@@ -6,9 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.3.2",
+    "@storybook/addon-interactions": "^7.3.2",
+    "@storybook/addon-links": "^7.3.2",
+    "@storybook/blocks": "^7.3.2",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "^7.3.2",
+    "@storybook/vue3-vite": "^7.3.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@vitejs/plugin-vue": "^4.3.1",
     "@vue/eslint-config-standard": "^8.0.1",
@@ -18,7 +27,12 @@
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-vue": "^9.17.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.66.1",
+    "storybook": "^7.3.2",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vue": "^3.3.4",
