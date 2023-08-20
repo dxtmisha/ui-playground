@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import {
   executeFunction,
@@ -14,13 +14,13 @@ import {
   transformation
 } from '../../../functions/data.ts'
 
-import { demoUndefined, demoUndefinedString } from '../demo/undefined.ts'
-import { demoBoolean, demoBooleanString } from '../demo/boolean.ts'
-import { demoNumber, demoNumberString } from '../demo/number.ts'
-import { demoString } from '../demo/string.ts'
-import { demoArray, demoArrayString, demoArrayText } from '../demo/array.ts'
-import { demoObject, demoObjectString } from '../demo/object.ts'
-import { demoFunction } from '../demo/function.ts'
+import { demoUndefined, demoUndefinedString } from '../../../stories/demo/undefined.ts'
+import { demoBoolean, demoBooleanString } from '../../../stories/demo/boolean.ts'
+import { demoNumber, demoNumberString } from '../../../stories/demo/number.ts'
+import { demoString } from '../../../stories/demo/string.ts'
+import { demoArray, demoArrayString, demoArrayText } from '../../../stories/demo/array.ts'
+import { demoObject, demoObjectString } from '../../../stories/demo/object.ts'
+import { demoFunction } from '../../../stories/demo/function.ts'
 
 const meta = {
   title: 'Functions/data',

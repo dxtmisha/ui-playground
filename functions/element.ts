@@ -1,13 +1,13 @@
 import { executeFunction, forEach, isFilled, isObject } from './data.ts'
 import { random } from './number.ts'
 
-import { ObjectType } from '../types/basic.ts'
+import { type ObjectType } from '../types/basic.ts'
 import {
-  ElementAttributes,
-  ElementHtmlType,
-  ElementOrStringType,
-  ElementType,
-  WindowType
+  type ElementAttributes,
+  type ElementHtmlType,
+  type ElementOrStringType,
+  type ElementType,
+  type WindowType
 } from '../types/element.ts'
 
 /**

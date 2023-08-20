@@ -1,10 +1,25 @@
-import { executeFunction, forEach, isFilled } from '../../../functions/data.ts'
-import { intersectKey, toArray } from '../../../functions/object.ts'
+import { isRef } from 'vue'
+import { executeFunction, forEach, isFilled } from '../functions/data.ts'
+import { intersectKey, isDifferent, toArray } from '../functions/object.ts'
 
-import { ArgDemoType, ArgType } from './types.ts'
+import { type ArgDemoType, type ArgType } from './types.ts'
 
 import { category } from './media.ts'
-import { isRef } from 'vue'
+
+/**
+ * Checks if the values were changed.<br>
+ * Проверяет, были ли изменены значения.
+ * @param args list of all input values /<br>список всех входных значений
+ * @param value list of selected values /<br>список выбранных значений
+ * @param name names of the group /<br>названия группа
+ */
+export function isArgsDifferent<I, T extends Record<string, I>> (
+  args: Record<string, T>,
+  value: T,
+  name: string
+): boolean {
+  return args?.[name] && isDifferent(args[name], value)
+}
 
 /**
  * Returns the values of input data, grouped by categories.<br>
@@ -144,7 +159,7 @@ export function toName<T> (value: T): string {
   }
 
   if (isRef(value)) {
-    return toNameObject('Ref', String(value.value))
+    return toNameObject('Ref', toName(value.value))
   }
 
   return toNameByType(value)
@@ -195,6 +210,24 @@ export function toNameElement (value: HTMLElement): string {
   }
 
   return value.nodeName
+}
+
+/**
+ * The function is called and returns the returned data.<br>
+ * Вызывает функция и возвращает возвращенные данные.
+ * @param callback function name /<br>имя функции
+ * @param args input data for a function /<br>входные данные для функции
+ */
+export function makeCallback<
+  A,
+  R,
+  C extends (...args: A[]) => R,
+> (callback: C, args: Record<string, any> | any[]): R {
+  if (Array.isArray(args)) {
+    return callback(...args)
+  } else {
+    return callback(...(Object.values(args) as A[]))
+  }
 }
 
 /**

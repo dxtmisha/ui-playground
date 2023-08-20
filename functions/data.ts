@@ -1,7 +1,8 @@
 import {
   type EmptyType,
   type FunctionAnyType,
-  type FunctionType, ObjectOrArrayType,
+  type FunctionType,
+  type ObjectOrArrayType,
   type ObjectType,
   type UndefinedType
 } from '../types/basic.ts'

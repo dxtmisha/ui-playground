@@ -1,12 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import { getHash, removeHash, setHash } from '../../../functions/hash.ts'
 
-import { demoStringName } from '../demo/string.ts'
-import { demoNumberRandom } from '../demo/number.ts'
+import { demoStringName } from '../../../stories/demo/string.ts'
+import { demoNumberRandom } from '../../../stories/demo/number.ts'
 
 const meta = {
   title: 'Functions/hash',

@@ -1,4 +1,4 @@
-import { NumberOrStringType } from '../types/basic.ts'
+import { type NumberOrStringType } from '../types/basic.ts'
 
 /**
  * Checks if the value is between integers.<br>

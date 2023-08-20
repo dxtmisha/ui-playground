@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import { isIntegerBetween, random, toNumber } from '../../../functions/number.ts'
 
-import { demoNumberStringBig } from '../demo/number.ts'
+import { demoNumberStringBig } from '../../../stories/demo/number.ts'
 
 const meta = {
   title: 'Functions/number',

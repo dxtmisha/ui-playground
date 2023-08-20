@@ -1,6 +1,9 @@
 import { isRef, type Ref, ref } from 'vue'
 
-import { RefOrNormalType, RefType } from '../types/ref.ts'
+import {
+  type RefOrNormalType,
+  type RefType
+} from '../types/ref.ts'
 
 /**
  * You return the values of the ref variable or the variable itself if it is not reactive.<br>

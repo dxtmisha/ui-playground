@@ -1,6 +1,6 @@
 import { transformation } from './data.ts'
 
-import { NumberOrStringType } from '../types/basic.ts'
+import { type NumberOrStringType } from '../types/basic.ts'
 
 export type EnvIndexType = 'cache' | 'language' | 'prefix' | string;
 export type EnvListType = {

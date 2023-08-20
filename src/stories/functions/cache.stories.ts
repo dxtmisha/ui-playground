@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { random } from '../../../functions/number.ts'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import { getCache } from '../../../functions/cache.ts'
 
-import { demoStringName } from '../demo/string.ts'
+import { demoStringName } from '../../../stories/demo/string.ts'
 
 const meta = {
   title: 'Functions/cache',

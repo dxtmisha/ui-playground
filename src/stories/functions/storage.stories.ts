@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import { getSession, getStorage, setSession, setStorage } from '../../../functions/storage.ts'
 
-import { demoNumberRandom } from '../demo/number.ts'
-import { demoStringName } from '../demo/string.ts'
-import { demoFunction } from '../demo/function.ts'
+import { demoNumberRandom } from '../../../stories/demo/number.ts'
+import { demoStringName } from '../../../stories/demo/string.ts'
+import { demoFunction } from '../../../stories/demo/function.ts'
 
 const meta = {
   title: 'Functions/storage',

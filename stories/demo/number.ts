@@ -1,4 +1,4 @@
-import { random } from '../../../functions/number.ts'
+import { random } from '../../functions/number.ts'
 
 export const demoNumber = [
   0,

@@ -1,12 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import { getRef, toRefItem } from '../../../functions/ref.ts'
 
-import { demoRef } from '../demo/ref.ts'
-import { demoString } from '../demo/string.ts'
+import { demoRef } from '../../../stories/demo/ref.ts'
+import { demoString } from '../../../stories/demo/string.ts'
 
 const meta = {
   title: 'Functions/ref',

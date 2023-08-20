@@ -21,11 +21,13 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    "composables/**/*.ts",
     "functions/**/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "stories/**/*.ts",
     "types/**/*.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

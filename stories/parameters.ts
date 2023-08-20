@@ -1,4 +1,4 @@
-import { replaceRecursive } from '../../../functions/object.ts'
+import { replaceRecursive } from '../functions/object.ts'
 
 import { getDescription } from './functions.ts'
 

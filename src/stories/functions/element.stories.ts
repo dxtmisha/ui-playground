@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import {
   createElement,
@@ -20,7 +20,7 @@ import {
   demoElementItem,
   demoElementString,
   demoElementWindow
-} from '../demo/element.ts'
+} from '../../../stories/demo/element.ts'
 
 const meta = {
   title: 'Functions/element',

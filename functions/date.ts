@@ -1,5 +1,5 @@
 import { isNull } from './data.ts'
-import { NumberOrStringOrDateType } from '../types/basic.ts'
+import { type NumberOrStringOrDateType } from '../types/basic.ts'
 
 /**
  * Conversion to Date object.<br>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import {
   arrFill,
@@ -17,10 +17,10 @@ import {
   uniqueArray
 } from '../../../functions/object.ts'
 
-import { demoUndefined } from '../demo/undefined.ts'
-import { demoString } from '../demo/string.ts'
-import { demoArray, demoArrayText } from '../demo/array.ts'
-import { demoObject, demoObjectBig } from '../demo/object.ts'
+import { demoUndefined } from '../../../stories/demo/undefined.ts'
+import { demoString } from '../../../stories/demo/string.ts'
+import { demoArray, demoArrayText } from '../../../stories/demo/array.ts'
+import { demoObject, demoObjectBig } from '../../../stories/demo/object.ts'
 
 const meta = {
   title: 'Functions/object',

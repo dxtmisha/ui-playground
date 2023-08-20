@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../composables/parameters.ts'
-import { getStoryForFunction } from '../composables/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForFunction } from '../../../stories/stories.ts'
 
 import {
   getCookie,
@@ -9,7 +9,7 @@ import {
   setCookie
 } from '../../../functions/cookie.ts'
 
-import { demoString, demoStringName } from '../demo/string.ts'
+import { demoString, demoStringName } from '../../../stories/demo/string.ts'
 
 const meta = {
   title: 'Functions/cookie',

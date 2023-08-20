@@ -1,7 +1,7 @@
 import { executeFunction, forEach } from './data'
 import { arrFill } from './object'
 
-import { FunctionType } from '../types/basic.ts'
+import { type FunctionType } from '../types/basic.ts'
 
 /**
  * The object is used for matching text with a pattern.<br>
