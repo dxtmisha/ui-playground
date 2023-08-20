@@ -8,7 +8,7 @@ import { type CookieOptionsType, getCookie, setCookie } from '../../functions/co
  * @param defaultValue value or function to change data /<br>значение или функция для изменения данных
  * @param options additional parameters /<br>дополнительные параметры
  */
-export function useCookieVue<T> (
+export function useCookieRef<T> (
   name: string,
   defaultValue?: T | (() => T),
   options?: CookieOptionsType

@@ -8,7 +8,7 @@ import { useStorageRef } from '../../../../composables/ref/useStorageRef.ts'
 import { category } from '../../../../stories/media.ts'
 
 const meta = {
-  title: 'Composables/Vue/useStorageVue',
+  title: 'Composables/Vue/useStorageRef',
   parameters: getComponentParameters([
     'Creates a reactive variable to manage a local storage.',
     'Создает реактивный переменный для управления локальным хранилищем.'
