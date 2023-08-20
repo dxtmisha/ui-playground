@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { random } from '../../../functions/number.ts'
 
 import { getComponentParameters } from '../composables/parameters.ts'
 import { getStoryForFunction } from '../composables/stories.ts'
 
 import { getSession, getStorage, setSession, setStorage } from '../../../functions/storage.ts'
 
+import { demoNumberRandom } from '../demo/number.ts'
 import { demoStringName } from '../demo/string.ts'
 import { demoFunction } from '../demo/function.ts'
 
@@ -38,7 +38,7 @@ export const StorageGetStorage: Story = {
     [
       demoStringName,
       [
-        random(100, 999),
+        ...demoNumberRandom,
         ...demoFunction
       ],
       [5]
@@ -56,7 +56,7 @@ export const StorageSetStorage: Story = {
     ],
     [
       demoStringName,
-      [random(100, 999)]
+      demoNumberRandom
     ]
   )
 }
@@ -72,7 +72,7 @@ export const StorageGetSession: Story = {
     [
       demoStringName,
       [
-        random(100, 999),
+        ...demoNumberRandom,
         ...demoFunction
       ],
       [5]
@@ -90,7 +90,7 @@ export const StorageSetSession: Story = {
     ],
     [
       demoStringName,
-      [random(100, 999)]
+      demoNumberRandom
     ]
   )
 }

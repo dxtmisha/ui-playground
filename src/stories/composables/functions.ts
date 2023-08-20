@@ -4,6 +4,7 @@ import { intersectKey, toArray } from '../../../functions/object.ts'
 import { ArgDemoType, ArgType } from './types.ts'
 
 import { category } from './media.ts'
+import { isRef } from 'vue'
 
 /**
  * Returns the values of input data, grouped by categories.<br>
@@ -140,6 +141,10 @@ export function toName<T> (value: T): string {
 
   if (value instanceof Window) {
     return toNameObject('Window')
+  }
+
+  if (isRef(value)) {
+    return toNameObject('Ref', String(value.value))
   }
 
   return toNameByType(value)
