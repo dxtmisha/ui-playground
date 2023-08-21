@@ -31,6 +31,8 @@ export function useArgs<
     if (isArgsDifferent(args, argsRef.value, category.arg)) {
       argsRef.value = args[category.arg]
       item.value = makeCallback<A, R, C>(callback, argsRef.value)
+
+      console.info(`Reload<${callback?.name}>`)
     }
   })
 
@@ -48,15 +50,18 @@ export function useArgs<
  * @param item object of the received data after the function is executed /<br>
  * объект полученные данные после выполнения функции
  * @param options data for processing /<br>данные для обработки
+ * @param exceptions list of variables that should not be displayed /<br>
+ * список переменных, который не надо выводить
  */
 export function useVariables<T> (
   item: Ref<T | undefined>,
-  options: Ref<ArgsGroupType>
+  options: Ref<ArgsGroupType>,
+  exceptions?: string[]
 ): { variables: Ref<VariablesType> } {
   const variables = ref<VariablesType>([])
 
   watch(options, () => {
-    variables.value = getVariables(item, options.value)
+    variables.value = getVariables(item, options.value, exceptions)
   }, { immediate: true })
 
   return { variables }
@@ -97,30 +102,37 @@ export function makeValues<R> (
  * @param item object of the received data after the function is executed /<br>
  * объект полученные данные после выполнения функции
  * @param options data for processing /<br>данные для обработки
+ * @param exceptions list of variables that should not be displayed /<br>
+ * список переменных, который не надо выводить
  */
 function getVariables<T> (
   item: Ref<T | undefined>,
-  options: ArgsGroupType
+  options: ArgsGroupType,
+  exceptions?: string[]
 ): VariablesType {
   const variables: VariablesType = []
-
   if (
     !isRef(item.value) &&
     isObject(item.value)
   ) {
     forEach(item.value, (variable: string | FunctionAnyType<string, string>, name) => {
-      if (typeof variable === 'function') {
-        const values: string[] = Object.values(options.value?.[name] ?? {})
+      if (
+        !exceptions ||
+        exceptions.indexOf(name as string) === -1
+      ) {
+        if (typeof variable === 'function') {
+          const values: string[] = Object.values(options?.[name] ?? {})
 
-        variables.push({
-          name: `${name}(<span>${toCallbackName(values)}</span>)`,
-          value: toCallbackReturn(variable(...values))
-        })
-      } else {
-        variables.push({
-          name,
-          value: toCallbackReturn(variable)
-        })
+          variables.push({
+            name: `${name}(<span>${toCallbackName(values)}</span>)`,
+            value: toCallbackReturn(variable(...values))
+          })
+        } else {
+          variables.push({
+            name,
+            value: toCallbackReturn(variable)
+          })
+        }
       }
     })
   }

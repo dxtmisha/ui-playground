@@ -32,6 +32,8 @@ export function getStoryForFunction<
  * @param callback function to execute /<br>функция для выполнения
  * @param watchCallback function to update the value /<br>функция для обновления значения
  * @param description description text /<br>текст описания
+ * @param exceptions list of variables that should not be displayed /<br>
+ * список переменных, который не надо выводить
  */
 export function getStoryForComposablesRef<
   A = any,
@@ -40,10 +42,11 @@ export function getStoryForComposablesRef<
 > (
   callback: C,
   watchCallback: (item: R, valuesRef: any) => void,
-  description?: string | string[]
+  description?: string | string[],
+  exceptions?: string[]
 ) {
   return {
     parameters: getStoryParameters(description),
-    render: renderComposablesRef(callback, watchCallback)
+    render: renderComposablesRef(callback, watchCallback, exceptions)
   }
 }

@@ -41,7 +41,11 @@ export function getElement<E extends ElementHtmlType> (
   }
 
   if (typeof element === 'string') {
-    return document.querySelector<E>(element) ?? undefined
+    try {
+      return document.querySelector<E>(element) ?? undefined
+    } catch {
+      return undefined
+    }
   }
 
   return element

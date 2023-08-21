@@ -175,7 +175,11 @@ export function toNameByType<T> (value: T): string {
     case 'function':
       return toNameObject('Function', value.name)
     case 'object':
-      return JSON.stringify(value)
+      try {
+        return JSON.stringify(value)
+      } catch {
+        return 'Object'
+      }
     case 'string':
       return `'${value}'`
     case 'undefined':

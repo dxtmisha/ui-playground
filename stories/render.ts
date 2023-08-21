@@ -52,6 +52,8 @@ export function renderStory<T extends (...args: any[]) => any> (
  * Метод рендеринга для реактивных функций.
  * @param callback function name /<br>имя функции
  * @param watchCallback function to update the value /<br>функция для обновления значения
+ * @param exceptions list of variables that should not be displayed /<br>
+ * список переменных, который не надо выводить
  */
 export function renderComposablesRef<
   A = any,
@@ -59,7 +61,8 @@ export function renderComposablesRef<
   C extends FunctionAnyType<A, R> = FunctionAnyType<A, R>,
 > (
   callback: C,
-  watchCallback: (item: R, valuesRef: any) => void
+  watchCallback: (item: R, valuesRef: any) => void,
+  exceptions?: string[]
 ) {
   const {
     item,
@@ -68,7 +71,7 @@ export function renderComposablesRef<
     argsReturn
   } = useArgs(callback)
 
-  const { variables } = useVariables(item, options)
+  const { variables } = useVariables(item, options, exceptions)
 
   makeValues(item, options, watchCallback)
 
@@ -94,7 +97,7 @@ export function renderComposablesRef<
             <div class="sb-function__item__name">
               ${callback.name}(<span>{{ argsName }}</span>).<i v-html="variable.name" />
             </div>
-            <div class="sb-function__item__value">// {{ variable.value }}</div>
+            <div class="sb-function__item__value">// <span v-html="variable.value" /></div>
           </div>
         </div>
       `
