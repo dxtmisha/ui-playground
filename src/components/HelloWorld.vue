@@ -1,7 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { EventItem } from '../../classes/EventItem.ts'
 
 defineProps<{ msg: string }>()
+
+const button1 = ref()
+const button2 = ref()
+const button2show = ref(true)
+
+onMounted(() => {
+  const eventItem = new EventItem(button1.value, 'click', (event: Event) => {
+    console.log('event1', event)
+  })
+
+  eventItem.start()
+  eventItem.setDetail({
+    a: 1,
+    b: 2
+  })
+
+  setTimeout(() => eventItem.setElementControl(button2.value), 2000)
+  setTimeout(() => {
+    button2show.value = false
+  }, 4000)
+  setTimeout(() => eventItem.stop(), 16000)
+
+  console.log('event', eventItem)
+})
 
 const count = ref(0)
 </script>
@@ -16,6 +41,9 @@ const count = ref(0)
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
+
+  <button ref="button1">Event 1</button>
+  <button v-if="button2show" ref="button2">Event 2</button>
 
   <p>
     Check out

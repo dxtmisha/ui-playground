@@ -223,8 +223,8 @@ export function intersectKey<
  * Преобразование в массив.
  * @param value input value /<br>входное значение
  */
-export function toArray<T extends any[] | any> (value: T): (T & any[]) | [T] {
-  return Array.isArray(value) ? value : [value]
+export function toArray<T> (value: T): T extends any[] ? T : [T] {
+  return (Array.isArray(value) ? value : [value]) as T extends any[] ? T : [T]
 }
 
 /**

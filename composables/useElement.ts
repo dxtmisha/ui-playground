@@ -1,5 +1,5 @@
 import { isNull } from '../functions/data.ts'
-import { getElement, getElementOrWindow, isInDom } from '../functions/element.ts'
+import { getElement, getElementId, getElementOrWindow, isInDom } from '../functions/element.ts'
 
 import {
   type ElementHtmlType,
@@ -23,6 +23,13 @@ export type ElementItemType<E extends ElementType> = {
    * Проверяет, находится ли еще элемент в дереве DOM.
    */
   isDom: () => boolean
+
+  /**
+   * Returns the identifier (ID) of the element or creates it if the element has no ID.<br>
+   * Возвращает идентификатор (ID) элемента или создает его, если у элемента нет ID.
+   * @param selector selectors for matching /<br>селекторов для сопоставления
+   */
+  getId: (selector?: string) => string
 };
 
 /**
@@ -46,6 +53,7 @@ export function useElement<E extends ElementType> (
       element = getElementOrWindow(elementSelector)
     },
     is: (): boolean => !isNull(element),
-    isDom: (): boolean => isInDom(element)
+    isDom: (): boolean => isInDom(element),
+    getId: (selector?: string): string => getElementId(element as ElementHtmlType, selector)
   }
 }
