@@ -91,8 +91,8 @@ export class EventItem<
    * значение, связанное с событием
    */
   constructor (
-    elementSelector: ElementOrStringType<E>,
-    type: string | string[],
+    elementSelector?: ElementOrStringType<E>,
+    type: string | string[] = ['click'],
     protected listener?: EventListenerType<O, D>,
     protected options?: EventOptionsType,
     protected detail?: D
@@ -125,7 +125,7 @@ export class EventItem<
    * Модифицирует объект, который получает уведомление.
    * @param elementSelector element /<br>элемент
    */
-  setElementControl (elementSelector: ElementOrStringType<E>): this {
+  setElementControl (elementSelector: ElementOrStringType<ElementHtmlType>): this {
     this.elementControl = getElement(elementSelector)
     this.elementControlEdit = true
     return this

@@ -1,8 +1,7 @@
 import { isRef, type Ref, ref } from 'vue'
 
 import {
-  type RefOrNormalType,
-  type RefType
+  type RefOrNormalType
 } from '../types/ref.ts'
 
 /**
@@ -19,6 +18,6 @@ export function getRef<T> (item: RefOrNormalType<T>): T {
  * Возвращает регулярный переменный или оборачивает его в регулярный переменный, если является обычным переменным.
  * @param item
  */
-export function toRefItem<T> (item: RefOrNormalType<T>): RefType<T> {
+export function toRefItem<T> (item: RefOrNormalType<T>): Ref<T> {
   return isRef(item) ? item : ref<T>(item) as Ref<T>
 }
