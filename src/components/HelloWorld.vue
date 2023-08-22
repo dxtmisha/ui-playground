@@ -9,23 +9,9 @@ const button2 = ref()
 const button2show = ref(true)
 
 onMounted(() => {
-  const eventItem = new EventItem(button1.value, 'click', (event: Event) => {
+  new EventItem('#app', 'resize', (event: Event) => {
     console.log('event1', event)
-  })
-
-  eventItem.start()
-  eventItem.setDetail({
-    a: 1,
-    b: 2
-  })
-
-  setTimeout(() => eventItem.setElementControl(button2.value), 2000)
-  setTimeout(() => {
-    button2show.value = false
-  }, 4000)
-  setTimeout(() => eventItem.stop(), 16000)
-
-  console.log('event', eventItem)
+  }).start()
 })
 
 const count = ref(0)

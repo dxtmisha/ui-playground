@@ -1,7 +1,8 @@
-import { ElementHtmlType, ElementOrStringType, ElementType } from '../types/element'
 import { getElement, getElementOrWindow, isInDom } from '../functions/element'
 import { isObject } from '../functions/data.ts'
 import { toArray } from '../functions/object'
+
+import { ElementHtmlType, ElementOrStringType, ElementType } from '../types/element'
 
 export type EventListenerType<
   O extends Event,
@@ -10,8 +11,10 @@ export type EventListenerType<
 
 export type EventOptionsType = AddEventListenerOptions | boolean | undefined
 export type EventActivityItemType<E extends ElementType> = {
-  element: E | undefined,
+  element: E | undefined
   type: string
+  listener?: (event: any | Event) => void
+  observer?: ResizeObserver
 }
 
 /**
@@ -53,9 +56,9 @@ export class EventItem<
    * Это должен быть объект, реализующий интерфейс EventListener или просто функция JavaScript.
    * @protected
    */
-  protected listenerRecent = ((event: O): void => {
+  protected listenerRecent = (event?: O | ResizeObserverEntry): void => {
     if (isInDom(this.elementControl)) {
-      this.listener?.call(this.element, event, this.detail)
+      this.listener?.call(this.element, event as O, this.detail)
 
       if (
         isObject(this.options) &&
@@ -66,7 +69,7 @@ export class EventItem<
     } else {
       this.stop()
     }
-  }) as EventListener | EventListenerObject
+  }
 
   /**
    * Event states.<br>
@@ -193,16 +196,24 @@ export class EventItem<
    * Запуск прослушивания события.
    */
   start (): this {
-    if (!this.activity) {
+    if (
+      this.element &&
+      !this.activity
+    ) {
       this.activity = true
       this.activityItems = []
 
       this.type.forEach(type => {
-        this.element?.addEventListener(type, this.listenerRecent, this.options)
-        this.activityItems.push({
-          element: this.element,
-          type
-        })
+        if (
+          !(type === 'resize' && this.makeResize()) &&
+          !(type === 'scroll-sync' && this.makeScroll())
+        ) {
+          this.element?.addEventListener(type, this.listenerRecent as EventListener, this.options)
+          this.activityItems.push({
+            element: this.element,
+            type
+          })
+        }
       })
     }
 
@@ -216,7 +227,20 @@ export class EventItem<
   stop (): this {
     if (this.activity) {
       this.activity = false
-      this.type.forEach(type => this.element?.removeEventListener(type, this.listenerRecent))
+      this.activityItems.forEach(({
+        element,
+        type,
+        listener,
+        observer
+      }) => {
+        if (observer) {
+          observer.disconnect()
+        } else if (listener) {
+          element?.removeEventListener(type, listener as EventListener)
+        } else {
+          element?.removeEventListener(type, this.listenerRecent as EventListener)
+        }
+      })
     }
 
     return this
@@ -237,17 +261,87 @@ export class EventItem<
    */
   reset () {
     if (this.activity) {
-      this.activity = false
-      this.activityItems.forEach(({
-        element,
-        type
-      }) => {
-        element?.removeEventListener(type, this.listenerRecent)
-      })
-
+      this.stop()
       this.start()
     }
 
     return this
+  }
+
+  /**
+   * Checks if the ResizeObserver object exists.<br>
+   * Проверяет, существует ли объект ResizeObserver.
+   */
+  protected isObserver (): boolean {
+    return 'ResizeObserver' in window
+  }
+
+  /**
+   * The implementation of the resize event for an element.<br>
+   * Реализация события изменения размера для элемента.
+   * @protected
+   */
+  protected makeResize (): boolean {
+    if (
+      this.element &&
+      this.element instanceof HTMLElement &&
+      this.element !== document.body &&
+      this.isObserver()
+    ) {
+      const observer = new ResizeObserver(
+        (entries: ResizeObserverEntry[]) => this.listenerRecent(entries?.[0])
+      )
+
+      observer.observe(this.element)
+
+      this.activityItems.push({
+        element: this.element,
+        type: 'resize',
+        observer
+      })
+
+      return true
+    }
+
+    return false
+  }
+
+  /**
+   * Implementation of the scroll event for an element.<br>
+   * Реализация события изменения положения скролла для элемента.
+   * @protected
+   */
+  protected makeScroll (): boolean {
+    if (this.element) {
+      let go = false
+      const listener = (event: O): void => {
+        if (!go) {
+          go = true
+          requestAnimationFrame(() => {
+            this.listenerRecent(event)
+            go = false
+          })
+        }
+      }
+
+      this.element.addEventListener('scroll', listener as EventListener, this.options)
+      this.element.addEventListener('resize', listener as EventListener, this.options)
+      this.activityItems.push(
+        {
+          element: this.element,
+          type: 'scroll',
+          listener
+        },
+        {
+          element: this.element,
+          type: 'resize',
+          listener
+        }
+      )
+
+      return true
+    }
+
+    return false
   }
 }
