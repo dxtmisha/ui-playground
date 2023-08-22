@@ -37,6 +37,16 @@ export function getCountry (): string {
 }
 
 /**
+ * Returns the first day of the week.<br>
+ * Возвращает первый день недели.
+ * @param code country code, full form language-country or one of them /<br>
+ * код страны, полный вид язык-страна или один из них
+ */
+export function getFirstDay (code?: GeoType): string {
+  return (code ? code?.firstDay : item?.firstDay) || 'Mo'
+}
+
+/**
  * Full format according to the standard.<br>
  * Полный формат согласно стандарту.
  * @param code country code, full form language-country or one of them /<br>
