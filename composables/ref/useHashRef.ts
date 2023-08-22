@@ -1,6 +1,8 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
 import { getHash, setHash } from '../../functions/hash.ts'
 
+const hashItems: Record<string, Ref<any>> = {}
+
 /**
  * Creates a reactive variable to manage hash.<br>
  * Создает реактивную переменную для управления hash.
@@ -11,11 +13,16 @@ export function useHashRef<T> (
   name: string,
   defaultValue?: T | (() => T)
 ): Ref<UnwrapRef<T> | undefined> {
+  if (name in hashItems) {
+    return hashItems[name]
+  }
+
   const hash: Ref<UnwrapRef<T> | undefined> = ref(getHash<T>(name, defaultValue))
 
   watch(hash, value => {
     setHash(name, value)
   })
 
+  hashItems[name] = hash
   return hash
 }

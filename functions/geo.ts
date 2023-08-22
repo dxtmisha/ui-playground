@@ -8,9 +8,9 @@ import { GeoType } from '../types/geo.ts'
 
 const STORAGE_NAME_CODE = 'geo-code'
 
-const code: string = findLocation()
-let item = getByCode(code) as GeoType
-let language: string = findLanguage(code)
+let location: string = findLocation()
+let item = getByCode(location) as GeoType
+let language: string = findLanguage(location)
 
 /**
  * Information about the current country.<br>
@@ -55,7 +55,7 @@ export function getGeoStandard (code?: GeoType): string {
  * Полный формат.
  */
 export function getGeoCode (): string {
-  return code
+  return location
 }
 
 /**
@@ -84,6 +84,7 @@ export function setGeo (code: string, save?: boolean): void {
     setStorage(STORAGE_NAME_CODE, code)
   }
 
+  location = findLocation()
   language = findLanguage(code)
 }
 
@@ -206,7 +207,7 @@ function findCountry (code?: string): string {
   }
 
   if (code) {
-    return findLocation()
+    return findCountry(item?.country)
   }
 
   return 'GB'
@@ -226,7 +227,7 @@ function findLanguage (code?: string): string {
   }
 
   if (code) {
-    return findLocation()
+    return findLanguage(item?.language)
   }
 
   return 'ru'

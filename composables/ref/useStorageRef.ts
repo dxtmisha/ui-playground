@@ -1,5 +1,7 @@
-import { ref, watch } from 'vue'
+import { Ref, ref, UnwrapRef, watch } from 'vue'
 import { getStorage, setStorage } from '../../functions/storage.ts'
+
+const storages: Record<string, Ref<any>> = {}
 
 /**
  * Creates a reactive variable to manage a local storage.<br>
@@ -12,10 +14,15 @@ export function useStorageRef<T> (
   name: string,
   defaultValue?: T | (() => T),
   cache?: number
-) {
+): Ref<UnwrapRef<T> | undefined> {
+  if (name in storages) {
+    return storages[name]
+  }
+
   const storage = ref(getStorage<T>(name, defaultValue, cache))
 
   watch(storage, value => setStorage(name, value))
 
+  storages[name] = storage
   return storage
 }

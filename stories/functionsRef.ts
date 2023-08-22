@@ -24,13 +24,15 @@ export function useArgs<
   const argsRef = ref<Record<string, any>>({})
   const options = ref<ArgsGroupType>({})
   const item = ref<R>()
+  let first = true
 
   watch(options, (
     args: Record<keyof typeof category | string, Record<string, any>>
   ) => {
-    if (isArgsDifferent(args, argsRef.value, category.arg)) {
-      argsRef.value = args[category.arg]
+    if (first || isArgsDifferent(args, argsRef.value, category.arg)) {
+      argsRef.value = args?.[category.arg] || {}
       item.value = makeCallback<A, R, C>(callback, argsRef.value)
+      first = false
 
       console.info(`Reload<${callback?.name}>`)
     }
@@ -61,7 +63,9 @@ export function useVariables<T> (
   const variables = ref<VariablesType>([])
 
   watch(options, () => {
-    variables.value = getVariables(item, options.value, exceptions)
+    requestAnimationFrame(() => {
+      variables.value = getVariables(item, options.value, exceptions)
+    })
   }, { immediate: true })
 
   return { variables }
