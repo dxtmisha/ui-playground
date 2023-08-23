@@ -1,5 +1,5 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { CookieOptionsType, getCookie, setCookie } from '../../functions/cookie.ts'
+import { CookieOptionsType, getCookie, setCookie } from '../functions/cookie.ts'
 
 const cookies: Record<string, Ref<any>> = {}
 
@@ -10,7 +10,7 @@ const cookies: Record<string, Ref<any>> = {}
  * @param defaultValue value or function to change data /<br>значение или функция для изменения данных
  * @param options additional parameters /<br>дополнительные параметры
  */
-export function useCookieRef<T> (
+export function useCookie<T> (
   name: string,
   defaultValue?: T | (() => T),
   options?: CookieOptionsType

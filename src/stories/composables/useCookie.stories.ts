@@ -1,14 +1,14 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 import { type Ref } from 'vue'
 
-import { getComponentParameters } from '../../../../stories/parameters.ts'
-import { getStoryForComposablesRef } from '../../../../stories/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForComposablesRef } from '../../../stories/stories.ts'
 
-import { useCookieRef } from '../../../../composables/ref/useCookieRef.ts'
-import { category } from '../../../../stories/media.ts'
+import { useCookie } from '../../../composables/useCookie.ts'
+import { category } from '../../../stories/media.ts'
 
 const meta = {
-  title: 'Composables/Vue/useCookieRef',
+  title: 'Composables/useCookie',
   parameters: getComponentParameters([
     'Creates a reactive variable to manage cookies.',
     'Создает реактивную переменную для управления cookie.'
@@ -50,10 +50,10 @@ type Story = StoryObj<typeof meta>;
 
 export default meta
 
-export const UseCookieRefStory: Story = {
-  name: 'useCookieRef',
+export const UseCookieStory: Story = {
+  name: 'useCookie',
   ...getStoryForComposablesRef(
-    useCookieRef,
+    useCookie,
     (item: Ref<string>, valuesRef: { value: string }) => {
       item.value = valuesRef.value
     }

@@ -1,13 +1,13 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 
-import { getComponentParameters } from '../../../../stories/parameters.ts'
-import { getStoryForComposablesRef } from '../../../../stories/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForComposablesRef } from '../../../stories/stories.ts'
 
-import { GeoRefType, useGeoRef } from '../../../../composables/ref/useGeoRef.ts'
-import { category } from '../../../../stories/media.ts'
+import { GeoRefType, useGeo } from '../../../composables/useGeo.ts'
+import { category } from '../../../stories/media.ts'
 
 const meta = {
-  title: 'Composables/Vue/useGeoRef',
+  title: 'Composables/useGeo',
   parameters: getComponentParameters([
     'Creates a reactive variable to get data about the current country.',
     'Создает реактивную переменную для получения данных о текущей стране.'
@@ -41,10 +41,10 @@ type Story = StoryObj<typeof meta>;
 
 export default meta
 
-export const UseGeoRefStory: Story = {
-  name: 'useGeoRef',
+export const UseGeoStory: Story = {
+  name: 'useGeo',
   ...getStoryForComposablesRef(
-    useGeoRef,
+    useGeo,
     (
       item: GeoRefType,
       valuesRef: { value: string, save: boolean }

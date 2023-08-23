@@ -1,17 +1,17 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 import { type Ref } from 'vue'
 
-import { getComponentParameters } from '../../../../stories/parameters.ts'
-import { getStoryForComposablesRef } from '../../../../stories/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForComposablesRef } from '../../../stories/stories.ts'
 
-import { useStorageRef } from '../../../../composables/ref/useStorageRef.ts'
-import { category } from '../../../../stories/media.ts'
+import { useSession } from '../../../composables/useSession.ts'
+import { category } from '../../../stories/media.ts'
 
 const meta = {
-  title: 'Composables/Vue/useStorageRef',
+  title: 'Composables/useSession',
   parameters: getComponentParameters([
-    'Creates a reactive variable to manage a local storage.',
-    'Создает реактивный переменный для управления локальным хранилищем.'
+    'Creates a reactive variable to manage session storage.',
+    'Создает реактивную переменную для управления сессией хранения.'
   ]),
   tags: ['autodocs'],
   argTypes: {
@@ -31,14 +31,6 @@ const meta = {
         type: { summary: 'any' }
       }
     },
-    cache: {
-      control: 'number',
-      description: 'cache time / время кэширования',
-      table: {
-        category: category.arg,
-        type: { summary: 'number' }
-      }
-    },
     value: {
       control: 'text',
       description: 'new values / новые значения',
@@ -50,8 +42,7 @@ const meta = {
   },
   args: {
     name: 'name1',
-    defaultValue: 'defaultValue',
-    cache: 60
+    defaultValue: 'defaultValue'
   }
 } satisfies Meta
 
@@ -59,10 +50,10 @@ type Story = StoryObj<typeof meta>
 
 export default meta
 
-export const UseStorageRefStory: Story = {
-  name: 'useStorageRef',
+export const UseSessionStory: Story = {
+  name: 'useSession',
   ...getStoryForComposablesRef(
-    useStorageRef,
+    useSession,
     (item: Ref<string>, valuesRef: { value: string }) => {
       item.value = valuesRef.value
     }

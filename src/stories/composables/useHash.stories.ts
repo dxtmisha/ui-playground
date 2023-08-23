@@ -1,14 +1,14 @@
 import { type Meta, type StoryObj } from '@storybook/vue3'
 import { type Ref } from 'vue'
 
-import { getComponentParameters } from '../../../../stories/parameters.ts'
-import { getStoryForComposablesRef } from '../../../../stories/stories.ts'
+import { getComponentParameters } from '../../../stories/parameters.ts'
+import { getStoryForComposablesRef } from '../../../stories/stories.ts'
 
-import { useHashRef } from '../../../../composables/ref/useHashRef.ts'
-import { category } from '../../../../stories/media.ts'
+import { useHash } from '../../../composables/useHash.ts'
+import { category } from '../../../stories/media.ts'
 
 const meta = {
-  title: 'Composables/Vue/useHashVue',
+  title: 'Composables/useHash',
   parameters: getComponentParameters([
     'Creates a reactive variable to manage hash.',
     'Создает реактивную переменную для управления hash.'
@@ -46,14 +46,14 @@ const meta = {
   }
 } satisfies Meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export default meta
 
-export const UseHashRefStory: Story = {
-  name: 'useHashRef',
+export const UseHashStory: Story = {
+  name: 'useHash',
   ...getStoryForComposablesRef(
-    useHashRef,
+    useHash,
     (item: Ref<string>, valuesRef: { value: string }) => {
       item.value = valuesRef.value
     }

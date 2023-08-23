@@ -1,5 +1,5 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { getSession, setSession } from '../../functions/storage.ts'
+import { getSession, setSession } from '../functions/storage.ts'
 
 const sessions: Record<string, Ref<any>> = {}
 
@@ -9,7 +9,7 @@ const sessions: Record<string, Ref<any>> = {}
  * @param name value name /<br>название значения
  * @param defaultValue default value /<br>значение по умолчанию
  */
-export function useSessionRef<T> (
+export function useSession<T> (
   name: string,
   defaultValue?: T | (() => T)
 ): Ref<UnwrapRef<T> | undefined> {

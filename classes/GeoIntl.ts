@@ -1,5 +1,5 @@
 import { toDate } from '../functions/date.ts'
-import { findGeo, getCountry, getFirstDay, getLanguage } from '../functions/geo.ts'
+import { findGeo, getCountry, getFirstDay, getLanguage, toGeoStandard } from '../functions/geo.ts'
 import { toNumber } from '../functions/number.ts'
 
 import { NumberOrStringOrDateType, NumberOrStringType } from '../types/basic.ts'
@@ -30,7 +30,7 @@ export class GeoIntl {
   constructor (code?: string) {
     const geo = findGeo(code)
 
-    this.language = geo?.language ?? 'en'
+    this.language = toGeoStandard(geo)
     this.firstDay = getFirstDay(geo)
   }
 
@@ -44,8 +44,9 @@ export class GeoIntl {
   display (
     value?: string,
     typeOptions?: Intl.DisplayNamesOptions['type'] | Intl.DisplayNamesOptions
-  ): string | undefined {
+  ): string {
     let options: Intl.DisplayNamesOptions = { type: 'language' }
+    let text
 
     if (typeOptions) {
       if (typeof typeOptions === 'string') {
@@ -60,17 +61,16 @@ export class GeoIntl {
 
     try {
       if (value) {
-        return new Intl.DisplayNames(this.language, options).of(value)
+        text = new Intl.DisplayNames(this.language, options).of(value)
       } else if (options.type === 'language') {
-        return new Intl.DisplayNames(this.language, options).of(getLanguage())
+        text = new Intl.DisplayNames(this.language, options).of(getLanguage())
       } else if (options.type === 'region') {
-        return new Intl.DisplayNames(this.language, options).of(getCountry())
+        text = new Intl.DisplayNames(this.language, options).of(getCountry())
       }
     } catch (e) {
-      return value
     }
 
-    return undefined
+    return text ?? value ?? ''
   }
 
   /**
@@ -82,7 +82,7 @@ export class GeoIntl {
   languageName (
     value?: string,
     style?: Intl.RelativeTimeFormatStyle
-  ): string | undefined {
+  ): string {
     const options: Intl.DisplayNamesOptions = {
       type: 'language',
       style
@@ -100,7 +100,7 @@ export class GeoIntl {
   countryName (
     value?: string,
     style?: Intl.RelativeTimeFormatStyle
-  ): string | undefined {
+  ): string {
     const options: Intl.DisplayNamesOptions = {
       type: 'region',
       style
@@ -127,7 +127,7 @@ export class GeoIntl {
    * Decimal point symbol.<br>
    * Символ десятичной точки.
    */
-  decimal () {
+  decimal (): string {
     return this.numberObject()
       ?.formatToParts?.(1.2)
       ?.find?.(item => item.type === 'decimal')?.value || '.'
@@ -273,7 +273,7 @@ export class GeoIntl {
     value: NumberOrStringOrDateType,
     styleOptions?: Intl.RelativeTimeFormatStyle | Intl.RelativeTimeFormatOptions,
     todayValue?: Date
-  ): string | undefined {
+  ): string {
     const date = toDate(value)
     const today = todayValue || new Date()
     const options: Intl.RelativeTimeFormatOptions = ({
@@ -314,7 +314,7 @@ export class GeoIntl {
     } catch (e) {
     }
 
-    return undefined
+    return ''
   }
 
   /**
@@ -342,7 +342,7 @@ export class GeoIntl {
     dateOptions?: Intl.DateTimeFormatOptions['month'] | Intl.DateTimeFormatOptions,
     type?: GeoDateType,
     hour24?: boolean
-  ): string | undefined {
+  ): string {
     const date = toDate(value)
     const today = todayValue || new Date()
     const limitValueIn = (new Date(today))
@@ -379,14 +379,14 @@ export class GeoIntl {
   month (
     value?: NumberOrStringOrDateType,
     style?: Intl.DateTimeFormatOptions['month']
-  ): string | undefined {
+  ): string {
     try {
       return Intl.DateTimeFormat(this.language, { month: style || 'long' })
         .format(toDate(value))
     } catch {
     }
 
-    return undefined
+    return ''
   }
 
   /**
@@ -429,14 +429,14 @@ export class GeoIntl {
   weekday (
     value?: NumberOrStringOrDateType,
     style?: Intl.DateTimeFormatOptions['weekday']
-  ): string | undefined {
+  ): string {
     try {
       return Intl.DateTimeFormat(this.language, { weekday: style || 'long' })
         .format(toDate(value))
     } catch {
     }
 
-    return undefined
+    return ''
   }
 
   /**
@@ -447,10 +447,10 @@ export class GeoIntl {
   weekdays (
     style?: Intl.DateTimeFormatOptions['weekday']
   ): ItemValueType<number | undefined>[] {
-    const list = [{
+    const list: ItemValueType<number | undefined>[] = [{
       label: '',
       value: undefined
-    }] as ItemValueType<number | undefined>[]
+    }]
 
     try {
       const date = new Date()

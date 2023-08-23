@@ -1,5 +1,5 @@
-import { getElement, getElementOrWindow, isInDom } from '../functions/element'
 import { isObject } from '../functions/data.ts'
+import { getElement, getElementOrWindow, isInDom } from '../functions/element'
 import { toArray } from '../functions/object'
 
 import { ElementHtmlType, ElementOrStringType, ElementType } from '../types/element'
@@ -196,23 +196,22 @@ export class EventItem<
    * Запуск прослушивания события.
    */
   start (): this {
-    if (
-      this.element &&
-      !this.activity
-    ) {
+    if (!this.activity) {
       this.activity = true
       this.activityItems = []
 
       this.type.forEach(type => {
-        if (
-          !(type === 'resize' && this.makeResize()) &&
-          !(type === 'scroll-sync' && this.makeScroll())
-        ) {
-          this.element?.addEventListener(type, this.listenerRecent as EventListener, this.options)
-          this.activityItems.push({
-            element: this.element,
-            type
-          })
+        if (this.element) {
+          if (
+            !(type === 'resize' && this.makeResize()) &&
+            !(type === 'scroll-sync' && this.makeScroll())
+          ) {
+            this.element.addEventListener(type, this.listenerRecent as EventListener, this.options)
+            this.activityItems.push({
+              element: this.element,
+              type
+            })
+          }
         }
       })
     }

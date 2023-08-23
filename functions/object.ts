@@ -65,8 +65,8 @@ export function getMaxLength (data: ObjectOrArrayType<string>): number {
  * Создает копию простого объекта.
  * @param value object for copying /<br>объект для копирования
  */
-export function copyObject<T, R extends ObjectOrArrayType<T>> (value: R): R {
-  return JSON.parse(JSON.stringify(value)) as R
+export function copyObject<T> (value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T
 }
 
 /**

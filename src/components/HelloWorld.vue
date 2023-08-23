@@ -1,18 +1,43 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { EventItem } from '../../classes/EventItem.ts'
+import { ref } from 'vue'
+import { useGeo } from '../../composables/useGeo.ts'
+import {
+  useCountryName,
+  useCurrency,
+  useDecimal,
+  useLanguageName,
+  useNumber, usePercent, usePercentBy100,
+  useUnit
+} from '../../composables/useIntl.ts'
 
 defineProps<{ msg: string }>()
 
 const button1 = ref()
 const button2 = ref()
-const button2show = ref(true)
 
-onMounted(() => {
-  new EventItem('#app', 'resize', (event: Event) => {
-    console.log('event1', event)
-  }).start()
-})
+const { setGeo } = useGeo()
+const [language] = useLanguageName()
+const [languageUS] = useLanguageName('en-US')
+const [country] = useCountryName()
+const [numberFormat, number] = useNumber(1000.5)
+const [currencyFormat, currency, currencyCode] = useCurrency(number, 'USD')
+const [unitFormat] = useUnit(number, 'centimeter')
+const [percent] = usePercent(number)
+const [percentBy100] = usePercentBy100(number)
+const decimal = useDecimal()
+
+const onClickVn = () => setGeo('vi-VN')
+const onClickRu = () => setGeo('ru-RU')
+const onClickRub = () => {
+  currencyCode.value = 'RUB'
+}
+const onClickVnd = () => {
+  currencyCode.value = 'VND'
+}
+
+setInterval(() => {
+  number.value += 1500
+}, 1000)
 
 const count = ref(0)
 </script>
@@ -28,8 +53,20 @@ const count = ref(0)
     </p>
   </div>
 
-  <button ref="button1">Event 1</button>
-  <button v-if="button2show" ref="button2">Event 2</button>
+  {{ country }} / {{ language }} / {{ languageUS }}
+
+  <div>{{ numberFormat }} ({{ decimal }})</div>
+  <div>{{ currencyFormat }}</div>
+  <div>{{ unitFormat }}</div>
+  <div>{{ percent }}</div>
+  <div>{{ percentBy100 }}</div>
+
+  <div>
+    <button ref="button1" @click="onClickVn">VN</button>
+    <button ref="button2" @click="onClickRu">RU</button>
+    <button @click="onClickRub">RUB</button>
+    <button @click="onClickVnd">VND</button>
+  </div>
 
   <p>
     Check out

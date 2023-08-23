@@ -1,5 +1,5 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { getStorage, setStorage } from '../../functions/storage.ts'
+import { getStorage, setStorage } from '../functions/storage.ts'
 
 const storages: Record<string, Ref<any>> = {}
 
@@ -10,7 +10,7 @@ const storages: Record<string, Ref<any>> = {}
  * @param defaultValue default value /<br>значение по умолчанию
  * @param cache cache time /<br>время кэширования
  */
-export function useStorageRef<T> (
+export function useStorage<T> (
   name: string,
   defaultValue?: T | (() => T),
   cache?: number
@@ -19,7 +19,7 @@ export function useStorageRef<T> (
     return storages[name]
   }
 
-  const storage = ref(getStorage<T>(name, defaultValue, cache))
+  const storage = ref<T | undefined>(getStorage<T>(name, defaultValue, cache))
 
   watch(storage, value => setStorage(name, value))
 

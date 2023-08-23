@@ -1,15 +1,16 @@
-import { isFilled } from './data.ts'
+import { isSelected } from './data.ts'
 import { getEnv } from './env.ts'
 import { getStorage, setStorage } from './storage.ts'
 
 import geo from '../media/geo.json'
 
 import { GeoType } from '../types/geo.ts'
+import { copyObject } from './object.ts'
 
 const STORAGE_NAME_CODE = 'geo-code'
 
 let location: string = findLocation()
-let item = getByCode(location) as GeoType
+let item: GeoType = getByCode(location)
 let language: string = findLanguage(location)
 
 /**
@@ -33,31 +34,25 @@ export function getLanguage (): string {
  * Текущая страна.
  */
 export function getCountry (): string {
-  return item?.country ?? findCountry()
+  return item.country
 }
 
 /**
  * Returns the first day of the week.<br>
  * Возвращает первый день недели.
- * @param code country code, full form language-country or one of them /<br>
- * код страны, полный вид язык-страна или один из них
+ * @param geo object with data about the current country /<br>
+ * объект с данными об текущей стране
  */
-export function getFirstDay (code?: GeoType): string {
-  return (code ? code?.firstDay : item?.firstDay) || 'Mo'
+export function getFirstDay (geo?: GeoType): string {
+  return (geo ? geo?.firstDay : item?.firstDay) || 'Mo'
 }
 
 /**
  * Full format according to the standard.<br>
  * Полный формат согласно стандарту.
- * @param code country code, full form language-country or one of them /<br>
- * код страны, полный вид язык-страна или один из них
  */
-export function getGeoStandard (code?: GeoType): string {
-  if (code) {
-    return `${code?.language}-${code?.country}`
-  }
-
-  return `${item?.language ?? findLanguage()}-${item?.country ?? findCountry()}`
+export function getGeoStandard (): string {
+  return toGeoStandard(item)
 }
 
 /**
@@ -84,18 +79,13 @@ export function getGeoList (): GeoType[] {
  * @param save save the result /<br>сохранить результат
  */
 export function setGeo (code: string, save?: boolean): void {
-  const data = findGeo(code)
+  location = code
+  item = findGeo(location)
+  language = findLanguage(location)
 
-  item = {
-    ...(data || getByCountry(findCountry()))
-  } as GeoType
-
-  if (data && save) {
-    setStorage(STORAGE_NAME_CODE, code)
+  if (save) {
+    setStorage(STORAGE_NAME_CODE, location)
   }
-
-  location = findLocation()
-  language = findLanguage(code)
 }
 
 /**
@@ -104,7 +94,7 @@ export function setGeo (code: string, save?: boolean): void {
  * @param language language /<br>язык
  * @param save save the result /<br>сохранить результат
  */
-export function setLanguage (language: string, save?: boolean) {
+export function setLanguage (language: string, save?: boolean): void {
   setGeo(`${language}-${getCountry()}`, save)
 }
 
@@ -114,7 +104,7 @@ export function setLanguage (language: string, save?: boolean) {
  * @param country language /<br>язык
  * @param save save the result /<br>сохранить результат
  */
-export function setCountry (country: string, save?: boolean) {
+export function setCountry (country: string, save?: boolean): void {
   setGeo(`${getLanguage()}-${country}`, save)
 }
 
@@ -124,7 +114,7 @@ export function setCountry (country: string, save?: boolean) {
  * @param code country code, full form language-country or one of them /<br>
  * код страны, полный вид язык-страна или один из них
  */
-export function findGeo (code?: string): GeoType | undefined {
+export function findGeo (code?: string): GeoType {
   if (code) {
     return getByCode(code)
   }
@@ -133,14 +123,26 @@ export function findGeo (code?: string): GeoType | undefined {
 }
 
 /**
+ * Converts to standard codes to determine language and country.<br>
+ * Преобразует в стандартные коды для определения языка и страны.
+ * @param geo object with data about the current country /<br>
+ * объект с данными об текущей стране
+ */
+export function toGeoStandard (geo: GeoType): string {
+  return `${geo.language}-${geo.country}`
+}
+
+/**
  * Returns the full data by language and country.<br>
  * Возвращает полные данные по языку и стране.
  * @param code string in the form of language-country /<br>строка в виде язык-страна
  */
 function get (code: string): GeoType | undefined {
-  return getGeoList()?.find(
-    item => `${item?.language}-${item?.country}` === code ||
-      `${item?.country}-${item?.language}` === code
+  return getGeoList().find(
+    item => isSelected(code, [
+      `${item.language}-${item.country}`,
+      `${item.country}-${item.language}`
+    ])
   )
 }
 
@@ -150,8 +152,8 @@ function get (code: string): GeoType | undefined {
  * @param language language /<br>язык
  */
 function getByLanguage (language: string): GeoType | undefined {
-  return getGeoList()?.find(item => {
-    return item?.language === language ||
+  return getGeoList().find(item => {
+    return item.language === language ||
       item?.languageAlternative?.find(languageAlternative => languageAlternative === language)
   })
 }
@@ -162,8 +164,8 @@ function getByLanguage (language: string): GeoType | undefined {
  * @param country country /<br>страна
  */
 function getByCountry (country: string): GeoType | undefined {
-  return getGeoList()?.find(item => {
-    return item?.country === country ||
+  return getGeoList().find(item => {
+    return item.country === country ||
       item?.countryAlternative?.find(countryAlternative => countryAlternative === country)
   })
 }
@@ -174,20 +176,24 @@ function getByCountry (country: string): GeoType | undefined {
  * @param code country code, full form language-country or one of them /<br>
  * код страны, полный вид язык-страна или один из них
  */
-function getByCode (code?: string): GeoType | undefined {
+function getByCode (code?: string): GeoType {
+  let item: GeoType | undefined
+
   if (code) {
     if (code.match(/([A-Z]{2}-[a-z]{2})|([a-z]{2}-[A-Z]{2})/)) {
-      return get(code) ??
-        getByCountry(toCountry(code)) ??
-        getByLanguage(toLanguage(code))
-    } else if (code.match(/^[a-z]{2}$/)) {
-      return getByLanguage(code)
-    } else if (code.match(/^[A-Z]{2}$/)) {
-      return getByCountry(code)
+      item = get(code)
+    }
+
+    if (!item && code.match(/[a-z]{2}/)) {
+      item = getByLanguage(toLanguage(code))
+    }
+
+    if (!item && code.match(/[A-Z]{2}/)) {
+      item = getByCountry(toCountry(code))
     }
   }
 
-  return undefined
+  return copyObject(item ?? getGeoList()[0])
 }
 
 /**
@@ -204,43 +210,17 @@ function findLocation (): string {
 }
 
 /**
- * Determines the current country.<br>
- * Определяет текущую страну.
- * @param code country code, full form language-country or one of them /<br>
- * код страны, полный вид язык-страна или один из них
- */
-function findCountry (code?: string): string {
-  const name = toCountry(code ?? findLocation())
-
-  if (isFilled(name)) {
-    return name
-  }
-
-  if (code) {
-    return findCountry(item?.country)
-  }
-
-  return 'GB'
-}
-
-/**
  * Determines the current language.<br>
  * Определяет текущий язык.
  * @param code country code, full form language-country or one of them /<br>
  * код страны, полный вид язык-страна или один из них
  */
 function findLanguage (code?: string): string {
-  const name = toLanguage(code ?? findLocation())
-
-  if (isFilled(name)) {
-    return name
+  if (code && code.match(/[a-z]{2}/)) {
+    return toLanguage(code)
   }
 
-  if (code) {
-    return findLanguage(item?.language)
-  }
-
-  return 'ru'
+  return item.language
 }
 
 /**
@@ -260,12 +240,3 @@ function toLanguage (code: string): string {
 function toCountry (code: string): string {
   return code.replace(/[^A-Z]+/g, '')
 }
-
-/**
- * We get the full code by the data of the country.<br>
- * Получаем полный код по данным страны.
- * @param data data /<br>данный
- */
-// function toCode (data?: GeoType): string | undefined {
-//  return data ? `${data?.language}-${data?.country}` : undefined
-// }
