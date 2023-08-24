@@ -7,3 +7,13 @@ export type ItemValueType<V> = {
   label: string
   value: V
 }
+
+export type Item<V> = {
+  index: string
+  value: V
+}
+
+export type ItemValue<V> = {
+  label: string
+  value: V
+}

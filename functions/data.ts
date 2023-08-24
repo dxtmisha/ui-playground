@@ -1,10 +1,7 @@
 import {
   type EmptyType,
-  type FunctionAnyType,
-  type FunctionType,
-  type ObjectOrArrayType,
-  type ObjectType,
-  type UndefinedType
+  type FunctionArgs,
+  type Undefined
 } from '../types/basic.ts'
 
 /**
@@ -12,7 +9,7 @@ import {
  * Является ли переменная равной null или undefined.
  * @param value input value /<br>входное значение
  */
-export function isNull<T> (value: T | UndefinedType): value is UndefinedType {
+export function isNull<T> (value: T): value is Extract<T, Undefined> {
   return value === null || value === undefined
 }
 
@@ -21,8 +18,8 @@ export function isNull<T> (value: T | UndefinedType): value is UndefinedType {
  * Проверяет, является ли значение объектом.
  * @param value input value /<br>входное значение
  */
-export function isObject<T> (value: T | ObjectType): value is ObjectType {
-  return (value && typeof value === 'object') || false
+export function isObject<T> (value: T): value is Extract<T, Record<any, any>> {
+  return Boolean(value && typeof value === 'object')
 }
 
 /**
@@ -30,9 +27,7 @@ export function isObject<T> (value: T | ObjectType): value is ObjectType {
  * Проверяет, является ли функция обратного вызова.
  * @param callback the value being checked /<br>проверяемое значение
  */
-export function isFunction<T> (
-  callback: T | FunctionType
-): callback is FunctionType | FunctionAnyType {
+export function isFunction<T> (callback: T): callback is Extract<T, FunctionArgs<any, any>> {
   return callback instanceof Function || typeof callback === 'function'
 }
 
@@ -78,7 +73,7 @@ export function isFilled<T> (value: T): value is Exclude<T, EmptyType> {
  */
 export function isSelected<T> (
   value: T,
-  selected: T | Exclude<any, T> | (T | Exclude<any, T>)[]
+  selected: T | T[]
 ): boolean {
   if (isNull(value)) {
     return false
@@ -99,7 +94,7 @@ export function isSelected<T> (
  */
 export function isSelectedByList<T> (
   values: T | T[],
-  selected: T | Exclude<any, T> | (T | Exclude<any, T>)[]
+  selected: T | T[]
 ): boolean {
   if (Array.isArray(values)) {
     return values.every(item => isSelected(item, selected))
@@ -118,7 +113,7 @@ export function isSelectedByList<T> (
  * функция, которая будет вызвана для каждого элемента
  */
 export function forEach<T, R> (
-  data: ObjectOrArrayType<T> | Map<string, T>,
+  data: T[] | Record<string, T> | Map<string, T>,
   callback: (item: T, key: string | number, dataMain: typeof data) => R
 ): R[] {
   if (isObject(data)) {
@@ -143,7 +138,7 @@ export function forEach<T, R> (
  * Выполняется функция и возвращает ее результат. Или возвращает входные данные, если это не функция
  * @param callback function or any value /<br>функция или любое значение
  */
-export function executeFunction<T> (callback: T | FunctionType<T>): T {
+export function executeFunction<T> (callback: T): Exclude<T, FunctionArgs<any, T>> {
   return isFunction(callback) ? callback() : callback
 }
 
@@ -182,7 +177,7 @@ export function transformation (value: any, isFunction = false): any {
           item in window &&
           typeof window[item as any] === 'function'
         ) {
-          return (window[item as any] as any) as FunctionAnyType
+          return window[item as any] as any as FunctionArgs<any, any>
         }
     }
   }

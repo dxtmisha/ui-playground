@@ -1,43 +1,25 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useGeo } from '../../composables/useGeo.ts'
-import {
-  useCountryName,
-  useCurrency,
-  useDecimal,
-  useLanguageName,
-  useNumber, usePercent, usePercentBy100,
-  useUnit
-} from '../../composables/useIntl.ts'
+import { isProxy, ref } from 'vue'
+import { Cache } from '../../classes/Cache.ts'
+import { Env } from '../../classes/static/Env.ts'
+import { useEnv } from '../../composables/static/useEnv.ts'
+import { useStorage } from '../../composables/ref/useStorage.ts'
+import { useSession } from '../../composables/ref/useSession.ts'
 
-defineProps<{ msg: string }>()
+const prop = defineProps<{ msg: string }>()
+const a = useStorage('a', 123)
+a.value = 456
 
-const button1 = ref()
-const button2 = ref()
-
-const { setGeo } = useGeo()
-const [language] = useLanguageName()
-const [languageUS] = useLanguageName('en-US')
-const [country] = useCountryName()
-const [numberFormat, number] = useNumber(1000.5)
-const [currencyFormat, currency, currencyCode] = useCurrency(number, 'USD')
-const [unitFormat] = useUnit(number, 'centimeter')
-const [percent] = usePercent(number)
-const [percentBy100] = usePercentBy100(number)
-const decimal = useDecimal()
-
-const onClickVn = () => setGeo('vi-VN')
-const onClickRu = () => setGeo('ru-RU')
-const onClickRub = () => {
-  currencyCode.value = 'RUB'
-}
-const onClickVnd = () => {
-  currencyCode.value = 'VND'
-}
-
-setInterval(() => {
-  number.value += 1500
-}, 1000)
+Cache.get('test', () => 35)
+console.log(
+  Cache.get('test', () => 86),
+  Cache.get('test', () => 99),
+  new Env('cache').get(),
+  useEnv('cache'),
+  isProxy(prop),
+  a.value,
+  useSession('s', 'g').value
+)
 
 const count = ref(0)
 </script>
@@ -51,21 +33,6 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
-  </div>
-
-  {{ country }} / {{ language }} / {{ languageUS }}
-
-  <div>{{ numberFormat }} ({{ decimal }})</div>
-  <div>{{ currencyFormat }}</div>
-  <div>{{ unitFormat }}</div>
-  <div>{{ percent }}</div>
-  <div>{{ percentBy100 }}</div>
-
-  <div>
-    <button ref="button1" @click="onClickVn">VN</button>
-    <button ref="button2" @click="onClickRu">RU</button>
-    <button @click="onClickRub">RUB</button>
-    <button @click="onClickVnd">VND</button>
   </div>
 
   <p>

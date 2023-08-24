@@ -1,13 +1,9 @@
 import { executeFunction, forEach, isFilled, isObject } from './data.ts'
 import { random } from './number.ts'
 
-import { type ObjectType } from '../types/basic.ts'
 import {
-  type ElementAttributes,
-  type ElementHtmlType,
-  type ElementOrStringType,
-  type ElementType,
-  type WindowType
+  type ElementOrString,
+  type ElementOrWindow
 } from '../types/element.ts'
 
 /**
@@ -15,7 +11,7 @@ import {
  * Проверяет, является ли объект Window.
  * @param element selectors for matching or an Element /<br>селекторов для сопоставления или Element
  */
-export function isWindow<E extends WindowType> (element: E | Exclude<any, E>): element is E {
+export function isWindow<E> (element: E): element is Extract<E, Window> {
   return element === window
 }
 
@@ -24,8 +20,8 @@ export function isWindow<E extends WindowType> (element: E | Exclude<any, E>): e
  * Проверяет, находится ли еще элемент в дереве DOM.
  * @param element selectors for matching or an Element /<br>селекторов для сопоставления или Element
  */
-export function isInDom<E extends ElementType> (element?: ElementOrStringType<E>): boolean {
-  return Boolean(getElement(element)?.closest?.('html'))
+export function isInDom<E extends ElementOrWindow> (element?: ElementOrString<E>): boolean {
+  return Boolean(getElement(element)?.closest('html'))
 }
 
 /**
@@ -33,22 +29,25 @@ export function isInDom<E extends ElementType> (element?: ElementOrStringType<E>
  * Возвращает первый Element документа, который соответствует указанному селектору или саму element.
  * @param element selectors for matching or an Element /<br>селекторов для сопоставления или Element
  */
-export function getElement<E extends ElementHtmlType> (
-  element?: ElementOrStringType<E> | WindowType
-): E | undefined {
+export function getElement<
+  E extends ElementOrWindow,
+  R extends Exclude<E, Window>
+> (
+  element?: ElementOrString<E>
+): R | undefined {
   if (isWindow(element)) {
-    return document.body as E
+    return document.body as R
   }
 
   if (typeof element === 'string') {
     try {
-      return document.querySelector<E>(element) ?? undefined
+      return document.querySelector<R>(element) ?? undefined
     } catch {
       return undefined
     }
   }
 
-  return element
+  return element as R | undefined
 }
 
 /**
@@ -56,14 +55,14 @@ export function getElement<E extends ElementHtmlType> (
  * Возвращает окно или элемент.
  * @param element selectors for matching or an Element /<br>селекторов для сопоставления или Element
  */
-export function getElementOrWindow<E extends ElementType> (
-  element?: ElementOrStringType<E>
+export function getElementOrWindow<E extends ElementOrWindow> (
+  element?: ElementOrString<E>
 ): E | undefined {
   if (isWindow(element)) {
     return element
   }
 
-  return getElement(element) as E
+  return getElement(element)
 }
 
 /**
@@ -72,15 +71,18 @@ export function getElementOrWindow<E extends ElementType> (
  * @param element element from which you obtain an ID /<br>элемент, с которого получаете ID
  * @param selector selectors for matching /<br>селекторов для сопоставления
  */
-export function getElementId<E extends ElementHtmlType> (element?: E, selector?: string): string {
-  const elementItem = getElement(element)
+export function getElementId<E extends ElementOrWindow> (
+  element?: ElementOrString<E>,
+  selector?: string
+): string {
+  const item = getElement(element)
 
-  if (elementItem) {
-    if (!isFilled(elementItem.id)) {
-      elementItem.setAttribute('id', `id-${idLast++}`)
+  if (item) {
+    if (!isFilled(item.id)) {
+      item.setAttribute('id', `id-${idLast++}`)
     }
 
-    return selector ? `#${elementItem.id}${selector}`.trim() : elementItem.id
+    return selector ? `#${item.id}${selector}`.trim() : item.id
   }
 
   return `id-${idLast++}`
@@ -95,15 +97,15 @@ export function getElementId<E extends ElementHtmlType> (element?: E, selector?:
  * если значение отсутствует
  */
 export function getElementItem<
-  T extends ElementHtmlType,
-  D,
-  K extends keyof T = keyof T
+  T extends ElementOrWindow,
+  K extends keyof T,
+  D
 > (
-  element: T,
+  element: ElementOrString<T>,
   index: K | string,
   defaultValue?: D
-): T[K] | D {
-  return element?.[index as K] ?? (defaultValue as D)
+): T[K] | D | undefined {
+  return getElement(element)?.[index as K] ?? defaultValue
 }
 
 /**
@@ -111,8 +113,10 @@ export function getElementItem<
  * Получает список атрибутов у элемента.
  * @param element selectors for matching or an Element /<br>селекторов для сопоставления или Element
  */
-export function getAttributes<E extends ElementHtmlType> (element?: ElementOrStringType<E>): ElementAttributes {
-  const attributes: ElementAttributes = {}
+export function getAttributes<E extends ElementOrWindow> (
+  element?: ElementOrString<E>
+): Record<string, string | undefined> {
+  const attributes: Record<string, string | undefined> = {}
   const item = getElement(element)
 
   if (item) {
@@ -133,18 +137,18 @@ export function getAttributes<E extends ElementHtmlType> (element?: ElementOrStr
  * @param value new value / новое значение
  */
 export function setElementItem<
-  E extends ElementHtmlType,
-  K extends keyof E = keyof E,
+  E extends ElementOrWindow,
+  K extends keyof E,
   V extends E[K] = E[K]
 > (
-  element: ElementOrStringType<E>,
+  element: ElementOrString<E>,
   index: K,
-  value: V | ObjectType<V>
+  value: V | Record<string, V>
 ): E | undefined {
-  const elementItem = getElement(element)
+  const item = getElement(element)
 
-  if (elementItem) {
-    const data = getElementItem(elementItem, index)
+  if (item) {
+    const data: any = getElementItem(item, index)
 
     if (
       isObject(data) &&
@@ -157,17 +161,17 @@ export function setElementItem<
       const newValue = executeFunction(value)
 
       if (
-        !(index in elementItem) &&
+        !(index in item) &&
         typeof newValue === 'string'
       ) {
-        elementItem.setAttribute(index.toString(), newValue)
+        item.setAttribute(index.toString(), newValue)
       } else {
-        elementItem[index] = executeFunction(value) as V
+        (item as any)[index] = executeFunction(value)
       }
     }
   }
 
-  return elementItem
+  return item
 }
 
 /**
@@ -181,11 +185,11 @@ export function setElementItem<
  * @param referenceElement the node before which newNode is inserted /<br>элемент,
  * перед которым будет вставлен newElement
  */
-export function createElement<T extends ElementHtmlType> (
-  parentElement?: ElementHtmlType,
+export function createElement<T extends HTMLElement> (
+  parentElement?: HTMLElement,
   tagName = 'div',
   options?: Record<keyof T, T[keyof T]> | ((element: T) => void),
-  referenceElement?: ElementHtmlType
+  referenceElement?: HTMLElement
 ): T {
   const element = document.createElement(tagName) as T
 

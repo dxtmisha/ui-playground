@@ -1,7 +1,6 @@
-import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { getStorage, setStorage } from '../functions/storage.ts'
+import { Ref, shallowRef, watch } from 'vue'
 
-const storages: Record<string, Ref<any>> = {}
+import { DataStorage } from '../../classes/static/DataStorage.ts'
 
 /**
  * Creates a reactive variable to manage a local storage.<br>
@@ -14,15 +13,18 @@ export function useStorage<T> (
   name: string,
   defaultValue?: T | (() => T),
   cache?: number
-): Ref<UnwrapRef<T> | undefined> {
-  if (name in storages) {
-    return storages[name]
+): Ref<T | undefined> {
+  if (name in items) {
+    return items[name]
   }
 
-  const storage = ref<T | undefined>(getStorage<T>(name, defaultValue, cache))
+  const storage = new DataStorage<T>(name)
+  const item = shallowRef(storage.get(defaultValue, cache))
 
-  watch(storage, value => setStorage(name, value))
+  watch(item, value => storage.set(value))
 
-  storages[name] = storage
-  return storage
+  items[name] = item
+  return item
 }
+
+const items: Record<string, Ref<any>> = {}

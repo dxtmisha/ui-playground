@@ -1,12 +1,11 @@
 import { isNull } from './data.ts'
-import { type NumberOrStringOrDateType } from '../types/basic.ts'
 
 /**
  * Conversion to Date object.<br>
  * Преобразование в объект Date.
  * @param value input value /<br>входное значение
  */
-export function toDate<T extends NumberOrStringOrDateType> (value?: T): (T & Date) | Date {
+export function toDate<T extends Date | number | string> (value?: T): (T & Date) | Date {
   if (value instanceof Date) {
     return value
   }

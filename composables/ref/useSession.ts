@@ -1,7 +1,6 @@
-import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { getSession, setSession } from '../functions/storage.ts'
+import { Ref, shallowRef, watch } from 'vue'
 
-const sessions: Record<string, Ref<any>> = {}
+import { DataStorage } from '../../classes/static/DataStorage.ts'
 
 /**
  * Creates a reactive variable to manage session storage.<br>
@@ -12,15 +11,18 @@ const sessions: Record<string, Ref<any>> = {}
 export function useSession<T> (
   name: string,
   defaultValue?: T | (() => T)
-): Ref<UnwrapRef<T> | undefined> {
-  if (name in sessions) {
-    return sessions[name]
+): Ref<T | undefined> {
+  if (name in items) {
+    return items[name]
   }
 
-  const session = ref(getSession<T>(name, defaultValue))
+  const storage = new DataStorage<T>(name, true)
+  const item = shallowRef(storage.get(defaultValue))
 
-  watch(session, value => setSession(name, value))
+  watch(item, value => storage.set(value))
 
-  sessions[name] = session
-  return session
+  items[name] = item
+  return item
 }
+
+const items: Record<string, Ref<any>> = {}
