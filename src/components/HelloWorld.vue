@@ -1,28 +1,14 @@
 <script setup lang="ts">
-import { isProxy, ref } from 'vue'
-import { Cache } from '../../classes/static/Cache.ts'
-import { Env } from '../../classes/static/Env.ts'
-import { useEnv } from '../../composables/static/useEnv.ts'
-import { useStorage } from '../../composables/ref/useStorage.ts'
-import { useSession } from '../../composables/ref/useSession.ts'
-import { useCookie } from '../../composables/ref/useCookie.ts'
+import { ref } from 'vue'
+import { GeoRef } from '../../classes/ref/GeoRef.ts'
 
-const prop = defineProps<{ msg: string }>()
-const a = useStorage('a', 123)
-a.value = 456
+defineProps<{ msg: string }>()
 
-Cache.get('test', () => 35)
-console.log(
-  Cache.get('test', () => 86),
-  Cache.get('test', () => 99),
-  new Env('cache').get(),
-  useEnv('cache'),
-  isProxy(prop),
-  a.value,
-  useSession('s', 'g').value,
-  useCookie('test', 'ddd').value,
-  useCookie('test', 't').value
-)
+const country = GeoRef.getCountry()
+const language = GeoRef.getLanguage()
+const standard = GeoRef.getStandard()
+
+const onGeo = (code: string) => GeoRef.set(code)
 
 const count = ref(0)
 </script>
@@ -36,6 +22,15 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
+  </div>
+
+  <div>
+    {{ country }} / {{ language }} / {{ standard }}
+  </div>
+
+  <div>
+    <button @click="onGeo('ru-RU')">ru-RU</button>
+    <button @click="onGeo('vi-VN')">vi-VN</button>
   </div>
 
   <p>

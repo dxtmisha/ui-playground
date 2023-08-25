@@ -1,12 +1,9 @@
-import { RefOrNormalType } from './ref.ts'
+export type GeoDate = 'datetime' | 'date' | 'month' | 'time' | 'second'
+export type GeoFirstDay = 1 | 6 | 0
+export type GeoHours = '12' | '24'
+export type GeoTimeZoneStyle = 'minute' | 'hour' | 'ISO8601' | 'RFC'
 
-export type GeoCodeType = RefOrNormalType<string>
-export type GeoDateType = 'datetime' | 'date' | 'month' | 'time' | 'second'
-export type GeoFirstDayType = 1 | 6 | 0
-export type GeoHoursType = '12' | '24'
-export type GeoTimeZoneStyleType = 'minute' | 'hour' | 'ISO8601' | 'RFC'
-
-export interface GeoType {
+export interface GeoItem {
   country: string
   countryAlternative?: string[]
   language: string
@@ -15,4 +12,9 @@ export interface GeoType {
   zone?: string | null
   phoneCode?: string
   phoneMask?: string | string[]
+}
+
+export interface GeoItemFull extends Omit<GeoItem, 'firstDay'> {
+  standard: string
+  firstDay: string
 }
