@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { isProxy, ref } from 'vue'
-import { Cache } from '../../classes/Cache.ts'
+import { Cache } from '../../classes/static/Cache.ts'
 import { Env } from '../../classes/static/Env.ts'
 import { useEnv } from '../../composables/static/useEnv.ts'
 import { useStorage } from '../../composables/ref/useStorage.ts'
 import { useSession } from '../../composables/ref/useSession.ts'
+import { useCookie } from '../../composables/ref/useCookie.ts'
 
 const prop = defineProps<{ msg: string }>()
 const a = useStorage('a', 123)
@@ -18,7 +19,9 @@ console.log(
   useEnv('cache'),
   isProxy(prop),
   a.value,
-  useSession('s', 'g').value
+  useSession('s', 'g').value,
+  useCookie('test', 'ddd').value,
+  useCookie('test', 't').value
 )
 
 const count = ref(0)

@@ -1,7 +1,5 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { CookieOptionsType, getCookie, setCookie } from '../functions/cookie.ts'
-
-const cookies: Record<string, Ref<any>> = {}
+import { Cookie, CookieOptions } from '../../classes/static/Cookie.ts'
 
 /**
  * Creates a reactive variable to manage cookies.<br>
@@ -12,19 +10,22 @@ const cookies: Record<string, Ref<any>> = {}
  */
 export function useCookie<T> (
   name: string,
-  defaultValue?: T | (() => T),
-  options?: CookieOptionsType
-): Ref<UnwrapRef<T> | undefined> {
-  if (name in cookies) {
-    return cookies[name]
+  defaultValue?: T | string | (() => (T | string)),
+  options?: CookieOptions
+): Ref<UnwrapRef<T> | string | undefined> {
+  if (name in items) {
+    return items[name]
   }
 
-  const cookie = ref(getCookie<T>(name, defaultValue, options))
+  const cookie = new Cookie<T>(name)
+  const item = ref(cookie.get(defaultValue, options))
 
-  watch(cookie, value => {
-    setCookie(name, value, options)
+  watch(item, value => {
+    cookie.set(value as T, options)
   })
 
-  cookies[name] = cookie
-  return cookie
+  items[name] = item
+  return item
 }
+
+const items: Record<string, Ref<any>> = {}

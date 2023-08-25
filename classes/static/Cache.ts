@@ -1,4 +1,4 @@
-import { executeFunction } from '../functions/data.ts'
+import { executeFunction } from '../../functions/data.ts'
 
 /**
  * Class for working with fast cache during code execution.<br>
