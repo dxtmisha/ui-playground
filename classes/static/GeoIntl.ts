@@ -1,10 +1,17 @@
-import { toDate } from '../functions/date.ts'
-import { findGeo, getCountry, getFirstDay, getLanguage, toGeoStandard } from '../functions/geo.ts'
-import { toNumber } from '../functions/number.ts'
+import { toDate } from '../../functions/date.ts'
+import { toNumber } from '../../functions/number.ts'
 
-import { NumberOrStringOrDateType, NumberOrStringType } from '../types/basic.ts'
-import { GeoDateType } from '../types/geo.ts'
-import { ItemValueType } from '../types/object.ts'
+import { Geo } from './Geo.ts'
+import {
+  type GeoDate,
+  type GeoItemFull
+} from '../../types/geo.ts'
+
+import {
+  type NumberOrStringOrDate,
+  type NumberOrString
+} from '../../types/basic.ts'
+import { type ItemValue } from '../../types/object.ts'
 
 /**
  * The Intl namespace object contains several constructors as well as functionality common
@@ -19,19 +26,31 @@ import { ItemValueType } from '../types/object.ts'
  * языка-зависимых функций
  */
 export class GeoIntl {
-  private readonly language: string
-  private readonly firstDay: string
+  private readonly geo: GeoItemFull
 
   /**
    * Constructor
    * @param code country code, full form language-country or one of them /<br>
    * код страны, полный вид язык-страна или один из них
    */
-  constructor (code?: string) {
-    const geo = findGeo(code)
+  constructor (code: string = Geo.getLocation()) {
+    this.geo = Geo.find(code)
 
-    this.language = toGeoStandard(geo)
-    this.firstDay = getFirstDay(geo)
+    const location = this.getLocation()
+
+    if (location in items) {
+      return items[location]
+    }
+
+    items[location] = this
+  }
+
+  /**
+   * Returns country code and language.<br>
+   * Возвращает код страны и языка.
+   */
+  getLocation (): string {
+    return this.geo.standard
   }
 
   /**
@@ -61,11 +80,11 @@ export class GeoIntl {
 
     try {
       if (value) {
-        text = new Intl.DisplayNames(this.language, options).of(value)
+        text = new Intl.DisplayNames(this.getLocation(), options).of(value)
       } else if (options.type === 'language') {
-        text = new Intl.DisplayNames(this.language, options).of(getLanguage())
+        text = new Intl.DisplayNames(this.getLocation(), options).of(this.geo.language)
       } else if (options.type === 'region') {
-        text = new Intl.DisplayNames(this.language, options).of(getCountry())
+        text = new Intl.DisplayNames(this.getLocation(), options).of(this.geo.country)
       }
     } catch (e) {
     }
@@ -117,7 +136,7 @@ export class GeoIntl {
    * или всеми свойствами
    */
   number (
-    value: NumberOrStringType,
+    value: NumberOrString,
     options?: Intl.NumberFormatOptions
   ): string {
     return this.numberObject(options)?.format?.(toNumber(value)) || value.toString()
@@ -142,7 +161,7 @@ export class GeoIntl {
    * @param numberOnly do not display the currency symbol /<br>не выводить значок валюты
    */
   currency (
-    value: NumberOrStringType,
+    value: NumberOrString,
     currencyOptions?: string | Intl.NumberFormatOptions,
     numberOnly = false
   ): string {
@@ -183,7 +202,7 @@ export class GeoIntl {
    * в форматировании блока
    */
   unit (
-    value: NumberOrStringType,
+    value: NumberOrString,
     unitOptions?: string | Intl.NumberFormatOptions
   ): string {
     const options: Intl.NumberFormatOptions = ({
@@ -208,7 +227,7 @@ export class GeoIntl {
    * @param options an object with some or all properties /<br>объект с некоторыми или всеми свойствами
    */
   percent (
-    value: NumberOrStringType,
+    value: NumberOrString,
     options?: Intl.NumberFormatOptions
   ): string {
     return this.number(value, {
@@ -225,7 +244,7 @@ export class GeoIntl {
    * объект с некоторыми или всеми свойствами
    */
   percentBy100 (
-    value: NumberOrStringType,
+    value: NumberOrString,
     options?: Intl.NumberFormatOptions
   ): string {
     return this.percent(toNumber(value) / 100, options)
@@ -240,8 +259,8 @@ export class GeoIntl {
    * @param hour24 whether to use 12-hour time /<br>использовать ли 12-часовое время
    */
   date (
-    value: NumberOrStringOrDateType,
-    type?: GeoDateType,
+    value: NumberOrStringOrDate,
+    type?: GeoDate,
     styleOptions?: Intl.DateTimeFormatOptions['month'] | Intl.DateTimeFormatOptions,
     hour24?: boolean
   ): string {
@@ -258,7 +277,7 @@ export class GeoIntl {
       Object.assign(options, styleOptions)
     }
 
-    return date.toLocaleString(this.language, options)
+    return date.toLocaleString(this.getLocation(), options)
   }
 
   /**
@@ -270,7 +289,7 @@ export class GeoIntl {
    * @param todayValue current day /<br>текущий день
    */
   relative (
-    value: NumberOrStringOrDateType,
+    value: NumberOrStringOrDate,
     styleOptions?: Intl.RelativeTimeFormatStyle | Intl.RelativeTimeFormatOptions,
     todayValue?: Date
   ): string {
@@ -310,7 +329,7 @@ export class GeoIntl {
     }
 
     try {
-      return new Intl.RelativeTimeFormat(this.language, options).format(Math.round(relative), unit)
+      return new Intl.RelativeTimeFormat(this.getLocation(), options).format(Math.round(relative), unit)
     } catch (e) {
     }
 
@@ -335,12 +354,12 @@ export class GeoIntl {
    * @param hour24 whether to use 12-hour time /<br>использовать ли 12-часовое время
    */
   relativeLimit (
-    value: NumberOrStringOrDateType,
+    value: NumberOrStringOrDate,
     limit: number,
     todayValue?: Date,
     relativeOptions?: Intl.RelativeTimeFormatStyle | Intl.RelativeTimeFormatOptions,
     dateOptions?: Intl.DateTimeFormatOptions['month'] | Intl.DateTimeFormatOptions,
-    type?: GeoDateType,
+    type?: GeoDate,
     hour24?: boolean
   ): string {
     const date = toDate(value)
@@ -377,11 +396,11 @@ export class GeoIntl {
    * @param style the representation of the month /<br>представление месяца
    */
   month (
-    value?: NumberOrStringOrDateType,
+    value?: NumberOrStringOrDate,
     style?: Intl.DateTimeFormatOptions['month']
   ): string {
     try {
-      return Intl.DateTimeFormat(this.language, { month: style || 'long' })
+      return Intl.DateTimeFormat(this.getLocation(), { month: style || 'long' })
         .format(toDate(value))
     } catch {
     }
@@ -396,15 +415,15 @@ export class GeoIntl {
    */
   months (
     style?: Intl.DateTimeFormatOptions['month']
-  ): ItemValueType<number | undefined>[] {
-    const list: ItemValueType<number | undefined>[] = [{
+  ): ItemValue<number | undefined>[] {
+    const list: ItemValue<number | undefined>[] = [{
       label: '',
       value: undefined
     }]
 
     try {
       const date = new Date()
-      const format = Intl.DateTimeFormat(this.language, { month: style || 'long' })
+      const format = Intl.DateTimeFormat(this.getLocation(), { month: style || 'long' })
 
       for (let i = 0; i < 12; i++) {
         date.setMonth(i)
@@ -427,11 +446,11 @@ export class GeoIntl {
    * @param style the representation of the weekday /<br>представление о дне недели
    */
   weekday (
-    value?: NumberOrStringOrDateType,
+    value?: NumberOrStringOrDate,
     style?: Intl.DateTimeFormatOptions['weekday']
   ): string {
     try {
-      return Intl.DateTimeFormat(this.language, { weekday: style || 'long' })
+      return Intl.DateTimeFormat(this.getLocation(), { weekday: style || 'long' })
         .format(toDate(value))
     } catch {
     }
@@ -446,16 +465,16 @@ export class GeoIntl {
    */
   weekdays (
     style?: Intl.DateTimeFormatOptions['weekday']
-  ): ItemValueType<number | undefined>[] {
-    const list: ItemValueType<number | undefined>[] = [{
+  ): ItemValue<number | undefined>[] {
+    const list: ItemValue<number | undefined>[] = [{
       label: '',
       value: undefined
     }]
 
     try {
       const date = new Date()
-      const format = Intl.DateTimeFormat(this.language, { weekday: style || 'long' })
-      const current = date.getDay() + (this.firstDay === 'Mo' ? -1 : 1)
+      const format = Intl.DateTimeFormat(this.getLocation(), { weekday: style || 'long' })
+      const current = date.getDay() + (this.geo.firstDay === 'Mo' ? -1 : 1)
 
       date.setDate(date.getDate() - current)
 
@@ -480,7 +499,7 @@ export class GeoIntl {
    * Время.
    * @param value the date to format /<br>дата для форматирования
    */
-  time (value: NumberOrStringOrDateType): string {
+  time (value: NumberOrStringOrDate): string {
     return this.date(value, 'time')
   }
 
@@ -492,7 +511,7 @@ export class GeoIntl {
    */
   private numberObject (options?: Intl.NumberFormatOptions): Intl.NumberFormat | undefined {
     try {
-      return new Intl.NumberFormat(this.language, options)
+      return new Intl.NumberFormat(this.getLocation(), options)
     } catch (e) {
     }
 
@@ -506,7 +525,7 @@ export class GeoIntl {
    * @param display the representation of the month /<br>представление месяца
    */
   private dateOptions (
-    type?: GeoDateType,
+    type?: GeoDate,
     display: Intl.DateTimeFormatOptions['month'] = 'short'
   ): Intl.DateTimeFormatOptions {
     const options: Intl.DateTimeFormatOptions = {}
@@ -534,3 +553,5 @@ export class GeoIntl {
     return options
   }
 }
+
+const items: Record<string, GeoIntl> = {}

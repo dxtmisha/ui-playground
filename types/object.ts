@@ -3,7 +3,7 @@ export type ItemNameValueType<V> = {
   value: V
 }
 
-export type ItemValueType<V> = {
+export type ItemValue<V> = {
   label: string
   value: V
 }

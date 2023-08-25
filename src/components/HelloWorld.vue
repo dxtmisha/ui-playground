@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GeoRef } from '../../classes/ref/GeoRef.ts'
+import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
 
 defineProps<{ msg: string }>()
+
+const number = ref(1000)
 
 const country = GeoRef.getCountry()
 const language = GeoRef.getLanguage()
 const standard = GeoRef.getStandard()
+const numberFormat = new GeoIntlRef().currency(number, 'RUB')
 
-const onGeo = (code: string) => GeoRef.set(code)
+const onGeo = (code: string) => {
+  GeoRef.set(code)
+  number.value += 1100.20
+}
 
 const count = ref(0)
 </script>
@@ -26,6 +33,10 @@ const count = ref(0)
 
   <div>
     {{ country }} / {{ language }} / {{ standard }}
+  </div>
+
+  <div>
+    {{ numberFormat }}
   </div>
 
   <div>

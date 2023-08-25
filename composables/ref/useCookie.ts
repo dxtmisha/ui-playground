@@ -1,5 +1,6 @@
 import { Ref, ref, UnwrapRef, watch } from 'vue'
-import { Cookie, CookieOptions } from '../../classes/static/Cookie.ts'
+
+import { Cookie, type CookieOptions } from '../../classes/static/Cookie.ts'
 
 /**
  * Creates a reactive variable to manage cookies.<br>

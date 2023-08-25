@@ -1,4 +1,4 @@
-import { type NumberOrStringType } from '../types/basic.ts'
+import { type NumberOrString } from '../types/basic.ts'
 
 /**
  * Checks if the value is between integers.<br>
@@ -26,7 +26,7 @@ export function random (min: number, max: number): number {
  * Метод принимает строку в качестве аргумента и возвращает десятичное число
  * @param value input value /<br>входное значение
  */
-export function toNumber<T extends NumberOrStringType> (value: T): (T & number) | number {
+export function toNumber<T extends NumberOrString> (value: T): (T & number) | number {
   if (typeof value === 'number') {
     return value
   }

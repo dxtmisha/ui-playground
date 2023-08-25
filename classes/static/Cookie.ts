@@ -1,6 +1,7 @@
 import { executeFunction, isFilled, transformation } from '../../functions/data.ts'
-import { CookieBlock } from './CookieBlock.ts'
 import { useEnv } from '../../composables/static/useEnv.ts'
+
+import { CookieBlock } from './CookieBlock.ts'
 
 type CookieSameSite = 'strict' | 'lax'
 

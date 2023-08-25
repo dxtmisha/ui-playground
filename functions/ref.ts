@@ -1,7 +1,7 @@
 import { isRef, type Ref, ref } from 'vue'
 
 import {
-  type RefOrNormalType
+  type RefOrNormal
 } from '../types/ref.ts'
 
 /**
@@ -9,7 +9,7 @@ import {
  * Возвращаешь значения ref переменной или саму переменную, если она не реактивная.
  * @param item reactive variable or ordinary value /<br>реактивная переменная или обычное значение
  */
-export function getRef<T> (item: RefOrNormalType<T>): T {
+export function getRef<T> (item: RefOrNormal<T>): T {
   return isRef(item) ? item.value : item
 }
 
@@ -18,6 +18,6 @@ export function getRef<T> (item: RefOrNormalType<T>): T {
  * Возвращает регулярный переменный или оборачивает его в регулярный переменный, если является обычным переменным.
  * @param item
  */
-export function toRefItem<T> (item: RefOrNormalType<T>): Ref<T> {
+export function toRefItem<T> (item: RefOrNormal<T>): Ref<T> {
   return isRef(item) ? item : ref<T>(item) as Ref<T>
 }

@@ -1,5 +1,5 @@
 import {
-  type EmptyType,
+  type EmptyValue,
   type FunctionArgs,
   type Undefined
 } from '../types/basic.ts'
@@ -36,7 +36,7 @@ export function isFunction<T> (callback: T): callback is Extract<T, FunctionArgs
  * Проверяет, заполнено ли поле.
  * @param value input value /<br>входное значение
  */
-export function isFilled<T> (value: T): value is Exclude<T, EmptyType> {
+export function isFilled<T> (value: T): value is Exclude<T, EmptyValue> {
   if (value) {
     switch (typeof value) {
       case 'bigint':
