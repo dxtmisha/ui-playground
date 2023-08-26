@@ -1,11 +1,11 @@
-import { type ImageCoordinatorType } from '../types/image.ts'
+import { type ImageCoordinator } from '../types/image.ts'
 
 /**
  * Returns the position of the mouse cursor or the location of the click.<br>
  * Возвращает позицию курсора мыши или место нажатия.
  * @param event event object /<br>объект события
  */
-export function getClient (event: MouseEvent & TouchEvent): ImageCoordinatorType {
+export function getClient (event: MouseEvent & TouchEvent): ImageCoordinator {
   return {
     x: getClientX(event),
     y: getClientY(event)

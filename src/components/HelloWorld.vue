@@ -2,10 +2,13 @@
 import { ref } from 'vue'
 import { GeoRef } from '../../classes/ref/GeoRef.ts'
 import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
+import { useHash } from '../../composables/ref/useHash.ts'
 
 defineProps<{ msg: string }>()
 
 const number = ref(1000)
+const hash = useHash('test', 1000)
+const hash2 = useHash('test2', 1000)
 
 const country = GeoRef.getCountry()
 const language = GeoRef.getLanguage()
@@ -15,6 +18,7 @@ const numberFormat = new GeoIntlRef().currency(number, 'RUB')
 const onGeo = (code: string) => {
   GeoRef.set(code)
   number.value += 1100.20
+  hash.value += 1200.30
 }
 
 const count = ref(0)
@@ -37,6 +41,14 @@ const count = ref(0)
 
   <div>
     {{ numberFormat }}
+  </div>
+
+  <div>
+    {{ hash }}
+  </div>
+
+  <div>
+    {{ hash2 }}
   </div>
 
   <div>
