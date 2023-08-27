@@ -1,28 +1,21 @@
-import { isObject } from '../functions/data.ts'
-import { getElement, getElementOrWindow, isInDom } from '../functions/element'
-import { toArray } from '../functions/object'
+import { isObject } from '../../functions/data.ts'
+import { toArray } from '../../functions/object.ts'
+import { getElement, getElementOrWindow, isInDom } from '../../functions/element.ts'
 
-import { ElementHtmlType, ElementOrStringType, ElementType } from '../types/element'
-
-export type EventListenerType<
-  O extends Event,
-  D extends Record<string, any>
-> = (event: O, detail?: D) => void
-
-export type EventOptionsType = AddEventListenerOptions | boolean | undefined
-export type EventActivityItemType<E extends ElementType> = {
-  element: E | undefined
-  type: string
-  listener?: (event: any | Event) => void
-  observer?: ResizeObserver
-}
+import {
+  type ElementOrString,
+  type ElementOrWindow,
+  type EventActivityItem,
+  type EventListenerDetail,
+  type EventOptions
+} from '../../types/element.ts'
 
 /**
  * Class for working with events.<br>
  * Класс для работа с события.
  */
 export class EventItem<
-  E extends ElementType,
+  E extends ElementOrWindow,
   O extends Event,
   D extends Record<string, any>
 > {
@@ -38,7 +31,7 @@ export class EventItem<
    * Элемент для проверки. Если элемент отсутствует в DOM, событие выключается.
    * @protected
    */
-  protected elementControl?: ElementHtmlType
+  protected elementControl?: ElementOrWindow
   protected elementControlEdit?: boolean
 
   /**
@@ -77,7 +70,7 @@ export class EventItem<
    * @protected
    */
   protected activity = false
-  protected activityItems: EventActivityItemType<E>[] = []
+  protected activityItems: EventActivityItem<E>[] = []
 
   /**
    * Classes Constructor
@@ -91,10 +84,10 @@ export class EventItem<
    * значение, связанное с событием
    */
   constructor (
-    elementSelector?: ElementOrStringType<E>,
+    elementSelector?: ElementOrString<E>,
     type: string | string[] = ['click'],
-    protected listener?: EventListenerType<O, D>,
-    protected options?: EventOptionsType,
+    protected listener?: EventListenerDetail<O, D>,
+    protected options?: EventOptions,
     protected detail?: D
   ) {
     this.element = getElementOrWindow(elementSelector)
@@ -107,7 +100,7 @@ export class EventItem<
    * Изменение элемента для прослеживания.
    * @param elementSelector element /<br>элемент
    */
-  setElement (elementSelector: ElementOrStringType<E>): this {
+  setElement (elementSelector: ElementOrString<E>): this {
     const element = getElementOrWindow(elementSelector)
 
     if (!this.elementControlEdit) {
@@ -125,7 +118,7 @@ export class EventItem<
    * Модифицирует объект, который получает уведомление.
    * @param elementSelector element /<br>элемент
    */
-  setElementControl (elementSelector: ElementOrStringType<ElementHtmlType>): this {
+  setElementControl (elementSelector: ElementOrString<E>): this {
     this.elementControl = getElement(elementSelector)
     this.elementControlEdit = true
     return this
@@ -148,7 +141,7 @@ export class EventItem<
    * Модифицирует объект, который получает уведомление.
    * @param listener
    */
-  setListener (listener: EventListenerType<O, D>): this {
+  setListener (listener: EventListenerDetail<O, D>): this {
     this.listener = listener
     return this
   }
@@ -158,7 +151,7 @@ export class EventItem<
    * Изменение объекта options, который определяет характеристики объекта.
    * @param options
    */
-  setOptions (options?: EventOptionsType): this {
+  setOptions (options?: EventOptions): this {
     this.options = options
     this.reset()
 

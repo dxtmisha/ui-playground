@@ -3,9 +3,11 @@ import { ref } from 'vue'
 import { GeoRef } from '../../classes/ref/GeoRef.ts'
 import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
 import { useHash } from '../../composables/ref/useHash.ts'
+import { EventRef } from '../../classes/ref/EventRef.ts'
 
 defineProps<{ msg: string }>()
 
+const button = ref()
 const number = ref(1000)
 const hash = useHash('test', 1000)
 const hash2 = useHash('test2', 1000)
@@ -20,6 +22,11 @@ const onGeo = (code: string) => {
   number.value += 1100.20
   hash.value += 1200.30
 }
+
+const event = new EventRef(document.body, button, 'click', () => {
+  console.log('ok')
+})
+event.start()
 
 const count = ref(0)
 </script>
@@ -54,6 +61,7 @@ const count = ref(0)
   <div>
     <button @click="onGeo('ru-RU')">ru-RU</button>
     <button @click="onGeo('vi-VN')">vi-VN</button>
+    <button ref="button">Event</button>
   </div>
 
   <p>
