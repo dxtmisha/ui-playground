@@ -1,8 +1,8 @@
 import { forEach, isObject } from './data.ts'
 
 import {
-  type ObjectOrArrayType,
-  type ObjectType
+  type ObjectItem,
+  type ObjectOrArray
 } from '../types/basic.ts'
 
 /**
@@ -12,8 +12,8 @@ import {
  * @param old old values /<br>старые значения
  */
 export function isDifferent<T> (
-  value: ObjectType<T>,
-  old: ObjectType<T>
+  value: ObjectItem<T>,
+  old: ObjectItem<T>
 ): boolean {
   let different = Object.keys(value).length !== Object.keys(old).length
 
@@ -36,7 +36,7 @@ export function isDifferent<T> (
  * @param column ключ столбца, значения которого нужно вернуть /<br>the column of values to return
  */
 export function getColumn<T, K extends keyof T> (
-  array: ObjectOrArrayType<T>,
+  array: ObjectOrArray<T>,
   column: K
 ): Array<T[K] | undefined> {
   return forEach(array, item => item?.[column])
@@ -47,7 +47,7 @@ export function getColumn<T, K extends keyof T> (
  * Ищет самую короткую строку в массиве и возвращает её длину.
  * @param data array with values /<br>массив с значениями
  */
-export function getMinLength (data: ObjectOrArrayType<string>): number {
+export function getMinLength (data: ObjectOrArray<string>): number {
   return Math.min(...getLength(data))
 }
 
@@ -56,7 +56,7 @@ export function getMinLength (data: ObjectOrArrayType<string>): number {
  * Ищет самую длинную строку в массиве и возвращает её длину.
  * @param data array with values /<br>массив с значениями
  */
-export function getMaxLength (data: ObjectOrArrayType<string>): number {
+export function getMaxLength (data: ObjectOrArray<string>): number {
   return Math.max(...getLength(data))
 }
 
@@ -96,11 +96,11 @@ export function arrFill<T> (value: T, count: number): T[] {
  * @param isMerge merge one or more arrays /<br>сливает один или большее количество массивов
  */
 export function replaceRecursive<I> (
-  array: ObjectType<I>,
-  replacement?: ObjectOrArrayType<I>,
+  array: ObjectItem<I>,
+  replacement?: ObjectOrArray<I>,
   isMerge = true
-): ObjectType<I> {
-  const returnData: ObjectType<I> = copyObject(array)
+): ObjectItem<I> {
+  const returnData: ObjectItem<I> = copyObject(array)
 
   if (
     isObject(array) &&
@@ -148,16 +148,16 @@ export function replaceRecursive<I> (
  * @param indexStart index at which to start changing the array /<br>индекс, по которому начинает изменять массив
  */
 export function splice<I> (
-  array: ObjectType<I>,
-  replacement?: ObjectType<I> | I,
+  array: ObjectItem<I>,
+  replacement?: ObjectItem<I> | I,
   indexStart?: string
-): ObjectType<I> {
+): ObjectItem<I> {
   if (
     isObject(array) &&
     isObject(replacement)
   ) {
     if (indexStart) {
-      let returnData: ObjectType<I> = {}
+      let returnData: ObjectItem<I> = {}
       let init = false
 
       forEach(array, (item, index) => {
@@ -232,6 +232,6 @@ export function toArray<T> (value: T): T extends any[] ? T : [T] {
  * Возвращает длину всех элементов в виде массива.
  * @param value input value /<br>входное значение
  */
-function getLength (value: ObjectOrArrayType<string>): number[] {
+function getLength (value: ObjectOrArray<string>): number[] {
   return forEach(value, item => item.length)
 }

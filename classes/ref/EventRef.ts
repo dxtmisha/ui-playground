@@ -51,7 +51,7 @@ export class EventRef<
       this.setElementControl(itemControl.value)
     }
 
-    watch(item, (element: ElementOrString<E>) => this.setElement(element))
-    watch(itemControl, (element: ElementOrString<E>) => this.setElementControl(element))
+    watch(item, (element?: ElementOrString<E>) => this.setElement(element))
+    watch(itemControl, (element?: ElementOrString<E>) => this.setElementControl(element))
   }
 }

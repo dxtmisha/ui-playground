@@ -1,4 +1,4 @@
-import { isObject } from '../../functions/data.ts'
+import { isNull, isObject } from '../../functions/data.ts'
 import { toArray } from '../../functions/object.ts'
 import { getElement, getElementOrWindow, isInDom } from '../../functions/element.ts'
 
@@ -100,7 +100,7 @@ export class EventItem<
    * Изменение элемента для прослеживания.
    * @param elementSelector element /<br>элемент
    */
-  setElement (elementSelector: ElementOrString<E>): this {
+  setElement (elementSelector?: ElementOrString<E>): this {
     const element = getElementOrWindow(elementSelector)
 
     if (!this.elementControlEdit) {
@@ -118,9 +118,14 @@ export class EventItem<
    * Модифицирует объект, который получает уведомление.
    * @param elementSelector element /<br>элемент
    */
-  setElementControl (elementSelector: ElementOrString<E>): this {
+  setElementControl (elementSelector?: ElementOrString<E>): this {
     this.elementControl = getElement(elementSelector)
-    this.elementControlEdit = true
+    this.elementControlEdit = !isNull(this.elementControl)
+
+    if (!this.elementControlEdit) {
+      this.elementControl = getElement(this.element)
+    }
+
     return this
   }
 

@@ -1,7 +1,7 @@
 import { executeFunction, forEach } from './data'
 import { arrFill } from './object'
 
-import { type FunctionType } from '../types/basic.ts'
+import { type FunctionReturn } from '../types/basic.ts'
 
 /**
  * The object is used for matching text with a pattern.<br>
@@ -86,7 +86,7 @@ export function toKebabCase (value: string): string {
  * @param value template string /<br>строка шаблона
  * @param replaces object with values for replacement /<br>объект с значениями для замены
  */
-export function replaceTemplate (value: string, replaces: Record<string, string | FunctionType<string>>): string {
+export function replaceTemplate (value: string, replaces: Record<string, string | FunctionReturn<string>>): string {
   let data = value
 
   forEach(replaces, (replacement, pattern) => {

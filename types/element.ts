@@ -1,7 +1,3 @@
-export type WindowType = Window & typeof globalThis
-export type ElementType = WindowType | HTMLElement | Element
-export type ElementHtmlType = HTMLElement | Element
-
 export type ElementOrWindow = HTMLElement | Window
 export type ElementOrString<E extends ElementOrWindow> = E | string
 
