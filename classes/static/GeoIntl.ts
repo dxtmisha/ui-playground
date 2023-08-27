@@ -54,6 +54,14 @@ export class GeoIntl {
   }
 
   /**
+   * Returns the first day of the week.<br>
+   * Возвращает первый день недели.
+   */
+  getFirstDay (): string {
+    return this.geo.firstDay
+  }
+
+  /**
    * The consistent translation of language, region and script display names.<br>
    * Последовательный перевод отображаемых названий языка, региона и скрипта.
    * @param value the code to provide depends on the type /<br>предоставляемый код зависит от типа
@@ -530,22 +538,28 @@ export class GeoIntl {
   ): Intl.DateTimeFormatOptions {
     const options: Intl.DateTimeFormatOptions = {}
 
-    if (['datetime', 'date', undefined, 'month'].indexOf(type) !== -1) {
+    if (['full', 'datetime', 'date', undefined, 'year-month', 'year'].indexOf(type) !== -1) {
       options.year = 'numeric'
+    }
+
+    if (['full', 'datetime', 'date', undefined, 'year-month', 'month'].indexOf(type) !== -1) {
       options.month = display
     }
 
-    if (['datetime', 'date', undefined].indexOf(type) !== -1) {
+    if (['full', 'datetime', 'date', undefined, 'day'].indexOf(type) !== -1) {
       options.day = '2-digit'
     }
 
     if (type !== undefined) {
-      if (['datetime', 'time', 'second'].indexOf(type) !== -1) {
+      if (['full', 'datetime', 'time', 'hour-minute', 'hour'].indexOf(type) !== -1) {
         options.hour = '2-digit'
+      }
+
+      if (['full', 'datetime', 'time', 'hour-minute', 'minute'].indexOf(type) !== -1) {
         options.minute = '2-digit'
       }
 
-      if (['second'].indexOf(type) !== -1) {
+      if (['full', 'time', 'second'].indexOf(type) !== -1) {
         options.second = '2-digit'
       }
     }

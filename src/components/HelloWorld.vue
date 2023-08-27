@@ -4,6 +4,7 @@ import { GeoRef } from '../../classes/ref/GeoRef.ts'
 import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
 import { useHash } from '../../composables/ref/useHash.ts'
 import { EventRef } from '../../classes/ref/EventRef.ts'
+import { Datetime } from '../../classes/static/Datetime.ts'
 
 defineProps<{ msg: string }>()
 
@@ -27,6 +28,30 @@ const event = new EventRef(document.body, button, 'click', () => {
   console.log('ok')
 })
 event.start()
+
+const datetime = new Datetime('1987-09-02 15:04:05', 'datetime')
+
+console.log(
+  'datetime',
+  datetime.getDate(),
+  datetime.getTimeZone()
+)
+console.log(datetime.getFirstDayCode())
+console.log(datetime.getYear())
+console.log(datetime.getMonth())
+console.log(datetime.getDay())
+console.log(datetime.getHour())
+console.log(datetime.getMinute())
+console.log(datetime.getSecond())
+console.log(datetime.getMaxDay())
+console.log(datetime.locale())
+console.log(datetime.localeYear())
+console.log(datetime.localeMonth())
+console.log(datetime.localeDay())
+console.log(datetime.localeHour())
+console.log(datetime.localeMinute())
+console.log(datetime.localeSecond())
+console.log(datetime.standard())
 
 const count = ref(0)
 </script>
