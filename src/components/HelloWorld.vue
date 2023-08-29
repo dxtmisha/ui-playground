@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, triggerRef } from 'vue'
 import { GeoRef } from '../../classes/ref/GeoRef.ts'
 import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
 import { useHash } from '../../composables/ref/useHash.ts'
 import { EventRef } from '../../classes/ref/EventRef.ts'
-import { Datetime } from '../../classes/static/Datetime.ts'
+import { DatetimeRef } from '../../classes/ref/DatetimeRef.ts'
 
 defineProps<{ msg: string }>()
 
@@ -22,6 +22,9 @@ const onGeo = (code: string) => {
   GeoRef.set(code)
   number.value += 1100.20
   hash.value += 1200.30
+  triggerRef(button)
+
+  datetime.getDatetime().moveDayNext()
 }
 
 const event = new EventRef(document.body, button, 'click', () => {
@@ -29,29 +32,9 @@ const event = new EventRef(document.body, button, 'click', () => {
 })
 event.start()
 
-const datetime = new Datetime('1987-09-02 15:04:05', 'datetime')
-
-console.log(
-  'datetime',
-  datetime.getDate(),
-  datetime.getTimeZone()
-)
-console.log(datetime.getFirstDayCode())
-console.log(datetime.getYear())
-console.log(datetime.getMonth())
-console.log(datetime.getDay())
-console.log(datetime.getHour())
-console.log(datetime.getMinute())
-console.log(datetime.getSecond())
-console.log(datetime.getMaxDay())
-console.log(datetime.locale())
-console.log(datetime.localeYear())
-console.log(datetime.localeMonth())
-console.log(datetime.localeDay())
-console.log(datetime.localeHour())
-console.log(datetime.localeMinute())
-console.log(datetime.localeSecond())
-console.log(datetime.standard())
+const date = ref('1987-09-02 15:04:05')
+const datetime = new DatetimeRef(date, 'datetime')
+const dateRef = datetime.getDay()
 
 const count = ref(0)
 </script>
@@ -82,6 +65,8 @@ const count = ref(0)
   <div>
     {{ hash2 }}
   </div>
+
+  <div>dateRef: {{ dateRef }}</div>
 
   <div>
     <button @click="onGeo('ru-RU')">ru-RU</button>
