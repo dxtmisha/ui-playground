@@ -581,6 +581,16 @@ export class GeoFlag {
   }
 
   /**
+   * To change the location.<br>
+   * Изменить местоположение.
+   * @param code country and language code /<br>код страны и языка
+   */
+  setCode (code: string): this {
+    this.code = code
+    return this
+  }
+
+  /**
    * Returns a special object for formatting.<br>
    * Возвращает специальный объект для работы с форматированием.
    */
