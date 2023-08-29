@@ -30,3 +30,17 @@ export interface GeoItemFull extends Omit<GeoItem, 'firstDay'> {
   standard: string
   firstDay: string
 }
+
+export interface GeoFlagItem {
+  language: string
+  country: string
+  standard: string
+  icon?: string
+  label: string
+  value: string
+}
+
+export interface GeoFlagNational extends GeoFlagItem {
+  nationalLanguage: string
+  nationalCountry: string
+}

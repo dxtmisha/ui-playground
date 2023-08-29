@@ -5,6 +5,7 @@ import { GeoIntlRef } from '../../classes/ref/GeoIntlRef.ts'
 import { useHash } from '../../composables/ref/useHash.ts'
 import { EventRef } from '../../classes/ref/EventRef.ts'
 import { DatetimeRef } from '../../classes/ref/DatetimeRef.ts'
+import { GeoFlag } from '../../classes/static/GeoFlag.ts'
 
 defineProps<{ msg: string }>()
 
@@ -18,6 +19,7 @@ const language = GeoRef.getLanguage()
 const standard = GeoRef.getStandard()
 const numberFormat = new GeoIntlRef().currency(number, 'RUB')
 
+console.log(new GeoFlag().getNational())
 const onGeo = (code: string) => {
   GeoRef.set(code)
   number.value += 1100.20
