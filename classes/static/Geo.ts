@@ -102,6 +102,16 @@ export class Geo {
   }
 
   /**
+   * Returns a complete string with the country code and language.<br>
+   * Возвращает полную строку с кодом страны и языка.
+   * @param item object with data about the current country /<br>
+   * объект с данными об текущей стране
+   */
+  static toStandard (item: GeoItem) {
+    return `${item.language}-${item.country}`
+  }
+
+  /**
    * Changes the data by the full code.<br>
    * Изменяет данные по полному коду.
    * @param code country code, full form language-country or one of them /<br>
@@ -237,7 +247,7 @@ export class Geo {
   private static toFull (item: GeoItem): GeoItemFull {
     return {
       ...item,
-      standard: `${item.language}-${item.country}`,
+      standard: this.toStandard(item),
       firstDay: item?.firstDay || 'Mo'
     }
   }

@@ -512,6 +512,21 @@ export class GeoIntl {
   }
 
   /**
+   * Sorts strings taking into account the characteristics of countries.<br>
+   * Сортирует строки с учетом особенностей стран.
+   * @param data an array with data /<br>массив с данными
+   * @param compareFn a function for sorting /<br>функция для сортировки
+   */
+  sort<T> (
+    data: T[],
+    compareFn: (a: T, b: T) => [string, string] = (a, b) => [a as string, b as string]
+  ) {
+    const collator = new Intl.Collator(this.getLocation())
+
+    return data.sort((a, b) => collator.compare(...compareFn(a, b)))
+  }
+
+  /**
    * The object enables language-sensitive number formatting.<br>
    * Объект включает форматирование чисел с учетом языка.
    * @param options an object with some or all properties /<br>

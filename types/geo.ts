@@ -44,3 +44,23 @@ export interface GeoFlagNational extends GeoFlagItem {
   nationalLanguage: string
   nationalCountry: string
 }
+
+export interface GeoPhoneValue {
+  phone: number
+  mask: string[]
+  value: string
+}
+
+export interface GeoPhoneMap {
+  items: GeoPhoneValue[]
+  info: GeoPhoneValue | undefined
+  value: string | undefined
+  mask: string[]
+  maskFull: string[]
+  next: Record<string, GeoPhoneMap>
+}
+
+export interface GeoPhoneMapInfo {
+  item?: GeoPhoneMap
+  phone?: string
+}
