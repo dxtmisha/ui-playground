@@ -1,7 +1,9 @@
+#!/usr/bin/env ts-node
+
 import { config } from 'dotenv'
 import { program } from 'commander'
 
-import { Properties } from '../classes/services/properties/Properties.ts'
+import { Properties } from '../classes/services/properties/Properties'
 
 config()
 

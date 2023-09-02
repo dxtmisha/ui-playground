@@ -2,7 +2,7 @@
   "name": "@dxtmisha/ui-playground",
   "private": true,
   "version": "0.0.0-dev.1",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
