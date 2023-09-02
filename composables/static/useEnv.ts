@@ -7,7 +7,7 @@ import { Env, EnvIndex } from '../../classes/static/Env.ts'
  * @param defaultValue default property value /<br>значение свойства по умолчанию
  */
 export function useEnv<T> (
-  index: EnvIndex,
+  index: EnvIndex | string,
   defaultValue?: T
 ): T | undefined {
   return new Env(index).get(defaultValue)

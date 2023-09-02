@@ -1,6 +1,5 @@
 import { transformation } from '../../functions/data.ts'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BASIC = {
   cache: {
     index: 'UI_CACHE',
@@ -29,13 +28,8 @@ export class Env {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    private index: EnvIndex
+    private index: EnvIndex | string
   ) {
-    if (index in items) {
-      return items[index]
-    }
-
-    items[index] = this
   }
 
   /**
@@ -57,7 +51,7 @@ export class Env {
    * @private
    */
   private getBasic () {
-    return BASIC?.[this.index]
+    return BASIC?.[this.index as EnvIndex]
   }
 
   /**
@@ -76,5 +70,3 @@ export class Env {
     return this.getBasic()?.value
   }
 }
-
-const items: Record<string, Env> = {}
