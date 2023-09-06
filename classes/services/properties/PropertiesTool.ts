@@ -4,8 +4,7 @@ export class PropertiesTool {
    * Данный метод возвращает названия дизайнов из переменной окружения (env)
    */
   static getDesigns (): string[] {
-    console.log('process.env', process.env)
-    const designs = ''
+    const designs = process.env?.DESIGNS
       ?.toString()
       ?.split(',')
 
