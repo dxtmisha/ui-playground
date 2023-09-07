@@ -1,4 +1,4 @@
-import { propertyList } from '../../../types/property.ts'
+import { PropertyList } from '../../../types/property.ts'
 
 /**
  * Class for working with a list of all properties.<br>
@@ -12,7 +12,7 @@ export class PropertiesItems {
    * @param {Object<string,*>} properties array with all property records /<br>массив со всеми записями свойств
    */
   constructor (
-    private properties: propertyList
+    private properties: PropertyList
   ) {
     this.designs = Object.keys(properties)
   }

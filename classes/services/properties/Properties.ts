@@ -1,9 +1,14 @@
-import { PropertiesItems } from './PropertiesItems.ts'
 import { PropertiesTool } from './PropertiesTool.ts'
+import { PropertiesItems } from './PropertiesItems.ts'
+
+import { PropertiesCache } from './PropertiesCache.ts'
+import { PropertiesPath } from './PropertiesPath.ts'
+
+const FILE_CACHE = 'properties'
 
 export class Properties {
   private readonly designs: string[]
-  private readonly data?: Record<string, any>
+  private data?: Record<string, any>
 
   /**
    * Constructor
@@ -19,18 +24,31 @@ export class Properties {
   getBasic () {
     if (!this.data) {
       this.data = new PropertiesItems(
-        Cache.get([], this.getPathName(), () => {
-          const properties = this.__readBasic()
+        PropertiesCache.get([], this.getPathName(), () => {
+          // const properties = this.__readBasic()
 
-          new ToDivision(properties).to()
+          // new ToDivision(properties).to()
 
           console.info('[Properties]', 'init')
 
-          return properties.get()
+          return { test: 'test' } // properties.get()
         })
       )
     }
 
-    return this.__basic
+    return this.data
+  }
+
+  /**
+   * Returns the name of the cache file. It contains all processed properties.<br>
+   * Возвращает название файла для кэша.
+   * Это полный массив со всеми обработанными свойствами.
+   */
+  private getPathName (): string {
+    return `${this.designs.join('-')}-${FILE_CACHE}`
+  }
+
+  private read () {
+    const path = new PropertiesPath(this.designs)
   }
 }

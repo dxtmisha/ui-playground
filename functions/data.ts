@@ -174,6 +174,7 @@ export function transformation (value: any, isFunction = false): any {
           return parseInt(item, 10)
         } else if (
           isFunction &&
+          window &&
           item in window &&
           typeof window[item as any] === 'function'
         ) {
