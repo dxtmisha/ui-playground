@@ -32,13 +32,4 @@ export class PropertiesFile {
       return requirePath.dirname(this.joinPath(path))
     }
   }
-
-  /**
-   * Reads the contents of the directory.<br>
-   * Читает содержимое директории.
-   * @param path path to the directory /<br>путь к директории
-   */
-  static readDir (path: PropertyPath): string[] {
-    return this.is(path) ? requireFs.readdirSync(this.joinPath(path)) : []
-  }
 }

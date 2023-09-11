@@ -1,13 +1,13 @@
-import requireFs from 'fs'
-import requirePath from 'path'
-
 import { isFilled, transformation } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
 import { toArray } from '../../../functions/object.ts'
 
+import requireFs from 'fs'
+import requirePath from 'path'
+
 import {
-  type PropertyPath,
-  type PropertyValue
+  type PropertyFileValue,
+  type PropertyPath
 } from '../../../types/property.ts'
 
 /**
@@ -17,6 +17,62 @@ import {
 export class PropertiesFile {
   static root: string
   static module: boolean
+
+  /**
+   * The fs.existsSync() method is used to synchronously check if a file already
+   * exists in the given path or not. It returns a boolean value which indicates
+   * the presence of a file.<br>
+   * Метод fs.existsSync() используется для синхронной проверки наличия файла в
+   * указанном пути. Он возвращает логическое значение, которое указывает на
+   * наличие файла.
+   * @param path it holds the path of the file that has to be checked /<br>
+   * это содержит путь к файлу, который необходимо проверить
+   */
+  static is (path: PropertyPath): boolean {
+    return requireFs.existsSync(this.joinPath(path))
+  }
+
+  /**
+   * Determines whether the package is connected as a module.<br>
+   * Определяет, является ли пакет подключенным как модуль.
+   */
+  static isModule (): boolean {
+    return this.module
+  }
+
+  /**
+   * Checks whether it is a directory.<br>
+   * Проверяет, является ли это директорией.
+   * @param path name of the element being checked /<br>название проверяемого элемента
+   */
+  static isDir (path: PropertyPath): boolean {
+    return !this.joinPath(path).match(/\.\w+$/)
+  }
+
+  /**
+   * Returns the root path.<br>
+   * Возвращает корневой путь.
+   */
+  static getRoot (): string {
+    return this.root
+  }
+
+  /**
+   * Returns the file name.<br>
+   * Возвращает имя файла.
+   * @param name element name /<br>название элемента
+   * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
+   */
+  static getFileName (
+    name: string,
+    extension = 'json'
+  ): string {
+    if (isFilled(extension)) {
+      return `${toKebabCase(name)}.${extension}`
+    } else {
+      return name
+    }
+  }
 
   /**
    * The path.joinPath() method joins all given path segments together using the
@@ -71,59 +127,12 @@ export class PropertiesFile {
   }
 
   /**
-   * The fs.existsSync() method is used to synchronously check if a file already
-   * exists in the given path or not. It returns a boolean value which indicates
-   * the presence of a file.<br>
-   * Метод fs.existsSync() используется для синхронной проверки наличия файла в
-   * указанном пути. Он возвращает логическое значение, которое указывает на
-   * наличие файла.
-   * @param path it holds the path of the file that has to be checked /<br>
-   * это содержит путь к файлу, который необходимо проверить
+   * Reads the contents of the directory.<br>
+   * Читает содержимое директории.
+   * @param path path to the directory /<br>путь к директории
    */
-  static is (path: PropertyPath): boolean {
-    return requireFs.existsSync(this.joinPath(path))
-  }
-
-  /**
-   * Checks whether it is a directory.<br>
-   * Проверяет, является ли это директорией.
-   * @param path name of the element being checked /<br>название проверяемого элемента
-   */
-  static isDir (path: PropertyPath): boolean {
-    return !this.joinPath(path).match(/\.\w+$/)
-  }
-
-  /**
-   * Determines whether the package is connected as a module.<br>
-   * Определяет, является ли пакет подключенным как модуль.
-   */
-  static isModule (): boolean {
-    return this.module
-  }
-
-  /**
-   * Returns the root path.<br>
-   * Возвращает корневой путь.
-   */
-  static getRoot (): string {
-    return this.root
-  }
-
-  /**
-   * Returns the file name.<br>
-   * Возвращает имя файла.
-   * @param name element name /<br>название элемента
-   * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
-   */
-  static getFileName (
-    name: string,
-    extension = 'json'
-  ): string {
-    if (isFilled(extension)) {
-      return `${toKebabCase(name)}.${extension}`
-    } else {
-      return name
-    }
+  static readDir (path: PropertyPath): string[] {
+    return this.is(path) ? requireFs.readdirSync(this.joinPath(path)) : []
   }
 
   /**
@@ -131,30 +140,14 @@ export class PropertiesFile {
    * Возвращает содержимое пути.
    * @param path filename /<br>имя файла
    */
-  static readFile<R> (path: PropertyPath): R {
+  static readFile<R> (path: PropertyPath): R | undefined {
     if (this.is(path)) {
       return transformation(
         requireFs.readFileSync(this.joinPath(path)).toString()
       )
-    } else {
-      return {} as R
     }
-  }
 
-  /**
-   * Synchronously creates a directory.<br>
-   * Синхронно создает директорию.
-   * @param path path to the directory /<br>путь к директории
-   */
-  static createDir (path: PropertyPath): void {
-    const dir: string[] = [this.root]
-
-    this.splitForDir(this.removeRootInPath(path)).forEach(name => {
-      dir.push(name)
-      if (!this.is(dir)) {
-        requireFs.mkdirSync(this.joinPath(dir))
-      }
-    })
+    return undefined
   }
 
   /**
@@ -165,7 +158,7 @@ export class PropertiesFile {
    * @param value values for storage /<br>значения для хранения
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  static write<T extends PropertyValue> (
+  static write<T extends PropertyFileValue> (
     path: PropertyPath,
     name: string,
     value: T,
@@ -177,6 +170,22 @@ export class PropertiesFile {
       this.joinPathByName(path, name, extension),
       typeof value === 'object' ? JSON.stringify(value) : value
     )
+  }
+
+  /**
+   * Synchronously creates a directory.<br>
+   * Синхронно создает директорию.
+   * @param path path to the directory /<br>путь к директории
+   */
+  private static createDir (path: PropertyPath): void {
+    const dir: string[] = [this.root]
+
+    this.splitForDir(this.removeRootInPath(path)).forEach(name => {
+      dir.push(name)
+      if (!this.is(dir)) {
+        requireFs.mkdirSync(this.joinPath(dir))
+      }
+    })
   }
 
   /**

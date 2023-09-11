@@ -1,42 +1,42 @@
-import { PropertiesTool } from './PropertiesTool.ts'
-import { PropertiesItems } from './PropertiesItems.ts'
+import { replaceRecursive } from '../../../functions/object.ts'
 
+import { PropertiesTool } from './PropertiesTool.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 import { PropertiesPath } from './PropertiesPath.ts'
+import { PropertiesItems } from './PropertiesItems.ts'
+
+import { type PropertyList } from '../../../types/property.ts'
 
 const FILE_CACHE = 'properties'
 
 export class Properties {
   private readonly designs: string[]
-  private data?: Record<string, any>
+  private items: PropertiesItems
 
   /**
    * Constructor
    */
   constructor () {
     this.designs = ['d', ...PropertiesTool.getDesigns()]
+    this.items = new PropertiesItems(
+      PropertiesCache.get<PropertyList>([], this.getPathName(), () => {
+        const properties = this.read()
+
+        // new ToDivision(properties).to()
+
+        console.info('[Properties]', 'init')
+
+        return properties.get() ?? {}
+      })
+    )
   }
 
   /**
    * Collects into an array from all files and returns the content without processing them.<br>
    * Собирает в массив со всех файлов и возвращает содержимое не обрабатывая их.
    */
-  getBasic () {
-    if (!this.data) {
-      this.data = new PropertiesItems(
-        PropertiesCache.get([], this.getPathName(), () => {
-          // const properties = this.__readBasic()
-
-          // new ToDivision(properties).to()
-
-          console.info('[Properties]', 'init')
-
-          return { test: 'test' } // properties.get()
-        })
-      )
-    }
-
-    return this.data
+  get (): PropertyList | undefined {
+    return this.items.get()
   }
 
   /**
@@ -48,7 +48,14 @@ export class Properties {
     return `${this.designs.join('-')}-${FILE_CACHE}`
   }
 
-  private read () {
+  private read (): PropertiesItems {
     const path = new PropertiesPath(this.designs)
+    const properties = new PropertiesItems(
+      replaceRecursive(
+        new PropertiesSettings(path).get()
+      )
+    )
+
+    return properties
   }
 }

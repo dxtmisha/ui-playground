@@ -1,39 +1,44 @@
-import { forEach } from '../../../functions/data.ts'
+import { replaceRecursive } from '../../../functions/object.ts'
 import { toKebabCase } from '../../../functions/string.ts'
-import { getColumn, replaceRecursive } from '../../../functions/object.ts'
 
 import { PropertiesFile } from './PropertiesFile.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 
 import {
   type PropertyList,
-  type PropertyRoot,
-  type PropertyRootItem,
-  type PropertyRootPath
+  type PropertyListOrData
 } from '../../../types/property.ts'
 
+export type PropertyPathItem = {
+  design: string
+  paths: string[][]
+}
+
+export type PropertyPathList = PropertyPathItem[]
+
 const DIR_CACHE = 'read'
-const FILE_NAME = 'properties.json'
 
 /**
  * Class for working with paths by the given name of the design.<br>
  * Класс для работы с путями по заданному названию дизайна.
  */
 export class PropertiesPath {
-  private readonly root: PropertyRoot
+  private readonly paths: PropertyPathList
 
   /**
    * Constructor
    * @param designs list of design names corresponding to folder names /<br>
    * список названий дизайнов, соответствующих названиям папок
    */
-  constructor (designs: string[]) {
-    this.root = []
+  constructor (
+    private designs: string[]
+  ) {
+    this.paths = []
 
     designs.forEach(design => {
-      this.root.push({
+      this.paths.push({
         design: toKebabCase(design),
-        paths: this.makeInfo(this.makePaths(design))
+        paths: this.getDir(design)
       })
     })
   }
@@ -43,7 +48,7 @@ export class PropertiesPath {
    * Возвращает названия доступных дизайнов.
    */
   getDesigns (): string[] {
-    return getColumn(this.root, 'design') as string[]
+    return this.designs
   }
 
   /**
@@ -51,8 +56,8 @@ export class PropertiesPath {
    * Получает список доступных путей к файлу глобальных настроек компонента.
    * @param name design name /<br>название дизайна
    */
-  getPath (name: string): PropertyRootItem | undefined {
-    return this.root.find(item => item.design === name)
+  getPath (name: string): PropertyPathItem | undefined {
+    return this.paths.find(item => item.design === name)
   }
 
   /**
@@ -65,9 +70,9 @@ export class PropertiesPath {
   to (
     name: string,
     design: string,
-    callback: (item: PropertyRootPath, design: string) => PropertyList
-  ) {
-    return PropertiesCache.get([DIR_CACHE, name], `${name}-${design}`, () => {
+    callback: (path: string[], design: string) => PropertyList
+  ): PropertyListOrData | undefined {
+    return PropertiesCache.get<PropertyListOrData>([DIR_CACHE, name], `${name}-${design}`, () => {
       let data = {}
 
       this.getPath(design)?.paths.forEach(path => {
@@ -86,12 +91,12 @@ export class PropertiesPath {
    */
   toAll (
     name: string,
-    callback: (item: PropertyRootPath, design: string) => PropertyList
-  ) {
-    return PropertiesCache.get([DIR_CACHE], name, () => {
+    callback: (path: string[], design: string) => PropertyList
+  ): PropertyListOrData | undefined {
+    return PropertiesCache.get<PropertyListOrData>([DIR_CACHE], name, () => {
       let data = {}
 
-      this.getDesigns().forEach(design => {
+      this.designs.forEach(design => {
         data = replaceRecursive(data, this.to(name, design, callback))
       })
 
@@ -104,8 +109,8 @@ export class PropertiesPath {
    * Возвращает путь к файлу по названию дизайна.
    * @param name design name /<br>название дизайна
    */
-  private makePaths (name: string): string[][] {
-    const path = name === 'd' ? 'constructors' : name
+  private getDir (name: string): string[][] {
+    const path = this.getDirByName(name)
     const root = PropertiesFile.getRoot()
 
     if (PropertiesFile.isModule()) {
@@ -122,15 +127,11 @@ export class PropertiesPath {
   }
 
   /**
-   * Getting the context of the path and file separation.<br>
-   * Получение контекста разделения пути и файла.
-   * @param paths list of available paths /<br>список доступных путей
+   * Getting the directory name by its name.<br>
+   * Получение названия директории по его имени.
+   * @param name design name /<br>название дизайна
    */
-  private makeInfo (paths: string[][]): PropertyRootPath[] {
-    return forEach(paths, path => ({
-      dir: path,
-      file: FILE_NAME,
-      full: [...path, FILE_NAME]
-    }))
+  private getDirByName (name: string) {
+    return name === 'd' ? 'constructors' : name
   }
 }

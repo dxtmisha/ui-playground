@@ -1,3 +1,7 @@
+/**
+ * Common class with diverse functionality.<br>
+ * Общий класс с разнообразным функционалом.
+ */
 export class PropertiesTool {
   /**
    * This method returns the names of designs from the environment variable (env).<br>

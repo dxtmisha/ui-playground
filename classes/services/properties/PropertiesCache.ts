@@ -3,76 +3,51 @@ import { toArray } from '../../../functions/object.ts'
 import { PropertiesFile } from './PropertiesFile.ts'
 
 import {
-  type PropertyPath,
-  type PropertySystem,
-  type PropertyValue
+  type PropertyFileValue,
+  type PropertyPath
 } from '../../../types/property.ts'
 
-const CACHE_STATUS = true
-const DIR_CACHE = ['cache']
+const DIR_CACHE = 'cache'
 const FILE_SYSTEM = 'system'
+
+type PropertySystem = {
+  time: number,
+  files: Record<string, string[]>,
+  sizes: Record<string, string[]>
+}
 
 /**
  * Processing for storing temporary files.<br>
  * Обработка для хранения временных файлов.
  */
 export class PropertiesCache {
-  /**
-   * System data for file version control.
-   * This array stores the time of the last launch and the list of files that were read.<br>
-   * Системные данные для контроля версии файла.
-   * В этом массиве хранится время последнего запуска и список файлов, которые были прочитаны.
-   */
-  static system: PropertySystem = {
-    time: 0,
-    files: {},
-    sizes: {}
-  }
-
-  /**
-   * The name of the cache, by which the names of the files are stored during the execution of
-   * the script for saving the cache.<br>
-   * Имя кэша, по которому сохраняются названия файлов во время выполнения скрипта для сохранения кэша.
-   */
+  static time = 0
+  static files: Record<string, string[]> = {}
+  static sizes: Record<string, string[]> = {}
   static listenerName: string[] = ['global']
-
-  /**
-   * Checks if there are files to read.<br>
-   * Проверяет наличие файлов для чтения.
-   * @param path path to the file /<br>путь к файлу
-   * @param name file name /<br>название файла
-   * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
-   */
-  static is (
-    path: PropertyPath,
-    name: string,
-    extension = 'json'
-  ): boolean {
-    return PropertiesFile.is(this.getPathName(path, name, extension))
-  }
 
   /**
    * Reads data from the cache or updates the cache if the data is outdated.<br>
    * Читает данные из кэша или обновляет кэш, если данные устарели.
    * @param path path to the file /<br>путь к файлу
    * @param name file name /<br>название файла
-   * @param callback if the file is not found, the callback function is called and
-   * its result is saved in the current file /<br>если файл не найден, вызывается функция
-   * обратного вызова (callback) и её результат сохраняется в текущем файле
+   * @param callback if the file is not found, the callback function is called
+   * and its result is saved in the current file /<br>
+   * если файл не найден, вызывается функция обратного вызова (callback) и её
+   * результат сохраняется в текущем файле
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  static get<T extends PropertyValue> (
+  static get<T extends PropertyFileValue> (
     path: PropertyPath,
     name: string,
     callback?: () => T,
     extension = 'json'
-  ): T {
+  ): T | undefined {
     if (
-      CACHE_STATUS &&
       this.is(path, name, extension) &&
       this.isBySystem(name)
     ) {
-      return this.read(path, name, extension)
+      return this.readFile(path, name, extension) as T
     }
 
     if (callback) {
@@ -87,7 +62,43 @@ export class PropertiesCache {
       return value
     }
 
-    return {} as T
+    return undefined
+  }
+
+  /**
+   * Returns the content of the file by the specified path.<br>
+   * Возвращает содержимое файла по указанному пути.
+   * @param path filename /<br>имя файла
+   */
+  static read<R> (path: PropertyPath): R | undefined {
+    if (PropertiesFile.is(path)) {
+      const value = PropertiesFile.joinPath(path)
+
+      this.listenerName.forEach(name => {
+        if (!(name in this.files)) {
+          this.files[name] = [value]
+        } else if (this.files[name].indexOf(value) === -1) {
+          this.files[name].push(value)
+        }
+      })
+    }
+
+    return PropertiesFile.readFile<R>(path)
+  }
+
+  /**
+   * Checks if there are files to read.<br>
+   * Проверяет наличие файлов для чтения.
+   * @param path path to the file /<br>путь к файлу
+   * @param name file name /<br>название файла
+   * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
+   */
+  private static is (
+    path: PropertyPath,
+    name: string,
+    extension = 'json'
+  ): boolean {
+    return PropertiesFile.is(this.getPathName(path, name, extension))
   }
 
   /**
@@ -98,9 +109,9 @@ export class PropertiesCache {
   private static isBySystem (name = 'global'): boolean {
     let update = false
 
-    if (name in this.system.files) {
-      this.system.files[name].forEach(path => {
-        if (PropertiesFile.stat(path)?.mtimeMs > this.system.time) {
+    if (name in this.files) {
+      this.files[name].forEach(path => {
+        if (PropertiesFile.stat(path).mtimeMs > this.time) {
           update = true
           this.console(`Modified file: ${name} - ${path}`)
         }
@@ -116,7 +127,7 @@ export class PropertiesCache {
    * @param path path to the file /<br>путь к файлу
    */
   private static getPath (path: PropertyPath): string[] {
-    return [PropertiesFile.getRoot(), ...DIR_CACHE, ...toArray(path)]
+    return [PropertiesFile.getRoot(), DIR_CACHE, ...toArray(path)]
   }
 
   /**
@@ -131,10 +142,7 @@ export class PropertiesCache {
     name: string,
     extension = 'json'
   ): string[] {
-    return this.getPath([
-      ...toArray(path),
-      PropertiesFile.getFileName(name, extension)
-    ])
+    return this.getPath([...toArray(path), PropertiesFile.getFileName(name, extension)])
   }
 
   /**
@@ -144,11 +152,11 @@ export class PropertiesCache {
    * @param name file name /<br>название файла
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  private static read<R> (
+  private static readFile<R> (
     path: PropertyPath,
     name: string,
     extension = 'json'
-  ): R {
+  ): R | undefined {
     return PropertiesFile.readFile<R>(this.getPathName(path, name, extension))
   }
 
@@ -160,7 +168,7 @@ export class PropertiesCache {
    * @param value values for storage /<br>значения для хранения
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  private static write<T extends PropertyValue> (
+  private static write<T extends PropertyFileValue> (
     path: PropertyPath,
     name: string,
     value: T,
@@ -175,9 +183,14 @@ export class PropertiesCache {
    */
   private static writeSystem (): void {
     if (this.listenerName.length < 2) {
-      this.system.time = new Date().getTime()
+      this.time = new Date().getTime()
 
-      this.write([], FILE_SYSTEM, this.system)
+      this.write([], FILE_SYSTEM, {
+        time: this.time,
+        files: this.files,
+        sizes: this.sizes
+      } as PropertySystem)
+
       this.console('Writes the system data')
     }
   }
@@ -192,8 +205,12 @@ export class PropertiesCache {
   }
 
   static {
-    if (this.is([], FILE_SYSTEM)) {
-      this.system = this.read<PropertySystem>([], FILE_SYSTEM)
+    const system = this.readFile<PropertySystem>([], FILE_SYSTEM)
+
+    if (system) {
+      this.time = system.time
+      this.files = system.files
+      this.sizes = system.sizes
     }
   }
 }
