@@ -4,15 +4,21 @@ import { toCamelCase } from '../../../functions/string.ts'
 
 import { PropertiesFile } from './PropertiesFile.ts'
 import { PropertiesPath } from './PropertiesPath.ts'
+import { PropertiesCache } from './PropertiesCache.ts'
+
+import { PropertiesStandard } from './PropertiesStandard.ts'
 
 import {
   FILE_PROPERTY,
   type PropertyList
 } from '../../../types/property.ts'
-import { PropertiesCache } from './PropertiesCache.ts'
 
 const DIR_NAME = 'settings'
 
+/**
+ * Class for searching all components.<br>
+ * Класс для поиск всех компоненты.
+ */
 export class PropertiesSettings {
   /**
    * Constructor

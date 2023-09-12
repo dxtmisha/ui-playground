@@ -56,7 +56,7 @@ export type PropertyItem = {
   description?: string
 
   _category?: string
-  _type?: PropertyType | PropertyType[]
+  _type?: (PropertyType | string) | (PropertyType | string)[]
   _rename?: string
   _prop?: string | boolean
   _default?: string | number
@@ -75,7 +75,7 @@ export type PropertyItem = {
 }
 
 export type PropertyList = Record<string, PropertyItem>
-export type PropertyListOrData = Record<string, PropertyItem & Record<string, PropertyItem>>
+export type PropertyListOrData = Record<string, PropertyItem | Record<string, PropertyItem>>
 
 export type PropertyPath = string | string[]
 export type PropertyFileValue = string | Record<string, any>

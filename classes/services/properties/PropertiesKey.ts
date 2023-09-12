@@ -29,6 +29,15 @@ export class PropertiesKey {
   }
 
   /**
+   * Checks whether the name is complete.<br>
+   * Проверяет, является ли название полным.
+   * @param name key name /<br>название ключа
+   */
+  static isFull (name: string): boolean {
+    return Boolean(name.match(/^=|\|=/))
+  }
+
+  /**
    * Returns the property name, discarding its prefix.<br>
    * Возвращает имя свойства, отбрасывая его префикс.
    * @param name key name /<br>название ключа

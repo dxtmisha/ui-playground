@@ -3,7 +3,9 @@ import { replaceRecursive } from '../../../functions/object.ts'
 import { PropertiesTool } from './PropertiesTool.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 import { PropertiesPath } from './PropertiesPath.ts'
+
 import { PropertiesItems } from './PropertiesItems.ts'
+import { PropertiesSettings } from './PropertiesSettings.ts'
 
 import { type PropertyList } from '../../../types/property.ts'
 
@@ -52,7 +54,7 @@ export class Properties {
     const path = new PropertiesPath(this.designs)
     const properties = new PropertiesItems(
       replaceRecursive(
-        new PropertiesSettings(path).get()
+        new PropertiesSettings(path).get() ?? {}
       )
     )
 
