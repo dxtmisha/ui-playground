@@ -8,6 +8,8 @@ import { PropertiesItems } from './PropertiesItems.ts'
 import { PropertiesSettings } from './PropertiesSettings.ts'
 import { PropertiesMain } from './PropertiesMain.ts'
 
+import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
+
 import { type PropertyList } from '../../../types/property.ts'
 
 const FILE_CACHE = 'properties'
@@ -55,6 +57,10 @@ export class Properties {
     return `${this.designs.join('-')}-${FILE_CACHE}`
   }
 
+  /**
+   * Processing of basic data.<br>
+   * Обработка базовых данных.
+   */
   private read (): PropertiesItems {
     const path = new PropertiesPath(this.designs)
     const properties = new PropertiesItems(
@@ -63,6 +69,8 @@ export class Properties {
         new PropertiesMain(path).get() ?? {}
       )
     )
+
+    new PropertiesToReplace(properties).to()
 
     return properties
   }

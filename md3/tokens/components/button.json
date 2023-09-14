@@ -6,6 +6,10 @@
     "md": "{ref.spacing.10}",
     "lg": "{ref.spacing.12}"
   },
+  "test": {
+    "value": "12px 24px",
+    "_replace": "[0-9]+px ([0-9]+px)"
+  },
   "font": "{font.labelLarge}",
   "color": "{sys.palette.primary}",
   "background-color": "transparent",
