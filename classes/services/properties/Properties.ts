@@ -6,11 +6,16 @@ import { PropertiesPath } from './PropertiesPath.ts'
 
 import { PropertiesItems } from './PropertiesItems.ts'
 import { PropertiesSettings } from './PropertiesSettings.ts'
+import { PropertiesMain } from './PropertiesMain.ts'
 
 import { type PropertyList } from '../../../types/property.ts'
 
 const FILE_CACHE = 'properties'
 
+/**
+ * The main class for working with tokens.<br>
+ * Главный класс для работы с токенами.
+ */
 export class Properties {
   private readonly designs: string[]
   private items: PropertiesItems
@@ -54,7 +59,8 @@ export class Properties {
     const path = new PropertiesPath(this.designs)
     const properties = new PropertiesItems(
       replaceRecursive(
-        new PropertiesSettings(path).get() ?? {}
+        new PropertiesSettings(path).get() ?? {},
+        new PropertiesMain(path).get() ?? {}
       )
     )
 

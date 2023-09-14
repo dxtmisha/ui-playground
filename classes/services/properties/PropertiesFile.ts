@@ -75,6 +75,19 @@ export class PropertiesFile {
   }
 
   /**
+   * Returns the path to the directory, removing the file name from the path.<br>
+   * Возвращает путь к директории, убрав название файла из пути.
+   * @param path path to the file /<br>путь к файлу
+   */
+  static getPathDir (path: PropertyPath): string {
+    if (this.isDir(path)) {
+      return this.joinPath(path)
+    } else {
+      return requirePath.dirname(this.joinPath(path))
+    }
+  }
+
+  /**
    * The path.joinPath() method joins all given path segments together using the
    * platform-specific separator as a delimiter, then normalizes the resulting path.<br>
    * Метод path.joinPath() объединяет все указанные сегменты пути с использованием
