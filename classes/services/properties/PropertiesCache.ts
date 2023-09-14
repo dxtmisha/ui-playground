@@ -8,6 +8,7 @@ import {
 } from '../../../types/property.ts'
 
 const DIR_CACHE = 'cache'
+const DIR_STEP = ['step']
 const FILE_SYSTEM = 'system'
 
 type PropertySystem = {
@@ -84,6 +85,16 @@ export class PropertiesCache {
     }
 
     return PropertiesFile.readFile<R>(path)
+  }
+
+  /**
+   * Saves intermediate data.<br>
+   * Сохраняет промежуточные данные.
+   * @param name file name /<br>название файла
+   * @param value values for storage / значения для хранения
+   */
+  static writeStep<T extends PropertyFileValue> (name: string, value: T): void {
+    this.write<T>(DIR_STEP, name, value)
   }
 
   /**

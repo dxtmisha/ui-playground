@@ -1,13 +1,16 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
+import { getColumn } from '../../../functions/object.ts'
 
 import {
   type PropertyItem,
+  PropertyKey,
   type PropertyList,
   type PropertyRead,
   type PropertyReadCallback,
-  type PropertyReadParents,
-  type PropertyReadValue
+  type PropertyReadFull,
+  type PropertyReadParents
 } from '../../../types/property.ts'
+import { PropertiesCache } from './PropertiesCache.ts'
 
 /**
  * Class for working with a list of all properties.<br>
@@ -63,6 +66,50 @@ export class PropertiesItems {
   }
 
   /**
+   * Searching for records with selected categories.<br>
+   * Поиск записей с выделенными категориями.
+   * @param category names of categories /<br>названия категорий
+   */
+  findCategory (category: string | string[]): PropertyReadFull[] {
+    const data: PropertyReadFull[] = []
+
+    this.each((property) => {
+      const {
+        item
+      } = property
+
+      if (isSelected(item?.[PropertyKey.category], category)) {
+        data.push(this.getFullInfo(property))
+      }
+    })
+
+    return data
+  }
+
+  /**
+   * Saves intermediate data.<br>
+   * Сохраняет промежуточные данные.
+   * @param name file name /<br>название файла
+   */
+  createStep (name: string): void {
+    if (this.properties) {
+      PropertiesCache.writeStep(`${this.getDesigns().join('-')}-${name}`, this.properties)
+    }
+  }
+
+  /**
+   * Returns complete information about the property.<br>
+   * Возвращает полную информацию о свойстве.
+   * @param property an object with information about properties /<br>объект с информацией о свойствах
+   */
+  private getFullInfo (property: PropertyRead): PropertyReadFull {
+    return {
+      ...property,
+      index: `${getColumn(property.parents, 'name').join('.')}.${property.name}`
+    }
+  }
+
+  /**
    * Recursively applies a custom function to each element of the property.<br
    * Рекурсивно применяет пользовательскую функцию к каждому элементу свойства.
    * @param callback the callback function is executed for each element /<br>
@@ -77,7 +124,7 @@ export class PropertiesItems {
     callback: PropertyReadCallback<T>,
     design ?: string,
     component ?: string,
-    properties: PropertyReadValue = this.properties,
+    properties: PropertyItem['value'] = this.properties,
     parent?: PropertyItem,
     parents: PropertyReadParents = []
   ): T[] {

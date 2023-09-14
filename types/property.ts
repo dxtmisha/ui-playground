@@ -17,6 +17,18 @@ export enum PropertyKey {
   wrap = '__wrap'
 }
 
+export enum PropertyCategory {
+  root = 'root',
+  class = 'class',
+  media = 'media',
+
+  theme = 'theme',
+  shade = 'shade',
+  palette = 'palette',
+  color = 'color',
+  colors = 'colors'
+}
+
 export enum PropertyType {
   design = 'design',
   component = 'component',
@@ -91,6 +103,9 @@ export type PropertyRead = {
   item: PropertyItem,
   parent?: PropertyItem,
   parents: PropertyReadParents
+}
+export type PropertyReadFull = PropertyRead & {
+  index: string
 }
 export type PropertyReadCallback<T> = (item: PropertyRead) => T
 
