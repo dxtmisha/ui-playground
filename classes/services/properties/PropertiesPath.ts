@@ -71,16 +71,16 @@ export class PropertiesPath {
     name: string,
     design: string,
     callback: (path: string[], design: string) => PropertyList
-  ): PropertyListOrData | undefined {
+  ): PropertyListOrData {
     return PropertiesCache.get<PropertyListOrData>([DIR_CACHE, name], `${name}-${design}`, () => {
-      let data = {}
+      let data: PropertyListOrData = {}
 
       this.getPath(design)?.paths.forEach(path => {
         data = replaceRecursive(data, callback(path, design))
       })
 
       return data
-    })
+    }) ?? {} as PropertyListOrData
   }
 
   /**
@@ -92,16 +92,16 @@ export class PropertiesPath {
   toAll (
     name: string,
     callback: (path: string[], design: string) => PropertyList
-  ): PropertyListOrData | undefined {
+  ): PropertyListOrData {
     return PropertiesCache.get<PropertyListOrData>([DIR_CACHE], name, () => {
-      let data = {}
+      let data: PropertyListOrData = {}
 
       this.designs.forEach(design => {
         data = replaceRecursive(data, this.to(name, design, callback))
       })
 
       return data
-    })
+    }) ?? {} as PropertyListOrData
   }
 
   /**

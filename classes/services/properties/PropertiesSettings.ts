@@ -34,9 +34,9 @@ export class PropertiesSettings {
    * Returns the basic settings of the component.<br>
    * Возвращает базовые настройки у компонента.
    */
-  get (): PropertyList | undefined {
+  get (): PropertyList {
     return this.path.toAll(DIR_NAME, (path, design) => {
-      let data = {}
+      let data: PropertyList = {}
 
       PropertiesFile.readDir(path).forEach(dir => {
         const properties = PropertiesCache.read([...path, dir, FILE_PROPERTY])

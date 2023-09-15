@@ -1,6 +1,8 @@
 import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
 import { getColumn } from '../../../functions/object.ts'
 
+import { PropertiesCache } from './PropertiesCache.ts'
+
 import {
   type PropertyItem,
   PropertyKey,
@@ -10,28 +12,29 @@ import {
   type PropertyReadFull,
   type PropertyReadParents
 } from '../../../types/property.ts'
-import { PropertiesCache } from './PropertiesCache.ts'
 
 /**
  * Class for working with a list of all properties.<br>
  * Класс для работы со списком всех свойств.
  */
 export class PropertiesItems {
+  private readonly properties: PropertyList
+
   /**
    * Constructor
    * @param properties array with all property records /<br>массив со всеми записями свойств
    */
-  // eslint-disable-next-line no-useless-constructor
   constructor (
-    private properties?: PropertyList
+    properties?: PropertyList
   ) {
+    this.properties = properties ?? {}
   }
 
   /**
    * Getting full structure property.<br>
    * Получение полной структуры свойства.
    */
-  get (): PropertyList | undefined {
+  get (): PropertyList {
     return this.properties
   }
 
@@ -40,7 +43,73 @@ export class PropertiesItems {
    * Возвращает список названий дизайнов.
    */
   getDesigns (): string[] {
-    return (this.properties && Object.keys(this.properties)) ?? []
+    return Object.keys(this.properties)
+  }
+
+  /**
+   * Divides an index into sections.<br>
+   * Разделяет индекс на разделы.
+   * @param index index for splitting /<br>индекс для разделения
+   */
+  getKeys (index: string): string[] {
+    return index.replace(/^\{|}$/ig, '')
+      .split('.')
+  }
+
+  /**
+   * Returns the full information about the element by its link.<br>
+   * Возвращает полную информацию об элементе по его ссылке.
+   * @param index index for splitting /<br>индекс для разделения
+   */
+  getFullItemByIndex (index: string): PropertyRead | undefined {
+    const keys = this.getKeys(index)
+    const design = keys.shift() as string
+    const component = keys.shift() as string
+    const value = this.properties?.[design]?.value
+    const parents: PropertyReadParents = [
+      {
+        name: design,
+        item: this.properties?.[design]
+      }
+    ]
+
+    if (isObjectNotArray(value)) {
+      let name: string = component
+      let item: PropertyItem | undefined = value?.[component]
+      let parent: PropertyItem = parents[0].item
+
+      if (item) {
+        for (const key of keys) {
+          parents.push({
+            name: key,
+            item
+          })
+
+          parent = item
+
+          name = key
+          item = isObjectNotArray(item?.value) ? item.value?.[key] : undefined
+
+          if (!item) {
+            break
+          }
+        }
+      }
+
+      if (item) {
+        return {
+          design,
+          component,
+          name,
+          item,
+          value: item?.value,
+          parent,
+          parents
+        }
+      }
+    }
+
+    return undefined
   }
 
   /**
@@ -87,11 +156,55 @@ export class PropertiesItems {
   }
 
   /**
+   * Replaces labels with design and component names.<br>
+   * Заменяет метки на названия дизайна и компонента.
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   * @param value values of properties from the value field /<br>значения свойств из поля value
+   * @param separator разделитель
+   */
+  toFullLink (
+    design: string,
+    component: string,
+    value: string,
+    separator = '.'
+  ): string {
+    if (value.match(/\?/)) {
+      return value
+        .replace(/\?\?(?![ _-])/g, `${design}${separator}${component}${separator}`)
+        .replace(/\?\?(?=[ _-])/g, `${design}${separator}${component}`)
+        .replace(/\?/g, `${design}${separator}`)
+    }
+
+    return this.toFullLinkByDesign(design, value)
+  }
+
+  /**
+   * Adds the name of the design at the beginning if it is missing.<br>
+   * Добавляет название дизайна в начало, если его нет.
+   * @param design design name /<br>название дизайна
+   * @param value values of properties from the value field /<br>значения свойств из поля value
+   */
+  toFullLinkByDesign (design: string, value: string): string {
+    if (value.match('{')) {
+      return value?.replace(/(?<=\{)[^.{}]+/g, name => {
+        if (this.getDesigns().indexOf(name) === -1) {
+          return `${design}.${name}`
+        }
+
+        return name
+      })
+    }
+
+    return value
+  }
+
+  /**
    * Saves intermediate data.<br>
    * Сохраняет промежуточные данные.
    * @param name file name /<br>название файла
    */
-  createStep (name: string): void {
+  writeStep (name: string): void {
     if (this.properties) {
       PropertiesCache.writeStep(`${this.getDesigns().join('-')}-${name}`, this.properties)
     }

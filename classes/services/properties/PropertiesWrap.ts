@@ -158,7 +158,7 @@ export class PropertiesWrap {
       ) {
         max = item.length
         focus = {
-          value: value as string,
+          value,
           item
         }
       }

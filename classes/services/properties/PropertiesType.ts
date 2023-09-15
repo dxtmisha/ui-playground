@@ -1,5 +1,6 @@
-import { isSelected } from '../../../functions/data.ts'
+import { isFilled, isSelected } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
+import { toArray } from '../../../functions/object.ts'
 
 import {
   PropertyType,
@@ -12,6 +13,26 @@ import {
  * Класс со списком доступных типов.
  */
 export class PropertiesType {
+  /**
+   * Checks if the list contains such a type.<br>
+   * Проверяет, входит ли в список такой тип.
+   * @param type property type /<br>тип свойства
+   * @param name key name /<br>название ключа
+   */
+  static isType (
+    type?: PropertyType | PropertyType[],
+    name?: PropertyType[]
+  ): boolean {
+    if (
+      isFilled(type) &&
+      isFilled(name)
+    ) {
+      return Boolean(toArray(type).find(item => isSelected(item, name)))
+    }
+
+    return false
+  }
+
   /**
    * Is the property a SCSS selector.<br>
    * Является ли свойство выборки SCSS.
@@ -54,7 +75,7 @@ export class PropertiesType {
    * Возвращает название типа переменной из названия свойства.
    * @param name key name /<br>название ключа
    */
-  static getInName (name: string): string {
+  static getInName (name: string): PropertyType {
     if (this.isRoot(name)) {
       return PropertyType.root
     }
@@ -65,7 +86,7 @@ export class PropertiesType {
 
     return toKebabCase(
       name.replace(new RegExp(`^(.*?)([|].*?$|${SYMBOL_AVAILABLE}$)`), '$1')
-    )
+    ) as PropertyType
   }
 
   /**

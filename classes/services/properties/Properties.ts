@@ -12,6 +12,7 @@ import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
 import { PropertiesToPalette } from './to/PropertiesToPalette.ts'
 
 import { type PropertyList } from '../../../types/property.ts'
+import { PropertiesToLink } from './to/PropertiesToLink.ts'
 
 const FILE_CACHE = 'properties'
 
@@ -66,13 +67,14 @@ export class Properties {
     const path = new PropertiesPath(this.designs)
     const properties = new PropertiesItems(
       replaceRecursive(
-        new PropertiesSettings(path).get() ?? {},
-        new PropertiesMain(path).get() ?? {}
+        new PropertiesSettings(path).get(),
+        new PropertiesMain(path).get()
       )
     )
 
     new PropertiesToReplace(properties).to()
     new PropertiesToPalette(properties).to()
+    new PropertiesToLink(properties).to()
 
     return properties
   }

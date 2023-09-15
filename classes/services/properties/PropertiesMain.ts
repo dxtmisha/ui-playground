@@ -34,7 +34,7 @@ export class PropertiesMain {
    * Returns all main tokens.<br>
    * Возвращает все основные токены.
    */
-  get (): PropertyList | undefined {
+  get (): PropertyList {
     return this.path.toAll(DIR_NAME, (path, design) => {
       let properties: PropertyList = PropertiesCache.read<PropertyList>([...path, FILE_PROPERTY]) ?? {}
 

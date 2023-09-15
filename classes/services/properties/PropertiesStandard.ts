@@ -10,7 +10,7 @@ import {
   type PropertyItem,
   PropertyKey,
   type PropertyList,
-  type PropertyListOrData
+  type PropertyListOrData, PropertyType
 } from '../../../types/property.ts'
 
 /**
@@ -28,37 +28,35 @@ export class PropertiesStandard {
     const data: PropertyList = {}
 
     forEach(properties, (item, name) => {
-      if (typeof name === 'string') {
-        if (PropertiesKey.isSpecialKey(name)) {
-          data[name] = item
-        } else if (
-          typeof item !== 'object' ||
-          !('value' in item) ||
-          PropertiesType.isInName(name)
+      if (PropertiesKey.isSpecialKey(name)) {
+        data[name] = item
+      } else if (
+        typeof item !== 'object' ||
+        !('value' in item) ||
+        PropertiesType.isInName(name)
+      ) {
+        const value = this.getValue(item)
+        const type = value[PropertyKey.type] ?? PropertiesType.getInName(name)
+        const key = PropertiesKey.reKey(PropertiesKey.getName(name), type)
+
+        if (
+          typeof value === 'object' &&
+          'value' in value
         ) {
-          const value = this.getValue(item)
-          const type = value[PropertyKey.type] ?? PropertiesType.getInName(name)
-          const key = PropertiesKey.reKey(PropertiesKey.getName(name), type)
+          this.addType(value, type)
+          this.addFull(value, name)
+          this.general(value)
 
-          if (
-            typeof value === 'object' &&
-            'value' in value
-          ) {
-            this.addType(value, type)
-            this.addFull(value, name)
-            this.general(value)
-
-            if (key in data) {
-              data[key] = replaceRecursive(data[key], value)
-              return
-            }
+          if (key in data) {
+            data[key] = replaceRecursive(data[key], value)
+            return
           }
-
-          data[key] = value
-        } else {
-          this.general(item)
-          data[PropertiesKey.reKey(name)] = item
         }
+
+        data[key] = value
+      } else {
+        this.general(item)
+        data[PropertiesKey.reKey(name)] = item
       }
     })
 
@@ -165,7 +163,10 @@ export class PropertiesStandard {
    * @param item values for conversion /<br>значения для преобразования
    * @param type property type /<br>тип свойства
    */
-  private static addType (item: PropertyItem, type: string | string[]): void {
+  private static addType (
+    item: PropertyItem,
+    type: PropertyType | PropertyType[]
+  ): void {
     if (!(PropertyKey.type in item) && type) {
       item[PropertyKey.type] = type
     }

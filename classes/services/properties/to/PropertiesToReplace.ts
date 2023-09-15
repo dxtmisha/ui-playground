@@ -6,6 +6,8 @@ import {
 
 export type PropertyReplaceItem = string | Partial<PropertyReplace>
 
+const FILE_CACHE = '001-replace'
+
 /**
  * A class for transforming an expression through regular expressions.<br>
  * Класс для преобразования выражения через регулярные выражения.
@@ -35,6 +37,8 @@ export class PropertiesToReplace {
         )
       }
     })
+
+    this.items.writeStep(FILE_CACHE)
   }
 
   /**

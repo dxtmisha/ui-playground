@@ -10,8 +10,10 @@ import {
   PropertyKey,
   type PropertyList,
   type PropertyListOrData,
-  type PropertyPath
+  type PropertyPath,
+  PropertyType
 } from '../../../types/property.ts'
+import { PropertiesType } from './PropertiesType.ts'
 
 /**
  * Class for working with external files, which adds them to the current list of properties.<br>
@@ -45,7 +47,7 @@ export class PropertiesImport {
 
     forEach(properties, (item, name) => {
       if (
-        item?.[PropertyKey.type] === 'file' &&
+        PropertiesType.isType(item?.[PropertyKey.type], [PropertyType.file]) &&
         typeof item?.value === 'string'
       ) {
         const path = this.getPath(root, item.value)

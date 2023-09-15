@@ -38,8 +38,8 @@ export function isDifferent<T> (
 export function getColumn<T, K extends keyof T> (
   array: ObjectOrArray<T>,
   column: K
-): Array<T[K] | undefined> {
-  return forEach(array, item => item?.[column])
+): (T[K] | undefined)[] {
+  return forEach<T, T[K] | undefined>(array, item => item?.[column])
 }
 
 /**
@@ -106,7 +106,7 @@ export function replaceRecursive<I> (
     isObject(array) &&
     isObject(replacement)
   ) {
-    forEach(
+    forEach<I, void>(
       replacement,
       (item, index) => {
         const data = array?.[index]
@@ -160,7 +160,7 @@ export function splice<I> (
       let returnData: ObjectItem<I> = {}
       let init = false
 
-      forEach(array, (item, index) => {
+      forEach<I, void>(array, (item, index) => {
         if (
           !init && (
             indexStart === index ||
@@ -208,7 +208,7 @@ export function intersectKey<
     isObject(data) &&
     isObject(comparison)
   ) {
-    forEach(data, (item, index) => {
+    forEach<T[KT], void>(data, (item, index) => {
       if (index in comparison) {
         values[index as (KT & KC)] = item
       }
@@ -233,5 +233,5 @@ export function toArray<T> (value: T): T extends any[] ? T : [T] {
  * @param value input value /<br>входное значение
  */
 function getLength (value: ObjectOrArray<string>): number[] {
-  return forEach(value, item => item.length)
+  return forEach<string, number>(value, item => item.length)
 }

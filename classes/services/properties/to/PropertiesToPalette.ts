@@ -44,7 +44,7 @@ export class PropertiesToPalette {
         item
       }) => item?.value && isObjectNotArray(item.value) && this.read(item.value, name))
 
-    this.items.createStep(FILE_CACHE)
+    this.items.writeStep(FILE_CACHE)
   }
 
   /**
@@ -73,7 +73,7 @@ export class PropertiesToPalette {
         isObjectNotArray(item?.value)
       ) {
         forEach(item?.value, (shade, name) => {
-          const parent = this.getClass(list, name as string)
+          const parent = this.getClass(list, name)
 
           this.addItem(
             parent,

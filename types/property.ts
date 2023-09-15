@@ -48,7 +48,8 @@ export enum PropertyType {
   theme = 'theme',
   root = 'root',
   mixin = 'mixin',
-  none = 'none'
+  none = 'none',
+  file = 'file'
 }
 
 export enum PropertyFull {
@@ -68,7 +69,7 @@ export type PropertyItem = {
   description?: string
 
   _category?: string
-  _type?: (PropertyType | string) | (PropertyType | string)[]
+  _type?: PropertyType | PropertyType[]
   _rename?: string
   _prop?: string | boolean
   _default?: string | number
@@ -89,7 +90,6 @@ export type PropertyItem = {
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItem | Record<string, PropertyItem>>
 
-export type PropertyReadValue = string | string[] | number | Record<string, PropertyItem> | undefined
 export type PropertyReadParent = {
   name: string,
   item: PropertyItem
@@ -99,7 +99,7 @@ export type PropertyRead = {
   design?: string,
   component?: string,
   name: string,
-  value: PropertyReadValue,
+  value: PropertyItem['value'],
   item: PropertyItem,
   parent?: PropertyItem,
   parents: PropertyReadParents

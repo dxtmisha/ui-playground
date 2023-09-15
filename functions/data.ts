@@ -121,18 +121,25 @@ export function isSelectedByList<T> (
  * @param callback a function to execute for each element in the array /<br>
  * функция, которая будет вызвана для каждого элемента
  */
-export function forEach<T, R> (
-  data: T[] | Record<string, T> | Map<string, T>,
-  callback: (item: T, key: string | number, dataMain: typeof data) => R
+export function forEach<
+  T,
+  R,
+  D extends T[] | Record<string, T> | Map<string, T> = T[] | Record<string, T> | Map<string, T>,
+  K = D extends T[] ? number : string
+> (
+  data: D & (T[] | Record<string, T> | Map<string, T>),
+  callback: (item: T, key: K, dataMain: typeof data) => R
 ): R[] {
   if (isObject(data)) {
     const returnData: R[] = []
 
-    if (Array.isArray(data) || data instanceof Map) {
-      data.forEach((item: T, key) => returnData.push(callback(item, key, data)))
+    if (data instanceof Map) {
+      data.forEach((item: T, key) => returnData.push(callback(item, key as K, data)))
+    } else if (Array.isArray(data)) {
+      data.forEach((item: T, key) => returnData.push(callback(item, key as K, data)))
     } else {
       Object.entries(data).forEach(
-        ([key, item]) => returnData.push(callback(item, key, data))
+        ([key, item]) => returnData.push(callback(item, key as K, data))
       )
     }
 
