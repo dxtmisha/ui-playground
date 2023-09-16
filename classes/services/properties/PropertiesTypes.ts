@@ -11,7 +11,7 @@ import {
  * Class with a list of available types.<br>
  * Класс со списком доступных типов.
  */
-export class PropertiesType {
+export class PropertiesTypes {
   private static readonly SYMBOLS: Record<string, string> = {
     $: PropertyType.var,
     ':': PropertyType.selector,
@@ -113,7 +113,7 @@ export class PropertiesType {
    * Returns a regular expression for searching symbols in names.<br>
    * Возвращает регулярное выражение для поиска символов в названиях.
    */
-  private static getExpSymbols (): RegExp {
+  static getExpSymbols (): RegExp {
     return new RegExp(`^(${this.symbolsToString()}|\\w+(?=[|]))(.*?)$`)
   }
 

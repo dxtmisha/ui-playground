@@ -1,4 +1,12 @@
-import { PropertyItem } from '../../../types/property.ts'
+import { toCamelCase } from '../../../functions/string.ts'
+
+import { PropertiesTypes } from './PropertiesTypes.ts'
+
+import {
+  type PropertyItem,
+  SEPARATOR,
+  SYMBOL_SEPARATOR
+} from '../../../types/property.ts'
 
 /**
  * Key with all special keys for token processing.<br>
@@ -30,15 +38,38 @@ export class PropertiesKeys {
    * @param name key name /<br>название ключа
    */
   static getName (name: string): string {
+    let newName = name.replace(PropertiesTypes.getExpSymbols(), '$2')
+
     if (
-      PropertiesType.isScss(name) ||
-      PropertiesType.isRoot(name)
+      SYMBOL_SEPARATOR !== SEPARATOR &&
+      newName.match(SYMBOL_SEPARATOR)
     ) {
-      return name
+      newName = newName.replaceAll(SYMBOL_SEPARATOR, SEPARATOR)
     }
 
-    return toKebabCase(
-      name.replace(new RegExp(`^(.*?)(${SYMBOL_AVAILABLE})$`), '$2')
-    )
+    return toCamelCase(newName)
+  }
+
+  /**
+   * Transformed key name by its type.<br>
+   * Преобразованное название ключа по его типу.
+   * @param key property name /<br>название свойства
+   * @param type property type /<br>тип свойства
+   */
+  static reKey (
+    key: string,
+    type?: PropertyItem['_type']
+  ): string {
+    const name = this.getName(key)
+
+    if (
+      type &&
+      PropertiesTypes.isMedia(type) &&
+      !name.match(/^media[A-Z]/)
+    ) {
+      return toCamelCase(`media-${name}`)
+    }
+
+    return name
   }
 }
