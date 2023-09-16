@@ -95,3 +95,10 @@ export type PropertyItemInput = PropertyItemPartial | {
 
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItemInput>
+
+export const SEPARATOR = '/'
+
+export const SYMBOL_SEPARATOR = process.env.TOKEN_SEPARATOR ?? SEPARATOR
+export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
+
+export const FILE_PROPERTY = 'properties.json'
