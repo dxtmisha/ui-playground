@@ -7,7 +7,8 @@ export enum PropertyKey {
   replace = '_replace',
   important = '_important',
   modification = '_modification',
-  full = '_full',
+  fullName = '_fullName',
+  fullValue = '_fullValue',
   style = '_style',
   name = '__n',
   variable = '__v',
@@ -15,18 +16,6 @@ export enum PropertyKey {
   code = '__f',
   file = '__file',
   wrap = '__wrap'
-}
-
-export enum PropertyCategory {
-  root = 'root',
-  class = 'class',
-  media = 'media',
-
-  theme = 'theme',
-  shade = 'shade',
-  palette = 'palette',
-  color = 'color',
-  colors = 'colors'
 }
 
 export enum PropertyType {
@@ -52,9 +41,16 @@ export enum PropertyType {
   file = 'file'
 }
 
-export enum PropertyFull {
-  name = 'name',
-  value = 'value'
+export enum PropertyCategory {
+  root = 'root',
+  class = 'class',
+  media = 'media',
+
+  theme = 'theme',
+  shade = 'shade',
+  palette = 'palette',
+  color = 'color',
+  colors = 'colors'
 }
 
 export type PropertyReplace = {
@@ -63,20 +59,23 @@ export type PropertyReplace = {
   replace: string
 }
 
+export type PropertyValue<T> = string | string[] | number | Record<string, T>
+
 export type PropertyItem = {
-  value?: string | string[] | number | Record<string, PropertyItem>
+  value: PropertyValue<PropertyItem>
   type?: string
   description?: string
 
-  _category?: string
-  _type?: PropertyType | PropertyType[]
+  _type: PropertyType | PropertyType[]
+  _category?: PropertyCategory
   _rename?: string
   _prop?: string | boolean
   _default?: string | number
   _replace?: string | PropertyReplace
   _important?: boolean
   _modification?: boolean
-  _full?: PropertyFull | PropertyFull[]
+  _fullName?: boolean
+  _fullValue?: boolean
   _style?: boolean
 
   __n?: string
@@ -87,47 +86,12 @@ export type PropertyItem = {
   __wrap?: boolean
 }
 
+export type PropertyItemPartial = Partial<Omit<PropertyItem, 'value'>> & {
+  value?: PropertyValue<PropertyItemPartial>
+}
+export type PropertyItemInput = PropertyItemPartial | {
+  [K in string]: PropertyItemInput
+}
+
 export type PropertyList = Record<string, PropertyItem>
-export type PropertyListOrData = Record<string, PropertyItem | Record<string, PropertyItem>>
-
-export type PropertyReadParent = {
-  name: string,
-  item: PropertyItem
-}
-export type PropertyReadParents = PropertyReadParent[]
-export type PropertyRead = {
-  design?: string,
-  component?: string,
-  name: string,
-  value: PropertyItem['value'],
-  item: PropertyItem,
-  parent?: PropertyItem,
-  parents: PropertyReadParents
-}
-export type PropertyReadFull = PropertyRead & {
-  index: string
-}
-export type PropertyReadCallback<T> = (item: PropertyRead) => T
-
-export type PropertyPath = string | string[]
-export type PropertyFileValue = string | Record<string, any>
-
-export const SEPARATOR = '/'
-
-export const SYMBOL_SEPARATOR = process.env.TOKEN_SEPARATOR || SEPARATOR
-export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
-
-export const FILE_PROPERTY = 'properties.json'
-
-export const SYMBOLS = {
-  $: PropertyType.var,
-  ':': PropertyType.selector,
-  '::': PropertyType.virtual,
-  '~': PropertyType.state,
-  '#': PropertyType.subclass,
-  '@': PropertyType.link,
-  '@@': PropertyType.linkClass,
-  '&': PropertyType.scss,
-  '&&': PropertyType.root,
-  '--': PropertyType.none
-}
+export type PropertyListOrData = Record<string, PropertyItemInput>

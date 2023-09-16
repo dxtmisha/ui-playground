@@ -1,14 +1,12 @@
+import requireFs from 'fs'
+import requirePath from 'path'
+
 import { isFilled, transformation } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
 import { toArray } from '../../../functions/object.ts'
 
-import requireFs from 'fs'
-import requirePath from 'path'
-
-import {
-  type PropertyFileValue,
-  type PropertyPath
-} from '../../../types/property.ts'
+export type PropertiesFilePath = string | string[]
+export type PropertiesFileValue<T = any> = string | Record<string, T>
 
 /**
  * A class for working with files.<br>
@@ -28,8 +26,17 @@ export class PropertiesFile {
    * @param path it holds the path of the file that has to be checked /<br>
    * это содержит путь к файлу, который необходимо проверить
    */
-  static is (path: PropertyPath): boolean {
+  static is (path: PropertiesFilePath): boolean {
     return requireFs.existsSync(this.joinPath(path))
+  }
+
+  /**
+   * Checks whether it is a directory.<br>
+   * Проверяет, является ли это директорией.
+   * @param path name of the element being checked /<br>название проверяемого элемента
+   */
+  static isDir (path: PropertiesFilePath): boolean {
+    return !this.joinPath(path).match(/\.\w+$/)
   }
 
   /**
@@ -41,12 +48,30 @@ export class PropertiesFile {
   }
 
   /**
-   * Checks whether it is a directory.<br>
-   * Проверяет, является ли это директорией.
-   * @param path name of the element being checked /<br>название проверяемого элемента
+   * The path.joinPath() method joins all given path segments together using the
+   * platform-specific separator as a delimiter, then normalizes the resulting path.<br>
+   * Метод path.joinPath() объединяет все указанные сегменты пути с использованием
+   * специфического для платформы разделителя в качестве разделителя,
+   * а затем нормализует полученный путь.
+   * @param path a sequence of path segments /<br>последовательность сегментов пути
    */
-  static isDir (path: PropertyPath): boolean {
-    return !this.joinPath(path).match(/\.\w+$/)
+  static joinPath (path: PropertiesFilePath): string {
+    return requirePath.join(...toArray(path))
+  }
+
+  /**
+   * Getting the path to the file by its name and the path to the directory.<br>
+   * Получение пути к файлу по его названию и пути к директории.
+   * @param path path to the file /<br>путь к файлу
+   * @param name file name /<br>название файла
+   * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
+   */
+  static joinPathByName (
+    path: PropertiesFilePath,
+    name: string,
+    extension = 'json'
+  ): string {
+    return this.joinPath([...toArray(path), this.getFileName(name, extension)])
   }
 
   /**
@@ -79,7 +104,7 @@ export class PropertiesFile {
    * Возвращает путь к директории, убрав название файла из пути.
    * @param path path to the file /<br>путь к файлу
    */
-  static getPathDir (path: PropertyPath): string {
+  static getPathDir (path: PropertiesFilePath): string {
     if (this.isDir(path)) {
       return this.joinPath(path)
     } else {
@@ -88,30 +113,18 @@ export class PropertiesFile {
   }
 
   /**
-   * The path.joinPath() method joins all given path segments together using the
-   * platform-specific separator as a delimiter, then normalizes the resulting path.<br>
-   * Метод path.joinPath() объединяет все указанные сегменты пути с использованием
-   * специфического для платформы разделителя в качестве разделителя,
-   * а затем нормализует полученный путь.
-   * @param path a sequence of path segments /<br>последовательность сегментов пути
-   */
-  static joinPath (path: PropertyPath): string {
-    return requirePath.join(...toArray(path))
-  }
-
-  /**
-   * Getting the path to the file by its name and the path to the directory.<br>
-   * Получение пути к файлу по его названию и пути к директории.
+   * Returns the path to the file.<br>
+   * Возвращает путь к файлу.
    * @param path path to the file /<br>путь к файлу
-   * @param name file name /<br>название файла
+   * @param name element name /<br>название элемента
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  static joinPathByName (
-    path: PropertyPath,
+  static getPathFile (
+    path: PropertiesFilePath,
     name: string,
     extension = 'json'
-  ): string {
-    return this.joinPath([...toArray(path), this.getFileName(name, extension)])
+  ): string[] {
+    return [...toArray(path), this.getFileName(name, extension)]
   }
 
   /**
@@ -119,7 +132,7 @@ export class PropertiesFile {
    * Метод возвращает объект, свойства которого представляют существенные элементы пути.
    * @param path filename /<br>имя файла
    */
-  static parse (path: PropertyPath): requirePath.ParsedPath {
+  static parse (path: PropertiesFilePath): requirePath.ParsedPath {
     return requirePath.parse(this.joinPath(path))
   }
 
@@ -128,15 +141,12 @@ export class PropertiesFile {
    * Получение информации о файле.
    * @param path path to the file /<br>путь к файлу
    */
-  static stat (path: PropertyPath): requireFs.Stats {
+  static stat (path: PropertiesFilePath): requireFs.Stats | undefined {
     if (this.is(path)) {
-      return requireFs.statSync(this.joinPath(path))
-    } else {
-      return {
-        mtimeMs: 0,
-        size: 0
-      } as requireFs.Stats
+      return { ...requireFs.statSync(this.joinPath(path)) }
     }
+
+    return undefined
   }
 
   /**
@@ -144,7 +154,7 @@ export class PropertiesFile {
    * Читает содержимое директории.
    * @param path path to the directory /<br>путь к директории
    */
-  static readDir (path: PropertyPath): string[] {
+  static readDir (path: PropertiesFilePath): string[] {
     return this.is(path) ? requireFs.readdirSync(this.joinPath(path)) : []
   }
 
@@ -153,7 +163,7 @@ export class PropertiesFile {
    * Возвращает содержимое пути.
    * @param path filename /<br>имя файла
    */
-  static readFile<R> (path: PropertyPath): R | undefined {
+  static readFile<R> (path: PropertiesFilePath): R | undefined {
     if (this.is(path)) {
       return transformation(
         requireFs.readFileSync(this.joinPath(path)).toString()
@@ -164,6 +174,22 @@ export class PropertiesFile {
   }
 
   /**
+   * Synchronously creates a directory.<br>
+   * Синхронно создает директорию.
+   * @param path path to the directory /<br>путь к директории
+   */
+  static createDir (path: PropertiesFilePath): void {
+    const dir: string[] = [this.root]
+
+    this.splitForDir(this.removeRootInPath(path)).forEach(name => {
+      dir.push(name)
+      if (!this.is(dir)) {
+        requireFs.mkdirSync(this.joinPath(dir))
+      }
+    })
+  }
+
+  /**
    * Writing data to a file.<br>
    * Запись данных в файл.
    * @param path path to the file /<br>путь к файлу
@@ -171,8 +197,8 @@ export class PropertiesFile {
    * @param value values for storage /<br>значения для хранения
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  static write<T extends PropertyFileValue> (
-    path: PropertyPath,
+  static write<T extends PropertiesFileValue> (
+    path: PropertiesFilePath,
     name: string,
     value: T,
     extension = 'json'
@@ -186,27 +212,11 @@ export class PropertiesFile {
   }
 
   /**
-   * Synchronously creates a directory.<br>
-   * Синхронно создает директорию.
-   * @param path path to the directory /<br>путь к директории
-   */
-  private static createDir (path: PropertyPath): void {
-    const dir: string[] = [this.root]
-
-    this.splitForDir(this.removeRootInPath(path)).forEach(name => {
-      dir.push(name)
-      if (!this.is(dir)) {
-        requireFs.mkdirSync(this.joinPath(dir))
-      }
-    })
-  }
-
-  /**
    * The method splits the path into an array of components.<br>
    * Метод разбивает путь на массив компонентов.
    * @param path path to the directory /<br>путь к директории
    */
-  private static splitForDir (path: PropertyPath): string[] {
+  private static splitForDir (path: PropertiesFilePath): string[] {
     const dir = this.isDir(path) ? path : this.parse(path)?.dir
     return (this.joinPath(dir || '')).split(requirePath.sep)
   }
@@ -217,8 +227,10 @@ export class PropertiesFile {
    * @param path path to the directory /<br>путь к директории
    * @private
    */
-  private static removeRootInPath (path: PropertyPath): string {
-    return this.joinPath(path).replace(`${this.root}${requirePath.sep}`, '')
+  private static removeRootInPath (path: PropertiesFilePath): string {
+    return this.joinPath(path)
+      .replace(`${this.root}${requirePath.sep}`, '')
+      .replace(`${this.root}`, '')
   }
 
   static {

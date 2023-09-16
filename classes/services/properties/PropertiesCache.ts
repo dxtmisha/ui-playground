@@ -1,20 +1,20 @@
 import { toArray } from '../../../functions/object.ts'
 
-import { PropertiesFile } from './PropertiesFile.ts'
-
 import {
-  type PropertyFileValue,
-  type PropertyPath
-} from '../../../types/property.ts'
+  PropertiesFile,
+  type PropertiesFilePath,
+  type PropertiesFileValue
+} from './PropertiesFile.ts'
 
-const DIR_CACHE = 'cache'
+const DIR_CACHE = ['cache']
 const DIR_STEP = ['step']
 const FILE_SYSTEM = 'system'
 
-type PropertySystem = {
+type PropertiesCacheList = Record<string, string[]>
+type PropertiesCacheSystem = {
   time: number,
-  files: Record<string, string[]>,
-  sizes: Record<string, string[]>
+  files: PropertiesCacheList,
+  sizes: PropertiesCacheList
 }
 
 /**
@@ -22,10 +22,10 @@ type PropertySystem = {
  * Обработка для хранения временных файлов.
  */
 export class PropertiesCache {
-  static time = 0
-  static files: Record<string, string[]> = {}
-  static sizes: Record<string, string[]> = {}
-  static listenerName: string[] = ['global']
+  private static time = 0
+  private static readonly files: PropertiesCacheList = {}
+  private static readonly sizes: PropertiesCacheList = {}
+  private static readonly listenerName: string[] = ['global']
 
   /**
    * Reads data from the cache or updates the cache if the data is outdated.<br>
@@ -38,32 +38,28 @@ export class PropertiesCache {
    * результат сохраняется в текущем файле
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  static get<T extends PropertyFileValue> (
-    path: PropertyPath,
+  static get<T extends PropertiesFileValue> (
+    path: PropertiesFilePath,
     name: string,
-    callback?: () => T,
+    callback: () => T,
     extension = 'json'
-  ): T | undefined {
+  ): T {
     if (
       this.is(path, name, extension) &&
       this.isBySystem(name)
     ) {
-      return this.readFile(path, name, extension) as T
+      return this.readFile<T>(path, name, extension) as T
     }
 
-    if (callback) {
-      this.listenerName.push(name)
+    this.listenerName.push(name)
 
-      const value = callback()
-      this.write(path, name, value, extension)
+    const value = callback()
+    this.writeFile(path, name, value, extension)
 
-      this.listenerName.pop()
-      this.writeSystem()
+    this.listenerName.pop()
+    this.writeSystem()
 
-      return value
-    }
-
-    return undefined
+    return value
   }
 
   /**
@@ -71,7 +67,7 @@ export class PropertiesCache {
    * Возвращает содержимое файла по указанному пути.
    * @param path filename /<br>имя файла
    */
-  static read<R> (path: PropertyPath): R | undefined {
+  static read<R> (path: PropertiesFilePath): R | undefined {
     if (PropertiesFile.is(path)) {
       const value = PropertiesFile.joinPath(path)
 
@@ -93,8 +89,8 @@ export class PropertiesCache {
    * @param name file name /<br>название файла
    * @param value values for storage / значения для хранения
    */
-  static writeStep<T extends PropertyFileValue> (name: string, value: T): void {
-    this.write<T>(DIR_STEP, name, value)
+  static write<T extends PropertiesFileValue> (name: string, value: T): void {
+    this.writeFile<T>(DIR_STEP, name, value)
   }
 
   /**
@@ -105,7 +101,7 @@ export class PropertiesCache {
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
   private static is (
-    path: PropertyPath,
+    path: PropertiesFilePath,
     name: string,
     extension = 'json'
   ): boolean {
@@ -118,18 +114,20 @@ export class PropertiesCache {
    * @param name the name of the cache /<br>название кэша
    */
   private static isBySystem (name = 'global'): boolean {
-    let update = false
+    let notUpdate = true
 
     if (name in this.files) {
       this.files[name].forEach(path => {
-        if (PropertiesFile.stat(path).mtimeMs > this.time) {
-          update = true
-          this.console(`Modified file: ${name} - ${path}`)
+        const stat = PropertiesFile.stat(path)
+
+        if (stat && stat.mtimeMs > this.time) {
+          notUpdate = false
+          this.console(`Modified file: ${name}, ${path}`)
         }
       })
     }
 
-    return !update
+    return notUpdate
   }
 
   /**
@@ -137,8 +135,8 @@ export class PropertiesCache {
    * Возвращает путь к файлу.
    * @param path path to the file /<br>путь к файлу
    */
-  private static getPath (path: PropertyPath): string[] {
-    return [PropertiesFile.getRoot(), DIR_CACHE, ...toArray(path)]
+  private static getPath (path: PropertiesFilePath): string[] {
+    return [PropertiesFile.getRoot(), ...DIR_CACHE, ...toArray(path)]
   }
 
   /**
@@ -149,11 +147,11 @@ export class PropertiesCache {
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
   private static getPathName (
-    path: PropertyPath,
+    path: PropertiesFilePath,
     name: string,
     extension = 'json'
   ): string[] {
-    return this.getPath([...toArray(path), PropertiesFile.getFileName(name, extension)])
+    return PropertiesFile.getPathFile(this.getPath(path), name, extension)
   }
 
   /**
@@ -164,7 +162,7 @@ export class PropertiesCache {
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
   private static readFile<R> (
-    path: PropertyPath,
+    path: PropertiesFilePath,
     name: string,
     extension = 'json'
   ): R | undefined {
@@ -179,8 +177,8 @@ export class PropertiesCache {
    * @param value values for storage /<br>значения для хранения
    * @param extension file extension by default is json /<br>расширение файла по умолчанию - json
    */
-  private static write<T extends PropertyFileValue> (
-    path: PropertyPath,
+  private static writeFile<T extends PropertiesFileValue> (
+    path: PropertiesFilePath,
     name: string,
     value: T,
     extension = 'json'
@@ -196,12 +194,13 @@ export class PropertiesCache {
     if (this.listenerName.length < 2) {
       this.time = new Date().getTime()
 
-      this.write([], FILE_SYSTEM, {
+      const data: PropertiesCacheSystem = {
         time: this.time,
         files: this.files,
         sizes: this.sizes
-      } as PropertySystem)
+      }
 
+      this.writeFile([], FILE_SYSTEM, data)
       this.console('Writes the system data')
     }
   }
@@ -216,12 +215,12 @@ export class PropertiesCache {
   }
 
   static {
-    const system = this.readFile<PropertySystem>([], FILE_SYSTEM)
+    const system = this.readFile<PropertiesCacheSystem>([], FILE_SYSTEM)
 
     if (system) {
       this.time = system.time
-      this.files = system.files
-      this.sizes = system.sizes
+      Object.assign(this.files, system.files)
+      Object.assign(this.sizes, system.sizes)
     }
   }
 }

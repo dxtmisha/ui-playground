@@ -1,20 +1,19 @@
-import { replaceRecursive } from '../../../functions/object.ts'
 import { toKebabCase } from '../../../functions/string.ts'
+import { replaceRecursive } from '../../../functions/object.ts'
 
 import { PropertiesFile } from './PropertiesFile.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 
 import {
-  type PropertyList,
   type PropertyListOrData
 } from '../../../types/property.ts'
 
-export type PropertyPathItem = {
+export type PropertiesPathItem = {
   design: string
   paths: string[][]
 }
 
-export type PropertyPathList = PropertyPathItem[]
+export type PropertiesPathList = PropertiesPathItem[]
 
 const DIR_CACHE = 'read'
 
@@ -23,7 +22,7 @@ const DIR_CACHE = 'read'
  * Класс для работы с путями по заданному названию дизайна.
  */
 export class PropertiesPath {
-  private readonly paths: PropertyPathList
+  private readonly paths: PropertiesPathList
 
   /**
    * Constructor
@@ -56,8 +55,16 @@ export class PropertiesPath {
    * Получает список доступных путей к файлу глобальных настроек компонента.
    * @param name design name /<br>название дизайна
    */
-  getPath (name: string): PropertyPathItem | undefined {
+  getPath (name: string): PropertiesPathItem | undefined {
     return this.paths.find(item => item.design === name)
+  }
+
+  /**
+   * List of available paths.<br>
+   * Список доступных путей.
+   */
+  getPaths (): PropertiesPathList {
+    return this.paths
   }
 
   /**
@@ -70,7 +77,7 @@ export class PropertiesPath {
   to (
     name: string,
     design: string,
-    callback: (path: string[], design: string) => PropertyList
+    callback: (path: string[], design: string) => PropertyListOrData
   ): PropertyListOrData {
     return PropertiesCache.get<PropertyListOrData>([DIR_CACHE, name], `${name}-${design}`, () => {
       let data: PropertyListOrData = {}
@@ -80,7 +87,7 @@ export class PropertiesPath {
       })
 
       return data
-    }) ?? {} as PropertyListOrData
+    })
   }
 
   /**
@@ -91,7 +98,7 @@ export class PropertiesPath {
    */
   toAll (
     name: string,
-    callback: (path: string[], design: string) => PropertyList
+    callback: (path: string[], design: string) => PropertyListOrData
   ): PropertyListOrData {
     return PropertiesCache.get<PropertyListOrData>([DIR_CACHE], name, () => {
       let data: PropertyListOrData = {}
@@ -101,7 +108,7 @@ export class PropertiesPath {
       })
 
       return data
-    }) ?? {} as PropertyListOrData
+    })
   }
 
   /**
@@ -112,18 +119,18 @@ export class PropertiesPath {
   private getDir (name: string): string[][] {
     const path = this.getDirByName(name)
     const root = PropertiesFile.getRoot()
+    const dirs: string[][] = [
+      [root, path]
+    ]
 
     if (PropertiesFile.isModule()) {
-      return [
-        [root, path],
+      dirs.push(
         [root, 'src', 'components', path],
         [__dirname, '..', '..', '..', path]
-      ]
-    } else {
-      return [
-        [root, path]
-      ]
+      )
     }
+
+    return dirs
   }
 
   /**
@@ -131,7 +138,7 @@ export class PropertiesPath {
    * Получение названия директории по его имени.
    * @param name design name /<br>название дизайна
    */
-  private getDirByName (name: string) {
+  private getDirByName (name: string): string {
     return name === 'd' ? 'constructors' : name
   }
 }
