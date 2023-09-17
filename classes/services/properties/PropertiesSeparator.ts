@@ -1,6 +1,8 @@
 import { forEach, isObjectNotArray } from '../../../functions/data.ts'
 import { replaceRecursive } from '../../../functions/object.ts'
 
+import { PropertiesKeys } from './PropertiesKeys.ts'
+
 import {
   type PropertyItem,
   PropertyKey,
@@ -29,12 +31,12 @@ export class PropertiesSeparator {
     limit = LIMIT
   ): boolean {
     if (limit > 0) {
-      for (const item in properties) {
-        if (item.match(SEPARATOR)) {
+      for (const index in properties) {
+        if (PropertiesKeys.isSeparator(index)) {
           return true
         }
 
-        const value = properties[item].value
+        const value = properties[index].value
 
         if (
           value &&
@@ -63,7 +65,7 @@ export class PropertiesSeparator {
         value: isObjectNotArray(item.value) ? this.to(item.value) : item.value
       }
 
-      if (this.isSeparator(name)) {
+      if (PropertiesKeys.isSeparator(name)) {
         data = replaceRecursive(data, this.wrap(newItem, this.removeBasicName(name)))
       } else {
         data = replaceRecursive(data, { [name]: newItem })
@@ -71,16 +73,6 @@ export class PropertiesSeparator {
     })
 
     return data
-  }
-
-  /**
-   * Checks if the property is suitable for splitting.<br>
-   * Проверяет, подходит ли свойство для разделения.
-   * @param name property names /<br>названия свойств
-   * @private
-   */
-  private static isSeparator (name: string): boolean {
-    return Boolean(name.match(SEPARATOR))
   }
 
   /**

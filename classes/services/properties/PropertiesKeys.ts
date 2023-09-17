@@ -35,6 +35,16 @@ export class PropertiesKeys {
   }
 
   /**
+   * Checks if the property is suitable for splitting.<br>
+   * Проверяет, подходит ли свойство для разделения.
+   * @param name property names /<br>названия свойств
+   * @private
+   */
+  static isSeparator (name: string): boolean {
+    return Boolean(name.match(SEPARATOR))
+  }
+
+  /**
    * Returns the property name, discarding its prefix.<br>
    * Возвращает имя свойства, отбрасывая его префикс.
    * @param name key name /<br>название ключа
@@ -51,7 +61,7 @@ export class PropertiesKeys {
       newName = newName.replaceAll(SYMBOL_SEPARATOR, SEPARATOR)
     }
 
-    if (newName.match(SEPARATOR)) {
+    if (this.isSeparator(newName)) {
       return newName
     }
 
