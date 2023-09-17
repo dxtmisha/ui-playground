@@ -67,7 +67,7 @@ export type PropertyItem = {
   description?: string
 
   _type: PropertyType | PropertyType[]
-  _category?: PropertyCategory
+  _category?: PropertyCategory | string
   _rename?: string
   _prop?: string | boolean
   _default?: string | number

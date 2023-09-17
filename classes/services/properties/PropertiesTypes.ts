@@ -2,7 +2,10 @@ import { isFilled, isSelected } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
 import { toArray } from '../../../functions/object.ts'
 
-import { type PropertyItem, PropertyType } from '../../../types/property.ts'
+import {
+  type PropertyItem,
+  PropertyType
+} from '../../../types/property.ts'
 
 /**
  * Class with a list of available types.<br>
@@ -11,14 +14,14 @@ import { type PropertyItem, PropertyType } from '../../../types/property.ts'
 export class PropertiesTypes {
   private static readonly SYMBOLS: Record<string, string> = {
     $: PropertyType.var,
-    ':': PropertyType.selector,
     '::': PropertyType.virtual,
+    ':': PropertyType.selector,
     '~': PropertyType.state,
     '#': PropertyType.subclass,
-    '@': PropertyType.link,
     '@@': PropertyType.linkClass,
-    '&': PropertyType.scss,
+    '@': PropertyType.link,
     '&&': PropertyType.root,
+    '&': PropertyType.scss,
     '--': PropertyType.none
   }
 
@@ -111,7 +114,7 @@ export class PropertiesTypes {
    * Возвращает регулярное выражение для поиска символов в названиях.
    */
   static getExpSymbols (): RegExp {
-    return new RegExp(`^(${this.symbolsToString()}|\\w+(?=[|]))(.*?)$`)
+    return new RegExp(`^(${this.symbolsToString()}|[\\w-]+(?=[|]))(.*?)$`)
   }
 
   /**

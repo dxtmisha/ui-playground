@@ -40,7 +40,9 @@ export class PropertiesKeys {
    * @param name key name /<br>название ключа
    */
   static getName (name: string): string {
-    let newName = name.replace(PropertiesTypes.getExpSymbols(), '$2')
+    let newName = name
+      .replace(PropertiesTypes.getExpSymbols(), '$2')
+      .replace(/^[|]/, '')
 
     if (
       SYMBOL_SEPARATOR !== SEPARATOR &&

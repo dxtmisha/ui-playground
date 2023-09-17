@@ -37,6 +37,9 @@ export class PropertiesStandard {
         newItem.value = this.to(newItem.value)
       }
 
+      this.addRename(key, newItem)
+      this.addValue(newItem)
+
       if (key in newItem) {
         data[key] = replaceRecursive(data[key], newItem) as PropertyItem
       } else {
@@ -61,8 +64,6 @@ export class PropertiesStandard {
 
     this.addType(name, newItem)
     this.addFull(name, newItem)
-    this.addRename(name, newItem)
-    this.addValue(newItem)
 
     return newItem as PropertyItem
   }
