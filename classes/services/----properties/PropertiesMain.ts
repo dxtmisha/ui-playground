@@ -13,12 +13,6 @@ import {
 } from '../../../types/property.ts'
 import { PropertiesWrap } from './PropertiesWrap.ts'
 
-const DIR_NAME = 'main'
-
-/**
- * A class for transforming global tokens.<br>
- * Класс для преобразования глобальных токенов.
- */
 export class PropertiesMain {
   /**
    * Constructor
@@ -28,32 +22,5 @@ export class PropertiesMain {
   constructor (
     private readonly path: PropertiesPath
   ) {
-  }
-
-  /**
-   * Returns all main tokens.<br>
-   * Возвращает все основные токены.
-   */
-  get (): PropertyList {
-    return this.path.toAll(DIR_NAME, (path, design) => {
-      let properties: PropertyList = PropertiesCache.read<PropertyList>([...path, FILE_PROPERTY]) ?? {}
-
-      if (
-        isFilled(properties) &&
-        isObject(properties)
-      ) {
-        properties = PropertiesStandard.to({ [design]: properties })
-        properties = new PropertiesImport(properties, path).to()
-
-        if (PropertiesSeparator.is(properties)) {
-          properties = PropertiesSeparator.to(properties)
-          PropertiesWrap.to(properties)
-        }
-
-        return properties
-      }
-
-      return {}
-    })
   }
 }

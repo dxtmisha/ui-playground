@@ -1,8 +1,9 @@
-import { forEach, isFilled, isObject } from '../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
 import { replaceRecursive } from '../../../functions/object.ts'
 
-import { PropertiesFile } from './PropertiesFile.ts'
+import { PropertiesFile, type PropertiesFilePath } from './PropertiesFile.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
+import { PropertiesTypes } from './PropertiesTypes.ts'
 
 import { PropertiesStandard } from './PropertiesStandard.ts'
 
@@ -10,10 +11,8 @@ import {
   PropertyKey,
   type PropertyList,
   type PropertyListOrData,
-  type PropertyPath,
   PropertyType
 } from '../../../types/property.ts'
-import { PropertiesType } from './PropertiesType.ts'
 
 /**
  * Class for working with external files, which adds them to the current list of properties.<br>
@@ -40,15 +39,15 @@ export class PropertiesImport {
    * @param root path to the directory /<br>путь к директории
    */
   to (
-    properties: PropertyList = this.properties,
-    root: string[] = this.root
+    properties = this.properties,
+    root = this.root
   ) {
     let data: PropertyList = {}
 
     forEach(properties, (item, name) => {
       if (
-        PropertiesType.isType(item?.[PropertyKey.type], [PropertyType.file]) &&
-        typeof item?.value === 'string'
+        typeof item.value === 'string' &&
+        PropertiesTypes.isInType(item[PropertyKey.type], [PropertyType.file])
       ) {
         const path = this.getPath(root, item.value)
         const read = this.read(path)
@@ -59,11 +58,7 @@ export class PropertiesImport {
             [PropertiesFile.getPathDir(path)]
           ))
         }
-      } else if (
-        isFilled(item?.value) &&
-        isObject(item.value) &&
-        !Array.isArray(item.value)
-      ) {
+      } else if (isObjectNotArray(item.value)) {
         data = replaceRecursive(data, {
           [name]: {
             ...item,
@@ -96,12 +91,12 @@ export class PropertiesImport {
    * Читает файл или всю директорию.
    * @param path path to file /<br>путь к файлу
    */
-  private read (path: PropertyPath): PropertyListOrData | undefined {
+  private read (path: PropertiesFilePath): PropertyListOrData | undefined {
     if (PropertiesFile.isDir(path)) {
       return this.readByDir(path)
-    } else {
-      return PropertiesCache.read<PropertyListOrData>(path)
     }
+
+    return PropertiesCache.read<PropertyListOrData>(path) ?? {}
   }
 
   /**
@@ -109,7 +104,7 @@ export class PropertiesImport {
    * Читает директорию.
    * @param path path to file /<br>путь к файлу
    */
-  private readByDir (path: PropertyPath): PropertyListOrData {
+  private readByDir (path: PropertiesFilePath): PropertyListOrData {
     const files = PropertiesFile.readDir(path)
     const data: PropertyListOrData = {}
 

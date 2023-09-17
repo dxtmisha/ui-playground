@@ -86,7 +86,7 @@ export class PropertiesTypes {
    * Возвращает название типа переменной из названия свойства.
    * @param name key name /<br>название ключа
    */
-  static getTypeInName (name: string): PropertyType {
+  static getTypeInName (name: string): PropertyItem['_type'] {
     if (this.isTypeInName(name)) {
       const type = name.replace(this.getExpSymbols(), '$1')
 
@@ -97,7 +97,7 @@ export class PropertiesTypes {
       return toKebabCase(type) as PropertyType
     }
 
-    return PropertyType.state
+    return null
   }
 
   /**
