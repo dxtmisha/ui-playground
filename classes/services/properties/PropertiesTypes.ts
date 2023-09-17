@@ -2,10 +2,7 @@ import { isFilled, isSelected } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
 import { toArray } from '../../../functions/object.ts'
 
-import {
-  type PropertyItem,
-  PropertyType
-} from '../../../types/property.ts'
+import { type PropertyItem, PropertyType } from '../../../types/property.ts'
 
 /**
  * Class with a list of available types.<br>
@@ -86,7 +83,7 @@ export class PropertiesTypes {
    * Возвращает название типа переменной из названия свойства.
    * @param name key name /<br>название ключа
    */
-  static getTypeInName (name: string): PropertyType | undefined {
+  static getTypeInName (name: string): PropertyType {
     if (this.isTypeInName(name)) {
       const type = name.replace(this.getExpSymbols(), '$1')
 
@@ -97,7 +94,7 @@ export class PropertiesTypes {
       return toKebabCase(type) as PropertyType
     }
 
-    return undefined
+    return PropertyType.state
   }
 
   /**

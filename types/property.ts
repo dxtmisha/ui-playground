@@ -59,7 +59,7 @@ export type PropertyReplace = {
   replace: string
 }
 
-export type PropertyValue<T> = string | string[] | number | Record<string, T>
+export type PropertyValue<T> = string | string[] | number | Record<string, T> | null
 
 export type PropertyItem = {
   value: PropertyValue<PropertyItem>
@@ -89,9 +89,9 @@ export type PropertyItem = {
 export type PropertyItemPartial = Partial<Omit<PropertyItem, 'value'>> & {
   value?: PropertyValue<PropertyItemPartial>
 }
-export type PropertyItemInput = PropertyItemPartial | {
+export type PropertyItemInput = Record<string, any> & (PropertyItemPartial | {
   [K in string]: PropertyItemInput
-}
+})
 
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItemInput>

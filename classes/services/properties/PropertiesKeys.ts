@@ -18,9 +18,11 @@ export class PropertiesKeys {
    * Проверяет, является ли переменная специальным значением.
    * @param key key name /<br>название ключа
    */
-  static isSpecialKey (key: string): key is keyof PropertyItem {
-    return ['value', 'type', 'description'].indexOf(key) !== -1 ||
+  static isSpecialKey (key: string | number): key is keyof PropertyItem {
+    return typeof key === 'string' && (
+      ['value', 'type', 'description'].indexOf(key) !== -1 ||
       Boolean(key.match(/^_/))
+    )
   }
 
   /**
