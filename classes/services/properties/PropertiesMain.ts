@@ -5,6 +5,7 @@ import { PropertiesPath } from './PropertiesPath.ts'
 
 import { PropertiesStandard } from './PropertiesStandard.ts'
 import { PropertiesImport } from './PropertiesImport.ts'
+import { PropertiesSeparator } from './PropertiesSeparator.ts'
 
 import {
   FILE_PROPERTY,
@@ -39,6 +40,10 @@ export class PropertiesMain {
       if (isFilled(properties)) {
         properties = PropertiesStandard.to({ [design]: properties })
         properties = new PropertiesImport(properties, path).to()
+
+        if (PropertiesSeparator.is(properties)) {
+          properties = PropertiesSeparator.to(properties)
+        }
       }
 
       /* ?? {}
@@ -49,7 +54,6 @@ export class PropertiesMain {
       ) {
 
         if (PropertiesSeparator.is(properties)) {
-          properties = PropertiesSeparator.to(properties)
           PropertiesWrap.to(properties)
         }
 

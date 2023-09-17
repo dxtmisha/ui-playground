@@ -51,6 +51,10 @@ export class PropertiesKeys {
       newName = newName.replaceAll(SYMBOL_SEPARATOR, SEPARATOR)
     }
 
+    if (newName.match(SEPARATOR)) {
+      return newName
+    }
+
     return toCamelCase(newName)
   }
 

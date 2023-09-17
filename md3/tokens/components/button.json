@@ -143,6 +143,16 @@
       "background-color": "{sys.palette.on-surface}",
       "background-opacity": "{sys.opacity.012}",
       "box-shadow": "none"
+    },
+    "a/b": {
+      "background-color": "{sys.palette.on-surface}"
+    },
+    "a/b/c": {
+      "background-color": "{sys.palette.on-surface}"
+    },
+    "a/b/d": {
+      "background-color": "{sys.palette.on-surface}",
+      "background-opacity": "{sys.opacity.012}"
     }
   }
 }

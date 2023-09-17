@@ -27,7 +27,7 @@ export function isObject<T> (value: T): value is Extract<T, Record<any, any>> {
  * Проверяет, является ли значение объектом и не является массивом.
  * @param value input value /<br>входное значение
  */
-export function isObjectNotArray<T> (value: T): value is Exclude<Extract<T, Record<any, any>>, any[] | undefined> {
+export function isObjectNotArray<T> (value: T): value is Exclude<Extract<T, Record<any, any>>, any[] | undefined | null> {
   return isObject(value) && !Array.isArray(value)
 }
 

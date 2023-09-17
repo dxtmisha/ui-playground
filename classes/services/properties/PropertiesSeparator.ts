@@ -1,4 +1,4 @@
-import { forEach, isFilled, isObject } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data.ts'
 import { replaceRecursive } from '../../../functions/object.ts'
 
 import {
@@ -8,17 +8,8 @@ import {
   SEPARATOR
 } from '../../../types/property.ts'
 
-/**
- * The base name, which is taken as the starting value. Used in grouped names.<br>
- * Базовое название, которое принимается как стартовое значение. Используется в группированных именах.
- */
 const BASIC = process.env.TOKEN_SEPARATOR_BASIC || 'basic'
-
-/**
- * Indicates how far inside the array it is necessary to check for the presence of grouped values.<br>
- * Указывает, на сколько внутри массива надо проверять на наличие группированных значений.
- */
-const LIMIT = parseInt(process.env.TOKEN_SEPARATOR_LIMIT ?? '3') || 3
+const LIMIT = parseInt(process.env.TOKEN_SEPARATOR_LIMIT ?? '6') || 6
 
 /**
  * Class for working with property splitting into multiple sub-properties.<br>
@@ -32,27 +23,22 @@ export class PropertiesSeparator {
    * массив, который нужно преобразовать
    * @param limit the maximum permissible level of verification /<br>
    * максимальный допустимый уровень проверки
-   * @return {boolean}
    */
   static is (
     properties: PropertyList,
     limit = LIMIT
   ): boolean {
-    if (
-      limit > 0 &&
-      isFilled(properties) &&
-      isObject(properties)
-    ) {
+    if (limit > 0) {
       for (const item in properties) {
         if (item.match(SEPARATOR)) {
           return true
         }
 
-        const value = properties[item]?.value
+        const value = properties[item].value
 
         if (
-          isObject(value) &&
-          !Array.isArray(value) &&
+          value &&
+          isObjectNotArray(value) &&
           this.is(value, limit - 1)
         ) {
           return true
@@ -68,41 +54,23 @@ export class PropertiesSeparator {
    * Преобразование свойства с длинными названиями с разделителями на множество под-свойств.
    * @param properties an array that needs to be transformed /<br>массив, который нужно преобразовать
    */
-  static to (
-    properties: PropertyList
-  ): PropertyList {
-    if (isObject(properties)) {
-      let data: PropertyList = {}
+  static to (properties: PropertyList): PropertyList {
+    let data: PropertyList = {}
 
-      forEach(properties, (item, name) => {
-        if (typeof name === 'string') {
-          const value = this.getValue(item?.value)
-          let newProperties: PropertyList
+    forEach(properties, (item, name) => {
+      const newItem: PropertyItem = {
+        ...item,
+        value: isObjectNotArray(item.value) ? this.to(item.value) : item.value
+      }
 
-          if (this.isSeparator(name)) {
-            const list = this.removeBasicName(name).split(SEPARATOR)
+      if (this.isSeparator(name)) {
+        data = replaceRecursive(data, this.wrap(newItem, this.removeBasicName(name)))
+      } else {
+        data = replaceRecursive(data, { [name]: newItem })
+      }
+    })
 
-            newProperties = this.wrap(list, {
-              ...item,
-              value
-            })?.value as PropertyList
-          } else {
-            newProperties = {
-              [name]: {
-                ...item,
-                value
-              }
-            }
-          }
-
-          data = replaceRecursive(data, newProperties)
-        }
-      })
-
-      return data
-    }
-
-    return properties
+    return data
   }
 
   /**
@@ -116,39 +84,24 @@ export class PropertiesSeparator {
   }
 
   /**
-   * Returns the processed values.<br>
-   * Возвращает обработанные значения
-   * @param value values to be processed /<br>значения для обработки
-   */
-  private static getValue<T> (value: T): PropertyList | T {
-    if (
-      isObject(value) &&
-      !Array.isArray(value)
-    ) {
-      return this.to(value as PropertyList)
-    }
-
-    return value
-  }
-
-  /**
    * Removing unnecessary characters from the name.<br>
    * Удаление лишних символов из названия.
    * @param name property names /<br>названия свойств
    */
-  private static removeBasicName (name: string): string {
+  private static removeBasicName (name: string): string[] {
     return name
       .replaceAll(`${SEPARATOR}${BASIC}`, '')
       .replace(new RegExp(`${SEPARATOR}$`), '')
+      .split(SEPARATOR)
   }
 
   /**
    * Packs a property into objects by an array of titles.<br>
    * Упаковывает свойство в объекты по массиву названий.
-   * @param list array of titles /<br>массив названий
    * @param item property values /<br>значения свойств
+   * @param list array of titles /<br>массив названий
    */
-  private static wrap (list: string[], item: PropertyItem) {
+  private static wrap (item: PropertyItem, list: string[]): PropertyList {
     let data = item;
 
     [...list]
@@ -160,10 +113,11 @@ export class PropertiesSeparator {
               ...data,
               [PropertyKey.wrap]: true
             }
-          }
+          },
+          [PropertyKey.type]: null
         }
       })
 
-    return data
+    return data.value as PropertyList
   }
 }
