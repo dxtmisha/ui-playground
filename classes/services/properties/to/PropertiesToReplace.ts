@@ -1,10 +1,11 @@
 import { PropertiesItems } from '../PropertiesItems.ts'
+
 import {
   PropertyKey,
   type PropertyReplace
 } from '../../../../types/property.ts'
 
-export type PropertyReplaceItem = string | Partial<PropertyReplace>
+export type PropertiesReplaceValue = string | Partial<PropertyReplace>
 
 const FILE_CACHE = '001-replace'
 
@@ -29,16 +30,18 @@ export class PropertiesToReplace {
     this.items.each(({ item }) => {
       if (
         item?.[PropertyKey.replace] &&
-        typeof item?.value === 'string'
+        typeof item.value === 'string'
       ) {
         item.value = this.getValue(
           this.getInfo(item[PropertyKey.replace]),
           item.value
         )
+
+        delete item[PropertyKey.replace]
       }
     })
 
-    this.items.writeStep(FILE_CACHE)
+    this.items.write(FILE_CACHE)
   }
 
   /**
@@ -46,7 +49,7 @@ export class PropertiesToReplace {
    * Получение информации о преобразовании.
    * @param info information for verification /<br>информация для проверки
    */
-  private getInfo (info: PropertyReplaceItem): PropertyReplace {
+  private getInfo (info: PropertiesReplaceValue): PropertyReplace {
     if (typeof info === 'object') {
       return {
         pattern: info?.pattern,

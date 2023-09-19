@@ -47,8 +47,6 @@ export class Properties {
         new PropertiesMain(path).get()
       )
     )
-
-    new PropertiesToReplace(properties).to()
     new PropertiesToPalette(properties).to()
     new PropertiesToLink(properties).to()
 

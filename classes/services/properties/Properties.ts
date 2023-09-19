@@ -8,6 +8,8 @@ import { PropertiesItems } from './PropertiesItems.ts'
 import { PropertiesSettings } from './PropertiesSettings.ts'
 import { PropertiesMain } from './PropertiesMain.ts'
 
+import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
+
 import {
   type PropertyList
 } from '../../../types/property.ts'
@@ -36,7 +38,7 @@ export class Properties {
     return PropertiesCache.get<PropertyList>([], this.getPathName(), () => {
       const properties = this.readFiles()
 
-      console.log('', properties.getItem('md3.button.outlined'))
+      new PropertiesToReplace(properties).to()
 
       return properties.get()
     })
