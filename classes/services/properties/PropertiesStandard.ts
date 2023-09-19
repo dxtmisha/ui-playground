@@ -146,8 +146,8 @@ export class PropertiesStandard {
    * @param item values for conversion /<br>значения для преобразования
    * @private
    */
-  private static addValue (item: PropertyItemPartial): PropertyItemPartial['value'] {
-    return PropertiesValues.reValue(item.value)
+  private static addValue (item: PropertyItemPartial): void {
+    item.value = PropertiesValues.reValue(item.value)
   }
 
   /**
