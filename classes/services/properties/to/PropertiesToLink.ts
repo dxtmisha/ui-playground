@@ -202,7 +202,6 @@ export class PropertiesToLink {
    */
   private add (parent: string[], items: PropertiesLinkItem[]): void {
     const property = this.items.getInfo(`{${parent.join('.')}}`)
-    console.log('itemParent', property)
 
     if (property) {
       items.forEach(({
@@ -215,7 +214,6 @@ export class PropertiesToLink {
           data,
           name
         ) as PropertyList
-        console.log('name', name)
       })
     }
   }
