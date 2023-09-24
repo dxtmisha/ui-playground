@@ -1,4 +1,5 @@
 import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
+import { toCamelCase } from '../../../functions/string.ts'
 import { getColumn } from '../../../functions/object.ts'
 
 import { PropertiesCache } from './PropertiesCache.ts'
@@ -143,8 +144,10 @@ export class PropertiesItems {
    * @param index index for splitting /<br>индекс для разделения
    */
   getKeys (index: string): string[] {
-    return index.replace(/^\{|}$/ig, '')
+    const names = index.replace(/^\{|}$/ig, '')
       .split('.')
+
+    return forEach(names, name => toCamelCase(name))
   }
 
   /**
@@ -335,7 +338,7 @@ export class PropertiesItems {
     const data: PropertiesItemsItem[] = []
 
     this.each(property => {
-      if (isSelected(property.item?.[PropertyKey.variable], variable)) {
+      if (isSelected(variable, property.item?.[PropertyKey.variable])) {
         data.push(property)
       }
     })

@@ -1,4 +1,4 @@
-import { PropertiesItems, PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
 
 import {
   type PropertyItem,

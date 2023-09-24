@@ -79,7 +79,7 @@ export type PropertyItem = {
   _style?: boolean
 
   __n?: string
-  __v?: string
+  __v?: PropertyType[]
   __c?: string
   __f?: string
   __file?: string
