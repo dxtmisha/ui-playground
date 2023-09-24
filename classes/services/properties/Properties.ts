@@ -9,6 +9,7 @@ import { PropertiesSettings } from './PropertiesSettings.ts'
 import { PropertiesMain } from './PropertiesMain.ts'
 
 import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
+import { PropertiesToPalette } from './to/PropertiesToPalette.ts'
 
 import {
   type PropertyList
@@ -39,6 +40,7 @@ export class Properties {
       const properties = this.readFiles()
 
       new PropertiesToReplace(properties).to()
+      new PropertiesToPalette(properties).to()
 
       return properties.get()
     })
