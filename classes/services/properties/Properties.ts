@@ -10,6 +10,7 @@ import { PropertiesMain } from './PropertiesMain.ts'
 
 import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
 import { PropertiesToPalette } from './to/PropertiesToPalette.ts'
+import { PropertiesToLink } from './to/PropertiesToLink.ts'
 
 import {
   type PropertyList
@@ -41,6 +42,7 @@ export class Properties {
 
       new PropertiesToReplace(properties).to()
       new PropertiesToPalette(properties).to()
+      new PropertiesToLink(properties).to()
 
       return properties.get()
     })
