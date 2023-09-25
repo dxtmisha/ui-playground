@@ -19,6 +19,7 @@ import { PropertiesToMulti } from './to/PropertiesToMulti.ts'
 import { PropertiesToStyle } from './to/PropertiesToStyle.ts'
 
 import { PropertiesToFull } from './to/PropertiesToFull.ts'
+import { PropertiesToVar } from './to/PropertiesToVar.ts'
 
 import {
   type PropertyList
@@ -55,6 +56,7 @@ export class Properties {
       new PropertiesToStyle(properties).to()
 
       new PropertiesToFull(properties).to()
+      new PropertiesToVar(properties).to()
 
       return properties.get()
     })

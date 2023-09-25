@@ -188,9 +188,9 @@ export class PropertiesItems {
     }) => {
       if (
         !variable || (
-          typeof item?.[PropertyKey.type] === 'string' && (
-            variable.indexOf(item[PropertyKey.type]) !== -1 ||
-            SUPPORT_NAME.indexOf(item[PropertyKey.type]) !== -1
+          typeof item?.[PropertyKey.variable] === 'string' && (
+            variable.indexOf(item[PropertyKey.variable]) !== -1 ||
+            SUPPORT_NAME.indexOf(item[PropertyKey.variable]) !== -1
           )
         )
       ) {
@@ -334,11 +334,11 @@ export class PropertiesItems {
    * Поиск записей с выделенными категориями.
    * @param variable names of categories /<br>названия категорий
    */
-  findVariable (variable: string): PropertiesItemsItem[] {
+  findVariable (variable: string | string[]): PropertiesItemsItem[] {
     const data: PropertiesItemsItem[] = []
 
     this.each(property => {
-      if (isSelected(variable, property.item?.[PropertyKey.variable])) {
+      if (isSelected(property.item?.[PropertyKey.variable], variable)) {
         data.push(property)
       }
     })
