@@ -105,8 +105,7 @@ export class PropertiesSeparator {
               ...data,
               [PropertyKey.wrap]: true
             }
-          },
-          [PropertyKey.type]: null
+          }
         }
       })
 

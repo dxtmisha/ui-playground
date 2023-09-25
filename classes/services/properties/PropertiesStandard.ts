@@ -101,7 +101,11 @@ export class PropertiesStandard {
     item: PropertyItemPartial
   ): void {
     if (!(PropertyKey.type in item)) {
-      item[PropertyKey.type] = PropertiesTypes.getTypeInName(name)
+      const type = PropertiesTypes.getTypeInName(name)
+
+      if (type) {
+        item[PropertyKey.type] = type
+      }
     }
   }
 

@@ -1,6 +1,5 @@
 import { isFilled, isSelected } from '../../../functions/data.ts'
 import { toKebabCase } from '../../../functions/string.ts'
-import { toArray } from '../../../functions/object.ts'
 
 import {
   type PropertyItem,
@@ -39,7 +38,7 @@ export class PropertiesTypes {
       isFilled(type) &&
       isFilled(name)
     ) {
-      return Boolean(toArray(type).find(item => isSelected(item, name)))
+      return Boolean(isSelected(type, name))
     }
 
     return false

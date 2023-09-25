@@ -14,6 +14,8 @@ import { PropertiesToLink } from './to/PropertiesToLink.ts'
 import { PropertiesToSub } from './to/PropertiesToSub.ts'
 import { PropertiesToVariable } from './to/PropertiesToVariable.ts'
 
+import { PropertiesToSimilar } from './to/PropertiesToSimilar.ts'
+
 import {
   type PropertyList
 } from '../../../types/property.ts'
@@ -42,11 +44,9 @@ export class Properties {
     return PropertiesCache.get<PropertyList>([], this.getPathName(), () => {
       const properties = this.readFiles()
 
-      new PropertiesToReplace(properties).to()
-      new PropertiesToPalette(properties).to()
-      new PropertiesToLink(properties).to()
-      new PropertiesToSub(properties).to()
-      new PropertiesToVariable(properties).to()
+      this.toBasic(properties)
+
+      new PropertiesToSimilar(properties).to()
 
       return properties.get()
     })
@@ -73,5 +73,19 @@ export class Properties {
         new PropertiesMain(path).get()
       )
     )
+  }
+
+  /**
+   * Basic transformations.<br>
+   * Базовые преобразования.
+   * @param properties a class that contains all data /<br>класс со всеми данными
+   * @private
+   */
+  private toBasic (properties: PropertiesItems) {
+    new PropertiesToReplace(properties).to()
+    new PropertiesToPalette(properties).to()
+    new PropertiesToLink(properties).to()
+    new PropertiesToSub(properties).to()
+    new PropertiesToVariable(properties).to()
   }
 }

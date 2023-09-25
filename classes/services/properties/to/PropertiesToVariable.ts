@@ -1,5 +1,4 @@
 import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
-import { toArray } from '../../../../functions/object.ts'
 
 import { PropertiesTypes } from '../PropertiesTypes.ts'
 import { PropertiesItems } from '../PropertiesItems.ts'
@@ -42,13 +41,11 @@ export class PropertiesToVariable {
       item,
       parent
     }) => {
-      item[PropertyKey.variable] = toArray(
-        this.getByVarParent(parent) ||
-        item?.[PropertyKey.type] ||
-        this.getByCategory(item) ||
-        this.getByMain(design, component, name) ||
+      item[PropertyKey.variable] = this.getByVarParent(parent) ??
+        item?.[PropertyKey.type] ??
+        this.getByCategory(item) ??
+        this.getByMain(design, component, name) ??
         this.findType(name, item)
-      )
     })
 
     this.items.write(FILE_CACHE)

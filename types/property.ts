@@ -66,7 +66,7 @@ export type PropertyItem = {
   type?: string
   description?: string
 
-  _type: PropertyType | PropertyType[] | null
+  _type?: PropertyType | null
   _category?: PropertyCategory | string
   _rename?: string
   _prop?: string | boolean
@@ -79,7 +79,7 @@ export type PropertyItem = {
   _style?: boolean
 
   __n?: string
-  __v?: PropertyType[]
+  __v?: PropertyType
   __c?: string
   __f?: string
   __file?: string
