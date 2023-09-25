@@ -15,6 +15,7 @@ import { PropertiesToSub } from './to/PropertiesToSub.ts'
 import { PropertiesToVariable } from './to/PropertiesToVariable.ts'
 
 import { PropertiesToSimilar } from './to/PropertiesToSimilar.ts'
+import { PropertiesToMulti } from './to/PropertiesToMulti.ts'
 
 import {
   type PropertyList
@@ -47,6 +48,7 @@ export class Properties {
       this.toBasic(properties)
 
       new PropertiesToSimilar(properties).to()
+      new PropertiesToMulti(properties).to()
 
       return properties.get()
     })
