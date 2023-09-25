@@ -1,5 +1,5 @@
 import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
-import { toCamelCase } from '../../../functions/string.ts'
+import { toCamelCase, toKebabCase } from '../../../functions/string.ts'
 import { getColumn } from '../../../functions/object.ts'
 
 import { PropertiesCache } from './PropertiesCache.ts'
@@ -194,7 +194,7 @@ export class PropertiesItems {
           )
         )
       ) {
-        return name
+        return toKebabCase(name)
       }
 
       return undefined

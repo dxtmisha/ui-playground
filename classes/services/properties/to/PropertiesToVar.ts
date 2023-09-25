@@ -30,14 +30,14 @@ export class PropertiesToVar {
   }
 
   to () {
-    this.items.findVariable(this.type).forEach(({
-      design,
-      component,
-      name,
-      value,
-      item,
-      parents
-    }) => {
+    this.items.findVariable(this.type).forEach(property => {
+      const {
+        design,
+        component,
+        value,
+        item
+      } = property
+
       if (
         component &&
         typeof value === 'string' &&
@@ -45,13 +45,7 @@ export class PropertiesToVar {
       ) {
         const fullValue = item?.[PropertyKey.css] || this.items.getLink(design, component, value)
 
-        item[PropertyKey.name] = this.getName(
-          design,
-          component,
-          name,
-          item,
-          parents
-        )
+        item[PropertyKey.name] = this.getName(property)
 
         item[PropertyKey.css] = this.toValue(
           this.toCalculator(fullValue), item?.[PropertyKey.default]
@@ -76,18 +70,18 @@ export class PropertiesToVar {
    * @param parents array of all ancestor properties along the tree from the top level /<br>
    * массив со всеми свойствами предков по дереву от верхнего уровня
    */
-  protected getName (
-    design: string,
-    component: string,
-    name: string,
-    item: PropertyItem,
-    parents: PropertiesItemsItem['parents']
-  ): string {
-    if (item?.[PropertyKey.fullName]) {
+  protected getName ({
+    design,
+    component,
+    name,
+    item,
+    parents
+  }: PropertiesItemsItem): string {
+    if (component && item?.[PropertyKey.fullName]) {
       return `--${this.items.getLink(design, component, name, '-')}`
     }
 
-    return `--${this.items.getParentsName(parents, [PropertyType.var]).join('-')}-${name}`
+    return `--${this.items.getParentsName(parents, [PropertyType.var]).join('-')}-${toKebabCase(name)}`
   }
 
   /**

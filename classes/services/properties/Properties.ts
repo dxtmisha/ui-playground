@@ -21,6 +21,9 @@ import { PropertiesToStyle } from './to/PropertiesToStyle.ts'
 import { PropertiesToFull } from './to/PropertiesToFull.ts'
 import { PropertiesToVar } from './to/PropertiesToVar.ts'
 import { PropertiesToProperty } from './to/PropertiesToProperty.ts'
+import { PropertiesToComponent } from './to/PropertiesToComponent.ts'
+import { PropertiesToClass } from './to/PropertiesToClass.ts'
+import { PropertiesToState } from './to/PropertiesToState.ts'
 
 import {
   type PropertyList
@@ -59,6 +62,9 @@ export class Properties {
       new PropertiesToFull(properties).to()
       new PropertiesToVar(properties).to()
       new PropertiesToProperty(properties).to()
+      new PropertiesToComponent(properties).to()
+      new PropertiesToClass(properties).to()
+      new PropertiesToState(properties).to()
 
       return properties.get()
     })
