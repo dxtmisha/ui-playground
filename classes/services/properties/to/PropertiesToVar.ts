@@ -18,16 +18,19 @@ const FILE_CACHE = '020-var'
  * Класс для работы с пользовательским свойством в CSS.
  */
 export class PropertiesToVar {
+  protected type = PropertyType.var
+  protected cacheName = FILE_CACHE
+
   /**
    * Constructor
    * @param items
    */
   // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
+  constructor (protected items: PropertiesItems) {
   }
 
   to () {
-    this.items.findVariable(PropertyType.var).forEach(({
+    this.items.findVariable(this.type).forEach(({
       design,
       component,
       name,
@@ -60,7 +63,7 @@ export class PropertiesToVar {
       }
     })
 
-    this.items.write(FILE_CACHE)
+    this.items.write(this.cacheName)
   }
 
   /**
@@ -73,7 +76,7 @@ export class PropertiesToVar {
    * @param parents array of all ancestor properties along the tree from the top level /<br>
    * массив со всеми свойствами предков по дереву от верхнего уровня
    */
-  private getName (
+  protected getName (
     design: string,
     component: string,
     name: string,
@@ -92,7 +95,7 @@ export class PropertiesToVar {
    * Проверяет, есть ли у значения математическое выражение.
    * @param value values to process /<br>значения для преобразования
    */
-  private toCalculator (value: string): string {
+  protected toCalculator (value: string): string {
     if (
       value.match(/([+*/]|(?<![\w-])-(?![\w-]))/ig) &&
       value.match(/calc/ig) === null
@@ -108,7 +111,7 @@ export class PropertiesToVar {
    * Возвращает преобразованный указатель.
    * @param {string} value values to process /<br>значения для преобразования
    */
-  private toLink (value: string): string {
+  protected toLink (value: string): string {
     return toKebabCase(
       value.replace(/\./ig, '-')
     )
@@ -120,7 +123,7 @@ export class PropertiesToVar {
    * @param value values to process /<br>значения для преобразования
    * @param defaultValue default values /<br>значения по умолчанию
    */
-  private toValue (value: string, defaultValue?: PropertyItem['_default']): string {
+  protected toValue (value: string, defaultValue?: PropertyItem['_default']): string {
     if (value.match('{')) {
       return value.replace(REG_VAR, (...text) => {
         if (defaultValue && typeof defaultValue === 'string') {
