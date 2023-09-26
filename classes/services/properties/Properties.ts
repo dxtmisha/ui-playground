@@ -27,6 +27,9 @@ import { PropertiesToState } from './to/PropertiesToState.ts'
 import { PropertiesToSubclass } from './to/PropertiesToSubclass.ts'
 import { PropertiesToRoot } from './to/PropertiesToRoot.ts'
 import { PropertiesToMedia } from './to/PropertiesToMedia.ts'
+import { PropertiesToAnimate } from './to/PropertiesToAnimate.ts'
+
+import { PropertiesToNone } from './to/PropertiesToNone.ts'
 
 import {
   type PropertyList
@@ -71,6 +74,9 @@ export class Properties {
       new PropertiesToSubclass(properties).to()
       new PropertiesToRoot(properties).to()
       new PropertiesToMedia(properties).to()
+      new PropertiesToAnimate(properties).to()
+
+      new PropertiesToNone(properties).to()
 
       return properties.get()
     })
