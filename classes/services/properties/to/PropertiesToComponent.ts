@@ -1,5 +1,3 @@
-import { toKebabCase } from '../../../../functions/string.ts'
-
 import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
 
 import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
@@ -25,7 +23,7 @@ export class PropertiesToComponent {
       item,
       parents
     }) => {
-      item[PropertyKey.name] = this.getName(name, item, parents)
+      item[PropertyKey.name] = this.getName(this.items.getReName(name, item), item, parents)
     })
 
     this.items.write(FILE_CACHE)
@@ -44,10 +42,12 @@ export class PropertiesToComponent {
     item: PropertyItem,
     parents: PropertiesItemsItem['parents']
   ): string {
+    const newName = this.items.getReName(name, item)
+
     if (item?.[PropertyKey.fullName]) {
-      return `${name}`
+      return `${newName}`
     }
 
-    return `${this.items.getParentsName(parents).join('-')}-${toKebabCase(name)}`
+    return `${this.items.getParentsName(parents).join('-')}-${newName}`
   }
 }

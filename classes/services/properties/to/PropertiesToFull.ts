@@ -25,10 +25,14 @@ export class PropertiesToFull {
       item
     }) => {
       if (component) {
-        item[PropertyKey.name] = this.items.getLink(design, component, this.items.getReName(name, item), '-')
+        item[PropertyKey.name] = this.items.getLinkToName(
+          design,
+          component,
+          this.items.getReName(name, item)
+        )
 
         if (typeof value === 'string') {
-          item[PropertyKey.css] = this.items.getLink(design, component, value)
+          item[PropertyKey.css] = this.items.getLinkToValue(design, component, value)
         }
       }
     })

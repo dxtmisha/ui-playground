@@ -1,5 +1,5 @@
 import { isFilled } from '../../../../functions/data.ts'
-import { toKebabCase } from '../../../../functions/string.ts'
+import { toCamelCase } from '../../../../functions/string.ts'
 
 import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
 
@@ -43,10 +43,9 @@ export class PropertiesToVar {
         typeof value === 'string' &&
         isFilled(value)
       ) {
-        const fullValue = item?.[PropertyKey.css] || this.items.getLink(design, component, value)
+        const fullValue = item?.[PropertyKey.css] ?? this.items.getLinkToValue(design, component, value)
 
         item[PropertyKey.name] = this.getName(property)
-
         item[PropertyKey.css] = this.toValue(
           this.toCalculator(fullValue), item?.[PropertyKey.default]
         )
@@ -81,7 +80,7 @@ export class PropertiesToVar {
       return `--${this.items.getLink(design, component, name, '-')}`
     }
 
-    return `--${this.items.getParentsName(parents, [PropertyType.var]).join('-')}-${toKebabCase(name)}`
+    return `--${this.items.getParentsName(parents, [PropertyType.var]).join('-')}-${toCamelCase(name)}`
   }
 
   /**
@@ -106,9 +105,7 @@ export class PropertiesToVar {
    * @param {string} value values to process /<br>значения для преобразования
    */
   protected toLink (value: string): string {
-    return toKebabCase(
-      value.replace(/\./ig, '-')
-    )
+    return this.items.getKeys(value).join('-')
   }
 
   /**

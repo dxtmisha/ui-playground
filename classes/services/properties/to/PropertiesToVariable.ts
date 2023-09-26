@@ -13,6 +13,7 @@ import {
 import css from '../../../../media/propertiesListCss.json'
 import cssSelector from '../../../../media/propertiesListCssSelector.json'
 import cssVirtual from '../../../../media/propertiesListCssVirtual.json'
+import { toKebabCase } from '../../../../functions/string.ts'
 
 const FILE_CACHE = '008-variable'
 
@@ -94,7 +95,7 @@ export class PropertiesToVariable {
    * @param name key name /<br>название ключа
    */
   private getByProperty (name: string): PropertyType | undefined {
-    return css.indexOf(name) !== -1 ? PropertyType.property : undefined
+    return css.indexOf(toKebabCase(name)) !== -1 ? PropertyType.property : undefined
   }
 
   /**
@@ -103,7 +104,7 @@ export class PropertiesToVariable {
    * @param name key name /<br>название ключа
    */
   private getBySelector (name: string): PropertyType | undefined {
-    return cssSelector.indexOf(name) !== -1 ? PropertyType.selector : undefined
+    return cssSelector.indexOf(toKebabCase(name)) !== -1 ? PropertyType.selector : undefined
   }
 
   /**
@@ -137,7 +138,7 @@ export class PropertiesToVariable {
    * @param name key name /<br>название ключа
    */
   private getByVirtual (name: string): PropertyType | undefined {
-    return cssVirtual.indexOf(name) !== -1 ? PropertyType.virtual : undefined
+    return cssVirtual.indexOf(toKebabCase(name)) !== -1 ? PropertyType.virtual : undefined
   }
 
   /**

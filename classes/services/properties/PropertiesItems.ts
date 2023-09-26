@@ -1,5 +1,5 @@
 import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
-import { toCamelCase, toKebabCase } from '../../../functions/string.ts'
+import { toCamelCase } from '../../../functions/string.ts'
 import { getColumn } from '../../../functions/object.ts'
 
 import { PropertiesCache } from './PropertiesCache.ts'
@@ -167,7 +167,7 @@ export class PropertiesItems {
    * @param item object of property /<br>объект свойства
    */
   getReName (name: string, item: PropertyItem): string {
-    return item?.[PropertyKey.rename] || name
+    return item?.[PropertyKey.name] ?? item?.[PropertyKey.rename] ?? name
   }
 
   /**
@@ -194,7 +194,7 @@ export class PropertiesItems {
           )
         )
       ) {
-        return toKebabCase(name)
+        return toCamelCase(name)
       }
 
       return undefined
@@ -243,6 +243,49 @@ export class PropertiesItems {
     }
 
     return this.getLinkByDesign(design, value)
+  }
+
+  /**
+   * Get values for links and convert them to accessible code.<br>
+   * Получаем значения для ссылок и преобразуем их в доступный код.
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   * @param value values of properties from the value field /<br>значения свойств из поля value
+   */
+  getLinkToName (
+    design: string,
+    component: string,
+    value: string
+  ) {
+    const link = this.getLink(
+      design,
+      component,
+      value,
+      '-'
+    )
+
+    return link.replace(/[a-zA-Z]+/ig, text => toCamelCase(text))
+  }
+
+  /**
+   * Get values for links and convert them to accessible code.<br>
+   * Получаем значения для ссылок и преобразуем их в значения для ссылки.
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   * @param value values of properties from the value field /<br>значения свойств из поля value
+   */
+  getLinkToValue (
+    design: string,
+    component: string,
+    value: string
+  ) {
+    const link = this.getLink(
+      design,
+      component,
+      value
+    )
+
+    return link.replace(/(?<=\{.*?)[a-zA-Z]+(?=.*?})/ig, text => toCamelCase(text))
   }
 
   /**

@@ -1,5 +1,3 @@
-import { toKebabCase } from '../../../../functions/string.ts'
-
 import { PropertiesItems } from '../PropertiesItems.ts'
 
 import {
@@ -41,10 +39,12 @@ export class PropertiesToState {
    * @param item current element /<br>текущий элемент
    */
   private getName (name: string, item: PropertyItem): string {
+    const newName = this.items.getReName(name, item)
+
     if (item?.[PropertyKey.fullName]) {
-      return `&.${name}`
+      return `&.${newName}`
     }
 
-    return `&--${toKebabCase(name)}`
+    return `&--${newName}`
   }
 }

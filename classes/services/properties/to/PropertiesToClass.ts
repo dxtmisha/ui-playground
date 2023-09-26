@@ -1,5 +1,3 @@
-import { toKebabCase } from '../../../../functions/string.ts'
-
 import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
 
 import {
@@ -46,10 +44,12 @@ export class PropertiesToClass {
     item: PropertyItem,
     parents: PropertiesItemsItem['parents']
   ): string {
+    const newName = this.items.getReName(name, item)
+
     if (item?.[PropertyKey.fullName]) {
-      return `& .${name}`
+      return `& .${newName}`
     }
 
-    return `& .${parents?.[0]?.name}-${toKebabCase(name)}`
+    return `& .${parents?.[0]?.name}-${newName}`
   }
 }
