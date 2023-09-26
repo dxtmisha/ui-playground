@@ -34,6 +34,7 @@ import { PropertiesToNone } from './to/PropertiesToNone.ts'
 import {
   type PropertyList
 } from '../../../types/property.ts'
+import { PropertiesScss } from './PropertiesScss.ts'
 
 const FILE_CACHE = 'properties'
 
@@ -43,20 +44,38 @@ const FILE_CACHE = 'properties'
  */
 export class Properties {
   private readonly designs: string[]
+  private readonly items: PropertiesItems
 
   /**
    * Constructor
    */
   constructor () {
     this.designs = ['d', ...PropertiesTool.getDesigns()]
+    this.items = new PropertiesItems(this.read())
+  }
+
+  /**
+   * Getting structured data for use in an SCSS file.<br>
+   * Получение структурированных данных для работы в SCSS файле.
+   */
+  getScss (): string {
+    return PropertiesCache.get([], this.getPathName(), () => {
+      const properties = new PropertiesScss(this.items).get()
+
+      console.info('[Scss]', 'init')
+
+      return properties
+    }, 'scss')
   }
 
   /**
    * Processing of basic data.<br>
    * Обработка базовых данных.
    */
-  read (): PropertyList {
+  protected read (): PropertyList {
     return PropertiesCache.get<PropertyList>([], this.getPathName(), () => {
+      console.info('[Properties]', 'start')
+
       const properties = this.readFiles()
 
       this.toBasic(properties)
@@ -77,6 +96,8 @@ export class Properties {
       new PropertiesToAnimate(properties).to()
 
       new PropertiesToNone(properties).to()
+
+      console.info('[Properties]', 'init')
 
       return properties.get()
     })

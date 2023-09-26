@@ -13,7 +13,7 @@ program
   .command('component <name>')
   .description('Adding or updating a component in accordance with design tokens\r\nДобавление или обновление компонента в соответствии с дизайн-токенами')
   .action((name, options) => {
-    new Properties().read()
+    new Properties().getScss()
     // console.log()
     // const a = new Properties().get()
   })

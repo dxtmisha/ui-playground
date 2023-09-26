@@ -6,6 +6,7 @@ export enum PropertyKey {
   default = '_default',
   replace = '_replace',
   important = '_important',
+  varKey = '_var',
   modification = '_modification',
   fullName = '_fullName',
   fullValue = '_fullValue',
@@ -73,6 +74,7 @@ export type PropertyItem = {
   _default?: string | number
   _replace?: string | PropertyReplace
   _important?: boolean
+  _var?: boolean
   _modification?: boolean
   _fullName?: boolean
   _fullValue?: boolean
