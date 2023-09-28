@@ -1,0 +1,113 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "sass:selector";
+@use "sass:string";
+
+/// Finding a value in a tree-like array
+///
+/// Поиск значения в древовидном массиве
+/// @param {Map} $map input array / массив входных данных
+/// @param {List} $index list of keys to traverse / список ключей для обхода
+/// @param {*} $default default values if not found / значения по умолчанию, если не было найдено
+/// @return {*}
+@function getMapItem(
+  $map,
+  $index,
+  $default: null
+) {
+  @if (meta.type-of($index) == list) {
+    $data: $map;
+
+    @each $key in $index {
+      $data: getMapItem($data, $key, $default);
+    }
+
+    @return $data
+  } @else if (
+          meta.type-of($map) == map and
+          map.has-key($map, $index)
+  ) {
+    @return map.get($map, $index);
+  } @else {
+    @return $default;
+  }
+}
+
+/// Returns the value by its index
+///
+/// Возвращает значение по его индексу
+/// @param {Map} $map input array / массив входных данных
+/// @param {List} $index list of keys to traverse / список ключей для обхода
+/// @param {*} $default default values if not found / значения по умолчанию, если не было найдено
+@function getMapByIndex(
+  $map,
+  $index,
+  $default: null
+) {
+  @if (map.has-key($map, $index)) {
+    @return map.get($map, $index);
+  } @else {
+    @return $default;
+  }
+}
+
+/// Changes values in an array
+///
+/// Меняет значения в массиве
+/// @param {Map} $map input array / массив входных данных
+/// @param {String} $index
+/// @param {*} $value values to be saved / значения для сохранения
+/// @return {*}
+@function setMapItem($map, $index, $value) {
+  @return map.merge($map, (#{$index}: $value));
+}
+
+/// Returns the name of the first selector
+///
+/// Возвращает название первого селектора
+/// @param {List} $selector
+/// @return {String}
+@function getFirstSelector($selector: &) {
+  $value: strToList(#{$selector}, ' ');
+  $value: strToList(#{$value}, ':');
+
+  @return list.nth(selector.simple-selectors(list.nth($value, 1)), 1);
+}
+
+/// Split a string by a string
+///
+/// Разбивает строку с помощью разделителя
+/// @param {String} $value the input string / входная строка
+/// @param {String} $separator the boundary string / разделитель
+/// @return {String}
+@function strToList($value, $separator: '.') {
+  $index: string.index($value, $separator);
+
+  @if ($index != null) {
+    @return list.join((string.slice($value, 1, $index - 1)), strToList(string.slice($value, $index + 1), $separator))
+  } @else {
+    @return $value
+  }
+}
+
+/// Replace all occurrences of the search string with the replacement string
+///
+/// Заменяет все вхождения строки поиска на строку замены
+/// @param {String} $value the string or array being searched and replaced on / строка в котором
+/// производится поиск и замена
+/// @param {String} $pattern the value being searched / искомое значение
+/// @param {String} $replacement the replacement value that replaces found search values / значение замены
+/// @return {String}
+@function strReplace($value, $pattern, $replacement) {
+  $index: string.index($value, $pattern);
+
+  @if ($index != null) {
+    $leftText: string.slice($value, 1, $index - 1);
+    $rightText: strReplace(string.slice($value, $index + string.length($pattern)), $pattern, $replacement);
+
+    @return #{$leftText}#{$replacement}#{$rightText}
+  } @else {
+    @return $value
+  }
+}

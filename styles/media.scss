@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "sass:meta";
+
+$designsDesign: 'design' !default;
+$designsMedia: (
+        'xs': 300px,
+        'sm': 640px,
+        'md': 768px,
+        'lg': 1024px,
+        'xl': 1280px,
+        '2xl': 1536px
+) !default;
+
+/// Returns values for media files
+///
+/// Возвращает значения для медиафайлов
+/// @param {String} $width size name / название размера
+/// @return {String}
+@function media($width) {
+  @return map.get($designsMedia, #{$designsDesign}#{'-'}#{$width});
+}
+
+@mixin mediaMinWidth($width) {
+  @media screen and (min-width: media($width)) {
+    @content;
+  }
+}
+
+@mixin mediaMaxWidth($width) {
+  @media screen and (max-width: media($width) - 1) {
+    @content;
+  }
+}
+
+@mixin mediaMinMaxWidth($min, $max) {
+  @media screen and (min-width: media($min)) and (max-width: media($max) - 1) {
+    @content;
+  }
+}

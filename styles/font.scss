@@ -1,0 +1,49 @@
+@import "dir";
+
+@mixin fontSize($value) {
+  --sys-font-size: #{$value};
+  font-size: var(--sys-font-size);
+}
+
+@mixin lineHeight($value) {
+  --sys-line-height: #{$value};
+  line-height: var(--sys-line-height);
+}
+
+@mixin textAlign($value) {
+  @if ($value == 'left') {
+    text-align: dirLeft();
+  } @else if ($value == 'right') {
+    text-align: dirRight();
+  } @else {
+    text-align: #{$value};
+  }
+}
+
+@mixin textOverflow($value) {
+  @if ($value == 'truncate') {
+    @include truncate;
+  } @else {
+    text-overflow: #{$value};
+  }
+}
+
+@mixin clamp($clamp) {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: pre-wrap;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin textSelectNone {
+  touch-callout: none;
+  user-select: none;
+}

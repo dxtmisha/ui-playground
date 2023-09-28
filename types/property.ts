@@ -83,7 +83,7 @@ export type PropertyItem = {
   __n?: string
   __v?: PropertyType
   __c?: string
-  __f?: string
+  __f?: string | string[]
   __file?: string
   __wrap?: boolean
 }
@@ -97,6 +97,7 @@ export type PropertyItemInput = Record<string, any> & (PropertyItemPartial | {
 
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItemInput>
+export type PropertyStyles = Record<string, string[]>
 
 export const SEPARATOR = '/'
 

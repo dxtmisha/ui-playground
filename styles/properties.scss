@@ -1,0 +1,194 @@
+@use "sass:map";
+@use "sass:string";
+
+$designsDesigns: ('design') !default;
+$designsDesign: 'design' !default;
+$designsComponent: 'component' !default;
+$designsValues: () !default;
+$designsClassName: 'class' !default;
+$designsClassIndex: 'class' !default;
+$designsInit: false !default;
+
+@import "./rules";
+
+@import "./color";
+@import "./dimension";
+@import "./dir";
+@import "./flex";
+@import "./font";
+@import "./margin";
+@import "./media";
+@import "./padding";
+@import "./position";
+@import "./selector";
+@import "./transform";
+
+@import "./services/propertiesItem";
+@import "./services/propertiesTool";
+
+/// Generating styles for the component
+///
+/// Генерация стилей для компонента
+/// @param {String} $component
+@mixin initDesign(
+  $component: 'design.component',
+  $root: false
+) {
+  $designsValues: getProperties($component) !global;
+  $designsInit: false !global;
+
+  @if ($designsValues != null) {
+    $designsDesign: __getDesign() !global;
+    $designsComponent: __getComponent() !global;
+
+    $name: map.get($designsValues, 'name');
+    $designsClassIndex: $name !global;
+
+    @if ($root) {
+      @content;
+    } @else {
+      #{'.'}#{$name} {
+        $designsClassName: & !global;
+
+        @content;
+
+        @if ($designsInit == false) {
+          @include initPropertiesComponent;
+        }
+      }
+    }
+  }
+}
+
+@mixin initDesignBody($component: 'design.component') {
+  body {
+    @include initDesign($component, true) {
+      @include initByLink($component);
+      @content;
+    }
+  }
+}
+
+@mixin initNone() {
+  $designsInit: true !global;
+}
+
+/// Generating all properties
+///
+/// Генерация всех свойств
+@mixin initPropertiesComponent {
+  $value: map.get($designsValues, 'value');
+  $designsInit: true !global;
+  @include initProperties($value);
+}
+
+/// Generating all properties by reference
+///
+/// Генерация всех свойств по ссылке
+/// @param {String} $link
+@mixin initByLink($link) {
+  $property: getProperties(__toFullName($link));
+
+  @if ($property != null) {
+    $value: map.get($property, 'value');
+    $type: map.get($property, 'type');
+
+    @if ($type =='var') {
+      @include initVar($property);
+    } @else if ($type =='property') {
+      @include initProperty($property);
+    } @else {
+      @include initProperties($value);
+    }
+  } @else {
+    @warn #{'[initByLink] not link: '}#{$link};
+  }
+}
+
+/// Mixin for generating custom properties
+///
+/// Миксин для генерации пользовательских свойств
+/// @param {String} $name property names / названия свойств
+/// @param {String} $value property values / значения свойства
+/// @param {Bool} $important high priority / высокий приоритет
+@mixin initByCustom(
+  $name,
+  $value,
+  $important: false
+) {
+  @include __toProperty(#{'??'}#{$name}, $value, $important);
+}
+
+/// Mixin for generating custom properties with 'var' value type
+///
+/// Миксин для генерации пользовательских свойств с типом значений 'var'
+/// @param {String} $name property names / названия свойств
+/// @param {String} $value property values / значения свойства
+/// @param {String} $default default values / значения по умолчанию
+/// @param {Boolean} $important high priority / высокий приоритет
+@mixin initByCustomVar(
+  $name,
+  $value,
+  $default: null,
+  $important: false
+) {
+  @include __toPropertyVar(#{'??'}#{$name}, $value, $default, $important);
+}
+
+/// Mixin for generating custom properties at the design level
+///
+/// Миксин для генерации пользовательских свойств на уровне дизайна
+/// @param {String} $name property names / названия свойств
+/// @param {String} $value property values / значения свойства
+/// @param {Bool} $important high priority / высокий приоритет
+@mixin initByCustomDesign(
+  $name,
+  $value,
+  $important: false
+) {
+  @include __toProperty(#{'?'}#{$name}, $value, $important);
+}
+
+/// Mixin for generating a sub-class
+///
+/// Миксин для генерации класса статуса
+/// @param {String} $name status names / названия статуса
+@mixin state($name) {
+  &#{$designsClassName}--#{$name} {
+    @content;
+  }
+}
+
+/// Mixin for generating status class
+///
+/// Миксин для генерации саб класса
+/// @param {String} $name
+@mixin subclass($name) {
+  #{$designsClassName}__#{$name} {
+    @content;
+  }
+}
+
+/// Returns the name of the design
+///
+/// Возвращает название дизайна
+/// @return {String}
+@function __getDesign() {
+  $component: map.get($designsValues, 'name');
+
+  @each $design in $designsDesigns {
+    @if (string.index($component, #{$design}#{'-'})) {
+      @return $design;
+    }
+  }
+
+  @return null;
+}
+
+/// Returns the component name
+///
+/// Возвращает название компонента
+/// @return {String}
+@function __getComponent() {
+  @return map.get($designsValues, 'index');
+}

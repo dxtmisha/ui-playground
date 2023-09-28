@@ -31,10 +31,11 @@ import { PropertiesToAnimate } from './to/PropertiesToAnimate.ts'
 
 import { PropertiesToNone } from './to/PropertiesToNone.ts'
 
+import { PropertiesScss } from './PropertiesScss.ts'
+
 import {
   type PropertyList
 } from '../../../types/property.ts'
-import { PropertiesScss } from './PropertiesScss.ts'
 
 const FILE_CACHE = 'properties'
 
@@ -52,6 +53,10 @@ export class Properties {
   constructor () {
     this.designs = ['d', ...PropertiesTool.getDesigns()]
     this.items = new PropertiesItems(this.read())
+  }
+
+  get () {
+    return this.items
   }
 
   /**

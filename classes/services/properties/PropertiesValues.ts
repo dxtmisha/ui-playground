@@ -15,6 +15,19 @@ export class PropertiesValues {
   }
 
   /**
+   * Checks if the value is a color value.<br>
+   * Проверяет, является ли значение цветом.
+   * @param value property value /<br>значение свойства
+   */
+  static isColor (value: PropertyItemPartial['__c']): boolean {
+    return Boolean(
+      typeof value === 'string' && (
+        value.match(/^(#|rgb|rgba)/i)
+      )
+    )
+  }
+
+  /**
    * Removes unnecessary values from the values.<br>
    * Убирает лишние значения из значений.
    * @param value property value /<br>значение свойства

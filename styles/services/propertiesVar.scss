@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "sass:meta";
+
+@import "../color";
+
+/// Mixin for adding variables
+///
+/// Миксин для добавления переменных
+/// @param {Map} $property
+@mixin initVar($property) {
+  $name: map.get($property, 'name');
+  $value: map.get($property, 'value');
+
+  @if (meta.type-of($value) == map) {
+    @include initVars($value);
+  } @else if (meta.type-of($value) != list) {
+    #{$name}: __getVarValue($value);
+  }
+}
+
+/// A method for generating all with variables
+///
+/// Метод для генерации всех с переменными
+/// @param {Map} $properties
+@mixin initVars($properties) {
+  @if ($properties != null) {
+    @each $index, $property in $properties {
+      @include initVar($property);
+    }
+  }
+}
+
+/// Returns the value of a property
+///
+/// Возвращает значение свойства
+/// @param {String} $value
+@function __getVarValue($value) {
+  @if (meta.type-of($value) == color) {
+    @return #{toColorRbg($value)};
+  } @else if (
+          meta.type-of($value) != map
+  ) {
+    @return #{$value};
+  } @else {
+    @return unset;
+  }
+}

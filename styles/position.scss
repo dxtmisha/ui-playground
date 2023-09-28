@@ -1,0 +1,68 @@
+@import "dir";
+
+@mixin inset($value: 0) {
+  inset: $value;
+
+  @supports not(inset: $value) {
+    top: $value;
+    right: $value;
+    bottom: $value;
+    left: $value;
+  }
+}
+
+@mixin horizon($value: 0) {
+  left: $value;
+  right: $value;
+}
+
+@mixin vertically($value: 0) {
+  top: $value;
+  bottom: $value;
+}
+
+@mixin top($value: 0) {
+  top: $value;
+  @include horizon;
+}
+
+@mixin bottom($value: 0) {
+  bottom: $value;
+  @include horizon;
+}
+
+@mixin left($value: 0px) {
+  inset-inline-start: #{$value};
+
+  @supports not (inset-inline-start: #{$value}) {
+    @include __positionDir;
+    --sys-position-left: #{$value};
+  }
+}
+
+@mixin right($value: 0px) {
+  inset-inline-end: #{$value};
+
+  @supports not (inset-inline-end: #{$value}) {
+    @include __positionDir;
+    --sys-position-right: #{$value};
+  }
+}
+
+@mixin __positionDir() {
+  left: var(--d-dir-position-left);
+  right: var(--d-dir-position-right);
+}
+
+@mixin absolute($value: 0) {
+  position: absolute;
+  @include inset($value);
+}
+
+@mixin absoluteAfter($value: 0) {
+  position: relative;
+
+  &::after {
+    @include absolute($value);
+  }
+}

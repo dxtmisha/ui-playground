@@ -1,0 +1,57 @@
+@use "sass:map";
+
+/// Mixin for generating an element state
+///
+/// Миксин для генерации состояния элемента
+/// @param {Map} $property
+@mixin initState($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+
+    #{$name} {
+      @content;
+    }
+  }
+}
+
+/// Mixin for generating an element subclass
+///
+/// Миксин для генерации саб-класс элемента
+/// @param {Map} $property
+@mixin initSubclass($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+
+    #{$name} {
+      @content;
+    }
+  }
+}
+
+/// Mixin for generating an element scss
+///
+/// Миксин для генерации scss элемента
+/// @param {Map} $property
+@mixin initScss($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+
+    #{$name} {
+      @content;
+    }
+  }
+}
+
+/// Mixin for generating an element root
+///
+/// Миксин для генерации root элемента
+/// @param {Map} $property
+@mixin initAtRoot($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+
+    @at-root #{$name} {
+      @content;
+    }
+  }
+}

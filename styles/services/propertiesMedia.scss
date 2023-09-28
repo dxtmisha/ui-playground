@@ -1,0 +1,15 @@
+@use "sass:map";
+
+/// Mixin for generating a media
+///
+/// Миксин для генерации media
+/// @param {Map} $property
+@mixin initMedia($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+
+    @media screen and #{$name} {
+      @content;
+    }
+  }
+}

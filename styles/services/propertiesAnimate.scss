@@ -1,0 +1,28 @@
+@use "sass:map";
+
+$designsAnimate: false !default;
+
+/// Mixin for generating an element state
+///
+/// Миксин для генерации анимация
+/// @param {Map} $property
+@mixin initAnimate($property) {
+  @if ($property != null) {
+    $name: map.get($property, 'name');
+    $value: map.get($property, 'value');
+
+    $designsAnimate: true !global;
+
+    @keyframes #{$name} {
+      @each $frame, $item in $value {
+        @if (map.has-key($item, 'value')) {
+          #{$frame} {
+            @content(map.get($item, 'value'));
+          }
+        }
+      }
+    }
+
+    $designsAnimate: false !global;
+  }
+}

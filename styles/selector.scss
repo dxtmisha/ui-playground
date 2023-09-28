@@ -1,0 +1,94 @@
+@use "sass:list";
+@use "sass:selector";
+@use "sass:string";
+
+@import "rules";
+
+/// Accepts a selector
+///
+/// Принимает селектор
+/// @param {String} $name
+/// @param {List} $parent
+@mixin selector($name, $parent: &) {
+  @if ($name == 'focus') {
+    &:focus, &:focus-within, &#{$parent}--focus {
+      @content;
+    }
+  } @else {
+    &#{':'}#{$name} {
+      @content;
+    }
+  }
+}
+
+/// Accepts active elements
+///
+/// Принимает активные элементы
+/// @param {List} $parent
+@mixin enabled($parent: &) {
+  $first: getFirstSelector(&);
+  $separator: ' ';
+
+  @if (__isEnabled()) {
+    @content;
+  } @else if ($first == #{$parent}) {
+    @at-root
+    #{selector.replace(&, $parent, #{$parent}#{':not(:disabled,#{$parent}--disabled,#{$parent}--readonly,#{$parent}--progress)'})} {
+      @content;
+    }
+  } @else {
+    @if (string.index($first, #{$parent}#{'--'})) {
+      $separator: '';
+    }
+
+    @at-root
+    #{$parent}#{':not(:disabled,#{$parent}--disabled,#{$parent}--readonly,#{$parent}--progress)'}#{$separator}#{&} {
+      @content;
+    }
+  }
+}
+
+/// Accepts a selector for active elements
+///
+/// Принимает селектор для активных элементов
+/// @param {String} $name
+/// @param {List} $parent
+@mixin enabledSelector($name, $parent: &) {
+  @include enabled($parent) {
+    @include selector($name, $parent) {
+      @content;
+    }
+  }
+}
+
+@mixin hover($parent: &) {
+  @include enabledSelector('hover', $parent);
+}
+
+@mixin active($parent: &) {
+  @include enabledSelector('active', $parent);
+}
+
+@mixin focus($parent: &) {
+  @include enabledSelector('focus', $parent);
+}
+
+@mixin disabled($parent: &) {
+  &:disabled, &#{$parent}--disabled, &--disabled {
+    @content;
+  }
+}
+
+@mixin readonly($parent: &) {
+  &#{$parent}--readonly, &--readonly {
+    @content;
+  }
+}
+
+/// Checks whether the current element is a child element
+///
+/// Проверяет, является ли текущий элемент дочерним элементом
+/// @return {Boolean}
+@function __isEnabled() {
+  @return string.index(#{&}, 'enabled') or string.index(#{&}, '--disabled');
+}

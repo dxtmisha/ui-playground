@@ -1,0 +1,12 @@
+@import "../color";
+@import "../dir";
+@import "../transform";
+
+@mixin propertiesGlobal {
+  @include dirInit;
+
+  *, *:after, *:before {
+    @include paletteGlobal;
+    @include transformGlobal;
+  }
+}

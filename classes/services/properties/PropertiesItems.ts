@@ -40,6 +40,8 @@ const SUPPORT_NAME = [
  * Класс для работы со списком всех свойств.
  */
 export class PropertiesItems {
+  private focusDesign?: string
+
   /**
    * Constructor
    * @param properties array with all property records /<br>массив со всеми записями свойств
@@ -390,12 +392,38 @@ export class PropertiesItems {
   }
 
   /**
+   * Changes the focused design.<br>
+   * Изменяет фокусированный дизайн.
+   * @param design
+   */
+  setFocusDesign (design: string): this {
+    this.focusDesign = design
+    return this
+  }
+
+  /**
    * Saves intermediate data.<br>
    * Сохраняет промежуточные данные.
    * @param name file name /<br>название файла
    */
   write (name: string): void {
     PropertiesCache.write(`${this.getDesigns().join('-')}-${name}`, this.properties)
+  }
+
+  /**
+   * Checks if the record complies with the design requirements.<br>
+   * Проверяет, соответствует ли запись условиям дизайна.
+   * @param name names of items /<br>названия объектов
+   * @param design design name /<br>название дизайна
+   * @private
+   */
+  private isFocusDesign (name: string, design?: string): boolean {
+    return Boolean(
+      !design ||
+      !this.focusDesign ||
+      name === 'd' ||
+      name === this.focusDesign
+    )
   }
 
   /**
@@ -429,39 +457,41 @@ export class PropertiesItems {
     const data: T[] = []
 
     forEach(properties, (item, name) => {
-      const newDesign = design ?? name
-      const newComponent = design && (component ?? name)
-      const newParents = [...parents, {
-        name,
-        item
-      }]
+      if (this.isFocusDesign(name, design)) {
+        const newDesign = design ?? name
+        const newComponent = design && (component ?? name)
+        const newParents = [...parents, {
+          name,
+          item
+        }]
 
-      const value = callback({
-        design: newDesign,
-        component: newComponent,
-        name,
-        index: this.getIndex(newParents),
-        value: item.value,
-        item,
-        parent,
-        parents
-      })
+        const value = callback({
+          design: newDesign,
+          component: newComponent,
+          name,
+          index: this.getIndex(newParents),
+          value: item.value,
+          item,
+          parent,
+          parents
+        })
 
-      if (value !== undefined) {
-        data.push(value)
-      }
+        if (value !== undefined) {
+          data.push(value)
+        }
 
-      if (isObjectNotArray(item.value)) {
-        data.push(
-          ...this.read(
-            callback,
-            newDesign,
-            newComponent,
-            item.value,
-            item,
-            newParents
+        if (isObjectNotArray(item.value)) {
+          data.push(
+            ...this.read(
+              callback,
+              newDesign,
+              newComponent,
+              item.value,
+              item,
+              newParents
+            )
           )
-        )
+        }
       }
     })
 

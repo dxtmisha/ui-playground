@@ -1,0 +1,148 @@
+@mixin dirInit {
+  html {
+    --d-dir: 1;
+    --d-dir-left: 1;
+    --d-dir-right: 0;
+    --d-dir-auto: auto;
+    --d-dir-start: flex-start;
+    --d-dir-end: flex-end;
+    --d-dir-text-left: left;
+    --d-dir-text-right: right;
+    --d-dir-order: 1;
+
+    *, *:after, *:before {
+      --d-dir-position-left: var(--sys-position-left, initial);
+      --d-dir-position-right: var(--sys-position-right, initial);
+      --d-dir-margin-left: var(--sys-margin-left, 0);
+      --d-dir-margin-right: var(--sys-margin-right, 0);
+      --d-dir-padding-left: var(--sys-padding-left, 0);
+      --d-dir-padding-right: var(--sys-padding-right, 0);
+    }
+
+    &[dir="rtl"],
+    .dir-rtl {
+      direction: rtl;
+
+      --d-dir: -1;
+      --d-dir-left: 0;
+      --d-dir-right: 1;
+      --d-dir-auto: unset;
+      --d-dir-auto-rtl: auto;
+      --d-dir-start: flex-end;
+      --d-dir-end: flex-start;
+      --d-dir-text-left: right;
+      --d-dir-text-right: left;
+      --d-dir-order: 999999;
+
+      *, *:after, *:before {
+        --d-dir-position-left: var(--sys-position-right, initial);
+        --d-dir-position-right: var(--sys-position-left, initial);
+        --d-dir-margin-left: var(--sys-margin-right, 0);
+        --d-dir-margin-right: var(--sys-margin-left, 0);
+        --d-dir-padding-left: var(--sys-padding-right, 0);
+        --d-dir-padding-right: var(--sys-padding-left, 0);
+      }
+    }
+  }
+}
+
+/// Check if the direction is reverse
+///
+/// Проверить, является ли направление обратным
+/// @return {String}
+@function isDir() {
+  @return var(--d-dir, 1);
+}
+
+/// Is the position on the left
+///
+/// Является ли расположение слева
+/// @return {String}
+@function isDirLeft() {
+  @return var(--d-dir-left, 1);
+}
+
+/// Is the position on the right
+///
+/// Является ли расположение справа
+/// @return {String}
+@function isDirRight() {
+  @return var(--d-dir-right, 0);
+}
+
+/// Returns the values on the left
+///
+/// Возвращает значения слева
+/// @return {String}
+@function dirLeft() {
+  @return var(--d-dir-text-left, left);
+}
+
+/// Returns the values on the right
+///
+/// Возвращает значения справа
+/// @return {String}
+@function dirRight() {
+  @return var(--d-dir-text-right, right);
+}
+
+/// Returns the value 'auto' for the 'left' property
+///
+/// Возвращает значение 'auto' для свойства 'left'
+/// @return {String}
+@function dirLeftAuto() {
+  @return var(--d-dir-auto, auto);
+}
+
+/// Returns the value 'auto' for the 'right' property
+///
+/// Возвращает значение 'auto' для свойства 'right'
+/// @return {String}
+@function dirRightAuto() {
+  @return var(--d-dir-auto-rtl, unset);
+}
+
+/// Returns the values on the left (flex)
+///
+/// Возвращает значения слева (flex)
+/// @return {String}
+@function dirFlexLeft() {
+  @return var(--d-dir-start, flex-start);
+}
+
+/// Returns the values on the right (flex)
+///
+/// Возвращает значения справа (flex)
+/// @return {String}
+@function dirFlexRight() {
+  @return var(--d-dir-end, flex-end);
+}
+
+/// Returns a string for transitioning from left to right position
+///
+/// Возвращает строку для перехода из левого положения в правое
+/// @param {String} $left
+/// @param {String} $right
+/// @return {String}
+@function dirToLeft($left, $right) {
+  @return calc((isDirLeft() * var($left, 0px)) + (isDirRight() * var($right, 0px)));
+}
+
+/// Returns a string for transitioning from right to left position
+///
+/// Возвращает строку для перехода из правого положения в левое
+/// @param {String} $left
+/// @param {String} $right
+/// @return {String}
+@function dirToRight($left, $right) {
+  @return calc((isDirLeft() * var($right, 0px)) + (isDirRight() * var($left, 0px)));
+}
+
+/// Returns a string calculated by sorting
+///
+/// Возвращает строку, вычисленную с помощью сортировки
+/// @param {String/Number} $value
+/// @return {String}
+@function dirOrder($value) {
+  @return calc(var(--d-dir-order) + (var(--d-dir) * #{$value}));
+}

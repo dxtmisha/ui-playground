@@ -1,0 +1,46 @@
+@import "dir";
+
+@mixin margin($value) {
+  margin: $value;
+}
+
+@mixin marginX($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin marginY($value) {
+  margin-bottom: $value;
+  margin-top: $value;
+}
+
+@mixin marginLeft($value) {
+  margin-inline-start: #{$value};
+
+  @supports not (margin-inline-start: #{$value}) {
+    @include __marginDir;
+    --sys-margin-left: #{$value};
+  }
+}
+
+@mixin marginRight($value) {
+  margin-inline-end: #{$value};
+
+  @supports not (margin-inline-end: #{$value}) {
+    @include __marginDir;
+    --sys-margin-right: #{$value};
+  }
+}
+
+@mixin __marginDir() {
+  margin-left: var(--d-dir-margin-left);
+  margin-right: var(--d-dir-margin-right);
+}
+
+@mixin marginTop($value) {
+  margin-top: $value;
+}
+
+@mixin marginBottom($value) {
+  margin-bottom: $value;
+}
