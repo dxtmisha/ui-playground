@@ -1,6 +1,7 @@
 import { toKebabCase } from '../../../functions/string.ts'
 import { replaceRecursive } from '../../../functions/object.ts'
 
+import { PropertiesTool } from './PropertiesTool.ts'
 import { PropertiesFile } from './PropertiesFile.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 
@@ -117,7 +118,7 @@ export class PropertiesPath {
    * @param name design name /<br>название дизайна
    */
   private getDir (name: string): string[][] {
-    const path = this.getDirByName(name)
+    const path = PropertiesTool.getDirByName(name)
     const root = PropertiesFile.getRoot()
     const dirs: string[][] = [
       [root, path]
@@ -131,14 +132,5 @@ export class PropertiesPath {
     }
 
     return dirs
-  }
-
-  /**
-   * Getting the directory name by its name.<br>
-   * Получение названия директории по его имени.
-   * @param name design name /<br>название дизайна
-   */
-  private getDirByName (name: string): string {
-    return name === 'd' ? 'constructors' : name
   }
 }

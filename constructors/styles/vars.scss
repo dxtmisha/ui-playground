@@ -1,0 +1,35 @@
+@import "../../styles/properties";
+
+:root {
+  --d-ref-transitionDuration-1: 45ms;
+  --d-ref-transitionDuration-2: 75ms;
+  --d-ref-transitionDuration-3: 100ms;
+  --d-ref-transitionDuration-4: 150ms;
+  --d-ref-transitionDuration-5: 200ms;
+  --d-ref-transitionDuration-6: 250ms;
+  --d-ref-transitionDuration-7: 280ms;
+  --d-ref-transitionDuration-8: 300ms;
+  --d-ref-transitionFunction-linear: linear;
+  --d-ref-transitionFunction-e0i80: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --d-ref-transitionFunction-e40i0: cubic-bezier(0.4, 0.0, 1, 1);
+  --d-ref-transitionFunction-e40i80: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --d-ref-transitionFunction-e40i40: cubic-bezier(0.4, 0.0, 0.6, 1);
+  --d-sys-transitionDuration-standard: var(--d-ref-transitionDuration-4);
+  --d-sys-transitionDuration-xs: var(--d-ref-transitionDuration-1);
+  --d-sys-transitionDuration-sm: var(--d-ref-transitionDuration-3);
+  --d-sys-transitionDuration-md-open: var(--d-ref-transitionDuration-6);
+  --d-sys-transitionDuration-md-close: var(--d-ref-transitionDuration-5);
+  --d-sys-transitionDuration-lg-open: var(--d-ref-transitionDuration-8);
+  --d-sys-transitionDuration-lg-close: var(--d-ref-transitionDuration-6);
+  --d-sys-transitionDuration-axis: var(--d-ref-transitionDuration-8);
+  --d-sys-transitionDuration-container-open: var(--d-ref-transitionDuration-8);
+  --d-sys-transitionDuration-container-close: var(--d-ref-transitionDuration-6);
+  --d-sys-transitionDuration-fade-enter: var(--d-ref-transitionDuration-4);
+  --d-sys-transitionDuration-fade-exit: var(--d-ref-transitionDuration-2);
+  --d-sys-transitionDuration-fade-through: var(--d-ref-transitionDuration-8);
+  --d-sys-transitionFunction-linear: linear;
+  --d-sys-transitionFunction-standard: var(--d-ref-transitionFunction-e40i80);
+  --d-sys-transitionFunction-emphasized: var(--d-ref-transitionFunction-e40i40);
+  --d-sys-transitionFunction-acceleration: var(--d-ref-transitionFunction-e40i0);
+  --d-sys-transitionFunction-deceleration: var(--d-ref-transitionFunction-e0i80);
+}

@@ -97,11 +97,12 @@ export type PropertyItemInput = Record<string, any> & (PropertyItemPartial | {
 
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItemInput>
-export type PropertyStyles = Record<string, string[]>
 
 export const SEPARATOR = '/'
 
 export const SYMBOL_SEPARATOR = process.env.TOKEN_SEPARATOR ?? SEPARATOR
 export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
 
+export const NAME_CONSTRUCTOR = 'd'
+export const DIR_CONSTRUCTOR = 'constructors'
 export const FILE_PROPERTY = 'properties.json'

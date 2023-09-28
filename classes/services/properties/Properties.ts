@@ -34,6 +34,7 @@ import { PropertiesToNone } from './to/PropertiesToNone.ts'
 import { PropertiesScss } from './PropertiesScss.ts'
 
 import {
+  NAME_CONSTRUCTOR,
   type PropertyList
 } from '../../../types/property.ts'
 
@@ -51,7 +52,7 @@ export class Properties {
    * Constructor
    */
   constructor () {
-    this.designs = ['d', ...PropertiesTool.getDesigns()]
+    this.designs = [NAME_CONSTRUCTOR, ...PropertiesTool.getDesigns()]
     this.items = new PropertiesItems(this.read())
   }
 

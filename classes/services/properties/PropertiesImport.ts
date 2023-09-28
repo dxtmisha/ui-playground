@@ -21,8 +21,8 @@ import {
 export class PropertiesImport {
   /**
    * Constructor
-   * @param properties array with all property records / массив со всеми записями свойств
-   * @param root path to the directory / путь к директории
+   * @param properties array with all property records /<br>массив со всеми записями свойств
+   * @param root path to the directory /<br>путь к директории
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (

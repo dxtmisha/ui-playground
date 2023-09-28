@@ -22,7 +22,7 @@ export class PropertiesValues {
   static isColor (value: PropertyItemPartial['__c']): boolean {
     return Boolean(
       typeof value === 'string' && (
-        value.match(/^(#|rgb|rgba)/i)
+        value.match(/^#/i)
       )
     )
   }

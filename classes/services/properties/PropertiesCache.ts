@@ -87,7 +87,7 @@ export class PropertiesCache {
    * Saves intermediate data.<br>
    * Сохраняет промежуточные данные.
    * @param name file name /<br>название файла
-   * @param value values for storage / значения для хранения
+   * @param value values for storage /<br>значения для хранения
    */
   static write<T extends PropertiesFileValue> (name: string, value: T): void {
     this.writeFile<T>(DIR_STEP, name, value)

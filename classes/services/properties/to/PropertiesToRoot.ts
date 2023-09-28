@@ -33,9 +33,9 @@ export class PropertiesToRoot {
   }
 
   /**
-   * @param design design name / название дизайна
-   * @param component component name / название компонента
-   * @param name base property name / базовое название свойства
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   * @param name base property name /<br>базовое название свойства
    */
   private getName (
     design: string,

@@ -1,4 +1,4 @@
-import { forEach, isObjectNotArray, isSelected } from '../../../functions/data.ts'
+import { forEach, isNull, isObjectNotArray, isSelected } from '../../../functions/data.ts'
 import { toCamelCase } from '../../../functions/string.ts'
 import { getColumn } from '../../../functions/object.ts'
 
@@ -419,9 +419,8 @@ export class PropertiesItems {
    */
   private isFocusDesign (name: string, design?: string): boolean {
     return Boolean(
-      !design ||
-      !this.focusDesign ||
-      name === 'd' ||
+      design ||
+      isNull(this.focusDesign) ||
       name === this.focusDesign
     )
   }
