@@ -8,7 +8,6 @@ import {
   PropertyKey,
   PropertyType
 } from '../../../../types/property.ts'
-import { PropertiesValues } from '../PropertiesValues.ts'
 
 const REG_VAR = /\{([^{}]+)}/ig
 
@@ -54,8 +53,6 @@ export class PropertiesToVar {
         if (item?.[PropertyKey.important]) {
           item[PropertyKey.css] += ' !important'
         }
-
-        item[PropertyKey.code] = this.toFull(property)
       }
     })
 
@@ -129,22 +126,5 @@ export class PropertiesToVar {
     }
 
     return value
-  }
-
-  /**
-   * Acquiring full ownership.<br>
-   * Получения полного свойства.
-   * @param item current element /<br>текущий элемент
-   */
-  protected toFull ({ item }: PropertiesItemsItem): string | string[] {
-    let value = item[PropertyKey.css]
-
-    if (!isFilled(value)) {
-      value = 'unset'
-    } else if (PropertiesValues.isColor(value)) {
-      value = `#{toColorRbg(${value})}`
-    }
-
-    return `${item[PropertyKey.name]}: ${value};`
   }
 }

@@ -343,6 +343,7 @@ export class PropertiesItems {
       if (isObjectNotArray(property.item.value)) {
         return this.read(
           callback,
+          true,
           property.design,
           property.component,
           property.item.value,
@@ -355,6 +356,36 @@ export class PropertiesItems {
     }
 
     return this.read(callback)
+  }
+
+  /**
+   * Applies a user function to elements on the current level.<br>
+   * Применяет пользовательскую функцию к элементам на текущем уровне.
+   * @param callback the callback function is executed for each element /<br>
+   * выполняется функция обратного вызова (callback) для каждого элемента
+   * @param property
+   */
+  eachMainOnly<T> (
+    callback: PropertiesItemsCallback<T>,
+    property?: PropertiesItemsItem
+  ): T[] {
+    if (property) {
+      if (isObjectNotArray(property.item.value)) {
+        return this.read(
+          callback,
+          false,
+          property.design,
+          property.component,
+          property.item.value,
+          property.item,
+          property.parents
+        )
+      }
+
+      return []
+    }
+
+    return this.read(callback, false)
   }
 
   /**
@@ -439,6 +470,7 @@ export class PropertiesItems {
    * Рекурсивно применяет пользовательскую функцию к каждому элементу свойства.
    * @param callback the callback function is executed for each element /<br>
    * выполняется функция обратного вызова (callback) для каждого элемента
+   * @param subItem scan child elements of the current element /<br>сканировать дочерние элементы текущего элемента
    * @param design design name /<br>название дизайна
    * @param component component name /<br>название компонента
    * @param properties object for traversal /<br>объект для обхода
@@ -447,6 +479,7 @@ export class PropertiesItems {
    */
   private read<T> (
     callback: PropertiesItemsCallback<T>,
+    subItem = true,
     design?: string,
     component?: string,
     properties = this.properties,
@@ -479,10 +512,14 @@ export class PropertiesItems {
           data.push(value)
         }
 
-        if (isObjectNotArray(item.value)) {
+        if (
+          subItem &&
+          isObjectNotArray(item.value)
+        ) {
           data.push(
             ...this.read(
               callback,
+              subItem,
               newDesign,
               newComponent,
               item.value,

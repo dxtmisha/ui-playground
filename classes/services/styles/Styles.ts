@@ -1,16 +1,14 @@
-import { strFill } from '../../../functions/string.ts'
-
-import { PropertiesTool } from '../properties/PropertiesTool.ts'
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { PropertiesItems } from '../properties/PropertiesItems.ts'
 
 import { Properties } from '../properties/Properties.ts'
-import { StylesRoot } from './StylesRoot.ts'
+import { StylesTool } from './StylesTool.ts'
 
-const SPACE = '  '
-const DIR_STYLE = 'styles'
+import { StylesRoot } from './StylesRoot.ts'
+import { StylesClasses } from './StylesClasses.ts'
 
 const FILE_VAR = 'vars'
+const FILE_CLASS = 'classes'
 
 /**
  * Base class for generating basic properties.<br>
@@ -27,30 +25,51 @@ export class Styles {
   }
 
   init () {
-    this.initRoot()
+    this.getByDesigns((
+      design,
+      items
+    ) => {
+      this.initRoot(design, items)
+      this.initClasses(design, items)
+    })
   }
 
   /**
    * Generating basic variables.<br>
    * Генерация базовых переменных.
+   * @param design design name /<br>название дизайна
+   * @param items current element /<br>текущий элемент
    */
-  protected initRoot () {
-    this.getByDesigns((
-      design,
-      items
-    ) => {
-      const list = new StylesRoot(items).init()
-      const space = this.addSpace(1)
-      const data = [
-        this.addImportProperties(),
-        '',
-        ':root {',
-        `${space}${list.join(`\r\n${space}`)}`,
-        '}'
-      ]
+  protected initRoot (
+    design: string,
+    items: PropertiesItems
+  ): this {
+    const data = StylesTool.join(new StylesRoot(items).init())
 
-      PropertiesFile.write(this.getDir(design), FILE_VAR, data.join('\r\n'), 'scss')
-    })
+    PropertiesFile.write(
+      StylesTool.getDir(design),
+      FILE_VAR,
+      data,
+      'scss'
+    )
+
+    return this
+  }
+
+  protected initClasses (
+    design: string,
+    items: PropertiesItems
+  ): this {
+    const data = StylesTool.join(new StylesClasses(items).init())
+
+    PropertiesFile.write(
+      StylesTool.getDir(design),
+      FILE_CLASS,
+      data,
+      'scss'
+    )
+
+    return this
   }
 
   /**
@@ -70,31 +89,5 @@ export class Styles {
           new PropertiesItems(properties).setFocusDesign(design)
         )
       })
-  }
-
-  /**
-   * Getting a directory to store a file.<br>
-   * Получение директории для хранения файла.
-   * @param design design name /<br>название дизайна
-   */
-  private getDir (design: string): string[] {
-    return [PropertiesTool.getDirByName(design), DIR_STYLE]
-  }
-
-  /**
-   * Getting an indent.<br>
-   * Получение отступа.
-   * @param level level /<br>уровень
-   */
-  private addSpace (level: number): string {
-    return strFill(SPACE, level)
-  }
-
-  /**
-   * Getting a reference to a base function.<br>
-   * Получение ссылки на базовую функцию.
-   */
-  private addImportProperties (): string {
-    return '@import "../../styles/all";'
   }
 }

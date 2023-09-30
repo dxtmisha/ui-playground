@@ -1,9 +1,7 @@
-import { toArray } from '../../../functions/object.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
 
-import {
-  PropertiesItems,
-  type PropertiesItemsItem
-} from '../properties/PropertiesItems.ts'
+import { StylesTool } from './StylesTool.ts'
+import { StylesVar } from './StylesVar.ts'
 
 import {
   PropertyCategory,
@@ -25,18 +23,22 @@ export class StylesRoot {
   }
 
   init (): string[] {
-    const data: string[] = []
+    const space = StylesTool.addSpace(1)
+    const data: string[] = [
+      StylesTool.addImportProperties(),
+      '',
+      ':root {'
+    ]
 
     this.getList().forEach(property => {
       this.items.each(({ item }) => {
-        if (
-          item?.[PropertyKey.variable] === PropertyType.var &&
-          item?.[PropertyKey.code]
-        ) {
-          data.push(...toArray(item[PropertyKey.code]))
+        if (item?.[PropertyKey.variable] === PropertyType.var) {
+          data.push(StylesVar.get(item, space))
         }
       }, property)
     })
+
+    data.push('}')
 
     return data
   }
