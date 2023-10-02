@@ -24,6 +24,10 @@ export class Styles {
     this.properties = new Properties()
   }
 
+  /**
+   * Generating all basic data.<br>
+   * Генерация всех базовых данных.
+   */
   init () {
     this.getByDesigns((
       design,
@@ -56,6 +60,12 @@ export class Styles {
     return this
   }
 
+  /**
+   * Generating all base classes.<br>
+   * Генерация всех базовых классов.
+   * @param design design name /<br>название дизайна
+   * @param items current element /<br>текущий элемент
+   */
   protected initClasses (
     design: string,
     items: PropertiesItems

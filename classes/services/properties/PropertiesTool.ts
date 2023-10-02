@@ -1,4 +1,9 @@
-import { DIR_CONSTRUCTOR, NAME_CONSTRUCTOR } from '../../../types/property.ts'
+import { toCamelCase } from '../../../functions/string.ts'
+
+import {
+  DIR_CONSTRUCTOR,
+  NAME_CONSTRUCTOR
+} from '../../../types/property.ts'
 
 export class PropertiesTool {
   /**
@@ -18,6 +23,16 @@ export class PropertiesTool {
     return process.env?.DESIGNS
       ?.toString()
       ?.split(',') ?? []
+  }
+
+  /**
+   * Getting the component name.<br>
+   * Получения названия компонента.
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   */
+  static getClassName (design: string, component?: string): string {
+    return `.${design}${component ? `-${toCamelCase(component)}` : ''}`
   }
 
   /**

@@ -48,7 +48,7 @@ export class StylesTool {
   /**
    * Adding an access level.<br>
    * Добавление уровня доступа.
-   * @param space basic values /<br>базовые значения
+   * @param space space /<br>пробел
    */
   static increaseSpace (space: string): string {
     return `${space}${SPACE}`

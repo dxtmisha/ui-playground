@@ -1,13 +1,9 @@
 import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
 
 import { StylesTool } from './StylesTool.ts'
-import { StylesVar } from './StylesVar.ts'
+import { StylesVar } from './to/StylesVar.ts'
 
-import {
-  PropertyCategory,
-  PropertyKey,
-  PropertyType
-} from '../../../types/property.ts'
+import { PropertyCategory } from '../../../types/property.ts'
 
 /**
  * Class for generating base properties from tokens.<br>
@@ -22,6 +18,10 @@ export class StylesRoot {
   constructor (private items: PropertiesItems) {
   }
 
+  /**
+   * Generating all basic token values.<br>
+   * Генерация всех базовых значений токенов.
+   */
   init (): string[] {
     const space = StylesTool.addSpace(1)
     const data: string[] = [
@@ -30,13 +30,9 @@ export class StylesRoot {
       ':root {'
     ]
 
-    this.getList().forEach(property => {
-      this.items.each(({ item }) => {
-        if (item?.[PropertyKey.variable] === PropertyType.var) {
-          data.push(StylesVar.get(item, space))
-        }
-      }, property)
-    })
+    this.getList().forEach(
+      property => data.push(...StylesVar.get(property, space))
+    )
 
     data.push('}')
 

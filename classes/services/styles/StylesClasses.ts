@@ -4,7 +4,12 @@ import { StylesTool } from './StylesTool.ts'
 import { StylesProperties } from './StylesProperties.ts'
 
 import { PropertyCategory, PropertyKey } from '../../../types/property.ts'
+import { isFilled, isObjectNotArray } from '../../../functions/data.ts'
 
+/**
+ * A class for generating base classes.<br>
+ * Класс для генерации базовых классов.
+ */
 export class StylesClasses {
   /**
    * Constructor
@@ -14,23 +19,32 @@ export class StylesClasses {
   constructor (private items: PropertiesItems) {
   }
 
+  /**
+   * Generating all base classes.<br>
+   * Генерация всех базовых классов.
+   */
   init (): string[] {
-    const data: string[] = ['color:red;']
+    const data: string[] = []
     const space = StylesTool.addSpace(1)
     const stylesProperties = new StylesProperties(this.items)
 
     this.getList().forEach(property => {
-      data.push(
-        '',
-        `${space}.${property.item[PropertyKey.name]} {`,
-        ...stylesProperties.init(property, StylesTool.increaseSpace(space)),
-        `${space}}`
-      )
+      if (
+        isObjectNotArray(property.value) &&
+        isFilled(property.value)
+      ) {
+        data.push(
+          '',
+          `.${property.item[PropertyKey.name]} {`,
+          ...stylesProperties.init(property, space),
+          '}'
+        )
+      }
     })
 
     return [
       StylesTool.addImportProperties(),
-      `${data.join('\r\n')}`
+      StylesTool.join(data)
     ]
   }
 
