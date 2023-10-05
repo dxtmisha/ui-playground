@@ -1,7 +1,7 @@
 import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
 
 import { StylesTool } from './StylesTool.ts'
-import { StylesVar } from './to/StylesVar.ts'
+import { StylesToVar } from './to/StylesToVar.ts'
 
 import { PropertyCategory } from '../../../types/property.ts'
 
@@ -15,7 +15,9 @@ export class StylesRoot {
    * @param items
    */
   // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
+  constructor (
+    private items: PropertiesItems
+  ) {
   }
 
   /**
@@ -31,7 +33,7 @@ export class StylesRoot {
     ]
 
     this.getList().forEach(
-      property => data.push(...StylesVar.get(property, space))
+      property => data.push(...(new StylesToVar(property, space).make()))
     )
 
     data.push('}')

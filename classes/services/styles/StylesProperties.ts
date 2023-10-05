@@ -2,11 +2,16 @@ import { PropertiesItems, type PropertiesItemsItem } from '../properties/Propert
 
 import { StylesTool } from './StylesTool.ts'
 
-import { StylesVar } from './to/StylesVar.ts'
-import { StylesProperty } from './to/StylesProperty.ts'
+import { StylesToClass } from './to/StylesToClass.ts'
+import { StylesToVar } from './to/StylesToVar.ts'
+import { StylesToProperty } from './to/StylesToProperty.ts'
+import { StylesToSelector } from './to/StylesToSelector.ts'
 
-import { type PropertyItem, PropertyKey, PropertyType } from '../../../types/property.ts'
-import { StylesSelector } from './to/StylesSelector.ts'
+import {
+  type PropertyItem,
+  PropertyKey,
+  PropertyType
+} from '../../../types/property.ts'
 
 const TYPE_AUXILIARY = [
   'selector',
@@ -84,6 +89,19 @@ export class StylesProperties {
   }
 
   /**
+   * Returns a function for iterating over all records.<br>
+   * Возвращает функцию для обхода всех записей.
+   * @param property initial variables for processing /<br>начальные переменные для обработки
+   * @param space пробелы
+   */
+  private getContent (
+    property: PropertiesItemsItem,
+    space: string
+  ): () => string[] {
+    return () => this.init(property, StylesTool.increaseSpace(space))
+  }
+
+  /**
    * Converting a value to a string depending on the type.<br>
    * Преобразования значения в строка в зависимости от типа.
    * @param property initial variables for processing /<br>начальные переменные для обработки
@@ -94,18 +112,22 @@ export class StylesProperties {
     space: string
   ) {
     const { item } = property
+
+    const content = this.getContent(property, space)
     const data: string[] = []
-    const content = () => this.init(property, StylesTool.increaseSpace(space))
 
     switch (item?.[PropertyKey.variable]) {
       case PropertyType.var:
-        data.push(...StylesVar.get(property, space))
+        data.push(...(new StylesToVar(property, space, content)).make())
         break
       case PropertyType.property:
-        data.push(...StylesProperty.get(property, space))
+        data.push(...(new StylesToProperty(property, space, content)).make())
         break
       case PropertyType.selector:
-        data.push(...StylesSelector.get(property, space, content))
+        data.push(...(new StylesToSelector(property, space, content)).make())
+        break
+      case PropertyType.state:
+        data.push(...(new StylesToClass(property, space, content)).make())
         break
     }
 

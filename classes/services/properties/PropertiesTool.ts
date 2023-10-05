@@ -26,13 +26,23 @@ export class PropertiesTool {
   }
 
   /**
+   * Return a list of component names.<br>
+   * Возвращаем список названий компонентов.
+   * @param design design name /<br>название дизайна
+   * @param component component name /<br>название компонента
+   */
+  static getComponentName (design: string, component?: string): string {
+    return `${design}${component ? `-${toCamelCase(component)}` : ''}`
+  }
+
+  /**
    * Getting the component name.<br>
    * Получения названия компонента.
    * @param design design name /<br>название дизайна
    * @param component component name /<br>название компонента
    */
   static getClassName (design: string, component?: string): string {
-    return `.${design}${component ? `-${toCamelCase(component)}` : ''}`
+    return `.${this.getComponentName(design, component)}`
   }
 
   /**
