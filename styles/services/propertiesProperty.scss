@@ -164,7 +164,7 @@ $designsAnimate: false !default;
   } @else if ($name == 'stroke-opacity') {
     @include strokeOpacity(#{$value});
   } @else if ($name == 'background-color') {
-    @include background(#{$value});
+    @include backgroundColor(#{$value});
   } @else if ($name == 'background-opacity') {
     @include backgroundOpacity(#{$value});
   } @else if ($name == 'background-size') {

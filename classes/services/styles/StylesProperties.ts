@@ -10,6 +10,7 @@ import { StylesToSelector } from './to/StylesToSelector.ts'
 import {
   type PropertyItem,
   PropertyKey,
+  type PropertyList,
   PropertyType
 } from '../../../types/property.ts'
 
@@ -29,45 +30,54 @@ const TYPE_BASIC = [
  * Класс для преобразования всех тип свойство в виде scss.
  */
 export class StylesProperties {
+  private readonly items: PropertiesItems
+  private readonly data: string[] = []
+
   /**
    * Constructor
-   * @param items
+   * @param space пробелы
+   * @param properties array with all property records /<br>массив со всеми записями свойств
+   * @param parent object of ancestor /<br>объект предка
    */
   // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
+  constructor (
+    private space: string,
+    private properties: PropertyItem,
+    private parent?: PropertyItem
+  ) {
+    this.items = new PropertiesItems(properties.value as PropertyList)
   }
 
   /**
    * Generating all properties and variables.<br>
    * Генерация всех свойств и переменных.
-   * @param property initial variables for processing /<br>начальные переменные для обработки
-   * @param space пробелы
-   * @param parent object of ancestor /<br>объект предка
    */
-  init (
-    property: PropertiesItemsItem,
-    space: string,
-    parent?: PropertyItem
-  ): string[] {
-    const data: string[] = []
+  make (): string[] {
+    this.items.eachMainOnly(property => {
+      const { item } = property
 
-    this.items.eachMainOnly(propertyItem => {
       if (
-        this.isTypeAuxiliary(parent) &&
-        this.isTypeAuxiliary(propertyItem.item) &&
-        !this.isTypeBasic(property)
+        this.isAuxiliary() &&
+        this.isAuxiliary(item) &&
+        this.isNotBasic(item)
       ) {
-        data.push(
-          `${space}& {`,
-          ...this.init(propertyItem, StylesTool.increaseSpace(space)),
-          `${space}}`
+        const data: string[] = new StylesProperties(
+          StylesTool.increaseSpace(this.space),
+          property,
+          this.properties
+        ).make()
+
+        this.data.push(
+          `${this.space}& {`,
+          ...data,
+          `${this.space}}`
         )
       } else {
-        data.push(...this.toByType(propertyItem, space))
+        this.data.push(...this.toByType(property))
       }
-    }, property)
+    })
 
-    return data
+    return this.data
   }
 
   /**
@@ -75,7 +85,9 @@ export class StylesProperties {
    * Проверяет, является ли тип тот, для которого надо пробел поставить в начале.
    * @param item element for checking /<br>элемент для проверки
    */
-  private isTypeAuxiliary (item?: PropertyItem): boolean {
+  private isAuxiliary (
+    item = this.parent
+  ): boolean {
     return Boolean(item && TYPE_AUXILIARY.indexOf(item?.[PropertyKey.variable] as string) !== -1)
   }
 
@@ -84,53 +96,57 @@ export class StylesProperties {
    * Проверяет, является ли тип базовым свойством переменных.
    * @param item element for checking /<br>элемент для проверки
    */
-  private isTypeBasic (item: PropertyItem): boolean {
-    return Boolean(item && TYPE_BASIC.indexOf(item?.[PropertyKey.variable] as string) !== -1)
+  private isNotBasic (item: PropertyItem): boolean {
+    return !(item && TYPE_BASIC.indexOf(item?.[PropertyKey.variable] as string) !== -1)
   }
 
   /**
    * Returns a function for iterating over all records.<br>
    * Возвращает функцию для обхода всех записей.
    * @param property initial variables for processing /<br>начальные переменные для обработки
-   * @param space пробелы
    */
   private getContent (
-    property: PropertiesItemsItem,
-    space: string
+    property: PropertiesItemsItem
   ): () => string[] {
-    return () => this.init(property, StylesTool.increaseSpace(space))
+    return () => new StylesProperties(
+      this.space,
+      property,
+      this.properties
+    ).make()
+  }
+
+  /**
+   * Parameters for a class that converts data by type.<br>
+   * Параметры для класса, который преобразует данные по типу.
+   * @param property initial variables for processing /<br>начальные переменные для обработки
+   */
+  private getArgumentsForTo (
+    property: PropertiesItemsItem
+  ): [PropertiesItemsItem, string, () => string[]] {
+    return [property, this.space, this.getContent(property)]
   }
 
   /**
    * Converting a value to a string depending on the type.<br>
    * Преобразования значения в строка в зависимости от типа.
    * @param property initial variables for processing /<br>начальные переменные для обработки
-   * @param space пробелы
    */
   private toByType (
-    property: PropertiesItemsItem,
-    space: string
-  ) {
-    const { item } = property
+    property: PropertiesItemsItem
+  ): string[] {
+    const argumentsValue = this.getArgumentsForTo(property)
 
-    const content = this.getContent(property, space)
-    const data: string[] = []
-
-    switch (item?.[PropertyKey.variable]) {
+    switch (property.item?.[PropertyKey.variable]) {
       case PropertyType.var:
-        data.push(...(new StylesToVar(property, space, content)).make())
-        break
+        return new StylesToVar(...argumentsValue).make()
       case PropertyType.property:
-        data.push(...(new StylesToProperty(property, space, content)).make())
-        break
+        return new StylesToProperty(...argumentsValue).make()
       case PropertyType.selector:
-        data.push(...(new StylesToSelector(property, space, content)).make())
-        break
+        return new StylesToSelector(...argumentsValue).make()
       case PropertyType.state:
-        data.push(...(new StylesToClass(property, space, content)).make())
-        break
+        return new StylesToClass(...argumentsValue).make()
+      default:
+        return []
     }
-
-    return data
   }
 }

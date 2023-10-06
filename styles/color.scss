@@ -174,7 +174,7 @@ $designsShade: () !default;
 
 @mixin paletteBackground($color) {
   --sys-palette-background: #{getPalette($color)};
-  @include background(#{var(--sys-palette-background)});
+  @include backgroundColor(#{var(--sys-palette-background)});
 }
 
 @mixin paletteFill($color) {
@@ -238,7 +238,7 @@ $designsShade: () !default;
 
 /* Background */
 
-@mixin background($color, $opacity: null) {
+@mixin backgroundColor($color, $opacity: null) {
   @if ($color == 'as-color') {
     @include backgroundAsColor;
   } @else if (isColorRbgOrVar($color)) {
@@ -334,5 +334,5 @@ $designsShade: () !default;
 /* As */
 
 @mixin backgroundAsColor() {
-  @include background(var(--sys-color), var(--sys-color-opacity));
+  @include backgroundColor(var(--sys-color), var(--sys-color-opacity));
 }

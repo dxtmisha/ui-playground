@@ -1,10 +1,14 @@
+import { isFilled, isObjectNotArray } from '../../../functions/data.ts'
+
 import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
 
 import { StylesTool } from './StylesTool.ts'
 import { StylesProperties } from './StylesProperties.ts'
 
-import { PropertyCategory, PropertyKey } from '../../../types/property.ts'
-import { isFilled, isObjectNotArray } from '../../../functions/data.ts'
+import {
+  PropertyCategory,
+  PropertyKey
+} from '../../../types/property.ts'
 
 /**
  * A class for generating base classes.<br>
@@ -26,17 +30,19 @@ export class StylesClasses {
   init (): string[] {
     const data: string[] = []
     const space = StylesTool.addSpace(1)
-    const stylesProperties = new StylesProperties(this.items)
 
-    this.getList().forEach(property => {
+    this.getList().forEach(({
+      value,
+      item
+    }) => {
       if (
-        isObjectNotArray(property.value) &&
-        isFilled(property.value)
+        isFilled(value) &&
+        isObjectNotArray(value)
       ) {
         data.push(
           '',
-          `.${property.item[PropertyKey.name]} {`,
-          ...stylesProperties.init(property, space),
+          `.${item[PropertyKey.name]} {`,
+          ...(new StylesProperties(space, item)).make(),
           '}'
         )
       }
@@ -53,6 +59,9 @@ export class StylesClasses {
    * Получение всех свойств из базовых переменных.
    */
   private getList (): PropertiesItemsItem[] {
-    return this.items.findCategory([PropertyCategory.class, PropertyCategory.theme])
+    return this.items.findCategory([
+      PropertyCategory.class,
+      PropertyCategory.theme
+    ])
   }
 }

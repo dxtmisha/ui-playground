@@ -29,7 +29,7 @@ export class StylesToSelector extends StylesTo {
       component
     } = this.property
 
-    return PropertiesTool.getClassName(design, component)
+    return `'${PropertiesTool.getClassName(design, component)}'`
   }
 
   /**
@@ -42,11 +42,11 @@ export class StylesToSelector extends StylesTo {
     switch (name) {
       case 'disabled':
       case 'readonly':
-        return `@include ${name}(#{${this.getClassName()}})`
+        return `@include ${name}(${this.getClassName()})`
       case 'active':
       case 'focus':
       case 'hover':
-        return `@include enabledSelector(#{${name}}, #{${this.getClassName()}})`
+        return `@include enabledSelector(${name}, ${this.getClassName()})`
       default:
         return `&:${name}`
     }
