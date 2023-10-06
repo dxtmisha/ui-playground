@@ -1,4 +1,5 @@
 import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
+import { toKebabCase } from '../../../../functions/string.ts'
 
 import { PropertiesTypes } from '../PropertiesTypes.ts'
 import { PropertiesItems } from '../PropertiesItems.ts'
@@ -10,10 +11,9 @@ import {
   PropertyType
 } from '../../../../types/property.ts'
 
-import css from '../../../../media/propertiesListCss.json'
+import { css } from '../../../../media/propertiesListCss.js'
 import cssSelector from '../../../../media/propertiesListCssSelector.json'
 import cssVirtual from '../../../../media/propertiesListCssVirtual.json'
-import { toKebabCase } from '../../../../functions/string.ts'
 
 const FILE_CACHE = '008-variable'
 
