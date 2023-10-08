@@ -1,17 +1,13 @@
 export const cssLayout: string[] = [
-  'direction',
-  'appearance',
+  'direction', // задает направление текста
+  'appearance', // для отображения элемента, используя базовые стили
   'aspect-ratio',
-  'aspect-ratio-width',
-  'aspect-ratio-height',
+  'aspect-ratio-width', // mixin
+  'aspect-ratio-height', // mixin
   'position',
-  'absolute',
-  'absoluteAfter',
+  'absolute', // mixin
+  'absoluteAfter', // mixin
   'z-index',
-  'top',
-  'right',
-  'bottom',
-  'left',
   'inset',
   'inset-block',
   'inset-block-start',
@@ -19,35 +15,44 @@ export const cssLayout: string[] = [
   'inset-inline',
   'inset-inline-start',
   'inset-inline-end',
+  'top',
+  'right', // mixin
+  'bottom',
+  'left', // mixin
   'display',
   'visibility',
-  'float',
-  'clear',
+  'float', // элемент должен быть взят из нормального потока и помещён вдоль левой или правой стороны его контейнера
+  'clear', // может ли элемент быть рядом с плавающими floating элементами
+  'contain', // указывает, что элемент и его содержимое максимально независимы от остальной части дерева документа
   'overflow',
   'overflow-x',
   'overflow-y',
-  'overflow-block',
-  'overflow-inline',
-  'overflow-wrap'
+  'overflow-block', // устанавливает, что будет отображаться, когда содержимое переполняет начальные и конечные края блока
+  'overflow-inline', // устанавливает, что будет показано, когда содержимое выходит за пределы встроенных начального и конечного краев блока
+  'overflow-wrap', // определяя, должен ли браузер вставлять разрывы строк в неразрывную строку
+  'overflow-clip-margin', // определяет, насколько далеко за пределы границ может быть нарисован элемент перед его обрезкой
+  'overflow-anchor', // предоставляет возможность отказаться от привязки прокрутки браузера, которая регулирует положение прокрутки, чтобы минимизировать сдвиги содержимого
+
+  'min-zoom', // устанавливает минимальный коэффициент масштабирования документа
+  'max-zoom' // устанавливает максимальный коэффициент масштабирования документа
 ]
 
 export const cssFlexbox: string[] = [
   'flex',
-  'flex-position',
-  'flex-flow',
+  'flex-position', // mixin
+  'flex-flow', // свойство, которое является сокращением для отдельных свойств flex-direction и flex-wrap
   'flex-basis',
-  'flex-direction',
+  'flex-direction', // свойство, указывающее на то, как flex-элементы располагаются во flex-контейнере по главной оси и направлению
   'flex-grow',
   'flex-shrink',
   'flex-wrap',
-  'flex-dynamic',
+  'flex-dynamic', // mixin
 
   'grid',
-  'grid-area',
-  'grid-gap',
-  'grid-auto-flow',
-  'grid-auto-columns',
-  'grid-auto-rows',
+  'grid-area', // это сокращённая форма записи для свойств grid-row-start, grid-column-start, grid-row-end и grid-column-end
+  'grid-auto-flow', // управляет поведением автоматически размещаемых элементов
+  'grid-auto-columns', // определяет размер неявно созданной дорожки столбца сетки или шаблона дорожек
+  'grid-auto-rows', // определяет размер неявно созданной дорожки строки сетки или шаблона дорожек
   'grid-template',
   'grid-template-areas',
   'grid-template-columns',
@@ -55,37 +60,41 @@ export const cssFlexbox: string[] = [
   'grid-column',
   'grid-column-start',
   'grid-column-end',
-  'grid-column-gap',
   'grid-row',
   'grid-row-start',
   'grid-row-end',
-  'grid-row-gap',
 
-  'gap',
   'align-content',
   'align-items',
   'align-self',
+  'align-tracks', // устанавливает выравнивание по оси кладки для контейнеров сетки, у которых кладка находится на оси блока
   'justify-content',
   'justify-items',
   'justify-self',
-  'justify-tracks',
+  'justify-tracks', // устанавливает выравнивание по оси кладки для контейнеров сетки, у которых кладка находится на встроенной оси
   'place-content',
   'place-items',
   'place-self',
-  'order'
+
+  'gap',
+  'order',
+
+  'masonry-auto-flow' // изменяет способ размещения элементов при использовании кладки в CSS Grid Layout
 ]
 
 export const cssColumns: string[] = [
-  'columns',
-  'column-count',
-  'column-width',
-  'column-fill',
-  'column-gap',
-  'column-span',
-  'column-rule',
+  'columns', // устанавливает количество столбцов, которые будут использоваться
+  'column-count', // разбивает содержимое элемента на заданное число столбцов
+  'column-width', // устанавливает идеальную ширину столбца в макете с несколькими столбцами
+  'column-fill', // разбитому на столбцы и указывает как содержимое располагается внутри столбца
+  'column-gap', // задаёт отступ между колонками
+
+  'column-rule', // устанавливает ширину, стиль и цвет линии, находящейся между колонками
   'column-rule-width',
   'column-rule-color',
-  'column-rule-style'
+  'column-rule-style',
+
+  'column-span' // позволяет элементу охватывать все столбцы
 ]
 
 export const cssSpacing: string[] = [
@@ -94,22 +103,23 @@ export const cssSpacing: string[] = [
   'margin-right',
   'margin-bottom',
   'margin-left',
-  'margin-x',
-  'margin-y',
+  'margin-x', // mixin
+  'margin-y', // mixin
   'margin-block',
   'margin-block-start',
   'margin-block-end',
   'margin-inline',
   'margin-inline-start',
   'margin-inline-end',
-  'margin-trim',
+  'margin-trim', // позволяет контейнеру обрезать поля своих дочерних элементов там, где они примыкают к краям контейнера
+
   'padding',
   'padding-top',
   'padding-right',
   'padding-bottom',
   'padding-left',
-  'padding-x',
-  'padding-y',
+  'padding-x', // mixin
+  'padding-y', // mixin
   'padding-block',
   'padding-block-start',
   'padding-block-end',
@@ -120,9 +130,7 @@ export const cssSpacing: string[] = [
 
 export const cssSizing: string[] = [
   'box-sizing',
-  'block-size',
-  'inline-size',
-  'tab-size',
+
   'width',
   'min-width',
   'max-width',
@@ -132,10 +140,31 @@ export const cssSizing: string[] = [
   'max-height',
   'height-basis',
 
+  'block-size',
   'min-block-size',
   'max-block-size',
+
+  'inline-size',
   'min-inline-size',
-  'max-inline-size'
+  'max-inline-size',
+
+  'tab-size' // используется для настройки ширины символа табуляции
+]
+
+export const cssContent: string[] = [
+  'content',
+  'content-visibility', // контролирует, отображает ли элемент вообще свое содержимое
+  'quotes', // определяет, как браузер должен отображать кавычки
+  'hanging-punctuation', // указывает, должен ли знак препинания висеть в начале или в конце строки текста
+  'line-break', // определяет, как разрывать строки текста на китайском, японском или корейском языке
+
+  'counter-set', // устанавливает для счетчика CSS заданное значение
+  'counter-reset', // сбрасывает счетчик CSS на заданное значение
+  'counter-increment', // увеличивает или уменьшает значение счетчика CSS на заданное значение
+
+  'hyphens', // указывает, как следует переносить слова через дефис
+  'hyphenate-character', // устанавливает символ (или строку), используемый в конце строки перед разрывом переноса
+  'hyphenate-limit-chars' // определяет минимальную длину слова, позволяющую расставлять переносы в словах
 ]
 
 export const cssTypography: string[] = [
@@ -144,73 +173,116 @@ export const cssTypography: string[] = [
   'font-size',
   'font-weight',
   'font-style',
-  'font-variant',
-  'font-size-adjust',
-  'font-stretch',
+  'font-variant', // позволяет вам установить все варианты шрифта
+  'font-size-adjust', // позволяет изменить размер строчных букв относительно размера прописных букв
+  'font-stretch', // выбирает обычное, сжатое или расширенное начертание шрифта
+  'font-synthesis', // позволяет указать, может ли браузер синтезировать полужирный, курсив, прописные и/или подстрочные и надстрочные шрифты
   'line-height',
-  'line-height-step',
+  'line-height-step', // устанавливает шаг для высоты линейного блока
+  'letter-spacing',
+  'word-spacing',
   'text-align',
-  'text-align-last',
+  'text-align-last', // описывает как выравнивается последняя строка в блоке
+  'text-justify', // определяет какой тип выравнивания следует применить к тексту, когда text-align: justify
   'vertical-align',
   'white-space',
+  'text-overflow', // определяет, как пользователю будет сообщаться скрытое содержимое переполнения
+
+  'font-optical-sizing', // оптимизировано ли отображение текста для просмотра в разных размерах
+  'font-variation-settings', // обеспечивает низкоуровневый контроль над переменными характеристиками шрифта
+  'box-decoration-break', // определяет, как должны отображаться фрагменты элемента, разбитые на несколько строк
+  'orphans', // устанавливает минимальное число строк в блочном контейнере, которое должно быть показано внизу страницы
+
+  'text-transform',
   'text-decoration',
-  'text-emphasis',
+  'text-indent', // определяет размер отступа перед строкой в текстовом блоке
+
+  'font-feature-settings', // управляет расширенными типографскими функциями шрифтов OpenType
+  'font-kerning', // устанавливает использование информации о кернинге, хранящейся в шрифте
+
+  'font-language-override', // управляет использованием глифов, специфичных для языка, в шрифте
+  'font-variant-caps', // управляет использованием альтернативных глифов для заглавных букв
+  'font-variant-position', // управляет использованием альтернативных глифов меньшего размера, которые располагаются как надстрочные или подстрочные
+  'font-variant-ligatures', // определяет, какие лигатуры и контекстные формы используются
+  'font-variant-alternates', // управляет использованием альтернативных глифов
+  'font-variant-east-asian', // управляет использованием альтернативных глифов для восточноазиатских алфавитов, таких как японский и китайский
+  'font-variant-numeric', // управляет использованием альтернативных глифов для чисел
+  'font-variant-emoji', // определяет стиль представления по умолчанию для отображения emoji
+
+  'word-break', // определяет, будут ли появляться разрывы строк там, где в противном случае текст вышел бы за пределы поля содержимого
+  'word-wrap',
+
+  'text-emphasis', // применяет к тексту знаки акцента
   'text-emphasis-color',
   'text-emphasis-style',
   'text-emphasis-position',
-  'text-indent',
-  'text-justify',
-  'letter-spacing',
-  'word-spacing',
-  'text-transform',
-  'text-overflow',
-  'word-wrap',
-  'word-break',
 
-  'font-feature-settings',
-  'font-kerning',
-  'font-language-override',
-  'font-optical-sizing',
-  'font-synthesis',
-  'font-variant-alternates',
-  'font-variant-caps',
-  'font-variant-east-asian',
-  'font-variant-ligatures',
-  'font-variant-numeric',
-  'font-variant-position',
-  'font-variation-settings',
-
-  'hanging-punctuation'
-]
-
-export const cssTypographyList: string[] = [
-  'list-style',
+  'list-style', // установить все свойства стиля списка одновременно
   'list-style-position',
   'list-style-type',
   'list-style-image'
 ]
 
-export const cssContent: string[] = [
-  'contain',
-  'content',
-  'content-visibility',
-  'quotes',
+export const cssMath: string[] = [
+  'math-depth', // описывает понятие глубины для каждого элемента математической формулы относительно контейнера верхнего уровня этой формулы
+  'math-shift', // указывает, должны ли верхние индексы внутри формул MathML подниматься обычным или компактным сдвигом
+  'math-style' // указывает, должны ли уравнения MathML отображаться с нормальной или компактной высотой
+]
 
-  'counter-set',
-  'counter-reset',
-  'counter-increment',
+export const cssColor: string[] = [
+  'palette', // mixin
+  'opacity',
+  'color', // mixin
+  'color-opacity', // mixin
+  'color-scheme', // позволяет элементу указать, в каких цветовых схемах его удобно отображать
+  'palette-color', // mixin
 
-  'hyphens',
-  'hyphenate-character',
-  'line-break'
+  'accent-color', // устанавливает цвет акцента для элементов управления пользовательского интерфейса
+  'forced-color-adjust' // позволяет авторам отключать для определенных элементов режим принудительного цвета
+]
+
+export const cssBackgrounds: string[] = [
+  'background',
+  'background-color', // mixin
+  'background-opacity', // mixin
+  'palette-background', // mixin
+  'background-image',
+  'gradient', // mixin
+  'gradient-opacity', // mixin
+  'palette-gradient', // mixin
+  'background-repeat',
+  'background-attachment',
+  'background-position',
+  'background-position-x',
+  'background-position-y',
+  'background-clip',
+  'background-origin',
+  'background-size',
+
+  'mask',
+  'mask-type',
+  'mask-mode',
+  'mask-composite',
+  'mask-image',
+  'mask-repeat',
+  'mask-position',
+  'mask-clip',
+  'mask-origin',
+  'mask-size',
+
+  'image-rendering', // устанавливает алгоритм масштабирования изображения
+  'image-resolution', // определяет внутреннее разрешение всех растровых изображений, используемых в элементе или на нем
+  'image-orientation',
+  'object-fit', // определяет, как содержимое заменяемого элемента должно быть изменено в соответствии с его контейнером
+  'object-position' // определяет выравнивание содержимого выбранного замененного элемента внутри поля элемента
 ]
 
 export const cssBorder: string[] = [
   'border-radius',
   'border-top-left-radius',
   'border-top-right-radius',
-  'border-bottom-right-radius',
   'border-bottom-left-radius',
+  'border-bottom-right-radius',
   'border-start-start-radius',
   'border-start-end-radius',
   'border-end-start-radius',
@@ -222,6 +294,7 @@ export const cssBorder: string[] = [
   'border-color',
   'border-opacity',
   'palette-border',
+
   'border-top',
   'border-top-width',
   'border-top-style',
@@ -240,11 +313,11 @@ export const cssBorder: string[] = [
   'border-left-color',
 
   'border-image',
-  'border-image-source',
-  'border-image-slice',
+  'border-image-source', // свойство устанавливает исходное изображение
+  'border-image-slice', // делит изображение, указанное на области
+  'border-image-repeat', // определяет, как края и средняя область исходного изображения корректируются в соответствии с размерами изображения границы элемента
   'border-image-width',
-  'border-image-outset',
-  'border-image-repeat',
+  'border-image-outset', // элемента располагается от его рамки
 
   'border-block',
   'border-block-width',
@@ -272,6 +345,14 @@ export const cssBorder: string[] = [
   'border-inline-start-color',
   'border-inline-start-style',
 
+  'mask-border',
+  'mask-border-mode',
+  'mask-border-source',
+  'mask-border-slice',
+  'mask-border-repeat',
+  'mask-border-width',
+  'mask-border-outset',
+
   'outline',
   'outline-width',
   'outline-style',
@@ -279,90 +360,42 @@ export const cssBorder: string[] = [
   'outline-offset'
 ]
 
-export const cssBorderMask: string[] = [
-  'mask-border',
-  'mask-border-mode',
-  'mask-border-source',
-  'mask-border-slice',
-  'mask-border-width',
-  'mask-border-outset',
-  'mask-border-repeat'
-]
-
-export const cssColor: string[] = [
-  'palette',
-  'color-scheme',
-  'opacity',
-  'color',
-  'color-opacity',
-  'palette-color',
-  'accent-color',
-  'forced-color-adjust'
-]
-
-export const cssBackgrounds: string[] = [
-  'background',
-  'background-color',
-  'background-opacity',
-  'palette-background',
-  'background-image',
-  'background-repeat',
-  'background-attachment',
-  'background-position',
-  'background-position-x',
-  'background-position-y',
-  'background-clip',
-  'background-origin',
-  'background-size',
-  'gradient',
-  'gradient-opacity',
-  'palette-gradient',
-
-  'image-orientation',
-  'image-rendering',
-  'image-resolution',
-  'isolation'
-]
-
-export const cssMask: string[] = [
-  'mask',
-  'mask-type',
-  'mask-mode',
-  'mask-composite',
-  'mask-image',
-  'mask-repeat',
-  'mask-position',
-  'mask-clip',
-  'mask-origin',
-  'mask-size'
-]
-
 export const cssEffects: string[] = [
-  'box-decoration-break',
   'box-shadow',
   'text-shadow',
-  'clip-path',
-  'clip-rule',
-  'transform',
-  'transform-origin',
-  'perspective',
-  'perspective-origin',
+
   'filter',
   'backdrop-filter',
   'backface-visibility',
-  'background-blend-mode',
-  'mix-blend-mode'
-]
+  'color-interpolation-filters', // определяет цветовое пространство для операций изображения, выполняемых с помощью эффектов фильтра
 
-export const cssTables: string[] = [
-  'table-layout',
-  'empty-cells',
-  'caption-side',
-  'border-spacing',
-  'border-collapse'
+  'mix-blend-mode', // определяет, как содержимое элемента должно сочетаться с содержимым родительского элемента и фона элемента
+  'background-blend-mode', // определяет, как фоновые изображения элемента должны сочетаться друг с другом
+  'isolation' // определяет, должен ли элемент создавать новый контекст стекирования
 ]
 
 export const cssTransforms: string[] = [
+  'transform',
+  'transform-origin',
+  'scale',
+
+  'clip-path',
+  'clip-rule',
+
+  'perspective', // определяет расстояние между плоскостью z=0 и пользователем
+  'perspective-origin'
+]
+
+export const cssTables: string[] = [
+  'table-layout', // устанавливает алгоритм, используемый для расположения <table>ячеек, строк и столбцов
+  'empty-cells', // определяет, будут ли появляться границы и фон вокруг <table>ячеек, не имеющих видимого содержимого
+  'border-collapse', // определяет, имеют ли ячейки внутри общие или отдельные границы
+  'border-spacing', // устанавливает расстояние между границами соседних ячеек в файле
+
+  'caption-side' // помещает содержимое таблицы на указанную сторону
+]
+
+export const cssTransitions: string[] = [
   'transition',
   'transition-delay',
   'transition-timing-function',
@@ -371,46 +404,46 @@ export const cssTransforms: string[] = [
 
   'animation',
   'animation-name',
-  'animation-duration',
-  'animation-play-state',
-  'animation-timing-function',
-  'animation-fill-mode',
   'animation-delay',
-  'animation-iteration-count',
-  'animation-direction',
+  'animation-timing-function',
+  'animation-duration',
+  'animation-direction', // определяет, должна ли анимация воспроизводиться вперёд, назад или переменно вперёд и назад
+  'animation-iteration-count', // определяет сколько раз будет проигрываться анимационный цикл, перед тем как остановиться
+  'animation-fill-mode', // определяет, как нужно применять стили к объекту анимации до и после её выполнения
+  'animation-play-state', // определяет состояние анимации, паузы или проигрыша
+  'animation-timeline', // определяет временную шкалу, которая используется для управления ходом анимации CSS
 
-  'animation-timeline',
-  'pause',
+  'pause', // определения времени паузы до и после элемента
   'pause-before',
   'pause-after',
 
-  'offset',
-  'offset-anchor',
-  'offset-distance',
-  'offset-path',
-  'offset-position',
-  'offset-rotate',
-  'object-fit',
-  'object-position'
+  'offset', // устанавливает все свойства offset, необходимые для анимации элемента по определенному пути
+  'offset-path', // указывает путь, по которому должен следовать элемент
+  'offset-anchor', // указывает точку внутри рамки элемента, перемещающегося по пути, который фактически движется по пути
+  'offset-rotate', // определяет ориентацию/направление элемента при его расположении вдоль
+  'offset-distance', // определяет положение размещаемого элемента
+  'offset-position' // определяет начальное положение элемента на пути
 ]
 
 export const cssInteractivity: string[] = [
-  'resize',
   'cursor',
+  'pointer-events', // устанавливает, при каких обстоятельствах конкретный графический элемент может стать целью событий указателя,
   'user-select',
   'caret-color',
-  'pointer-events'
+
+  'resize'
 ]
 
 export const cssScrolls: string[] = [
-  'overscroll-behavior',
+  'overscroll-behavior', // управлять поведением прокрутки при достижении границы области прокрутки
   'overscroll-behavior-x',
   'overscroll-behavior-y',
   'overscroll-behavior-block',
   'overscroll-behavior-inline',
 
-  'scroll-behavior',
-  'scroll-margin',
+  'scroll-behavior', // определяет поведение прокрутки для любого элемента на странице
+
+  'scroll-margin', // устанавливает все поля прокрутки элемента одновременно
   'scroll-margin-top',
   'scroll-margin-right',
   'scroll-margin-bottom',
@@ -421,7 +454,8 @@ export const cssScrolls: string[] = [
   'scroll-margin-inline',
   'scroll-margin-inline-start',
   'scroll-margin-inline-end',
-  'scroll-padding',
+
+  'scroll-padding', // устанавливает отступы прокрутки со всех сторон элемента одновременно
   'scroll-padding-top',
   'scroll-padding-right',
   'scroll-padding-bottom',
@@ -432,36 +466,31 @@ export const cssScrolls: string[] = [
   'scroll-padding-inline',
   'scroll-padding-inline-start',
   'scroll-padding-inline-end',
-  'scroll-snap-type',
-  'scroll-snap-align',
-  'scroll-snap-stop'
+
+  'scroll-snap-type', // определяет как строго прокрутка контейнера привязывается к точкам привязки
+  'scroll-snap-align', // определяет положение привязки блока как выравнивание его области привязки
+  'scroll-snap-stop' // определяет, разрешено ли контейнеру прокрутки «пропускать» возможные позиции привязки
 ]
 
 export const cssSVG: string[] = [
-  'fill',
-  'flood-color',
-  'flood-opacity',
-  'paint-order'
+  'fill', // атрибут представления, который определяет цвет, используемые для рисования элемента
+  'paint-order', // позволяет вам контролировать порядок, в котором отрисовываются заливка и обводка
+
+  'flood-color', // указывает, какой цвет использовать для заливки текущей подобласти примитива фильтра
+  'flood-opacity', // указывает значение непрозрачности, которое будет использоваться в текущей подобласти примитива фильтра
+
+  'lighting-color' // определяет цвет источника света для примитивов фильтров
 ]
 
-export const cssOther: string[] = [
-  'break-inside',
-  'break-after',
-  'break-before',
-  'math-style'
+export const cssPrint: string[] = [
+  'break-inside', // определяет, как должны вести себя разрывы страницы, столбца или региона внутри сгенерированного блока
+  'break-before', // определяет, как должны вести себя разрывы страниц, столбцов или областей перед сгенерированным блоком
+  'break-after' // определяет, как должны вести себя разрывы страниц, столбцов или областей после созданного поля
 ]
 
-export const cssExperimental: string[] = [
-  'align-tracks',
-  'color-interpolation-filters',
-  'lighting-color',
-  'masonry-auto-flow',
-  'max-zoom',
-  'min-zoom',
-  'orphans',
-  'overflow-anchor',
-  'overflow-clip-margin'
-]
+export const cssOther: string[] = []
+
+export const cssExperimental: string[] = []
 
 export const cssDifferent: string[] = [
   'all',
@@ -482,6 +511,9 @@ export const cssDifferent: string[] = [
 ]
 
 export const cssDeprecated: string[] = [
+  'grid-gap',
+  'grid-column-gap',
+  'grid-row-gap',
   'glyph-orientation-vertical',
   'page-break-after',
   'page-break-before',
@@ -494,20 +526,20 @@ export const css: string[] = [
   ...cssColumns,
   ...cssSpacing,
   ...cssSizing,
-  ...cssTypography,
-  ...cssTypographyList,
   ...cssContent,
-  ...cssBorder,
-  ...cssBorderMask,
+  ...cssTypography,
+  ...cssMath,
   ...cssColor,
   ...cssBackgrounds,
-  ...cssMask,
+  ...cssBorder,
   ...cssEffects,
-  ...cssTables,
   ...cssTransforms,
+  ...cssTables,
+  ...cssTransitions,
   ...cssInteractivity,
   ...cssScrolls,
   ...cssSVG,
+  ...cssPrint,
   ...cssOther,
   ...cssExperimental,
   ...cssDifferent,
@@ -521,7 +553,6 @@ export const css: string[] = [
   'row-gap',
   'ruby-align',
   'ruby-position',
-  'scale',
   'scrollbar-color',
   'scrollbar-gutter',
   'scrollbar-width',
