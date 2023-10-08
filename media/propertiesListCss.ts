@@ -25,7 +25,10 @@ export const cssLayout: string[] = [
   'clear',
   'overflow',
   'overflow-x',
-  'overflow-y'
+  'overflow-y',
+  'overflow-block',
+  'overflow-inline',
+  'overflow-wrap'
 ]
 
 export const cssFlexbox: string[] = [
@@ -38,6 +41,7 @@ export const cssFlexbox: string[] = [
   'flex-shrink',
   'flex-wrap',
   'flex-dynamic',
+
   'grid',
   'grid-area',
   'grid-gap',
@@ -56,11 +60,18 @@ export const cssFlexbox: string[] = [
   'grid-row-start',
   'grid-row-end',
   'grid-row-gap',
+
   'gap',
   'align-content',
   'align-items',
   'align-self',
   'justify-content',
+  'justify-items',
+  'justify-self',
+  'justify-tracks',
+  'place-content',
+  'place-items',
+  'place-self',
   'order'
 ]
 
@@ -110,6 +121,8 @@ export const cssSpacing: string[] = [
 export const cssSizing: string[] = [
   'box-sizing',
   'block-size',
+  'inline-size',
+  'tab-size',
   'width',
   'min-width',
   'max-width',
@@ -117,7 +130,12 @@ export const cssSizing: string[] = [
   'height',
   'min-height',
   'max-height',
-  'height-basis'
+  'height-basis',
+
+  'min-block-size',
+  'max-block-size',
+  'min-inline-size',
+  'max-inline-size'
 ]
 
 export const cssTypography: string[] = [
@@ -130,6 +148,7 @@ export const cssTypography: string[] = [
   'font-size-adjust',
   'font-stretch',
   'line-height',
+  'line-height-step',
   'text-align',
   'text-align-last',
   'vertical-align',
@@ -176,11 +195,14 @@ export const cssContent: string[] = [
   'content',
   'content-visibility',
   'quotes',
+
   'counter-set',
   'counter-reset',
   'counter-increment',
-  'tab-size',
-  'hyphens'
+
+  'hyphens',
+  'hyphenate-character',
+  'line-break'
 ]
 
 export const cssBorder: string[] = [
@@ -199,6 +221,7 @@ export const cssBorder: string[] = [
   'border-style',
   'border-color',
   'border-opacity',
+  'palette-border',
   'border-top',
   'border-top-width',
   'border-top-style',
@@ -267,10 +290,12 @@ export const cssBorderMask: string[] = [
 ]
 
 export const cssColor: string[] = [
+  'palette',
   'color-scheme',
   'opacity',
   'color',
   'color-opacity',
+  'palette-color',
   'accent-color',
   'forced-color-adjust'
 ]
@@ -279,6 +304,7 @@ export const cssBackgrounds: string[] = [
   'background',
   'background-color',
   'background-opacity',
+  'palette-background',
   'background-image',
   'background-repeat',
   'background-attachment',
@@ -289,7 +315,13 @@ export const cssBackgrounds: string[] = [
   'background-origin',
   'background-size',
   'gradient',
-  'gradient-opacity'
+  'gradient-opacity',
+  'palette-gradient',
+
+  'image-orientation',
+  'image-rendering',
+  'image-resolution',
+  'isolation'
 ]
 
 export const cssMask: string[] = [
@@ -311,10 +343,15 @@ export const cssEffects: string[] = [
   'text-shadow',
   'clip-path',
   'clip-rule',
+  'transform',
+  'transform-origin',
+  'perspective',
+  'perspective-origin',
   'filter',
   'backdrop-filter',
   'backface-visibility',
-  'background-blend-mode'
+  'background-blend-mode',
+  'mix-blend-mode'
 ]
 
 export const cssTables: string[] = [
@@ -331,8 +368,7 @@ export const cssTransforms: string[] = [
   'transition-timing-function',
   'transition-duration',
   'transition-property',
-  'transform',
-  'transform-origin',
+
   'animation',
   'animation-name',
   'animation-duration',
@@ -343,7 +379,19 @@ export const cssTransforms: string[] = [
   'animation-iteration-count',
   'animation-direction',
 
-  'animation-timeline'
+  'animation-timeline',
+  'pause',
+  'pause-before',
+  'pause-after',
+
+  'offset',
+  'offset-anchor',
+  'offset-distance',
+  'offset-path',
+  'offset-position',
+  'offset-rotate',
+  'object-fit',
+  'object-position'
 ]
 
 export const cssInteractivity: string[] = [
@@ -355,6 +403,12 @@ export const cssInteractivity: string[] = [
 ]
 
 export const cssScrolls: string[] = [
+  'overscroll-behavior',
+  'overscroll-behavior-x',
+  'overscroll-behavior-y',
+  'overscroll-behavior-block',
+  'overscroll-behavior-inline',
+
   'scroll-behavior',
   'scroll-margin',
   'scroll-margin-top',
@@ -386,18 +440,27 @@ export const cssScrolls: string[] = [
 export const cssSVG: string[] = [
   'fill',
   'flood-color',
-  'flood-opacity'
+  'flood-opacity',
+  'paint-order'
 ]
 
 export const cssOther: string[] = [
   'break-inside',
   'break-after',
-  'break-before'
+  'break-before',
+  'math-style'
 ]
 
 export const cssExperimental: string[] = [
   'align-tracks',
-  'color-interpolation-filters'
+  'color-interpolation-filters',
+  'lighting-color',
+  'masonry-auto-flow',
+  'max-zoom',
+  'min-zoom',
+  'orphans',
+  'overflow-anchor',
+  'overflow-clip-margin'
 ]
 
 export const cssDifferent: string[] = [
@@ -406,11 +469,23 @@ export const cssDifferent: string[] = [
   'cue',
   'cue-after',
   'cue-before',
-  'globalcompositeoperation'
+  'globalcompositeoperation',
+  'horizon',
+  'inherit',
+  'initial',
+  'initial-letter',
+  'initial-letter-align',
+  'initial-value',
+  'pitch',
+  'pitch-range',
+  'play-during'
 ]
 
 export const cssDeprecated: string[] = [
-  'glyph-orientation-vertical'
+  'glyph-orientation-vertical',
+  'page-break-after',
+  'page-break-before',
+  'page-break-inside'
 ]
 
 export const css: string[] = [
@@ -437,74 +512,6 @@ export const css: string[] = [
   ...cssExperimental,
   ...cssDifferent,
   ...cssDeprecated,
-  'horizon',
-  'hyphenate-character',
-  'image-orientation',
-  'image-rendering',
-  'image-resolution',
-  'inherit',
-  'initial',
-  'initial-letter',
-  'initial-letter-align',
-  'initial-value',
-  'inline-size',
-  'isolation',
-  'justify-items',
-  'justify-self',
-  'justify-tracks',
-  'lighting-color',
-  'line-break',
-  'line-height-step',
-  'masonry-auto-flow',
-  'math-style',
-  'max-block-size',
-  'max-inline-size',
-  'max-zoom',
-  'min-block-size',
-  'min-inline-size',
-  'min-zoom',
-  'mix-blend-mode',
-  'offset',
-  'offset-anchor',
-  'offset-distance',
-  'offset-path',
-  'offset-position',
-  'offset-rotate',
-  'object-fit',
-  'object-position',
-  'orphans',
-  'overflow-anchor',
-  'overflow-block',
-  'overflow-clip-margin',
-  'overflow-inline',
-  'overflow-wrap',
-  'overscroll-behavior',
-  'overscroll-behavior-block',
-  'overscroll-behavior-inline',
-  'overscroll-behavior-x',
-  'overscroll-behavior-y',
-  'page-break-after',
-  'page-break-before',
-  'page-break-inside',
-  'paint-order',
-  'palette',
-  'palette-color',
-  'palette-stroke',
-  'palette-background',
-  'palette-fill',
-  'palette-border',
-  'palette-gradient',
-  'pause',
-  'pause-after',
-  'pause-before',
-  'pitch',
-  'pitch-range',
-  'place-content',
-  'place-items',
-  'place-self',
-  'play-during',
-  'perspective',
-  'perspective-origin',
   'print-color-adjust',
   'rest',
   'rest-after',
