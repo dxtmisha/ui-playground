@@ -201,6 +201,7 @@ export const cssTypography: string[] = [
   'font-optical-sizing', // оптимизировано ли отображение текста для просмотра в разных размерах
   'font-variation-settings', // обеспечивает низкоуровневый контроль над переменными характеристиками шрифта
   'box-decoration-break', // определяет, как должны отображаться фрагменты элемента, разбитые на несколько строк
+  'widows', // минимальное количество строк в блочном контейнере, которое должно отображаться вверху страницы
   'orphans', // устанавливает минимальное число строк в блочном контейнере, которое должно быть показано внизу страницы
 
   'text-transform',
@@ -230,6 +231,7 @@ export const cssTypography: string[] = [
 
   'text-orientation',
   'text-combine-upright', // устанавливает комбинацию символов в пространство одного символа
+  'writing-mode', // определяет, будут ли строки текста располагаться горизонтально или вертикально, а также направление перемещения блоков
 
   'word-break', // определяет, будут ли появляться разрывы строк там, где в противном случае текст вышел бы за пределы поля содержимого
   'word-wrap',
@@ -452,7 +454,9 @@ export const cssTransitions: string[] = [
   'offset-anchor', // указывает точку внутри рамки элемента, перемещающегося по пути, который фактически движется по пути
   'offset-rotate', // определяет ориентацию/направление элемента при его расположении вдоль
   'offset-distance', // определяет положение размещаемого элемента
-  'offset-position' // определяет начальное положение элемента на пути
+  'offset-position', // определяет начальное положение элемента на пути
+
+  'will-change' // подсказывает браузерам, как ожидается изменение элемента
 ]
 
 export const cssInteractivity: string[] = [
@@ -541,7 +545,16 @@ export const cssOther: string[] = [
   'speak-header',
   'speak-numeral',
   'speak-punctuation',
-  'speech-rate' // скорости речи используется для объявления скорости, с которой произносится текст
+  'speech-rate', // скорости речи используется для объявления скорости, с которой произносится текст
+
+  'voice-balance',
+  'voice-duration',
+  'voice-family',
+  'voice-pitch',
+  'voice-range',
+  'voice-rate',
+  'voice-stress',
+  'voice-volume'
 ]
 
 export const cssExperimental: string[] = []
@@ -564,7 +577,9 @@ export const cssDifferent: string[] = [
   'play-during',
   'rest',
   'rest-after',
-  'rest-before'
+  'rest-before',
+  'unset',
+  'vertically'
 ]
 
 export const cssDeprecated: string[] = [
@@ -576,7 +591,8 @@ export const cssDeprecated: string[] = [
   'page-break-before',
   'page-break-inside',
   'richness',
-  'stress'
+  'stress',
+  'volume'
 ]
 
 export const css: string[] = [
@@ -602,19 +618,5 @@ export const css: string[] = [
   ...cssOther,
   ...cssExperimental,
   ...cssDifferent,
-  ...cssDeprecated,
-  'unset',
-  'vertically',
-  'voice-balance',
-  'voice-duration',
-  'voice-family',
-  'voice-pitch',
-  'voice-range',
-  'voice-rate',
-  'voice-stress',
-  'voice-volume',
-  'volume',
-  'widows',
-  'will-change',
-  'writing-mode'
+  ...cssDeprecated
 ]
