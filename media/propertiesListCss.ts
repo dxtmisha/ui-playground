@@ -1,5 +1,6 @@
 export const cssLayout: string[] = [
   'direction', // задает направление текста
+  'unicode-bidi', // определяет, как обрабатывается двунаправленный текст в документе
   'appearance', // для отображения элемента, используя базовые стили
   'aspect-ratio',
   'aspect-ratio-width', // mixin
@@ -21,7 +22,6 @@ export const cssLayout: string[] = [
   'left', // mixin
   'display',
   'visibility',
-  'float', // элемент должен быть взят из нормального потока и помещён вдоль левой или правой стороны его контейнера
   'clear', // может ли элемент быть рядом с плавающими floating элементами
   'contain', // указывает, что элемент и его содержимое максимально независимы от остальной части дерева документа
   'overflow',
@@ -32,6 +32,11 @@ export const cssLayout: string[] = [
   'overflow-wrap', // определяя, должен ли браузер вставлять разрывы строк в неразрывную строку
   'overflow-clip-margin', // определяет, насколько далеко за пределы границ может быть нарисован элемент перед его обрезкой
   'overflow-anchor', // предоставляет возможность отказаться от привязки прокрутки браузера, которая регулирует положение прокрутки, чтобы минимизировать сдвиги содержимого
+
+  'float', // элемент должен быть взят из нормального потока и помещён вдоль левой или правой стороны его контейнера
+  'shape-outside', // определяет форму, вокруг которой должно обтекаться соседнее встроенное содержимое
+  'shape-margin', // устанавливает поле для фигуры CSS, созданной с использованием
+  'shape-image-threshold', // устанавливает порог альфа-канала, используемый для извлечения фигуры, используя изображение в качестве значения для
 
   'min-zoom', // устанавливает минимальный коэффициент масштабирования документа
   'max-zoom' // устанавливает максимальный коэффициент масштабирования документа
@@ -77,6 +82,7 @@ export const cssFlexbox: string[] = [
   'place-self',
 
   'gap',
+  'row-gap',
   'order',
 
   'masonry-auto-flow' // изменяет способ размещения элементов при использовании кладки в CSS Grid Layout
@@ -131,6 +137,8 @@ export const cssSpacing: string[] = [
 export const cssSizing: string[] = [
   'box-sizing',
 
+  'squared',
+
   'width',
   'min-width',
   'max-width',
@@ -182,11 +190,13 @@ export const cssTypography: string[] = [
   'letter-spacing',
   'word-spacing',
   'text-align',
+  'text-align-all',
   'text-align-last', // описывает как выравнивается последняя строка в блоке
   'text-justify', // определяет какой тип выравнивания следует применить к тексту, когда text-align: justify
   'vertical-align',
   'white-space',
   'text-overflow', // определяет, как пользователю будет сообщаться скрытое содержимое переполнения
+  'text-rendering', // предоставляет механизму рендеринга информацию о том, что следует оптимизировать при рендеринге текста
 
   'font-optical-sizing', // оптимизировано ли отображение текста для просмотра в разных размерах
   'font-variation-settings', // обеспечивает низкоуровневый контроль над переменными характеристиками шрифта
@@ -194,8 +204,17 @@ export const cssTypography: string[] = [
   'orphans', // устанавливает минимальное число строк в блочном контейнере, которое должно быть показано внизу страницы
 
   'text-transform',
-  'text-decoration',
   'text-indent', // определяет размер отступа перед строкой в текстовом блоке
+
+  'text-decoration',
+  'text-decoration-thickness', // задает толщину обводки декоративной линии
+  'text-decoration-color', // устанавливает цвет украшений, добавляемых к тексту с помощью
+  'text-decoration-style', // устанавливает стиль строк, заданный параметром
+  'text-decoration-line', // задает тип оформления текста в элементе
+  'text-decoration-skip', // определяет, какие части содержимого элемента любое текстовое оформление, влияющее на элемент, должно пропускать
+  'text-decoration-skip-ink', // определяет, как рисуются надстрочные и подчеркивающие линии, когда они проходят над верхними и нижними элементами глифа
+  'text-underline-offset', // устанавливает расстояние смещения линии оформления подчеркивания текста
+  'text-underline-position', // определяет положение подчеркивания
 
   'font-feature-settings', // управляет расширенными типографскими функциями шрифтов OpenType
   'font-kerning', // устанавливает использование информации о кернинге, хранящейся в шрифте
@@ -209,6 +228,9 @@ export const cssTypography: string[] = [
   'font-variant-numeric', // управляет использованием альтернативных глифов для чисел
   'font-variant-emoji', // определяет стиль представления по умолчанию для отображения emoji
 
+  'text-orientation',
+  'text-combine-upright', // устанавливает комбинацию символов в пространство одного символа
+
   'word-break', // определяет, будут ли появляться разрывы строк там, где в противном случае текст вышел бы за пределы поля содержимого
   'word-wrap',
 
@@ -216,6 +238,9 @@ export const cssTypography: string[] = [
   'text-emphasis-color',
   'text-emphasis-style',
   'text-emphasis-position',
+
+  'ruby-align', // определяет распределение различных элементов Ruby по базе
+  'ruby-position',
 
   'list-style', // установить все свойства стиля списка одновременно
   'list-style-position',
@@ -376,8 +401,13 @@ export const cssEffects: string[] = [
 
 export const cssTransforms: string[] = [
   'transform',
+  'transform-box', // определяет поле макета, к которому относятся transform, отдельные свойства преобразования
+  'transform-style', // определяет, располагаются ли дочерние элементы элемента в трехмерном пространстве или сглаживаются в плоскости элемента
   'transform-origin',
+  'translate-x',
+  'translate-y',
   'scale',
+  'rotate',
 
   'clip-path',
   'clip-rule',
@@ -429,9 +459,13 @@ export const cssInteractivity: string[] = [
   'cursor',
   'pointer-events', // устанавливает, при каких обстоятельствах конкретный графический элемент может стать целью событий указателя,
   'user-select',
+  'text-select-none',
   'caret-color',
 
-  'resize'
+  'resize',
+
+  'touch-action', // определяет, как пользователь сенсорного экрана может манипулировать областью элемента
+  'touch-callout' // управляет отображением выноски по умолчанию
 ]
 
 export const cssScrolls: string[] = [
@@ -469,12 +503,23 @@ export const cssScrolls: string[] = [
 
   'scroll-snap-type', // определяет как строго прокрутка контейнера привязывается к точкам привязки
   'scroll-snap-align', // определяет положение привязки блока как выравнивание его области привязки
-  'scroll-snap-stop' // определяет, разрешено ли контейнеру прокрутки «пропускать» возможные позиции привязки
+  'scroll-snap-stop', // определяет, разрешено ли контейнеру прокрутки «пропускать» возможные позиции привязки
+
+  'scrollbar-gutter', // позволяет авторам резервировать место для полосы прокрутки
+  'scrollbar-width', // позволяет автору устанавливать максимальную толщину полос прокрутки элемента при их отображении
+  'scrollbar-color' // задает цвет полосы прокрутки и бегунка
 ]
 
 export const cssSVG: string[] = [
   'fill', // атрибут представления, который определяет цвет, используемые для рисования элемента
   'paint-order', // позволяет вам контролировать порядок, в котором отрисовываются заливка и обводка
+
+  'stroke',
+  'stroke-width',
+  'stroke-opacity',
+  'stroke-dasharray',
+  'stroke-dashoffset',
+  'stroke-linecap',
 
   'flood-color', // указывает, какой цвет использовать для заливки текущей подобласти примитива фильтра
   'flood-opacity', // указывает значение непрозрачности, которое будет использоваться в текущей подобласти примитива фильтра
@@ -485,10 +530,19 @@ export const cssSVG: string[] = [
 export const cssPrint: string[] = [
   'break-inside', // определяет, как должны вести себя разрывы страницы, столбца или региона внутри сгенерированного блока
   'break-before', // определяет, как должны вести себя разрывы страниц, столбцов или областей перед сгенерированным блоком
-  'break-after' // определяет, как должны вести себя разрывы страниц, столбцов или областей после созданного поля
+  'break-after', // определяет, как должны вести себя разрывы страниц, столбцов или областей после созданного поля
+
+  'print-color-adjust' // определяет, что может сделать пользовательский агент для оптимизации внешнего вида элемента на устройстве вывода
 ]
 
-export const cssOther: string[] = []
+export const cssOther: string[] = [
+  'speak',
+  'speak-as', // определяет, как символ счетчика, созданный с использованием @counter-style значения будет представлен в устной форме
+  'speak-header',
+  'speak-numeral',
+  'speak-punctuation',
+  'speech-rate' // скорости речи используется для объявления скорости, с которой произносится текст
+]
 
 export const cssExperimental: string[] = []
 
@@ -507,17 +561,22 @@ export const cssDifferent: string[] = [
   'initial-value',
   'pitch',
   'pitch-range',
-  'play-during'
+  'play-during',
+  'rest',
+  'rest-after',
+  'rest-before'
 ]
 
 export const cssDeprecated: string[] = [
+  'glyph-orientation-vertical',
   'grid-gap',
   'grid-column-gap',
   'grid-row-gap',
-  'glyph-orientation-vertical',
   'page-break-after',
   'page-break-before',
-  'page-break-inside'
+  'page-break-inside',
+  'richness',
+  'stress'
 ]
 
 export const css: string[] = [
@@ -544,55 +603,6 @@ export const css: string[] = [
   ...cssExperimental,
   ...cssDifferent,
   ...cssDeprecated,
-  'print-color-adjust',
-  'rest',
-  'rest-after',
-  'rest-before',
-  'richness',
-  'rotate',
-  'row-gap',
-  'ruby-align',
-  'ruby-position',
-  'scrollbar-color',
-  'scrollbar-gutter',
-  'scrollbar-width',
-  'shape-image-threshold',
-  'shape-margin',
-  'shape-outside',
-  'speak',
-  'speak-as',
-  'speak-header',
-  'speak-numeral',
-  'speak-punctuation',
-  'speech-rate',
-  'stress',
-  'stroke',
-  'stroke-opacity',
-  'stroke-dasharray',
-  'stroke-dashoffset',
-  'stroke-linecap',
-  'stroke-width',
-  'squared',
-  'text-align-all',
-  'text-combine-upright',
-  'text-decoration-color',
-  'text-decoration-line',
-  'text-decoration-skip',
-  'text-decoration-skip-ink',
-  'text-decoration-style',
-  'text-decoration-thickness',
-  'text-orientation',
-  'text-rendering',
-  'text-select-none',
-  'text-underline-offset',
-  'text-underline-position',
-  'touch-action',
-  'touch-callout',
-  'transform-box',
-  'transform-style',
-  'translate-x',
-  'translate-y',
-  'unicode-bidi',
   'unset',
   'vertically',
   'voice-balance',
