@@ -27,7 +27,10 @@ import { cssSelector } from './propertiesListCssSelector'
 import { cssVirtual } from './propertiesListCssVirtual'
 
 import { type Item } from '../types/object'
-import { PropertyType } from '../types/property'
+import {
+  PropertyCategory,
+  PropertyType
+} from '../types/property'
 
 export const sortList: Item<string[][]>[] = [
   {
@@ -83,11 +86,27 @@ export const sortList: Item<string[][]>[] = [
     value: []
   },
   {
+    index: `category-${PropertyCategory.theme}`,
+    value: []
+  },
+  {
+    index: `category-${PropertyCategory.class}`,
+    value: []
+  },
+  {
     index: PropertyType.classType,
     value: []
   },
   {
+    index: PropertyType.component,
+    value: []
+  },
+  {
     index: PropertyType.scss,
+    value: []
+  },
+  {
+    index: PropertyType.other,
     value: []
   }
 ]

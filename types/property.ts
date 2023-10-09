@@ -39,7 +39,8 @@ export enum PropertyType {
   root = 'root',
   mixin = 'mixin',
   none = 'none',
-  file = 'file'
+  file = 'file',
+  other = 'other'
 }
 
 export enum PropertyCategory {

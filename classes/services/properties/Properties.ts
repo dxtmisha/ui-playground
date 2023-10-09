@@ -29,6 +29,7 @@ import { PropertiesToRoot } from './to/PropertiesToRoot.ts'
 import { PropertiesToMedia } from './to/PropertiesToMedia.ts'
 import { PropertiesToAnimate } from './to/PropertiesToAnimate.ts'
 
+import { PropertiesToSort } from './to/PropertiesToSort.ts'
 import { PropertiesToNone } from './to/PropertiesToNone.ts'
 
 import { PropertiesScss } from './PropertiesScss.ts'
@@ -101,6 +102,7 @@ export class Properties {
       new PropertiesToMedia(properties).to()
       new PropertiesToAnimate(properties).to()
 
+      new PropertiesToSort(properties).to()
       new PropertiesToNone(properties).to()
 
       console.info('[Properties]', 'init')
