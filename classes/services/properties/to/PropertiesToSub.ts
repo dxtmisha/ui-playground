@@ -1,4 +1,5 @@
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -7,33 +8,23 @@ import {
 
 const REG_SUB = /(?<={[^}]*?){([^{}]+)}/g
 
-const FILE_CACHE = '006-sub'
-
 /**
  * Class for converting all properties with sub-values.<br>
  * Класс для преобразования всех свойств с под-значениями.
  */
-export class PropertiesToSub {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToSub extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '006-sub'
 
   /**
    * Converting all elements.<br>
    * Преобразование всех элементов.
    */
-  to (): void {
+  protected init (): void {
     this.items.each(property => {
       if (this.is(property.value)) {
         this.read(property)
       }
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

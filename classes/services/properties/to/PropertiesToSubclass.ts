@@ -1,4 +1,5 @@
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -6,22 +7,14 @@ import {
   PropertyType
 } from '../../../../types/property.ts'
 
-const FILE_CACHE = '036-subclass'
-
 /**
  * A class for transforming subclass.<br>
  * Класс для преобразования subclass.
  */
-export class PropertiesToSubclass {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToSubclass extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '036-subclass'
 
-  to () {
+  protected init (): void {
     this.items.findVariable(PropertyType.subclass).forEach(({
       name,
       item,
@@ -29,8 +22,6 @@ export class PropertiesToSubclass {
     }) => {
       item[PropertyKey.name] = this.getName(name, item, parents)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

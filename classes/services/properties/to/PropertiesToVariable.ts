@@ -2,7 +2,7 @@ import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
 import { toKebabCase } from '../../../../functions/string.ts'
 
 import { PropertiesTypes } from '../PropertiesTypes.ts'
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   PropertyCategory,
@@ -15,26 +15,18 @@ import { css } from '../../../../media/propertiesListCss.ts'
 import { cssSelector } from '../../../../media/propertiesListCssSelector.ts'
 import { cssVirtual } from '../../../../media/propertiesListCssVirtual.ts'
 
-const FILE_CACHE = '008-variable'
-
 /**
  * Class for performing data type conversions.<br>
  * Класс для выполнения преобразования типов данных.
  */
-export class PropertiesToVariable {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToVariable extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '008-variable'
 
   /**
    * Determine all properties and their property types in an object.<br>
    * Определяем все свойства и их типы свойств в объекте.
    */
-  to () {
+  protected init (): void {
     this.items.each(({
       design,
       component,
@@ -48,8 +40,6 @@ export class PropertiesToVariable {
         this.getByMain(design, component, name) ??
         this.findType(name, item)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

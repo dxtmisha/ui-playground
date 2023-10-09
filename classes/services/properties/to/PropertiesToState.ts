@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -6,30 +6,20 @@ import {
   PropertyType
 } from '../../../../types/property.ts'
 
-const FILE_CACHE = '032-state'
-
 /**
  * A class for transforming components.<br>
  * Класс для преобразования состояния.
  */
-export class PropertiesToState {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToState extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '032-state'
 
-  to () {
+  protected init (): void {
     this.items.findVariable([PropertyType.state]).forEach(({
       name,
       item
     }) => {
       item[PropertyKey.name] = this.getName(name, item)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

@@ -1,8 +1,8 @@
 import { isObjectNotArray } from '../../../../functions/data.ts'
 import { splice } from '../../../../functions/object.ts'
 
-import { PropertiesItems } from '../PropertiesItems.ts'
 import { PropertiesTypes } from '../PropertiesTypes.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -27,30 +27,22 @@ const USED_TYPE: PropertyType[] = [
   PropertyType.virtual
 ]
 
-const FILE_CACHE = '004-link'
-
 /**
  * The method for changing all links.<br>
  * Метод для изменения всех ссылок.
  */
-export class PropertiesToLink {
+export class PropertiesToLink extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '004-link'
+
   private update = 1
   private readonly ignore: string[] = []
   private readonly links: string[] = []
 
   /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
-
-  /**
    * The method searches for all links and replaces their values with the specified link.<br>
    * Метод ищет все ссылки и заменяет значения на указанную ссылку.
    */
-  to () {
+  protected init (): void {
     let max = MAX
 
     while (
@@ -59,8 +51,6 @@ export class PropertiesToLink {
       this.update = 0
       this.read()
     }
-
-    this.items.write(FILE_CACHE)
   }
 
   /**
@@ -71,7 +61,7 @@ export class PropertiesToLink {
    * @param properties array with all property records /<br>массив со всеми записями свойств
    * @param parent object of ancestor /<br>объект предка
    */
-  read (
+  private read (
     design?: string,
     component?: string,
     properties = this.items.get(),

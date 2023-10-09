@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   PropertyKey,
@@ -7,26 +7,18 @@ import {
 
 export type PropertiesReplaceValue = string | Partial<PropertyReplace>
 
-const FILE_CACHE = '001-replace'
-
 /**
  * A class for transforming an expression through regular expressions.<br>
  * Класс для преобразования выражения через регулярные выражения.
  */
-export class PropertiesToReplace {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToReplace extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '001-replace'
 
   /**
    * Transforming all of its properties.<br>
    * Преобразование всех своих свойств.
    */
-  to (): void {
+  protected init (): void {
     this.items.each(({ item }) => {
       if (
         item?.[PropertyKey.replace] &&
@@ -40,8 +32,6 @@ export class PropertiesToReplace {
         delete item[PropertyKey.replace]
       }
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

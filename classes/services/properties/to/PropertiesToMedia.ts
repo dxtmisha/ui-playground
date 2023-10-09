@@ -2,6 +2,7 @@ import { forEach } from '../../../../functions/data.ts'
 import { toCamelCase } from '../../../../functions/string.ts'
 
 import { PropertiesItems, type PropertiesItemsMedia } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -9,24 +10,24 @@ import {
   PropertyType
 } from '../../../../types/property.ts'
 
-const FILE_CACHE = '040-media'
-
 /**
  * A class for transforming class.<br>
  * Класс для преобразования class.
  */
-export class PropertiesToMedia {
+export class PropertiesToMedia extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '040-media'
   private readonly media: PropertiesItemsMedia
 
   /**
    * Constructor
-   * @param items
+   * @param items data for processing /<br>данные для обработки
    */
-  constructor (private items: PropertiesItems) {
+  constructor (protected items: PropertiesItems) {
+    super(items)
     this.media = this.items.getMedia()
   }
 
-  to () {
+  protected init (): void {
     this.items.findVariable([PropertyType.media, PropertyType.mediaMax]).forEach(({
       design,
       name,
@@ -34,8 +35,6 @@ export class PropertiesToMedia {
     }) => {
       item[PropertyKey.name] = this.getName(design, name, item)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

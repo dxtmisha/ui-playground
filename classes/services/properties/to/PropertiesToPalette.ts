@@ -1,6 +1,7 @@
 import { forEach, isFilled, isObject, isObjectNotArray } from '../../../../functions/data.ts'
 
 import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   PropertyCategory,
@@ -13,20 +14,20 @@ import {
 const THEME_BASIC = 'basic'
 const KEY_CLASS_NAME = 'palette'
 
-const FILE_CACHE = '002-palette'
-
 /**
  * Class for working with colors.<br>
  * Класс для работы с цветами.
  */
-export class PropertiesToPalette {
+export class PropertiesToPalette extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '002-palette'
   private palette: PropertiesItemsItem[]
 
   /**
    * Constructor
-   * @param items
+   * @param items data for processing /<br>данные для обработки
    */
-  constructor (private items: PropertiesItems) {
+  constructor (protected items: PropertiesItems) {
+    super(items)
     this.palette = this.items.findCategory(PropertyCategory.palette)
   }
 
@@ -34,15 +35,13 @@ export class PropertiesToPalette {
    * Adding a class for working with colors.<br>
    * Добавление класса для работы со цветами.
    */
-  to (): void {
+  protected init (): void {
     this.read()
     this.items.findCategory(PropertyCategory.theme)
       .forEach(({
         name,
         item
       }) => item?.value && isObjectNotArray(item.value) && this.read(item.value, name))
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

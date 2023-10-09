@@ -1,7 +1,8 @@
 import { isFilled } from '../../../../functions/data.ts'
 import { toCamelCase } from '../../../../functions/string.ts'
 
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -11,25 +12,15 @@ import {
 
 const REG_VAR = /\{([^{}]+)}/ig
 
-const FILE_CACHE = '020-var'
-
 /**
  * A class for working with custom properties in CSS.<br>
  * Класс для работы с пользовательским свойством в CSS.
  */
-export class PropertiesToVar {
+export class PropertiesToVar extends PropertiesToAbstract {
+  protected FILE_CACHE = '020-var'
   protected type = PropertyType.var
-  protected cacheName = FILE_CACHE
 
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (protected items: PropertiesItems) {
-  }
-
-  to () {
+  protected init (): void {
     this.items.findVariable(this.type).forEach(property => {
       const {
         design,
@@ -55,8 +46,6 @@ export class PropertiesToVar {
         }
       }
     })
-
-    this.items.write(this.cacheName)
   }
 
   /**

@@ -5,15 +5,13 @@ import { PropertiesToVar } from './PropertiesToVar.ts'
 
 import { PropertyType } from '../../../../types/property.ts'
 
-const FILE_CACHE = '024-property'
-
 /**
  * Class for working with custom styles in CSS.<br>
  * Класс для работы с пользовательскими стилями в CSS.
  */
 export class PropertiesToProperty extends PropertiesToVar {
+  protected FILE_CACHE = '024-property'
   protected type = PropertyType.property
-  protected cacheName = FILE_CACHE
 
   /**
    * Name transformation for the var type.<br>

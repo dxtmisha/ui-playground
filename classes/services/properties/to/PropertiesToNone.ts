@@ -1,7 +1,7 @@
 import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
 import { getColumn } from '../../../../functions/object.ts'
 
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import { PropertyType } from '../../../../types/property.ts'
 
@@ -14,20 +14,14 @@ const TYPES = [
  * Class for cleaning all empty entries for clothing the array.<br>
  * Класс для очистки всех пустых записей для облечения массива.
  */
-export class PropertiesToNone {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToNone extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '999-none'
 
   /**
    * Removes all empty entries from the data.<br>
    * Удаляет у данных всех пустых записей.
    */
-  to () {
+  protected init (): void {
     this.items.findVariable(TYPES)
       .forEach(({
         name,

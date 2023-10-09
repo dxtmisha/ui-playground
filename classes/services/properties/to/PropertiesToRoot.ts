@@ -1,23 +1,15 @@
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import { PropertyKey, PropertyType } from '../../../../types/property.ts'
-
-const FILE_CACHE = '038-root'
 
 /**
  * A class for transforming class.<br>
  * Класс для преобразования class.
  */
-export class PropertiesToRoot {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToRoot extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '038-root'
 
-  to () {
+  protected init (): void {
     this.items.findVariable(PropertyType.root).forEach(({
       design,
       component,
@@ -28,8 +20,6 @@ export class PropertiesToRoot {
         item[PropertyKey.name] = this.getName(design, component, this.items.getReName(name, item))
       }
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

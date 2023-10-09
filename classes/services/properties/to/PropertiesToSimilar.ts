@@ -1,6 +1,7 @@
 import { isObjectNotArray } from '../../../../functions/data.ts'
 
-import { PropertiesItems, type PropertiesItemsParent } from '../PropertiesItems.ts'
+import { type PropertiesItemsParent } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -18,26 +19,18 @@ const EXCEPTION = [
   PropertyType.subclass
 ]
 
-const FILE_CACHE = '010-similar'
-
 /**
  * A class for searching for related properties at a higher level to adopt their properties.<br>
  * Класс для поиска родственных свойств на уровне выше для принятия их свойств.
  */
-export class PropertiesToSimilar {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToSimilar extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '010-similar'
 
   /**
    * Finding similar data for editing.<br>
    * Поиск похожих данных для редактирования.
    */
-  to () {
+  protected init (): void {
     this.items.each(({
       item,
       name,
@@ -50,8 +43,6 @@ export class PropertiesToSimilar {
         item[PropertyKey.variable] = similar?.[PropertyKey.variable]
       }
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

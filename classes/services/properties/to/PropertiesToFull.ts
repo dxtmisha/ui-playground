@@ -1,22 +1,15 @@
-import { PropertiesItems } from '../PropertiesItems.ts'
-import { PropertyKey } from '../../../../types/property.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-const FILE_CACHE = '018-full'
+import { PropertyKey } from '../../../../types/property.ts'
 
 /**
  * A class for transforming components.<br>
  * Класс для преобразования состояния.
  */
-export class PropertiesToFull {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToFull extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '018-full'
 
-  to () {
+  protected init (): void {
     this.items.each(({
       design,
       component,
@@ -36,7 +29,5 @@ export class PropertiesToFull {
         }
       }
     })
-
-    this.items.write(FILE_CACHE)
   }
 }

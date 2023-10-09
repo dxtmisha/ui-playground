@@ -1,6 +1,7 @@
 import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
 
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
   PropertyKey,
@@ -13,26 +14,18 @@ const TYPE = [
   PropertyType.state
 ]
 
-const FILE_CACHE = '012-multi'
-
 /**
  * Class for converting properties with multiple values.<br>
  * Класс для преобразования свойств с множеством значений.
  */
-export class PropertiesToMulti {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToMulti extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '012-multi'
 
   /**
    * Converts property records with multiple types.<br>
    * Преобразует записи свойств со множеством типов.
    */
-  to () {
+  protected init (): void {
     this.getList().forEach(({
       item,
       name,
@@ -41,10 +34,6 @@ export class PropertiesToMulti {
       this.read(this.items.getReName(name, item), value as PropertyList)
       item[PropertyKey.variable] = PropertyType.state
     })
-
-    this.items.write(FILE_CACHE)
-
-    return this
   }
 
   /**

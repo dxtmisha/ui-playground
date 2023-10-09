@@ -1,22 +1,20 @@
-import { PropertiesItems, PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-const FILE_CACHE = '044-animate'
+import {
+  type PropertyItem,
+  PropertyKey,
+  PropertyType
+} from '../../../../types/property.ts'
 
 /**
  * A class for transforming animate.<br>
  * Класс для преобразования animate.
  */
-export class PropertiesToAnimate {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToAnimate extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '044-animate'
 
-  to () {
+  protected init (): void {
     this.items.findVariable(PropertyType.animate).forEach(({
       name,
       item,
@@ -24,8 +22,6 @@ export class PropertiesToAnimate {
     }) => {
       item[PropertyKey.name] = this.getName(this.items.getReName(name, item), item, parents)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**

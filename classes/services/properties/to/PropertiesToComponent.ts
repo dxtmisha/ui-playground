@@ -1,23 +1,20 @@
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
-
-const FILE_CACHE = '028-component'
+import {
+  type PropertyItem,
+  PropertyKey,
+  PropertyType
+} from '../../../../types/property.ts'
 
 /**
  * A class for transforming components.<br>
  * Класс для преобразования компонент.
  */
-export class PropertiesToComponent {
-  /**
-   * Constructor
-   * @param items
-   */
-  // eslint-disable-next-line no-useless-constructor
-  constructor (private items: PropertiesItems) {
-  }
+export class PropertiesToComponent extends PropertiesToAbstract {
+  protected readonly FILE_CACHE = '028-component'
 
-  to () {
+  protected init (): void {
     this.items.findVariable([PropertyType.component, PropertyType.theme]).forEach(({
       name,
       item,
@@ -25,8 +22,6 @@ export class PropertiesToComponent {
     }) => {
       item[PropertyKey.name] = this.getName(this.items.getReName(name, item), item, parents)
     })
-
-    this.items.write(FILE_CACHE)
   }
 
   /**
