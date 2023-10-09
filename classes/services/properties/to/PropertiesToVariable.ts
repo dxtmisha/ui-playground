@@ -13,7 +13,7 @@ import {
 
 import { css } from '../../../../media/propertiesListCss.ts'
 import { cssSelector } from '../../../../media/propertiesListCssSelector.ts'
-import cssVirtual from '../../../../media/propertiesListCssVirtual.json'
+import { cssVirtual } from '../../../../media/propertiesListCssVirtual.ts'
 
 const FILE_CACHE = '008-variable'
 

@@ -23,6 +23,8 @@ import {
   cssTransitions,
   cssTypography
 } from './propertiesListCss'
+import { cssSelector } from './propertiesListCssSelector'
+import { cssVirtual } from './propertiesListCssVirtual'
 
 import { type Item } from '../types/object'
 import { PropertyType } from '../types/property'
@@ -62,6 +64,30 @@ export const sortList: Item<string[][]>[] = [
   },
   {
     index: PropertyType.selector,
+    value: [
+      cssSelector
+    ]
+  },
+  {
+    index: PropertyType.virtual,
+    value: [
+      cssVirtual
+    ]
+  },
+  {
+    index: PropertyType.state,
+    value: []
+  },
+  {
+    index: PropertyType.subclass,
+    value: []
+  },
+  {
+    index: PropertyType.classType,
+    value: []
+  },
+  {
+    index: PropertyType.scss,
     value: []
   }
 ]
