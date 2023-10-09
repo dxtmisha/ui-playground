@@ -11,8 +11,8 @@ import {
   PropertyType
 } from '../../../../types/property.ts'
 
-import { css } from '../../../../media/propertiesListCss.js'
-import cssSelector from '../../../../media/propertiesListCssSelector.json'
+import { css } from '../../../../media/propertiesListCss.ts'
+import { cssSelector } from '../../../../media/propertiesListCssSelector.ts'
 import cssVirtual from '../../../../media/propertiesListCssVirtual.json'
 
 const FILE_CACHE = '008-variable'
