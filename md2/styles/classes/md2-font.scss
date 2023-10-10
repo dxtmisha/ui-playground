@@ -1,0 +1,129 @@
+@import "styles/all";
+
+.md2-font {
+  &--overline {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-xs)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-sm)});
+    letter-spacing: var(--md2-ref-letterSpacing-3xl);
+    text-transform: uppercase;
+  }
+  
+  &--caption {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-normal);
+    @include fontSize(#{var(--md2-ref-font-size-sm)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-sm)});
+    letter-spacing: var(--md2-ref-letterSpacing-lg);
+    text-transform: none;
+  }
+  
+  &--button {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-md)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-sm)});
+    letter-spacing: var(--md2-ref-letterSpacing-2xl);
+    text-transform: uppercase;
+  }
+  
+  &--body2 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-normal);
+    @include fontSize(#{var(--md2-ref-font-size-md)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-sm)});
+    letter-spacing: var(--md2-ref-letterSpacing-md);
+    text-transform: none;
+  }
+  
+  &--body1 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-normal);
+    @include fontSize(#{var(--md2-ref-font-size-lg)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-lg)});
+    letter-spacing: var(--md2-ref-letterSpacing-xl);
+    text-transform: none;
+  }
+  
+  &--subtitle2 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-md)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-lg)});
+    letter-spacing: var(--md2-ref-letterSpacing-xs);
+    text-transform: none;
+  }
+  
+  &--subtitle1 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-normal);
+    @include fontSize(#{var(--md2-ref-font-size-lg)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-lg)});
+    letter-spacing: var(--md2-ref-letterSpacing-sm);
+    text-transform: none;
+  }
+  
+  &--headline6 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-6)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-6)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-6);
+    text-transform: none;
+  }
+  
+  &--headline5 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-5)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-5)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-5);
+    text-transform: none;
+  }
+  
+  &--headline4 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-4)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-4)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-4);
+    text-transform: none;
+  }
+  
+  &--headline3 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-3)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-3)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-3);
+    text-transform: none;
+  }
+  
+  &--headline2 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-2)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-2)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-2);
+    text-transform: none;
+  }
+  
+  &--headline1 {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-headline-1)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-headline-1)});
+    letter-spacing: var(--md2-ref-letterSpacing-headline-1);
+    text-transform: none;
+  }
+  
+  &--interactiveDisplay {
+    font-family: var(--md2-ref-font-family-roboto);
+    font-weight: var(--md2-ref-font-weight-bold);
+    @include fontSize(#{var(--md2-ref-font-size-interactiveDisplay)});
+    @include lineHeight(#{var(--md2-ref-lineHeight-interactiveDisplay)});
+    letter-spacing: var(--md2-ref-letterSpacing-none);
+    text-transform: none;
+  }
+}

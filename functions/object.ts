@@ -33,7 +33,7 @@ export function isDifferent<T> (
  * Возвращает массив значений для определенного столбца входного массива.
  * @param array a one array or an array of objects from which to pull a column of values from /<br>
  * многомерный массив или массив объектов, из которого будет производиться выборка значений
- * @param column ключ столбца, значения которого нужно вернуть /<br>the column of values to return
+ * @param column the column of values to return /<br>ключ столбца, значения которого нужно вернуть
  */
 export function getColumn<T, K extends keyof T> (
   array: ObjectOrArray<T>,
@@ -45,7 +45,7 @@ export function getColumn<T, K extends keyof T> (
 /**
  * Searches for the shortest string in the array and returns its length.<br>
  * Ищет самую короткую строку в массиве и возвращает её длину.
- * @param data array with values /<br>массив с значениями
+ * @param data array with data /<br>массив с данными
  */
 export function getMinLength (data: ObjectOrArray<string>): number {
   return Math.min(...getLength(data))
@@ -54,7 +54,7 @@ export function getMinLength (data: ObjectOrArray<string>): number {
 /**
  * Searches for the longest string in the array and returns its length.<br>
  * Ищет самую длинную строку в массиве и возвращает её длину.
- * @param data array with values /<br>массив с значениями
+ * @param data array with data /<br>массив с данными
  */
 export function getMaxLength (data: ObjectOrArray<string>): number {
   return Math.max(...getLength(data))

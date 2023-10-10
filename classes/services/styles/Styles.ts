@@ -1,3 +1,5 @@
+import { forEach } from '../../../functions/data.ts'
+
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { PropertiesItems } from '../properties/PropertiesItems.ts'
 
@@ -7,8 +9,12 @@ import { StylesTool } from './StylesTool.ts'
 import { StylesRoot } from './StylesRoot.ts'
 import { StylesClasses } from './StylesClasses.ts'
 
+import { EXTENSION_STYLE_FILE } from '../../../types/property.ts'
+
 const FILE_VAR = 'vars'
 const FILE_CLASS = 'classes'
+
+const DIR_CLASS = 'classes'
 
 /**
  * Base class for generating basic properties.<br>
@@ -54,7 +60,7 @@ export class Styles {
       StylesTool.getDir(design),
       FILE_VAR,
       data,
-      'scss'
+      EXTENSION_STYLE_FILE
     )
 
     return this
@@ -70,13 +76,25 @@ export class Styles {
     design: string,
     items: PropertiesItems
   ): this {
-    const data = StylesTool.join(new StylesClasses(items).init())
+    const {
+      data,
+      classes
+    } = new StylesClasses(items).init()
+
+    forEach(classes, (item, name) => {
+      PropertiesFile.write(
+        [...StylesTool.getDir(design), DIR_CLASS],
+        name,
+        StylesTool.join(item),
+        EXTENSION_STYLE_FILE
+      )
+    })
 
     PropertiesFile.write(
       StylesTool.getDir(design),
       FILE_CLASS,
-      data,
-      'scss'
+      StylesTool.join(data),
+      EXTENSION_STYLE_FILE
     )
 
     return this

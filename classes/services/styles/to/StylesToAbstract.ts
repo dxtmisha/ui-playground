@@ -60,7 +60,15 @@ export abstract class StylesToAbstract {
    * Добавление пробела в каждую строку.
    * @param data data for processing /<br>данные для обработки
    */
-  private addSpace (data: string[]): string[] {
+  protected addSpace (data: string[]): string[] {
     return forEach(data, item => `${this.space}${item}`)
+  }
+
+  /**
+   * Adds an empty line if the element is not the first in the tree.<br>
+   * Добавляет пустую строку, если элемент не является первым в дереве.
+   */
+  protected addEmptyString (): string[] {
+    return (this.property?.previous ? [''] : [])
   }
 }

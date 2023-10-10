@@ -84,7 +84,7 @@ export function toKebabCase (value: string): string {
  * Replacing the value from replaces in value.<br>
  * Замена значения из replaces в value.
  * @param value template string /<br>строка шаблона
- * @param replaces object with values for replacement /<br>объект с значениями для замены
+ * @param replaces object with data for replacement /<br>объект с данными для замены
  */
 export function replaceTemplate (value: string, replaces: Record<string, string | FunctionReturn<string>>): string {
   let data = value

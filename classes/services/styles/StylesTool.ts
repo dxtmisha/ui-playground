@@ -29,11 +29,20 @@ export class StylesTool {
   }
 
   /**
+   * Код строки для импорта файла.<br>
+   * Code line for file import.
+   * @param path path to the file /<br>путь к файлу
+   */
+  static addImport (path: string): string {
+    return `@import "${path}";`
+  }
+
+  /**
    * Getting a reference to a base function.<br>
    * Получение ссылки на базовую функцию.
    */
   static addImportProperties (): string {
-    return '@import "../../styles/all";'
+    return this.addImport('styles/all')
   }
 
   /**

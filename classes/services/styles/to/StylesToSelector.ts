@@ -13,6 +13,7 @@ export class StylesToSelector extends StylesToAbstract {
    */
   protected treatment (): string[] {
     return [
+      ...this.addEmptyString(),
       `${this.getSelector()} {`,
       ...this.content(),
       '}'
@@ -28,7 +29,7 @@ export class StylesToSelector extends StylesToAbstract {
       design,
       component
     } = this.property
-
+    console.log('this.property', this.property)
     return `'${PropertiesTool.getClassName(design, component)}'`
   }
 

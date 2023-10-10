@@ -1,0 +1,7 @@
+@import "styles/all";
+
+.md2-grid {
+  grid-template-columns: repeat(var(--md2-sys-grid-xs), minmax(0, 1fr));
+  
+  column-gap: var(--md2-sys-gap-xs);
+}

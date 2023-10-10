@@ -1,0 +1,138 @@
+@import "styles/all";
+
+.md3-font {
+  &--bodySmall {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-sm)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-sm)});
+    letter-spacing: var(--md3-ref-letterSpacing-lg);
+    text-transform: none;
+  }
+  
+  &--bodyMedium {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-md)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+    letter-spacing: var(--md3-ref-letterSpacing-md);
+    text-transform: none;
+  }
+  
+  &--bodyLarge {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-lg)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-lg)});
+    letter-spacing: var(--md3-ref-letterSpacing-xl);
+    text-transform: none;
+  }
+  
+  &--labelSmall {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-bold);
+    @include fontSize(#{var(--md3-ref-font-size-xs)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-sm)});
+    letter-spacing: var(--md3-ref-letterSpacing-xl);
+    text-transform: none;
+  }
+  
+  &--labelMedium {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-bold);
+    @include fontSize(#{var(--md3-ref-font-size-sm)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-sm)});
+    letter-spacing: var(--md3-ref-letterSpacing-xl);
+    text-transform: none;
+  }
+  
+  &--labelLarge {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-bold);
+    @include fontSize(#{var(--md3-ref-font-size-md)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+    letter-spacing: var(--md3-ref-letterSpacing-xs);
+    text-transform: none;
+  }
+  
+  &--titleSmall {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-bold);
+    @include fontSize(#{var(--md3-ref-font-size-md)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+    letter-spacing: var(--md3-ref-letterSpacing-xs);
+    text-transform: none;
+  }
+  
+  &--titleMedium {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-bold);
+    @include fontSize(#{var(--md3-ref-font-size-lg)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-lg)});
+    letter-spacing: var(--md3-ref-letterSpacing-sm);
+    text-transform: none;
+  }
+  
+  &--titleLarge {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-xl)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-xl)});
+    letter-spacing: var(--md3-ref-letterSpacing-none);
+    text-transform: none;
+  }
+  
+  &--headlineSmall {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-headline-sm)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-headline-sm)});
+    letter-spacing: var(--md3-ref-letterSpacing-headline-sm);
+    text-transform: none;
+  }
+  
+  &--headlineMedium {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-headline-md)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-headline-md)});
+    letter-spacing: var(--md3-ref-letterSpacing-headline-md);
+    text-transform: none;
+  }
+  
+  &--headlineLarge {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-headline-lg)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-headline-lg)});
+    letter-spacing: var(--md3-ref-letterSpacing-headline-lg);
+    text-transform: none;
+  }
+  
+  &--displaySmall {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-display-sm)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-display-sm)});
+    letter-spacing: var(--md3-ref-letterSpacing-display-sm);
+    text-transform: none;
+  }
+  
+  &--displayMedium {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-display-md)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-display-md)});
+    letter-spacing: var(--md3-ref-letterSpacing-display-md);
+    text-transform: none;
+  }
+  
+  &--displayLarge {
+    font-family: var(--md3-ref-font-family-roboto);
+    font-weight: var(--md3-ref-font-weight-normal);
+    @include fontSize(#{var(--md3-ref-font-size-display-lg)});
+    @include lineHeight(#{var(--md3-ref-lineHeight-display-lg)});
+    letter-spacing: var(--md3-ref-letterSpacing-display-lg);
+    text-transform: none;
+  }
+}

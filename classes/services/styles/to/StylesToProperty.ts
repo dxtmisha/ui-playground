@@ -92,6 +92,13 @@ export class StylesToProperty extends StylesToAbstract {
   protected treatment (): string[] {
     const data: string[] = []
 
+    if (
+      this.property?.previous &&
+      this.property.previous?.[PropertyKey.sort] !== this.item?.[PropertyKey.sort]
+    ) {
+      data.push('')
+    }
+
     if (this.item?.[PropertyKey.varKey]) {
       data.push(this.getVar())
     }

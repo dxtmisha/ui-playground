@@ -109,3 +109,4 @@ export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
 export const NAME_CONSTRUCTOR = 'd'
 export const DIR_CONSTRUCTOR = 'constructors'
 export const FILE_PROPERTY = 'properties.json'
+export const EXTENSION_STYLE_FILE = 'scss'

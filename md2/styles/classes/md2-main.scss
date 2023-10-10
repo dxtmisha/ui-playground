@@ -1,0 +1,15 @@
+@import "styles/all";
+
+.md2-main {
+  font-family: var(--md2-ref-font-family-roboto);
+  font-weight: var(--md2-ref-font-weight-normal);
+  @include fontSize(#{var(--md2-ref-font-size-lg)});
+  @include lineHeight(#{var(--md2-ref-lineHeight-lg)});
+  letter-spacing: var(--md2-ref-letterSpacing-xl);
+  text-transform: none;
+  
+  @include color(#{var(--md2-sys-palette-onSurface)});
+  @include colorOpacity(#{var(--md2-sys-opacity-surface-high)});
+  
+  background: var(--md2-ref-background-0);
+}

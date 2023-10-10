@@ -129,12 +129,11 @@ export function getAttributes<E extends ElementOrWindow> (
 }
 
 /**
- * Modifies the value of an element identified by its key
- *
- * Изменяет значение элемента, определенного ключом
- * @param element checked element / проверяемый элемент
- * @param index index at which we retrieve values / индекс, по которому получаем значения
- * @param value new value / новое значение
+ * Modifies the value of an element identified by its key.<br>
+ * Изменяет значение элемента, определенного ключом.
+ * @param element checked element /<br>проверяемый элемент
+ * @param index index at which we retrieve values /<br>индекс, по которому получаем значения
+ * @param value new value /<br>новое значение
  */
 export function setElementItem<
   E extends ElementOrWindow,
@@ -175,8 +174,8 @@ export function setElementItem<
 }
 
 /**
- * In an HTML document.<br>
- * В HTML-документах создаёт элемент c тем тегом, что указан в аргументе.
+ * In HTML documents, creates an element with the tag that is specified in the argument.<br>
+ * В HTML-документах создаёт элемент с тегом, который указан в аргументе.
  * @param parentElement the DOM node's parent Element /<br>родитель для нового элемента
  * @param tagName A string that specifies the type of element to be created /<br>строка,
  * указывающая элемент какого типа должен быть создан

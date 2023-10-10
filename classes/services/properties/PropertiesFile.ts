@@ -13,8 +13,8 @@ export type PropertiesFileValue<T = any> = string | Record<string, T>
  * Класс для работы с файлами.
  */
 export class PropertiesFile {
-  static root: string
-  static module: boolean
+  protected static root: string
+  protected static module: boolean
 
   /**
    * The fs.existsSync() method is used to synchronously check if a file already

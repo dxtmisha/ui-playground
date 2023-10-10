@@ -1,0 +1,35 @@
+@import "styles/all";
+
+.md2-dark {
+  --md2-ref-background-0: rgb(18, 18, 18);
+  --md2-ref-background-1: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #121212;
+  --md2-ref-background-2: linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07)), #121212;
+  --md2-ref-background-3: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #121212;
+  --md2-ref-background-4: linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #121212;
+  --md2-ref-background-6: linear-gradient(0deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.11)), #121212;
+  --md2-ref-background-8: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #121212;
+  --md2-ref-background-12: linear-gradient(0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)), #121212;
+  --md2-ref-background-16: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), #121212;
+  --md2-ref-background-24: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #121212;
+  --md2-sys-palette-primary: var(--md2-ref-palette-blue-200);
+  --md2-sys-palette-primaryVariant: var(--md2-ref-palette-blue-700);
+  --md2-sys-palette-secondary: var(--md2-ref-palette-amber-200);
+  --md2-sys-palette-secondaryVariant: var(--md2-ref-palette-amber-200);
+  --md2-sys-palette-background: var(--md2-ref-palette-blackLight);
+  --md2-sys-palette-surface: var(--md2-ref-palette-blackLight);
+  --md2-sys-palette-success: var(--md2-ref-palette-green-700);
+  --md2-sys-palette-warning: var(--md2-ref-palette-yellow-700);
+  --md2-sys-palette-error: var(--md2-ref-palette-red-700);
+  --md2-sys-palette-disabled: var(--md2-ref-palette-white);
+  --md2-sys-palette-onPrimary: var(--md2-ref-palette-black);
+  --md2-sys-palette-onSecondary: var(--md2-ref-palette-black);
+  --md2-sys-palette-onBackground: var(--md2-ref-palette-white);
+  --md2-sys-palette-onSurface: var(--md2-ref-palette-white);
+  --md2-sys-palette-onSuccess: var(--md2-ref-palette-black);
+  --md2-sys-palette-onWarning: var(--md2-ref-palette-black);
+  --md2-sys-palette-onError: var(--md2-ref-palette-black);
+  --md2-sys-palette-outline: var(--md2-ref-palette-white);
+  --md2-sys-palette-white: var(--md2-ref-palette-white);
+  --md2-sys-palette-black: var(--md2-ref-palette-blackLight);
+  --md2-sys-palette-overlay: var(--md2-ref-palette-white);
+}

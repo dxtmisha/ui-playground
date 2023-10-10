@@ -1,0 +1,202 @@
+@import "styles/all";
+
+.md3-button {
+  --md3-button-gap: var(--md3-ref-spacing-2);
+  --md3-button-padding: var(--md3-ref-spacing-6);
+  --md3-button-test: 24px;
+  
+  font-family: var(--md3-ref-font-family-roboto);
+  font-weight: var(--md3-ref-font-weight-bold);
+  @include fontSize(#{var(--md3-ref-font-size-md)});
+  @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+  letter-spacing: var(--md3-ref-letterSpacing-xs);
+  text-transform: none;
+  
+  @include paletteColor(#{var(--md3-sys-palette-primary)});
+  
+  @include paletteGradient(#{var(--md3-sys-palette-primary)});
+  @include backgroundColor(#{transparent});
+  
+  border-radius: var(--md3-sys-rounded-full);
+  
+  box-shadow: none;
+  
+  transition-property: border, box-shadow;
+  transition-duration: var(--d-sys-transitionDuration-lg-close);
+  transition-timing-function: var(--d-sys-transitionFunction-standard);
+  
+  @include enabledSelector(hover, '.hover') {
+    @include gradientOpacity(#{var(--md3-sys-opacity-008)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  @include enabledSelector(active, '.active') {
+    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &--selected {
+    @include paletteColor(#{var(--md3-sys-palette-primaryVariant)});
+    
+    @include paletteGradient(#{var(--md3-sys-palette-primaryVariant)});
+  }
+  
+  &--progress {
+  }
+  
+  &--disabled {
+    @include paletteColor(#{var(--md3-sys-palette-onSurface)});
+    @include colorOpacity(#{var(--md3-sys-opacity-disabled)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &--adaptive {
+    &--icon {
+      --md3-button-padding: 0px;
+    }
+    
+    &--sm {
+    }
+    
+    &--md {
+    }
+  }
+  
+  &--height {
+    &--sm {
+      @include height(#{var(--md3-ref-spacing-8)});
+    }
+    
+    &--md {
+      @include height(#{var(--md3-ref-spacing-10)});
+    }
+    
+    &--lg {
+      @include height(#{var(--md3-ref-spacing-12)});
+    }
+  }
+  
+  &--filled {
+    @include color(#{var(--md3-sys-palette-onPrimary)});
+    
+    @include paletteBackground(#{var(--md3-sys-palette-primary)});
+    @include gradient(#{var(--md3-sys-palette-onPrimary)});
+    
+    @include enabledSelector(hover, '.hover') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include enabledSelector(active, '.active') {
+      box-shadow: none;
+    }
+    
+    @include disabled('.disabled') {
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include color(#{var(--md3-sys-palette-onPrimary)});
+      
+      @include paletteBackground(#{var(--md3-sys-palette-primaryVariant)});
+    }
+  }
+  
+  &--outlined {
+    @include enabledSelector(focus, '.focus') {
+    }
+    
+    @include disabled('.disabled') {
+    }
+    
+    &--palette-border {
+    }
+    
+    &--selected {
+    }
+  }
+  
+  &--text {
+    --md3-button-padding: var(--md3-ref-spacing-3);
+    
+    @include enabledSelector(hover, '.hover') {
+      transition-duration: var(--d-sys-transitionDuration-lg-close);
+    }
+    
+    @include enabledSelector(active, '.active') {
+    }
+    
+    &--palette-border {
+    }
+  }
+  
+  &--elevated {
+    @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerLow)});
+    
+    box-shadow: var(--md3-ref-shadow-1);
+    
+    @include enabledSelector(hover, '.hover') {
+      box-shadow: var(--md3-ref-shadow-2);
+    }
+    
+    @include enabledSelector(active, '.active') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include disabled('.disabled') {
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerHigh)});
+    }
+  }
+  
+  &--tonal {
+    @include color(#{var(--md3-sys-palette-onSecondaryContainer)});
+    
+    @include paletteBackground(#{var(--md3-sys-palette-secondaryContainer)});
+    @include gradient(#{var(--md3-sys-palette-onSecondaryContainer)});
+    
+    @include enabledSelector(hover, '.hover') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include enabledSelector(active, '.active') {
+      box-shadow: none;
+    }
+    
+    @include disabled('.disabled') {
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include paletteBackground(#{var(--md3-sys-palette-secondaryContainerVariant)});
+    }
+    
+    &--a {
+      &--b {
+        @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
+        
+        &--d {
+          @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+        }
+      }
+    }
+  }
+  
+  &--test {
+    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+  }
+}

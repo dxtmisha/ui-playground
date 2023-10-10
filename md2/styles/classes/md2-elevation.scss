@@ -1,0 +1,83 @@
+@import "styles/all";
+
+.md2-elevation {
+  &--0 {
+    background: var(--md2-ref-background-0);
+    
+    box-shadow: var(--md2-ref-shadow-0);
+    
+    z-index: var(--md2-ref-index-0);
+  }
+  
+  &--1 {
+    background: var(--md2-ref-background-1);
+    
+    box-shadow: var(--md2-ref-shadow-1);
+    
+    z-index: var(--md2-ref-index-1);
+  }
+  
+  &--2 {
+    background: var(--md2-ref-background-2);
+    
+    box-shadow: var(--md2-ref-shadow-2);
+    
+    z-index: var(--md2-ref-index-2);
+  }
+  
+  &--3 {
+    background: var(--md2-ref-background-3);
+    
+    box-shadow: var(--md2-ref-shadow-3);
+    
+    z-index: var(--md2-ref-index-3);
+  }
+  
+  &--4 {
+    background: var(--md2-ref-background-4);
+    
+    box-shadow: var(--md2-ref-shadow-4);
+    
+    z-index: var(--md2-ref-index-4);
+  }
+  
+  &--6 {
+    background: var(--md2-ref-background-6);
+    
+    box-shadow: var(--md2-ref-shadow-6);
+    
+    z-index: var(--md2-ref-index-6);
+  }
+  
+  &--8 {
+    background: var(--md2-ref-background-8);
+    
+    box-shadow: var(--md2-ref-shadow-8);
+    
+    z-index: var(--md2-ref-index-8);
+  }
+  
+  &--12 {
+    background: var(--md2-ref-background-12);
+    
+    box-shadow: var(--md2-ref-shadow-12);
+    
+    z-index: var(--md2-ref-index-12);
+  }
+  
+  &--16 {
+    background: var(--md2-ref-background-16);
+    
+    box-shadow: var(--md2-ref-shadow-16);
+    
+    z-index: var(--md2-ref-index-16);
+  }
+  
+  &--24 {
+    background: var(--md2-ref-background-24);
+    
+    box-shadow: var(--md2-ref-shadow-24);
+    
+    z-index: var(--md2-ref-index-24);
+  }
+}
