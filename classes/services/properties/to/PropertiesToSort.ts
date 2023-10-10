@@ -4,6 +4,7 @@ import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
+  PropertyItem,
   PropertyKey,
   type PropertyList,
   PropertyType
@@ -39,36 +40,78 @@ export class PropertiesToSort extends PropertiesToAbstract {
         value,
         item
       } = property
-
-      const category = `category-${item?.[PropertyKey.category]}`
-      const variable = item?.[PropertyKey.variable]
+      const sort = this.getIndex(item)
 
       if (isObjectNotArray(value)) {
         item.value = this.read(property)
       }
 
-      if (category && category in data) {
-        data[category][name] = item
-      } else if (variable && variable in data) {
-        data[variable][name] = item
-      } else {
-        data[PropertyType.other][name] = item
-      }
+      item[PropertyKey.sort] = sort
+      data[sort][name] = item
     }, properties)
 
     return this.join(data)
   }
 
+  /**
+   * Getting a basic list of empty variables, sorted.<br>
+   * Получение базового списка пустых переменных, отсортированного.
+   */
   private getBasic (): PropertiesSortBasic {
     const data: PropertiesSortBasic = {}
 
-    sortList.forEach(({ index }) => {
+    sortList.forEach(({
+      index,
+      value
+    }) => {
+      if (value.length > 0) {
+        for (const key in value) {
+          data[`${index}-${key}`] = {}
+        }
+      }
+
       data[index] = {}
     })
 
     return data
   }
 
+  /**
+   * Getting the category name of an element.<br>
+   * Получение названия категории у элемента.
+   * @param item current element /<br>текущий элемент
+   */
+  private getCategoryName (item: PropertyItem): string {
+    return `category-${item?.[PropertyKey.category]}`
+  }
+
+  /**
+   * Getting the index name of an element.<br>
+   * Получение названия индекса у элемента.
+   * @param item current element /<br>текущий элемент
+   */
+  private getIndex (item: PropertyItem): string {
+    const category = this.getCategoryName(item)
+    const variable = item?.[PropertyKey.variable]
+
+    const sort = sortList.find(
+      ({ index }) => index === category || index === variable
+    )
+
+    if (sort) {
+      const key = sort.value.findIndex(names => names.indexOf(item?.[PropertyKey.name] ?? '') !== -1)
+
+      return `${sort.index}${key > 0 ? `-${key}` : ''}`
+    }
+
+    return PropertyType.other
+  }
+
+  /**
+   * Merging records into a list.<br>
+   * Соединения записи в список.
+   * @param data given for connection /<br>данный для соединения
+   */
   private join (data: PropertiesSortBasic): PropertyList {
     const properties: PropertyList = {}
 

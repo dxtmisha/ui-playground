@@ -16,10 +16,10 @@
   "gradient": "{sys.palette.primary}",
   "gradient-opacity": "0",
   "border-radius": "{sys.rounded.full}",
-  "=box-shadow": "=none",
-  "transition-property": "=border, box-shadow",
-  "=transition-duration": "{d.sys.transitionDuration.lg.close}",
-  "transition-function": "{d.sys.transitionFunction.standard}",
+  "box-shadow": "none",
+  "transition-property": "border, box-shadow",
+  "transition-duration": "{d.sys.transitionDuration.lg.close}",
+  "transition-timing-function": "{d.sys.transitionFunction.standard}",
   "hover": {
     "gradient-opacity": "{sys.opacity.008}",
     "transition-duration": "{d.sys.transitionDuration.sm}"
