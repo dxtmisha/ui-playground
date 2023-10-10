@@ -8,7 +8,7 @@ import { type PropertyItem, PropertyKey } from '../../../../types/property.ts'
  * Base class for conversion.<br>
  * Базовый класс для преобразования.
  */
-export class StylesTo {
+export abstract class StylesToAbstract {
   protected item: PropertyItem
 
   /**
@@ -53,9 +53,7 @@ export class StylesTo {
    * Method for converting data into a style structure.<br>
    * Метод преобразования данных в структуру стиля.
    */
-  protected treatment (): string[] {
-    return []
-  }
+  protected abstract treatment (): string[]
 
   /**
    * Adding a space in each line.<br>

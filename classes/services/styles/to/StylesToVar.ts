@@ -3,7 +3,7 @@ import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
 import { PropertiesItems } from '../../properties/PropertiesItems.ts'
 import { PropertiesValues } from '../../properties/PropertiesValues.ts'
 
-import { StylesTo } from './StylesTo.ts'
+import { StylesToAbstract } from './StylesToAbstract.ts'
 
 import {
   type PropertyItem,
@@ -15,7 +15,7 @@ import {
  * CSS variable converter class.<br>
  * Класс для преобразования в переменные CSS.
  */
-export class StylesToVar extends StylesTo {
+export class StylesToVar extends StylesToAbstract {
   /**
    * Getting all variables in the current branch.<br>
    * Получение всех переменных в текущей ветке.

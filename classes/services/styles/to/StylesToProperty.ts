@@ -1,7 +1,7 @@
 import { toCamelCase } from '../../../../functions/string.ts'
 
 import { PropertiesTool } from '../../properties/PropertiesTool.ts'
-import { StylesTo } from './StylesTo.ts'
+import { StylesToAbstract } from './StylesToAbstract.ts'
 
 import { PropertyKey } from '../../../../types/property.ts'
 
@@ -84,7 +84,7 @@ export const TYPES: string[] = [
  * CSS class for converting to CSS property.<br>
  * Класс для преобразования в свойство CSS.
  */
-export class StylesToProperty extends StylesTo {
+export class StylesToProperty extends StylesToAbstract {
   /**
    * Acquiring full ownership.<br>
    * Получения полного свойства.

@@ -23,6 +23,7 @@ export type PropertiesItemsItem = {
   index: string
   value: PropertyItem['value'],
   item: PropertyItem,
+  previous?: PropertyItem,
   parent?: PropertyItem,
   parents: PropertiesItemsParent[]
 }
@@ -487,6 +488,7 @@ export class PropertiesItems {
     parents: PropertiesItemsItem['parents'] = []
   ): T[] {
     const data: T[] = []
+    let previous: PropertyItem
 
     forEach(properties, (item, name) => {
       if (this.isFocusDesign(name, design)) {
@@ -504,6 +506,7 @@ export class PropertiesItems {
           index: this.getIndex(newParents),
           value: item.value,
           item,
+          previous,
           parent,
           parents
         })
@@ -528,6 +531,8 @@ export class PropertiesItems {
             )
           )
         }
+
+        previous = item
       }
     })
 

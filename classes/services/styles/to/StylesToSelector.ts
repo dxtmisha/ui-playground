@@ -1,12 +1,12 @@
 import { PropertiesTool } from '../../properties/PropertiesTool.ts'
 
-import { StylesTo } from './StylesTo.ts'
+import { StylesToAbstract } from './StylesToAbstract.ts'
 
 /**
  * Class for generating data for sub property styles.<br>
  * Класс для генерация данный для под свойство стили.
  */
-export class StylesToSelector extends StylesTo {
+export class StylesToSelector extends StylesToAbstract {
   /**
    * Method for converting data into a style structure.<br>
    * Метод преобразования данных в структуру стиля.
