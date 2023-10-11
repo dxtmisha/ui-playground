@@ -87,6 +87,7 @@ export type PropertyItem = {
   __c?: string
   __f?: string | string[]
   __s?: string
+  __o?: number
   __file?: string
   __wrap?: boolean
 }

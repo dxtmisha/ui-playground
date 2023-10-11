@@ -10,7 +10,6 @@ import { StylesToSelector } from './to/StylesToSelector.ts'
 import {
   type PropertyItem,
   PropertyKey,
-  type PropertyList,
   PropertyType
 } from '../../../types/property.ts'
 
@@ -30,22 +29,22 @@ const TYPE_BASIC = [
  * Класс для преобразования всех тип свойство в виде scss.
  */
 export class StylesProperties {
-  private readonly items: PropertiesItems
+  private readonly item: PropertyItem
   private readonly data: string[] = []
 
   /**
    * Constructor
    * @param space пробелы
-   * @param properties array with all property records /<br>массив со всеми записями свойств
+   * @param property array with all property records /<br>массив со всеми записями свойств
    * @param parent object of ancestor /<br>объект предка
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     private space: string,
-    private properties: PropertyItem,
+    private property: PropertiesItemsItem,
     private parent?: PropertyItem
   ) {
-    this.items = new PropertiesItems(properties.value as PropertyList)
+    this.item = property.item
   }
 
   /**
@@ -53,7 +52,7 @@ export class StylesProperties {
    * Генерация всех свойств и переменных.
    */
   make (): string[] {
-    this.items.eachMainOnly(property => {
+    (new PropertiesItems({})).eachMainOnly(property => {
       const { item } = property
 
       if (
@@ -64,7 +63,7 @@ export class StylesProperties {
         const data: string[] = new StylesProperties(
           StylesTool.increaseSpace(this.space),
           property,
-          this.properties
+          this.item
         ).make()
 
         this.data.push(
@@ -75,7 +74,7 @@ export class StylesProperties {
       } else {
         this.data.push(...this.toByType(property))
       }
-    })
+    }, this.property)
 
     return this.data
   }
@@ -111,7 +110,7 @@ export class StylesProperties {
     return () => new StylesProperties(
       this.space,
       property,
-      this.properties
+      this.item
     ).make()
   }
 

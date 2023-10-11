@@ -37,10 +37,12 @@ export class StylesClasses {
     const classes: StylesClassesItem['classes'] = {}
     const space = StylesTool.addSpace(1)
 
-    this.getList().forEach(({
-      value,
-      item
-    }) => {
+    this.getList().forEach(property => {
+      const {
+        value,
+        item
+      } = property
+
       if (
         isFilled(value) &&
         isObjectNotArray(value)
@@ -53,7 +55,7 @@ export class StylesClasses {
           StylesTool.addImportProperties(),
           '',
           `.${name} {`,
-          ...(new StylesProperties(space, item)).make(),
+          ...(new StylesProperties(space, property)).make(),
           '}'
         ]
       }

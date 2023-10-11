@@ -7,15 +7,15 @@
   
   font-family: var(--md3-ref-font-family-roboto);
   font-weight: var(--md3-ref-font-weight-bold);
-  @include fontSize(#{var(--md3-ref-font-size-md)});
-  @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+  @include fontSize(var(--md3-ref-font-size-md));
+  @include lineHeight(var(--md3-ref-lineHeight-md));
   letter-spacing: var(--md3-ref-letterSpacing-xs);
   text-transform: none;
   
-  @include paletteColor(#{var(--md3-sys-palette-primary)});
+  @include paletteColor(var(--md3-sys-palette-primary));
   
-  @include paletteGradient(#{var(--md3-sys-palette-primary)});
-  @include backgroundColor(#{transparent});
+  @include paletteGradient(var(--md3-sys-palette-primary));
+  @include backgroundColor(transparent);
   
   border-radius: var(--md3-sys-rounded-full);
   
@@ -25,30 +25,30 @@
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-timing-function: var(--d-sys-transitionFunction-standard);
   
-  @include enabledSelector(hover, '.hover') {
-    @include gradientOpacity(#{var(--md3-sys-opacity-008)});
+  @include enabledSelector(hover, '.md3-button') {
+    @include gradientOpacity(var(--md3-sys-opacity-008));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  @include enabledSelector(active, '.active') {
-    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+  @include enabledSelector(active, '.md3-button') {
+    @include gradientOpacity(var(--md3-sys-opacity-012));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
   &--selected {
-    @include paletteColor(#{var(--md3-sys-palette-primaryVariant)});
+    @include paletteColor(var(--md3-sys-palette-primaryVariant));
     
-    @include paletteGradient(#{var(--md3-sys-palette-primaryVariant)});
+    @include paletteGradient(var(--md3-sys-palette-primaryVariant));
   }
   
   &--progress {
   }
   
   &--disabled {
-    @include paletteColor(#{var(--md3-sys-palette-onSurface)});
-    @include colorOpacity(#{var(--md3-sys-opacity-disabled)});
+    @include paletteColor(var(--md3-sys-palette-onSurface));
+    @include colorOpacity(var(--md3-sys-opacity-disabled));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
@@ -67,51 +67,51 @@
   
   &--height {
     &--sm {
-      @include height(#{var(--md3-ref-spacing-8)});
+      @include height(var(--md3-ref-spacing-8));
     }
     
     &--md {
-      @include height(#{var(--md3-ref-spacing-10)});
+      @include height(var(--md3-ref-spacing-10));
     }
     
     &--lg {
-      @include height(#{var(--md3-ref-spacing-12)});
+      @include height(var(--md3-ref-spacing-12));
     }
   }
   
   &--filled {
-    @include color(#{var(--md3-sys-palette-onPrimary)});
+    @include color(var(--md3-sys-palette-onPrimary));
     
-    @include paletteBackground(#{var(--md3-sys-palette-primary)});
-    @include gradient(#{var(--md3-sys-palette-onPrimary)});
+    @include paletteBackground(var(--md3-sys-palette-primary));
+    @include gradient(var(--md3-sys-palette-onPrimary));
     
-    @include enabledSelector(hover, '.hover') {
+    @include enabledSelector(hover, '.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
-    @include enabledSelector(active, '.active') {
+    @include enabledSelector(active, '.md3-button') {
       box-shadow: none;
     }
     
-    @include disabled('.disabled') {
-      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
-      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+    @include disabled('.md3-button') {
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
+      @include backgroundOpacity(var(--md3-sys-opacity-012));
       
       box-shadow: none;
     }
     
     &--selected {
-      @include color(#{var(--md3-sys-palette-onPrimary)});
+      @include color(var(--md3-sys-palette-onPrimary));
       
-      @include paletteBackground(#{var(--md3-sys-palette-primaryVariant)});
+      @include paletteBackground(var(--md3-sys-palette-primaryVariant));
     }
   }
   
   &--outlined {
-    @include enabledSelector(focus, '.focus') {
+    @include enabledSelector(focus, '.md3-button') {
     }
     
-    @include disabled('.disabled') {
+    @include disabled('.md3-button') {
     }
     
     &--palette-border {
@@ -124,11 +124,11 @@
   &--text {
     --md3-button-padding: var(--md3-ref-spacing-3);
     
-    @include enabledSelector(hover, '.hover') {
+    @include enabledSelector(hover, '.md3-button') {
       transition-duration: var(--d-sys-transitionDuration-lg-close);
     }
     
-    @include enabledSelector(active, '.active') {
+    @include enabledSelector(active, '.md3-button') {
     }
     
     &--palette-border {
@@ -136,67 +136,67 @@
   }
   
   &--elevated {
-    @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerLow)});
+    @include paletteBackground(var(--md3-sys-palette-surfaceContainerLow));
     
     box-shadow: var(--md3-ref-shadow-1);
     
-    @include enabledSelector(hover, '.hover') {
+    @include enabledSelector(hover, '.md3-button') {
       box-shadow: var(--md3-ref-shadow-2);
     }
     
-    @include enabledSelector(active, '.active') {
+    @include enabledSelector(active, '.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
-    @include disabled('.disabled') {
-      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
-      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+    @include disabled('.md3-button') {
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
+      @include backgroundOpacity(var(--md3-sys-opacity-012));
       
       box-shadow: none;
     }
     
     &--selected {
-      @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerHigh)});
+      @include paletteBackground(var(--md3-sys-palette-surfaceContainerHigh));
     }
   }
   
   &--tonal {
-    @include color(#{var(--md3-sys-palette-onSecondaryContainer)});
+    @include color(var(--md3-sys-palette-onSecondaryContainer));
     
-    @include paletteBackground(#{var(--md3-sys-palette-secondaryContainer)});
-    @include gradient(#{var(--md3-sys-palette-onSecondaryContainer)});
+    @include paletteBackground(var(--md3-sys-palette-secondaryContainer));
+    @include gradient(var(--md3-sys-palette-onSecondaryContainer));
     
-    @include enabledSelector(hover, '.hover') {
+    @include enabledSelector(hover, '.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
-    @include enabledSelector(active, '.active') {
+    @include enabledSelector(active, '.md3-button') {
       box-shadow: none;
     }
     
-    @include disabled('.disabled') {
-      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
-      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+    @include disabled('.md3-button') {
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
+      @include backgroundOpacity(var(--md3-sys-opacity-012));
       
       box-shadow: none;
     }
     
     &--selected {
-      @include paletteBackground(#{var(--md3-sys-palette-secondaryContainerVariant)});
+      @include paletteBackground(var(--md3-sys-palette-secondaryContainerVariant));
     }
     
     &--a {
       &--b {
-        @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
+        @include paletteBackground(var(--md3-sys-palette-onSurface));
         
         &--d {
-          @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+          @include backgroundOpacity(var(--md3-sys-opacity-012));
         }
       }
     }
   }
   
   &--test {
-    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+    @include gradientOpacity(var(--md3-sys-opacity-012));
   }
 }

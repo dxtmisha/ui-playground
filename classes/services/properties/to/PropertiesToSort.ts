@@ -3,6 +3,7 @@ import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
 import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
+import { type Item } from '../../../../types/object.ts'
 import {
   PropertyItem,
   PropertyKey,
@@ -12,7 +13,12 @@ import {
 
 import { sortList } from '../../../../media/propertiesListSort.ts'
 
-type PropertiesSortBasic = Record<string, PropertyList>
+type PropertiesSortItem = {
+  name: string
+  item: PropertyItem
+  order: number
+}
+type PropertiesSortList = PropertiesSortItem[]
 
 /**
  * Class for sorting properties.<br>
@@ -32,7 +38,7 @@ export class PropertiesToSort extends PropertiesToAbstract {
    * массив, который нужно преобразовать
    */
   private read (properties?: PropertiesItemsItem): PropertyList {
-    const data = this.getBasic()
+    const data: PropertiesSortList = []
 
     this.items.eachMainOnly((property) => {
       const {
@@ -40,40 +46,22 @@ export class PropertiesToSort extends PropertiesToAbstract {
         value,
         item
       } = property
-      const sort = this.getIndex(item)
+      const sort = this.getKeys(item)
 
       if (isObjectNotArray(value)) {
         item.value = this.read(property)
       }
 
-      item[PropertyKey.sort] = sort
-      data[sort][name] = item
+      item[PropertyKey.sort] = sort.index
+      item.__o = sort.value
+      data.push({
+        name,
+        item,
+        order: sort.value
+      })
     }, properties)
 
     return this.join(data)
-  }
-
-  /**
-   * Getting a basic list of empty variables, sorted.<br>
-   * Получение базового списка пустых переменных, отсортированного.
-   */
-  private getBasic (): PropertiesSortBasic {
-    const data: PropertiesSortBasic = {}
-
-    sortList.forEach(({
-      index,
-      value
-    }) => {
-      if (value.length > 0) {
-        for (const key in value) {
-          data[`${index}-${key}`] = {}
-        }
-      }
-
-      data[index] = {}
-    })
-
-    return data
   }
 
   /**
@@ -86,25 +74,47 @@ export class PropertiesToSort extends PropertiesToAbstract {
   }
 
   /**
-   * Getting the index name of an element.<br>
-   * Получение названия индекса у элемента.
+   * Getting data about sorting by object.<br>
+   * Получение данных о сортировке по объекту.
    * @param item current element /<br>текущий элемент
    */
-  private getIndex (item: PropertyItem): string {
+  private getKeys (item: PropertyItem): Item<number> {
     const category = this.getCategoryName(item)
     const variable = item?.[PropertyKey.variable]
 
-    const sort = sortList.find(
+    const sortIndex = sortList.findIndex(
       ({ index }) => index === category || index === variable
     )
 
-    if (sort) {
-      const key = sort.value.findIndex(names => names.indexOf(item?.[PropertyKey.name] ?? '') !== -1)
+    if (sortIndex !== -1) {
+      const sort = sortList[sortIndex]
+      const order = sort.value.findIndex(names => names.indexOf(item?.[PropertyKey.name] ?? '') !== -1)
+      let value = (sortIndex + 1) * 1_000_000
 
-      return `${sort.index}${key > 0 ? `-${key}` : ''}`
+      if (order !== -1) {
+        const key = sort.value[order]?.findIndex(name => name === item?.[PropertyKey.name])
+
+        value += order * 1_000
+
+        if (key !== -1) {
+          value += key
+        } else {
+          value += 999
+        }
+      } else {
+        value += 999_999
+      }
+
+      return {
+        index: `${sort.index}${order > 0 ? `@${order}` : ''}`,
+        value
+      }
     }
 
-    return PropertyType.other
+    return {
+      index: PropertyType.other,
+      value: 99_999_999
+    }
   }
 
   /**
@@ -112,11 +122,16 @@ export class PropertiesToSort extends PropertiesToAbstract {
    * Соединения записи в список.
    * @param data given for connection /<br>данный для соединения
    */
-  private join (data: PropertiesSortBasic): PropertyList {
+  private join (data: PropertiesSortList): PropertyList {
     const properties: PropertyList = {}
 
-    forEach(data, items => {
-      Object.assign(properties, items)
+    data.sort((a, b) => a.order - b.order)
+
+    forEach(data, ({
+      name,
+      item
+    }) => {
+      properties[name] = item
     })
 
     return properties

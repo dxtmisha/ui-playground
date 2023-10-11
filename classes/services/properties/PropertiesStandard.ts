@@ -1,5 +1,5 @@
 import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
-import { toKebabCase } from '../../../functions/string.ts'
+// import { toKebabCase } from '../../../functions/string.ts'
 import { replaceRecursive } from '../../../functions/object.ts'
 
 import { PropertiesKeys } from './PropertiesKeys.ts'
@@ -137,12 +137,15 @@ export class PropertiesStandard {
    * @param name key name /<br>название ключа
    * @param item values for conversion /<br>значения для преобразования
    */
+
+  /*
   private static addRename (
     name: string,
     item: PropertyItemPartial
   ): void {
     item[PropertyKey.rename] = toKebabCase(item?.[PropertyKey.rename] ?? name)
   }
+  */
 
   /**
    * Converts values to string, if they are of type number.<br>
