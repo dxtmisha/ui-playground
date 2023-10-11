@@ -62,15 +62,21 @@
 }
 
 @mixin hover($parent: &) {
-  @include enabledSelector('hover', $parent);
+  @include enabledSelector('hover', $parent) {
+    @content;
+  }
 }
 
 @mixin active($parent: &) {
-  @include enabledSelector('active', $parent);
+  @include enabledSelector('active', $parent) {
+    @content;
+  }
 }
 
 @mixin focus($parent: &) {
-  @include enabledSelector('focus', $parent);
+  @include enabledSelector('focus', $parent) {
+    @content;
+  }
 }
 
 @mixin disabled($parent: &) {

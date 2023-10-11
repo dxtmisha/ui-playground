@@ -37,10 +37,10 @@ export class PropertiesStandard {
         newItem.value = this.to(newItem.value)
       }
 
-      newItem[PropertyKey.index] = index
-
       // this.addRename(key, newItem)
       this.addValue(newItem)
+
+      newItem[PropertyKey.index] = index
 
       if (key in newItem) {
         data[key] = replaceRecursive(data[key], newItem) as PropertyItem

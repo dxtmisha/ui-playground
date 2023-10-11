@@ -16,6 +16,7 @@ import {
   PropertyKey,
   PropertyType
 } from '../../../types/property.ts'
+import { StyleToRoot } from './to/StyleToRoot.ts'
 
 const TYPE_AUXILIARY = [
   'selector',
@@ -153,8 +154,12 @@ export class StylesProperties {
         return new StylesToMedia(...argumentsValue).make()
       case PropertyType.animate:
         return new StylesToAnimate(...argumentsValue).make()
+      case PropertyType.root:
+        return new StyleToRoot(...argumentsValue).make()
       case PropertyType.state:
       case PropertyType.subclass:
+      case PropertyType.classType:
+      case PropertyType.scss:
         return new StylesToClass(...argumentsValue).make()
       case PropertyType.animateFrame:
         return new StylesToClassFull(...argumentsValue).make()

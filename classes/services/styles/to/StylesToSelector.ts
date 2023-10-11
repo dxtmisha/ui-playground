@@ -42,15 +42,15 @@ export class StylesToSelector extends StylesToAbstract {
   private getSelector (): string {
     const name = this.getName()
     const className = this.getClassName()
+    const isClassMain = className === `'.${this.property.parent?.[PropertyKey.name]}'`
 
     switch (name) {
-      case 'disabled':
-      case 'readonly':
-        return `@include ${name}(${className})`
+      case 'hover':
       case 'active':
       case 'focus':
-      case 'hover':
-        return `@include enabledSelector(${name}${className === `'.${this.property.parent?.[PropertyKey.name]}'` ? '' : `, ${className}`})`
+      case 'disabled':
+      case 'readonly':
+        return `@include ${name}${isClassMain ? '' : `(${className})`}`
       default:
         return `&:${name}`
     }

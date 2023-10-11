@@ -68,7 +68,7 @@ export class PropertiesTypes {
    * @param name key name /<br>название ключа
    */
   static isScss (name: string): boolean {
-    return Boolean(name.match(/^&(?!&)/))
+    return name === PropertyType.scss || Boolean(name.match(/^&(?!&)/))
   }
 
   /**
@@ -77,7 +77,7 @@ export class PropertiesTypes {
    * @param name key name /<br>название ключа
    */
   static isRoot (name: string): boolean {
-    return Boolean(name.match(/^&&/))
+    return name === PropertyType.root || Boolean(name.match(/^&&/))
   }
 
   /**

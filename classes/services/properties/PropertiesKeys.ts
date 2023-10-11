@@ -48,8 +48,9 @@ export class PropertiesKeys {
    * Returns the property name, discarding its prefix.<br>
    * Возвращает имя свойства, отбрасывая его префикс.
    * @param name key name /<br>название ключа
+   * @param camelCase to convert case /<br>преобразуйте этот текст в верхний регистр
    */
-  static getName (name: string): string {
+  static getName (name: string, camelCase = true): string {
     let newName = name
       .replace(PropertiesTypes.getExpSymbols(), '$2')
       .replace(/^[|]/, '')
@@ -61,7 +62,10 @@ export class PropertiesKeys {
       newName = newName.replaceAll(SYMBOL_SEPARATOR, SEPARATOR)
     }
 
-    if (this.isSeparator(newName)) {
+    if (
+      this.isSeparator(newName) ||
+      !camelCase
+    ) {
       return newName
     }
 
@@ -80,12 +84,20 @@ export class PropertiesKeys {
   ): string {
     const name = this.getName(key)
 
-    if (
-      type &&
-      PropertiesTypes.isMedia(type) &&
-      !name.match(/^media[A-Z]/)
-    ) {
-      return toCamelCase(`media-${name}`)
+    if (type) {
+      if (
+        PropertiesTypes.isMedia(type) &&
+        !name.match(/^media[A-Z]/)
+      ) {
+        return toCamelCase(`media-${name}`)
+      }
+
+      if (
+        PropertiesTypes.isScss(type) ||
+        PropertiesTypes.isRoot(type)
+      ) {
+        return this.getName(key, false)
+      }
     }
 
     return name

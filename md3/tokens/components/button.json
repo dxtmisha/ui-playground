@@ -170,5 +170,9 @@
       "background-color": "{sys.palette.on-surface}",
       "background-opacity": "{sys.opacity.012}"
     }
+  },
+  "&&.is-root": {
+    "box-shadow": "none",
+    "_type": "root"
   }
 }

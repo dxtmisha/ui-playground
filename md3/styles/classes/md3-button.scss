@@ -26,13 +26,13 @@
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: border, box-shadow;
   
-  @include enabledSelector(hover) {
+  @include hover {
     @include gradientOpacity(var(--md3-sys-opacity-008));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  @include enabledSelector(active) {
+  @include active {
     @include gradientOpacity(var(--md3-sys-opacity-012));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
@@ -49,9 +49,6 @@
     @include paletteGradient(var(--md3-sys-palette-primaryVariant));
   }
   
-  &--progress {
-  }
-  
   &--disabled {
     @include colorOpacity(var(--md3-sys-opacity-disabled));
     @include paletteColor(var(--md3-sys-palette-onSurface));
@@ -62,17 +59,35 @@
   &--adaptive {
     &--icon {
       --md3-button-padding: 0px;
+      
+       .md3-button__label {
+        display: none;
+        
+        @include paddingX(0px);
+      }
     }
     
     &--sm {
       @media screen and (max-width: calc(600px - 1px)) {
         --md3-button-padding: 0px;
+        
+         .md3-button__label {
+          display: none;
+          
+          @include paddingX(0px);
+        }
       }
     }
     
     &--md {
       @media screen and (max-width: calc(905px - 1px)) {
         --md3-button-padding: 0px;
+        
+         .md3-button__label {
+          display: none;
+          
+          @include paddingX(0px);
+        }
       }
     }
   }
@@ -97,11 +112,11 @@
     @include paletteBackground(var(--md3-sys-palette-primary));
     @include gradient(var(--md3-sys-palette-onPrimary));
     
-    @include enabledSelector(hover, '.md3-button') {
+    @include hover('.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
-    @include enabledSelector(active, '.md3-button') {
+    @include active('.md3-button') {
       box-shadow: none;
     }
     
@@ -120,7 +135,7 @@
   }
   
   &--outlined {
-    @include enabledSelector(focus, '.md3-button') {
+    @include focus('.md3-button') {
       &::before {
         content: ' ';
         @include paletteBorder(var(--md3-sys-palette-primary));
@@ -146,9 +161,6 @@
       @include paletteBorder(var(--md3-sys-palette-outline));
     }
     
-    &--palette-border {
-    }
-    
     &--selected {
       &::before {
         content: ' ';
@@ -160,11 +172,11 @@
   &--text {
     --md3-button-padding: var(--md3-ref-spacing-3);
     
-    @include enabledSelector(hover, '.md3-button') {
+    @include hover('.md3-button') {
       transition-duration: var(--d-sys-transitionDuration-lg-close);
     }
     
-    @include enabledSelector(active, '.md3-button') {
+    @include active('.md3-button') {
       &::after {
         content: ' ';
         @include borderOpacity(var(--md3-sys-opacity-medium));
@@ -184,9 +196,6 @@
       
       transition: inherit;
     }
-    
-    &--palette-border {
-    }
   }
   
   &--elevated {
@@ -194,11 +203,11 @@
     
     box-shadow: var(--md3-ref-shadow-1);
     
-    @include enabledSelector(hover, '.md3-button') {
+    @include hover('.md3-button') {
       box-shadow: var(--md3-ref-shadow-2);
     }
     
-    @include enabledSelector(active, '.md3-button') {
+    @include active('.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
@@ -220,11 +229,11 @@
     @include paletteBackground(var(--md3-sys-palette-secondaryContainer));
     @include gradient(var(--md3-sys-palette-onSecondaryContainer));
     
-    @include enabledSelector(hover, '.md3-button') {
+    @include hover('.md3-button') {
       box-shadow: var(--md3-ref-shadow-1);
     }
     
-    @include enabledSelector(active, '.md3-button') {
+    @include active('.md3-button') {
       box-shadow: none;
     }
     
@@ -243,9 +252,6 @@
       &--b {
         @include paletteBackground(var(--md3-sys-palette-onSurface));
         
-        &--c {
-        }
-        
         &--d {
           @include backgroundOpacity(var(--md3-sys-opacity-012));
         }
@@ -255,15 +261,6 @@
   
   &--test {
     @include gradientOpacity(var(--md3-sys-opacity-012));
-  }
-  
-  &__label {
-  }
-  
-  &__icon {
-  }
-  
-  &__trailing {
   }
   
   @keyframes md3-button-animateTest {
@@ -278,5 +275,9 @@
     100% {
       opacity: 1;
     }
+  }
+  
+  @at-root .is-root & {
+    box-shadow: none;
   }
 }

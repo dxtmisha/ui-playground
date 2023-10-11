@@ -6,11 +6,17 @@ import { StylesToAbstract } from './StylesToAbstract.ts'
  */
 export class StylesToClass extends StylesToAbstract {
   protected treatment (): string[] {
-    return [
-      ...this.addEmptyString(),
-      `${this.getName()} {`,
-      ...this.content(),
-      '}'
-    ]
+    const content = this.content()
+
+    if (content.length > 0) {
+      return [
+        ...this.addEmptyString(),
+        `${this.getName()} {`,
+        ...this.content(),
+        '}'
+      ]
+    }
+
+    return []
   }
 }
