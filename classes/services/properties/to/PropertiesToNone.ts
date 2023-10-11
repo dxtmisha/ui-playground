@@ -32,6 +32,7 @@ export class PropertiesToNone extends PropertiesToAbstract {
         if (
           parent &&
           !isFilled(value) &&
+          isObjectNotArray(value) &&
           isObjectNotArray(parent.value)
         ) {
           console.error('[None]', `{${getColumn(parents, 'name').join('.')}.${name}}`)

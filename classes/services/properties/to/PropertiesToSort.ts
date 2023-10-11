@@ -25,7 +25,7 @@ type PropertiesSortList = PropertiesSortItem[]
  * Класс для сортировки свойств.
  */
 export class PropertiesToSort extends PropertiesToAbstract {
-  protected readonly FILE_CACHE = '48-sort'
+  protected readonly FILE_CACHE = '048-sort'
 
   protected init (): void {
     this.read()

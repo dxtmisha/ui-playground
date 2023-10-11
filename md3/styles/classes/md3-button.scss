@@ -25,6 +25,8 @@
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: border, box-shadow;
   
+  gradientOpacity: 0;
+  
   @include enabledSelector(hover) {
     @include gradientOpacity(var(--md3-sys-opacity-008));
     
@@ -181,6 +183,8 @@
       @include paletteBorder(var(--md3-sys-palette-outline));
       
       transition: inherit;
+      
+      borderOpacity: 0;
     }
     
     &--palette-border {

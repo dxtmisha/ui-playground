@@ -21,11 +21,13 @@
   --md3-ref-font-size-display-lg: calc(var(--md3-ref-spacing-px)*57);
   --md3-ref-font-weight-normal: 400;
   --md3-ref-font-weight-bold: 500;
+  0: unset;
   --md3-ref-index-1: 100;
   --md3-ref-index-2: 200;
   --md3-ref-index-3: 300;
   --md3-ref-index-4: 400;
   --md3-ref-index-5: 500;
+  none: unset;
   --md3-ref-letterSpacing-xs: calc(var(--md3-ref-spacing-px)*.1);
   --md3-ref-letterSpacing-sm: calc(var(--md3-ref-spacing-px)*.15);
   --md3-ref-letterSpacing-md: calc(var(--md3-ref-spacing-px)*.25);
@@ -47,6 +49,7 @@
   --md3-ref-lineHeight-display-sm: calc(var(--md3-ref-spacing-px)*44);
   --md3-ref-lineHeight-display-md: calc(var(--md3-ref-spacing-px)*52);
   --md3-ref-lineHeight-display-lg: calc(var(--md3-ref-spacing-px)*64);
+  0: unset;
   --md3-ref-opacity-2: 0.02;
   --md3-ref-opacity-4: 0.04;
   --md3-ref-opacity-8: 0.08;
@@ -159,6 +162,7 @@
   --md3-ref-palette-neutralVariant-96: #{toColorRbg(#F5EEFA)};
   --md3-ref-palette-neutralVariant-99: #{toColorRbg(#FFFBFE)};
   --md3-ref-palette-neutralVariant-100: #{toColorRbg(#FFFFFF)};
+  0: unset;
   --md3-ref-rounded-1: var(--md3-ref-spacing-1);
   --md3-ref-rounded-2: var(--md3-ref-spacing-2);
   --md3-ref-rounded-3: var(--md3-ref-spacing-3);
@@ -175,6 +179,7 @@
   --md3-ref-screen-lg: 1280px;
   --md3-ref-screen-xl: 1440px;
   --md3-ref-screen-2xl: 1648px;
+  0: unset;
   --md3-ref-shade-10: 10;
   --md3-ref-shade-20: 20;
   --md3-ref-shade-30: 30;

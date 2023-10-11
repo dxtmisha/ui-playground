@@ -32,6 +32,7 @@ export enum PropertyType {
   media = 'media',
   mediaMax = 'media-max',
   animate = 'animate',
+  animateFrame = 'animate-frame',
   link = 'link',
   linkClass = 'link-class',
   classType = 'class',

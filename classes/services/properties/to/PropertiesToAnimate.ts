@@ -1,3 +1,5 @@
+import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
+
 import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
@@ -17,10 +19,17 @@ export class PropertiesToAnimate extends PropertiesToAbstract {
   protected init (): void {
     this.items.findVariable(PropertyType.animate).forEach(({
       name,
+      value,
       item,
       parents
     }) => {
       item[PropertyKey.name] = this.getName(this.items.getReName(name, item), item, parents)
+
+      if (isObjectNotArray(value)) {
+        forEach(value, frame => {
+          frame[PropertyKey.name] = PropertyType.animateFrame
+        })
+      }
     })
   }
 
