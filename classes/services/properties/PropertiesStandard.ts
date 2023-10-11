@@ -29,13 +29,15 @@ export class PropertiesStandard {
   static to (properties: PropertyListOrData): PropertyList {
     const data: PropertyList = {}
 
-    forEach(properties, (item, name) => {
-      const newItem = this.getItem(name, item)
-      const key = PropertiesKeys.reKey(name, newItem?.[PropertyKey.type])
+    forEach(properties, (item, index) => {
+      const newItem = this.getItem(index, item)
+      const key = PropertiesKeys.reKey(index, newItem?.[PropertyKey.type])
 
       if (isObjectNotArray(newItem.value)) {
         newItem.value = this.to(newItem.value)
       }
+
+      newItem[PropertyKey.index] = index
 
       // this.addRename(key, newItem)
       this.addValue(newItem)

@@ -15,6 +15,7 @@
   @include paletteColor(var(--md3-sys-palette-primary));
   
   @include backgroundColor(transparent);
+  @include gradientOpacity(0);
   @include paletteGradient(var(--md3-sys-palette-primary));
   
   border-radius: var(--md3-sys-rounded-full);
@@ -24,8 +25,6 @@
   transition-timing-function: var(--d-sys-transitionFunction-standard);
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: border, box-shadow;
-  
-  gradientOpacity: 0;
   
   @include enabledSelector(hover) {
     @include gradientOpacity(var(--md3-sys-opacity-008));
@@ -180,11 +179,10 @@
       border-radius: inherit;
       border-width: var(--md3-ref-spacing-px);
       border-style: solid;
+      @include borderOpacity(0);
       @include paletteBorder(var(--md3-sys-palette-outline));
       
       transition: inherit;
-      
-      borderOpacity: 0;
     }
     
     &--palette-border {
@@ -245,11 +243,11 @@
       &--b {
         @include paletteBackground(var(--md3-sys-palette-onSurface));
         
-        &--d {
-          @include backgroundOpacity(var(--md3-sys-opacity-012));
+        &--c {
         }
         
-        & .md3-button__c {
+        &--d {
+          @include backgroundOpacity(var(--md3-sys-opacity-012));
         }
       }
     }
@@ -266,5 +264,19 @@
   }
   
   &__trailing {
+  }
+  
+  @keyframes md3-button-animateTest {
+    0% {
+      opacity: 0;
+    }
+    
+    16% {
+      opacity: .32;
+    }
+    
+    100% {
+      opacity: 1;
+    }
   }
 }

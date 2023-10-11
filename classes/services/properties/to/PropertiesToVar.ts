@@ -1,4 +1,3 @@
-import { isFilled } from '../../../../functions/data.ts'
 import { toCamelCase } from '../../../../functions/string.ts'
 
 import { type PropertiesItemsItem } from '../PropertiesItems.ts'
@@ -32,7 +31,7 @@ export class PropertiesToVar extends PropertiesToAbstract {
       if (
         component &&
         typeof value === 'string' &&
-        isFilled(value)
+        value !== ''
       ) {
         const fullValue = item?.[PropertyKey.css] ?? this.items.getLinkToValue(design, component, value)
 

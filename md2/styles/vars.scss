@@ -41,7 +41,7 @@
   --md2-ref-grid-4: 4;
   --md2-ref-grid-8: 8;
   --md2-ref-grid-12: 12;
-  0: unset;
+  --md2-ref-index-0: unset;
   --md2-ref-index-1: 100;
   --md2-ref-index-2: 200;
   --md2-ref-index-3: 300;
@@ -51,7 +51,7 @@
   --md2-ref-index-12: 1200;
   --md2-ref-index-16: 1600;
   --md2-ref-index-24: 2400;
-  none: unset;
+  --md2-ref-letterSpacing-none: unset;
   --md2-ref-letterSpacing-xs: calc(var(--md2-ref-spacing-px)*.1);
   --md2-ref-letterSpacing-sm: calc(var(--md2-ref-spacing-px)*.15);
   --md2-ref-letterSpacing-md: calc(var(--md2-ref-spacing-px)*.25);
@@ -61,8 +61,8 @@
   --md2-ref-letterSpacing-3xl: calc(var(--md2-ref-spacing-px)*1.5);
   --md2-ref-letterSpacing-headline-1: calc(var(--md2-ref-spacing-px)*-1.5);
   --md2-ref-letterSpacing-headline-2: calc(var(--md2-ref-spacing-px)*-0.5);
-  3: unset;
-  4: unset;
+  --md2-ref-letterSpacing-headline-3: unset;
+  --md2-ref-letterSpacing-headline-4: unset;
   --md2-ref-letterSpacing-headline-5: calc(var(--md2-ref-spacing-px)*.18);
   --md2-ref-letterSpacing-headline-6: calc(var(--md2-ref-spacing-px)*.15);
   --md2-ref-lineHeight-sm: var(--md2-ref-spacing-4);
@@ -76,7 +76,7 @@
   --md2-ref-lineHeight-headline-5: calc(var(--md2-ref-spacing-px)*24);
   --md2-ref-lineHeight-headline-6: calc(var(--md2-ref-spacing-px)*24);
   --md2-ref-lineHeight-interactiveDisplay: calc(var(--md2-ref-spacing-px)*88);
-  0: unset;
+  --md2-ref-opacity-0: unset;
   --md2-ref-opacity-2: 0.02;
   --md2-ref-opacity-4: 0.04;
   --md2-ref-opacity-8: 0.08;
@@ -285,7 +285,7 @@
   --md2-ref-palette-white: #{toColorRbg(#ffffff)};
   --md2-ref-palette-black: #{toColorRbg(#000000)};
   --md2-ref-palette-blackLight: #{toColorRbg(#212121)};
-  0: unset;
+  --md2-ref-rounded-0: unset;
   --md2-ref-rounded-1: var(--md2-ref-spacing-1);
   --md2-ref-rounded-2: var(--md2-ref-spacing-2);
   --md2-ref-rounded-4: var(--md2-ref-spacing-4);

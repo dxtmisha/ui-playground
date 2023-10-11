@@ -16,6 +16,8 @@ export enum PropertyKey {
   css = '__c',
   code = '__f',
   sort = '__s',
+  order = '__o',
+  index = '__i',
   file = '__file',
   wrap = '__wrap'
 }
@@ -89,6 +91,7 @@ export type PropertyItem = {
   __f?: string | string[]
   __s?: string
   __o?: number
+  __i?: string
   __file?: string
   __wrap?: boolean
 }

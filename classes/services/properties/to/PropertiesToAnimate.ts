@@ -26,8 +26,9 @@ export class PropertiesToAnimate extends PropertiesToAbstract {
       item[PropertyKey.name] = this.getName(this.items.getReName(name, item), item, parents)
 
       if (isObjectNotArray(value)) {
-        forEach(value, frame => {
-          frame[PropertyKey.name] = PropertyType.animateFrame
+        forEach(value, (frame, code) => {
+          frame[PropertyKey.variable] = PropertyType.animateFrame
+          frame[PropertyKey.name] = frame?.[PropertyKey.index] ?? code
         })
       }
     })

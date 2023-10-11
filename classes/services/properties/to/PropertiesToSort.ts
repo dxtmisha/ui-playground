@@ -53,7 +53,6 @@ export class PropertiesToSort extends PropertiesToAbstract {
       }
 
       item[PropertyKey.sort] = sort.index
-      item.__o = sort.value
       data.push({
         name,
         item,
