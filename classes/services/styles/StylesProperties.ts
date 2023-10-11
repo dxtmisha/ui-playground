@@ -6,6 +6,7 @@ import { StylesToClass } from './to/StylesToClass.ts'
 import { StylesToVar } from './to/StylesToVar.ts'
 import { StylesToProperty } from './to/StylesToProperty.ts'
 import { StylesToSelector } from './to/StylesToSelector.ts'
+import { StylesToVirtual } from './to/StylesToVirtual.ts'
 
 import {
   type PropertyItem,
@@ -142,6 +143,8 @@ export class StylesProperties {
         return new StylesToProperty(...argumentsValue).make()
       case PropertyType.selector:
         return new StylesToSelector(...argumentsValue).make()
+      case PropertyType.virtual:
+        return new StylesToVirtual(...argumentsValue).make()
       case PropertyType.state:
         return new StylesToClass(...argumentsValue).make()
       default:

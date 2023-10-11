@@ -20,6 +20,14 @@ export class StylesTool {
   }
 
   /**
+   * Returns a space.<br>
+   * Возвращает пробел
+   */
+  static getSpace (): string {
+    return SPACE
+  }
+
+  /**
    * Getting an indent.<br>
    * Получение отступа.
    * @param level level /<br>уровень

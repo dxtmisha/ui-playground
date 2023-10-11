@@ -32,6 +32,9 @@
     "gradient-opacity": "{sys.opacity.012}",
     "transition-duration": "{d.sys.transitionDuration.sm}"
   },
+  "after": {
+    "color": "{sys.palette.primary-variant}"
+  },
   "selected": {
     "color": "{sys.palette.primary-variant}",
     "gradient": "{sys.palette.primary-variant}"

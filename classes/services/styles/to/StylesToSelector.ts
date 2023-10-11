@@ -2,6 +2,8 @@ import { PropertiesTool } from '../../properties/PropertiesTool.ts'
 
 import { StylesToAbstract } from './StylesToAbstract.ts'
 
+import { PropertyKey } from '../../../../types/property.ts'
+
 /**
  * Class for generating data for sub property styles.<br>
  * Класс для генерация данный для под свойство стили.
@@ -29,7 +31,7 @@ export class StylesToSelector extends StylesToAbstract {
       design,
       component
     } = this.property
-    console.log('this.property', this.property)
+
     return `'${PropertiesTool.getClassName(design, component)}'`
   }
 
@@ -39,15 +41,16 @@ export class StylesToSelector extends StylesToAbstract {
    */
   private getSelector (): string {
     const name = this.getName()
+    const className = this.getClassName()
 
     switch (name) {
       case 'disabled':
       case 'readonly':
-        return `@include ${name}(${this.getClassName()})`
+        return `@include ${name}(${className})`
       case 'active':
       case 'focus':
       case 'hover':
-        return `@include enabledSelector(${name}, ${this.getClassName()})`
+        return `@include enabledSelector(${name}${className === `'.${this.property.parent?.[PropertyKey.name]}'` ? '' : `, ${className}`})`
       default:
         return `&:${name}`
     }

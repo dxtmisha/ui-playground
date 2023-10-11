@@ -6,35 +6,40 @@
   --md3-button-test: 24px;
   
   font-family: var(--md3-ref-font-family-roboto);
-  font-weight: var(--md3-ref-font-weight-bold);
   @include fontSize(var(--md3-ref-font-size-md));
+  font-weight: var(--md3-ref-font-weight-bold);
   @include lineHeight(var(--md3-ref-lineHeight-md));
   letter-spacing: var(--md3-ref-letterSpacing-xs);
   text-transform: none;
   
   @include paletteColor(var(--md3-sys-palette-primary));
   
-  @include paletteGradient(var(--md3-sys-palette-primary));
   @include backgroundColor(transparent);
+  @include paletteGradient(var(--md3-sys-palette-primary));
   
   border-radius: var(--md3-sys-rounded-full);
   
   box-shadow: none;
   
-  transition-property: border, box-shadow;
-  transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-timing-function: var(--d-sys-transitionFunction-standard);
+  transition-duration: var(--d-sys-transitionDuration-lg-close);
+  transition-property: border, box-shadow;
   
-  @include enabledSelector(hover, '.md3-button') {
+  @include enabledSelector(hover) {
     @include gradientOpacity(var(--md3-sys-opacity-008));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  @include enabledSelector(active, '.md3-button') {
+  @include enabledSelector(active) {
     @include gradientOpacity(var(--md3-sys-opacity-012));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &::after {
+    content: ' ';
+    @include paletteColor(var(--md3-sys-palette-primaryVariant));
   }
   
   &--selected {
@@ -47,8 +52,8 @@
   }
   
   &--disabled {
-    @include paletteColor(var(--md3-sys-palette-onSurface));
     @include colorOpacity(var(--md3-sys-opacity-disabled));
+    @include paletteColor(var(--md3-sys-palette-onSurface));
     
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
@@ -94,8 +99,8 @@
     }
     
     @include disabled('.md3-button') {
-      @include paletteBackground(var(--md3-sys-palette-onSurface));
       @include backgroundOpacity(var(--md3-sys-opacity-012));
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
       
       box-shadow: none;
     }
@@ -109,15 +114,39 @@
   
   &--outlined {
     @include enabledSelector(focus, '.md3-button') {
+      &::before {
+        content: ' ';
+        @include paletteBorder(var(--md3-sys-palette-primary));
+      }
     }
     
     @include disabled('.md3-button') {
+      &::before {
+        content: ' ';
+        @include borderOpacity(var(--md3-sys-opacity-012));
+        @include paletteBorder(var(--md3-sys-palette-onSurface));
+      }
+    }
+    
+    &::before {
+      content: ' ';
+      position: absolute;
+      @include inset(0px);
+      
+      border-radius: inherit;
+      border-width: var(--md3-ref-spacing-px);
+      border-style: solid;
+      @include paletteBorder(var(--md3-sys-palette-outline));
     }
     
     &--palette-border {
     }
     
     &--selected {
+      &::before {
+        content: ' ';
+        @include paletteBorder(var(--md3-sys-palette-primaryVariant));
+      }
     }
   }
   
@@ -129,6 +158,23 @@
     }
     
     @include enabledSelector(active, '.md3-button') {
+      &::after {
+        content: ' ';
+        @include borderOpacity(var(--md3-sys-opacity-medium));
+      }
+    }
+    
+    &::after {
+      content: ' ';
+      position: absolute;
+      @include inset(0px);
+      
+      border-radius: inherit;
+      border-width: var(--md3-ref-spacing-px);
+      border-style: solid;
+      @include paletteBorder(var(--md3-sys-palette-outline));
+      
+      transition: inherit;
     }
     
     &--palette-border {
@@ -149,8 +195,8 @@
     }
     
     @include disabled('.md3-button') {
-      @include paletteBackground(var(--md3-sys-palette-onSurface));
       @include backgroundOpacity(var(--md3-sys-opacity-012));
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
       
       box-shadow: none;
     }
@@ -175,8 +221,8 @@
     }
     
     @include disabled('.md3-button') {
-      @include paletteBackground(var(--md3-sys-palette-onSurface));
       @include backgroundOpacity(var(--md3-sys-opacity-012));
+      @include paletteBackground(var(--md3-sys-palette-onSurface));
       
       box-shadow: none;
     }
