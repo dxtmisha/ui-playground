@@ -7,6 +7,7 @@ import { StylesToVar } from './to/StylesToVar.ts'
 import { StylesToProperty } from './to/StylesToProperty.ts'
 import { StylesToSelector } from './to/StylesToSelector.ts'
 import { StylesToVirtual } from './to/StylesToVirtual.ts'
+import { StylesToMedia } from './to/StylesToMedia.ts'
 
 import {
   type PropertyItem,
@@ -146,7 +147,11 @@ export class StylesProperties {
       case PropertyType.virtual:
         return new StylesToVirtual(...argumentsValue).make()
       case PropertyType.state:
+      case PropertyType.subclass:
         return new StylesToClass(...argumentsValue).make()
+      case PropertyType.media:
+      case PropertyType.mediaMax:
+        return new StylesToMedia(...argumentsValue).make()
       default:
         return []
     }

@@ -64,9 +64,15 @@
     }
     
     &--sm {
+      @media screen and (max-width: calc(600px - 1px)) {
+        --md3-button-padding: 0px;
+      }
     }
     
     &--md {
+      @media screen and (max-width: calc(905px - 1px)) {
+        --md3-button-padding: 0px;
+      }
     }
   }
   
@@ -238,11 +244,23 @@
         &--d {
           @include backgroundOpacity(var(--md3-sys-opacity-012));
         }
+        
+        & .md3-button__c {
+        }
       }
     }
   }
   
   &--test {
     @include gradientOpacity(var(--md3-sys-opacity-012));
+  }
+  
+  &__label {
+  }
+  
+  &__icon {
+  }
+  
+  &__trailing {
   }
 }

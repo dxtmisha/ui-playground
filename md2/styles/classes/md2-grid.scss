@@ -4,4 +4,28 @@
   grid-template-columns: repeat(var(--md2-sys-grid-xs), minmax(0, 1fr));
   
   column-gap: var(--md2-sys-gap-xs);
+  
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(var(--md2-sys-grid-sm), minmax(0, 1fr));
+    
+    column-gap: var(--md2-sys-gap-sm);
+  }
+  
+  @media screen and (min-width: 905px) {
+    grid-template-columns: repeat(var(--md2-sys-grid-md), minmax(0, 1fr));
+    
+    column-gap: var(--md2-sys-gap-md);
+  }
+  
+  @media screen and (min-width: 1240px) {
+    grid-template-columns: repeat(var(--md2-sys-grid-lg), minmax(0, 1fr));
+    
+    column-gap: var(--md2-sys-gap-lg);
+  }
+  
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: repeat(var(--md2-sys-grid-xl), minmax(0, 1fr));
+    
+    column-gap: var(--md2-sys-gap-xl);
+  }
 }
