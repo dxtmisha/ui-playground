@@ -76,7 +76,7 @@ export type PropertyItem = {
   _category?: PropertyCategory | string
   _rename?: string
   _prop?: string | boolean
-  _default?: string | number
+  _default?: string | number | boolean
   _replace?: string | PropertyReplace
   _important?: boolean
   _var?: boolean
@@ -85,13 +85,13 @@ export type PropertyItem = {
   _fullValue?: boolean
   _style?: boolean
 
+  __i?: string
   __n?: string
   __v?: PropertyType
   __c?: string
   __f?: string | string[]
   __s?: string
   __o?: number
-  __i?: string
   __file?: string
   __wrap?: boolean
 }

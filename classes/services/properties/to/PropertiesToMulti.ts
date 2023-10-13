@@ -1,9 +1,10 @@
-import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data.ts'
 
 import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
+  PropertyItem,
   PropertyKey,
   type PropertyList,
   PropertyType
@@ -49,6 +50,7 @@ export class PropertiesToMulti extends PropertiesToAbstract {
 
       if (
         item?.[PropertyKey.variable] === PropertyType.property &&
+        isFilled(value) &&
         isObjectNotArray(value)
       ) {
         return property
@@ -76,7 +78,7 @@ export class PropertiesToMulti extends PropertiesToAbstract {
             value: item.value,
             [PropertyKey.variable]: PropertyType.property
           }
-        }
+        } as PropertyItem['value']
       }
     })
   }

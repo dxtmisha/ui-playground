@@ -128,6 +128,16 @@ export class PropertiesFile {
   }
 
   /**
+   * The method splits the path into an array of components.<br>
+   * Метод разбивает путь на массив компонентов.
+   * @param path path to the directory /<br>путь к директории
+   */
+  static splitForDir (path: PropertiesFilePath): string[] {
+    const dir = this.isDir(path) ? path : this.parse(path)?.dir
+    return (this.joinPath(dir || '')).split(requirePath.sep)
+  }
+
+  /**
    * Method returns an object whose properties represent significant elements of the path.<br>
    * Метод возвращает объект, свойства которого представляют существенные элементы пути.
    * @param path filename /<br>имя файла
@@ -209,16 +219,6 @@ export class PropertiesFile {
       this.joinPathByName(path, name, extension),
       typeof value === 'object' ? JSON.stringify(value) : value
     )
-  }
-
-  /**
-   * The method splits the path into an array of components.<br>
-   * Метод разбивает путь на массив компонентов.
-   * @param path path to the directory /<br>путь к директории
-   */
-  private static splitForDir (path: PropertiesFilePath): string[] {
-    const dir = this.isDir(path) ? path : this.parse(path)?.dir
-    return (this.joinPath(dir || '')).split(requirePath.sep)
   }
 
   /**
