@@ -1,4 +1,6 @@
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { DesignStructure } from './DesignStructure.ts'
+import { DesignReplace } from './DesignReplace.ts'
 
 const DIR_SAMPLE = [__dirname, '..', '..', '..', 'media', 'templates']
 
@@ -10,10 +12,12 @@ export abstract class DesignCommand {
   protected abstract DIR_SAMPLE: string
   protected abstract dir: string[]
 
+  protected structure?: DesignStructure
+
   /**
    * Constructor
-   * @param command component name / названия компонента
-   * @param options additional parameters / дополнительные параметры
+   * @param command component name /<br>названия компонента
+   * @param options additional parameters /<br>дополнительные параметры
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -37,12 +41,6 @@ export abstract class DesignCommand {
       console.info('-- not name')
     }
   }
-
-  /**
-   * Returns an array of paths to components.<br>
-   * Возвращает массив с путями к компонентам.
-   */
-  protected abstract initDir (): string[]
 
   /**
    * Initializes the creation of all files for the current team.<br>
@@ -82,6 +80,32 @@ export abstract class DesignCommand {
   }
 
   /**
+   * Returns a structure object.<br>
+   * Возвращает объект структуры.
+   */
+  protected getStructure (): DesignStructure {
+    if (!this.structure) {
+      const [design, component] = this.getCommand().split('.', 2)
+      this.structure = new DesignStructure(design, component)
+    }
+
+    return this.structure
+  }
+
+  /**
+   * Returns an object for template transformation.<br>
+   * Возвращает объект для преобразования шаблона.
+   * @param sample property template /<br>шаблон свойства
+   */
+  protected getReplace (sample?: string): DesignReplace {
+    return new DesignReplace(
+      this.getStructure(),
+      this.DIR_SAMPLE,
+      sample ?? ''
+    )
+  }
+
+  /**
    * Reading.<br>
    * Читает файл.
    * @param name file name /<br>название файла
@@ -97,6 +121,31 @@ export abstract class DesignCommand {
    */
   protected readSample (name: string): string | undefined {
     return PropertiesFile.readFile<string>([...DIR_SAMPLE, this.DIR_SAMPLE, name])
+  }
+
+  /**
+   * Reads the file itself or its template if it is not found.<br>
+   * Читает сам файл или его шаблон, если его нет.
+   * @param name file name /<br>название файла
+   * @param callback the function is executed if there is no such file /<br>функция выполняется, если такого файла нет
+   */
+  protected readDefinable (name: string, callback?: (sample: DesignReplace) => void): DesignReplace {
+    if (this.isFile(name)) {
+      return this.getReplace(this.read(name))
+    }
+
+    const replace = this.getReplace(this.readSample(name))
+
+    if (callback) {
+      callback(replace)
+    }
+
+    replace
+      .replacementOnce()
+      .replaceName()
+      .replacePath()
+
+    return replace
   }
 
   /**

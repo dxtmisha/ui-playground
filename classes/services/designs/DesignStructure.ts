@@ -1,4 +1,4 @@
-import { toCamelCase, toKebabCase } from '../../../functions/string.ts'
+import { toCamelCase, toCamelCaseFirst, toKebabCase } from '../../../functions/string.ts'
 
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { PropertiesCache } from '../properties/PropertiesCache.ts'
@@ -51,6 +51,22 @@ export class DesignStructure {
    */
   get (): DesignStructureList {
     return this.items
+  }
+
+  /**
+   * Returns the name of the component.<br>
+   * Возвращает название компонента.
+   */
+  getComponentName (): string {
+    return this.component
+  }
+
+  /**
+   * Returns the name of the component with a capital letter.<br>
+   * Возвращает название компонента с заглавной буквой.
+   */
+  getComponentNameFirst (): string {
+    return toCamelCaseFirst(this.component)
   }
 
   /**
