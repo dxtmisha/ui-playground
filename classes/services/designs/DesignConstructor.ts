@@ -3,6 +3,7 @@ import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { DesignCommand } from './DesignCommand.ts'
 
 const FILE_PROPS = 'props.ts'
+const FILE_TYPES = 'types.ts'
 
 /**
  * Class for generating files based on a constructor.<br>
@@ -29,10 +30,14 @@ export class DesignConstructor extends DesignCommand {
     ]
   }
 
+  /**
+   * Initializes the creation of all files for the current team.<br>
+   * Инициализирует создание всех файлов для текущей команды.
+   */
   protected initMain (): void {
     this
       .makeProps()
-    console.log(this.dir)
+      .makeTypes()
   }
 
   /**
@@ -47,6 +52,18 @@ export class DesignConstructor extends DesignCommand {
       .replaceType()
       .replaceDefault()
       .replaceProps()
+
+    this.write(file, sample.get())
+    return this
+  }
+
+  /**
+   * This code generates the types.ts.<br>
+   * Генерация файла types.ts.
+   */
+  protected makeTypes () {
+    const file = FILE_TYPES
+    const sample = this.readDefinable(file)
 
     this.write(file, sample.get())
     return this

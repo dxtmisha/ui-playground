@@ -4,7 +4,7 @@ import { PropType } from 'vue'
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type PropsButtonType = {
+export type ButtonProps = {
   // :type [!] System label, cannot be deleted / Системная метка, нельзя удалять
   selected?: boolean
   progress?: boolean
@@ -26,7 +26,7 @@ export type PropsButtonType = {
  * Default value for property.<br>
  * Значение по умолчанию для свойства.
  */
-export const defaultsButton: PropsButtonType = {
+export const defaultsButton: ButtonProps = {
   ...{
     // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
     height: 'md',
@@ -45,9 +45,9 @@ export const propsButton = {
     selected: Boolean,
     progress: Boolean,
     disabled: Boolean,
-    adaptive: String as PropType<PropsButtonType['adaptive']>,
+    adaptive: String as PropType<ButtonProps['adaptive']>,
     height: {
-      type: String as PropType<PropsButtonType['height']>,
+      type: String as PropType<ButtonProps['height']>,
       default: defaultsButton?.height
     },
     filled: {
@@ -57,9 +57,9 @@ export const propsButton = {
     outlined: Boolean,
     text: Boolean,
     elevated: Boolean,
-    tonal: [String, Boolean] as PropType<PropsButtonType['tonal']>,
+    tonal: [String, Boolean] as PropType<ButtonProps['tonal']>,
     test: Boolean,
-    palette: String as PropType<PropsButtonType['palette']>
+    palette: String as PropType<ButtonProps['palette']>
     // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
   },
   // Values

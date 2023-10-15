@@ -268,7 +268,7 @@ export class DesignReplace {
       return 'Boolean'
     }
 
-    return `${this.isBoolean(value) ? '[String, Boolean]' : 'String'} as PropType<Props${this.component}Type['${name}']>`
+    return `${this.isBoolean(value) ? '[String, Boolean]' : 'String'} as PropType<${this.component}Props['${name}']>`
   }
 
   /**
