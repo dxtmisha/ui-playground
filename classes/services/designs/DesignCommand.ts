@@ -141,7 +141,7 @@ export abstract class DesignCommand {
     }
 
     replace
-      .replacementOnce()
+      .replaceOnce()
       .replaceName()
       .replacePath()
 

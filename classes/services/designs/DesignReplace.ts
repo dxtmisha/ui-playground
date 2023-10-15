@@ -1,6 +1,8 @@
-import { toCamelCaseFirst } from '../../../functions/string.ts'
+import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
 
 import { DesignStructure } from './DesignStructure.ts'
+import { forEach } from '../../../functions/data.ts'
+import { DesignStructureItem } from '../../../types/design.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -61,7 +63,30 @@ export class DesignReplace {
    * Изменение пути к файлу.
    */
   replacePath (): this {
-    this.sample.replaceAll('../../../', this.getRoot())
+    this.sample = this.sample.replaceAll('../../../', this.getRoot())
+    return this
+  }
+
+  /**
+   * Replaces values with selected label.<br>
+   * Заменяет значения на выбранную метку.
+   * @param name label name /<br>название метки
+   * @param data data for replacement /<br>данные для замены
+   */
+  replaceMark (
+    name: string,
+    data: string[]
+  ): this {
+    const space = this.sample.match(new RegExp(`^( +)(\\/\\/ :${name} )`, 'm'))?.[1]
+
+    if (space) {
+      this.sample = this.sample
+        .replace(
+          new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),
+          `$1$2\r\n${space}${data.join(`\r\n${space}`)}\r\n$4`
+        )
+    }
+
     return this
   }
 
@@ -71,8 +96,8 @@ export class DesignReplace {
    * @param name label name /<br>название метки
    * @param removeReplacement data deletion /<br>удаление данных
    */
-  replacementOnce (
-    name = this.mark,
+  replaceOnce (
+    name = toCamelCase(this.mark),
     removeReplacement: boolean | ((data: string) => string) = false
   ): this {
     const exp1 = new RegExp(`\\/\\/ :${name}\\.once ([^\r\n]+)([\r\n ]*)`, 'g')
@@ -83,15 +108,15 @@ export class DesignReplace {
 
     const replacement = (...data: string[]) => {
       if (typeof removeReplacement === 'function') {
-        return `${removeReplacement(data[1].trim())}${data[2]}`
+        return `${removeReplacement(data[1])}${data[2]}`
       } else if (removeReplacement) {
         return ''
       }
 
-      return `${data[1].trim()}${data[2]}`
+      return `${data[1]}${data[2]}`
     }
 
-    this.sample
+    this.sample = this.sample
       .replace(exp1, replacement)
       .replace(exp2, replacement)
       .replace(exp3, replacement)
@@ -99,5 +124,121 @@ export class DesignReplace {
       .replace(exp5, replacement)
 
     return this
+  }
+
+  /**
+   * Adding types for properties.<br>
+   * Добавление типов для свойств.
+   */
+  replaceType (): this {
+    const mark = 'type'
+    const props = this.structure.get()
+    const templates: string[] = []
+
+    forEach(props, ({
+      name,
+      valueAll,
+      style
+    }) => {
+      const types = this.getPropTypeByValue(valueAll, style)
+
+      if (
+        !this.makeMarkAddValue(mark, name, types) &&
+        !this.isNoMark(mark, name)
+      ) {
+        templates.push(`${name}?: ${types}`)
+      }
+    })
+
+    return this.replaceMark(mark, templates)
+  }
+
+  /**
+   * Checks if the data type is boolean.<br>
+   * Проверяет, является ли тип данных булевым.
+   * @param value values to check /<br>значения для проверки
+   */
+  protected isBoolean (value: DesignStructureItem['value']): boolean {
+    return value.indexOf(true) !== -1
+  }
+
+  /**
+   * Checks if the data type is string.<br>
+   * Проверяет, является ли тип данных строковым.
+   * @param value values to check /<br>значения для проверки
+   */
+  protected isString (value: DesignStructureItem['value']): boolean {
+    return value.length > 0 && value[0] !== true
+  }
+
+  /**
+   * Checks whether the current property should be excluded by its label.<br>
+   * Проверяет, следует ли исключить текущее свойство по его метке.
+   * @param mark label property /<br>метка свойства
+   * @param name property name /<br>название свойства
+   */
+  protected isNoMark (
+    mark: string,
+    name: string
+  ): boolean {
+    return Boolean(this.sample.match(`:${mark}.${name}.none`))
+  }
+
+  /**
+   * Returns a string with the data type.<br>
+   * Возвращает строку с типом данных.
+   * @param value values to check /<br>значения для проверки
+   * @param style is the property style present /<br>является ли свойство style
+   */
+  protected getPropTypeByValue (
+    value: (string | boolean)[],
+    style?: boolean
+  ): string {
+    const types: string[] = []
+
+    if (this.isBoolean(value)) {
+      types.push('boolean')
+    }
+
+    if (style) {
+      types.push('string')
+    }
+
+    if (this.isString(value)) {
+      value.forEach(item => types.push(item === true ? 'true' : `'${item}'`))
+    }
+
+    if (types.length === 0) {
+      types.push('boolean')
+    }
+
+    return types.join(' | ')
+  }
+
+  /**
+   * Adds new data from tokens to existing data.<br>
+   * Добавляет новые данные из токенов к уже существующим.
+   * @param mark label property /<br>метка свойства
+   * @param name property name /<br>название свойства
+   * @param value property value /<br>значение свойства
+   */
+  protected makeMarkAddValue (
+    mark: string,
+    name: string,
+    value: string
+  ): boolean {
+    if (
+      this.sample.match(`:${mark}.${name}`)
+    ) {
+      this.sample = this.sample
+        .replace(
+          new RegExp(`(/[*] ?:${mark}[.]${name} ?[*]/)[^\r\n]*`, 'g'),
+          `$1 | ${value}`
+        )
+
+      return true
+    }
+
+    return false
   }
 }

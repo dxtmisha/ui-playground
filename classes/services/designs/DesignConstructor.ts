@@ -43,6 +43,9 @@ export class DesignConstructor extends DesignCommand {
     const file = FILE_PROPS
     const sample = this.readDefinable(file)
 
+    sample
+      .replaceType()
+
     if (sample) {
       // if (this._isFile(FILE_PROPERTIES)) {
       //  sample = this._replaceSubclass(sample)
