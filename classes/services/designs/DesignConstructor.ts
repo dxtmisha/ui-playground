@@ -45,18 +45,10 @@ export class DesignConstructor extends DesignCommand {
 
     sample
       .replaceType()
-
-    if (sample) {
-      // if (this._isFile(FILE_PROPERTIES)) {
-      //  sample = this._replaceSubclass(sample)
-      //  sample = this._replacePropsType(sample)
-      //  sample = this._replacePropsDefault(sample)
-      //  sample = this._replaceProps(sample, this.loader.getComponent())
-      // }
-    }
+      .replaceDefault()
+      .replaceProps()
 
     this.write(file, sample.get())
-
     return this
   }
 }

@@ -72,18 +72,25 @@ export class DesignReplace {
    * Заменяет значения на выбранную метку.
    * @param name label name /<br>название метки
    * @param data data for replacement /<br>данные для замены
+   * @param end symbol at the end of the line /<br>символ в конце строки
    */
   replaceMark (
     name: string,
-    data: string[]
+    data: string[],
+    end = ''
   ): this {
     const space = this.sample.match(new RegExp(`^( +)(\\/\\/ :${name} )`, 'm'))?.[1]
 
     if (space) {
+      const inString = `\r\n${space}`
+      const value = data
+        .join(`${end}${inString}`)
+        .replaceAll('[space]', inString)
+
       this.sample = this.sample
         .replace(
           new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),
-          `$1$2\r\n${space}${data.join(`\r\n${space}`)}\r\n$4`
+          `$1$2${inString}${value}\r\n$4`
         )
     }
 
@@ -154,6 +161,56 @@ export class DesignReplace {
   }
 
   /**
+   * Adding default values for properties.<br>
+   * Добавление значения по умолчанию для свойств.
+   */
+  replaceDefault () {
+    const mark = 'default'
+    const props = this.structure.get()
+    const templates: string[] = []
+
+    forEach(props, item => {
+      if (
+        item.default &&
+        !this.isNoMark(mark, item.name)
+      ) {
+        templates.push(`${item.name}: ${this.getDefault(item.default)}`)
+      }
+    })
+
+    return this.replaceMark(mark, templates, ',')
+  }
+
+  /**
+   * Adding types for properties.<br>
+   * Добавление самих свойств.
+   */
+  replaceProps (): this {
+    const mark = 'prop'
+    const props = this.structure.get()
+    const templates: string[] = []
+
+    forEach(props, item => {
+      if (!this.isNoMark('type', item.name)) {
+        const type = this.getPropByValue(item.name, item.valueAll)
+
+        if (item.default) {
+          templates.push(
+            `${item.name}: {` +
+            `[space]  type: ${type},` +
+            `[space]  default: defaults${this.component}?.${item.name}` +
+            '[space]}'
+          )
+        } else {
+          templates.push(`${item.name}: ${type}`)
+        }
+      }
+    })
+
+    return this.replaceMark(mark, templates, ',')
+  }
+
+  /**
    * Checks if the data type is boolean.<br>
    * Проверяет, является ли тип данных булевым.
    * @param value values to check /<br>значения для проверки
@@ -185,13 +242,43 @@ export class DesignReplace {
   }
 
   /**
+   * Returns default values.<br>
+   * Возвращает значения по умолчанию.
+   * @param value default values /<br>значения по умолчанию
+   */
+  protected getDefault (value: DesignStructureItem['default']): string {
+    if (typeof value === 'string') {
+      return `'${value}'`
+    } else {
+      return `${value}`
+    }
+  }
+
+  /**
+   * Returns available types for property.<br>
+   * Возвращает доступные типы для свойства.
+   * @param name property name /<br>название свойства
+   * @param value values to check /<br>значения для проверки
+   */
+  protected getPropByValue (
+    name: string,
+    value: DesignStructureItem['value']
+  ): string {
+    if (!this.isString(value)) {
+      return 'Boolean'
+    }
+
+    return `${this.isBoolean(value) ? '[String, Boolean]' : 'String'} as PropType<Props${this.component}Type['${name}']>`
+  }
+
+  /**
    * Returns a string with the data type.<br>
    * Возвращает строку с типом данных.
    * @param value values to check /<br>значения для проверки
    * @param style is the property style present /<br>является ли свойство style
    */
   protected getPropTypeByValue (
-    value: (string | boolean)[],
+    value: DesignStructureItem['value'],
     style?: boolean
   ): string {
     const types: string[] = []

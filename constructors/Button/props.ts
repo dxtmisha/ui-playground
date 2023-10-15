@@ -29,6 +29,8 @@ export type PropsButtonType = {
 export const defaultsButton: PropsButtonType = {
   ...{
     // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    height: 'md',
+    filled: true
     // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
   },
 }
@@ -40,6 +42,24 @@ export const defaultsButton: PropsButtonType = {
 export const propsButton = {
   ...{
     // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    selected: Boolean,
+    progress: Boolean,
+    disabled: Boolean,
+    adaptive: String as PropType<PropsButtonType['adaptive']>,
+    height: {
+      type: String as PropType<PropsButtonType['height']>,
+      default: defaultsButton?.height
+    },
+    filled: {
+      type: Boolean,
+      default: defaultsButton?.filled
+    },
+    outlined: Boolean,
+    text: Boolean,
+    elevated: Boolean,
+    tonal: [String, Boolean] as PropType<PropsButtonType['tonal']>,
+    test: Boolean,
+    palette: String as PropType<PropsButtonType['palette']>
     // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
   },
   // Values
