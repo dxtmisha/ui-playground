@@ -9,10 +9,12 @@ import { StylesTool } from './StylesTool.ts'
 import { StylesRoot } from './StylesRoot.ts'
 import { StylesClasses } from './StylesClasses.ts'
 
-import { EXTENSION_STYLE_FILE } from '../../../types/property.ts'
+import { EXTENSION_STYLE_FILE, NAME_CONSTRUCTOR } from '../../../types/property.ts'
+import { PropertiesScss } from '../properties/PropertiesScss.ts'
 
 const FILE_VAR = 'vars'
 const FILE_CLASS = 'classes'
+const FILE_PROPERTIES = 'properties'
 
 const DIR_CLASS = 'classes'
 
@@ -41,6 +43,7 @@ export class Styles {
     ) => {
       this.initRoot(design, items)
       this.initClasses(design, items)
+      this.initProperties(design, items)
     })
   }
 
@@ -100,6 +103,22 @@ export class Styles {
     return this
   }
 
+  protected initProperties (
+    design: string,
+    items: PropertiesItems
+  ): this {
+    const scss = new PropertiesScss(items)
+
+    PropertiesFile.write(
+      StylesTool.getDir(design),
+      FILE_PROPERTIES,
+      scss.get(),
+      EXTENSION_STYLE_FILE
+    )
+
+    return this
+  }
+
   /**
    * Generating a list of properties from a design.<br>
    * Получение списка свойств по дизайну.
@@ -112,10 +131,12 @@ export class Styles {
       .get()
       .getDesigns()
       .forEach(design => {
-        callback(
-          design,
-          new PropertiesItems(properties).setFocusDesign(design)
-        )
+        if (design !== NAME_CONSTRUCTOR) {
+          callback(
+            design,
+            new PropertiesItems(properties).setFocusDesign(design)
+          )
+        }
       })
   }
 }

@@ -5,6 +5,7 @@ import { getColumn } from '../../../functions/object.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 
 import {
+  NAME_CONSTRUCTOR,
   PropertyCategory,
   type PropertyItem,
   PropertyKey,
@@ -54,10 +55,41 @@ export class PropertiesItems {
   }
 
   /**
+   * Checks if the record complies with the design requirements.<br>
+   * Проверяет, соответствует ли запись условиям дизайна.
+   * @param name names of items /<br>названия объектов
+   * @param design design name /<br>название дизайна
+   * @private
+   */
+  isFocusDesign (name: string, design?: string): boolean {
+    return Boolean(
+      design ||
+      isNull(this.focusDesign) ||
+      name === this.focusDesign ||
+      name === NAME_CONSTRUCTOR
+    )
+  }
+
+  /**
    * Getting full structure property.<br>
    * Получение полной структуры свойства.
    */
   get (): PropertyList {
+    if (this.focusDesign) {
+      const data: PropertyList = {}
+
+      forEach(this.properties, (properties, index) => {
+        if (
+          index === NAME_CONSTRUCTOR ||
+          index === this.focusDesign
+        ) {
+          data[index] = properties
+        }
+      })
+
+      return data
+    }
+
     return this.properties
   }
 
@@ -440,21 +472,6 @@ export class PropertiesItems {
    */
   write (name: string): void {
     PropertiesCache.write(`${this.getDesigns().join('-')}-${name}`, this.properties)
-  }
-
-  /**
-   * Checks if the record complies with the design requirements.<br>
-   * Проверяет, соответствует ли запись условиям дизайна.
-   * @param name names of items /<br>названия объектов
-   * @param design design name /<br>название дизайна
-   * @private
-   */
-  private isFocusDesign (name: string, design?: string): boolean {
-    return Boolean(
-      design ||
-      isNull(this.focusDesign) ||
-      name === this.focusDesign
-    )
   }
 
   /**

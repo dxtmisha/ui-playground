@@ -1,4 +1,4 @@
-import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
+import { isObjectNotArray } from '../../../../functions/data.ts'
 
 import { PropertiesItems } from '../../properties/PropertiesItems.ts'
 import { PropertiesValues } from '../../properties/PropertiesValues.ts'
@@ -51,10 +51,10 @@ export class StylesToVar extends StylesToAbstract {
   ): string {
     let value = item?.[PropertyKey.css]
 
-    if (!isFilled(value)) {
+    if (typeof value !== 'string' || value === '') {
       value = 'unset'
     } else if (PropertiesValues.isColor(value)) {
-      value = `#{toColorRbg(${value})}`
+      value = `toColorRbg(${value})`
     }
 
     return `${item?.[PropertyKey.name]}: ${value};`
