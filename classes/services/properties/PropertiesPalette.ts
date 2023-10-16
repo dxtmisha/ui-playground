@@ -1,5 +1,4 @@
 import { forEach, isObjectNotArray } from '../../../functions/data.ts'
-import { toCamelCase } from '../../../functions/string.ts'
 import { getColumn } from '../../../functions/object.ts'
 
 import { PropertiesItems } from './PropertiesItems.ts'
@@ -76,11 +75,11 @@ export class PropertiesPalette {
         item?.[PropertyKey.variable] === PropertyType.var &&
         item?.[PropertyKey.category] !== PropertyCategory.color &&
         item?.[PropertyKey.name] &&
-        list.indexOf(toCamelCase(this.items.getLink(
+        list.indexOf(this.items.getLink(
           design,
           component,
           value
-        ))) !== -1
+        )) !== -1
       ) {
         const name = item[PropertyKey.name]
         const code = data.find(code => code.name === name)
