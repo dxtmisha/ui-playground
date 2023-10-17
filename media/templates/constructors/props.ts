@@ -5,8 +5,8 @@
  * Тип, описывающий входящие свойства.
  */
 export type ConstructorsProps = {
-  // :type [!] System label, cannot be deleted / Системная метка, нельзя удалять
-  // :type [!] System label, cannot be deleted / Системная метка, нельзя удалять
+  // :type [!] System label / Системная метка
+  // :type [!] System label / Системная метка
 }// :constructors.once  & {
 // :constructors.once }
 
@@ -16,8 +16,8 @@ export type ConstructorsProps = {
  */
 export const defaultsConstructors: ConstructorsProps = {
   ...{
-    // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
-    // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :default [!] System label / Системная метка
+    // :default [!] System label / Системная метка
   }// :constructors.once ,
 }
 
@@ -27,8 +27,8 @@ export const defaultsConstructors: ConstructorsProps = {
  */
 export const propsConstructors = {
   ...{
-    // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
-    // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :prop [!] System label / Системная метка
+    // :prop [!] System label / Системная метка
   }// :constructors.once ,
   // Values
 
