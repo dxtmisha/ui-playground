@@ -31,6 +31,7 @@
     "constructors/**/*.ts",
     "constructors/**/*.tsx",
     "functions/**/*.ts",
+    "media/templates/**/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",

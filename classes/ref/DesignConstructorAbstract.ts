@@ -1,4 +1,4 @@
-import { ref, toRefs, type ToRefs, useAttrs, useSlots, VNode } from 'vue'
+import { computed, ref, toRefs, type ToRefs, useAttrs, useSlots, VNode } from 'vue'
 
 import { forEach, isFilled } from '../../functions/data.ts'
 import { toCamelCase } from '../../functions/string.ts'
@@ -37,6 +37,7 @@ export abstract class DesignConstructorAbstract<
   protected modification?: ConstrComponentMod<P>
   protected emits?: ConstrEmit<EMITS>
   protected classes?: RefType<CLASSES>
+  protected classesSub?: RefType<CLASSES>
 
   protected attrs?: ConstrItem
   protected slots?: SLOTS
@@ -79,8 +80,7 @@ export abstract class DesignConstructorAbstract<
     }
 
     this.dataExpose = this.initExpose()
-
-    this.makeClasses()
+    this.classesSub = computed(() => this.initClasses())
 
     return this
   }
@@ -133,12 +133,6 @@ export abstract class DesignConstructorAbstract<
   protected abstract makeOptions (): this
 
   /**
-   * Improvement of the obtained list of classes.<br>
-   * Доработка полученного списка классов.
-   */
-  protected abstract makeClasses (): this
-
-  /**
    * Initialization of all the necessary properties for work<br>
    * Инициализация всех необходимых свойств для работы.
    */
@@ -149,6 +143,12 @@ export abstract class DesignConstructorAbstract<
    * Инициализация всех необходимых свойств для работы.
    */
   protected abstract initExpose (): EXPOSE
+
+  /**
+   * Improvement of the obtained list of classes.<br>
+   * Доработка полученного списка классов.
+   */
+  protected abstract initClasses (): CLASSES
 
   /**
    * A method for rendering.<br>

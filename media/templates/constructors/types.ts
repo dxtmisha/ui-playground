@@ -1,4 +1,4 @@
-import { ConstrClass } from '../../../types/constructor'
+import { ConstrClass } from '../../../types/constructor.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

@@ -1,13 +1,13 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../../classes/ref/DesignConstructorAbstract'
+import { DesignConstructorAbstract } from '../../../classes/ref/DesignConstructorAbstract.ts'
 
 import {
   type ConstrOptions
-} from '../../../types/constructor'
+} from '../../../types/constructor.ts'
 import {
   type ConstructorsProps
-} from './props'
+} from './props.ts'
 import {
   type ConstructorsClasses,
   type ConstructorsComponents,
@@ -15,7 +15,7 @@ import {
   type ConstructorsExpose,
   type ConstructorsSetup,
   type ConstructorsSlots
-} from './types'
+} from './types.ts'
 
 /**
  * ConstructorsDesign
@@ -69,18 +69,6 @@ export class ConstructorsDesign<
   }
 
   /**
-   * Improvement of the obtained list of classes.<br>
-   * Доработка полученного списка классов.
-   */
-  protected makeClasses (): this {
-    // :classes [!] System label / Системная метка
-    // :classes [!] System label / Системная метка
-    // TODO
-
-    return this
-  }
-
-  /**
    * Initialization of all the necessary properties for work<br>
    * Инициализация всех необходимых свойств для работы.
    */
@@ -101,13 +89,24 @@ export class ConstructorsDesign<
   }
 
   /**
+   * Improvement of the obtained list of classes.<br>
+   * Доработка полученного списка классов.
+   */
+  protected initClasses (): CLASSES {
+    return {
+      // :classes [!] System label / Системная метка
+      // :classes [!] System label / Системная метка
+    } as CLASSES
+  }
+
+  /**
    * A method for rendering.<br>
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
     return h('div', {
       ref: this.element,
-      class: this.classes.value.main
+      class: this.classes?.value.main
     })
   }
 }
