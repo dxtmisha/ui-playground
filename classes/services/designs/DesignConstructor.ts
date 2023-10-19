@@ -2,11 +2,11 @@ import { PropertiesFile } from '../properties/PropertiesFile.ts'
 
 import { DesignCommand } from './DesignCommand.ts'
 
-// const FILE_CLASS = 'ConstructorsDesign.ts'
 const FILE_PROPERTIES = 'properties.json'
 const FILE_PROPS = 'props.ts'
 const FILE_TYPES = 'types.ts'
 const FILE_STYLE = 'style.scss'
+const FILE_CLASS = 'ConstructorsDesign.ts'
 
 /**
  * Class for generating files based on a constructor.<br>
@@ -43,6 +43,7 @@ export class DesignConstructor extends DesignCommand {
       .makeProps()
       .makeTypes()
       .makeStyle()
+      .makeMain()
   }
 
   /**
@@ -102,6 +103,20 @@ export class DesignConstructor extends DesignCommand {
       this.write(file, sample.get())
     }
 
+    return this
+  }
+
+  /**
+   * This code generates the style.scss.<br>
+   * Генерация файла style.scss.
+   */
+  protected makeMain (): this {
+    const file = FILE_CLASS
+    const sample = this.readDefinable(file)
+
+    sample.replaceConstructorClasses()
+
+    this.write(sample.getNameFile(file), sample.get())
     return this
   }
 }

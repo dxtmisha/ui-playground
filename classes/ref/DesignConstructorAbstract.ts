@@ -99,7 +99,11 @@ export abstract class DesignConstructorAbstract<
    * @param name list of class names by levels /<br>список названий классов по уровням
    */
   getSubClass (name: string | string[]): string {
-    return `${this.getName()}__${toArray(name).join('__')}`
+    const newName = typeof name === 'string'
+      ? name
+      : toArray(name).join('__')
+
+    return `${this.getName()}__${newName}`
   }
 
   /**

@@ -130,8 +130,10 @@ export abstract class DesignCommand {
    * @param callback the function is executed if there is no such file /<br>функция выполняется, если такого файла нет
    */
   protected readDefinable (name: string, callback?: (sample: DesignReplace) => void): DesignReplace {
-    if (this.isFile(name)) {
-      return this.getReplace(this.read(name))
+    const fileName = this.getReplace().getNameFile(name)
+
+    if (this.isFile(fileName)) {
+      return this.getReplace(this.read(fileName))
     }
 
     const replace = this.getReplace(this.readSample(name))

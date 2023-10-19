@@ -51,11 +51,20 @@ export class DesignReplace {
   }
 
   /**
+   * Changes the names in accordance with the component name.<br>
+   * Изменяет названия в соответствии с названием компонента.
+   * @param name the name of a file /<br>название файла
+   */
+  getNameFile (name: string): string {
+    return name.replaceAll(this.mark, this.component)
+  }
+
+  /**
    * Changing the name of the component.<br>
    * Изменение названия компонента.
    */
   replaceName (): this {
-    this.sample = this.sample.replaceAll(this.mark, this.component)
+    this.sample = this.getNameFile(this.sample)
     return this
   }
 
@@ -214,17 +223,33 @@ export class DesignReplace {
   /**
    * Adding a list of available classes.<br>
    * Добавление списка доступных классов.
+   * @param template a function that returns a template /<br>функция, которая возвращает шаблон
+   * @param end symbol at the end of the line /<br>символ в конце строки
    */
-  replaceClasses (): this {
+  replaceClasses (
+    template: (item: string[]) => string = (item: string[]) => `${item[1]}: string`,
+    end = ''
+  ): this {
     const mark = 'classes'
     const classes = this.structure.getClasses()
     const templates: string[] = []
 
     forEach(classes, (...item) => {
-      templates.push(`${item[1]}: string`)
+      templates.push(...template(item as string[]))
     })
 
-    return this.replaceMark(mark, templates)
+    return this.replaceMark(mark, templates, end)
+  }
+
+  /**
+   * Adding a list of available classes for a constructor.<br>
+   * Добавление списка доступных классов для конструктора.
+   */
+  replaceConstructorClasses (): this {
+    return this.replaceClasses(
+      (item: string[]) => `${item[1]}: this.getSubClass('${item[0]}')`,
+      ','
+    )
   }
 
   /**
