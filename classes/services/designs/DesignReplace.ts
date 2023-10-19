@@ -235,7 +235,7 @@ export class DesignReplace {
     const templates: string[] = []
 
     forEach(classes, (...item) => {
-      templates.push(...template(item as string[]))
+      templates.push(template(item as string[]))
     })
 
     return this.replaceMark(mark, templates, end)

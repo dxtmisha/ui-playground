@@ -37,7 +37,7 @@ export abstract class DesignConstructorAbstract<
   protected modification?: ConstrComponentMod<P>
   protected emits?: ConstrEmit<EMITS>
   protected classes?: RefType<CLASSES>
-  protected classesSub?: RefType<CLASSES>
+  protected classesSub?: CLASSES
 
   protected attrs?: ConstrItem
   protected slots?: SLOTS
@@ -51,7 +51,7 @@ export abstract class DesignConstructorAbstract<
    * @param props properties /<br>свойства
    * @param options list of additional parameters /<br>список дополнительных параметров
    */
-  constructor (
+  protected constructor (
     name: string,
     protected readonly props: Readonly<P>,
     options?: ConstrOptions<COMP, EMITS, CLASSES, P>
@@ -72,15 +72,18 @@ export abstract class DesignConstructorAbstract<
     this.makeOptions()
     this.makeComponents()
 
+    this.classesSub = this.initClasses()
     this.data = {
       name: this.getName(),
       element: this.element,
-      classes: this.classes,
+      classes: computed(() => ({
+        ...this.classesSub,
+        ...this.classes
+      } as CLASSES)),
       ...this.initSetup()
     }
 
     this.dataExpose = this.initExpose()
-    this.classesSub = computed(() => this.initClasses())
 
     return this
   }
