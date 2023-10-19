@@ -1,8 +1,10 @@
+import { ConstrClass } from '../../types/constructor.ts'
+
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
-export type ConstructorComponents = {
+export type ButtonComponents = {
   componentName: Record<string, any>
 }
 
@@ -18,13 +20,17 @@ export type ButtonEmits = {
  * Interface for describing what property setup returns.<br>
  * Интерфейс для описания, какое свойство возвращает setup.
  */
-export type ButtonSetup = {}
+export type ButtonSetup = {
+  // TODO
+}
 
 /**
  * Type describing available properties.<br>
  * Тип, описывающий доступные свойства.
  */
-export type ButtonExpose = {}
+export type ButtonExpose = {
+  // TODO
+}
 
 /**
  * Type describing available slots.<br>
@@ -32,4 +38,18 @@ export type ButtonExpose = {}
  */
 export type ButtonSlots = {
   default? (props: any): any
+}
+
+/**
+ * Type describing subclasses.<br>
+ * Тип, описывающий подклассы.
+ */
+export type ButtonClasses = {
+  main: ConstrClass
+  // :classes [!] System label / Системная метка
+  progress: string
+  label: string
+  icon: string
+  trailing: string
+  // :classes [!] System label / Системная метка
 }

@@ -1,8 +1,9 @@
+import { forEach } from '../../../functions/data.ts'
 import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
 
 import { DesignStructure } from './DesignStructure.ts'
-import { forEach } from '../../../functions/data.ts'
-import { DesignStructureItem } from '../../../types/design.ts'
+
+import { type DesignStructureItem } from '../../../types/design.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -164,7 +165,7 @@ export class DesignReplace {
    * Adding default values for properties.<br>
    * Добавление значения по умолчанию для свойств.
    */
-  replaceDefault () {
+  replaceDefault (): this {
     const mark = 'default'
     const props = this.structure.get()
     const templates: string[] = []
@@ -208,6 +209,22 @@ export class DesignReplace {
     })
 
     return this.replaceMark(mark, templates, ',')
+  }
+
+  /**
+   * Adding a list of available classes.<br>
+   * Добавление списка доступных классов.
+   */
+  replaceClasses (): this {
+    const mark = 'classes'
+    const classes = this.structure.getClasses()
+    const templates: string[] = []
+
+    forEach(classes, (...item) => {
+      templates.push(`${item[1]}: string`)
+    })
+
+    return this.replaceMark(mark, templates)
   }
 
   /**

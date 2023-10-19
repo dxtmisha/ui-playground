@@ -4,12 +4,15 @@ import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { PropertiesCache } from '../properties/PropertiesCache.ts'
 
 import { DesignStructureRead } from './DesignStructureRead.ts'
+import { DesignStructureClasses } from './DesignStructureClasses.ts'
 
 import {
+  DesignStructureClassesList,
   type DesignStructureList
 } from '../../../types/design.ts'
 
 const DIR_NAME = 'structure'
+const FILE_CLASSES = 'classes'
 
 /**
  * Class for processing structured components.<br>
@@ -20,6 +23,7 @@ export class DesignStructure {
   protected readonly component: string
 
   protected items: DesignStructureList
+  protected itemsClasses: DesignStructureClassesList
 
   constructor (path: string)
   constructor (design: string, component: string)
@@ -43,6 +47,7 @@ export class DesignStructure {
     }
 
     this.items = this.make()
+    this.itemsClasses = this.makeClasses()
   }
 
   /**
@@ -51,6 +56,14 @@ export class DesignStructure {
    */
   get (): DesignStructureList {
     return this.items
+  }
+
+  /**
+   * Obtaining a list of subclasses from a structure.<br>
+   * Получение списка подклассов из структуры.
+   */
+  getClasses (): DesignStructureClassesList {
+    return this.itemsClasses
   }
 
   /**
@@ -79,6 +92,14 @@ export class DesignStructure {
   }
 
   /**
+   * Returns the name of the file with data about the subclass.<br>
+   * Возвращает название файла с данными о подклассе.
+   */
+  protected getPathClasses (): string {
+    return `${this.getPathName()}-${FILE_CLASSES}`
+  }
+
+  /**
    * Data generation.<br>
    * Генерация данных.
    */
@@ -88,6 +109,23 @@ export class DesignStructure {
       this.getPathName(),
       () => {
         return new DesignStructureRead(
+          this.design,
+          this.component
+        ).get()
+      }
+    )
+  }
+
+  /**
+   * Generation of data for the subclass.<br>
+   * Генерация данных для подкласса.
+   */
+  protected makeClasses (): DesignStructureClassesList {
+    return PropertiesCache.get<DesignStructureClassesList>(
+      [DIR_NAME],
+      this.getPathClasses(),
+      () => {
+        return new DesignStructureClasses(
           this.design,
           this.component
         ).get()

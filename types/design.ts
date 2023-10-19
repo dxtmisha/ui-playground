@@ -8,6 +8,7 @@ export type DesignStructureState = {
   state: DesignStructureState[]
 }
 export type DesignStructureStateList = DesignStructureState['state']
+export type DesignStructureClassesList = Record<string, string>
 
 export type DesignStructureItemSub = {
   name: string

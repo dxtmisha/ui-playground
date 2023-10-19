@@ -42,7 +42,7 @@ export type ConstructorsSlots = {
 
 /**
  * Type describing subclasses.<br>
- * Тип, описывающий подклассы
+ * Тип, описывающий подклассы.
  */
 export type ConstructorsClasses = {
   main: ConstrClass

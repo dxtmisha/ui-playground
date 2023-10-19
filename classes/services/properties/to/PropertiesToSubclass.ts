@@ -20,7 +20,10 @@ export class PropertiesToSubclass extends PropertiesToAbstract {
       item,
       parents
     }) => {
-      item[PropertyKey.name] = this.getName(name, item, parents)
+      const newName = this.items.getReName(name, item)
+
+      item[PropertyKey.name] = this.getName(newName, item, parents)
+      item[PropertyKey.nameIndex] = newName
     })
   }
 
@@ -47,18 +50,16 @@ export class PropertiesToSubclass extends PropertiesToAbstract {
     item: PropertyItem,
     parents: PropertiesItemsItem['parents']
   ): string {
-    const newName = this.items.getReName(name, item)
-
     if (item?.[PropertyKey.fullName]) {
-      return `& .${newName}`
+      return `& .${name}`
     } else if (this.isParentState(parents)) {
       const parentsName = this.items.getParentsName(parents, [PropertyType.subclass])
         .join('__')
         .replace('__', '-')
 
-      return `& .${parentsName}__${newName}`
+      return `& .${parentsName}__${name}`
     }
 
-    return `&__${newName}`
+    return `&__${name}`
   }
 }

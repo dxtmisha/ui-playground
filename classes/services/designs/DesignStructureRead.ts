@@ -1,8 +1,7 @@
 import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
 import { uniqueArray } from '../../../functions/object.ts'
 
-import { type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
-import { Properties } from '../properties/Properties.ts'
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts'
 
 import {
   type PropertyItem,
@@ -31,9 +30,7 @@ const LIST_PROPS: string[] = [
  * Class for processing dependency properties of the component.<br>
  * Класс для обработки зависимости свойств у компонента.
  */
-export class DesignStructureRead {
-  protected properties: Properties
-  protected items?: PropertiesItemsItem
+export class DesignStructureRead extends DesignStructureItemAbstract<DesignStructureList> {
   protected states: DesignStructureStateList
 
   protected data: DesignStructureList = {}
@@ -43,13 +40,11 @@ export class DesignStructureRead {
    * @param design design name /<br>название дизайна
    * @param component component name /<br>название компонента
    */
-  // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly design: string,
-    protected readonly component: string
+    design: string,
+    component: string
   ) {
-    this.properties = new Properties()
-    this.items = this.properties.get().getInfo(this.getLink())
+    super(design, component)
     this.states = this.makeState(this.items?.value)
 
     this.makeMain()
@@ -57,14 +52,6 @@ export class DesignStructureRead {
     this.makeValueAll()
     this.makeValueUnique()
     this.makeValueState()
-  }
-
-  /**
-   * Getting all data about dependencies of the current component.<br>
-   * Получение всех данных об зависимостях у текущего компонента.
-   */
-  get (): DesignStructureList {
-    return this.data
   }
 
   /**
@@ -101,15 +88,6 @@ export class DesignStructureRead {
   }
 
   /**
-   * Returns a reference to the component.<br>
-   * Возвращает ссылку на компонент.
-   * Это полный массив со всеми обработанными свойствами.
-   */
-  protected getLink (): string {
-    return `{${this.design}.${this.component}}`
-  }
-
-  /**
    * Transformations to a class name.<br>
    * Преобразование в имя класса.
    * @param value values of properties from the value field /<br>значения свойств из поля value
@@ -133,7 +111,7 @@ export class DesignStructureRead {
   /**
    * Returns records that meet state conditions.<br>
    * Возвращает записи, удовлетворяющие условиям состояния.
-   * @param {Object<string,*>} properties input data / входной данный
+   * @param properties input data /<br>входной данный
    */
   protected makeState (properties?: PropertyItem['value']): DesignStructureStateList {
     const state: DesignStructureStateList = []

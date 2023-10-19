@@ -2,7 +2,7 @@ import { PropertiesFile } from '../properties/PropertiesFile.ts'
 
 import { DesignCommand } from './DesignCommand.ts'
 
-const FILE_CLASS = 'ConstructorsDesign.ts'
+// const FILE_CLASS = 'ConstructorsDesign.ts'
 const FILE_PROPERTIES = 'properties.json'
 const FILE_PROPS = 'props.ts'
 const FILE_TYPES = 'types.ts'
@@ -83,6 +83,8 @@ export class DesignConstructor extends DesignCommand {
   protected makeTypes (): this {
     const file = FILE_TYPES
     const sample = this.readDefinable(file)
+
+    sample.replaceClasses()
 
     this.write(file, sample.get())
     return this

@@ -1,6 +1,7 @@
 export enum PropertyKey {
   category = '_category',
   type = '_type',
+  subclass = '_subclass',
   rename = '_rename',
   prop = '_prop',
   default = '_default',
@@ -12,6 +13,7 @@ export enum PropertyKey {
   fullValue = '_fullValue',
   style = '_style',
   name = '__n',
+  nameIndex = '__ni',
   variable = '__v',
   css = '__c',
   code = '__f',
@@ -73,6 +75,7 @@ export type PropertyItem = {
   description?: string
 
   _type?: PropertyType | null
+  _subclass?: boolean
   _category?: PropertyCategory | string
   _rename?: string
   _prop?: string | boolean
@@ -87,6 +90,7 @@ export type PropertyItem = {
 
   __i?: string
   __n?: string
+  __ni?: string
   __v?: PropertyType
   __c?: string
   __f?: string | string[]

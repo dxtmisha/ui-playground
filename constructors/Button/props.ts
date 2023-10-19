@@ -5,7 +5,7 @@ import { PropType } from 'vue'
  * Тип, описывающий входящие свойства.
  */
 export type ButtonProps = {
-  // :type [!] System label, cannot be deleted / Системная метка, нельзя удалять
+  // :type [!] System label / Системная метка
   selected?: boolean
   progress?: boolean
   disabled?: boolean
@@ -18,7 +18,7 @@ export type ButtonProps = {
   tonal?: boolean | 'a' | true
   test?: boolean
   palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
-  // :type [!] System label, cannot be deleted / Системная метка, нельзя удалять
+  // :type [!] System label / Системная метка
 } & {
 }
 
@@ -28,10 +28,10 @@ export type ButtonProps = {
  */
 export const defaultsButton: ButtonProps = {
   ...{
-    // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :default [!] System label / Системная метка
     height: 'md',
     filled: true
-    // :default [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :default [!] System label / Системная метка
   },
 }
 
@@ -41,7 +41,7 @@ export const defaultsButton: ButtonProps = {
  */
 export const propsButton = {
   ...{
-    // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :prop [!] System label / Системная метка
     selected: Boolean,
     progress: Boolean,
     disabled: Boolean,
@@ -60,7 +60,7 @@ export const propsButton = {
     tonal: [String, Boolean] as PropType<ButtonProps['tonal']>,
     test: Boolean,
     palette: String as PropType<ButtonProps['palette']>
-    // :prop [!] System label, cannot be deleted / Системная метка, нельзя удалять
+    // :prop [!] System label / Системная метка
   },
   // Values
 
