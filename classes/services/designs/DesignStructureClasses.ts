@@ -17,7 +17,7 @@ import {
  * Класс для получения списка классов компонентов.
  */
 export class DesignStructureClasses extends DesignStructureItemAbstract<DesignStructureClassesList> {
-  protected data: DesignStructureClassesList = {}
+  protected data: DesignStructureClassesList = []
 
   /**
    * Constructor
@@ -42,7 +42,7 @@ export class DesignStructureClasses extends DesignStructureItemAbstract<DesignSt
     properties?: PropertyItem['value'],
     parent: string[] = []
   ): DesignStructureClassesList {
-    const list: DesignStructureClassesList = {}
+    const list: DesignStructureClassesList = []
 
     if (
       isFilled(properties) &&
@@ -52,12 +52,15 @@ export class DesignStructureClasses extends DesignStructureItemAbstract<DesignSt
         if (this.isClasses(item)) {
           const names = this.getNames(item, parent)
 
-          list[toCamelCase(names.join('-'))] = names.join('__')
+          list.push({
+            index: toCamelCase(names.join('-')),
+            full: item?.[PropertyKey.fullName] ?? false,
+            className: names.join('__')
+          })
+
           Object.assign(list, this.make(item?.value, names))
         }
       })
-
-      return list
     }
 
     return list

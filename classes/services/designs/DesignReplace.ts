@@ -3,7 +3,7 @@ import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
 
 import { DesignStructure } from './DesignStructure.ts'
 
-import { type DesignStructureItem } from '../../../types/design.ts'
+import { DesignStructureClasses, type DesignStructureItem } from '../../../types/design.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -227,16 +227,14 @@ export class DesignReplace {
    * @param end symbol at the end of the line /<br>символ в конце строки
    */
   replaceClasses (
-    template: (item: string[]) => string = (item: string[]) => `${item[1]}: string`,
+    template: (item: DesignStructureClasses) => string = (item: DesignStructureClasses) => `${item.index}: string`,
     end = ''
   ): this {
     const mark = 'classes'
     const classes = this.structure.getClasses()
     const templates: string[] = []
 
-    forEach(classes, (...item) => {
-      templates.push(template(item as string[]))
-    })
+    forEach(classes, item => templates.push(template(item)))
 
     return this.replaceMark(mark, templates, end)
   }
@@ -247,7 +245,13 @@ export class DesignReplace {
    */
   replaceConstructorClasses (): this {
     return this.replaceClasses(
-      (item: string[]) => `${item[1]}: this.getSubClass('${item[0]}')`,
+      (item: DesignStructureClasses) => {
+        if (item.full) {
+          return `${item.index}: '${item.className}'`
+        }
+
+        return `${item.index}: this.getSubClass('${item.className}')`
+      },
       ','
     )
   }
