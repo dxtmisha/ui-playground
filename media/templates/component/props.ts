@@ -1,18 +1,21 @@
 // :component.once import { PropType } from 'vue'
 
 // :component.once import {
+// :component.once   ComponentProps,
 // :component.once   defaultsComponent,
 // :component.once   propsComponent
 // :component.once } from '../../constructors/Component/props.ts'
+
+export type PropsToken = {
+  // :type [!] System label / Системная метка
+  // :type [!] System label / Системная метка
+}
 
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type Props = {
-  // :type [!] System label / Системная метка
-  // :type [!] System label / Системная метка
-}
+export type Props = PropsToken/* :component.once  & Omit<ComponentProps, keyof PropsToken> */
 
 /**
  * Default value for property.<br>

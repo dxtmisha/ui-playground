@@ -3,6 +3,7 @@ import { DesignCommand } from './DesignCommand.ts'
 
 import { DIR_CONSTRUCTOR } from '../../../types/property.ts'
 
+const FILE_PROPERTIES = 'properties.json'
 const FILE_PROPS = 'props.ts'
 
 /**
@@ -39,6 +40,7 @@ export class DesignComponent extends DesignCommand {
    */
   protected initMain (): void {
     this
+      .makeProperties()
       .makeProps()
   }
 
@@ -57,6 +59,20 @@ export class DesignComponent extends DesignCommand {
       .replaceProps()
 
     this.write(file, sample.get())
+    return this
+  }
+
+  /**
+   * This code generates the properties.json.<br>
+   * Генерация файла properties.json.
+   */
+  protected makeProperties (): this {
+    const file = FILE_PROPERTIES
+
+    if (!this.isFile(file)) {
+      this.write(file, '{\r\n}\r\n')
+    }
+
     return this
   }
 

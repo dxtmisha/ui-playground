@@ -396,7 +396,7 @@ export class DesignReplace {
         const name = string.match(/[a-z0-9]+(?=[ ?:])/i)?.[0]
 
         if (name && props.indexOf(name) === -1) {
-          templates.push(string.trim())
+          templates.push(`// [constructor] ${string.trim()}`)
         }
       })
 

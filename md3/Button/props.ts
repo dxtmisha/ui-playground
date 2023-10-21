@@ -1,15 +1,12 @@
 import { PropType } from 'vue'
 
 import {
+  ButtonProps,
   defaultsButton,
   propsButton
 } from '../../constructors/Button/props.ts'
 
-/**
- * Type describing incoming properties.<br>
- * Тип, описывающий входящие свойства.
- */
-export type Props = {
+export type PropsToken = {
   // :type [!] System label / Системная метка
   selected?: boolean
   progress?: boolean
@@ -25,6 +22,12 @@ export type Props = {
   palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
   // :type [!] System label / Системная метка
 }
+
+/**
+ * Type describing incoming properties.<br>
+ * Тип, описывающий входящие свойства.
+ */
+export type Props = PropsToken & Omit<ButtonProps, keyof PropsToken>
 
 /**
  * Default value for property.<br>
@@ -49,9 +52,9 @@ export const propsInstruction = {
     selected: Boolean,
     progress: Boolean,
     disabled: Boolean,
-    adaptive: String as PropType<Props['adaptive']>,
+    adaptive: String as PropType<PropsToken['adaptive']>,
     height: {
-      type: String as PropType<Props['height']>,
+      type: String as PropType<PropsToken['height']>,
       default: defaults?.height
     },
     filled: {
@@ -61,9 +64,9 @@ export const propsInstruction = {
     outlined: Boolean,
     text: Boolean,
     elevated: Boolean,
-    tonal: [String, Boolean] as PropType<Props['tonal']>,
+    tonal: [String, Boolean] as PropType<PropsToken['tonal']>,
     test: Boolean,
-    palette: String as PropType<Props['palette']>
+    palette: String as PropType<PropsToken['palette']>
     // :prop [!] System label / Системная метка
   }
 }
