@@ -55,7 +55,6 @@ export class ButtonDesign<
     )
 
     // TODO: Initialization
-    console.log('asd')
 
     this.init()
   }

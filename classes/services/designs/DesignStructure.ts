@@ -67,6 +67,14 @@ export class DesignStructure {
   }
 
   /**
+   * Returns the name of the design.<br>
+   * Возвращает название дизайна.
+   */
+  getDesign (): string {
+    return this.design
+  }
+
+  /**
    * Returns the name of the component.<br>
    * Возвращает название компонента.
    */

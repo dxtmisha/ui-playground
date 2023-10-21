@@ -5,6 +5,7 @@ import { program } from 'commander'
 
 import { Styles } from '../classes/services/styles/Styles.ts'
 import { DesignConstructor } from '../classes/services/designs/DesignConstructor.ts'
+import { DesignComponent } from '../classes/services/designs/DesignComponent.ts'
 
 config()
 
@@ -14,6 +15,7 @@ program
   .action((/* name, options */) => {
     new Styles().init()
     new DesignConstructor('md3.button').init()
+    new DesignComponent('md3.button').init()
     // console.log()
     // const a = new Properties().get()
   })

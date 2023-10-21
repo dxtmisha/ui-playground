@@ -1,48 +1,37 @@
-// :basic.once import { PropType } from 'vue'
-// :constructor.once import { PropType } from 'vue'
-// :constructor.once import { defaultsConstructor, propsConstructor, PropsConstructorBasicType, subclassesConstructor } from '../../../constructors/Constructor/props'
+// :component.once import { PropType } from 'vue'
 
-// Type describing subclasses<br>
-// Тип, описывающий подклассы
-export const subclasses = {
-  /* :constructor.once ...subclassesConstructor, */
-  ...{
-    // [!] System label, cannot be deleted
-    // [!] Системная метка, нельзя удалять
-    // :subclass
-    // :subclass
-  }
+// :component.once import {
+// :component.once   defaultsComponent,
+// :component.once   propsComponent
+// :component.once } from '../../constructors/Component/props.ts'
+
+/**
+ * Type describing incoming properties.<br>
+ * Тип, описывающий входящие свойства.
+ */
+export type Props = {
+  // :type [!] System label / Системная метка
+  // :type [!] System label / Системная метка
 }
 
-// Type describing incoming properties<br>
-// Тип, описывающий входящие свойства
-export type PropsType = /* :constructor.once PropsConstructorBasicType & */ {
-  // [!] System label, cannot be deleted
-  // [!] Системная метка, нельзя удалять
-  // :type
-  // :type
-}
-
-// Default value for property<br>
-// Значение по умолчанию для свойства
-export const defaults: PropsType = {
-  /* :constructor.once ...defaultsConstructor, */
+/**
+ * Default value for property.<br>
+ * Значение по умолчанию для свойства.
+ */
+export const defaults: Props = {
+  /* :component.once ...defaultsComponent, */
   ...{
-    // [!] System label, cannot be deleted
-    // [!] Системная метка, нельзя удалять
-    // :default
-    // :default
+    // :default [!] System label / Системная метка
+    // :default [!] System label / Системная метка
   }
 }
 
 // Constructor for property
 // Конструктор для свойства
 export const propsInstruction = {
-  /* :constructor.once ...propsConstructor, */
+  /* :component.once ...propsComponent, */
   ...{
-    // [!] System label, cannot be deleted
-    // [!] Системная метка, нельзя удалять
-    // :prop
-    // :prop
+    // :prop [!] System label / Системная метка
+    // :prop [!] System label / Системная метка
   }
 }

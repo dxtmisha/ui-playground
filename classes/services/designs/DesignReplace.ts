@@ -3,7 +3,11 @@ import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
 
 import { DesignStructure } from './DesignStructure.ts'
 
-import { DesignStructureClasses, type DesignStructureItem } from '../../../types/design.ts'
+import {
+  type DesignStructureClasses,
+  type DesignStructureItem
+} from '../../../types/design.ts'
+import { getColumn } from '../../../functions/object.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -146,11 +150,16 @@ export class DesignReplace {
   /**
    * Adding types for properties.<br>
    * Добавление типов для свойств.
+   * @param constructor additional data for processing /<br>дополнительные данные для обработки
    */
-  replaceType (): this {
+  replaceType (constructor?: string): this {
     const mark = 'type'
     const props = this.structure.get()
     const templates: string[] = []
+
+    if (constructor) {
+      templates.push(...this.getTypeForConstructor(constructor))
+    }
 
     forEach(props, ({
       name,
@@ -199,6 +208,7 @@ export class DesignReplace {
     const mark = 'prop'
     const props = this.structure.get()
     const templates: string[] = []
+    const indexDefault = this.getIndexDefault()
 
     forEach(props, item => {
       if (!this.isNoMark('type', item.name)) {
@@ -208,7 +218,7 @@ export class DesignReplace {
           templates.push(
             `${item.name}: {` +
             `[space]  type: ${type},` +
-            `[space]  default: defaults${this.component}?.${item.name}` +
+            `[space]  default: ${indexDefault}?.${item.name}` +
             '[space]}'
           )
         } else {
@@ -314,7 +324,14 @@ export class DesignReplace {
       return 'Boolean'
     }
 
-    return `${this.isBoolean(value) ? '[String, Boolean]' : 'String'} as PropType<${this.component}Props['${name}']>`
+    const type = this.isBoolean(value) ? '[String, Boolean]' : 'String'
+    const index = this.getIndexProp()
+
+    if (index) {
+      return `${type} as PropType<${index}['${name}']>`
+    }
+
+    return type
   }
 
   /**
@@ -346,6 +363,44 @@ export class DesignReplace {
     }
 
     return types.join(' | ')
+  }
+
+  /**
+   * Returns the names of parameters.<br>
+   * Возвращает названия параметров переменных.
+   */
+  protected getIndexProp (): string | undefined {
+    return this.sample.match(/type ([a-zA-Z]*Props[a-zA-Z]*) =/)?.[1]
+  }
+
+  /**
+   * Returns the names of parameters and their default values.<br>
+   * Возвращает названия параметров и значения по умолчанию.
+   */
+  protected getIndexDefault (): string | undefined {
+    return this.sample.match(/const ([a-zA-Z]*defaults[a-zA-Z]*):/)?.[1]
+  }
+
+  /**
+   * Getting base properties from a constructor.<br>
+   * Получение базовых свойств из конструктора.
+   * @param constructor data for processing /<br>данные для обработки
+   */
+  protected getTypeForConstructor (constructor: string): string[] {
+    const props = getColumn(this.structure.get(), 'name')
+    const templates: string[] = []
+
+    constructor
+      .match(/(?<=type[^{]+Props[^{]+{[^{}]+)(^[^\n{}/]+$)(?=[^{}]+^})/igm)
+      ?.forEach(string => {
+        const name = string.match(/[a-z0-9]+(?=[ ?:])/i)?.[0]
+
+        if (name && props.indexOf(name) === -1) {
+          templates.push(string.trim())
+        }
+      })
+
+    return templates
   }
 
   /**

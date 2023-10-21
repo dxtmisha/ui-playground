@@ -1,3 +1,5 @@
+import { toArray } from '../../../functions/object.ts'
+
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { DesignStructure } from './DesignStructure.ts'
 import { DesignReplace } from './DesignReplace.ts'
@@ -53,8 +55,8 @@ export abstract class DesignCommand {
    * Проверяет наличие файла.
    * @param name file name /<br>название файла
    */
-  protected isFile (name: string): boolean {
-    return PropertiesFile.is([...this.dir, name])
+  protected isFile (name: string | string[]): boolean {
+    return PropertiesFile.is([...this.dir, ...toArray(name)])
   }
 
   /**
@@ -110,8 +112,8 @@ export abstract class DesignCommand {
    * Читает файл.
    * @param name file name /<br>название файла
    */
-  protected read (name: string): string | undefined {
-    return PropertiesFile.readFile<string>([...this.dir, name])
+  protected read (name: string | string[]): string | undefined {
+    return PropertiesFile.readFile<string>([...this.dir, ...toArray(name)])
   }
 
   /**
