@@ -5,6 +5,7 @@ import { PropertiesCache } from '../properties/PropertiesCache.ts'
 
 import { DesignStructureRead } from './DesignStructureRead.ts'
 import { DesignStructureClasses } from './DesignStructureClasses.ts'
+import { DesignStructureStyles } from './DesignStructureStyles.ts'
 
 import {
   DesignStructureClassesList,
@@ -22,8 +23,9 @@ export class DesignStructure {
   protected readonly design: string
   protected readonly component: string
 
-  protected items: DesignStructureList
-  protected itemsClasses: DesignStructureClassesList
+  protected items?: DesignStructureList
+  protected itemsClasses?: DesignStructureClassesList
+  protected itemsStyles?: string[]
 
   constructor (path: string)
   constructor (design: string, component: string)
@@ -45,9 +47,6 @@ export class DesignStructure {
       this.design = toKebabCase(dirs[dirs.length - 2])
       this.component = toCamelCase(dirs[dirs.length - 1])
     }
-
-    this.items = this.make()
-    this.itemsClasses = this.makeClasses()
   }
 
   /**
@@ -55,6 +54,10 @@ export class DesignStructure {
    * Получение всех данных из структуры.
    */
   get (): DesignStructureList {
+    if (this.items === undefined) {
+      this.items = this.make()
+    }
+
     return this.items
   }
 
@@ -63,7 +66,23 @@ export class DesignStructure {
    * Получение списка подклассов из структуры.
    */
   getClasses (): DesignStructureClassesList {
+    if (this.itemsClasses === undefined) {
+      this.itemsClasses = this.makeClasses()
+    }
+
     return this.itemsClasses
+  }
+
+  /**
+   * Returns all styles from tokens.<br>
+   * Возвращает все стили из токенов.
+   */
+  getStyles (): string[] {
+    if (this.itemsStyles === undefined) {
+      this.itemsStyles = this.makeStyles()
+    }
+
+    return this.itemsStyles
   }
 
   /**
@@ -88,6 +107,14 @@ export class DesignStructure {
    */
   getComponentNameFirst (): string {
     return toCamelCaseFirst(this.component)
+  }
+
+  /**
+   * Returns the names of component files.<br>
+   * Возвращает названия файлов компонентов.
+   */
+  getFileName (): string {
+    return toCamelCaseFirst(this.getPathName())
   }
 
   /**
@@ -139,5 +166,16 @@ export class DesignStructure {
         ).get()
       }
     )
+  }
+
+  /**
+   * Performing transformation of tokens into styles for the component.<br>
+   * Выполнение преобразования токенов в стили для компонента.
+   */
+  protected makeStyles (): string[] {
+    return new DesignStructureStyles(
+      this.design,
+      this.component
+    ).get()
   }
 }

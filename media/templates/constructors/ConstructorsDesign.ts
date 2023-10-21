@@ -54,7 +54,8 @@ export class ConstructorsDesign<
       options
     )
 
-    // TODO: Initialization
+    // TODO: Method for initializing base objects
+    // TODO: Метод для инициализации базовых объектов
 
     this.init()
   }
@@ -64,7 +65,8 @@ export class ConstructorsDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO
+    // TODO: User code
+    // TODO: Код пользователя
     return this
   }
 
@@ -74,7 +76,8 @@ export class ConstructorsDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO
+      // TODO: List of parameters for setup
+      // TODO: список параметры для setup
     } as SETUP
   }
 
@@ -83,8 +86,10 @@ export class ConstructorsDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
+    // const setup = this.data
     return {
-      // TODO
+      // TODO: list of properties for export
+      // TODO: список свойств для экспорта
     } as EXPOSE
   }
 
@@ -104,6 +109,8 @@ export class ConstructorsDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
+    // const setup = this.data
+
     return h('div', {
       ref: this.element,
       class: this.classes?.value.main

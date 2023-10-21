@@ -1,5 +1,6 @@
 import { forEach } from '../../../functions/data.ts'
 import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
+import { getColumn } from '../../../functions/object.ts'
 
 import { DesignStructure } from './DesignStructure.ts'
 
@@ -7,7 +8,6 @@ import {
   type DesignStructureClasses,
   type DesignStructureItem
 } from '../../../types/design.ts'
-import { getColumn } from '../../../functions/object.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -60,7 +60,11 @@ export class DesignReplace {
    * @param name the name of a file /<br>название файла
    */
   getNameFile (name: string): string {
-    return name.replaceAll(this.mark, this.component)
+    return name
+      .replace('[design]', this.structure.getDesign())
+      .replace('[component]', this.structure.getComponentName())
+      .replace('DesignComponent', this.structure.getFileName())
+      .replaceAll(this.mark, this.component)
   }
 
   /**

@@ -22,7 +22,7 @@ export abstract class DesignCommand {
    * @param options additional parameters /<br>дополнительные параметры
    */
   // eslint-disable-next-line no-useless-constructor
-  constructor (
+  protected constructor (
     protected readonly command: string,
     protected readonly options: Record<string, string> = {}
   ) {

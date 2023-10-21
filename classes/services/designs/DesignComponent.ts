@@ -5,6 +5,8 @@ import { DIR_CONSTRUCTOR } from '../../../types/property.ts'
 
 const FILE_PROPERTIES = 'properties.json'
 const FILE_PROPS = 'props.ts'
+const FILE_STYLE = 'styleToken.scss'
+const FILE_CLASS = 'DesignComponent.vue'
 
 /**
  * Class for creating a component or updating data.<br>
@@ -42,6 +44,22 @@ export class DesignComponent extends DesignCommand {
     this
       .makeProperties()
       .makeProps()
+      .makeStyle()
+      .makeMain()
+  }
+
+  /**
+   * This code generates the properties.json.<br>
+   * Генерация файла properties.json.
+   */
+  protected makeProperties (): this {
+    const file = FILE_PROPERTIES
+
+    if (!this.isFile(file)) {
+      this.write(file, '{\r\n}\r\n')
+    }
+
+    return this
   }
 
   /**
@@ -63,16 +81,17 @@ export class DesignComponent extends DesignCommand {
   }
 
   /**
-   * This code generates the properties.json.<br>
-   * Генерация файла properties.json.
+   * This code generates the style.scss.<br>
+   * Генерация файла style.scss.
    */
-  protected makeProperties (): this {
-    const file = FILE_PROPERTIES
+  protected makeStyle (): this {
+    const file = FILE_STYLE
+    const sample = this.readDefinable(file)
+    const styles = this.getStructure().getStyles()
 
-    if (!this.isFile(file)) {
-      this.write(file, '{\r\n}\r\n')
-    }
+    sample.replaceMark('style', styles)
 
+    this.write(file, sample.get())
     return this
   }
 
@@ -86,5 +105,17 @@ export class DesignComponent extends DesignCommand {
     const constructor = this.read(path)
 
     return constructor ?? ''
+  }
+
+  /**
+   * This code generates the style.scss.<br>
+   * Генерация файла style.scss.
+   */
+  protected makeMain (): this {
+    const file = FILE_CLASS
+    const sample = this.readDefinable(file)
+
+    this.write(sample.getNameFile(file), sample.get())
+    return this
   }
 }
