@@ -46,7 +46,7 @@ export class ButtonDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, EMITS, CLASSES, P>
+    options?: ConstrOptions<COMP, EMITS, P>
   ) {
     super(
       name,
@@ -54,7 +54,8 @@ export class ButtonDesign<
       options
     )
 
-    // TODO: Initialization
+    // TODO: Method for initializing base objects
+    // TODO: Метод для инициализации базовых объектов
 
     this.init()
   }
@@ -64,7 +65,8 @@ export class ButtonDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO
+    // TODO: User code
+    // TODO: Код пользователя
     return this
   }
 
@@ -74,7 +76,8 @@ export class ButtonDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO
+      // TODO: List of parameters for setup
+      // TODO: список параметры для setup
     } as SETUP
   }
 
@@ -83,8 +86,10 @@ export class ButtonDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
+    // const setup = this.data
     return {
-      // TODO
+      // TODO: list of properties for export
+      // TODO: список свойств для экспорта
     } as EXPOSE
   }
 
@@ -92,15 +97,18 @@ export class ButtonDesign<
    * Improvement of the obtained list of classes.<br>
    * Доработка полученного списка классов.
    */
-  protected initClasses (): CLASSES {
+  protected initClasses (): Partial<CLASSES> {
     return {
-      // :classes [!] System label / Системная метка
-      progress: this.getSubClass('progress'),
-      label: this.getSubClass('label'),
-      icon: this.getSubClass('icon'),
-      trailing: 'trailing'
-      // :classes [!] System label / Системная метка
-    } as CLASSES
+      main: {},
+      ...{
+        // :classes [!] System label / Системная метка
+        progress: this.getSubClass('progress'),
+        label: this.getSubClass('label'),
+        icon: this.getSubClass('icon'),
+        trailing: 'trailing'
+        // :classes [!] System label / Системная метка
+      }
+    } as Partial<CLASSES>
   }
 
   /**
@@ -108,6 +116,8 @@ export class ButtonDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
+    // const setup = this.data
+
     return h('div', {
       ref: this.element,
       class: this.classes?.value.main

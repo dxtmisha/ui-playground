@@ -46,7 +46,7 @@ export class ConstructorsDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, EMITS, CLASSES, P>
+    options?: ConstrOptions<COMP, EMITS, P>
   ) {
     super(
       name,
@@ -97,11 +97,14 @@ export class ConstructorsDesign<
    * Improvement of the obtained list of classes.<br>
    * Доработка полученного списка классов.
    */
-  protected initClasses (): CLASSES {
+  protected initClasses (): Partial<CLASSES> {
     return {
-      // :classes [!] System label / Системная метка
-      // :classes [!] System label / Системная метка
-    } as CLASSES
+      main: {},
+      ...{
+        // :classes [!] System label / Системная метка
+        // :classes [!] System label / Системная метка
+      }
+    } as Partial<CLASSES>
   }
 
   /**

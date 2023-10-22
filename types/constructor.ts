@@ -1,5 +1,10 @@
-import { Ref } from 'vue'
-import { RefOrNormal, RefType } from './ref.ts'
+import { type Ref } from 'vue'
+
+import { type Undefined } from './basic.ts'
+import {
+  type RefOrNormal,
+  type RefType
+} from './ref.ts'
 
 export type ConstrItem = Record<string, any>
 
@@ -13,20 +18,20 @@ export type ConstrEmit<T extends ConstrItem = ConstrItem> = UnionToIntersection<
   [K in keyof T]: (evt: K, ...args: T[K]) => void
 }>>
 
-export type ConstrClass = string | string[] | Record<string, boolean>
+export type ConstrClassObject = Record<string, boolean>
+export type ConstrClass = string | (string | Undefined)[] | ConstrClassObject
 export type ConstrClassList = Record<string, ConstrClass>
 export type ConstrClasses = { main: ConstrClass } & ConstrClassList
 
 export type ConstrOptions<
   COMP extends ConstrComponent,
   EMITS extends ConstrItem,
-  CLASSES extends ConstrClasses,
   P extends ConstrItem
 > = {
   components?: COMP
   modification?: ConstrComponentMod<P>
   emits?: ConstrEmit<EMITS>
-  classes?: RefType<CLASSES>
+  classes?: RefType<ConstrClasses>
 }
 
 export type ConstrSetup<

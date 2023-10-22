@@ -1,12 +1,22 @@
-import { computed, ref, toRefs, type ToRefs, useAttrs, useSlots, VNode } from 'vue'
+import {
+  computed,
+  type ComputedRef,
+  ref,
+  toRefs,
+  type ToRefs,
+  useAttrs,
+  useSlots,
+  VNode
+} from 'vue'
 
-import { forEach, isFilled } from '../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../functions/data.ts'
 import { toCamelCase } from '../../functions/string.ts'
 import { toArray } from '../../functions/object.ts'
 
 import { type RefType } from '../../types/ref.ts'
 import {
-  type ConstrClasses,
+  ConstrClass,
+  type ConstrClasses, ConstrClassObject,
   type ConstrComponent,
   type ConstrComponentMod,
   type ConstrEmit,
@@ -36,8 +46,8 @@ export abstract class DesignConstructorAbstract<
   protected components?: COMP
   protected modification?: ConstrComponentMod<P>
   protected emits?: ConstrEmit<EMITS>
-  protected classes?: RefType<CLASSES>
-  protected classesSub?: CLASSES
+  protected classes?: RefType<ConstrClasses>
+  protected classesSub?: ComputedRef<Partial<CLASSES>>
 
   protected attrs?: ConstrItem
   protected slots?: SLOTS
@@ -54,9 +64,9 @@ export abstract class DesignConstructorAbstract<
   protected constructor (
     name: string,
     protected readonly props: Readonly<P>,
-    options?: ConstrOptions<COMP, EMITS, CLASSES, P>
+    options?: ConstrOptions<COMP, EMITS, P>
   ) {
-    this.name = this.makeName(name)
+    this.name = this.initName(name)
     this.refs = this.props ? toRefs(this.props) : {} as ToRefs<P>
 
     this.components = options?.components
@@ -72,14 +82,11 @@ export abstract class DesignConstructorAbstract<
     this.makeOptions()
     this.makeComponents()
 
-    this.classesSub = this.initClasses()
+    this.classesSub = computed(() => this.initClasses())
     this.data = {
       name: this.getName(),
       element: this.element,
-      classes: computed(() => ({
-        ...this.classesSub,
-        ...this.classes
-      } as CLASSES)),
+      classes: computed(() => this.updateClasses()),
       ...this.initSetup()
     }
 
@@ -155,17 +162,13 @@ export abstract class DesignConstructorAbstract<
    * Improvement of the obtained list of classes.<br>
    * Доработка полученного списка классов.
    */
-  protected abstract initClasses (): CLASSES
+  protected abstract initClasses (): Partial<CLASSES>
 
   /**
    * A method for rendering.<br>
    * Метод для рендеринга.
    */
   protected abstract initRender (): VNode
-
-  private makeName (name: string): string[] {
-    return forEach(name.split('.', 2), item => toCamelCase(item))
-  }
 
   /**
    * Initialization of a class for working with input components.<br>
@@ -177,5 +180,69 @@ export abstract class DesignConstructorAbstract<
     }
 
     return this
+  }
+
+  /**
+   * Getting component names as an array.<br>
+   * Получение названий компонентов в виде массива.
+   * @param name component name for transformation /<br>название компонента для преобразования
+   */
+  private initName (name: string): string[] {
+    return forEach(name.split('.', 2), item => toCamelCase(item))
+  }
+
+  /**
+   * Updating data about the class.<br>
+   * Обновление данных об классе.
+   */
+  private updateClasses (): CLASSES {
+    const classes = this.classesSub?.value
+    const classesProps = this.classes?.value
+
+    if (
+      classes &&
+      classesProps
+    ) {
+      return {
+        ...classes,
+        ...classesProps,
+        main: {
+          ...this.toClass(classes?.main),
+          ...this.toClass(classesProps?.main)
+        }
+      } as CLASSES
+    }
+
+    return (
+      classesProps ??
+      {
+        main: {}
+      }
+    ) as CLASSES
+  }
+
+  /**
+   * Transformation of the class value into an object.<br>
+   * Преобразование значения класса в объект.
+   * @param classes list of classes for transformation /<br>список классов для преобразования
+   */
+  private toClass (classes?: ConstrClass): ConstrClassObject {
+    if (isObjectNotArray(classes)) {
+      return classes
+    }
+
+    if (Array.isArray(classes)) {
+      const name = classes
+        .filter(item => typeof item === 'string' && item.trim() !== '')
+        .join(' ')
+
+      return { [name]: true }
+    }
+
+    if (typeof classes === 'string') {
+      return { [classes]: true }
+    }
+
+    return {}
   }
 }
