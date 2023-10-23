@@ -54,7 +54,7 @@ export class StylesToVar extends StylesToAbstract {
     if (typeof value !== 'string' || value === '') {
       value = 'unset'
     } else if (PropertiesValues.isColor(value)) {
-      value = `toColorRbg(${value})`
+      value = `#{toColorRbg(${value})}`
     }
 
     return `${item?.[PropertyKey.name]}: ${value};`

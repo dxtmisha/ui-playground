@@ -11,7 +11,6 @@ import {
   DesignStructureClassesList,
   type DesignStructureList
 } from '../../../types/design.ts'
-import { ConstrClassObject } from '../../../types/constructor.ts'
 
 const DIR_NAME = 'structure'
 const FILE_CLASSES = 'classes'

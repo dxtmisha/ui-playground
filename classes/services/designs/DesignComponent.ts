@@ -56,7 +56,7 @@ export class DesignComponent extends DesignCommand {
     const file = FILE_PROPERTIES
 
     if (!this.isFile(file)) {
-      this.write(file, '{\r\n}\r\n')
+      this.write(file, `{\r\n  "main": "${this.getStructure().getComponentName()}"}\r\n`)
     }
 
     return this

@@ -12,12 +12,10 @@ config()
 program
   .command('component <name>')
   .description('Adding or updating a component in accordance with design tokens\r\nДобавление или обновление компонента в соответствии с дизайн-токенами')
-  .action((/* name, options */) => {
+  .action(name => {
     new Styles().init()
-    new DesignConstructor('md3.button').init()
-    new DesignComponent('md3.button').init()
-    // console.log()
-    // const a = new Properties().get()
+    new DesignConstructor(name).init()
+    new DesignComponent(name).init()
   })
 
 program.parse(process.argv)
