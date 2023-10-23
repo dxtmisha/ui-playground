@@ -6,6 +6,11 @@
 // :component.once   propsComponent
 // :component.once } from '../../constructors/Component/props.ts'
 
+export const PropsValues = {
+  // :values [!] System label / Системная метка
+  // :values [!] System label / Системная метка
+}
+
 export type PropsToken = {
   // :type [!] System label / Системная метка
   // :type [!] System label / Системная метка

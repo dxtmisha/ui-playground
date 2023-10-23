@@ -11,6 +11,7 @@ import {
   DesignStructureClassesList,
   type DesignStructureList
 } from '../../../types/design.ts'
+import { ConstrClassObject } from '../../../types/constructor.ts'
 
 const DIR_NAME = 'structure'
 const FILE_CLASSES = 'classes'
@@ -122,7 +123,7 @@ export class DesignStructure {
    * Возвращает название файла для кэша.
    * Это полный массив со всеми обработанными свойствами.
    */
-  protected getPathName (): string {
+  getPathName (): string {
     return `${this.design}-${this.component}`
   }
 

@@ -75,6 +75,7 @@ export class DesignComponent extends DesignCommand {
       .replaceType(constructor)
       .replaceDefault()
       .replaceProps()
+      .replacePropsValues()
 
     this.write(file, sample.get())
     return this
@@ -114,6 +115,8 @@ export class DesignComponent extends DesignCommand {
   protected makeMain (): this {
     const file = FILE_CLASS
     const sample = this.readDefinable(file)
+
+    sample.replaceClassesValues()
 
     this.write(sample.getNameFile(file), sample.get())
     return this

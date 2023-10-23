@@ -6,8 +6,18 @@ import {
   propsButton
 } from '../../constructors/Button/props.ts'
 
+export const propsValues = {
+  // :values [!] System label / Системная метка
+  adaptive: ['icon', 'sm', 'md'],
+  height: ['sm', 'md', 'lg'],
+  tonal: ['a', true],
+  palette: ['primary', 'secondary', 'tertiary', 'error', 'neutral', 'neutralVariant']
+  // :values [!] System label / Системная метка
+}
+
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] testCode?: string
   selected?: boolean
   progress?: boolean
   disabled?: boolean

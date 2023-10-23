@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // :component.once import { computed } from 'vue'
+// :component.once import { isArray } from '../../functions/object.ts'
 // :component.once import { ComponentDesign } from '../../constructors/Component/ComponentDesign'
 
 // :component.once import { type ConstrClasses } from '../../../types/constructor'
@@ -8,21 +9,24 @@
 // :component.once   type ComponentSlots
 // :component.once } from '../../constructors/Component/types'
 
-// :component.once import { propsInstruction } from './props'
+// :component.once import {
+// :component.once   propsInstruction,
+// :component.once   propsValues
+// :component.once } from './props'
 
 // :component.once const emits = defineEmits<ComponentEmits>()
-// :component.once const props = defineProps({ ...propsInstruction })
+// :component.once const props = defineProps(propsInstruction)
 // :component.once const classesToken = computed<ConstrClasses>(() => ({
 // :component.once   main: {
 // :component.once     // TODO: User state classes / Пользовательские классы состояния
-// :component.once     // :classes [!] System label / Системная метка
-// :component.once     // :classes [!] System label / Системная метка
+// :component.once     // :classes-values [!] System label / Системная метка
+// :component.once     // :classes-values [!] System label / Системная метка
 // :component.once   }
 // :component.once   // TODO: User subclasses / Пользовательские подклассы
 // :component.once }))
 
 // :component.once const design = new ComponentDesign(
-// :component.once   '[design]-[component]',
+// :component.once   '[design].[component]',
 // :component.once   props,
 // :component.once   {
 // :component.once     emits,

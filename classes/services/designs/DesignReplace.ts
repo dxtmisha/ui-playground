@@ -6,7 +6,7 @@ import { DesignStructure } from './DesignStructure.ts'
 
 import {
   type DesignStructureClasses,
-  type DesignStructureItem
+  type DesignStructureItem, DesignStructureItemSub, DesignStructureList
 } from '../../../types/design.ts'
 
 /**
@@ -173,7 +173,7 @@ export class DesignReplace {
       const types = this.getPropTypeByValue(valueAll, style)
 
       if (
-        !this.makeMarkAddValue(mark, name, types) &&
+        !this.initMarkAddValue(mark, name, types) &&
         !this.isNoMark(mark, name)
       ) {
         templates.push(`${name}?: ${types}`)
@@ -235,6 +235,28 @@ export class DesignReplace {
   }
 
   /**
+   * Transforms the given value into a list.<br>
+   * Преобразовывает данное значение в список.
+   */
+  replacePropsValues (): this {
+    const mark = 'values'
+    const props = this.structure.get()
+    const templates: string[] = []
+
+    forEach(props, item => {
+      if (!this.isNoMark('type', item.name)) {
+        const values = this.getPropValuesByValue(item.valueAll)
+
+        if (values) {
+          templates.push(`${item.name}: [${values}]`)
+        }
+      }
+    })
+
+    return this.replaceMark(mark, templates, ',')
+  }
+
+  /**
    * Adding a list of available classes.<br>
    * Добавление списка доступных классов.
    * @param template a function that returns a template /<br>функция, которая возвращает шаблон
@@ -251,6 +273,17 @@ export class DesignReplace {
     forEach(classes, item => templates.push(template(item)))
 
     return this.replaceMark(mark, templates, end)
+  }
+
+  /**
+   * Transformation for active status classes.<br>
+   * Преобразование для активных классов статуса.
+   */
+  replaceClassesValues (): this {
+    const mark = 'classes-values'
+    const templates: string[] = this.initClassesValues()
+
+    return this.replaceMark(mark, templates, ',')
   }
 
   /**
@@ -370,6 +403,24 @@ export class DesignReplace {
   }
 
   /**
+   * Getting a list of available data for the property.<br>
+   * Получение списка доступных данных у свойства.
+   * @param value values to check /<br>значения для проверки
+   */
+  protected getPropValuesByValue (
+    value: DesignStructureItem['value']
+  ): string | undefined {
+    if (this.isString(value)) {
+      const types: string[] = []
+
+      value.forEach(item => types.push(item === true ? 'true' : `'${item}'`))
+      return types.join(', ')
+    }
+
+    return undefined
+  }
+
+  /**
    * Returns the names of parameters.<br>
    * Возвращает названия параметров переменных.
    */
@@ -414,7 +465,7 @@ export class DesignReplace {
    * @param name property name /<br>название свойства
    * @param value property value /<br>значение свойства
    */
-  protected makeMarkAddValue (
+  protected initMarkAddValue (
     mark: string,
     name: string,
     value: string
@@ -432,5 +483,44 @@ export class DesignReplace {
     }
 
     return false
+  }
+
+  /**
+   * Getting an array with all classes and conditions of activity status.<br>
+   * Получение массива со всеми классами и условиями статуса активности.
+   * @param items data list /<br>список данных
+   * @param parent ancestor data /<br>данные о предке
+   * @param values activity conditions /<br>условия активности
+   * @protected
+   */
+  protected initClassesValues (
+    items: DesignStructureList | DesignStructureItemSub[] = this.structure.get(),
+    parent: string = this.structure?.getPathName() ?? '',
+    values: string[] = []
+  ): string[] {
+    const templates: string[] = []
+
+    forEach(items, ({
+      name,
+      value,
+      state
+    }) => {
+      const index = `props.${name}`
+      const newParent = `${parent}--${name}`
+      const newValues = [...values, `Boolean(${index})`]
+
+      if (this.isBoolean(value)) {
+        templates.push(
+          `'${newParent}': ${newValues.join(' && ')}`,
+          ...this.initClassesValues(state, newParent, newValues)
+        )
+      }
+
+      if (this.isString(value)) {
+        templates.push(`[\`${newParent}--\${${index}}\`]: isArray(propsValues.${name}, ${index})`)
+      }
+    })
+
+    return templates
   }
 }
