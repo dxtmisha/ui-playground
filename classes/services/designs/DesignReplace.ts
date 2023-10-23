@@ -6,7 +6,9 @@ import { DesignStructure } from './DesignStructure.ts'
 
 import {
   type DesignStructureClasses,
-  type DesignStructureItem, DesignStructureItemSub, DesignStructureList
+  type DesignStructureItem,
+  type DesignStructureItemSub,
+  type DesignStructureList
 } from '../../../types/design.ts'
 
 /**
@@ -507,7 +509,10 @@ export class DesignReplace {
     }) => {
       const index = `props.${name}`
       const newParent = `${parent}--${name}`
-      const newValues = [...values, `Boolean(${index})`]
+      const newValues = [
+        ...values,
+        this.isString(value) ? `Boolean(${index})` : index
+      ]
 
       if (this.isBoolean(value)) {
         templates.push(
