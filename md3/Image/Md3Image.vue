@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
-import { isArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data.ts'
+// import { isArray } from '../../functions/object.ts'
 
 import { ImageDesign } from '../../constructors/Image/ImageDesign'
 
@@ -16,8 +16,8 @@ import {
 } from '../../constructors/Image/types'
 
 import {
-  propsInstruction,
-  propsValues
+  propsInstruction// ,
+  // propsValues
 } from './props'
 
 const emits = defineEmits<ImageEmits>()

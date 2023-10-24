@@ -1,4 +1,4 @@
-import { PropType } from 'vue'
+// import { PropType } from 'vue'
 
 /**
  * Type describing incoming properties.<br>
@@ -28,6 +28,7 @@ export const defaultsImage: ImageProps = {
  */
 export const propsImage = {
   // TODO: Location for a custom property / Место для пользовательского свойства
+  test: Boolean,
   ...{
     // :prop [!] System label / Системная метка
     // :prop [!] System label / Системная метка

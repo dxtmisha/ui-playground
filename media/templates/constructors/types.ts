@@ -5,7 +5,7 @@ import { ConstrClass } from '../../../types/constructor.ts'
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
 export type ConstructorsComponents = {
-  componentName: Record<string, any>
+  // componentName: Record<string, any>
 }
 
 /**
@@ -13,7 +13,7 @@ export type ConstructorsComponents = {
  * Тип, описывающий доступные события.
  */
 export type ConstructorsEmits = {
-  load: [value: string]
+  // load: [value: string]
 }
 
 /**
@@ -37,7 +37,7 @@ export type ConstructorsExpose = {
  * Тип, описывающий доступные слоты.
  */
 export type ConstructorsSlots = {
-  default? (props: any): any
+  // default? (props: any): any
 }
 
 /**

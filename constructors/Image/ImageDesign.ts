@@ -129,6 +129,6 @@ export class ImageDesign<
     return h('div', {
       ref: this.element,
       class: this.classes?.value.main
-    })
+    }, 'test 2')
   }
 }

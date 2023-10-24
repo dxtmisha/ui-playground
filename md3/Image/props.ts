@@ -1,4 +1,4 @@
-import { PropType } from 'vue'
+// import { PropType } from 'vue'
 
 import {
   ImageProps,
