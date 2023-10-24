@@ -7,7 +7,6 @@ import { PropType } from 'vue'
 export type ImageProps = {
   // TODO: Location for a custom property / Место для пользовательского свойства
   // :type [!] System label / Системная метка
-  disabled?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -19,7 +18,6 @@ export const defaultsImage: ImageProps = {
   // TODO: Location for a user-defined default value / Место для пользовательского значения по умолчанию
   ...{
     // :default [!] System label / Системная метка
-    
     // :default [!] System label / Системная метка
   }
 }
@@ -32,7 +30,6 @@ export const propsImage = {
   // TODO: Location for a custom property / Место для пользовательского свойства
   ...{
     // :prop [!] System label / Системная метка
-    disabled: Boolean
     // :prop [!] System label / Системная метка
   }
 }

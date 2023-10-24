@@ -293,185 +293,6 @@ $designsProperties: (
           ),
         ),
       ),
-      'button':(
-        index: 'button',
-        name: 'd-button',
-        type: 'component',
-        value: (
-          'selected':(
-            index: 'selected',
-            name: '&--selected',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'adaptive':(
-            index: 'adaptive',
-            name: '&--adaptive',
-            type: 'state',
-            value: (
-              'icon':(
-                index: 'icon',
-                name: '&--icon',
-                type: 'state',
-                value: (
-                  'padding':(
-                    index: 'padding',
-                    name: '--d-button-padding',
-                    type: 'var',
-                    value: 0px,
-                  ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-button__label',
-                    type: 'scss',
-                    value: (
-                      'display':(
-                        index: 'display',
-                        name: 'display',
-                        type: 'property',
-                        value: 'none',
-                      ),
-                      'paddingX':(
-                        index: 'paddingX',
-                        name: 'padding-x',
-                        type: 'property',
-                        value: 0px,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-        ),
-      ),
-      'progress':(
-        index: 'progress',
-        name: 'd-progress',
-        type: 'component',
-        value: (
-          'linear':(
-            index: 'linear',
-            name: '&--linear',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'circular':(
-            index: 'circular',
-            name: '&--circular',
-            type: 'state',
-            value: (
-              'inset':(
-                index: 'inset',
-                name: 'inset',
-                type: 'property',
-                value: 0px,
-                var: true,
-              ),
-            ),
-          ),
-          'indeterminate':(
-            index: 'indeterminate',
-            name: '&--indeterminate',
-            type: 'state',
-            value: (
-              'type1':(
-                index: 'type1',
-                name: '&--type1',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'type2':(
-                index: 'type2',
-                name: '&--type2',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'position':(
-            index: 'position',
-            name: '&--position',
-            type: 'state',
-            value: (
-              'top':(
-                index: 'top',
-                name: '&--top',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottom':(
-                index: 'bottom',
-                name: '&--bottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'dense':(
-            index: 'dense',
-            name: '&--dense',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'inverse':(
-            index: 'inverse',
-            name: '&--inverse',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-        ),
-      ),
     ),
   ),
   'md2':(
@@ -8283,14 +8104,14 @@ $designsProperties: (
         value: (
           'height':(
             index: 'height',
-            name: '--md2-progress-height',
-            type: 'var',
+            name: 'height',
+            type: 'property',
             value: 'var(--md2-ref-spacing-1)',
           ),
           'backgroundColor':(
             index: 'backgroundColor',
-            name: '--md2-progress-backgroundColor',
-            type: 'var',
+            name: 'background-color',
+            type: 'property',
             value: 'var(--md2-sys-palette-primary)',
           ),
           'linear':(
@@ -8311,82 +8132,18 @@ $designsProperties: (
             name: '&--circular',
             type: 'state',
             value: (
-              'width':(
-                index: 'width',
-                name: '--md2-progress-width',
-                type: 'var',
-                value: 'var(--md2-ref-spacing-12)',
-              ),
               'inset':(
                 index: 'inset',
                 name: 'inset',
                 type: 'property',
                 value: 'var(--md2-ref-spacing-1)',
-                var: true,
               ),
-            ),
-          ),
-          'indeterminate':(
-            index: 'indeterminate',
-            name: '&--indeterminate',
-            type: 'state',
-            value: (
-              'type1':(
-                index: 'type1',
-                name: '&--type1',
-                type: 'state',
-                value: (
-                ),
+              'width':(
+                index: 'width',
+                name: 'width',
+                type: 'property',
+                value: 'var(--md2-ref-spacing-12)',
               ),
-              'type2':(
-                index: 'type2',
-                name: '&--type2',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'position':(
-            index: 'position',
-            name: '&--position',
-            type: 'state',
-            value: (
-              'top':(
-                index: 'top',
-                name: '&--top',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottom':(
-                index: 'bottom',
-                name: '&--bottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'dense':(
-            index: 'dense',
-            name: '&--dense',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'inverse':(
-            index: 'inverse',
-            name: '&--inverse',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
             ),
           ),
         ),

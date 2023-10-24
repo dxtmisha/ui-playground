@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+
+import { isFilled } from '../../functions/data.ts'
 import { isArray } from '../../functions/object.ts'
+
 import { ImageDesign } from '../../constructors/Image/ImageDesign'
 
-import { type ConstrClasses } from '../../types/constructor'
+import {
+  type ConstrClasses,
+  type ConstrStyles
+} from '../../types/constructor'
 import {
   type ImageEmits,
   type ImageSlots
@@ -16,14 +22,19 @@ import {
 
 const emits = defineEmits<ImageEmits>()
 const props = defineProps(propsInstruction)
+
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
-    'md3-image--disabled': props.disabled
     // :classes-values [!] System label / Системная метка
   }
   // TODO: User subclasses / Пользовательские подклассы
+}))
+const stylesToken = computed<ConstrStyles>(() => ({
+  // TODO: User styles / Пользовательские стили
+  // :styles-values [!] System label / Системная метка
+  // :styles-values [!] System label / Системная метка
 }))
 
 const design = new ImageDesign(
@@ -31,12 +42,14 @@ const design = new ImageDesign(
   props,
   {
     emits,
-    classes: classesToken
+    classes: classesToken,
+    styles: stylesToken
   }
 )
 
 // const {
-//   classes
+//   classes,
+//   styles
 // } = design.setup()
 const render = design.render()
 

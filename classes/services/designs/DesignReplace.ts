@@ -107,12 +107,19 @@ export class DesignReplace {
       const value = data
         .join(`${end}${inString}`)
         .replaceAll('[space]', inString)
-
-      this.sample = this.sample
-        .replace(
-          new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),
-          `$1$2${inString}${value}\r\n$4`
-        )
+      if (inString.trim() !== '') {
+        this.sample = this.sample
+          .replace(
+            new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),
+            `$1$2${inString}${value}\r\n$4`
+          )
+      } else {
+        this.sample = this.sample
+          .replace(
+            new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),
+            '$1$2\r\n$4'
+          )
+      }
     }
 
     return this

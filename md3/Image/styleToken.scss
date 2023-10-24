@@ -2,9 +2,5 @@
 
 @mixin mixinImageToken {
   // :style [!] System label / Системная метка
-  @include disabled {
-    @include color(var(--md3-sys-palette-onSurface));
-    @include colorOpacity(var(--md3-sys-opacity-disabled));
-  }
   // :style [!] System label / Системная метка
 }

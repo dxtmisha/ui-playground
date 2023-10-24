@@ -339,185 +339,6 @@ $designsProperties: (
           ),
         ),
       ),
-      'button':(
-        index: 'button',
-        name: 'd-button',
-        type: 'component',
-        value: (
-          'selected':(
-            index: 'selected',
-            name: '&--selected',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'adaptive':(
-            index: 'adaptive',
-            name: '&--adaptive',
-            type: 'state',
-            value: (
-              'icon':(
-                index: 'icon',
-                name: '&--icon',
-                type: 'state',
-                value: (
-                  'padding':(
-                    index: 'padding',
-                    name: '--d-button-padding',
-                    type: 'var',
-                    value: 0px,
-                  ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-button__label',
-                    type: 'scss',
-                    value: (
-                      'display':(
-                        index: 'display',
-                        name: 'display',
-                        type: 'property',
-                        value: 'none',
-                      ),
-                      'paddingX':(
-                        index: 'paddingX',
-                        name: 'padding-x',
-                        type: 'property',
-                        value: 0px,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-        ),
-      ),
-      'progress':(
-        index: 'progress',
-        name: 'd-progress',
-        type: 'component',
-        value: (
-          'linear':(
-            index: 'linear',
-            name: '&--linear',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'circular':(
-            index: 'circular',
-            name: '&--circular',
-            type: 'state',
-            value: (
-              'inset':(
-                index: 'inset',
-                name: 'inset',
-                type: 'property',
-                value: 0px,
-                var: true,
-              ),
-            ),
-          ),
-          'indeterminate':(
-            index: 'indeterminate',
-            name: '&--indeterminate',
-            type: 'state',
-            value: (
-              'type1':(
-                index: 'type1',
-                name: '&--type1',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'type2':(
-                index: 'type2',
-                name: '&--type2',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'position':(
-            index: 'position',
-            name: '&--position',
-            type: 'state',
-            value: (
-              'top':(
-                index: 'top',
-                name: '&--top',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottom':(
-                index: 'bottom',
-                name: '&--bottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'dense':(
-            index: 'dense',
-            name: '&--dense',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'inverse':(
-            index: 'inverse',
-            name: '&--inverse',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-        ),
-      ),
     ),
   ),
   'md3':(
@@ -6885,23 +6706,23 @@ $designsProperties: (
         name: 'md3-button',
         type: 'component',
         value: (
-          'gap':(
-            index: 'gap',
-            name: '--md3-button-gap',
-            type: 'var',
-            value: 'var(--md3-ref-spacing-2)',
-          ),
-          'padding':(
-            index: 'padding',
-            name: '--md3-button-padding',
-            type: 'var',
-            value: 'var(--md3-ref-spacing-6)',
-          ),
           'transitionFunction':(
             index: 'transitionFunction',
             name: '--md3-button-transitionFunction',
             type: 'var',
             value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'gap':(
+            index: 'gap',
+            name: 'gap',
+            type: 'property',
+            value: 'var(--md3-ref-spacing-2)',
+          ),
+          'padding':(
+            index: 'padding',
+            name: 'padding',
+            type: 'property',
+            value: 'var(--md3-ref-spacing-6)',
           ),
           'fontFamily':(
             index: 'fontFamily',
@@ -6941,7 +6762,7 @@ $designsProperties: (
           ),
           'color':(
             index: 'color',
-            name: 'palette-color',
+            name: 'color',
             type: 'property',
             value: 'var(--md3-sys-palette-primary)',
           ),
@@ -6951,17 +6772,17 @@ $designsProperties: (
             type: 'property',
             value: 'transparent',
           ),
+          'gradient':(
+            index: 'gradient',
+            name: 'gradient',
+            type: 'property',
+            value: 'var(--md3-sys-palette-primary)',
+          ),
           'gradientOpacity':(
             index: 'gradientOpacity',
             name: 'gradient-opacity',
             type: 'property',
             value: 0,
-          ),
-          'gradient':(
-            index: 'gradient',
-            name: 'palette-gradient',
-            type: 'property',
-            value: 'var(--md3-sys-palette-primary)',
           ),
           'borderRadius':(
             index: 'borderRadius',
@@ -7038,171 +6859,28 @@ $designsProperties: (
               ),
             ),
           ),
-          'selected':(
-            index: 'selected',
-            name: '&--selected',
-            type: 'state',
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
             value: (
               'color':(
                 index: 'color',
-                name: 'palette-color',
+                name: 'color',
                 type: 'property',
-                value: 'var(--md3-sys-palette-primaryVariant)',
+                value: 'var(--md3-sys-palette-onSurface)',
               ),
-              'gradient':(
-                index: 'gradient',
-                name: 'palette-gradient',
-                type: 'property',
-                value: 'var(--md3-sys-palette-primaryVariant)',
-              ),
-            ),
-          ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
               'colorOpacity':(
                 index: 'colorOpacity',
                 name: 'color-opacity',
                 type: 'property',
                 value: 'var(--md3-sys-opacity-disabled)',
               ),
-              'color':(
-                index: 'color',
-                name: 'palette-color',
-                type: 'property',
-                value: 'var(--md3-sys-palette-onSurface)',
-              ),
               'transitionDuration':(
                 index: 'transitionDuration',
                 name: 'transition-duration',
                 type: 'property',
                 value: 'var(--d-sys-transitionDuration-sm)',
-              ),
-            ),
-          ),
-          'adaptive':(
-            index: 'adaptive',
-            name: '&--adaptive',
-            type: 'state',
-            value: (
-              'icon':(
-                index: 'icon',
-                name: '&--icon',
-                type: 'state',
-                value: (
-                  'padding':(
-                    index: 'padding',
-                    name: '--md3-button-padding',
-                    type: 'var',
-                    value: 0px,
-                  ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .md3-button__label',
-                    type: 'scss',
-                    value: (
-                      'display':(
-                        index: 'display',
-                        name: 'display',
-                        type: 'property',
-                        value: 'none',
-                      ),
-                      'paddingX':(
-                        index: 'paddingX',
-                        name: 'padding-x',
-                        type: 'property',
-                        value: 0px,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'sm':(
-                index: 'sm',
-                name: '&--sm',
-                type: 'state',
-                value: (
-                  'mediaSm':(
-                    index: 'mediaSm',
-                    name: '(max-width: calc(600px - 1px))',
-                    type: 'media-max',
-                    value: (
-                      'padding':(
-                        index: 'padding',
-                        name: '--md3-button-padding',
-                        type: 'var',
-                        value: 0px,
-                      ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .md3-button__label',
-                        type: 'scss',
-                        value: (
-                          'display':(
-                            index: 'display',
-                            name: 'display',
-                            type: 'property',
-                            value: 'none',
-                          ),
-                          'paddingX':(
-                            index: 'paddingX',
-                            name: 'padding-x',
-                            type: 'property',
-                            value: 0px,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'md':(
-                index: 'md',
-                name: '&--md',
-                type: 'state',
-                value: (
-                  'mediaMd':(
-                    index: 'mediaMd',
-                    name: '(max-width: calc(905px - 1px))',
-                    type: 'media-max',
-                    value: (
-                      'padding':(
-                        index: 'padding',
-                        name: '--md3-button-padding',
-                        type: 'var',
-                        value: 0px,
-                      ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .md3-button__label',
-                        type: 'scss',
-                        value: (
-                          'display':(
-                            index: 'display',
-                            name: 'display',
-                            type: 'property',
-                            value: 'none',
-                          ),
-                          'paddingX':(
-                            index: 'paddingX',
-                            name: 'padding-x',
-                            type: 'property',
-                            value: 0px,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ),
           ),
@@ -7250,18 +6928,24 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'custom':(
-                index: 'custom',
-                name: '&--custom',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: 'height',
-                    type: 'property',
-                    value: 'var(--md3-button-sys-height)',
-                  ),
-                ),
+            ),
+          ),
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--md3-sys-palette-primaryVariant)',
+              ),
+              'gradient':(
+                index: 'gradient',
+                name: 'gradient',
+                type: 'property',
+                value: 'var(--md3-sys-palette-primaryVariant)',
               ),
             ),
           ),
@@ -7278,7 +6962,7 @@ $designsProperties: (
               ),
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'palette-background',
+                name: 'background-color',
                 type: 'property',
                 value: 'var(--md3-sys-palette-primary)',
               ),
@@ -7319,17 +7003,17 @@ $designsProperties: (
                 name: 'disabled',
                 type: 'selector',
                 value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--md3-sys-palette-onSurface)',
+                  ),
                   'backgroundOpacity':(
                     index: 'backgroundOpacity',
                     name: 'background-opacity',
                     type: 'property',
                     value: 'var(--md3-sys-opacity-012)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'palette-background',
-                    type: 'property',
-                    value: 'var(--md3-sys-palette-onSurface)',
                   ),
                   'boxShadow':(
                     index: 'boxShadow',
@@ -7352,7 +7036,7 @@ $designsProperties: (
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'palette-background',
+                    name: 'background-color',
                     type: 'property',
                     value: 'var(--md3-sys-palette-primaryVariant)',
                   ),
@@ -7377,7 +7061,7 @@ $designsProperties: (
                     value: (
                       'borderColor':(
                         index: 'borderColor',
-                        name: 'palette-border',
+                        name: 'border-color',
                         type: 'property',
                         value: 'var(--md3-sys-palette-primary)',
                       ),
@@ -7395,17 +7079,17 @@ $designsProperties: (
                     name: 'before',
                     type: 'virtual',
                     value: (
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--md3-sys-palette-onSurface)',
+                      ),
                       'borderOpacity':(
                         index: 'borderOpacity',
                         name: 'border-opacity',
                         type: 'property',
                         value: 'var(--md3-sys-opacity-012)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'palette-border',
-                        type: 'property',
-                        value: 'var(--md3-sys-palette-onSurface)',
                       ),
                     ),
                   ),
@@ -7448,7 +7132,7 @@ $designsProperties: (
                   ),
                   'borderColor':(
                     index: 'borderColor',
-                    name: 'palette-border',
+                    name: 'border-color',
                     type: 'property',
                     value: 'var(--md3-sys-palette-outline)',
                   ),
@@ -7466,7 +7150,7 @@ $designsProperties: (
                     value: (
                       'borderColor':(
                         index: 'borderColor',
-                        name: 'palette-border',
+                        name: 'border-color',
                         type: 'property',
                         value: 'var(--md3-sys-palette-primaryVariant)',
                       ),
@@ -7483,8 +7167,8 @@ $designsProperties: (
             value: (
               'padding':(
                 index: 'padding',
-                name: '--md3-button-padding',
-                type: 'var',
+                name: 'padding',
+                type: 'property',
                 value: 'var(--md3-ref-spacing-3)',
               ),
               'hover':(
@@ -7555,17 +7239,17 @@ $designsProperties: (
                     type: 'property',
                     value: 'solid',
                   ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--md3-sys-palette-outline)',
+                  ),
                   'borderOpacity':(
                     index: 'borderOpacity',
                     name: 'border-opacity',
                     type: 'property',
                     value: 0,
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'palette-border',
-                    type: 'property',
-                    value: 'var(--md3-sys-palette-outline)',
                   ),
                   'transition':(
                     index: 'transition',
@@ -7584,7 +7268,7 @@ $designsProperties: (
             value: (
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'palette-background',
+                name: 'background-color',
                 type: 'property',
                 value: 'var(--md3-sys-palette-surfaceContainerLow)',
               ),
@@ -7625,17 +7309,17 @@ $designsProperties: (
                 name: 'disabled',
                 type: 'selector',
                 value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--md3-sys-palette-onSurface)',
+                  ),
                   'backgroundOpacity':(
                     index: 'backgroundOpacity',
                     name: 'background-opacity',
                     type: 'property',
                     value: 'var(--md3-sys-opacity-012)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'palette-background',
-                    type: 'property',
-                    value: 'var(--md3-sys-palette-onSurface)',
                   ),
                   'boxShadow':(
                     index: 'boxShadow',
@@ -7652,7 +7336,7 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'palette-background',
+                    name: 'background-color',
                     type: 'property',
                     value: 'var(--md3-sys-palette-surfaceContainerHigh)',
                   ),
@@ -7673,7 +7357,7 @@ $designsProperties: (
               ),
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'palette-background',
+                name: 'background-color',
                 type: 'property',
                 value: 'var(--md3-sys-palette-secondaryContainer)',
               ),
@@ -7714,17 +7398,17 @@ $designsProperties: (
                 name: 'disabled',
                 type: 'selector',
                 value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--md3-sys-palette-onSurface)',
+                  ),
                   'backgroundOpacity':(
                     index: 'backgroundOpacity',
                     name: 'background-opacity',
                     type: 'property',
                     value: 'var(--md3-sys-opacity-012)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'palette-background',
-                    type: 'property',
-                    value: 'var(--md3-sys-palette-onSurface)',
                   ),
                   'boxShadow':(
                     index: 'boxShadow',
@@ -7741,70 +7425,11 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'palette-background',
+                    name: 'background-color',
                     type: 'property',
                     value: 'var(--md3-sys-palette-secondaryContainerVariant)',
                   ),
                 ),
-              ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'palette':(
-            index: 'palette',
-            name: 'palette',
-            type: 'link-class',
-            value: '{md3.palette}',
-          ),
-        ),
-      ),
-      'image':(
-        index: 'image',
-        name: 'md3-image',
-        type: 'component',
-        value: (
-          'main':(
-            index: 'main',
-            name: '--md3-image-main',
-            type: 'var',
-            value: 'image',
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: 'disabled',
-            type: 'selector',
-            value: (
-              'color':(
-                index: 'color',
-                name: 'color',
-                type: 'property',
-                value: 'var(--md3-sys-palette-onSurface)',
-              ),
-              'colorOpacity':(
-                index: 'colorOpacity',
-                name: 'color-opacity',
-                type: 'property',
-                value: 'var(--md3-sys-opacity-disabled)',
               ),
             ),
           ),
@@ -8947,6 +8572,32 @@ $designsProperties: (
                     value: 'var(--md3-sys-opacity-016)',
                   ),
                 ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      'image':(
+        index: 'image',
+        name: 'md3-image',
+        type: 'component',
+        value: (
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--md3-sys-palette-onSurface)',
+              ),
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: 'color-opacity',
+                type: 'property',
+                value: 'var(--md3-sys-opacity-disabled)',
               ),
             ),
           ),

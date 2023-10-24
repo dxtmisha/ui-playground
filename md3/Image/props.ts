@@ -6,15 +6,13 @@ import {
   propsImage
 } from '../../constructors/Image/props.ts'
 
-export const PropsValues = {
+export const propsValues = {
   // :values [!] System label / Системная метка
-  
   // :values [!] System label / Системная метка
 }
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
-  disabled?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -32,7 +30,6 @@ export const defaults: Props = {
   ...defaultsImage,
   ...{
     // :default [!] System label / Системная метка
-    
     // :default [!] System label / Системная метка
   }
 }
@@ -43,7 +40,6 @@ export const propsInstruction = {
   ...propsImage,
   ...{
     // :prop [!] System label / Системная метка
-    disabled: Boolean
     // :prop [!] System label / Системная метка
   }
 }

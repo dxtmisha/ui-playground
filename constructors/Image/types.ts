@@ -47,6 +47,5 @@ export type ImageSlots = {
 export type ImageClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
-  
   // :classes [!] System label / Системная метка
 }
