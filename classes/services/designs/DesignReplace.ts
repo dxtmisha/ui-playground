@@ -290,6 +290,17 @@ export class DesignReplace {
   }
 
   /**
+   * Transformation for active status classes.<br>
+   * Преобразование для активных классов статуса.
+   */
+  replaceStylesValues (): this {
+    const mark = 'styles-values'
+    const templates: string[] = this.initStylesValues()
+
+    return this.replaceMark(mark, templates, ',')
+  }
+
+  /**
    * Adding a list of available classes for a constructor.<br>
    * Добавление списка доступных классов для конструктора.
    */
@@ -534,6 +545,30 @@ export class DesignReplace {
 
       if (this.isString(value)) {
         templates.push(`[\`${newParent}--\${${index}}\`]: isArray(propsValues.${name}, ${index})`)
+      }
+    })
+
+    return templates
+  }
+
+  /**
+   * Getting an array with all component styles.<br>
+   * Получение массива со всеми стилями компонента.
+   * @param items data list /<br>список данных
+   * @protected
+   */
+  protected initStylesValues (
+    items: DesignStructureList = this.structure.get()
+  ): string[] {
+    const templates: string[] = []
+    const className = this.structure?.getPathName()
+
+    forEach(items, ({
+      name,
+      style
+    }) => {
+      if (style) {
+        templates.push(`'${className}-sys-${name}': props.${name} ?? null`)
       }
     })
 

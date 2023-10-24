@@ -6,7 +6,10 @@ import { isArray } from '../../functions/object.ts'
 
 import { ButtonDesign } from '../../constructors/Button/ButtonDesign'
 
-import { type ConstrClasses } from '../../types/constructor'
+import {
+  type ConstrClasses,
+  type ConstrStyles
+} from '../../types/constructor'
 import {
   type ButtonEmits,
   type ButtonSlots
@@ -19,6 +22,7 @@ import {
 
 const emits = defineEmits<ButtonEmits>()
 const props = defineProps(propsInstruction)
+
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // TODO: User state classes / Пользовательские классы состояния
@@ -49,18 +53,26 @@ const classesToken = computed<ConstrClasses>(() => ({
   }
   // TODO: User subclasses / Пользовательские подклассы
 }))
+const stylesToken = computed<ConstrStyles>(() => ({
+  // TODO: User styles / Пользовательские стили
+  // :styles-values [!] System label / Системная метка
+  'md3-button-sys-height': props.height ?? null
+  // :styles-values [!] System label / Системная метка
+}))
 
 const design = new ButtonDesign(
   'md3.button',
   props,
   {
     emits,
-    classes: classesToken
+    classes: classesToken,
+    styles: stylesToken
   }
 )
 
 // const {
-//   classes
+//   classes,
+//   styles
 // } = design.setup()
 const render = design.render()
 

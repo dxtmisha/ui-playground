@@ -15,14 +15,16 @@ import { toArray } from '../../functions/object.ts'
 
 import { type RefType } from '../../types/ref.ts'
 import {
-  ConstrClass,
-  type ConstrClasses, ConstrClassObject,
+  type ConstrClass,
+  type ConstrClasses,
+  type ConstrClassObject,
   type ConstrComponent,
   type ConstrComponentMod,
   type ConstrEmit,
   type ConstrItem,
   type ConstrOptions,
-  type ConstrSetup
+  type ConstrSetup,
+  type ConstrStyles
 } from '../../types/constructor.ts'
 
 /**
@@ -49,6 +51,9 @@ export abstract class DesignConstructorAbstract<
   protected classes?: RefType<ConstrClasses>
   protected classesSub?: ComputedRef<Partial<CLASSES>>
 
+  protected styles?: RefType<ConstrStyles>
+  protected stylesSub?: ComputedRef<ConstrStyles>
+
   protected attrs?: ConstrItem
   protected slots?: SLOTS
 
@@ -73,6 +78,7 @@ export abstract class DesignConstructorAbstract<
     this.modification = options?.modification
     this.emits = options?.emits
     this.classes = options?.classes
+    this.styles = options?.styles
 
     this.attrs = useAttrs()
     this.slots = useSlots() as SLOTS
@@ -83,10 +89,13 @@ export abstract class DesignConstructorAbstract<
     this.makeComponents()
 
     this.classesSub = computed(() => this.initClasses())
+    this.stylesSub = computed(() => this.initStyles())
+
     this.data = {
       name: this.getName(),
       element: this.element,
       classes: computed(() => this.updateClasses()),
+      styles: computed(() => this.updateStyles()),
       ...this.initSetup()
     }
 
@@ -165,6 +174,12 @@ export abstract class DesignConstructorAbstract<
   protected abstract initClasses (): Partial<CLASSES>
 
   /**
+   * Refinement of the received list of styles.<br>
+   * Доработка полученного списка стилей.
+   */
+  protected abstract initStyles (): ConstrStyles
+
+  /**
    * A method for rendering.<br>
    * Метод для рендеринга.
    */
@@ -219,6 +234,27 @@ export abstract class DesignConstructorAbstract<
         main: {}
       }
     ) as CLASSES
+  }
+
+  /**
+   * Refinement of the received list of styles.<br>
+   * Доработка полученного списка стилей.
+   */
+  private updateStyles (): ConstrStyles {
+    const styles = this.stylesSub?.value
+    const stylesProps = this.styles?.value
+
+    if (
+      styles &&
+      stylesProps
+    ) {
+      return {
+        ...styles,
+        ...stylesProps
+      }
+    }
+
+    return stylesProps ?? {}
   }
 
   /**

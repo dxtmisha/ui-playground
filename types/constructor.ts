@@ -23,6 +23,9 @@ export type ConstrClass = string | (string | Undefined)[] | ConstrClassObject
 export type ConstrClassList = Record<string, ConstrClass>
 export type ConstrClasses = { main: ConstrClass } & ConstrClassList
 
+export type ConstrStylesItem = string | null
+export type ConstrStyles = Record<string, ConstrStylesItem>
+
 export type ConstrOptions<
   COMP extends ConstrComponent,
   EMITS extends ConstrItem,
@@ -32,6 +35,7 @@ export type ConstrOptions<
   modification?: ConstrComponentMod<P>
   emits?: ConstrEmit<EMITS>
   classes?: RefType<ConstrClasses>
+  styles?: RefType<ConstrStyles>
 }
 
 export type ConstrSetup<
@@ -42,4 +46,5 @@ export type ConstrSetup<
   name: string
   element: Ref<E | undefined>,
   classes?: RefType<CLASSES>
+  styles?: RefType<ConstrStyles>
 } & SETUP

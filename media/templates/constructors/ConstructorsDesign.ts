@@ -3,7 +3,8 @@ import { h, VNode } from 'vue'
 import { DesignConstructorAbstract } from '../../../classes/ref/DesignConstructorAbstract.ts'
 
 import {
-  type ConstrOptions
+  type ConstrOptions,
+  type ConstrStyles
 } from '../../../types/constructor.ts'
 import {
   type ConstructorsProps
@@ -105,6 +106,17 @@ export class ConstructorsDesign<
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
+  }
+
+  /**
+   * Refinement of the received list of styles.<br>
+   * Доработка полученного списка стилей.
+   */
+  protected initStyles (): ConstrStyles {
+    return {
+      // TODO: list of user styles
+      // TODO: список пользовательских стилей
+    }
   }
 
   /**

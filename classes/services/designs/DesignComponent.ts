@@ -97,6 +97,21 @@ export class DesignComponent extends DesignCommand {
   }
 
   /**
+   * This code generates the style.scss.<br>
+   * Генерация файла style.scss.
+   */
+  protected makeMain (): this {
+    const file = FILE_CLASS
+    const sample = this.readDefinable(file)
+
+    sample.replaceClassesValues()
+    sample.replaceStylesValues()
+
+    this.write(sample.getNameFile(file), sample.get())
+    return this
+  }
+
+  /**
    * Getting the contents of a file from a constructor.<br>
    * Получение содержимого файла из конструктора.
    * @param file file name /<br>имя файла
@@ -106,19 +121,5 @@ export class DesignComponent extends DesignCommand {
     const constructor = this.read(path)
 
     return constructor ?? ''
-  }
-
-  /**
-   * This code generates the style.scss.<br>
-   * Генерация файла style.scss.
-   */
-  protected makeMain (): this {
-    const file = FILE_CLASS
-    const sample = this.readDefinable(file)
-
-    sample.replaceClassesValues()
-
-    this.write(sample.getNameFile(file), sample.get())
-    return this
   }
 }

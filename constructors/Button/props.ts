@@ -6,7 +6,6 @@ import { PropType } from 'vue'
  */
 export type ButtonProps = {
   // TODO: Location for a custom property / Место для пользовательского свойства
-  testCode?: string
   // :type [!] System label / Системная метка
   focus?: boolean
   selected?: boolean
