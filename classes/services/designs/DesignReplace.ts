@@ -107,7 +107,8 @@ export class DesignReplace {
       const value = data
         .join(`${end}${inString}`)
         .replaceAll('[space]', inString)
-      if (inString.trim() !== '') {
+
+      if (value.trim() !== '') {
         this.sample = this.sample
           .replace(
             new RegExp(`(^ +)(\\/\\/ :${name} .*?$)([\\S\\s]+)(^ +\\/\\/ :${name} )`, 'gm'),

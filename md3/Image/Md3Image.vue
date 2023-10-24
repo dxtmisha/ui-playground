@@ -27,6 +27,10 @@ const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
+    'md3-image--turn': props.turn,
+    'md3-image--disabled': props.disabled,
+    'md3-image--hide': props.hide,
+    'md3-image--adaptive': props.adaptive
     // :classes-values [!] System label / Системная метка
   }
   // TODO: User subclasses / Пользовательские подклассы
