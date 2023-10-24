@@ -1,7 +1,8 @@
 {
   "basic": "{d.button}",
   "height": {
-    "_default": "md"
+    "_default": "md",
+    "_style": true
   },
   "color": {
     "_rename": "palette-color"

@@ -10,7 +10,6 @@ export const propsValues = {
   // :values [!] System label / Системная метка
   adaptive: ['icon', 'sm', 'md'],
   height: ['sm', 'md', 'lg'],
-  tonal: ['a', true],
   palette: ['primary', 'secondary', 'tertiary', 'error', 'neutral', 'neutralVariant']
   // :values [!] System label / Системная метка
 }
@@ -18,17 +17,17 @@ export const propsValues = {
 export type PropsToken = {
   // :type [!] System label / Системная метка
   // [constructor] testCode?: string
+  focus?: boolean
   selected?: boolean
   progress?: boolean
   disabled?: boolean
   adaptive?: 'icon' | 'sm' | 'md'
-  height?: 'sm' | 'md' | 'lg'
+  height?: string | 'sm' | 'md' | 'lg' | 'custom'
   filled?: boolean
   outlined?: boolean
   text?: boolean
   elevated?: boolean
-  tonal?: boolean | 'a' | true
-  test?: boolean
+  tonal?: boolean
   palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
   // :type [!] System label / Системная метка
 }
@@ -59,6 +58,7 @@ export const propsInstruction = {
   ...propsButton,
   ...{
     // :prop [!] System label / Системная метка
+    focus: Boolean,
     selected: Boolean,
     progress: Boolean,
     disabled: Boolean,
@@ -74,8 +74,7 @@ export const propsInstruction = {
     outlined: Boolean,
     text: Boolean,
     elevated: Boolean,
-    tonal: [String, Boolean] as PropType<PropsToken['tonal']>,
-    test: Boolean,
+    tonal: Boolean,
     palette: String as PropType<PropsToken['palette']>
     // :prop [!] System label / Системная метка
   }

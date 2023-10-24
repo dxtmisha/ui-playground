@@ -105,7 +105,7 @@ export class ButtonDesign<
         progress: this.getSubClass('progress'),
         label: this.getSubClass('label'),
         icon: this.getSubClass('icon'),
-        trailing: 'trailing'
+        trailing: this.getSubClass('trailing')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>

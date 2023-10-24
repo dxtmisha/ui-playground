@@ -8,17 +8,17 @@ export type ButtonProps = {
   // TODO: Location for a custom property / Место для пользовательского свойства
   testCode?: string
   // :type [!] System label / Системная метка
+  focus?: boolean
   selected?: boolean
   progress?: boolean
   disabled?: boolean
   adaptive?: 'icon' | 'sm' | 'md'
-  height?: 'sm' | 'md' | 'lg'
+  height?: string | 'sm' | 'md' | 'lg' | 'custom'
   filled?: boolean
   outlined?: boolean
   text?: boolean
   elevated?: boolean
-  tonal?: boolean | 'a' | true
-  test?: boolean
+  tonal?: boolean
   palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
   // :type [!] System label / Системная метка
 }
@@ -45,6 +45,7 @@ export const propsButton = {
   // TODO: Location for a custom property / Место для пользовательского свойства
   ...{
     // :prop [!] System label / Системная метка
+    focus: Boolean,
     selected: Boolean,
     progress: Boolean,
     disabled: Boolean,
@@ -60,8 +61,7 @@ export const propsButton = {
     outlined: Boolean,
     text: Boolean,
     elevated: Boolean,
-    tonal: [String, Boolean] as PropType<ButtonProps['tonal']>,
-    test: Boolean,
+    tonal: Boolean,
     palette: String as PropType<ButtonProps['palette']>
     // :prop [!] System label / Системная метка
   }

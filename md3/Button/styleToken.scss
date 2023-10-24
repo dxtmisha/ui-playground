@@ -4,7 +4,7 @@
   // :style [!] System label / Системная метка
   --md3-button-gap: var(--md3-ref-spacing-2);
   --md3-button-padding: var(--md3-ref-spacing-6);
-  --md3-button-test: 24px;
+  --md3-button-transitionFunction: var(--d-sys-transitionFunction-standard);
   
   font-family: var(--md3-ref-font-family-roboto);
   @include fontSize(var(--md3-ref-font-size-md));
@@ -23,7 +23,6 @@
   
   box-shadow: none;
   
-  transition-timing-function: var(--d-sys-transitionFunction-standard);
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: border, box-shadow;
   
@@ -39,9 +38,8 @@
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  &::after {
-    content: ' ';
-    @include paletteColor(var(--md3-sys-palette-primaryVariant));
+  @include focus {
+    @include gradientOpacity(var(--md3-sys-opacity-012));
   }
   
   &--selected {
@@ -104,6 +102,10 @@
     
     &--lg {
       @include height(var(--md3-ref-spacing-12));
+    }
+    
+    &--custom {
+      @include height(var(--md3-button-sys-height));
     }
   }
   
@@ -248,38 +250,6 @@
     &--selected {
       @include paletteBackground(var(--md3-sys-palette-secondaryContainerVariant));
     }
-    
-    &--a {
-      &--b {
-        @include paletteBackground(var(--md3-sys-palette-onSurface));
-        
-        &--d {
-          @include backgroundOpacity(var(--md3-sys-opacity-012));
-        }
-      }
-    }
-  }
-  
-  &--test {
-    @include gradientOpacity(var(--md3-sys-opacity-012));
-  }
-  
-  @keyframes md3-button-animateTest {
-    0% {
-      opacity: 0;
-    }
-    
-    16% {
-      opacity: .32;
-    }
-    
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @at-root .is-root & {
-    box-shadow: none;
   }
   // :style [!] System label / Системная метка
 }

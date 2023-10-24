@@ -1,6 +1,9 @@
 <script setup lang="ts">
 // :component.once import { computed } from 'vue'
+
+// :component.once import { isFilled } from '../../functions/data.ts'
 // :component.once import { isArray } from '../../functions/object.ts'
+
 // :component.once import { ComponentDesign } from '../../constructors/Component/ComponentDesign'
 
 // :component.once import { type ConstrClasses } from '../../../types/constructor'

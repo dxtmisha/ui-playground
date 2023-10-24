@@ -10,6 +10,7 @@ import {
   type DesignStructureItemSub,
   type DesignStructureList
 } from '../../../types/design.ts'
+import { KEY_CUSTOM } from '../properties/to/PropertiesToStyle.ts'
 
 /**
  * Class with basic replacement for templates.<br>
@@ -415,7 +416,11 @@ export class DesignReplace {
     if (this.isString(value)) {
       const types: string[] = []
 
-      value.forEach(item => types.push(item === true ? 'true' : `'${item}'`))
+      value.forEach(item => {
+        if (item !== KEY_CUSTOM) {
+          types.push(item === true ? 'true' : `'${item}'`)
+        }
+      })
       return types.join(', ')
     }
 
@@ -502,11 +507,13 @@ export class DesignReplace {
   ): string[] {
     const templates: string[] = []
 
-    forEach(items, ({
-      name,
-      value,
-      state
-    }) => {
+    forEach(items, item => {
+      const {
+        name,
+        value,
+        state
+      } = item
+
       const index = `props.${name}`
       const newParent = `${parent}--${name}`
       const newValues = [
@@ -519,6 +526,10 @@ export class DesignReplace {
           `'${newParent}': ${newValues.join(' && ')}`,
           ...this.initClassesValues(state, newParent, newValues)
         )
+      }
+
+      if ('style' in item && item.style) {
+        templates.push(`'${newParent}--${KEY_CUSTOM}': isFilled(${index}) && !isArray(propsValues.${name}, ${index})`)
       }
 
       if (this.isString(value)) {

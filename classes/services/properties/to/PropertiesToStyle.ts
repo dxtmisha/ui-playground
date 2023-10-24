@@ -4,7 +4,7 @@ import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import { PropertyKey, PropertyType } from '../../../../types/property.ts'
 
-const KEY_CUSTOM = 'custom'
+export const KEY_CUSTOM = 'custom'
 
 /**
  * A class for working with properties that support additional values.<br>
@@ -33,7 +33,7 @@ export class PropertiesToStyle extends PropertiesToAbstract {
         item.value[KEY_CUSTOM] = {
           value: {
             [name]: {
-              value: `{${design}.${component}.sys.${name}`,
+              value: `{${design}.${component}.sys.${name}}`,
               [PropertyKey.variable]: PropertyType.property
             }
           },
