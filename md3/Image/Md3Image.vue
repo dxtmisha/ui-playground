@@ -21,11 +21,10 @@ import {
 } from './props'
 
 const emits = defineEmits<ImageEmits>()
-const props = defineProps(propsInstruction)
+const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
-    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'md3-image--turn': props.turn,
     'md3-image--disabled': props.disabled,
@@ -33,10 +32,8 @@ const classesToken = computed<ConstrClasses>(() => ({
     'md3-image--adaptive': props.adaptive
     // :classes-values [!] System label / Системная метка
   }
-  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
-  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))
@@ -71,7 +68,7 @@ defineExpose(design.expose())
 @import "../../constructors/Image/style";
 @import "styleToken";
 
-@include initDesign('[design].[component]') {
+@include initDesign('md3.image') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinImage;

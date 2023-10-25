@@ -63,10 +63,11 @@ export class DesignReplace {
    * @param name the name of a file /<br>название файла
    */
   getNameFile (name: string): string {
+    console.log('name', name)
     return name
-      .replace('[design]', this.structure.getDesign())
-      .replace('[component]', this.structure.getComponentName())
-      .replace('DesignComponent', this.structure.getFileName())
+      .replaceAll('[design]', this.structure.getDesign())
+      .replaceAll('[component]', this.structure.getComponentName())
+      .replaceAll('DesignComponent', this.structure.getFileName())
       .replaceAll(this.mark, this.component)
   }
 

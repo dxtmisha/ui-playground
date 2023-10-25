@@ -21,7 +21,7 @@
 // :component.once } from './props'
 
 // :component.once const emits = defineEmits<ComponentEmits>()
-// :component.once const props = defineProps(propsInstruction)
+// :component.once const props = defineProps({ ...propsInstruction })
 
 // :component.once const classesToken = computed<ConstrClasses>(() => ({
 // :component.once   main: {

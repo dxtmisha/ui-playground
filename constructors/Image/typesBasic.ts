@@ -1,4 +1,31 @@
-import { NumberOrString } from '../../types/basic.ts'
+import {
+  type NumberOrString,
+  type Undefined
+} from '../../types/basic.ts'
+
+export enum ImageTypeValue {
+  file = 'file',
+  image = 'image',
+  color = 'color',
+  public = 'public',
+  filled = 'filled',
+  outlined = 'outlined',
+  round = 'round',
+  sharp = 'sharp',
+  twoTone = 'two-tone',
+  material = 'material'
+}
+
+export type ImageElement = HTMLElement | Undefined
+export type ImageValue = string | File | Undefined
+export type ImageForOption = NumberOrString | Undefined
+
+export type ImageCoordinator =
+  [number] |
+  [number, number] |
+  [number, number, number] |
+  [number, number, number, number] |
+  Undefined
 
 export type ImageSize = {
   width: NumberOrString
@@ -17,3 +44,5 @@ export type ImageItem =
   }
 
 export type ImageEventItem = ImageItem | string | undefined
+
+export type ImageTypeItem = ImageTypeValue | Undefined

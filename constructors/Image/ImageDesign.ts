@@ -1,6 +1,7 @@
 import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+import { ImageRef } from './ImageRef.ts'
 
 import {
   type ConstrOptions,
@@ -38,6 +39,8 @@ export class ImageDesign<
   CLASSES,
   P
 > {
+  protected image?: ImageRef
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -55,8 +58,25 @@ export class ImageDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
+    if (
+      'value' in this.refs &&
+      this.refs.value
+    ) {
+      this.image = new ImageRef(
+        this.element,
+        this.refs.value,
+        this.refs?.url,
+        this.refs?.size,
+        this.refs?.coordinator,
+        this.refs?.x,
+        this.refs?.y,
+        this.refs?.adaptiveGroup,
+        this.refs?.adaptive,
+        this.refs?.adaptiveAlways,
+        this.refs?.objectWidth,
+        this.refs?.objectHeight
+      )
+    }
 
     this.init()
   }
@@ -129,6 +149,6 @@ export class ImageDesign<
     return h('div', {
       ref: this.element,
       class: this.classes?.value.main
-    }, 'test 2')
+    }, this.image?.getType() ?? '')
   }
 }
