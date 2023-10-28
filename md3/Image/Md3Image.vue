@@ -26,6 +26,7 @@ const props = defineProps({ ...propsInstruction })
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // :classes-values [!] System label / Системная метка
+    'md3-image': true,
     'md3-image--turn': props.turn,
     'md3-image--disabled': props.disabled,
     'md3-image--hide': props.hide,

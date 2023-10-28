@@ -293,7 +293,10 @@ export class DesignReplace {
    */
   replaceClassesValues (): this {
     const mark = 'classes-values'
-    const templates: string[] = this.initClassesValues()
+    const templates: string[] = [
+      `'${this.structure?.getPathName()}': true`,
+      ...this.initClassesValues()
+    ]
 
     return this.replaceMark(mark, templates, ',')
   }

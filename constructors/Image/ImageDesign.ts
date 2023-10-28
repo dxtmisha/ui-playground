@@ -148,7 +148,7 @@ export class ImageDesign<
 
     return h('span', {
       ref: this.element,
-      class: setup.classes.value,
+      class: setup.classes.value.main,
       style: setup.styles.value,
       translate: 'no'
     }, setup.text.value)
