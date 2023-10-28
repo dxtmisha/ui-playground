@@ -1,12 +1,24 @@
-import { ImageType } from './ImageType.ts'
+import { toNumber } from '../../../functions/number.ts'
 
+import { ImageType } from './ImageType.ts'
+import { ImageData } from './ImageData.ts'
+import { ImageCoordinator } from './ImageCoordinator.ts'
+import { ImagePosition } from './ImagePosition.ts'
+
+import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
+
+import { ImageBackground } from './ImageBackground.ts'
+
+import { type ConstrClassObject, ConstrStyles } from '../../../types/constructor.ts'
 import {
-  type ImageCoordinator,
+  type ImageCoordinatorItem,
   type ImageElement,
+  type ImageEventItem,
   type ImageForOption,
   type ImageTypeItem,
   type ImageValue
 } from '../typesBasic.ts'
+import { isString } from '../../../functions/data.ts'
 
 /**
  * Base class for working with images and icons.<br>
@@ -14,16 +26,22 @@ import {
  */
 export class Image {
   protected readonly type: ImageType
+  protected readonly data: ImageData
+
+  protected coordinator: ImageCoordinator
+  protected position: ImagePosition
+  protected adaptiveItem: ImageAdaptiveItem
+  protected background: ImageBackground
 
   /**
    * Constructor
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param image values from the image /<br>значения из изображения
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
    * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
+   * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
    * @param adaptive activity status /<br>статус активности
    * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
@@ -31,13 +49,13 @@ export class Image {
    * @param height physical height of the object /<br>физическая высота объекта
    */
   constructor (
-    protected element?: ImageElement,
     protected image?: ImageValue,
-    protected url?: string,
+    url?: string,
     protected size?: ImageForOption,
-    protected coordinator?: ImageCoordinator,
-    protected x?: ImageForOption,
-    protected y?: ImageForOption,
+    coordinator?: ImageCoordinatorItem,
+    x?: ImageForOption,
+    y?: ImageForOption,
+    protected element?: ImageElement,
     protected group?: string,
     protected adaptive?: boolean,
     protected adaptiveAlways?: boolean,
@@ -45,6 +63,31 @@ export class Image {
     protected height?: ImageForOption
   ) {
     this.type = new ImageType(image)
+    this.data = new ImageData(this.type, url)
+
+    this.coordinator = new ImageCoordinator(coordinator)
+    this.position = new ImagePosition(x, y, this.coordinator)
+
+    this.adaptiveItem = new ImageAdaptiveItem(
+      this.data,
+      element,
+      group,
+      adaptive,
+      adaptiveAlways,
+      width ? toNumber(width) : undefined,
+      height ? toNumber(height) : undefined
+    )
+
+    this.background = new ImageBackground(
+      this.data,
+      this.coordinator,
+      this.adaptiveItem,
+      size
+    )
+
+    if (image) {
+      this.data.set(image).then()
+    }
   }
 
   /**
@@ -56,13 +99,88 @@ export class Image {
   }
 
   /**
-   * To change the focus element.<br>
-   * Изменить элемент для фокуса.
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
+   * A method for obtaining an object with values for an image.<br>
+   * Метод для получения объекта с значениями для изображения.
    */
-  setElement (element?: ImageElement): this {
-    this.element = element
-    return this
+  getData (): ImageEventItem {
+    return this.data.get()
+  }
+
+  /**
+   * Values for the text.<br>
+   * Значения для текста.
+   */
+  getText (): string | undefined {
+    const type = this.type.get()
+
+    if (
+      type &&
+      typeof this.image === 'string' &&
+      [
+        'filled',
+        'outlined',
+        'round',
+        'sharp',
+        'two-tone',
+        'material'
+      ].indexOf(type) !== -1
+    ) {
+      return this.image.replace(/^(filled|outlined|round|sharp|two-tone)-/, '')
+    }
+
+    return undefined
+  }
+
+  /**
+   * Values for the class.<br>
+   * Значения для класса.
+   */
+  getClasses (): ConstrClassObject {
+    const type = this.type.get()
+    const data = {
+      [`??--type--${type}`]: type !== undefined,
+      notranslate: true
+    }
+
+    switch (type) {
+      case 'filled':
+      case 'outlined':
+      case 'round':
+      case 'sharp':
+      case 'two-tone':
+      case 'material':
+        data['material-icons'] = true
+        break
+    }
+
+    return data
+  }
+
+  /**
+   * Values for the style.<br>
+   * Значения для стиля.
+   */
+  getStyles (): ConstrStyles {
+    if (this.image) {
+      switch (this.type.get()) {
+        case 'file':
+        case 'image':
+          return {
+            'background-image': this.background.getImage(),
+            'background-size': this.background.get(),
+            'background-position-x': this.position?.getX(),
+            'background-position-y': this.position?.getY()
+          }
+        case 'public':
+          return { 'mask-image': this.background.getImage() }
+        case 'color':
+          if (isString(this.image)) {
+            return { 'background-color': this.image }
+          }
+      }
+    }
+
+    return {}
   }
 
   /**
@@ -70,9 +188,12 @@ export class Image {
    * Изменить названия изображения.
    * @param image values from the image /<br>значения из изображения
    */
-  setImage (image?: ImageValue): this {
+  async setImage (image?: ImageValue): Promise<this> {
     this.image = image
+
     this.type.set(image)
+    await this.data.set(image)
+
     return this
   }
 
@@ -81,8 +202,9 @@ export class Image {
    * Изменить путь к иконке.
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
    */
-  setUrl (url?: string): this {
-    this.url = url
+  async setUrl (url: string): Promise<this> {
+    await this.data.setUrl(url)
+
     return this
   }
 
@@ -101,8 +223,8 @@ export class Image {
    * Изменить параметры crop изображения.
    * @param coordinator coordinates for margins /<br>координаты для отступов
    */
-  setCoordinator (coordinator?: ImageCoordinator): this {
-    this.coordinator = coordinator
+  setCoordinator (coordinator: ImageCoordinatorItem): this {
+    this.coordinator.set(coordinator)
     return this
   }
 
@@ -111,8 +233,8 @@ export class Image {
    * Изменить сдвиг изображения влево.
    * @param x coordinate of the picture on the left /<br>координата картины слева
    */
-  setX (x?: ImageForOption): this {
-    this.x = x
+  setX (x: ImageForOption): this {
+    this.position.setX(x)
     return this
   }
 
@@ -121,8 +243,18 @@ export class Image {
    * Изменить сдвиг изображения сверху.
    * @param y coordinate of the picture on the top /<br>координата картины сверху
    */
-  setY (y?: ImageForOption): this {
-    this.y = y
+  setY (y: ImageForOption): this {
+    this.position.setY(y)
+    return this
+  }
+
+  /**
+   * To change the focus element.<br>
+   * Изменить элемент для фокуса.
+   * @param element image element for scaling /<br>элемент изображения для масштабирования
+   */
+  setElement (element: ImageElement): this {
+    this.adaptiveItem.setElement(element)
     return this
   }
 
@@ -132,7 +264,7 @@ export class Image {
    * @param group group name /<br>название группы
    */
   setGroup (group?: string): this {
-    this.group = group
+    this.adaptiveItem.setGroup(group)
     return this
   }
 
@@ -142,7 +274,7 @@ export class Image {
    * @param adaptive activity status /<br>статус активности
    */
   setAdaptive (adaptive?: boolean): this {
-    this.adaptive = adaptive
+    this.adaptiveItem.setAdaptive(Boolean(adaptive))
     return this
   }
 
@@ -152,7 +284,7 @@ export class Image {
    * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
    */
   setAdaptiveAlways (adaptiveAlways?: boolean): this {
-    this.adaptiveAlways = adaptiveAlways
+    this.adaptiveItem.setAdaptiveAlways(Boolean(adaptiveAlways))
     return this
   }
 
@@ -161,8 +293,8 @@ export class Image {
    * Изменить физическую ширину объекта на изображении.
    * @param width physical width of the object /<br>физическая ширина объекта
    */
-  setWidth (width?: ImageForOption): this {
-    this.width = width
+  setWidth (width: ImageForOption): this {
+    this.adaptiveItem.setWidth(width ? toNumber(width) : 0)
     return this
   }
 
@@ -171,8 +303,8 @@ export class Image {
    * Изменить физическую высоту объекта на изображении.
    * @param height physical height of the object /<br>физическая высота объекта
    */
-  setHeight (height?: ImageForOption): this {
-    this.height = height
+  setHeight (height: ImageForOption): this {
+    this.adaptiveItem.setHeight(height ? toNumber(height) : 0)
     return this
   }
 }

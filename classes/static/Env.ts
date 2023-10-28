@@ -12,6 +12,10 @@ const BASIC = {
   prefix: {
     index: 'UI_PREFIX',
     value: 'ui-playground-'
+  },
+  iconPath: {
+    index: 'UI_ICON_PATH',
+    value: '/icons/'
   }
 }
 

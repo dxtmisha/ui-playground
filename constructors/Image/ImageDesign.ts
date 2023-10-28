@@ -149,6 +149,9 @@ export class ImageDesign<
     return h('div', {
       ref: this.element,
       class: this.classes?.value.main
-    }, this.image?.getType() ?? '')
+    }, [
+      h('div', {}, this.image?.getType().value ?? ''),
+      h('div', {}, this.image?.getData().value?.src)
+    ])
   }
 }

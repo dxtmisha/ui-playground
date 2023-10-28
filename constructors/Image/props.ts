@@ -36,7 +36,6 @@ export type ImageProps = {
  */
 export const defaultsImage: ImageProps = {
   adaptiveGroup: 'basic',
-  url: '/icons/',
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -64,13 +63,8 @@ export const propsImage = {
   objectWidth: [String, Number],
   objectHeight: [String, Number],
 
-  // Status
-
   // Options
-  url: {
-    type: String,
-    default: defaultsImage.url
-  },
+  url: String,
 
   // Tokens
   ...{

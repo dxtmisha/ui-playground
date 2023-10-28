@@ -1,16 +1,21 @@
-import { computed, type ComputedRef, watch } from 'vue'
-import { isFilled } from '../../functions/data.ts'
+import { computed, type ComputedRef, ref, type Ref, watch } from 'vue'
 
 import { Image } from './static/Image.ts'
 
 import { type RefUndefined } from '../../types/ref.ts'
 import {
-  type ImageCoordinator,
+  type ImageCoordinatorItem,
   type ImageElement,
+  type ImageEventItem,
   type ImageForOption,
   type ImageTypeItem,
   type ImageValue
 } from './typesBasic.ts'
+
+type ImageRefItem = Ref<{
+  type: ImageTypeItem
+  data: ImageEventItem
+}>
 
 /**
  * Base class for working with images and icons.<br>
@@ -18,7 +23,14 @@ import {
  */
 export class ImageRef {
   protected readonly item: Image
+
+  protected readonly itemRef: ImageRefItem = ref({
+    type: undefined,
+    data: undefined
+  })
+
   protected readonly type: ComputedRef<ImageTypeItem>
+  protected readonly data: ComputedRef<ImageEventItem>
 
   /**
    * Constructor
@@ -37,10 +49,10 @@ export class ImageRef {
    */
   constructor (
     protected element: RefUndefined<ImageElement>,
-    protected image: RefUndefined<ImageValue>,
+    protected image?: RefUndefined<ImageValue>,
     protected url?: RefUndefined<string>,
     protected size?: RefUndefined<ImageForOption>,
-    protected coordinator?: RefUndefined<ImageCoordinator>,
+    protected coordinator?: RefUndefined<ImageCoordinatorItem>,
     protected x?: RefUndefined<ImageForOption>,
     protected y?: RefUndefined<ImageForOption>,
     protected group?: RefUndefined<string>,
@@ -51,7 +63,7 @@ export class ImageRef {
   ) {
     this.item = new Image(
       element.value,
-      image.value,
+      undefined,
       url?.value,
       size?.value,
       coordinator?.value,
@@ -65,10 +77,20 @@ export class ImageRef {
     )
 
     watch(element, value => this.item.setElement(value))
-    watch(image, value => this.item.setImage(value))
+
+    if (image) {
+      watch(image, async (value) => {
+        await this.item.setImage(value)
+        this.itemRef.value.type = this.item.getType()
+        this.itemRef.value.data = this.item.getData()
+      }, { immediate: true })
+    }
 
     if (url) {
-      watch(url, value => this.item.setUrl(value))
+      watch(url, async (value) => {
+        await this.item.setUrl(value)
+        this.itemRef.value.data = this.item.getData()
+      })
     }
 
     if (size) {
@@ -107,7 +129,8 @@ export class ImageRef {
       watch(height, value => this.item.setHeight(value))
     }
 
-    this.type = computed(() => (isFilled(this.image.value) && this.item.getType()) || undefined)
+    this.type = computed(() => this.itemRef.value.type)
+    this.data = computed(() => this.itemRef.value.data)
   }
 
   /**
@@ -116,5 +139,13 @@ export class ImageRef {
    */
   getType (): ComputedRef<ImageTypeItem> {
     return this.type
+  }
+
+  /**
+   * A method for obtaining an object with values for an image.<br>
+   * Метод для получения объекта с значениями для изображения.
+   */
+  getData (): ComputedRef<ImageEventItem> {
+    return this.data
   }
 }

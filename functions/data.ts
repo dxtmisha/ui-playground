@@ -32,6 +32,15 @@ export function isObjectNotArray<T> (value: T): value is Exclude<Extract<T, Reco
 }
 
 /**
+ * Checks if the value is of type string.<br>
+ * Проверяет, является ли значение типом строки.
+ * @param value input value /<br>входное значение
+ */
+export function isString<T> (value: T): value is Extract<T, string> {
+  return typeof value === 'string'
+}
+
+/**
  * Checks if the function is a callback function.<br>
  * Проверяет, является ли функция обратного вызова.
  * @param callback the value being checked /<br>проверяемое значение

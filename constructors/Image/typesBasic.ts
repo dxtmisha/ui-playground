@@ -16,20 +16,20 @@ export enum ImageTypeValue {
   material = 'material'
 }
 
-export type ImageElement = HTMLElement | Undefined
+export type ImageElement = HTMLElement | undefined
 export type ImageValue = string | File | Undefined
 export type ImageForOption = NumberOrString | Undefined
 
-export type ImageCoordinator =
+export type ImageCoordinatorItem =
   [number] |
   [number, number] |
   [number, number, number] |
   [number, number, number, number] |
   Undefined
 
-export type ImageSize = {
-  width: NumberOrString
-  height: NumberOrString
+export type ImageSize<T = number> = {
+  width: T
+  height: T
 }
 
 /**
