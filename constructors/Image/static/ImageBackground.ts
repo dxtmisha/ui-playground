@@ -24,7 +24,7 @@ export class ImageBackground {
     protected readonly data: ImageData,
     protected readonly coordinator: ImageCoordinator,
     protected readonly adaptive: ImageAdaptiveItem,
-    protected readonly size?: ImageForOption
+    protected size?: ImageForOption
   ) {
   }
 
@@ -63,6 +63,16 @@ export class ImageBackground {
       default:
         return null
     }
+  }
+
+  /**
+   * To change the image scaling parameters.<br>
+   * Изменить параметры масштабирования изображения.
+   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
+   */
+  setSize (size?: ImageForOption): this {
+    this.size = size
+    return this
   }
 
   /**
@@ -106,7 +116,7 @@ export class ImageBackground {
    * Возвращает размеры для значения.
    */
   protected getSizeForItem (): string | null {
-    const size = this.get()
+    const size = this.size
 
     if (size && isFilled(size)) {
       return size.toString().match(/%$/) ? this.getSize(size, size) : size.toString()

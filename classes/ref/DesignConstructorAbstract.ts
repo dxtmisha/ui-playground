@@ -45,13 +45,14 @@ export abstract class DesignConstructorAbstract<
   protected readonly element = ref<E | undefined>()
   protected readonly refs: ToRefs<P>
 
-  protected components?: COMP
-  protected modification?: ConstrComponentMod<P>
-  protected emits?: ConstrEmit<EMITS>
-  protected classes?: RefType<ConstrClasses>
+  protected readonly components?: COMP
+  protected readonly modification?: ConstrComponentMod<P>
+  protected readonly emits?: ConstrEmit<EMITS>
+
+  protected readonly classes?: RefType<ConstrClasses>
   protected classesSub?: ComputedRef<Partial<CLASSES>>
 
-  protected styles?: RefType<ConstrStyles>
+  protected readonly styles?: RefType<ConstrStyles>
   protected stylesSub?: ComputedRef<ConstrStyles>
 
   protected attrs?: ConstrItem

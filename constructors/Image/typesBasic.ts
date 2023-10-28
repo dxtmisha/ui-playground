@@ -2,6 +2,10 @@ import {
   type NumberOrString,
   type Undefined
 } from '../../types/basic.ts'
+import {
+  type ConstrClassObject,
+  type ConstrStyles
+} from '../../types/constructor.ts'
 
 export enum ImageTypeValue {
   file = 'file',
@@ -43,6 +47,13 @@ export type ImageItem =
     src: string
   }
 
-export type ImageEventItem = ImageItem | string | undefined
-
 export type ImageTypeItem = ImageTypeValue | Undefined
+
+export type ImageEventItem = ImageItem | string | undefined
+export type ImageEventLoad = {
+  type: ImageTypeItem
+  image: ImageEventItem
+  text: string | undefined
+  classes: ConstrClassObject
+  styles: ConstrStyles
+}

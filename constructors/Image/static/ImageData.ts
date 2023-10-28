@@ -1,12 +1,18 @@
+import { isString } from '../../../functions/data.ts'
+
 import { Icons } from '../../../classes/static/Icons.ts'
 
 import { ImageType } from './ImageType.ts'
 import { ImageFile } from './ImageFile.ts'
 
-import { type Undefined } from '../../../types/basic.ts'
+import {
+  type FunctionVoid,
+  type Undefined
+} from '../../../types/basic.ts'
 import {
   type ImageEventItem,
   type ImageItem,
+  ImageTypeValue,
   type ImageValue
 } from '../typesBasic.ts'
 
@@ -15,19 +21,25 @@ import {
  * Класс для работы и обработки изображения.
  */
 export class ImageData {
-  protected image?: ImageValue
   protected item?: ImageEventItem
 
   /**
    * Constructor
    * @param type image type /<br>тип изображения
+   * @param image values from the image /<br>значения из изображения
+   * @param callback callback function on successful image update or data recalculation /<br>
+   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
    */
-  // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly type: ImageType,
+    protected image?: ImageValue,
+    protected readonly callback?: FunctionVoid,
     protected url?: string
   ) {
+    if (image) {
+      this.make().then()
+    }
   }
 
   /**
@@ -81,7 +93,10 @@ export class ImageData {
    */
   async setUrl (url?: string): Promise<this> {
     this.url = url
-    await this.make()
+
+    if (this.type.get() === ImageTypeValue.public) {
+      await this.make()
+    }
 
     return this
   }
@@ -92,6 +107,8 @@ export class ImageData {
    */
   protected async make (): Promise<this> {
     this.item = await this.init()
+    this.callback?.()
+
     return this
   }
 
@@ -104,11 +121,11 @@ export class ImageData {
 
     if (image) {
       switch (this.type.get()) {
-        case 'image':
-        case 'file':
+        case ImageTypeValue.image:
+        case ImageTypeValue.file:
           return await ImageFile.createImage(image)
-        case 'public':
-          if (typeof image === 'string') {
+        case ImageTypeValue.public:
+          if (isString(image)) {
             return Icons.get(image, this.url)
           }
 

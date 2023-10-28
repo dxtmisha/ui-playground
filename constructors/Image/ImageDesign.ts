@@ -1,4 +1,4 @@
-import { h, VNode } from 'vue'
+import { h, onUnmounted, ref, VNode, watch } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
 import { ImageRef } from './ImageRef.ts'
@@ -24,7 +24,6 @@ import {
  */
 export class ImageDesign<
   COMP extends ImageComponents,
-  EMITS extends ImageEmits,
   SETUP extends ImageSetup,
   EXPOSE extends ImageExpose,
   CLASSES extends ImageClasses,
@@ -32,14 +31,14 @@ export class ImageDesign<
 > extends DesignConstructorAbstract<
   HTMLDivElement,
   COMP,
-  EMITS,
+  ImageEmits,
   SETUP,
   EXPOSE,
   ImageSlots,
   CLASSES,
   P
 > {
-  protected image?: ImageRef
+  protected image: ImageRef
 
   /**
    * Constructor
@@ -50,7 +49,7 @@ export class ImageDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, EMITS, P>
+    options?: ConstrOptions<COMP, ImageEmits, P>
   ) {
     super(
       name,
@@ -58,27 +57,27 @@ export class ImageDesign<
       options
     )
 
-    if (
-      'value' in this.refs &&
-      this.refs.value
-    ) {
-      this.image = new ImageRef(
-        this.element,
-        this.refs.value,
-        this.refs?.url,
-        this.refs?.size,
-        this.refs?.coordinator,
-        this.refs?.x,
-        this.refs?.y,
-        this.refs?.adaptiveGroup,
-        this.refs?.adaptive,
-        this.refs?.adaptiveAlways,
-        this.refs?.objectWidth,
-        this.refs?.objectHeight
-      )
-    }
+    this.image = new ImageRef(
+      this.refs.value ?? ref(),
+      this.refs?.url,
+      this.refs?.coordinator,
+      this.refs?.x,
+      this.refs?.y,
+      this.refs?.size,
+      this.element,
+      this.refs?.adaptiveGroup,
+      this.refs?.adaptive,
+      this.refs?.adaptiveAlways,
+      this.refs?.objectWidth,
+      this.refs?.objectHeight
+    )
 
     this.init()
+    onUnmounted(() => this.image.destructor())
+
+    if (this.emits) {
+      watch(this.image.getData(), () => this.emits?.('load', this.image.getItem()))
+    }
   }
 
   /**
@@ -86,8 +85,6 @@ export class ImageDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -97,8 +94,9 @@ export class ImageDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      type: this.image.getType(),
+      data: this.image.getData(),
+      text: this.image.getText()
     } as SETUP
   }
 
@@ -107,10 +105,11 @@ export class ImageDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
-    // const setup = this.data
+    const setup = this.setup()
+
     return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
+      type: setup.type,
+      data: setup.data
     } as EXPOSE
   }
 
@@ -120,7 +119,9 @@ export class ImageDesign<
    */
   protected initClasses (): Partial<CLASSES> {
     return {
-      main: {},
+      main: {
+        ...this.image.getClasses().value
+      },
       ...{
         // :classes [!] System label / Системная метка
         // :classes [!] System label / Системная метка
@@ -134,8 +135,7 @@ export class ImageDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
+      ...this.image.getStyles().value
     }
   }
 
@@ -144,14 +144,13 @@ export class ImageDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.data
+    const setup = this.setup()
 
-    return h('div', {
+    return h('span', {
       ref: this.element,
-      class: this.classes?.value.main
-    }, [
-      h('div', {}, this.image?.getType().value ?? ''),
-      h('div', {}, this.image?.getData().value?.src)
-    ])
+      class: setup.classes.value,
+      style: setup.styles.value,
+      translate: 'no'
+    }, setup.text.value)
   }
 }

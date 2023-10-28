@@ -23,7 +23,6 @@ import {
  */
 export class ConstructorsDesign<
   COMP extends ConstructorsComponents,
-  EMITS extends ConstructorsEmits,
   SETUP extends ConstructorsSetup,
   EXPOSE extends ConstructorsExpose,
   CLASSES extends ConstructorsClasses,
@@ -31,7 +30,7 @@ export class ConstructorsDesign<
 > extends DesignConstructorAbstract<
   HTMLDivElement,
   COMP,
-  EMITS,
+  ConstructorsEmits,
   SETUP,
   EXPOSE,
   ConstructorsSlots,
@@ -47,7 +46,7 @@ export class ConstructorsDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, EMITS, P>
+    options?: ConstrOptions<COMP, ConstructorsEmits, P>
   ) {
     super(
       name,
@@ -87,7 +86,8 @@ export class ConstructorsDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
-    // const setup = this.data
+    // const setup = this.setup()
+
     return {
       // TODO: list of properties for export
       // TODO: список свойств для экспорта
@@ -124,7 +124,7 @@ export class ConstructorsDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.data
+    // const setup = this.setup()
 
     return h('div', {
       ref: this.element,

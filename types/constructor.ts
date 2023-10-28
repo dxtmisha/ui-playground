@@ -45,6 +45,6 @@ export type ConstrSetup<
 > = {
   name: string
   element: Ref<E | undefined>,
-  classes?: RefType<CLASSES>
-  styles?: RefType<ConstrStyles>
+  classes: RefType<CLASSES>
+  styles: RefType<ConstrStyles>
 } & SETUP

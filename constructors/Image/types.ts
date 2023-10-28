@@ -1,7 +1,11 @@
 import { type ComputedRef } from 'vue'
-import { type RefType } from '../../types/ref.ts'
+
 import { type ConstrClass } from '../../types/constructor.ts'
-import { type ImageEventItem } from './typesBasic.ts'
+import {
+  type ImageEventItem,
+  type ImageEventLoad,
+  type ImageTypeItem
+} from './typesBasic.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
@@ -16,7 +20,7 @@ export type ImageComponents = {
  * Тип, описывающий доступные события.
  */
 export type ImageEmits = {
-  load: [image: ImageEventItem]
+  load: [image: ImageEventLoad]
 }
 
 /**
@@ -24,6 +28,8 @@ export type ImageEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type ImageSetup = {
+  type: ComputedRef<ImageTypeItem>
+  data: ComputedRef<ImageEventItem>
   text: ComputedRef<string | undefined>
 }
 
@@ -32,7 +38,8 @@ export type ImageSetup = {
  * Тип, описывающий доступные свойства.
  */
 export type ImageExpose = {
-  image: RefType<ImageEventItem>
+  type: ComputedRef<ImageTypeItem>
+  data: ComputedRef<ImageEventItem>
 }
 
 /**

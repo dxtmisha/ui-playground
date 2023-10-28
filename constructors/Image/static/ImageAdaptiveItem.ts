@@ -1,8 +1,10 @@
 import { getElementId } from '../../../functions/element.ts'
 
 import { ImageData } from './ImageData.ts'
+import { ImageAdaptiveGroup } from './ImageAdaptiveGroup.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'
 
+import { type FunctionVoid } from '../../../types/basic.ts'
 import {
   type ImageElement,
   type ImageItem,
@@ -40,6 +42,8 @@ export class ImageAdaptiveItem {
   /**
    * Constructor
    * @param data data management object /<br>объект управления данными
+   * @param callback callback function on successful image update or data recalculation /<br>
+   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
    * @param adaptive activity status /<br>статус активности
@@ -49,7 +53,8 @@ export class ImageAdaptiveItem {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected data: ImageData,
+    protected readonly data: ImageData,
+    protected readonly callback?: FunctionVoid,
     protected element?: ImageElement,
     protected group: string = GROUP_BASIC,
     protected adaptive?: boolean,
@@ -57,6 +62,7 @@ export class ImageAdaptiveItem {
     protected width: number = 0,
     protected height: number = 0
   ) {
+    this.update()
   }
 
   /**
@@ -174,9 +180,9 @@ export class ImageAdaptiveItem {
       const data = this.data.get() as ImageItem
 
       switch (this.getType()) {
-        case 'x':
+        case ImageAdaptiveItemType.x:
           return data.height * (this.element.offsetWidth * this.percent.width / data.width)
-        case 'y':
+        case ImageAdaptiveItemType.y:
           return data.width * (this.element.offsetHeight * this.percent.height / data.height)
       }
     }
@@ -195,14 +201,14 @@ export class ImageAdaptiveItem {
 
     if (element) {
       if (
-        type === 'x' &&
+        type === ImageAdaptiveItemType.x &&
         size > element.offsetHeight
       ) {
         return element.offsetHeight / size
       }
 
       if (
-        type === 'y' &&
+        type === ImageAdaptiveItemType.y &&
         size > element.offsetWidth
       ) {
         return element.offsetWidth / size
@@ -220,9 +226,9 @@ export class ImageAdaptiveItem {
     const factorMax = ImageCalculationList.get(this.group).getFactorMax()
 
     switch (this.getType()) {
-      case 'x':
+      case ImageAdaptiveItemType.x:
         return `${100 * this.percent.width * factorMax}% auto`
-      case 'y':
+      case ImageAdaptiveItemType.y:
         return `auto ${100 * this.percent.height * factorMax}%`
     }
 
@@ -236,6 +242,8 @@ export class ImageAdaptiveItem {
    */
   setElement (element: ImageElement): this {
     this.element = element
+    this.reset()
+
     return this
   }
 
@@ -246,6 +254,8 @@ export class ImageAdaptiveItem {
    */
   setGroup (group?: string): this {
     this.group = group ?? GROUP_BASIC
+    this.reset()
+
     return this
   }
 
@@ -256,6 +266,8 @@ export class ImageAdaptiveItem {
    */
   setAdaptive (adaptive: boolean): this {
     this.adaptive = adaptive
+    this.update()
+
     return this
   }
 
@@ -266,6 +278,8 @@ export class ImageAdaptiveItem {
    */
   setAdaptiveAlways (adaptiveAlways: boolean): this {
     this.adaptiveAlways = adaptiveAlways
+    this.reset()
+
     return this
   }
 
@@ -276,6 +290,8 @@ export class ImageAdaptiveItem {
    */
   setWidth (width: number): this {
     this.width = width
+    this.reset()
+
     return this
   }
 
@@ -286,6 +302,8 @@ export class ImageAdaptiveItem {
    */
   setHeight (height: number): this {
     this.height = height
+    this.reset()
+
     return this
   }
 
@@ -300,6 +318,26 @@ export class ImageAdaptiveItem {
     this.percent.height = height
 
     return this
+  }
+
+  /**
+   * Updating the enumeration of data.<br>
+   * Обновление перечисления данных.
+   */
+  reset (): void {
+    if (this.is()) {
+      ImageAdaptiveGroup.reset()
+    }
+  }
+
+  /**
+   * Removal of the element for scaling.<br>
+   * Удаления элемента для масштабирования.
+   */
+  remove (): void {
+    if (this.is()) {
+      ImageAdaptiveGroup.remove(this)
+    }
   }
 
   /**
@@ -332,5 +370,26 @@ export class ImageAdaptiveItem {
     }
 
     return this
+  }
+
+  /**
+   * Calls the callback function.<br>
+   * Вызывает функцию обратного вызова.
+   */
+  makeCallback (): this {
+    this.callback?.()
+    return this
+  }
+
+  /**
+   * Updating the calculated data.<br>
+   * Обновление вычисленных данных.
+   */
+  protected update (): void {
+    if (this.is()) {
+      ImageAdaptiveGroup.add(this)
+    } else {
+      ImageAdaptiveGroup.remove(this)
+    }
   }
 }

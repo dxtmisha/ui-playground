@@ -1,3 +1,4 @@
+import { isString } from '../../../functions/data.ts'
 import { toNumber } from '../../../functions/number.ts'
 
 import { ImageType } from './ImageType.ts'
@@ -9,16 +10,19 @@ import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
 
 import { ImageBackground } from './ImageBackground.ts'
 
-import { type ConstrClassObject, ConstrStyles } from '../../../types/constructor.ts'
+import {
+  type ConstrClassObject,
+  type ConstrStyles
+} from '../../../types/constructor.ts'
 import {
   type ImageCoordinatorItem,
   type ImageElement,
   type ImageEventItem,
+  type ImageEventLoad,
   type ImageForOption,
   type ImageTypeItem,
   type ImageValue
 } from '../typesBasic.ts'
-import { isString } from '../../../functions/data.ts'
 
 /**
  * Base class for working with images and icons.<br>
@@ -28,54 +32,64 @@ export class Image {
   protected readonly type: ImageType
   protected readonly data: ImageData
 
-  protected coordinator: ImageCoordinator
-  protected position: ImagePosition
-  protected adaptiveItem: ImageAdaptiveItem
-  protected background: ImageBackground
+  protected readonly coordinator: ImageCoordinator
+  protected readonly position: ImagePosition
+  protected readonly adaptiveItem: ImageAdaptiveItem
+  protected readonly background: ImageBackground
 
   /**
    * Constructor
    * @param image values from the image /<br>значения из изображения
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
+   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
    * @param adaptive activity status /<br>статус активности
    * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
    * @param width physical width of the object /<br>физическая ширина объекта
    * @param height physical height of the object /<br>физическая высота объекта
+   * @param callback callback function on successful image update or data recalculation /<br>
+   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
    */
   constructor (
     protected image?: ImageValue,
     url?: string,
-    protected size?: ImageForOption,
     coordinator?: ImageCoordinatorItem,
     x?: ImageForOption,
     y?: ImageForOption,
-    protected element?: ImageElement,
-    protected group?: string,
-    protected adaptive?: boolean,
-    protected adaptiveAlways?: boolean,
-    protected width?: ImageForOption,
-    protected height?: ImageForOption
+    size?: ImageForOption,
+    element?: ImageElement,
+    group?: string,
+    adaptive?: boolean,
+    adaptiveAlways?: boolean,
+    width?: ImageForOption,
+    height?: ImageForOption,
+    protected readonly callback?: (event: ImageEventLoad) => void
   ) {
     this.type = new ImageType(image)
-    this.data = new ImageData(this.type, url)
+    this.data = new ImageData(this.type, url, () => {
+      if (this.adaptiveItem.is()) {
+        this.adaptiveItem.reset()
+      } else {
+        this.makeCallback()
+      }
+    })
 
     this.coordinator = new ImageCoordinator(coordinator)
-    this.position = new ImagePosition(x, y, this.coordinator)
+    this.position = new ImagePosition(this.coordinator, x, y)
 
     this.adaptiveItem = new ImageAdaptiveItem(
       this.data,
+      () => this.makeCallback(),
       element,
       group,
       adaptive,
       adaptiveAlways,
-      width ? toNumber(width) : undefined,
-      height ? toNumber(height) : undefined
+      width ? toNumber(width) : 0,
+      height ? toNumber(height) : 0
     )
 
     this.background = new ImageBackground(
@@ -88,6 +102,13 @@ export class Image {
     if (image) {
       this.data.set(image).then()
     }
+  }
+
+  /**
+   * Destructor
+   */
+  destructor (): void {
+    this.adaptiveItem.remove()
   }
 
   /**
@@ -202,19 +223,8 @@ export class Image {
    * Изменить путь к иконке.
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
    */
-  async setUrl (url: string): Promise<this> {
+  async setUrl (url?: string): Promise<this> {
     await this.data.setUrl(url)
-
-    return this
-  }
-
-  /**
-   * To change the image scaling parameters.<br>
-   * Изменить параметры масштабирования изображения.
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
-   */
-  setSize (size?: ImageForOption): this {
-    this.size = size
     return this
   }
 
@@ -225,6 +235,8 @@ export class Image {
    */
   setCoordinator (coordinator: ImageCoordinatorItem): this {
     this.coordinator.set(coordinator)
+    this.makeCallback()
+
     return this
   }
 
@@ -235,6 +247,8 @@ export class Image {
    */
   setX (x: ImageForOption): this {
     this.position.setX(x)
+    this.makeCallback()
+
     return this
   }
 
@@ -245,6 +259,20 @@ export class Image {
    */
   setY (y: ImageForOption): this {
     this.position.setY(y)
+    this.makeCallback()
+
+    return this
+  }
+
+  /**
+   * To change the image scaling parameters.<br>
+   * Изменить параметры масштабирования изображения.
+   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
+   */
+  setSize (size?: ImageForOption): this {
+    this.background.setSize(size)
+    this.makeCallback()
+
     return this
   }
 
@@ -255,6 +283,7 @@ export class Image {
    */
   setElement (element: ImageElement): this {
     this.adaptiveItem.setElement(element)
+
     return this
   }
 
@@ -265,6 +294,7 @@ export class Image {
    */
   setGroup (group?: string): this {
     this.adaptiveItem.setGroup(group)
+
     return this
   }
 
@@ -275,6 +305,7 @@ export class Image {
    */
   setAdaptive (adaptive?: boolean): this {
     this.adaptiveItem.setAdaptive(Boolean(adaptive))
+
     return this
   }
 
@@ -285,6 +316,7 @@ export class Image {
    */
   setAdaptiveAlways (adaptiveAlways?: boolean): this {
     this.adaptiveItem.setAdaptiveAlways(Boolean(adaptiveAlways))
+
     return this
   }
 
@@ -295,6 +327,7 @@ export class Image {
    */
   setWidth (width: ImageForOption): this {
     this.adaptiveItem.setWidth(width ? toNumber(width) : 0)
+
     return this
   }
 
@@ -305,6 +338,23 @@ export class Image {
    */
   setHeight (height: ImageForOption): this {
     this.adaptiveItem.setHeight(height ? toNumber(height) : 0)
+
     return this
+  }
+
+  /**
+   * Calls the callback function.<br>
+   * Вызывает функцию обратного вызова.
+   */
+  protected makeCallback (): void {
+    if (this.callback) {
+      this.callback({
+        type: this.getType(),
+        image: this.getData(),
+        text: this.getText(),
+        classes: this.getClasses(),
+        styles: this.getStyles()
+      })
+    }
   }
 }

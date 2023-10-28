@@ -9,15 +9,15 @@ import { type ImageForOption } from '../typesBasic.ts'
 export class ImagePosition {
   /**
    * Constructor
+   * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
-   * @param coordinator coordinates for margins /<br>координаты для отступов
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly coordinator: ImageCoordinator,
     protected x: ImageForOption,
-    protected y: ImageForOption,
-    protected coordinator?: ImageCoordinator
+    protected y: ImageForOption
   ) {
   }
 
@@ -26,10 +26,7 @@ export class ImagePosition {
    * Возвращает позицию слева.
    */
   getX (): string {
-    if (
-      this.coordinator &&
-      this.coordinator?.is()
-    ) {
+    if (this.coordinator.is()) {
       return `${this.coordinator.getCoordinator()[3] + (this.coordinator.get().width / 2)}%`
     }
 
@@ -41,10 +38,7 @@ export class ImagePosition {
    * Возвращает позицию сверху.
    */
   getY (): string {
-    if (
-      this.coordinator &&
-      this.coordinator?.is()
-    ) {
+    if (this.coordinator.is()) {
       return `${this.coordinator.getCoordinator()[0] + (this.coordinator.get().height / 2)}%`
     }
 
@@ -68,16 +62,6 @@ export class ImagePosition {
    */
   setY (y: ImageForOption): this {
     this.y = y
-    return this
-  }
-
-  /**
-   * Updating the coordinate object.<br>
-   * Обновление объекта координат.
-   * @param coordinator coordinates for margins /<br>координаты для отступов
-   */
-  setCoordinator (coordinator?: ImageCoordinator): this {
-    this.coordinator = coordinator
     return this
   }
 }

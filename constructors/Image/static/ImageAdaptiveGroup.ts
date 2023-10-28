@@ -17,13 +17,24 @@ export class ImageAdaptiveGroup {
   protected static time?: number
 
   /**
+   * Checks if the object is present in the calculation list.<br>
+   * Проверяет, присутствует ли объект в списке вычислений.
+   * @param item object for working with images /<br>объект для работы с изображениями
+   */
+  static is (item: ImageAdaptiveItem): boolean {
+    return this.objects.findIndex(itemValue => itemValue === item) !== -1
+  }
+
+  /**
    * Adding a new element for tracking.<br>
    * Добавление нового элемента для отслеживания.
    * @param item object for working with images /<br>объект для работы с изображениями
    */
   static add (item: ImageAdaptiveItem): void {
-    this.objects.push(item)
-    this.make()
+    if (!this.is(item)) {
+      this.objects.push(item)
+      this.make()
+    }
   }
 
   /**
@@ -40,6 +51,15 @@ export class ImageAdaptiveGroup {
     }
 
     this.make()
+  }
+
+  /**
+   * Update the data.<br>
+   * Обновить данные.
+   */
+  static reset (): void {
+    this.cache = []
+    this.start()
   }
 
   /**
@@ -91,6 +111,7 @@ export class ImageAdaptiveGroup {
         this.makeSize()
         this.makePercent()
         this.makeFactorMax()
+        this.makeCallback()
       }
     } else {
       this.event?.stop()
@@ -171,6 +192,16 @@ export class ImageAdaptiveGroup {
         }
       })
     }
+  }
+
+  /**
+   * Calls the callback function.<br>
+   * Вызывает функцию обратного вызова.
+   */
+  protected static makeCallback (): void {
+    this.objectsAdaptive.forEach(item => {
+      item.makeCallback()
+    })
   }
 
   /**

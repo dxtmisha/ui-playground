@@ -4,18 +4,18 @@ import { Image } from './static/Image.ts'
 
 import { type RefUndefined } from '../../types/ref.ts'
 import {
+  type ConstrClassObject,
+  type ConstrStyles
+} from '../../types/constructor.ts'
+import {
   type ImageCoordinatorItem,
   type ImageElement,
   type ImageEventItem,
+  type ImageEventLoad,
   type ImageForOption,
   type ImageTypeItem,
   type ImageValue
 } from './typesBasic.ts'
-
-type ImageRefItem = Ref<{
-  type: ImageTypeItem
-  data: ImageEventItem
-}>
 
 /**
  * Base class for working with images and icons.<br>
@@ -23,24 +23,29 @@ type ImageRefItem = Ref<{
  */
 export class ImageRef {
   protected readonly item: Image
-
-  protected readonly itemRef: ImageRefItem = ref({
+  protected readonly itemRef: Ref<ImageEventLoad> = ref<ImageEventLoad>({
     type: undefined,
-    data: undefined
+    image: undefined,
+    text: undefined,
+    classes: {},
+    styles: {}
   })
 
   protected readonly type: ComputedRef<ImageTypeItem>
   protected readonly data: ComputedRef<ImageEventItem>
+  protected readonly text: ComputedRef<string | undefined>
+  protected readonly classes: ComputedRef<ConstrClassObject>
+  protected readonly styles: ComputedRef<ConstrStyles>
 
   /**
    * Constructor
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param image values from the image /<br>значения из изображения
    * @param url link to the folder with images /<br>ссылка на папку с изображениями
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
+   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
+   * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
    * @param adaptive activity status /<br>статус активности
    * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
@@ -48,53 +53,41 @@ export class ImageRef {
    * @param height physical height of the object /<br>физическая высота объекта
    */
   constructor (
-    protected element: RefUndefined<ImageElement>,
-    protected image?: RefUndefined<ImageValue>,
-    protected url?: RefUndefined<string>,
-    protected size?: RefUndefined<ImageForOption>,
-    protected coordinator?: RefUndefined<ImageCoordinatorItem>,
-    protected x?: RefUndefined<ImageForOption>,
-    protected y?: RefUndefined<ImageForOption>,
-    protected group?: RefUndefined<string>,
-    protected adaptive?: RefUndefined<boolean>,
-    protected adaptiveAlways?: RefUndefined<boolean>,
-    protected width?: RefUndefined<ImageForOption>,
-    protected height?: RefUndefined<ImageForOption>
+    image: RefUndefined<ImageValue>,
+    url?: RefUndefined<string>,
+    coordinator?: RefUndefined<ImageCoordinatorItem>,
+    x?: RefUndefined<ImageForOption>,
+    y?: RefUndefined<ImageForOption>,
+    size?: RefUndefined<ImageForOption>,
+    element?: RefUndefined<ImageElement>,
+    group?: RefUndefined<string>,
+    adaptive?: RefUndefined<boolean>,
+    adaptiveAlways?: RefUndefined<boolean>,
+    width?: RefUndefined<ImageForOption>,
+    height?: RefUndefined<ImageForOption>
   ) {
     this.item = new Image(
-      element.value,
-      undefined,
+      image?.value,
       url?.value,
-      size?.value,
       coordinator?.value,
       x?.value,
       y?.value,
+      size?.value,
+      element?.value,
       group?.value,
       adaptive?.value,
       adaptiveAlways?.value,
       width?.value,
-      height?.value
+      height?.value,
+      (event: ImageEventLoad) => {
+        this.itemRef.value = event
+      }
     )
 
-    watch(element, value => this.item.setElement(value))
-
-    if (image) {
-      watch(image, async (value) => {
-        await this.item.setImage(value)
-        this.itemRef.value.type = this.item.getType()
-        this.itemRef.value.data = this.item.getData()
-      }, { immediate: true })
-    }
+    watch(image, async value => await this.item.setImage(value))
 
     if (url) {
-      watch(url, async (value) => {
-        await this.item.setUrl(value)
-        this.itemRef.value.data = this.item.getData()
-      })
-    }
-
-    if (size) {
-      watch(size, value => this.item.setSize(value))
+      watch(url, async value => await this.item.setUrl(value))
     }
 
     if (coordinator) {
@@ -107,6 +100,14 @@ export class ImageRef {
 
     if (y) {
       watch(y, value => this.item.setY(value))
+    }
+
+    if (size) {
+      watch(size, value => this.item.setSize(value))
+    }
+
+    if (element) {
+      watch(element, value => this.item.setElement(value))
     }
 
     if (group) {
@@ -130,7 +131,25 @@ export class ImageRef {
     }
 
     this.type = computed(() => this.itemRef.value.type)
-    this.data = computed(() => this.itemRef.value.data)
+    this.data = computed(() => this.itemRef.value.image)
+    this.text = computed(() => this.itemRef.value.text)
+    this.classes = computed(() => this.itemRef.value.classes)
+    this.styles = computed(() => this.itemRef.value.styles)
+  }
+
+  /**
+   * Destructor
+   */
+  destructor (): void {
+    this.item.destructor()
+  }
+
+  /**
+   * Returns an object with data.<br>
+   * Возвращает объект с данными.
+   */
+  getItem (): ImageEventLoad {
+    return this.itemRef.value
   }
 
   /**
@@ -147,5 +166,29 @@ export class ImageRef {
    */
   getData (): ComputedRef<ImageEventItem> {
     return this.data
+  }
+
+  /**
+   * Values for the text.<br>
+   * Значения для текста.
+   */
+  getText (): ComputedRef<string | undefined> {
+    return this.text
+  }
+
+  /**
+   * Values for the class.<br>
+   * Значения для класса.
+   */
+  getClasses (): ComputedRef<ConstrClassObject> {
+    return this.classes
+  }
+
+  /**
+   * Values for the style.<br>
+   * Значения для стиля.
+   */
+  getStyles (): ComputedRef<ConstrStyles> {
+    return this.styles
   }
 }
