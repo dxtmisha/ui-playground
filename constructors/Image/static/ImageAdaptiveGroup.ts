@@ -76,6 +76,8 @@ export class ImageAdaptiveGroup {
     } else if (this.objects.length > 0) {
       this.event = new EventItem(window, ['scroll-sync'], () => this.start())
         .start()
+
+      this.start()
     }
   }
 

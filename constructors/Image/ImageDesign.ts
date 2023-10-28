@@ -120,7 +120,7 @@ export class ImageDesign<
   protected initClasses (): Partial<CLASSES> {
     return {
       main: {
-        ...this.image.getClasses().value
+        ...this.toClassName(this.image.getClasses().value)
       },
       ...{
         // :classes [!] System label / Системная метка

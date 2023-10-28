@@ -38,7 +38,7 @@ export class ImageBackground {
     }
 
     if (this.adaptive.is()) {
-      const size = this.adaptive.getSize()
+      const size = this.adaptive.getBackgroundSize()
 
       if (size) {
         return size.toString()

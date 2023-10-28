@@ -11,7 +11,7 @@
   border-radius: inherit;
 
   transition-property: background-size, filter, opacity, transform;
-  transition-duration: v('d.sys.transition-duration.standard');
+  transition-duration: v('d.sys.transitionDuration.standard');
   transform: none;
 
   &--type {
@@ -29,7 +29,7 @@
     &--file,
     &--image {
       @include disabled($designsClassName) {
-        filter: grayscale(1) opacity(#{var(--sys-color-opacity, v('??color-opacity'))});
+        filter: grayscale(1) opacity(#{var(--sys-color-opacity, v('??colorOpacity', 1))});
       }
     }
   }
@@ -43,7 +43,7 @@
   }
 
   &--disabled {
-    color: rgba(var(--sys-color, v('??color')), var(--sys-color-opacity, v('??color-opacity')));
+    color: rgba(var(--sys-color, v('??color')), var(--sys-color-opacity, v('??colorOpacity', 1)));
   }
 
   &--hide {

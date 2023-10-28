@@ -9,7 +9,7 @@ import {
   VNode
 } from 'vue'
 
-import { forEach, isFilled, isObjectNotArray } from '../../functions/data.ts'
+import { forEach, isFilled, isObject, isObjectNotArray } from '../../functions/data.ts'
 import { toCamelCase } from '../../functions/string.ts'
 import { toArray } from '../../functions/object.ts'
 
@@ -185,6 +185,31 @@ export abstract class DesignConstructorAbstract<
    * Метод для рендеринга.
    */
   protected abstract initRender (): VNode
+
+  /**
+   * Converts the class name to standard for the current component.<br>
+   * Преобразовывает название класса в стандартное для текущего компонента.
+   * @param classes list of classes /<br>список классов
+   */
+  protected toClassName (classes?: ConstrClassObject): ConstrClassObject {
+    if (isObject(classes)) {
+      const data: ConstrClassObject = {}
+
+      forEach(classes, (value, name: string) => {
+        if (name.match(/^\?\?/)) {
+          data[name.replace(/^\?\?/, this.getName())] = value
+        } else if (name.match(/^\?/)) {
+          data[name.replace(/^\?/, this.name[0])] = value
+        } else {
+          data[name] = value
+        }
+      })
+
+      return data
+    }
+
+    return {}
+  }
 
   /**
    * Initialization of a class for working with input components.<br>

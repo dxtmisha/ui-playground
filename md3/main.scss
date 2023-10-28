@@ -9,6 +9,7 @@
 
 @import "./styles/vars";
 @import "./styles/classes";
+@import "./styles/properties";
 
 @include dirInit;
 @include initDesignBody('md3.main');

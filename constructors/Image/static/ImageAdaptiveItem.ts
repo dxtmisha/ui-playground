@@ -62,7 +62,7 @@ export class ImageAdaptiveItem {
     protected width: number = 0,
     protected height: number = 0
   ) {
-    this.update()
+    this.reset()
   }
 
   /**
@@ -326,7 +326,11 @@ export class ImageAdaptiveItem {
    */
   reset (): void {
     if (this.is()) {
-      ImageAdaptiveGroup.reset()
+      if (ImageAdaptiveGroup.is(this)) {
+        ImageAdaptiveGroup.reset()
+      } else {
+        ImageAdaptiveGroup.add(this)
+      }
     }
   }
 
