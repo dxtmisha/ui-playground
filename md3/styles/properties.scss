@@ -339,6 +339,97 @@ $designsProperties: (
           ),
         ),
       ),
+      'icon':(
+        index: 'icon',
+        name: 'd-icon',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'animationType':(
+            index: 'animationType',
+            name: '&--animationType',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'animationShow':(
+            index: 'animationShow',
+            name: '&--animationShow',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'overlay':(
+            index: 'overlay',
+            name: '&--overlay',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dynamic':(
+            index: 'dynamic',
+            name: '&--dynamic',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'start':(
+            index: 'start',
+            name: '&--start',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'end':(
+            index: 'end',
+            name: '&--end',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'high':(
+            index: 'high',
+            name: '&--high',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'image':(
         index: 'image',
         name: 'd-image',
@@ -6736,6 +6827,457 @@ $designsProperties: (
           ),
         ),
       ),
+      'icon':(
+        index: 'icon',
+        name: 'md3-icon',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'animationType':(
+            index: 'animationType',
+            name: '&--animationType',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'animationShow':(
+            index: 'animationShow',
+            name: '&--animationShow',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'overlay':(
+            index: 'overlay',
+            name: '&--overlay',
+            type: 'state',
+            value: (
+              'backgroundOpacity':(
+                index: 'backgroundOpacity',
+                name: 'background-opacity',
+                type: 'property',
+                value: 'var(--md3-sys-opacity-016)',
+              ),
+            ),
+          ),
+          'dynamic':(
+            index: 'dynamic',
+            name: '&--dynamic',
+            type: 'state',
+            value: (
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--md3-sys-opacity-008)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--md3-sys-opacity-012)',
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--md3-sys-opacity-016)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'start':(
+            index: 'start',
+            name: '&--start',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'end':(
+            index: 'end',
+            name: '&--end',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'high':(
+            index: 'high',
+            name: '&--high',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'rounded':(
+            index: 'rounded',
+            name: '&--rounded',
+            type: 'state',
+            value: (
+              'none':(
+                index: 'none',
+                name: '&--none',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-none)',
+                  ),
+                ),
+              ),
+              'standard':(
+                index: 'standard',
+                name: '&--standard',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-standard)',
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-sm)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-md)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-lg)',
+                  ),
+                ),
+              ),
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-xl)',
+                  ),
+                ),
+              ),
+              '2xl':(
+                index: '2xl',
+                name: '&--2xl',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-2xl)',
+                  ),
+                ),
+              ),
+              'full':(
+                index: 'full',
+                name: '&--full',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-full)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              'xs':(
+                index: 'xs',
+                name: '&--xs',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--md3-icon-width',
+                    type: 'var',
+                    value: 'var(--md3-ref-spacing-6)',
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--md3-icon-width',
+                    type: 'var',
+                    value: 'var(--md3-ref-spacing-8)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--md3-icon-width',
+                    type: 'var',
+                    value: 'var(--md3-ref-spacing-10)',
+                  ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-family-roboto)',
+                  ),
+                  'fontSize':(
+                    index: 'fontSize',
+                    name: 'font-size',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-size-headline-md)',
+                  ),
+                  'fontWeight':(
+                    index: 'fontWeight',
+                    name: 'font-weight',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-weight-normal)',
+                  ),
+                  'lineHeight':(
+                    index: 'lineHeight',
+                    name: 'line-height',
+                    type: 'property',
+                    value: 'var(--md3-ref-lineHeight-headline-md)',
+                  ),
+                  'letterSpacing':(
+                    index: 'letterSpacing',
+                    name: 'letter-spacing',
+                    type: 'property',
+                    value: 'var(--md3-ref-letterSpacing-headline-md)',
+                  ),
+                  'textTransform':(
+                    index: 'textTransform',
+                    name: 'text-transform',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-none)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--md3-icon-width',
+                    type: 'var',
+                    value: 'var(--md3-ref-spacing-14)',
+                  ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-family-roboto)',
+                  ),
+                  'fontSize':(
+                    index: 'fontSize',
+                    name: 'font-size',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-size-headline-lg)',
+                  ),
+                  'fontWeight':(
+                    index: 'fontWeight',
+                    name: 'font-weight',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-weight-normal)',
+                  ),
+                  'lineHeight':(
+                    index: 'lineHeight',
+                    name: 'line-height',
+                    type: 'property',
+                    value: 'var(--md3-ref-lineHeight-headline-lg)',
+                  ),
+                  'letterSpacing':(
+                    index: 'letterSpacing',
+                    name: 'letter-spacing',
+                    type: 'property',
+                    value: 'var(--md3-ref-letterSpacing-headline-lg)',
+                  ),
+                  'textTransform':(
+                    index: 'textTransform',
+                    name: 'text-transform',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-none)',
+                  ),
+                ),
+              ),
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--md3-icon-width',
+                    type: 'var',
+                    value: 'var(--md3-ref-spacing-28)',
+                  ),
+                  'aspectRatioWidth':(
+                    index: 'aspectRatioWidth',
+                    name: 'aspect-ratio-width',
+                    type: 'property',
+                    value: 'calc(28/16)',
+                  ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-family-roboto)',
+                  ),
+                  'fontSize':(
+                    index: 'fontSize',
+                    name: 'font-size',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-size-display-sm)',
+                  ),
+                  'fontWeight':(
+                    index: 'fontWeight',
+                    name: 'font-weight',
+                    type: 'property',
+                    value: 'var(--md3-ref-font-weight-normal)',
+                  ),
+                  'lineHeight':(
+                    index: 'lineHeight',
+                    name: 'line-height',
+                    type: 'property',
+                    value: 'var(--md3-ref-lineHeight-display-sm)',
+                  ),
+                  'letterSpacing':(
+                    index: 'letterSpacing',
+                    name: 'letter-spacing',
+                    type: 'property',
+                    value: 'var(--md3-ref-letterSpacing-display-sm)',
+                  ),
+                  'textTransform':(
+                    index: 'textTransform',
+                    name: 'text-transform',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--md3-sys-rounded-none)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       'image':(
         index: 'image',
         name: 'md3-image',
@@ -8273,387 +8815,6 @@ $designsProperties: (
                 name: 'color',
                 type: 'property',
                 value: 'var(--md3-sys-palette-primary)',
-              ),
-            ),
-          ),
-        ),
-      ),
-      'icon':(
-        index: 'icon',
-        name: 'md3-icon',
-        type: 'component',
-        value: (
-          'rounded':(
-            index: 'rounded',
-            name: '&--rounded',
-            type: 'state',
-            value: (
-              'none':(
-                index: 'none',
-                name: '&--none',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-none)',
-                  ),
-                ),
-              ),
-              'standard':(
-                index: 'standard',
-                name: '&--standard',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-standard)',
-                  ),
-                ),
-              ),
-              'sm':(
-                index: 'sm',
-                name: '&--sm',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-sm)',
-                  ),
-                ),
-              ),
-              'md':(
-                index: 'md',
-                name: '&--md',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-md)',
-                  ),
-                ),
-              ),
-              'lg':(
-                index: 'lg',
-                name: '&--lg',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-lg)',
-                  ),
-                ),
-              ),
-              'xl':(
-                index: 'xl',
-                name: '&--xl',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-xl)',
-                  ),
-                ),
-              ),
-              '2xl':(
-                index: '2xl',
-                name: '&--2xl',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-2xl)',
-                  ),
-                ),
-              ),
-              'full':(
-                index: 'full',
-                name: '&--full',
-                type: 'state',
-                value: (
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-full)',
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'size':(
-            index: 'size',
-            name: '&--size',
-            type: 'state',
-            value: (
-              'xs':(
-                index: 'xs',
-                name: '&--xs',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: 'width',
-                    type: 'property',
-                    value: 'var(--md3-ref-spacing-6)',
-                  ),
-                ),
-              ),
-              'sm':(
-                index: 'sm',
-                name: '&--sm',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: 'width',
-                    type: 'property',
-                    value: 'var(--md3-ref-spacing-8)',
-                  ),
-                ),
-              ),
-              'md':(
-                index: 'md',
-                name: '&--md',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: 'width',
-                    type: 'property',
-                    value: 'var(--md3-ref-spacing-10)',
-                  ),
-                  'fontFamily':(
-                    index: 'fontFamily',
-                    name: 'font-family',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-family-roboto)',
-                  ),
-                  'fontSize':(
-                    index: 'fontSize',
-                    name: 'font-size',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-size-headline-md)',
-                  ),
-                  'fontWeight':(
-                    index: 'fontWeight',
-                    name: 'font-weight',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-weight-normal)',
-                  ),
-                  'lineHeight':(
-                    index: 'lineHeight',
-                    name: 'line-height',
-                    type: 'property',
-                    value: 'var(--md3-ref-lineHeight-headline-md)',
-                  ),
-                  'letterSpacing':(
-                    index: 'letterSpacing',
-                    name: 'letter-spacing',
-                    type: 'property',
-                    value: 'var(--md3-ref-letterSpacing-headline-md)',
-                  ),
-                  'textTransform':(
-                    index: 'textTransform',
-                    name: 'text-transform',
-                    type: 'property',
-                    value: 'none',
-                  ),
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-none)',
-                  ),
-                ),
-              ),
-              'lg':(
-                index: 'lg',
-                name: '&--lg',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: 'width',
-                    type: 'property',
-                    value: 'var(--md3-ref-spacing-14)',
-                  ),
-                  'fontFamily':(
-                    index: 'fontFamily',
-                    name: 'font-family',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-family-roboto)',
-                  ),
-                  'fontSize':(
-                    index: 'fontSize',
-                    name: 'font-size',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-size-headline-lg)',
-                  ),
-                  'fontWeight':(
-                    index: 'fontWeight',
-                    name: 'font-weight',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-weight-normal)',
-                  ),
-                  'lineHeight':(
-                    index: 'lineHeight',
-                    name: 'line-height',
-                    type: 'property',
-                    value: 'var(--md3-ref-lineHeight-headline-lg)',
-                  ),
-                  'letterSpacing':(
-                    index: 'letterSpacing',
-                    name: 'letter-spacing',
-                    type: 'property',
-                    value: 'var(--md3-ref-letterSpacing-headline-lg)',
-                  ),
-                  'textTransform':(
-                    index: 'textTransform',
-                    name: 'text-transform',
-                    type: 'property',
-                    value: 'none',
-                  ),
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-none)',
-                  ),
-                ),
-              ),
-              'xl':(
-                index: 'xl',
-                name: '&--xl',
-                type: 'state',
-                value: (
-                  'aspectRatioWidth':(
-                    index: 'aspectRatioWidth',
-                    name: 'aspect-ratio-width',
-                    type: 'property',
-                    value: 'calc(28/16)',
-                  ),
-                  'width':(
-                    index: 'width',
-                    name: 'width',
-                    type: 'property',
-                    value: 'var(--md3-ref-spacing-28)',
-                  ),
-                  'fontFamily':(
-                    index: 'fontFamily',
-                    name: 'font-family',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-family-roboto)',
-                  ),
-                  'fontSize':(
-                    index: 'fontSize',
-                    name: 'font-size',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-size-display-sm)',
-                  ),
-                  'fontWeight':(
-                    index: 'fontWeight',
-                    name: 'font-weight',
-                    type: 'property',
-                    value: 'var(--md3-ref-font-weight-normal)',
-                  ),
-                  'lineHeight':(
-                    index: 'lineHeight',
-                    name: 'line-height',
-                    type: 'property',
-                    value: 'var(--md3-ref-lineHeight-display-sm)',
-                  ),
-                  'letterSpacing':(
-                    index: 'letterSpacing',
-                    name: 'letter-spacing',
-                    type: 'property',
-                    value: 'var(--md3-ref-letterSpacing-display-sm)',
-                  ),
-                  'textTransform':(
-                    index: 'textTransform',
-                    name: 'text-transform',
-                    type: 'property',
-                    value: 'none',
-                  ),
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'var(--md3-sys-rounded-none)',
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'overlay':(
-            index: 'overlay',
-            name: '&--overlay',
-            type: 'state',
-            value: (
-              'backgroundOpacity':(
-                index: 'backgroundOpacity',
-                name: 'background-opacity',
-                type: 'property',
-                value: 'var(--md3-sys-opacity-016)',
-              ),
-            ),
-          ),
-          'dynamic':(
-            index: 'dynamic',
-            name: '&--dynamic',
-            type: 'state',
-            value: (
-              'hover':(
-                index: 'hover',
-                name: 'hover',
-                type: 'selector',
-                value: (
-                  'gradientOpacity':(
-                    index: 'gradientOpacity',
-                    name: 'gradient-opacity',
-                    type: 'property',
-                    value: 'var(--md3-sys-opacity-008)',
-                  ),
-                ),
-              ),
-              'active':(
-                index: 'active',
-                name: 'active',
-                type: 'selector',
-                value: (
-                  'gradientOpacity':(
-                    index: 'gradientOpacity',
-                    name: 'gradient-opacity',
-                    type: 'property',
-                    value: 'var(--md3-sys-opacity-012)',
-                  ),
-                ),
-              ),
-              'focus':(
-                index: 'focus',
-                name: 'focus',
-                type: 'selector',
-                value: (
-                  'gradientOpacity':(
-                    index: 'gradientOpacity',
-                    name: 'gradient-opacity',
-                    type: 'property',
-                    value: 'var(--md3-sys-opacity-016)',
-                  ),
-                ),
               ),
             ),
           ),

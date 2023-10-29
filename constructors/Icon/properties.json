@@ -1,0 +1,40 @@
+{
+  "width": {
+    "_type": "var"
+  },
+  "turn": {
+    "_type": "state"
+  },
+  "disabled": {
+    "_type": "state"
+  },
+  "hide": {
+    "_type": "state"
+  },
+  "animation-type": {
+    "~type1": {},
+    "~type2": {},
+    "_type": "state",
+    "_default": "type1"
+  },
+  "animation-show": {
+    "_type": "state"
+  },
+  "overlay": {
+    "_type": "state"
+  },
+  "dynamic": {
+    "_type": "state"
+  },
+  "start": {
+    "_type": "state",
+    "_category": "order"
+  },
+  "end": {
+    "_type": "state",
+    "_category": "order"
+  },
+  "high": {
+    "_type": "state"
+  }
+}

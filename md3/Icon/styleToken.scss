@@ -1,0 +1,109 @@
+@import "../../styles/all";
+
+@mixin mixinIconToken {
+  // :style [!] System label / Системная метка
+  
+  &--overlay {
+    @include backgroundOpacity(var(--md3-sys-opacity-016));
+  }
+  
+  &--dynamic {
+    @include hover('.md3-icon') {
+      @include gradientOpacity(var(--md3-sys-opacity-008));
+    }
+    
+    @include active('.md3-icon') {
+      @include gradientOpacity(var(--md3-sys-opacity-012));
+    }
+    
+    @include focus('.md3-icon') {
+      @include gradientOpacity(var(--md3-sys-opacity-016));
+    }
+  }
+  
+  &--rounded {
+    &--none {
+      border-radius: var(--md3-sys-rounded-none);
+    }
+    
+    &--standard {
+      border-radius: var(--md3-sys-rounded-standard);
+    }
+    
+    &--sm {
+      border-radius: var(--md3-sys-rounded-sm);
+    }
+    
+    &--md {
+      border-radius: var(--md3-sys-rounded-md);
+    }
+    
+    &--lg {
+      border-radius: var(--md3-sys-rounded-lg);
+    }
+    
+    &--xl {
+      border-radius: var(--md3-sys-rounded-xl);
+    }
+    
+    &--2xl {
+      border-radius: var(--md3-sys-rounded-2xl);
+    }
+    
+    &--full {
+      border-radius: var(--md3-sys-rounded-full);
+    }
+  }
+  
+  &--size {
+    &--xs {
+      --md3-icon-width: var(--md3-ref-spacing-6);
+    }
+    
+    &--sm {
+      --md3-icon-width: var(--md3-ref-spacing-8);
+    }
+    
+    &--md {
+      --md3-icon-width: var(--md3-ref-spacing-10);
+      
+      font-family: var(--md3-ref-font-family-roboto);
+      @include fontSize(var(--md3-ref-font-size-headline-md));
+      font-weight: var(--md3-ref-font-weight-normal);
+      @include lineHeight(var(--md3-ref-lineHeight-headline-md));
+      letter-spacing: var(--md3-ref-letterSpacing-headline-md);
+      text-transform: none;
+      
+      border-radius: var(--md3-sys-rounded-none);
+    }
+    
+    &--lg {
+      --md3-icon-width: var(--md3-ref-spacing-14);
+      
+      font-family: var(--md3-ref-font-family-roboto);
+      @include fontSize(var(--md3-ref-font-size-headline-lg));
+      font-weight: var(--md3-ref-font-weight-normal);
+      @include lineHeight(var(--md3-ref-lineHeight-headline-lg));
+      letter-spacing: var(--md3-ref-letterSpacing-headline-lg);
+      text-transform: none;
+      
+      border-radius: var(--md3-sys-rounded-none);
+    }
+    
+    &--xl {
+      --md3-icon-width: var(--md3-ref-spacing-28);
+      
+      @include aspectRatioWidth(calc(28/16));
+      
+      font-family: var(--md3-ref-font-family-roboto);
+      @include fontSize(var(--md3-ref-font-size-display-sm));
+      font-weight: var(--md3-ref-font-weight-normal);
+      @include lineHeight(var(--md3-ref-lineHeight-display-sm));
+      letter-spacing: var(--md3-ref-letterSpacing-display-sm);
+      text-transform: none;
+      
+      border-radius: var(--md3-sys-rounded-none);
+    }
+  }
+  // :style [!] System label / Системная метка
+}

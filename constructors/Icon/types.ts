@@ -1,50 +1,55 @@
-import { ConstrClass } from '../../../types/constructor.ts'
+import { type ComputedRef } from 'vue'
+import { type ConstrClass } from '../../types/constructor.ts'
+
+import { type ImageEmits } from '../Image/types.ts'
+import { type IconEventLoad } from './typesBasic.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
-export type ConstructorsComponents = {
-  // componentName: object
+export type IconComponents = {
+  image: object
 }
 
 /**
  * Type describing available events.<br>
  * Тип, описывающий доступные события.
  */
-export type ConstructorsEmits = {
-  // load: [value: string]
-}
+export type IconEmits = ImageEmits
 
 /**
  * Interface for describing what property setup returns.<br>
  * Интерфейс для описания, какое свойство возвращает setup.
  */
-export type ConstructorsSetup = {
-  // TODO
+export type IconSetup = {
+  iconBind: ComputedRef<IconEventLoad['iconBind']>
+  iconActiveBind: ComputedRef<IconEventLoad['iconActiveBind']>
+
+  isActive: ComputedRef<boolean>
 }
 
 /**
  * Type describing available properties.<br>
  * Тип, описывающий доступные свойства.
  */
-export type ConstructorsExpose = {
-  // TODO
+export type IconExpose = {
+  isActive: ComputedRef<boolean>
 }
 
 /**
  * Type describing available slots.<br>
  * Тип, описывающий доступные слоты.
  */
-export type ConstructorsSlots = {
-  // default? (props: any): any
+export type IconSlots = {
+  default? (props: any): any
 }
 
 /**
  * Type describing subclasses.<br>
  * Тип, описывающий подклассы.
  */
-export type ConstructorsClasses = {
+export type IconClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
   // :classes [!] System label / Системная метка

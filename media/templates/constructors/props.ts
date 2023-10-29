@@ -1,4 +1,4 @@
-// :constructors.once import { PropType } from 'vue'
+// :constructors.once import { type PropType } from 'vue'
 
 /**
  * Type describing incoming properties.<br>
@@ -6,6 +6,7 @@
  */
 export type ConstructorsProps = {
   // TODO: Location for a custom property / Место для пользовательского свойства
+  // Tokens
   // :type [!] System label / Системная метка
   // :type [!] System label / Системная метка
 }

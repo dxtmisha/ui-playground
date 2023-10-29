@@ -6,12 +6,14 @@ import {
   type ToRefs,
   useAttrs,
   useSlots,
-  VNode
+  type VNode
 } from 'vue'
 
-import { forEach, isFilled, isObject, isObjectNotArray } from '../../functions/data.ts'
+import { forEach, isObject, isObjectNotArray } from '../../functions/data.ts'
 import { toCamelCase } from '../../functions/string.ts'
 import { toArray } from '../../functions/object.ts'
+
+import { DesignComponents } from './DesignComponents.ts'
 
 import { type RefType } from '../../types/ref.ts'
 import {
@@ -19,7 +21,6 @@ import {
   type ConstrClasses,
   type ConstrClassObject,
   type ConstrComponent,
-  type ConstrComponentMod,
   type ConstrEmit,
   type ConstrItem,
   type ConstrOptions,
@@ -45,8 +46,7 @@ export abstract class DesignConstructorAbstract<
   protected readonly element = ref<E | undefined>()
   protected readonly refs: ToRefs<P>
 
-  protected readonly components?: COMP
-  protected readonly modification?: ConstrComponentMod<P>
+  protected readonly components: DesignComponents<COMP, P>
   protected readonly emits?: ConstrEmit<EMITS>
 
   protected readonly classes?: RefType<ConstrClasses>
@@ -75,8 +75,8 @@ export abstract class DesignConstructorAbstract<
     this.name = this.initName(name)
     this.refs = this.props ? toRefs(this.props) : {} as ToRefs<P>
 
-    this.components = options?.components
-    this.modification = options?.modification
+    this.components = new DesignComponents(options?.components, options?.compMod)
+
     this.emits = options?.emits
     this.classes = options?.classes
     this.styles = options?.styles
@@ -87,7 +87,6 @@ export abstract class DesignConstructorAbstract<
 
   protected init (): this {
     this.makeOptions()
-    this.makeComponents()
 
     this.classesSub = computed(() => this.initClasses())
     this.stylesSub = computed(() => this.initStyles())
@@ -119,11 +118,7 @@ export abstract class DesignConstructorAbstract<
    * @param name list of class names by levels /<br>список названий классов по уровням
    */
   getSubClass (name: string | string[]): string {
-    const newName = typeof name === 'string'
-      ? name
-      : toArray(name).join('__')
-
-    return `${this.getName()}__${newName}`
+    return `${this.getName()}__${toArray(name).join('__')}`
   }
 
   /**
@@ -187,6 +182,36 @@ export abstract class DesignConstructorAbstract<
   protected abstract initRender (): VNode
 
   /**
+   * Initializes the slot.<br>
+   * Инициализирует слот.
+   * @param name slot name /<br>название слота
+   * @param children if you pass this element, the slot will be added to it /<br>
+   * если передать этот элемент, то слот добавится в него
+   * @param props property for the slot /<br>свойство для слота
+   */
+  protected initSlot<K extends keyof SLOTS> (
+    name: K,
+    children?: any[],
+    props: ConstrItem = {}
+  ): VNode | undefined {
+    if (
+      this.slots &&
+      this.slots?.[name] &&
+      typeof this.slots[name] === 'function'
+    ) {
+      const slot = (this.slots[name] as ((props?: ConstrItem) => VNode))(props)
+
+      if (children) {
+        children.push(slot)
+      }
+
+      return slot
+    }
+
+    return undefined
+  }
+
+  /**
    * Converts the class name to standard for the current component.<br>
    * Преобразовывает название класса в стандартное для текущего компонента.
    * @param classes list of classes /<br>список классов
@@ -209,18 +234,6 @@ export abstract class DesignConstructorAbstract<
     }
 
     return {}
-  }
-
-  /**
-   * Initialization of a class for working with input components.<br>
-   * Инициализация класса для работы с входными компонентами.
-   */
-  private makeComponents (): this {
-    if (isFilled(this.components)) {
-      // TODO: в разработке
-    }
-
-    return this
   }
 
   /**

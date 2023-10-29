@@ -14,6 +14,7 @@ import {
   type DesignStructureList,
   type DesignStructureStateList
 } from '../../../types/design.ts'
+import { toCamelCase } from '../../../functions/string.ts'
 
 /**
  * List available for addition to props.<br>
@@ -290,10 +291,12 @@ export class DesignStructureRead extends DesignStructureItemAbstract<DesignStruc
   protected toName (item: PropertyItem, index: string): string {
     const prop = item?.[PropertyKey.prop]
 
-    return (typeof prop === 'string' && prop) ||
+    return toCamelCase(
+      (typeof prop === 'string' && prop) ||
       item?.[PropertyKey.rename] ||
       item?.[PropertyKey.index] ||
       index
+    )
   }
 
   /**

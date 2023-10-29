@@ -32,7 +32,7 @@ export type ConstrOptions<
   P extends ConstrItem
 > = {
   components?: COMP
-  modification?: ConstrComponentMod<P>
+  compMod?: ConstrComponentMod<P>
   emits?: ConstrEmit<EMITS>
   classes?: RefType<ConstrClasses>
   styles?: RefType<ConstrStyles>

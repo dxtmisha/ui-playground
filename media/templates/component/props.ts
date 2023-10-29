@@ -1,4 +1,4 @@
-// :component.once import { PropType } from 'vue'
+// :component.once import { type PropType } from 'vue'
 
 // :component.once import {
 // :component.once   ComponentProps,
