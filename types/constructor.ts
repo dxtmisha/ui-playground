@@ -9,7 +9,9 @@ import {
 export type ConstrItem = Record<string, any>
 
 export type ConstrComponent = Record<string, any>
-export type ConstrComponentMod<P extends ConstrItem> = Record<keyof P, RefOrNormal<any>>
+export type ConstrComponentMod<P extends ConstrItem> = {
+  [K in keyof P]?: RefOrNormal<P[K]>
+}
 
 export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 export type ConstrEmitItem<T extends ConstrItem> = T[keyof T]

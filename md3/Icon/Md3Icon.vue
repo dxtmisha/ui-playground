@@ -56,6 +56,11 @@ const design = new IconDesign(
     components: {
       image: Md3Image
     },
+    compMod: {
+      icon: {
+        adaptive: true
+      }
+    },
     emits,
     classes: classesToken,
     styles: stylesToken
