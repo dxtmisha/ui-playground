@@ -4,20 +4,20 @@
   // :style [!] System label / Системная метка
   
   &--overlay {
-    @include backgroundOpacity(var(--md3-sys-opacity-016));
+    @include backgroundOpacity(#{var(--md3-sys-opacity-016)});
   }
   
   &--dynamic {
     @include hover('.md3-icon') {
-      @include gradientOpacity(var(--md3-sys-opacity-008));
+      @include gradientOpacity(#{var(--md3-sys-opacity-008)});
     }
     
     @include active('.md3-icon') {
-      @include gradientOpacity(var(--md3-sys-opacity-012));
+      @include gradientOpacity(#{var(--md3-sys-opacity-012)});
     }
     
     @include focus('.md3-icon') {
-      @include gradientOpacity(var(--md3-sys-opacity-016));
+      @include gradientOpacity(#{var(--md3-sys-opacity-016)});
     }
   }
   
@@ -68,9 +68,9 @@
       --md3-icon-width: var(--md3-ref-spacing-10);
       
       font-family: var(--md3-ref-font-family-roboto);
-      @include fontSize(var(--md3-ref-font-size-headline-md));
+      @include fontSize(#{var(--md3-ref-font-size-headline-md)});
       font-weight: var(--md3-ref-font-weight-normal);
-      @include lineHeight(var(--md3-ref-lineHeight-headline-md));
+      @include lineHeight(#{var(--md3-ref-lineHeight-headline-md)});
       letter-spacing: var(--md3-ref-letterSpacing-headline-md);
       text-transform: none;
       
@@ -81,9 +81,9 @@
       --md3-icon-width: var(--md3-ref-spacing-14);
       
       font-family: var(--md3-ref-font-family-roboto);
-      @include fontSize(var(--md3-ref-font-size-headline-lg));
+      @include fontSize(#{var(--md3-ref-font-size-headline-lg)});
       font-weight: var(--md3-ref-font-weight-normal);
-      @include lineHeight(var(--md3-ref-lineHeight-headline-lg));
+      @include lineHeight(#{var(--md3-ref-lineHeight-headline-lg)});
       letter-spacing: var(--md3-ref-letterSpacing-headline-lg);
       text-transform: none;
       
@@ -93,12 +93,12 @@
     &--xl {
       --md3-icon-width: var(--md3-ref-spacing-28);
       
-      @include aspectRatioWidth(calc(28/16));
+      @include aspectRatioWidth(#{28/16});
       
       font-family: var(--md3-ref-font-family-roboto);
-      @include fontSize(var(--md3-ref-font-size-display-sm));
+      @include fontSize(#{var(--md3-ref-font-size-display-sm)});
       font-weight: var(--md3-ref-font-weight-normal);
-      @include lineHeight(var(--md3-ref-lineHeight-display-sm));
+      @include lineHeight(#{var(--md3-ref-lineHeight-display-sm)});
       letter-spacing: var(--md3-ref-letterSpacing-display-sm);
       text-transform: none;
       

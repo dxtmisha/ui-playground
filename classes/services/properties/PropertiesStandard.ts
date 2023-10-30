@@ -126,8 +126,10 @@ export class PropertiesStandard {
     }
 
     if (
-      typeof item.value === 'string' &&
-      PropertiesValues.isFull(item.value)
+      typeof item.value === 'string' && (
+        PropertiesValues.isFull(item.value) ||
+        name.match(/aspect/i)
+      )
     ) {
       item[PropertyKey.fullValue] = true
     }

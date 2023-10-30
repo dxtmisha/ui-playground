@@ -15,6 +15,7 @@ export class Icon {
     protected readonly classIconActive: string = 'is-icon-active',
     protected readonly callback?: (event: IconEventLoad) => void
   ) {
+    this.makeCallback()
   }
 
   isActive (): boolean {

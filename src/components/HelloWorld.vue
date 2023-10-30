@@ -2,19 +2,27 @@
 import { ref } from 'vue'
 
 import Md3Image from '../../md3/Image/Md3Image.vue'
+import Md3Icon from '../../md3/Icon/Md3Icon.vue'
 
 import s32 from './../assets/Galaxy_S23p.png'
 import fold from './../assets/Galaxy_Z_Fold5.png'
 import flip from './../assets/Galaxy_Z_Flip5.png'
 import pad from './../assets/pad.png'
 
+import { type ImageEventLoad } from '../../constructors/Image/typesBasic.ts'
+
 const value = ref('edit')
+const active = ref(false)
 const adaptive = ref(false)
 const turn = ref(false)
 const disabled = ref(false)
+const onLoad = (event: ImageEventLoad) => {
+  console.log('event', event)
+}
 
 setInterval(() => {
   value.value = '#ff0000'
+  active.value = !active.value
   adaptive.value = !adaptive.value
   turn.value = !turn.value
   disabled.value = !disabled.value
@@ -24,6 +32,22 @@ setInterval(() => {
 
 <template>
   <div>
+    <div style="display: flex;">
+      <md3-icon :icon="value" />
+      <md3-icon icon="face" :icon-active="value" :active="active" @load="onLoad" />
+      <md3-icon icon="face" :icon-active="value" :disabled="disabled" @load="onLoad" />
+      <md3-icon
+        icon="face"
+        icon-active="https://drscdn.500px.org/photo/295251975/q%3D50_w%3D1000_of%3D1/v2?sig=9ca0a690bd15614f702b389a6c121c6d796ece98b6086cee5d50ca1f9f23dc9a"
+        :active="active"
+        :turn="turn"
+        @load="onLoad"
+      />
+      <md3-icon />
+      <md3-icon>
+        <template v-slot:default>DE</template>
+      </md3-icon>
+    </div>
     <div style="display: flex;">
       <div style="position: relative; width: 160px; height: 160px;">
         <md3-image value="@vue" :turn="turn" />
@@ -44,6 +68,7 @@ setInterval(() => {
         <md3-image
           disabled
           value="https://drscdn.500px.org/photo/295251975/q%3D50_w%3D1000_of%3D1/v2?sig=9ca0a690bd15614f702b389a6c121c6d796ece98b6086cee5d50ca1f9f23dc9a"
+          @load="onLoad"
         />
       </div>
     </div>

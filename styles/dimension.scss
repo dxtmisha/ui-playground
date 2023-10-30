@@ -50,14 +50,14 @@
   }
 }
 
-@mixin aspectRatioByWidth($value) {
+@mixin aspectRatioWidth($value) {
   @include aspectRatio($value) {
     height: calc(var(--sys-width) * #{getHeightByRatio($value)} / #{getWidthByRatio($value)});
     @content;
   }
 }
 
-@mixin aspectRatioByHeight($value) {
+@mixin aspectRatioHeight($value) {
   @include aspectRatio($value) {
     width: calc(var(--sys-height) * #{getWidthByRatio($value)} / #{getHeightByRatio($value)});
     @content;

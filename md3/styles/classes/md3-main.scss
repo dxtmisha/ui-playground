@@ -2,13 +2,13 @@
 
 .md3-main {
   font-family: var(--md3-ref-font-family-roboto);
-  @include fontSize(var(--md3-ref-font-size-lg));
+  @include fontSize(#{var(--md3-ref-font-size-lg)});
   font-weight: var(--md3-ref-font-weight-normal);
-  @include lineHeight(var(--md3-ref-lineHeight-lg));
+  @include lineHeight(#{var(--md3-ref-lineHeight-lg)});
   letter-spacing: var(--md3-ref-letterSpacing-xl);
   text-transform: none;
   
-  @include color(var(--md3-sys-palette-onSurface));
+  @include color(#{var(--md3-sys-palette-onSurface)});
   
   background: var(--md3-ref-background-0);
 }

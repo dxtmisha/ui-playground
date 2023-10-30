@@ -34,7 +34,7 @@ export function isDifferent<T> (
  * @param array array for checking /<br>массив для проверки
  * @param value value to be checked /<br>проверяемое значение
  */
-export function isArray<T> (array: T[], value: T): boolean {
+export function inArray<T> (array: T[], value: T): boolean {
   return array.indexOf(value) !== -1
 }
 

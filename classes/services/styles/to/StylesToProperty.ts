@@ -135,7 +135,7 @@ export class StylesToProperty extends StylesToAbstract {
       this.item?.[PropertyKey.modification] !== false &&
       TYPES.indexOf(name) !== -1
     ) {
-      return `@include ${toCamelCase(name)}(${value});`
+      return `@include ${toCamelCase(name)}(#{${value}});`
     }
 
     return `${name}: ${value};`

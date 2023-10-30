@@ -4,12 +4,7 @@ import { toKebabCase } from '../../../../functions/string.ts'
 import { PropertiesTypes } from '../PropertiesTypes.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-import {
-  PropertyCategory,
-  type PropertyItem,
-  PropertyKey,
-  PropertyType
-} from '../../../../types/property.ts'
+import { PropertyCategory, type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
 
 import { css } from '../../../../media/propertiesListCss.ts'
 import { cssSelector } from '../../../../media/propertiesListCssSelector.ts'

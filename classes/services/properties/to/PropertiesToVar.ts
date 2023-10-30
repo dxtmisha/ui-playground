@@ -37,7 +37,7 @@ export class PropertiesToVar extends PropertiesToAbstract {
 
         item[PropertyKey.name] = this.getName(property)
         item[PropertyKey.css] = this.toValue(
-          this.toCalculator(fullValue), item?.[PropertyKey.default]
+          this.toCalculator(fullValue, item?.[PropertyKey.fullValue]), item?.[PropertyKey.default]
         )
 
         if (item?.[PropertyKey.important]) {
@@ -75,9 +75,11 @@ export class PropertiesToVar extends PropertiesToAbstract {
    * Checks if the value has a mathematical expression.<br>
    * Проверяет, есть ли у значения математическое выражение.
    * @param value values to process /<br>значения для преобразования
+   * @param full the expression is complete /<br>выражение является полным
    */
-  protected toCalculator (value: string): string {
+  protected toCalculator (value: string, full?: boolean): string {
     if (
+      !full &&
       value.match(/([+*/]|(?<![\w-])-(?![\w-]))/ig) &&
       value.match(/calc/ig) === null
     ) {

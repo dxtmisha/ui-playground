@@ -2,7 +2,7 @@
 // :component.once import { computed } from 'vue'
 
 // :component.once import { isFilled } from '../../functions/data.ts'
-// :component.once import { isArray } from '../../functions/object.ts'
+// :component.once import { inArray } from '../../functions/object.ts'
 
 // :component.once import { ComponentDesign } from '../../constructors/Component/ComponentDesign'
 

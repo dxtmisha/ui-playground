@@ -116,9 +116,9 @@ $designsAnimate: false !default;
   } @else if ($name == 'aspect-ratio') {
     @include aspectRatio(#{$value});
   } @else if ($name == 'aspect-ratio-width') {
-    @include aspectRatioByWidth(#{$value});
+    @include aspectRatioWidth(#{$value});
   } @else if ($name == 'aspect-ratio-height') {
-    @include aspectRatioByHeight(#{$value});
+    @include aspectRatioHeight(#{$value});
   } @else if ($name == 'squared') {
     @include squared(#{$value});
   } @else if ($name == 'circle') {

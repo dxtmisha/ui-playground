@@ -551,11 +551,11 @@ export class DesignReplace {
       }
 
       if ('style' in item && item.style) {
-        templates.push(`'${newParent}--${KEY_CUSTOM}': isFilled(${index}) && !isArray(propsValues.${name}, ${index})`)
+        templates.push(`'${newParent}--${KEY_CUSTOM}': isFilled(${index}) && !inArray(propsValues.${name}, ${index})`)
       }
 
       if (this.isString(value)) {
-        templates.push(`[\`${newParent}--\${${index}}\`]: isArray(propsValues.${name}, ${index})`)
+        templates.push(`[\`${newParent}--\${${index}}\`]: inArray(propsValues.${name}, ${index})`)
       }
     })
 
