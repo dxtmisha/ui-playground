@@ -1,33 +1,50 @@
 import { getBind } from '../../../functions/render.ts'
 
+import { DesignAbstract } from '../../../classes/static/DesignAbstract.ts'
+
 import { type IconProps } from '../props.ts'
 import { type IconEventLoad } from '../typesBasic.ts'
 
-export class Icon {
-  // eslint-disable-next-line no-useless-constructor
+/**
+ * Class for the icon component constructor.<br>
+ * Класс для конструктора компонента иконки.
+ */
+export class Icon extends DesignAbstract<IconProps, IconEventLoad> {
+  /**
+   * Constructor
+   * @param props base data /<br>базовые данные
+   * @param classIcon class name for the main icon /<br>название класса для основной иконки
+   * @param classIconActive class name for the additional icon /<br>название класса для дополнительной иконки
+   * @param callback callback function when the value changes /<br>
+   * функция обратного вызова при изменении значения
+   */
   constructor (
-    protected icon?: IconProps['icon'],
-    protected iconActive?: IconProps['iconActive'],
-    protected active?: boolean,
-    protected turn?: boolean,
-    protected disabled?: boolean,
+    props: IconProps,
     protected readonly classIcon: string = 'is-icon',
     protected readonly classIconActive: string = 'is-icon-active',
-    protected readonly callback?: (event: IconEventLoad) => void
+    callback?: (event: IconEventLoad) => void
   ) {
-    this.makeCallback()
+    super(props, callback)
   }
 
+  /**
+   * Checks if the additional icon is active.<br>
+   * Проверяет, активна ли дополнительная иконка.
+   */
   isActive (): boolean {
-    return Boolean(this.active && this.iconActive)
+    return Boolean(this.props?.active && this.props?.iconActive)
   }
 
+  /**
+   * Returns data for the icon component.<br>
+   * Возвращает данные для компонента иконки.
+   */
   getIconBind (): IconEventLoad['iconBind'] {
-    if (this.icon) {
-      return getBind(this.icon, {
+    if (this.props?.icon) {
+      return getBind(this.props.icon, {
         class: this.classIcon,
-        turn: this.turn,
-        disabled: this.disabled,
+        turn: this.props?.turn,
+        disabled: this.props?.disabled,
         hide: this.isActive()
       })
     }
@@ -35,12 +52,16 @@ export class Icon {
     return undefined
   }
 
+  /**
+   * Returns data for the additional icon component.<br>
+   * Возвращает данные для дополнительного компонента иконки.
+   */
   getIconActiveBind (): IconEventLoad['iconActiveBind'] {
-    if (this.iconActive) {
-      return getBind(this.iconActive, {
+    if (this.props?.iconActive) {
+      return getBind(this.props.iconActive, {
         class: this.classIconActive,
-        turn: this.turn,
-        disabled: this.disabled,
+        turn: this.props?.turn,
+        disabled: this.props?.disabled,
         hide: !this.isActive()
       })
     }
@@ -48,52 +69,13 @@ export class Icon {
     return undefined
   }
 
-  setIcon (icon?: IconProps['icon']): this {
-    this.icon = icon
-    this.makeCallback()
-
-    return this
-  }
-
-  setIconActive (iconActive?: IconProps['iconActive']): this {
-    this.iconActive = iconActive
-    this.makeCallback()
-
-    return this
-  }
-
-  setActive (active?: boolean): this {
-    this.active = active
-    this.makeCallback()
-
-    return this
-  }
-
-  setTurn (turn?: boolean): this {
-    this.turn = turn
-    this.makeCallback()
-
-    return this
-  }
-
-  setDisabled (disabled?: boolean): this {
-    this.disabled = disabled
-    this.makeCallback()
-
-    return this
-  }
-
   /**
-   * Calls the callback function.<br>
-   * Вызывает функцию обратного вызова.
+   * A function that is called each time the input values are changed.<br>
+   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
    */
-  protected makeCallback (): void {
-    if (this.callback) {
-      this.callback({
-        isActive: this.isActive(),
-        iconBind: this.getIconBind(),
-        iconActiveBind: this.getIconActiveBind()
-      })
-    }
+  protected initEvent (): void {
+    this.event.isActive = this.isActive()
+    this.event.iconBind = this.getIconBind()
+    this.event.iconActiveBind = this.getIconActiveBind()
   }
 }

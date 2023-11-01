@@ -1,10 +1,12 @@
-import { type ConstrClass } from '../../../types/constructor.ts'
+import { ComputedRef } from 'vue'
+
+import { type ConstrClass } from '../../types/constructor.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
-export type ConstructorsComponents = {
+export type ProgressComponents = {
   // componentName: object
 }
 
@@ -12,7 +14,7 @@ export type ConstructorsComponents = {
  * Type describing available events.<br>
  * Тип, описывающий доступные события.
  */
-export type ConstructorsEmits = {
+export type ProgressEmits = {
   // load: [value: string]
 }
 
@@ -20,23 +22,29 @@ export type ConstructorsEmits = {
  * Interface for describing what property setup returns.<br>
  * Интерфейс для описания, какое свойство возвращает setup.
  */
-export type ConstructorsSetup = {
-  // TODO
+export type ProgressSetup = {
+  tag: ComputedRef<string>
+  valueInPercent?: ComputedRef<string | null>
+
+  hide: ComputedRef<boolean>
+  visible: ComputedRef<boolean>
+
+  onAnimation: (event: AnimationEvent) => void
 }
 
 /**
  * Type describing available properties.<br>
  * Тип, описывающий доступные свойства.
  */
-export type ConstructorsExpose = {
-  // TODO
+export type ProgressExpose = {
+  // none
 }
 
 /**
  * Type describing available slots.<br>
  * Тип, описывающий доступные слоты.
  */
-export type ConstructorsSlots = {
+export type ProgressSlots = {
   // default? (props: any): any
 }
 
@@ -44,8 +52,9 @@ export type ConstructorsSlots = {
  * Type describing subclasses.<br>
  * Тип, описывающий подклассы.
  */
-export type ConstructorsClasses = {
+export type ProgressClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
+  circle: string
   // :classes [!] System label / Системная метка
 }

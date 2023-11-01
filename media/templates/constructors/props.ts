@@ -29,6 +29,7 @@ export const defaultsConstructors: ConstructorsProps = {
  */
 export const propsConstructors = {
   // TODO: Location for a custom property / Место для пользовательского свойства
+  // Tokens
   ...{
     // :prop [!] System label / Системная метка
     // :prop [!] System label / Системная метка

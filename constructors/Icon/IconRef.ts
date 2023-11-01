@@ -1,82 +1,63 @@
-import { computed, type ComputedRef, ref, type Ref, watch } from 'vue'
+import { computed, type ComputedRef } from 'vue'
 
 import { Icon } from './static/Icon.ts'
 
-import { type RefUndefined } from '../../types/ref.ts'
 import { type IconProps } from './props.ts'
 import { type IconEventLoad } from './typesBasic.ts'
 
+/**
+ * Class for the icon component constructor.<br>
+ * Класс для конструктора компонента иконки.
+ */
 export class IconRef {
   protected readonly item: Icon
-  protected readonly itemRef: Ref<IconEventLoad> = ref<IconEventLoad>({
-    isActive: false,
-    iconBind: undefined,
-    iconActiveBind: undefined
-  })
 
   protected readonly active: ComputedRef<IconEventLoad['isActive']>
   protected readonly iconBind: ComputedRef<IconEventLoad['iconBind']>
   protected readonly iconActiveBind: ComputedRef<IconEventLoad['iconActiveBind']>
 
+  /**
+   * Constructor
+   * @param props base data /<br>базовые данные
+   * @param classIcon class name for the main icon /<br>название класса для основной иконки
+   * @param classIconActive class name for the additional icon /<br>название класса для дополнительной иконки
+   */
   constructor (
-    icon?: RefUndefined<IconProps['icon']>,
-    iconActive?: RefUndefined<IconProps['iconActive']>,
-    active?: RefUndefined<boolean>,
-    turn?: RefUndefined<boolean>,
-    disabled?: RefUndefined<boolean>,
-    classIcon?: string,
-    classIconActive?: string
+    props: IconProps,
+    classIcon: string = 'is-icon',
+    classIconActive: string = 'is-icon-active'
   ) {
     this.item = new Icon(
-      icon?.value,
-      iconActive?.value,
-      active?.value,
-      turn?.value,
-      disabled?.value,
+      props,
       classIcon,
-      classIconActive,
-      (event: IconEventLoad) => {
-        this.itemRef.value = event
-      }
+      classIconActive
     )
 
-    if (icon) {
-      watch(icon, value => this.item.setIcon(value))
-    }
-
-    if (iconActive) {
-      watch(iconActive, value => this.item.setIconActive(value))
-    }
-
-    if (active) {
-      watch(active, value => this.item.setActive(value))
-    }
-
-    if (turn) {
-      watch(turn, value => this.item.setTurn(value))
-    }
-
-    if (disabled) {
-      watch(disabled, value => this.item.setDisabled(value))
-    }
-
-    this.active = computed(() => this.itemRef.value.isActive)
-    this.iconBind = computed(() => this.itemRef.value.iconBind)
-    this.iconActiveBind = computed(() => this.itemRef.value.iconActiveBind)
+    this.active = computed(() => this.item.isActive())
+    this.iconBind = computed(() => this.item.getIconBind())
+    this.iconActiveBind = computed(() => this.item.getIconActiveBind())
   }
 
+  /**
+   * Checks if the additional icon is active.<br>
+   * Проверяет, активна ли дополнительная иконка.
+   */
   isActive (): ComputedRef<IconEventLoad['isActive']> {
     return this.active
   }
 
-  get (): Ref<IconEventLoad> {
-    return this.itemRef
-  }
-
+  /**
+   * Returns data for the icon component.<br>
+   * Возвращает данные для компонента иконки.
+   */
   getIconBind (): ComputedRef<IconEventLoad['iconBind']> {
     return this.iconBind
   }
 
+  /**
+   * Returns data for the additional icon component.<br>
+   * Возвращает данные для дополнительного компонента иконки.
+   */
   getIconActiveBind (): ComputedRef<IconEventLoad['iconActiveBind']> {
     return this.iconActiveBind
   }

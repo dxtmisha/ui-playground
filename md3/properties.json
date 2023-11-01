@@ -26,11 +26,11 @@
     "_type": "var",
     "_category": "root"
   },
-  "dark": {
-    "value": {
-      "file|dark": "tokens/dark.json"
-    },
-    "_category": "theme"
+  "main": {
+    "font": "{font.bodyLarge}",
+    "color": "{sys.palette.onSurface}",
+    "background": "{ref.background.0}",
+    "_category": "class"
   },
   "elevation": {
     "value": {
@@ -50,11 +50,11 @@
     },
     "_category": "class"
   },
-  "main": {
-    "font": "{font.bodyLarge}",
-    "color": "{sys.palette.onSurface}",
-    "background": "{ref.background.0}",
-    "_category": "class"
+  "dark": {
+    "value": {
+      "file|dark": "tokens/dark.json"
+    },
+    "_category": "theme"
   },
   "file|components": "tokens/components"
 }

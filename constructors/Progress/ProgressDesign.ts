@@ -1,46 +1,42 @@
-import { h, type VNode } from 'vue'
+import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
-import { IconRef } from './IconRef.ts'
 
 import {
   type ConstrOptions,
   type ConstrStyles
 } from '../../types/constructor.ts'
-import { type ImageEventLoad } from '../Image/typesBasic.ts'
-import { type IconProps } from './props.ts'
 import {
-  type IconClasses,
-  type IconComponents,
-  type IconEmits,
-  type IconExpose,
-  type IconSetup,
-  type IconSlots
+  type ProgressProps
+} from './props.ts'
+import {
+  type ProgressClasses,
+  type ProgressComponents,
+  type ProgressEmits,
+  type ProgressExpose,
+  type ProgressSetup,
+  type ProgressSlots
 } from './types.ts'
 
 /**
- * IconDesign
+ * ProgressDesign
  */
-export class IconDesign<
-  COMP extends IconComponents,
-  SETUP extends IconSetup,
-  EXPOSE extends IconExpose,
-  CLASSES extends IconClasses,
-  P extends IconProps
+export class ProgressDesign<
+  COMP extends ProgressComponents,
+  SETUP extends ProgressSetup,
+  EXPOSE extends ProgressExpose,
+  CLASSES extends ProgressClasses,
+  P extends ProgressProps
 > extends DesignConstructorAbstract<
-  HTMLSpanElement,
+  HTMLDivElement,
   COMP,
-  IconEmits,
+  ProgressEmits,
   SETUP,
   EXPOSE,
-  IconSlots,
+  ProgressSlots,
   CLASSES,
   P
 > {
-  protected readonly icon: IconRef
-
-  protected readonly onLoad = (image: ImageEventLoad) => this.emits?.('load', image)
-
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -50,7 +46,7 @@ export class IconDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, IconEmits, P>
+    options?: ConstrOptions<COMP, ProgressEmits, P>
   ) {
     super(
       name,
@@ -58,11 +54,8 @@ export class IconDesign<
       options
     )
 
-    this.icon = new IconRef(
-      this.props,
-      this.getSubClass('icon'),
-      this.getSubClass('iconActive')
-    )
+    // TODO: Method for initializing base objects
+    // TODO: Метод для инициализации базовых объектов
 
     this.init()
   }
@@ -72,6 +65,8 @@ export class IconDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
+    // TODO: User code
+    // TODO: Код пользователя
     return this
   }
 
@@ -81,9 +76,8 @@ export class IconDesign<
    */
   protected initSetup (): SETUP {
     return {
-      iconBind: this.icon.getIconBind(),
-      iconActiveBind: this.icon.getIconActiveBind(),
-      isActive: this.icon.isActive()
+      // TODO: List of parameters for setup
+      // TODO: список параметры для setup
     } as SETUP
   }
 
@@ -92,10 +86,11 @@ export class IconDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
-    const setup = this.setup()
+    // const setup = this.setup()
 
     return {
-      isActive: setup.isActive
+      // TODO: list of properties for export
+      // TODO: список свойств для экспорта
     } as EXPOSE
   }
 
@@ -108,6 +103,7 @@ export class IconDesign<
       main: {},
       ...{
         // :classes [!] System label / Системная метка
+        circle: this.getSubClass('circle')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -118,7 +114,10 @@ export class IconDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {}
+    return {
+      // TODO: list of user styles
+      // TODO: список пользовательских стилей
+    }
   }
 
   /**
@@ -126,30 +125,11 @@ export class IconDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    const setup = this.setup()
-    const children: any[] = []
+    // const setup = this.setup()
 
-    this.initSlot('default', children)
-
-    if (this.components.is('image')) {
-      if (this.props?.icon) {
-        this.components.renderAdd(children, 'image', {
-          ...setup.iconBind.value,
-          onLoad: this.onLoad
-        })
-      }
-
-      if (this.props?.iconActive) {
-        this.components?.renderAdd(children, 'image', {
-          ...setup.iconActiveBind.value,
-          onLoad: this.onLoad
-        })
-      }
-    }
-
-    return h('span', {
+    return h('div', {
       ref: this.element,
-      class: setup.classes.value.main
-    }, children)
+      class: this.classes?.value.main
+    })
   }
 }

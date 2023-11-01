@@ -1,0 +1,318 @@
+@import "../../styles/properties";
+
+@mixin mixinProgress {
+  @include initByCustom('palette', v('??sys.color', v('??background-color')));
+  @include initByCustom('transitionDuration', 20s);
+
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 16;
+
+  transition-property: background-color;
+  animation-fill-mode: forwards;
+
+  appearance: none;
+
+  &__circle {
+    transition-property: background-color, stroke-dasharray;
+
+    fill: transparent;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-opacity: 1;
+    stroke-width: v('??height');
+    @include stroke(v('??palette'));
+  }
+
+  &--visible,
+  &--hide,
+  &--value {
+    display: block;
+  }
+
+  &--visible {
+    transition-duration: v('d.sys.transitionDuration.fade.enter');
+    animation-duration: v('d.sys.transitionDuration.fade.enter');
+  }
+
+  &--hide {
+    transition-duration: v('d.sys.transitionDuration.fade.exit');
+    animation-duration: v('d.sys.transitionDuration.fade.exit');
+  }
+
+  &--value {
+    &::after,
+    &::before {
+      animation-name: none !important;
+    }
+
+    @include subclass('circle') {
+      animation-name: none !important;
+      stroke-dasharray: calc(#{v('??sys.value')} * #{v('??circular.dasharray')}) #{v('??circular.length')};
+      stroke-linecap: butt;
+    }
+  }
+
+  &--linear {
+    @include paddingX(0);
+
+    width: 100%;
+    height: v('??height');
+
+    @include backgroundColor(v('??palette'));
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+
+      content: ' ';
+      @include backgroundColor(v('??palette'));
+
+      transition-property: background-color;
+      transition-duration: inherit;
+    }
+
+    @include state('visible') {
+      animation-name: n('??linear-visible');
+    }
+
+    @include state('hide') {
+      animation-name: n('??linear-hidden');
+    }
+
+    @include state('value') {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        right: v('??sys.value');
+        transition-property: right;
+      }
+    }
+
+    @include state('position') {
+      &--top {
+        top: 0;
+        transform-origin: top;
+      }
+
+      &--bottom {
+        bottom: 0;
+        transform-origin: bottom;
+      }
+    }
+
+    @include state('indeterminate') {
+      &--type1 {
+        &::after {
+          animation-duration: v('??transitionDuration');
+          animation-fill-mode: forwards;
+        }
+
+        @include state('visible') {
+          &::after {
+            animation-name: #{n('??linear-type1')}
+          }
+        }
+
+        @include state('hide') {
+          animation-delay: v('d.sys.transitionDuration.fade.exit');
+
+          &::after {
+            animation-name: #{n('??linear-type1')}
+          }
+
+          &::before {
+            right: 0;
+            transition-property: right;
+          }
+        }
+      }
+
+      &--type2 {
+        &::after {
+          animation: #{n('??linear-type3')} 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+          animation-delay: 1.15s;
+        }
+
+        &::before {
+          animation: #{n('??linear-type2')} 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+        }
+      }
+    }
+  }
+
+  &--circular {
+    @include initByCustom('circular.length', #{calc(2 * 3.1415926535 * 20px)});
+    @include initByCustom('circular.dasharray', #{calc(v('??circular.length') / 100)});
+
+    margin: auto;
+
+    @include squared(v('??width'));
+    max-width: #{calc(100% - 2 * v('??inset'))};
+    max-height: #{calc(100% - 2 * v('??inset'))};
+
+    @include rotate('-90deg');
+
+    @include state('visible') {
+      animation-name: n('??circle-visible');
+    }
+
+    @include state('hide') {
+      animation-name: n('??circle-hidden');
+    }
+
+    @include state('dense') {
+      @include initByCustom('inset', 0px);
+    }
+
+    @include state('indeterminate') {
+      &--type1 {
+        @include subclass('circle') {
+          animation-name: n('??circle-type1');
+          animation-duration: v('??transitionDuration');
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &--type2 {
+        @include subclass('circle') {
+          transform-origin: center;
+          animation: #{n('??circle-type2')} 2s linear infinite, #{n('??circle-type3')} 1.5s ease-in-out infinite;
+        }
+      }
+    }
+  }
+
+  &--inverse {
+    @include initByCustom('palette', v('??sys.color', var(--sys-color, v('??background-color'))));
+  }
+
+  @keyframes #{n('??linear-visible')} {
+    0% {
+      transform: scaleY(0)
+    }
+    100% {
+      transform: scaleY(1)
+    }
+  }
+
+  @keyframes #{n('??linear-hidden')} {
+    0% {
+      transform: scaleY(1)
+    }
+    100% {
+      transform: scaleY(0)
+    }
+  }
+
+  @keyframes #{n('??linear-type1')} {
+    0% {
+      right: 100%
+    }
+    5% {
+      right: 60%
+    }
+    50% {
+      right: 10%
+    }
+    100% {
+      right: 5%
+    }
+  }
+
+  @keyframes #{n('??linear-type2')} {
+    0% {
+      left: -35%;
+      right: 100%
+    }
+    60% {
+      left: 100%;
+      right: -90%
+    }
+    100% {
+      left: 100%;
+      right: -90%
+    }
+  }
+
+  @keyframes #{n('??linear-type3')} {
+    0% {
+      left: -200%;
+      right: 100%
+    }
+    60% {
+      left: 107%;
+      right: -8%
+    }
+    100% {
+      left: 107%;
+      right: -8%
+    }
+  }
+
+  @keyframes #{n('??circle-visible')} {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+  }
+
+  @keyframes #{n('??circle-hidden')} {
+    0% {
+      opacity: 1
+    }
+    100% {
+      opacity: 0
+    }
+  }
+
+  @keyframes #{n('??circle-type1')} {
+    0% {
+      stroke-dasharray: 1.256637061435917 125.66370614359173
+    }
+    5% {
+      stroke-dasharray: 50.265482457436692 125.66370614359173
+    }
+    50% {
+      stroke-dasharray: 113.09733552923253 125.66370614359173
+    }
+    100% {
+      stroke-dasharray: 119.38052083641211 125.66370614359173
+    }
+  }
+
+  @keyframes #{n('??circle-type2')} {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
+  @keyframes #{n('??circle-type3')} {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124
+    }
+  }
+}

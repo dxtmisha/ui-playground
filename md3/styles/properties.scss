@@ -16,10 +16,10 @@ $designsMedia: (
   'md3-2xl': 1648px,);
 $designsClasses: (
   'md3.dark',
+  'md3.main',
   'md3.elevation',
   'md3.font',
   'md3.rounded',
-  'md3.main',
   'md3.palette',);
 $designsPalette: (
   '--md3-sys-palette-primary': ('--md3-palette-basic-40', '--md3-palette-dark-80'),
@@ -460,6 +460,97 @@ $designsProperties: (
             index: 'adaptive',
             name: '&--adaptive',
             type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'progress':(
+        index: 'progress',
+        name: 'd-progress',
+        type: 'component',
+        value: (
+          'linear':(
+            index: 'linear',
+            name: '&--linear',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circular':(
+            index: 'circular',
+            name: '&--circular',
+            type: 'state',
+            value: (
+              'inset':(
+                index: 'inset',
+                name: 'inset',
+                type: 'property',
+                value: 0px,
+                var: true,
+              ),
+            ),
+          ),
+          'indeterminate':(
+            index: 'indeterminate',
+            name: '&--indeterminate',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'position':(
+            index: 'position',
+            name: '&--position',
+            type: 'state',
+            value: (
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
             value: (
             ),
           ),
@@ -5173,6 +5264,61 @@ $designsProperties: (
           ),
         ),
       ),
+      'main':(
+        index: 'main',
+        name: 'md3-main',
+        type: 'component',
+        value: (
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--md3-ref-font-family-roboto)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--md3-ref-font-size-lg)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--md3-ref-font-weight-normal)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--md3-ref-lineHeight-lg)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--md3-ref-letterSpacing-xl)',
+          ),
+          'textTransform':(
+            index: 'textTransform',
+            name: 'text-transform',
+            type: 'property',
+            value: 'none',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--md3-sys-palette-onSurface)',
+          ),
+          'background':(
+            index: 'background',
+            name: 'background',
+            type: 'property',
+            value: 'var(--md3-ref-background-0)',
+          ),
+        ),
+      ),
       'elevation':(
         index: 'elevation',
         name: 'md3-elevation',
@@ -6090,61 +6236,6 @@ $designsProperties: (
                 value: 'var(--md3-sys-rounded-full)',
               ),
             ),
-          ),
-        ),
-      ),
-      'main':(
-        index: 'main',
-        name: 'md3-main',
-        type: 'component',
-        value: (
-          'fontFamily':(
-            index: 'fontFamily',
-            name: 'font-family',
-            type: 'property',
-            value: 'var(--md3-ref-font-family-roboto)',
-          ),
-          'fontSize':(
-            index: 'fontSize',
-            name: 'font-size',
-            type: 'property',
-            value: 'var(--md3-ref-font-size-lg)',
-          ),
-          'fontWeight':(
-            index: 'fontWeight',
-            name: 'font-weight',
-            type: 'property',
-            value: 'var(--md3-ref-font-weight-normal)',
-          ),
-          'lineHeight':(
-            index: 'lineHeight',
-            name: 'line-height',
-            type: 'property',
-            value: 'var(--md3-ref-lineHeight-lg)',
-          ),
-          'letterSpacing':(
-            index: 'letterSpacing',
-            name: 'letter-spacing',
-            type: 'property',
-            value: 'var(--md3-ref-letterSpacing-xl)',
-          ),
-          'textTransform':(
-            index: 'textTransform',
-            name: 'text-transform',
-            type: 'property',
-            value: 'none',
-          ),
-          'color':(
-            index: 'color',
-            name: 'color',
-            type: 'property',
-            value: 'var(--md3-sys-palette-onSurface)',
-          ),
-          'background':(
-            index: 'background',
-            name: 'background',
-            type: 'property',
-            value: 'var(--md3-ref-background-0)',
           ),
         ),
       ),
@@ -7320,6 +7411,121 @@ $designsProperties: (
             index: 'adaptive',
             name: '&--adaptive',
             type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'progress':(
+        index: 'progress',
+        name: 'md3-progress',
+        type: 'component',
+        value: (
+          'height':(
+            index: 'height',
+            name: '--md3-progress-height',
+            type: 'var',
+            value: 'var(--md3-ref-spacing-1)',
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--md3-progress-backgroundColor',
+            type: 'var',
+            value: 'var(--md3-sys-palette-primary)',
+          ),
+          'linear':(
+            index: 'linear',
+            name: '&--linear',
+            type: 'state',
+            value: (
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: '--md3-progress-backgroundColor',
+                type: 'var',
+                value: 'var(--md3-sys-palette-surfaceContainerHighest)',
+              ),
+            ),
+          ),
+          'circular':(
+            index: 'circular',
+            name: '&--circular',
+            type: 'state',
+            value: (
+              'width':(
+                index: 'width',
+                name: '--md3-progress-width',
+                type: 'var',
+                value: 'var(--md3-ref-spacing-12)',
+              ),
+              'inset':(
+                index: 'inset',
+                name: 'inset',
+                type: 'property',
+                value: 'var(--md3-ref-spacing-1)',
+                var: true,
+              ),
+            ),
+          ),
+          'indeterminate':(
+            index: 'indeterminate',
+            name: '&--indeterminate',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'position':(
+            index: 'position',
+            name: '&--position',
+            type: 'state',
+            value: (
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
             value: (
             ),
           ),
@@ -8815,57 +9021,6 @@ $designsProperties: (
                 name: 'color',
                 type: 'property',
                 value: 'var(--md3-sys-palette-primary)',
-              ),
-            ),
-          ),
-        ),
-      ),
-      'progress':(
-        index: 'progress',
-        name: 'md3-progress',
-        type: 'component',
-        value: (
-          'height':(
-            index: 'height',
-            name: 'height',
-            type: 'property',
-            value: 'var(--md3-ref-spacing-1)',
-          ),
-          'backgroundColor':(
-            index: 'backgroundColor',
-            name: 'background-color',
-            type: 'property',
-            value: 'var(--md3-sys-palette-primary)',
-          ),
-          'linear':(
-            index: 'linear',
-            name: '&--linear',
-            type: 'state',
-            value: (
-              'backgroundColor':(
-                index: 'backgroundColor',
-                name: 'background-color',
-                type: 'property',
-                value: 'var(--md3-sys-palette-surfaceContainerHighest)',
-              ),
-            ),
-          ),
-          'circular':(
-            index: 'circular',
-            name: '&--circular',
-            type: 'state',
-            value: (
-              'inset':(
-                index: 'inset',
-                name: 'inset',
-                type: 'property',
-                value: 'var(--md3-ref-spacing-1)',
-              ),
-              'width':(
-                index: 'width',
-                name: 'width',
-                type: 'property',
-                value: 'var(--md3-ref-spacing-12)',
               ),
             ),
           ),

@@ -1,11 +1,12 @@
 import { type VNode } from 'vue'
 
-import { forEach } from '../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../functions/data.ts'
 import { getRef, render } from '../../functions/ref.ts'
 
 import {
   type ConstrComponent,
-  type ConstrComponentMod
+  type ConstrComponentMod,
+  type ConstrItem
 } from '../../types/constructor.ts'
 
 /**
@@ -14,7 +15,7 @@ import {
  */
 export class DesignComponents<
   COMP extends ConstrComponent,
-  P extends Record<string, any>
+  P extends ConstrItem
 > {
   /**
    * Constructor
@@ -56,25 +57,28 @@ export class DesignComponents<
     index?: string,
     props?: Record<string, any>
   ): Record<string, any> | undefined {
-    if (
-      index &&
-      this.modification &&
-      this.modification?.[index]
-    ) {
-      const value: Record<string, any> = {}
+    if (index) {
+      const modification = getRef(this.modification?.[index])
 
-      forEach(this.modification[index], (item, name) => {
-        value[name] = getRef(item)
-      })
+      if (
+        modification &&
+        isObjectNotArray(modification)
+      ) {
+        const value: Record<string, any> = {}
 
-      if (props) {
-        Object.assign(value, props)
+        forEach(modification, (item, name) => {
+          value[name] = getRef(item)
+        })
+
+        if (props) {
+          Object.assign(value, props)
+        }
+
+        return value
       }
-
-      return value
-    } else {
-      return props
     }
+
+    return props
   }
 
   /**
@@ -87,7 +91,7 @@ export class DesignComponents<
    */
   render<K extends keyof COMP> (
     name: K & string,
-    props?: COMP[K] & Record<string, any>,
+    props?: COMP[K] & ConstrItem,
     children?: any[],
     index?: string
   ): VNode[] {
@@ -118,7 +122,7 @@ export class DesignComponents<
   renderAdd<K extends keyof COMP> (
     item: any[],
     name: K & string,
-    props?: COMP[K] & Record<string, any>,
+    props?: COMP[K] & ConstrItem,
     children?: any[],
     index?: string
   ): this {

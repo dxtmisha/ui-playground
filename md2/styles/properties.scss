@@ -419,6 +419,97 @@ $designsProperties: (
           ),
         ),
       ),
+      'progress':(
+        index: 'progress',
+        name: 'd-progress',
+        type: 'component',
+        value: (
+          'linear':(
+            index: 'linear',
+            name: '&--linear',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circular':(
+            index: 'circular',
+            name: '&--circular',
+            type: 'state',
+            value: (
+              'inset':(
+                index: 'inset',
+                name: 'inset',
+                type: 'property',
+                value: 0px,
+                var: true,
+              ),
+            ),
+          ),
+          'indeterminate':(
+            index: 'indeterminate',
+            name: '&--indeterminate',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'position':(
+            index: 'position',
+            name: '&--position',
+            type: 'state',
+            value: (
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
     ),
   ),
   'md2':(
