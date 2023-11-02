@@ -1,4 +1,4 @@
-import { isArray } from '../../functions/data.ts'
+import { forEach, isArray } from '../../functions/data.ts'
 
 /**
  * The class checks the values that have been edited.<br>
@@ -6,6 +6,7 @@ import { isArray } from '../../functions/data.ts'
  */
 export class DesignChanged {
   private data: string[] = []
+  private readonly cache: Record<string, any> = {}
 
   /**
    * Checks if the value has been updated.<br>
@@ -18,6 +19,14 @@ export class DesignChanged {
     }
 
     return this.data.indexOf(value) !== -1
+  }
+
+  /**
+   * Checks if there are changes in the data.<br>
+   * Проверяет, есть ли изменения в данных.
+   */
+  isChanged (): boolean {
+    return this.data.length > 0
   }
 
   /**
@@ -39,6 +48,22 @@ export class DesignChanged {
     } else {
       this.data.push(value)
     }
+
+    return this
+  }
+
+  /**
+   * Checking for data changes in all records.<br>
+   * Проверка на изменения данных у всех записей.
+   * @param props base data /<br>базовые данные
+   */
+  addByCache (props: Record<string, any>): this {
+    forEach(props, (prop, name) => {
+      if (!(name in this.cache) || this.cache[name] !== prop) {
+        this.cache[name] = prop
+        this.add(name)
+      }
+    })
 
     return this
   }

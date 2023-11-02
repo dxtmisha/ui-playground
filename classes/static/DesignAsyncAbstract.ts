@@ -23,10 +23,13 @@ export abstract class DesignAsyncAbstract<
    */
   protected async makeCallback (): Promise<void> {
     if (this.callback) {
+      const changed = this.getChanged()
+
+      changed.addByCache(this.props)
       await this.initEvent()
 
       this.callback(this.event)
-      this.changed.reset()
+      changed.reset()
     }
   }
 

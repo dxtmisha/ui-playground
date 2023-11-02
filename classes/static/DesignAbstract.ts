@@ -9,7 +9,7 @@ export abstract class DesignAbstract<
   C extends Record<string, any>
 > {
   protected readonly event: C = {} as C
-  protected readonly changed: DesignChanged
+  protected changed?: DesignChanged
 
   /**
    * Constructor
@@ -17,11 +17,11 @@ export abstract class DesignAbstract<
    * @param callback callback function when the value changes /<br>
    * функция обратного вызова при изменении значения
    */
-  protected constructor (
+  // eslint-disable-next-line no-useless-constructor
+  constructor (
     protected readonly props: T,
     protected readonly callback?: (event: C) => void
   ) {
-    this.changed = new DesignChanged()
   }
 
   /**
@@ -48,7 +48,7 @@ export abstract class DesignAbstract<
    * @param name property names /<br>названия свойств
    */
   protected isChanged<K extends keyof T & string> (name: K): boolean {
-    return !(name in this.event) || this.changed.is(name)
+    return !(name in this.event) || this.getChanged().is(name)
   }
 
   /**
@@ -58,6 +58,19 @@ export abstract class DesignAbstract<
    */
   protected get<K extends keyof T> (name: K): T[K] | undefined {
     return this.props?.[name]
+  }
+
+  /**
+   * Getting an object to check for data changes.<br>
+   * Получение объекта для проверки изменения данных.\
+   */
+  protected getChanged (): DesignChanged {
+    if (this.changed) {
+      return this.changed
+    }
+
+    this.changed = new DesignChanged()
+    return this.changed
   }
 
   /**
@@ -74,7 +87,7 @@ export abstract class DesignAbstract<
   ): this {
     if (this.props?.[name] !== value) {
       this.props[name] = value as any
-      this.changed.add(name)
+      this.getChanged().add(name)
 
       if (make) {
         this.make()
@@ -90,10 +103,13 @@ export abstract class DesignAbstract<
    */
   protected makeCallback (): void {
     if (this.callback) {
+      const changed = this.getChanged()
+
+      changed.addByCache(this.props)
       this.initEvent()
 
       this.callback(this.event)
-      this.changed.reset()
+      changed.reset()
     }
   }
 
