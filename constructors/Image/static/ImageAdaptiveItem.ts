@@ -1,3 +1,4 @@
+import { toNumber } from '../../../functions/number.ts'
 import { getElementId } from '../../../functions/element.ts'
 
 import { ImageData } from './ImageData.ts'
@@ -5,6 +6,7 @@ import { ImageAdaptiveGroup } from './ImageAdaptiveGroup.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'
 
 import { type FunctionVoid } from '../../../types/basic.ts'
+import { type ImageProps } from '../props.ts'
 import {
   type ImageElement,
   type ImageItem,
@@ -41,26 +43,18 @@ export class ImageAdaptiveItem {
 
   /**
    * Constructor
+   * @param props base data /<br>базовые данные
+   * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param data data management object /<br>объект управления данными
    * @param callback callback function on successful image update or data recalculation /<br>
    * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
-   * @param group group name /<br>название группы
-   * @param adaptive activity status /<br>статус активности
-   * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
-   * @param width physical width of the object /<br>физическая ширина объекта
-   * @param height physical height of the object /<br>физическая высота объекта
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly props: ImageProps,
     protected readonly data: ImageData,
-    protected readonly callback?: FunctionVoid,
     protected element?: ImageElement,
-    protected group: string = GROUP_BASIC,
-    protected adaptive?: boolean,
-    protected adaptiveAlways: boolean = false,
-    protected width: number = 0,
-    protected height: number = 0
+    protected readonly callback?: FunctionVoid
   ) {
     this.reset()
   }
@@ -70,13 +64,13 @@ export class ImageAdaptiveItem {
    * Проверяет, подходить ли у элемента условия для масштабирования.
    */
   is (): boolean {
-    return Boolean(this.adaptive) &&
+    return Boolean(this.props?.adaptive) &&
       this.data.isImage() &&
       Boolean(
         this.element &&
         this.element.closest('body') && (
-          this.width ||
-          this.height
+          this.getWidth() ||
+          this.getHeight()
         )
       )
   }
@@ -87,7 +81,7 @@ export class ImageAdaptiveItem {
    * @param name name of the checked group /<br>название проверяемой группы
    */
   isGroup (name: string): boolean {
-    return this.group === name
+    return this.getGroup() === name
   }
 
   /**
@@ -127,7 +121,7 @@ export class ImageAdaptiveItem {
    * Возвращает название группы.
    */
   getGroup (): string {
-    return this.group
+    return this.props?.adaptiveGroup ?? GROUP_BASIC
   }
 
   /**
@@ -135,7 +129,7 @@ export class ImageAdaptiveItem {
    * Возвращает физическую ширину объекта.
    */
   getWidth (): number {
-    return this.width || 0
+    return toNumber(this.props?.objectWidth ?? 0)
   }
 
   /**
@@ -143,7 +137,7 @@ export class ImageAdaptiveItem {
    * Возвращает физическую высоту объекта.
    */
   getHeight (): number {
-    return this.height || 0
+    return toNumber(this.props?.objectHeight ?? 0)
   }
 
   /**
@@ -152,14 +146,14 @@ export class ImageAdaptiveItem {
    */
   getType (): ImageAdaptiveItemType | undefined {
     if (
-      this.width &&
+      this.getWidth() &&
       this.percent.width > 0
     ) {
       return ImageAdaptiveItemType.x
     }
 
     if (
-      this.height &&
+      this.getHeight() &&
       this.percent.height > 0
     ) {
       return ImageAdaptiveItemType.y
@@ -223,7 +217,7 @@ export class ImageAdaptiveItem {
    * Вычисление значения для свойства background-size.
    */
   getBackgroundSize (): string | null {
-    const factorMax = ImageCalculationList.get(this.group).getFactorMax()
+    const factorMax = ImageCalculationList.get(this.getGroup()).getFactorMax()
 
     switch (this.getType()) {
       case ImageAdaptiveItemType.x:
@@ -242,66 +236,6 @@ export class ImageAdaptiveItem {
    */
   setElement (element: ImageElement): this {
     this.element = element
-    this.reset()
-
-    return this
-  }
-
-  /**
-   * Change the group name for adaptation.<br>
-   * Изменить название группы для адаптации.
-   * @param group group name /<br>название группы
-   */
-  setGroup (group?: string): this {
-    this.group = group ?? GROUP_BASIC
-    this.reset()
-
-    return this
-  }
-
-  /**
-   * Enable image adaptation.<br>
-   * Включить адаптирования изображения.
-   * @param adaptive activity status /<br>статус активности
-   */
-  setAdaptive (adaptive: boolean): this {
-    this.adaptive = adaptive
-    this.update()
-
-    return this
-  }
-
-  /**
-   * Change the state of full adaptation.<br>
-   * Изменить состояние полного адаптирования.
-   * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
-   */
-  setAdaptiveAlways (adaptiveAlways: boolean): this {
-    this.adaptiveAlways = adaptiveAlways
-    this.reset()
-
-    return this
-  }
-
-  /**
-   * Change the physical width of the object in the image.<br>
-   * Изменить физическую ширину объекта на изображении.
-   * @param width physical width of the object /<br>физическая ширина объекта
-   */
-  setWidth (width: number): this {
-    this.width = width
-    this.reset()
-
-    return this
-  }
-
-  /**
-   * Change the physical height of the object in the image.<br>
-   * Изменить физическую высоту объекта на изображении.
-   * @param height physical height of the object /<br>физическая высота объекта
-   */
-  setHeight (height: number): this {
-    this.height = height
     this.reset()
 
     return this
@@ -353,7 +287,7 @@ export class ImageAdaptiveItem {
     this.visible = false
 
     if (this.is()) {
-      if (this.adaptiveAlways) {
+      if (this.props?.adaptiveAlways) {
         this.beyond = true
         this.visible = true
       } else {

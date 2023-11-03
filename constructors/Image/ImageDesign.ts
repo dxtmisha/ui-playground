@@ -1,4 +1,4 @@
-import { h, onUnmounted, ref, VNode, watch } from 'vue'
+import { h, onUnmounted, VNode, watch } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
 import { ImageRef } from './ImageRef.ts'
@@ -59,13 +59,7 @@ export class ImageDesign<
 
     this.image = new ImageRef(
       this.props,
-      this.refs.value ?? ref(),
-      this.element,
-      this.refs?.adaptiveGroup,
-      this.refs?.adaptive,
-      this.refs?.adaptiveAlways,
-      this.refs?.objectWidth,
-      this.refs?.objectHeight
+      this.element
     )
 
     this.init()

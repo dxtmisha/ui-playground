@@ -1,5 +1,6 @@
 import { isString } from '../../../functions/data.ts'
-import { toNumber } from '../../../functions/number.ts'
+
+import { DesignAsyncAbstract } from '../../../classes/static/DesignAsyncAbstract.ts'
 
 import { ImageType } from './ImageType.ts'
 import { ImageData } from './ImageData.ts'
@@ -17,17 +18,15 @@ import {
 import { type ImageProps } from '../props.ts'
 import {
   type ImageElement,
-  type ImageEventLoad,
-  type ImageForOption,
-  type ImageTypeItem,
-  type ImageValue
+  type ImageEventData,
+  type ImageTypeItem
 } from '../typesBasic.ts'
 
 /**
  * Base class for working with images and icons.<br>
  * Базовый класс для работы с изображениями и иконками.
  */
-export class Image {
+export class Image extends DesignAsyncAbstract<ImageProps, ImageEventData> {
   protected readonly type: ImageType
   protected readonly data: ImageData
 
@@ -39,33 +38,23 @@ export class Image {
   /**
    * Constructor
    * @param props base data /<br>базовые данные
-   * @param image values from the image /<br>значения из изображения
    * @param element image element for scaling /<br>элемент изображения для масштабирования
-   * @param group group name /<br>название группы
-   * @param adaptive activity status /<br>статус активности
-   * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
-   * @param width physical width of the object /<br>физическая ширина объекта
-   * @param height physical height of the object /<br>физическая высота объекта
    * @param callback callback function on successful image update or data recalculation /<br>
    * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
    */
   constructor (
-    props: ImageProps,
-    protected image?: ImageValue,
+    protected readonly props: ImageProps,
     element?: ImageElement,
-    group?: string,
-    adaptive?: boolean,
-    adaptiveAlways?: boolean,
-    width?: ImageForOption,
-    height?: ImageForOption,
-    protected readonly callback?: (event: ImageEventLoad) => void
+    protected readonly callback?: (event: ImageEventData) => void
   ) {
+    super(props, callback)
+
     this.type = new ImageType(props)
     this.data = new ImageData(props, this.type, () => {
       if (this.adaptiveItem.is()) {
         this.adaptiveItem.reset()
       } else {
-        this.makeCallback()
+        this.make()
       }
     })
 
@@ -73,14 +62,10 @@ export class Image {
     this.position = new ImagePosition(props, this.coordinator)
 
     this.adaptiveItem = new ImageAdaptiveItem(
+      props,
       this.data,
-      () => this.makeCallback(),
       element,
-      group,
-      adaptive,
-      adaptiveAlways,
-      width ? toNumber(width) : 0,
-      height ? toNumber(height) : 0
+      () => this.make()
     )
 
     this.background = new ImageBackground(
@@ -107,6 +92,14 @@ export class Image {
   }
 
   /**
+   * Getting the value of the picture.<br>
+   * Получение значения картины.
+   */
+  getValue (): ImageProps['value'] {
+    return this.props?.value
+  }
+
+  /**
    * A method for obtaining an object with values for an image.<br>
    * Метод для получения объекта с значениями для изображения.
    */
@@ -120,10 +113,11 @@ export class Image {
    */
   getText (): string | undefined {
     const type = this.type.get()
+    const value = this.getValue()
 
     if (
       type &&
-      typeof this.image === 'string' &&
+      isString(value) &&
       [
         'filled',
         'outlined',
@@ -133,7 +127,7 @@ export class Image {
         'material'
       ].indexOf(type) !== -1
     ) {
-      return this.image.replace(/^(filled|outlined|round|sharp|two-tone)-/, '')
+      return value.replace(/^(filled|outlined|round|sharp|two-tone)-/, '')
     }
 
     return undefined
@@ -169,7 +163,9 @@ export class Image {
    * Значения для стиля.
    */
   getStyles (): ConstrStyles {
-    if (this.image) {
+    const value = this.getValue()
+
+    if (value) {
       switch (this.type.get()) {
         case 'file':
         case 'image':
@@ -182,27 +178,13 @@ export class Image {
         case 'public':
           return { 'mask-image': this.background.getImage() }
         case 'color':
-          if (isString(this.image)) {
-            return { 'background-color': this.image }
+          if (isString(value)) {
+            return { 'background-color': value }
           }
       }
     }
 
     return {}
-  }
-
-  /**
-   * To change the image names.<br>
-   * Изменить названия изображения.
-   * @param image values from the image /<br>значения из изображения
-   */
-  async setImage (image?: ImageValue): Promise<this> {
-    this.image = image
-
-    // this.type.set(image)
-    // await this.data.set(image)
-
-    return this
   }
 
   /**
@@ -217,73 +199,10 @@ export class Image {
   }
 
   /**
-   * Change the group name for adaptation.<br>
-   * Изменить название группы для адаптации.
-   * @param group group name /<br>название группы
+   * A function that is called each time the input values are changed.<br>
+   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
    */
-  setGroup (group?: string): this {
-    this.adaptiveItem.setGroup(group)
-
-    return this
-  }
-
-  /**
-   * Enable image adaptation.<br>
-   * Включить адаптирования изображения.
-   * @param adaptive activity status /<br>статус активности
-   */
-  setAdaptive (adaptive?: boolean): this {
-    this.adaptiveItem.setAdaptive(Boolean(adaptive))
-
-    return this
-  }
-
-  /**
-   * Change the state of full adaptation.<br>
-   * Изменить состояние полного адаптирования.
-   * @param adaptiveAlways does the element always participate /<br>участвует ли элемент всегда
-   */
-  setAdaptiveAlways (adaptiveAlways?: boolean): this {
-    this.adaptiveItem.setAdaptiveAlways(Boolean(adaptiveAlways))
-
-    return this
-  }
-
-  /**
-   * Change the physical width of the object in the image.<br>
-   * Изменить физическую ширину объекта на изображении.
-   * @param width physical width of the object /<br>физическая ширина объекта
-   */
-  setWidth (width: ImageForOption): this {
-    this.adaptiveItem.setWidth(width ? toNumber(width) : 0)
-
-    return this
-  }
-
-  /**
-   * Change the physical height of the object in the image.<br>
-   * Изменить физическую высоту объекта на изображении.
-   * @param height physical height of the object /<br>физическая высота объекта
-   */
-  setHeight (height: ImageForOption): this {
-    this.adaptiveItem.setHeight(height ? toNumber(height) : 0)
-
-    return this
-  }
-
-  /**
-   * Calls the callback function.<br>
-   * Вызывает функцию обратного вызова.
-   */
-  protected makeCallback (): void {
-    if (this.callback) {
-      this.callback({
-        type: this.getType(),
-        image: this.getData().getImage(),
-        text: this.getText(),
-        classes: this.getClasses(),
-        styles: this.getStyles()
-      })
-    }
+  protected async initEvent (): Promise<void> {
+    this.event.image = this.getData().getImage()
   }
 }
