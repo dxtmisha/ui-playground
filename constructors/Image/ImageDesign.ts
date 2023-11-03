@@ -61,8 +61,6 @@ export class ImageDesign<
       this.props,
       this.refs.value ?? ref(),
       this.refs?.coordinator,
-      this.refs?.x,
-      this.refs?.y,
       this.refs?.size,
       this.element,
       this.refs?.adaptiveGroup,

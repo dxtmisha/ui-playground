@@ -42,8 +42,6 @@ export class Image {
    * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
    * @param coordinator coordinates for margins /<br>координаты для отступов
-   * @param x coordinate of the picture on the left /<br>координата картины слева
-   * @param y coordinate of the picture on the top /<br>координата картины сверху
    * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
@@ -58,8 +56,6 @@ export class Image {
     props: ImageProps,
     protected image?: ImageValue,
     coordinator?: ImageCoordinatorItem,
-    x?: ImageForOption,
-    y?: ImageForOption,
     size?: ImageForOption,
     element?: ImageElement,
     group?: string,
@@ -79,7 +75,7 @@ export class Image {
     })
 
     this.coordinator = new ImageCoordinator(coordinator)
-    this.position = new ImagePosition(this.coordinator, x, y)
+    this.position = new ImagePosition(props, this.coordinator)
 
     this.adaptiveItem = new ImageAdaptiveItem(
       this.data,
@@ -221,30 +217,6 @@ export class Image {
    */
   setCoordinator (coordinator: ImageCoordinatorItem): this {
     this.coordinator.set(coordinator)
-    this.makeCallback()
-
-    return this
-  }
-
-  /**
-   * Change the image shift to the left.<br>
-   * Изменить сдвиг изображения влево.
-   * @param x coordinate of the picture on the left /<br>координата картины слева
-   */
-  setX (x: ImageForOption): this {
-    this.position.setX(x)
-    this.makeCallback()
-
-    return this
-  }
-
-  /**
-   * Change the image shift from the top.<br>
-   * Изменить сдвиг изображения сверху.
-   * @param y coordinate of the picture on the top /<br>координата картины сверху
-   */
-  setY (y: ImageForOption): this {
-    this.position.setY(y)
     this.makeCallback()
 
     return this

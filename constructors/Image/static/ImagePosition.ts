@@ -1,6 +1,6 @@
 import { ImageCoordinator } from './ImageCoordinator.ts'
 
-import { type ImageForOption } from '../typesBasic.ts'
+import { type ImageProps } from '../props.ts'
 
 /**
  * Class for working with position.<br>
@@ -9,15 +9,13 @@ import { type ImageForOption } from '../typesBasic.ts'
 export class ImagePosition {
   /**
    * Constructor
+   * @param props base data /<br>базовые данные
    * @param coordinator coordinates for margins /<br>координаты для отступов
-   * @param x coordinate of the picture on the left /<br>координата картины слева
-   * @param y coordinate of the picture on the top /<br>координата картины сверху
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly coordinator: ImageCoordinator,
-    protected x: ImageForOption,
-    protected y: ImageForOption
+    protected readonly props: ImageProps,
+    protected readonly coordinator: ImageCoordinator
   ) {
   }
 
@@ -30,7 +28,7 @@ export class ImagePosition {
       return `${this.coordinator.getCoordinator()[3] + (this.coordinator.get().width / 2)}%`
     }
 
-    return this.x?.toString() || 'center'
+    return this.props?.x?.toString() || 'center'
   }
 
   /**
@@ -42,26 +40,6 @@ export class ImagePosition {
       return `${this.coordinator.getCoordinator()[0] + (this.coordinator.get().height / 2)}%`
     }
 
-    return this.y?.toString() || 'center'
-  }
-
-  /**
-   * Change the x coordinate.<br>
-   * Изменить координату x.
-   * @param x coordinate of the picture on the left /<br>координата картины слева
-   */
-  setX (x: ImageForOption): this {
-    this.x = x
-    return this
-  }
-
-  /**
-   * Change the y coordinate.<br>
-   * Изменить координату y.
-   * @param y coordinate of the picture on the top /<br>координата картины сверху
-   */
-  setY (y: ImageForOption): this {
-    this.y = y
-    return this
+    return this.props?.y?.toString() || 'center'
   }
 }

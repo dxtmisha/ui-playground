@@ -7,6 +7,7 @@ import {
   type ConstrClassObject,
   type ConstrStyles
 } from '../../types/constructor.ts'
+import { type ImageProps } from './props.ts'
 import {
   type ImageCoordinatorItem,
   type ImageElement,
@@ -16,7 +17,6 @@ import {
   type ImageTypeItem,
   type ImageValue
 } from './typesBasic.ts'
-import { ImageProps } from './props.ts'
 
 /**
  * Base class for working with images and icons.<br>
@@ -43,8 +43,6 @@ export class ImageRef {
    * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
    * @param coordinator coordinates for margins /<br>координаты для отступов
-   * @param x coordinate of the picture on the left /<br>координата картины слева
-   * @param y coordinate of the picture on the top /<br>координата картины сверху
    * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
@@ -57,8 +55,6 @@ export class ImageRef {
     props: ImageProps,
     image: RefUndefined<ImageValue>,
     coordinator?: RefUndefined<ImageCoordinatorItem>,
-    x?: RefUndefined<ImageForOption>,
-    y?: RefUndefined<ImageForOption>,
     size?: RefUndefined<ImageForOption>,
     element?: RefUndefined<ImageElement>,
     group?: RefUndefined<string>,
@@ -71,8 +67,6 @@ export class ImageRef {
       props,
       image?.value,
       coordinator?.value,
-      x?.value,
-      y?.value,
       size?.value,
       element?.value,
       group?.value,
@@ -94,14 +88,6 @@ export class ImageRef {
 
     if (coordinator) {
       watch(coordinator, value => this.item.setCoordinator(value))
-    }
-
-    if (x) {
-      watch(x, value => this.item.setX(value))
-    }
-
-    if (y) {
-      watch(y, value => this.item.setY(value))
     }
 
     if (size) {

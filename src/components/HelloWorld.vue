@@ -16,6 +16,7 @@ const active = ref(false)
 const adaptive = ref(false)
 const turn = ref(false)
 const disabled = ref(false)
+const position = ref('10px')
 const onLoad = (event: ImageEventLoad) => {
   console.log('event', event)
 }
@@ -26,6 +27,7 @@ setInterval(() => {
   adaptive.value = !adaptive.value
   turn.value = !turn.value
   disabled.value = !disabled.value
+  position.value = '25px'
   console.log('color')
 }, 1600)
 </script>
@@ -68,6 +70,15 @@ setInterval(() => {
         <md3-image
           disabled
           value="https://drscdn.500px.org/photo/295251975/q%3D50_w%3D1000_of%3D1/v2?sig=9ca0a690bd15614f702b389a6c121c6d796ece98b6086cee5d50ca1f9f23dc9a"
+          @load="onLoad"
+        />
+      </div>
+      <div style="position: relative; width: 160px; height: 160px;">
+        <md3-image
+          disabled
+          value="https://drscdn.500px.org/photo/295251975/q%3D50_w%3D1000_of%3D1/v2?sig=9ca0a690bd15614f702b389a6c121c6d796ece98b6086cee5d50ca1f9f23dc9a"
+          :x="position"
+          :y="position"
           @load="onLoad"
         />
       </div>
