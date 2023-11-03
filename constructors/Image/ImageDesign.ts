@@ -60,7 +60,6 @@ export class ImageDesign<
     this.image = new ImageRef(
       this.props,
       this.refs.value ?? ref(),
-      this.refs?.coordinator,
       this.refs?.size,
       this.element,
       this.refs?.adaptiveGroup,

@@ -14,9 +14,8 @@ import {
   type ConstrClassObject,
   type ConstrStyles
 } from '../../../types/constructor.ts'
-import { ImageProps } from '../props.ts'
+import { type ImageProps } from '../props.ts'
 import {
-  type ImageCoordinatorItem,
   type ImageElement,
   type ImageEventLoad,
   type ImageForOption,
@@ -41,7 +40,6 @@ export class Image {
    * Constructor
    * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
-   * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
@@ -55,7 +53,6 @@ export class Image {
   constructor (
     props: ImageProps,
     protected image?: ImageValue,
-    coordinator?: ImageCoordinatorItem,
     size?: ImageForOption,
     element?: ImageElement,
     group?: string,
@@ -74,7 +71,7 @@ export class Image {
       }
     })
 
-    this.coordinator = new ImageCoordinator(coordinator)
+    this.coordinator = new ImageCoordinator(props)
     this.position = new ImagePosition(props, this.coordinator)
 
     this.adaptiveItem = new ImageAdaptiveItem(
@@ -206,18 +203,6 @@ export class Image {
 
     // this.type.set(image)
     // await this.data.set(image)
-
-    return this
-  }
-
-  /**
-   * To modify the crop parameters of an image.<br>
-   * Изменить параметры crop изображения.
-   * @param coordinator coordinates for margins /<br>координаты для отступов
-   */
-  setCoordinator (coordinator: ImageCoordinatorItem): this {
-    this.coordinator.set(coordinator)
-    this.makeCallback()
 
     return this
   }

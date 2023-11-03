@@ -1,4 +1,7 @@
+import { isArray } from '../../../functions/data.ts'
+
 import { type Undefined } from '../../../types/basic.ts'
+import { type ImageProps } from '../props.ts'
 import {
   type ImageCoordinatorItem,
   type ImageSize
@@ -11,11 +14,11 @@ import {
 export class ImageCoordinator {
   /**
    * Constructor
-   * @param coordinator coordinates for margins /<br>координаты для отступов
+   * @param props base data /<br>базовые данные
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected coordinator: ImageCoordinatorItem
+    protected readonly props: ImageProps
   ) {
   }
 
@@ -24,9 +27,11 @@ export class ImageCoordinator {
    * Проверка на доступность координат.
    */
   is (): this is { coordinator: Exclude<ImageCoordinatorItem, Undefined> } {
-    return Array.isArray(this.coordinator) &&
-      this.coordinator.length > 0 &&
-      this.coordinator.length < 5
+    const coordinator = this.props?.coordinator
+
+    return isArray(coordinator) &&
+      coordinator.length > 0 &&
+      coordinator.length < 5
   }
 
   /**
@@ -61,7 +66,7 @@ export class ImageCoordinator {
    */
   getCoordinator (): [number, number, number, number] {
     if (this.is()) {
-      const coordinator: number[] = this.coordinator
+      const coordinator: number[] = this.props?.coordinator
 
       switch (coordinator.length) {
         case 1:
@@ -92,15 +97,5 @@ export class ImageCoordinator {
     }
 
     return [0, 0, 0, 0]
-  }
-
-  /**
-   * Changing coordinates.<br>
-   * Изменение координат.
-   * @param coordinator coordinates for margins /<br>координаты для отступов
-   */
-  set (coordinator: ImageCoordinatorItem): this {
-    this.coordinator = coordinator
-    return this
   }
 }

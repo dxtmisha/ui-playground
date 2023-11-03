@@ -9,7 +9,6 @@ import {
 } from '../../types/constructor.ts'
 import { type ImageProps } from './props.ts'
 import {
-  type ImageCoordinatorItem,
   type ImageElement,
   type ImageEventItem,
   type ImageEventLoad,
@@ -42,7 +41,6 @@ export class ImageRef {
    * Constructor
    * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
-   * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
@@ -54,7 +52,6 @@ export class ImageRef {
   constructor (
     props: ImageProps,
     image: RefUndefined<ImageValue>,
-    coordinator?: RefUndefined<ImageCoordinatorItem>,
     size?: RefUndefined<ImageForOption>,
     element?: RefUndefined<ImageElement>,
     group?: RefUndefined<string>,
@@ -66,7 +63,6 @@ export class ImageRef {
     this.item = new Image(
       props,
       image?.value,
-      coordinator?.value,
       size?.value,
       element?.value,
       group?.value,
@@ -85,10 +81,6 @@ export class ImageRef {
     })
 
     watch(image, async value => await this.item.setImage(value))
-
-    if (coordinator) {
-      watch(coordinator, value => this.item.setCoordinator(value))
-    }
 
     if (size) {
       watch(size, value => this.item.setSize(value))
