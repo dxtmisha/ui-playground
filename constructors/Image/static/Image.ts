@@ -40,7 +40,6 @@ export class Image {
    * Constructor
    * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param group group name /<br>название группы
    * @param adaptive activity status /<br>статус активности
@@ -53,7 +52,6 @@ export class Image {
   constructor (
     props: ImageProps,
     protected image?: ImageValue,
-    size?: ImageForOption,
     element?: ImageElement,
     group?: string,
     adaptive?: boolean,
@@ -86,10 +84,10 @@ export class Image {
     )
 
     this.background = new ImageBackground(
+      props,
       this.data,
       this.coordinator,
-      this.adaptiveItem,
-      size
+      this.adaptiveItem
     )
   }
 
@@ -203,18 +201,6 @@ export class Image {
 
     // this.type.set(image)
     // await this.data.set(image)
-
-    return this
-  }
-
-  /**
-   * To change the image scaling parameters.<br>
-   * Изменить параметры масштабирования изображения.
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
-   */
-  setSize (size?: ImageForOption): this {
-    this.background.setSize(size)
-    this.makeCallback()
 
     return this
   }

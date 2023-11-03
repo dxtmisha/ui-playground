@@ -52,7 +52,6 @@ export class ImageRef {
   constructor (
     props: ImageProps,
     image: RefUndefined<ImageValue>,
-    size?: RefUndefined<ImageForOption>,
     element?: RefUndefined<ImageElement>,
     group?: RefUndefined<string>,
     adaptive?: RefUndefined<boolean>,
@@ -63,7 +62,6 @@ export class ImageRef {
     this.item = new Image(
       props,
       image?.value,
-      size?.value,
       element?.value,
       group?.value,
       adaptive?.value,
@@ -81,10 +79,6 @@ export class ImageRef {
     })
 
     watch(image, async value => await this.item.setImage(value))
-
-    if (size) {
-      watch(size, value => this.item.setSize(value))
-    }
 
     if (element) {
       watch(element, value => this.item.setElement(value))

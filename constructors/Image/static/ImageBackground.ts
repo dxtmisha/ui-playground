@@ -5,7 +5,7 @@ import { ImageCoordinator } from './ImageCoordinator.ts'
 import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
 
 import { type NumberOrString } from '../../../types/basic.ts'
-import { type ImageForOption } from '../typesBasic.ts'
+import { type ImageProps } from '../props.ts'
 
 /**
  * Class for generating a link in the background-image property.<br>
@@ -14,17 +14,17 @@ import { type ImageForOption } from '../typesBasic.ts'
 export class ImageBackground {
   /**
    * Constructor
+   * @param props base data /<br>базовые данные
    * @param data object for working with values / объект для работы со значениями
    * @param coordinator object for working with coordinates / объект для работы с координатами
    * @param adaptive an object for working with adaptive layout / объект для работы с adaptive
-   * @param size property determining the size of the picture / свойство определяющее размер картины
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly props: ImageProps,
     protected readonly data: ImageData,
     protected readonly coordinator: ImageCoordinator,
-    protected readonly adaptive: ImageAdaptiveItem,
-    protected size?: ImageForOption
+    protected readonly adaptive: ImageAdaptiveItem
   ) {
   }
 
@@ -63,16 +63,6 @@ export class ImageBackground {
       default:
         return null
     }
-  }
-
-  /**
-   * To change the image scaling parameters.<br>
-   * Изменить параметры масштабирования изображения.
-   * @param size property determining the size of the picture /<br>свойство определяющее размер картины
-   */
-  setSize (size?: ImageForOption): this {
-    this.size = size
-    return this
   }
 
   /**
@@ -116,7 +106,7 @@ export class ImageBackground {
    * Возвращает размеры для значения.
    */
   protected getSizeForItem (): string | null {
-    const size = this.size
+    const size = this.props?.size
 
     if (size && isFilled(size)) {
       return size.toString().match(/%$/) ? this.getSize(size, size) : size.toString()
