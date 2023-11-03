@@ -50,10 +50,17 @@ export type ImageItem =
 export type ImageTypeItem = ImageTypeValue | Undefined
 
 export type ImageEventItem = ImageItem | string | undefined
-export type ImageEventLoad = {
+export type ImageEventType = {
   type: ImageTypeItem
-  image: ImageEventItem
-  text: string | undefined
-  classes: ConstrClassObject
-  styles: ConstrStyles
 }
+export type ImageEventData = {
+  image: ImageEventItem
+}
+export type ImageEventLoad =
+  ImageEventType &
+  ImageEventData &
+  {
+    text: string | undefined
+    classes: ConstrClassObject
+    styles: ConstrStyles
+  }

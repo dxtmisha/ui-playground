@@ -21,7 +21,7 @@ const onLoad = (event: ImageEventLoad) => {
 }
 
 setInterval(() => {
-  value.value = 'home'
+  value.value = '#ff0000'
   active.value = !active.value
   adaptive.value = !adaptive.value
   turn.value = !turn.value

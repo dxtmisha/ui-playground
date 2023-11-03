@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, ref, type Ref, watch } from 'vue'
+import { computed, type ComputedRef, ref, type Ref, watch, watchEffect } from 'vue'
 
 import { Image } from './static/Image.ts'
 
@@ -16,6 +16,7 @@ import {
   type ImageTypeItem,
   type ImageValue
 } from './typesBasic.ts'
+import { ImageProps } from './props.ts'
 
 /**
  * Base class for working with images and icons.<br>
@@ -39,8 +40,8 @@ export class ImageRef {
 
   /**
    * Constructor
+   * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
-   * @param url link to the folder with images /<br>ссылка на папку с изображениями
    * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
@@ -53,8 +54,8 @@ export class ImageRef {
    * @param height physical height of the object /<br>физическая высота объекта
    */
   constructor (
+    props: ImageProps,
     image: RefUndefined<ImageValue>,
-    url?: RefUndefined<string>,
     coordinator?: RefUndefined<ImageCoordinatorItem>,
     x?: RefUndefined<ImageForOption>,
     y?: RefUndefined<ImageForOption>,
@@ -67,8 +68,8 @@ export class ImageRef {
     height?: RefUndefined<ImageForOption>
   ) {
     this.item = new Image(
+      props,
       image?.value,
-      url?.value,
       coordinator?.value,
       x?.value,
       y?.value,
@@ -84,11 +85,12 @@ export class ImageRef {
       }
     )
 
-    watch(image, async value => await this.item.setImage(value))
+    watchEffect(async () => {
+      console.log('update')
+      await this.item.getData().makeCallback()
+    })
 
-    if (url) {
-      watch(url, async value => await this.item.setUrl(value))
-    }
+    watch(image, async value => await this.item.setImage(value))
 
     if (coordinator) {
       watch(coordinator, value => this.item.setCoordinator(value))

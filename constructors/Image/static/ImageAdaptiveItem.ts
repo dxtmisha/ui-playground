@@ -177,7 +177,7 @@ export class ImageAdaptiveItem {
       this.element &&
       this.data.isImage()
     ) {
-      const data = this.data.get() as ImageItem
+      const data = this.data.getImage() as ImageItem
 
       switch (this.getType()) {
         case ImageAdaptiveItemType.x:

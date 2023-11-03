@@ -1,7 +1,7 @@
+import { type ImageProps } from '../props.ts'
 import {
   type ImageTypeItem,
-  ImageTypeValue,
-  type ImageValue
+  ImageTypeValue
 } from '../typesBasic.ts'
 
 /**
@@ -9,14 +9,14 @@ import {
  * Класс для работы с типом изображения.
  */
 export class ImageType {
-  protected item?: ImageTypeItem
-
   /**
    * Constructor
-   * @param image values from the image /<br>значения из изображения
+   * @param props base data /<br>базовые данные
    */
-  constructor (image?: ImageValue) {
-    this.set(image)
+  // eslint-disable-next-line no-useless-constructor
+  constructor (
+    protected readonly props: ImageProps
+  ) {
   }
 
   /**
@@ -24,24 +24,8 @@ export class ImageType {
    * Получения тип изображения.
    */
   get (): ImageTypeItem {
-    return this.item
-  }
+    const image = this.props?.value
 
-  /**
-   * Change the image type.<br>
-   * Изменения тип изображения.
-   * @param image values from the image /<br>значения из изображения
-   */
-  set (image?: ImageValue): this {
-    this.item = this.init(image)
-    return this
-  }
-
-  /**
-   * Get the type value by its value.<br>
-   * Получение значения типа по его значению.
-   */
-  protected init (image?: ImageValue): ImageTypeItem {
     if (image) {
       if (image instanceof File) {
         return ImageTypeValue.file

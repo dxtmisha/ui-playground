@@ -14,10 +14,10 @@ import {
   type ConstrClassObject,
   type ConstrStyles
 } from '../../../types/constructor.ts'
+import { ImageProps } from '../props.ts'
 import {
   type ImageCoordinatorItem,
   type ImageElement,
-  type ImageEventItem,
   type ImageEventLoad,
   type ImageForOption,
   type ImageTypeItem,
@@ -39,8 +39,8 @@ export class Image {
 
   /**
    * Constructor
+   * @param props base data /<br>базовые данные
    * @param image values from the image /<br>значения из изображения
-   * @param url link to the folder with images /<br>ссылка на папку с изображениями
    * @param coordinator coordinates for margins /<br>координаты для отступов
    * @param x coordinate of the picture on the left /<br>координата картины слева
    * @param y coordinate of the picture on the top /<br>координата картины сверху
@@ -55,8 +55,8 @@ export class Image {
    * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
    */
   constructor (
+    props: ImageProps,
     protected image?: ImageValue,
-    url?: string,
     coordinator?: ImageCoordinatorItem,
     x?: ImageForOption,
     y?: ImageForOption,
@@ -69,8 +69,8 @@ export class Image {
     height?: ImageForOption,
     protected readonly callback?: (event: ImageEventLoad) => void
   ) {
-    this.type = new ImageType(image)
-    this.data = new ImageData(this.type, url, () => {
+    this.type = new ImageType(props)
+    this.data = new ImageData(props, this.type, () => {
       if (this.adaptiveItem.is()) {
         this.adaptiveItem.reset()
       } else {
@@ -98,10 +98,6 @@ export class Image {
       this.adaptiveItem,
       size
     )
-
-    if (image) {
-      this.data.set(image).then()
-    }
   }
 
   /**
@@ -123,8 +119,8 @@ export class Image {
    * A method for obtaining an object with values for an image.<br>
    * Метод для получения объекта с значениями для изображения.
    */
-  getData (): ImageEventItem {
-    return this.data.get()
+  getData (): ImageData {
+    return this.data
   }
 
   /**
@@ -212,19 +208,9 @@ export class Image {
   async setImage (image?: ImageValue): Promise<this> {
     this.image = image
 
-    this.type.set(image)
-    await this.data.set(image)
+    // this.type.set(image)
+    // await this.data.set(image)
 
-    return this
-  }
-
-  /**
-   * To change the path to the icon<br>
-   * Изменить путь к иконке.
-   * @param url link to the folder with images /<br>ссылка на папку с изображениями
-   */
-  async setUrl (url?: string): Promise<this> {
-    await this.data.setUrl(url)
     return this
   }
 
@@ -350,7 +336,7 @@ export class Image {
     if (this.callback) {
       this.callback({
         type: this.getType(),
-        image: this.getData(),
+        image: this.getData().getImage(),
         text: this.getText(),
         classes: this.getClasses(),
         styles: this.getStyles()

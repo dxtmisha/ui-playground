@@ -101,16 +101,17 @@ export abstract class DesignAbstract<
    * Calls the callback function.<br>
    * Вызывает функцию обратного вызова.
    */
-  protected makeCallback (): void {
+  makeCallback (): void {
+    const changed = this.getChanged()
+
+    changed.addByCache(this.props)
+    this.initEvent()
+
     if (this.callback) {
-      const changed = this.getChanged()
-
-      changed.addByCache(this.props)
-      this.initEvent()
-
       this.callback(this.event)
-      changed.reset()
     }
+
+    changed.reset()
   }
 
   /**

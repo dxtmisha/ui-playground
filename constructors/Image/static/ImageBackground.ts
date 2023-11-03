@@ -53,7 +53,7 @@ export class ImageBackground {
    * Возвращает строку значения для свойства background-image.
    */
   getImage (): string | null {
-    const image = this.data.get()
+    const image = this.data.getImage()
 
     switch (typeof image) {
       case 'string':
@@ -85,7 +85,7 @@ export class ImageBackground {
     width: NumberOrString,
     height: NumberOrString
   ): string | null {
-    const image = this.data.get()
+    const image = this.data.getImage()
 
     if (typeof image === 'object') {
       return image.height < image.width ? `auto ${height}` : `${width} auto`
