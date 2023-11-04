@@ -36,7 +36,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
     protected readonly type: ImageType,
     callback?: (event: ImageEventData) => void
   ) {
-    super(props, callback)
+    super(props, callback, ['value', 'url'])
 
     if (this.props?.value) {
       this.make()
@@ -47,7 +47,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
    * Checks if there are values.<br>
    * Проверяет, есть ли значения.
    */
-  is (): this is { item: Exclude<ImageEventItem, Undefined> } {
+  is (): this is { event: { image: Exclude<ImageEventItem, Undefined> } } {
     return this.getImage() !== undefined
   }
 
@@ -55,7 +55,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
    * Checks if the value is a link, that is, a type of string.<br>
    * Проверяет, является ли значение ссылкой, то есть видом строки.
    */
-  isLink (): this is { item: string } {
+  isLink (): this is { event: { image: string } } {
     return this.is() && typeof this.getImage() === 'string'
   }
 
@@ -63,7 +63,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
    * Checks if the value is an image object.<br>
    * Проверяет, является ли значение объектом изображения.
    */
-  isImage (): this is { item: ImageItem } {
+  isImage (): this is { event: { image: ImageItem } } {
     return this.is() && typeof this.getImage() !== 'string'
   }
 
@@ -80,14 +80,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
    * Вызывает функцию обратного вызова.
    */
   protected async initEvent (): Promise<void> {
-    const changed = this.getChanged()
-
-    if (
-      changed.is('value') || (
-        changed.is('url') &&
-        this.type.get() === ImageTypeValue.public
-      )
-    ) {
+    if (this.isChanged('image', ['value', 'url'])) {
       this.event.image = await this.initImage()
     }
   }
