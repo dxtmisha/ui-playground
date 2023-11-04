@@ -18,7 +18,7 @@ import {
 import { type ImageProps } from '../props.ts'
 import {
   type ImageElement,
-  type ImageEventData,
+  type ImageEventMain,
   type ImageTypeItem
 } from '../typesBasic.ts'
 
@@ -26,7 +26,7 @@ import {
  * Base class for working with images and icons.<br>
  * Базовый класс для работы с изображениями и иконками.
  */
-export class Image extends DesignAsyncAbstract<ImageProps, ImageEventData> {
+export class Image extends DesignAsyncAbstract<ImageProps, ImageEventMain> {
   protected readonly type: ImageType
   protected readonly data: ImageData
 
@@ -45,7 +45,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventData> {
   constructor (
     protected readonly props: ImageProps,
     element?: ImageElement,
-    protected readonly callback?: (event: ImageEventData) => void
+    protected readonly callback?: (event: ImageEventMain) => void
   ) {
     super(props, callback)
 
@@ -163,6 +163,37 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventData> {
    * Значения для стиля.
    */
   getStyles (): ConstrStyles {
+    return this.event?.styles || {}
+  }
+
+  /**
+   * To change the focus element.<br>
+   * Изменить элемент для фокуса.
+   * @param element image element for scaling /<br>элемент изображения для масштабирования
+   */
+  setElement (element: ImageElement): this {
+    this.adaptiveItem.setElement(element)
+
+    return this
+  }
+
+  /**
+   * A function that is called each time the input values are changed.<br>
+   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
+   */
+  protected async initEvent (): Promise<void> {
+    if (this.isChanged('image', ['value', 'url'])) {
+      this.event.image = this.getData().getImage()
+    }
+
+    this.event.styles = this.initStyles()
+  }
+
+  /**
+   * Values for the style.<br>
+   * Значения для стиля.
+   */
+  protected initStyles (): ConstrStyles {
     const value = this.getValue()
 
     if (value) {
@@ -185,24 +216,5 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventData> {
     }
 
     return {}
-  }
-
-  /**
-   * To change the focus element.<br>
-   * Изменить элемент для фокуса.
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
-   */
-  setElement (element: ImageElement): this {
-    this.adaptiveItem.setElement(element)
-
-    return this
-  }
-
-  /**
-   * A function that is called each time the input values are changed.<br>
-   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
-   */
-  protected async initEvent (): Promise<void> {
-    this.event.image = this.getData().getImage()
   }
 }

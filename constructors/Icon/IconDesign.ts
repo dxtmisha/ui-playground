@@ -7,7 +7,7 @@ import {
   type ConstrOptions,
   type ConstrStyles
 } from '../../types/constructor.ts'
-import { type ImageEventLoad } from '../Image/typesBasic.ts'
+import { type ImageEventData } from '../Image/typesBasic.ts'
 import { type IconProps } from './props.ts'
 import {
   type IconClasses,
@@ -39,7 +39,7 @@ export class IconDesign<
 > {
   protected readonly icon: IconRef
 
-  protected readonly onLoad = (image: ImageEventLoad) => this.emits?.('load', image)
+  protected readonly onLoad = (event: ImageEventData) => this.emits?.('load', event)
 
   /**
    * Constructor

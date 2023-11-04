@@ -66,7 +66,7 @@ export class ImageDesign<
     onUnmounted(() => this.image.destructor())
 
     if (this.emits) {
-      watch(this.image.getData(), () => this.emits?.('load', this.image.getItem()))
+      watch(this.image.data, value => this.emits?.('load', { image: value }))
     }
   }
 
@@ -84,9 +84,10 @@ export class ImageDesign<
    */
   protected initSetup (): SETUP {
     return {
-      type: this.image.getType(),
-      data: this.image.getData(),
-      text: this.image.getText()
+      type: this.image.type,
+      data: this.image.data,
+
+      text: this.image.text
     } as SETUP
   }
 
@@ -110,7 +111,7 @@ export class ImageDesign<
   protected initClasses (): Partial<CLASSES> {
     return {
       main: {
-        ...this.toClassName(this.image.getClasses().value)
+        ...this.toClassName(this.image.classes.value)
       },
       ...{
         // :classes [!] System label / Системная метка
@@ -125,7 +126,7 @@ export class ImageDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      ...this.image.getStyles().value
+      ...this.image.styles.value
     }
   }
 
