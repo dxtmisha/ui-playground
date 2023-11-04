@@ -74,8 +74,5 @@ export class Icon extends DesignAbstract<IconProps, IconEventLoad> {
    * Функция, которая вызывается каждый раз, когда изменяются входные значения.
    */
   protected initEvent (): void {
-    this.event.isActive = this.isActive()
-    this.event.iconBind = this.getIconBind()
-    this.event.iconActiveBind = this.getIconActiveBind()
   }
 }

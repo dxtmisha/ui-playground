@@ -12,9 +12,9 @@ import { type IconEventLoad } from './typesBasic.ts'
 export class IconRef {
   protected readonly item: Icon
 
-  protected readonly active: ComputedRef<IconEventLoad['isActive']>
-  protected readonly iconBind: ComputedRef<IconEventLoad['iconBind']>
-  protected readonly iconActiveBind: ComputedRef<IconEventLoad['iconActiveBind']>
+  readonly active: ComputedRef<IconEventLoad['isActive']>
+  readonly iconBind: ComputedRef<IconEventLoad['iconBind']>
+  readonly iconActiveBind: ComputedRef<IconEventLoad['iconActiveBind']>
 
   /**
    * Constructor
@@ -36,29 +36,5 @@ export class IconRef {
     this.active = computed(() => this.item.isActive())
     this.iconBind = computed(() => this.item.getIconBind())
     this.iconActiveBind = computed(() => this.item.getIconActiveBind())
-  }
-
-  /**
-   * Checks if the additional icon is active.<br>
-   * Проверяет, активна ли дополнительная иконка.
-   */
-  isActive (): ComputedRef<IconEventLoad['isActive']> {
-    return this.active
-  }
-
-  /**
-   * Returns data for the icon component.<br>
-   * Возвращает данные для компонента иконки.
-   */
-  getIconBind (): ComputedRef<IconEventLoad['iconBind']> {
-    return this.iconBind
-  }
-
-  /**
-   * Returns data for the additional icon component.<br>
-   * Возвращает данные для дополнительного компонента иконки.
-   */
-  getIconActiveBind (): ComputedRef<IconEventLoad['iconActiveBind']> {
-    return this.iconActiveBind
   }
 }

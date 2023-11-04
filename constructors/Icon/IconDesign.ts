@@ -81,9 +81,9 @@ export class IconDesign<
    */
   protected initSetup (): SETUP {
     return {
-      iconBind: this.icon.getIconBind(),
-      iconActiveBind: this.icon.getIconActiveBind(),
-      isActive: this.icon.isActive()
+      iconBind: this.icon.iconBind,
+      iconActiveBind: this.icon.iconActiveBind,
+      isActive: this.icon.active
     } as SETUP
   }
 
