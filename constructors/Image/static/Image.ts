@@ -18,7 +18,7 @@ import {
 import { type ImageProps } from '../props.ts'
 import {
   type ImageElement,
-  type ImageEventMain,
+  type ImageEventLoad,
   type ImageTypeItem
 } from '../typesBasic.ts'
 
@@ -26,7 +26,7 @@ import {
  * Base class for working with images and icons.<br>
  * Базовый класс для работы с изображениями и иконками.
  */
-export class Image extends DesignAsyncAbstract<ImageProps, ImageEventMain> {
+export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
   protected readonly type: ImageType
   protected readonly data: ImageData
 
@@ -45,7 +45,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventMain> {
   constructor (
     protected readonly props: ImageProps,
     element?: ImageElement,
-    protected readonly callback?: (event: ImageEventMain) => void
+    protected readonly callback?: (event: ImageEventLoad) => void
   ) {
     super(props, callback)
 

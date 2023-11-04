@@ -3,7 +3,6 @@ import {
   type Undefined
 } from '../../types/basic.ts'
 import {
-  type ConstrClassObject,
   type ConstrStyles
 } from '../../types/constructor.ts'
 
@@ -53,19 +52,18 @@ export type ImageEventItem = ImageItem | string | undefined
 export type ImageEventType = {
   type: ImageTypeItem
 }
-export type ImageEventData = {
-  image: ImageEventItem
-}
+export type ImageEventData =
+  ImageEventType &
+  {
+    image: ImageEventItem
+  }
 export type ImageEventMain =
   ImageEventData &
   {
     styles: ConstrStyles
   }
 export type ImageEventLoad =
-  ImageEventType &
   ImageEventData &
   {
-    text: string | undefined
-    classes: ConstrClassObject
     styles: ConstrStyles
   }

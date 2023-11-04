@@ -66,7 +66,10 @@ export class ImageDesign<
     onUnmounted(() => this.image.destructor())
 
     if (this.emits) {
-      watch(this.image.data, value => this.emits?.('load', { image: value }))
+      watch(this.image.data, value => this.emits?.('load', {
+        type: this.image.type.value,
+        image: value
+      }))
     }
   }
 
