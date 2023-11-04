@@ -1,6 +1,7 @@
 import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+import { ProgressRef } from './ProgressRef.ts'
 
 import {
   type ConstrOptions,
@@ -37,6 +38,8 @@ export class ProgressDesign<
   CLASSES,
   P
 > {
+  protected readonly item: ProgressRef
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -54,9 +57,7 @@ export class ProgressDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
-
+    this.item = new ProgressRef(props)
     this.init()
   }
 
@@ -65,8 +66,6 @@ export class ProgressDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -76,8 +75,8 @@ export class ProgressDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      tag: this.item.getTag(),
+      valueInPercent: this.item.getValueInPercent()
     } as SETUP
   }
 
@@ -88,10 +87,7 @@ export class ProgressDesign<
   protected initExpose (): EXPOSE {
     // const setup = this.setup()
 
-    return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
-    } as EXPOSE
+    return {} as EXPOSE
   }
 
   /**
@@ -100,7 +96,9 @@ export class ProgressDesign<
    */
   protected initClasses (): Partial<CLASSES> {
     return {
-      main: {},
+      main: {
+        ...this.toClassName(this.item.getClasses().value)
+      },
       ...{
         // :classes [!] System label / Системная метка
         circle: this.getSubClass('circle')
@@ -115,8 +113,7 @@ export class ProgressDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
+      ...this.item.getStyles().value
     }
   }
 

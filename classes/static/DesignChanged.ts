@@ -4,21 +4,33 @@ import { forEach, isArray } from '../../functions/data.ts'
  * The class checks the values that have been edited.<br>
  * Класс проверяет значения, которые были отредактированы.
  */
-export class DesignChanged {
+export class DesignChanged<T extends Record<string, any>> {
   private data: string[] = []
   private readonly cache: Record<string, any> = {}
 
   /**
+   * Constructor
+   * @param props base data /<br>базовые данные
+   * @param watch data for tracking /<br>данные для слежения
+   */
+  // eslint-disable-next-line no-useless-constructor
+  constructor (
+    protected readonly props?: T,
+    protected readonly watch?: string[]
+  ) {
+  }
+
+  /**
    * Checks if the value has been updated.<br>
    * Проверяет, обновлено ли значение.
-   * @param value property name /<br>название свойства
+   * @param name property name /<br>название свойства
    */
-  is (value: string | string[]): boolean {
-    if (isArray(value)) {
-      return Boolean(this.data.find(item => value.indexOf(item) !== -1))
+  is (name: string | string[]): boolean {
+    if (isArray(name)) {
+      return Boolean(this.data.find(item => name.indexOf(item) !== -1))
     }
 
-    return this.data.indexOf(value) !== -1
+    return this.data.indexOf(name) !== -1
   }
 
   /**
@@ -53,27 +65,40 @@ export class DesignChanged {
   }
 
   /**
-   * Checking for data changes in all records.<br>
-   * Проверка на изменения данных у всех записей.
-   * @param props base data /<br>базовые данные
-   */
-  addByCache (props: Record<string, any>): this {
-    forEach(props, (prop, name) => {
-      if (!(name in this.cache) || this.cache[name] !== prop) {
-        this.cache[name] = prop
-        this.add(name)
-      }
-    })
-
-    return this
-  }
-
-  /**
    * Resets all values.<br>
    * Сбрасывает все значения.
    */
   reset (): this {
     this.data = []
     return this
+  }
+
+  /**
+   * Checking for data changes in all records.<br>
+   * Проверка на изменения данных у всех записей.
+   */
+  resetByCache (): this {
+    if (this.props) {
+      forEach(this.props, (prop, name) => {
+        if (
+          this.isWatch(name) &&
+          this.cache?.[name] !== prop
+        ) {
+          this.cache[name] = prop
+          this.add(name)
+        }
+      })
+    }
+
+    return this
+  }
+
+  /**
+   * Checks if the current values need to be checked for changes.
+   * Проверяет, нужно ли проверить текущие значения на изменения.
+   * @param name property name /<br>название свойства
+   */
+  protected isWatch (name: string): boolean {
+    return !this.watch || name in this.watch
   }
 }

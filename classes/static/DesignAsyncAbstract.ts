@@ -24,7 +24,7 @@ export abstract class DesignAsyncAbstract<
   async makeCallback (): Promise<void> {
     const changed = this.getChanged()
 
-    changed.addByCache(this.props)
+    changed.resetByCache()
     await this.initEvent()
 
     if (this.callback) {

@@ -9,18 +9,20 @@ export abstract class DesignAbstract<
   C extends Record<string, any>
 > {
   protected readonly event: C = {} as C
-  protected changed?: DesignChanged
+  protected changed?: DesignChanged<T>
 
   /**
    * Constructor
    * @param props base data /<br>базовые данные
    * @param callback callback function when the value changes /<br>
    * функция обратного вызова при изменении значения
+   * @param changedWatch base data /<br>данный для слежения
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: T,
-    protected readonly callback?: (event: C) => void
+    protected readonly callback?: (event: C) => void,
+    protected readonly changedWatch?: string[]
   ) {
   }
 
@@ -46,9 +48,16 @@ export abstract class DesignAbstract<
    * Checks if the value has been changed by the property name.<br>
    * Проверяет, было ли изменено значение по названию свойства.
    * @param name property names /<br>названия свойств
+   * @param nameProp names of properties of the input variable /<br>названия свойств входной переменной
    */
-  protected isChanged<K extends keyof T & string> (name: K): boolean {
-    return !(name in this.event) || this.getChanged().is(name)
+  protected isChanged<
+    K extends keyof C & string,
+    KT extends keyof T & string
+  > (
+    name: K,
+    nameProp?: KT | KT[]
+  ): boolean {
+    return !(name in this.event) || this.getChanged().is(nameProp || name)
   }
 
   /**
@@ -64,12 +73,12 @@ export abstract class DesignAbstract<
    * Getting an object to check for data changes.<br>
    * Получение объекта для проверки изменения данных.\
    */
-  protected getChanged (): DesignChanged {
+  protected getChanged (): DesignChanged<T> {
     if (this.changed) {
       return this.changed
     }
 
-    this.changed = new DesignChanged()
+    this.changed = new DesignChanged(this.props, this.changedWatch)
     return this.changed
   }
 
@@ -104,7 +113,7 @@ export abstract class DesignAbstract<
   makeCallback (): void {
     const changed = this.getChanged()
 
-    changed.addByCache(this.props)
+    changed.resetByCache()
     this.initEvent()
 
     if (this.callback) {

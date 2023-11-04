@@ -122,6 +122,15 @@ export abstract class DesignConstructorAbstract<
   }
 
   /**
+   * Getting the class name for the status.<br>
+   * Получение названия класса для статуса.
+   * @param name list of class names by levels /<br>список названий классов по уровням
+   */
+  getStatusClass (name: string | string[]): string {
+    return `${this.getName()}--${toArray(name).join('--')}`
+  }
+
+  /**
    * Execution method to replace setup in Vue.<br>
    * Метод выполнения, для замены setup в Vue.
    */
