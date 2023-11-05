@@ -1,0 +1,65 @@
+@import "../../styles/properties";
+
+@mixin mixinRipple {
+  $subClass: 'item';
+  $stateEnd: 'end';
+
+  overflow: hidden;
+  @include absolute;
+  z-index: 8;
+
+  border-radius: inherit;
+
+  &__item {
+    @include absolute;
+
+    @include backgroundColor(
+                    v('??sys.color', var(--sys-color, v('??backgroundColor'))),
+                    v('??backgroundOpacity')
+    )
+  }
+
+  %ripple-end {
+    opacity: 0;
+
+    transition-delay: v('d.sys.transitionDuration.fade.enter');
+    transition-duration: v('d.sys.transitionDuration.fade.through');
+    transition-property: opacity;
+  }
+
+  &__#{$subClass} {
+    animation-duration: v('d.sys.transitionDuration.fade.through');
+    animation-fill-mode: forwards;
+    animation-name: n('??start');
+    animation-timing-function: linear;
+
+    &:not(:last-child) {
+      @include state($stateEnd) {
+        @extend %ripple-end;
+      }
+    }
+  }
+
+  &:not(:active) {
+    @include subclass($subClass) {
+      @include state($stateEnd) {
+        @extend %ripple-end;
+      }
+    }
+  }
+
+  @keyframes #{n('??start')} {
+    0% {
+      @include gradientOpacity(0);
+      clip-path: circle(000% at v('??sys.x') v('??sys.y'));
+    }
+    50% {
+      @include gradientOpacity(v('??backgroundOpacity'));
+      clip-path: circle(075% at v('??sys.x') v('??sys.y'));
+    }
+    100% {
+      @include gradientOpacity(v('??backgroundOpacity'));
+      clip-path: circle(150% at v('??sys.x') v('??sys.y'));
+    }
+  }
+}

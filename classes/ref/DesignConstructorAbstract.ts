@@ -131,6 +131,15 @@ export abstract class DesignConstructorAbstract<
   }
 
   /**
+   * Getting the property name for the style.<br>
+   * Получение названия свойства для стиля.
+   * @param name list of class names by levels /<br>список названий классов по уровням
+   */
+  getStyle (name: string | string[]): string {
+    return `${this.getName()}-${toArray(name).join('-')}`
+  }
+
+  /**
    * Execution method to replace setup in Vue.<br>
    * Метод выполнения, для замены setup в Vue.
    */

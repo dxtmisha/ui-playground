@@ -1,1 +1,5 @@
+@import "/md2/main";
 @import "/md3/main";
+
+@include md2Init;
+@include md3InitFull;

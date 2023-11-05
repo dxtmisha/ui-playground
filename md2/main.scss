@@ -1,14 +1,14 @@
 @import "/styles/properties";
 
-@mixin md3Init {
+@mixin md2Init {
   @import "./styles/vars";
   @import "./styles/classes";
   @import "./styles/properties";
 
-  @include initDesignBody('md3.main');
+  @include initDesignBody('md2.main');
 }
 
-@mixin md3InitFull {
+@mixin md2InitFull {
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
   @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
   @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
@@ -17,5 +17,5 @@
   @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone");
 
   @include dirInit;
-  @include md3Init;
+  @include md2Init;
 }
