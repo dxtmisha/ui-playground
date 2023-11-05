@@ -136,7 +136,7 @@ export abstract class DesignConstructorAbstract<
    * @param name list of class names by levels /<br>список названий классов по уровням
    */
   getStyle (name: string | string[]): string {
-    return `${this.getName()}-${toArray(name).join('-')}`
+    return `--${this.getName()}-sys-${toArray(name).join('-')}`
   }
 
   /**

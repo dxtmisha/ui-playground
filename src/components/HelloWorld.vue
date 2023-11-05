@@ -11,6 +11,7 @@ import pad from './../assets/pad.png'
 
 import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
 import Md3Progress from '../../md3/Progress/Md3Progress.vue'
+import Md2Ripple from '../../md2/Ripple/Md2Ripple.vue'
 
 const value = ref('edit')
 const active = ref(false)
@@ -40,6 +41,14 @@ setInterval(() => {
 
 <template>
   <div>
+    <div style="display: flex;">
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md2-ripple />
+      </div>
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md2-ripple :disabled="disabled" />
+      </div>
+    </div>
     <div style="display: flex;">
       <div style="position: relative; width: 240px; height: 240px;">
         <md3-progress :visible="true" />

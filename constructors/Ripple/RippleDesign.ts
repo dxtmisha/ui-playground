@@ -106,6 +106,7 @@ export class RippleDesign<
       main: {},
       ...{
         // :classes [!] System label / Системная метка
+        item: this.getSubClass('item')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>

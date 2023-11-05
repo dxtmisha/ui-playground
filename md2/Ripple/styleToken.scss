@@ -2,7 +2,7 @@
 
 @mixin mixinRippleToken {
   // :style [!] System label / Системная метка
-  @include backgroundColor(#{var(--md2-sys-palette-primary)});
-  @include backgroundOpacity(#{var(--md2-sys-opacity-pressed)});
+  --md2-ripple-backgroundColor: var(--md2-sys-palette-primary);
+  --md2-ripple-backgroundOpacity: var(--md2-sys-opacity-pressed);
   // :style [!] System label / Системная метка
 }

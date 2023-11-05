@@ -1,4 +1,4 @@
-import { type PropType } from 'vue'
+// import { type PropType } from 'vue'
 
 import {
   RippleProps,
@@ -13,6 +13,7 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] disabled?: boolean
   // :type [!] System label / Системная метка
 }
 

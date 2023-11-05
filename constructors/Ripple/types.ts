@@ -47,5 +47,6 @@ export type RippleSlots = {
 export type RippleClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
+  item: string
   // :classes [!] System label / Системная метка
 }
