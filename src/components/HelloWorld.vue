@@ -9,18 +9,20 @@ import fold from './../assets/Galaxy_Z_Fold5.png'
 import flip from './../assets/Galaxy_Z_Flip5.png'
 import pad from './../assets/pad.png'
 
-import { type ImageEventLoad } from '../../constructors/Image/typesBasic.ts'
+import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
+import Md3Progress from '../../md3/Progress/Md3Progress.vue'
 
 const value = ref('edit')
 const active = ref(false)
 const adaptive = ref(false)
 const turn = ref(false)
 const disabled = ref(false)
+const visible = ref(false)
 const position = ref('10px')
 const coordinator = ref([5])
 const size = ref('contain')
-const onLoad = (event: ImageEventLoad) => {
-  console.log('event', event)
+const onLoad = (event: ImageEventData) => {
+  // console.log('event', event)
 }
 
 setInterval(() => {
@@ -29,15 +31,33 @@ setInterval(() => {
   adaptive.value = !adaptive.value
   turn.value = !turn.value
   disabled.value = !disabled.value
+  visible.value = !visible.value
   position.value = '25px'
   coordinator.value = [25]
   size.value = 'cover'
-  console.log('color')
-}, 1600)
+}, 2400)
 </script>
 
 <template>
   <div>
+    <div style="display: flex;">
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md3-progress :visible="true" />
+      </div>
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md3-progress :visible="true" circular />
+      </div>
+      <div style="position: relative; width: 240px; height: 240px;">
+        {{ visible }}
+        <md3-progress :visible="visible" />
+      </div>
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md3-progress :visible="visible" indeterminate="type2" />
+      </div>
+      <div style="position: relative; width: 240px; height: 240px;">
+        <md3-progress :visible="visible" circular />
+      </div>
+    </div>
     <div style="display: flex;">
       <md3-icon :icon="value" />
       <md3-icon icon="face" :icon-active="value" :active="active" @load="onLoad" />

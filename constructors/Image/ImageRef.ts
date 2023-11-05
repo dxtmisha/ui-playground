@@ -11,7 +11,7 @@ import { type ImageProps } from './props.ts'
 import {
   type ImageElement,
   type ImageEventItem,
-  type ImageEventMain,
+  type ImageEventLoad,
   type ImageTypeItem
 } from './typesBasic.ts'
 
@@ -41,7 +41,7 @@ export class ImageRef {
     this.item = new Image(
       props,
       element?.value,
-      (event: ImageEventMain) => {
+      (event: ImageEventLoad) => {
         this.data.value = event.image
         this.styles.value = event.styles
       }

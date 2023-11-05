@@ -15,6 +15,10 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] value?: number
+  // [constructor] max?: number
+  // [constructor] visible?: boolean
+  // [constructor] delay?: number
   linear?: boolean
   circular?: boolean
   indeterminate?: 'type1' | 'type2'

@@ -75,8 +75,12 @@ export class ProgressDesign<
    */
   protected initSetup (): SETUP {
     return {
-      tag: this.item.getTag(),
-      valueInPercent: this.item.getValueInPercent()
+      tag: this.item.tag,
+      valueInPercent: this.item.valueInPercent,
+
+      hide: this.item.hide,
+      visible: this.item.visible,
+      onAnimation: this.item.onAnimation
     } as SETUP
   }
 
@@ -97,7 +101,7 @@ export class ProgressDesign<
   protected initClasses (): Partial<CLASSES> {
     return {
       main: {
-        ...this.toClassName(this.item.getClasses().value)
+        ...this.toClassName(this.item.classes.value)
       },
       ...{
         // :classes [!] System label / Системная метка
@@ -113,7 +117,7 @@ export class ProgressDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      ...this.item.getStyles().value
+      ...this.item.styles.value
     }
   }
 
@@ -122,11 +126,26 @@ export class ProgressDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
+    const setup = this.setup()
+    const children: any[] = []
 
-    return h('div', {
+    if (this.props?.circular) {
+      children.push(
+        h('circle', {
+          class: setup.classes.value.circle,
+          cx: '24',
+          cy: '24',
+          r: '20'
+        })
+      )
+    }
+
+    return h(setup.tag.value, {
       ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: setup.classes.value.main,
+      style: setup.styles.value,
+      viewBox: '0 0 48 48',
+      onAnimationend: setup.onAnimation
+    }, children)
   }
 }

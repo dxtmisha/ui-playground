@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
+// import { isFilled } from '../../functions/data.ts'
 import { inArray } from '../../functions/object.ts'
 
 import { ProgressDesign } from '../../constructors/Progress/ProgressDesign'
@@ -25,10 +25,9 @@ const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
-    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'md3-progress': true,
-    'md3-progress--linear': props.linear,
+    'md3-progress--linear': props.linear && !props.circular,
     'md3-progress--circular': props.circular,
     [`md3-progress--indeterminate--${props.indeterminate}`]: inArray(propsValues.indeterminate, props.indeterminate),
     [`md3-progress--position--${props.position}`]: inArray(propsValues.position, props.position),
@@ -36,10 +35,8 @@ const classesToken = computed<ConstrClasses>(() => ({
     'md3-progress--inverse': props.inverse
     // :classes-values [!] System label / Системная метка
   }
-  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
-  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))

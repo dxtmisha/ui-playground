@@ -114,6 +114,9 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
   onAnimation ({ animationName }: AnimationEvent): void {
     if (animationName.match('-hidden')) {
       this.event.hide = false
+      this.event.classes = this.initClasses()
+
+      this.makeCallbackItem()
     }
   }
 
@@ -130,7 +133,7 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
 
       if (this.isValue()) {
         resolve([false, false])
-      } else if (this.event?.visible !== visible) {
+      } else if (Boolean(this.event?.visible) !== visible) {
         if (visible && delay) {
           this.timeout = setTimeout(() => {
             clearTimeout(this.timeoutReject)

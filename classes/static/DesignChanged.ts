@@ -99,6 +99,6 @@ export class DesignChanged<T extends Record<string, any>> {
    * @param name property name /<br>название свойства
    */
   protected isWatch (name: string): boolean {
-    return !this.watch || name in this.watch
+    return !this.watch || this.watch.indexOf(name) >= 0
   }
 }

@@ -540,7 +540,8 @@ export class DesignReplace {
       const newParent = `${parent}--${name}`
       const newValues = [
         ...values,
-        this.isString(value) ? `Boolean(${index})` : index
+        this.isString(value) ? `Boolean(${index})` : index,
+        ...this.initClassesCategory(item)
       ]
 
       if (this.isBoolean(value)) {
@@ -560,6 +561,32 @@ export class DesignReplace {
     })
 
     return templates
+  }
+
+  /**
+   * Adding an exception for the current property.<br>
+   * Добавление исключения для текущего свойства.
+   * @param item object for checking /<br>объект для проверки
+   */
+  protected initClassesCategory (item: DesignStructureItem | DesignStructureItemSub): string[] {
+    const values: string[] = []
+
+    if (
+      'category' in item &&
+      item.category &&
+      Boolean(item.default)
+    ) {
+      forEach(this.structure.get(), ({
+        name,
+        category
+      }) => {
+        if (item.name !== name && item.category === category) {
+          values.push(`!props.${name}`)
+        }
+      })
+    }
+
+    return values
   }
 
   /**

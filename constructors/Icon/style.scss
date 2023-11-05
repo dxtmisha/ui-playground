@@ -1,11 +1,11 @@
 @import "../../styles/properties";
 
 @mixin mixinIcon {
-  $clipPath: clip-path #{v('d.sys.transition-duration.fade.enter')} #{v('d.sys.transition-function.deceleration')};
-  $margin: margin #{v('d.ref.transition-duration.1')} linear;
-  $background: background #{v('d.sys.transition-duration.standard')} linear;
-  $opacity: opacity #{v('d.sys.transition-duration.standard')} linear;
-  $transform: transform #{v('d.sys.transition-duration.standard')} linear;
+  $clipPath: clip-path #{v('d.sys.transitionDuration.fade.enter')} #{v('d.sys.transitionFunction.deceleration')};
+  $margin: margin #{v('d.ref.transitionDuration.1')} linear;
+  $background: background #{v('d.sys.transitionDuration.standard')} linear;
+  $opacity: opacity #{v('d.sys.transitionDuration.standard')} linear;
+  $transform: transform #{v('d.sys.transitionDuration.standard')} linear;
 
   @include initByCustom('_width', v('??width', #{calc(var(--sys-font-size, 16px) * 1.5)}));
 

@@ -115,12 +115,18 @@ export abstract class DesignAbstract<
 
     changed.resetByCache()
     this.initEvent()
+    this.makeCallbackItem()
+    changed.reset()
+  }
 
+  /**
+   * The function calls an image call.<br>
+   * Функция вызывает образный вызов.
+   */
+  protected makeCallbackItem (): void {
     if (this.callback) {
       this.callback(this.event)
     }
-
-    changed.reset()
   }
 
   /**

@@ -1,7 +1,7 @@
 @import "../../styles/properties";
 
 @mixin mixinProgress {
-  @include initByCustom('palette', v('??sys.color', v('??background-color')));
+  @include initByCustom('palette', v('??sys.color', v('??backgroundColor')));
   @include initByCustom('transitionDuration', 20s);
 
   display: none;
@@ -193,7 +193,7 @@
   }
 
   &--inverse {
-    @include initByCustom('palette', v('??sys.color', var(--sys-color, v('??background-color'))));
+    @include initByCustom('palette', v('??sys.color', var(--sys-color, v('??backgroundColor'))));
   }
 
   @keyframes #{n('??linear-visible')} {

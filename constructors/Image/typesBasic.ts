@@ -57,11 +57,6 @@ export type ImageEventData =
   {
     image: ImageEventItem
   }
-export type ImageEventMain =
-  ImageEventData &
-  {
-    styles: ConstrStyles
-  }
 export type ImageEventLoad =
   ImageEventData &
   {

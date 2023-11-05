@@ -7440,8 +7440,8 @@ $designsProperties: (
             value: (
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: '--md3-progress-backgroundColor',
-                type: 'var',
+                name: 'background-color',
+                type: 'property',
                 value: 'var(--md3-sys-palette-surfaceContainerHighest)',
               ),
             ),

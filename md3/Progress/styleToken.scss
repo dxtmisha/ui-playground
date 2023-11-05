@@ -6,7 +6,7 @@
   --md3-progress-backgroundColor: var(--md3-sys-palette-primary);
   
   &--linear {
-    --md3-progress-backgroundColor: var(--md3-sys-palette-surfaceContainerHighest);
+    @include backgroundColor(#{var(--md3-sys-palette-surfaceContainerHighest)});
   }
   
   &--circular {
