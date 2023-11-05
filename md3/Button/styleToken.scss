@@ -1,0 +1,217 @@
+@import "../../styles/all";
+
+@mixin mixinButtonToken {
+  // :style [!] System label / Системная метка
+  --md3-button-transitionFunction: var(--d-sys-transitionFunction-standard);
+  
+  gap: var(--md3-ref-spacing-2);
+  
+  padding: var(--md3-ref-spacing-6);
+  
+  font-family: var(--md3-ref-font-family-roboto);
+  @include fontSize(#{var(--md3-ref-font-size-md)});
+  font-weight: var(--md3-ref-font-weight-bold);
+  @include lineHeight(#{var(--md3-ref-lineHeight-md)});
+  letter-spacing: var(--md3-ref-letterSpacing-xs);
+  text-transform: none;
+  
+  @include color(#{var(--md3-sys-palette-primary)});
+  
+  @include backgroundColor(#{transparent});
+  @include gradient(#{var(--md3-sys-palette-primary)});
+  @include gradientOpacity(#{0});
+  
+  border-radius: var(--md3-sys-rounded-full);
+  
+  box-shadow: none;
+  
+  transition-duration: var(--d-sys-transitionDuration-lg-close);
+  transition-property: border, box-shadow;
+  
+  @include hover {
+    @include gradientOpacity(#{var(--md3-sys-opacity-008)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  @include active {
+    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  @include focus {
+    @include gradientOpacity(#{var(--md3-sys-opacity-012)});
+  }
+  
+  @include disabled {
+    @include color(#{var(--md3-sys-palette-onSurface)});
+    @include colorOpacity(#{var(--md3-sys-opacity-disabled)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &--height {
+    &--sm {
+      @include height(#{var(--md3-ref-spacing-8)});
+    }
+    
+    &--md {
+      @include height(#{var(--md3-ref-spacing-10)});
+    }
+    
+    &--lg {
+      @include height(#{var(--md3-ref-spacing-12)});
+    }
+  }
+  
+  &--selected {
+    @include color(#{var(--md3-sys-palette-primaryVariant)});
+    
+    @include gradient(#{var(--md3-sys-palette-primaryVariant)});
+  }
+  
+  &--filled {
+    @include color(#{var(--md3-sys-palette-onPrimary)});
+    
+    @include backgroundColor(#{var(--md3-sys-palette-primary)});
+    @include gradient(#{var(--md3-sys-palette-onPrimary)});
+    
+    @include hover('.md3-button') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include active('.md3-button') {
+      box-shadow: none;
+    }
+    
+    @include disabled('.md3-button') {
+      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include color(#{var(--md3-sys-palette-onPrimary)});
+      
+      @include backgroundColor(#{var(--md3-sys-palette-primaryVariant)});
+    }
+  }
+  
+  &--outlined {
+    @include focus('.md3-button') {
+      &::before {
+        content: ' ';
+        @include borderColor(#{var(--md3-sys-palette-primary)});
+      }
+    }
+    
+    @include disabled('.md3-button') {
+      &::before {
+        content: ' ';
+        @include borderColor(#{var(--md3-sys-palette-onSurface)});
+        @include borderOpacity(#{var(--md3-sys-opacity-012)});
+      }
+    }
+    
+    &::before {
+      content: ' ';
+      position: absolute;
+      @include inset(#{0px});
+      
+      border-radius: inherit;
+      border-width: var(--md3-ref-spacing-px);
+      border-style: solid;
+      @include borderColor(#{var(--md3-sys-palette-outline)});
+    }
+    
+    &--selected {
+      &::before {
+        content: ' ';
+        @include borderColor(#{var(--md3-sys-palette-primaryVariant)});
+      }
+    }
+  }
+  
+  &--text {
+    padding: var(--md3-ref-spacing-3);
+    
+    @include hover('.md3-button') {
+      transition-duration: var(--d-sys-transitionDuration-lg-close);
+    }
+    
+    @include active('.md3-button') {
+      &::after {
+        content: ' ';
+        @include borderOpacity(#{var(--md3-sys-opacity-medium)});
+      }
+    }
+    
+    &::after {
+      content: ' ';
+      position: absolute;
+      @include inset(#{0px});
+      
+      border-radius: inherit;
+      border-width: var(--md3-ref-spacing-px);
+      border-style: solid;
+      @include borderColor(#{var(--md3-sys-palette-outline)});
+      @include borderOpacity(#{0});
+      
+      transition: inherit;
+    }
+  }
+  
+  &--elevated {
+    @include backgroundColor(#{var(--md3-sys-palette-surfaceContainerLow)});
+    
+    box-shadow: var(--md3-ref-shadow-1);
+    
+    @include hover('.md3-button') {
+      box-shadow: var(--md3-ref-shadow-2);
+    }
+    
+    @include active('.md3-button') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include disabled('.md3-button') {
+      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include backgroundColor(#{var(--md3-sys-palette-surfaceContainerHigh)});
+    }
+  }
+  
+  &--tonal {
+    @include color(#{var(--md3-sys-palette-onSecondaryContainer)});
+    
+    @include backgroundColor(#{var(--md3-sys-palette-secondaryContainer)});
+    @include gradient(#{var(--md3-sys-palette-onSecondaryContainer)});
+    
+    @include hover('.md3-button') {
+      box-shadow: var(--md3-ref-shadow-1);
+    }
+    
+    @include active('.md3-button') {
+      box-shadow: none;
+    }
+    
+    @include disabled('.md3-button') {
+      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
+      @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include backgroundColor(#{var(--md3-sys-palette-secondaryContainerVariant)});
+    }
+  }
+  // :style [!] System label / Системная метка
+}
