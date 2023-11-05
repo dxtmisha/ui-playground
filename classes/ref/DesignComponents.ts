@@ -53,9 +53,9 @@ export class DesignComponents<
    * @param index the name of this /<br>название данного
    * @param props basic data /<br>базовые данные
    */
-  getModification (
-    index?: string,
-    props?: Record<string, any>
+  getModification<K extends keyof P> (
+    index?: K & string | string,
+    props?: P[K] | Record<string, any>
   ): Record<string, any> | undefined {
     if (index) {
       const modification = getRef(this.modification?.[index])
@@ -66,7 +66,7 @@ export class DesignComponents<
       ) {
         const value: Record<string, any> = {}
 
-        forEach(modification, (item, name) => {
+        forEach(modification, (item, name: string) => {
           value[name] = getRef(item)
         })
 
@@ -93,15 +93,17 @@ export class DesignComponents<
     name: K & string,
     props?: COMP[K] & ConstrItem,
     children?: any[],
-    index?: string
+    index?: K & string | string
   ): VNode[] {
     if (this.is(name)) {
+      const indexItem = index ?? name
+
       return [
         render(
           this.get(name),
-          this.getModification(index, props),
+          this.getModification(indexItem, props),
           children,
-          index || (name as string)
+          indexItem
         )
       ]
     }
@@ -124,7 +126,7 @@ export class DesignComponents<
     name: K & string,
     props?: COMP[K] & ConstrItem,
     children?: any[],
-    index?: string
+    index?: K & string | string
   ): this {
     item.push(...this.render(name, props, children, index))
 

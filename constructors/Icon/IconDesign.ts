@@ -133,17 +133,27 @@ export class IconDesign<
 
     if (this.components.is('image')) {
       if (this.props?.icon) {
-        this.components.renderAdd(children, 'image', {
-          ...setup.iconBind.value,
-          onLoad: this.onLoad
-        })
+        this.components.renderAdd(
+          children,
+          'image',
+          {
+            ...setup.iconBind.value,
+            onLoad: this.onLoad
+          },
+          undefined,
+          'icon')
       }
 
       if (this.props?.iconActive) {
-        this.components?.renderAdd(children, 'image', {
-          ...setup.iconActiveBind.value,
-          onLoad: this.onLoad
-        })
+        this.components.renderAdd(
+          children,
+          'image',
+          {
+            ...setup.iconActiveBind.value,
+            onLoad: this.onLoad
+          },
+          undefined,
+          'iconActive')
       }
     }
 
