@@ -94,7 +94,8 @@ export const useIcon = function <
         active: props?.selected,
         hide: props?.iconHide,
         animationType: 'type2',
-        start: true
+        start: true,
+        dataEventType: 'icon'
       },
       'icon'
     )
@@ -108,7 +109,8 @@ export const useIcon = function <
           class: classIconTrailing,
           turn: props?.iconTurn,
           end: true,
-          high: true
+          high: true,
+          dataEventType: 'icon-trailing'
         },
         'icon'
       )

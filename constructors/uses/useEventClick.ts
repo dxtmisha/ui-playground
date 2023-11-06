@@ -53,8 +53,9 @@ export const useEventClick = function (
    */
   const getOptions = (event: MouseEvent): UseEventClickValue => {
     const type = (event.target as HTMLElement)
-      .closest<HTMLElement>('[data-event-type]')
-      ?.dataset?.eventType
+      ?.closest<HTMLElement>('[data-event-type]')
+      ?.dataset
+      ?.eventType
 
     return {
       type: type ?? 'click',
