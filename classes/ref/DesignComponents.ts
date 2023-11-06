@@ -89,11 +89,14 @@ export class DesignComponents<
    * @param children sub-elements of the component /<br>под элементы компонента
    * @param index the name of the key /<br>названия ключа
    */
-  render<K extends keyof COMP> (
+  render<
+    K extends keyof COMP,
+    PK extends keyof P
+  > (
     name: K & string,
-    props?: COMP[K] & ConstrItem,
+    props?: P[PK] & ConstrItem,
     children?: any[],
-    index?: K & string | string
+    index?: PK & string | string
   ): VNode[] {
     if (this.is(name)) {
       const indexItem = index ?? name
@@ -121,12 +124,15 @@ export class DesignComponents<
    * @param children sub-elements of the component /<br>под элементы компонента
    * @param index the name of the key /<br>названия ключа
    */
-  renderAdd<K extends keyof COMP> (
+  renderAdd<
+    K extends keyof COMP,
+    PK extends keyof P
+  > (
     item: any[],
     name: K & string,
-    props?: COMP[K] & ConstrItem,
+    props?: P[PK] & ConstrItem,
     children?: any[],
-    index?: K & string | string
+    index?: PK & string | string
   ): this {
     item.push(...this.render(name, props, children, index))
 
