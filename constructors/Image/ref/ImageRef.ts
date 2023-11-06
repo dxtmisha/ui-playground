@@ -1,19 +1,19 @@
 import { computed, type ComputedRef, shallowRef, watch, watchEffect } from 'vue'
 
-import { Image } from './static/Image.ts'
+import { Image } from '../static/Image.ts'
 
-import { type RefUndefined } from '../../types/ref.ts'
+import { type RefUndefined } from '../../../types/ref.ts'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../types/constructor.ts'
-import { type ImageProps } from './props.ts'
+} from '../../../types/constructor.ts'
+import { type ImageProps } from '../props.ts'
 import {
   type ImageElement,
   type ImageEventItem,
   type ImageEventLoad,
   type ImageTypeItem
-} from './typesBasic.ts'
+} from '../typesBasic.ts'
 
 /**
  * Base class for working with images and icons.<br>

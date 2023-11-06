@@ -1,12 +1,38 @@
 import { computed, type ComputedRef, type PropType, type VNode } from 'vue'
-import { getBind } from '../../functions/render.ts'
+import { getBind } from '../../../functions/render.ts'
 
-import { DesignComponents } from '../../classes/ref/DesignComponents.ts'
+import { DesignComponents } from '../../../classes/ref/DesignComponents.ts'
 
-import { type IconProps } from './props.ts'
+import { type IconProps } from '../props.ts'
 
 export type UseIconComponent = {
   icon?: object
+}
+
+export type UseIconSetup = {
+  /**
+   * Parameters for the main icon.<br>
+   * Параметры для главной иконки.
+   */
+  iconBind: ComputedRef<IconProps>
+
+  /**
+   * Parameters for the secondary icon, if it exists.<br>
+   * Параметры для вторичной иконки, если она есть.
+   */
+  trailingBind?: ComputedRef<IconProps>
+
+  /**
+   * If the icon is active.<br>
+   * Если иконка активна.
+   */
+  isIcon: ComputedRef<boolean>
+
+  /**
+   * A method for rendering.<br>
+   * Метод для рендеринга.
+   */
+  renderIcon (): VNode[]
 }
 
 export type UseIconProps = {
@@ -44,32 +70,6 @@ export const usePropsIconTrailing = {
   iconTrailing: [String, Object] as PropType<UseIconProps['icon']>
 }
 
-export type useIconItem = {
-  /**
-   * Parameters for the main icon.<br>
-   * Параметры для главной иконки.
-   */
-  iconBind: ComputedRef<IconProps>
-
-  /**
-   * Parameters for the secondary icon, if it exists.<br>
-   * Параметры для вторичной иконки, если она есть.
-   */
-  trailingBind?: ComputedRef<IconProps>
-
-  /**
-   * If the icon is active.<br>
-   * Если иконка активна.
-   */
-  is: ComputedRef<boolean>
-
-  /**
-   * A method for rendering.<br>
-   * Метод для рендеринга.
-   */
-  render (): VNode[]
-}
-
 /**
  * useIcon
  * @param props input parameter /<br>входной параметр
@@ -77,7 +77,7 @@ export type useIconItem = {
  * @param classIcon class name for the component /<br>название класса для компонента
  * @param classIconTrailing class for the second icon /<br>класс для второй иконки
  */
-export const useIcon = function <
+export const useIconRef = function <
   COMP extends UseIconComponent,
   P extends UseIconTrailingProps
 > (
@@ -85,7 +85,7 @@ export const useIcon = function <
   components?: DesignComponents<COMP, P>,
   classIcon = 'is-icon',
   classIconTrailing = 'is-icon-trailing'
-): useIconItem {
+): UseIconSetup {
   const iconBind = computed(() => {
     return getBind(
       props?.icon,
@@ -122,9 +122,10 @@ export const useIcon = function <
   return {
     iconBind,
     trailingBind,
-    is,
 
-    render (): VNode[] {
+    isIcon: is,
+
+    renderIcon (): VNode[] {
       const elements: any[] = []
 
       if (components) {

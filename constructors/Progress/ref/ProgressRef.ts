@@ -1,12 +1,12 @@
 import { computed, type ComputedRef, shallowRef, watchEffect } from 'vue'
 
-import { Progress } from './static/Progress.ts'
+import { Progress } from '../static/Progress.ts'
 
-import { type ProgressProps } from './props.ts'
+import { type ProgressProps } from '../props.ts'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../../types/constructor.ts'
 
 /**
  * Constructor for warming up.<br>

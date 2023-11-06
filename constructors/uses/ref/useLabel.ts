@@ -1,5 +1,19 @@
 import { computed, type ComputedRef, type VNode } from 'vue'
-import { render } from '../../functions/ref.ts'
+import { render } from '../../../functions/ref.ts'
+
+export type UseLabelSetup = {
+  /**
+   * Checking if the text is available.<br>
+   * Проверка, доступен ли текст.
+   */
+  isLabel: ComputedRef<boolean>
+
+  /**
+   * A method for rendering.<br>
+   * Метод для рендеринга.
+   */
+  renderLabel (): VNode[]
+}
 
 export type UseLabelSlots = {
   default? (props: any): any
@@ -13,20 +27,6 @@ export const usePropsLabel = {
   label: [String, Number]
 }
 
-export type useIconItem = {
-  /**
-   * Checking if the text is available.<br>
-   * Проверка, доступен ли текст.
-   */
-  is: ComputedRef<boolean>
-
-  /**
-   * A method for rendering.<br>
-   * Метод для рендеринга.
-   */
-  render (): VNode[]
-}
-
 /**
  * UseLabel
  * @param props input property /<br>входное свойство
@@ -37,7 +37,7 @@ export const useLabel = function (
   props: Readonly<UseLabelProps>,
   slots?: UseLabelSlots,
   className = 'is-label'
-): useIconItem {
+): UseLabelSetup {
   const is = computed(() =>
     Boolean(
       props?.label || (
@@ -47,9 +47,9 @@ export const useLabel = function (
   )
 
   return {
-    is,
+    isLabel: is,
 
-    render (): VNode[] {
+    renderLabel (): VNode[] {
       const elements: any[] = []
 
       if (is.value) {

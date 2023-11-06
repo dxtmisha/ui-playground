@@ -1,7 +1,7 @@
 import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
-import { RippleRef } from './RippleRef.ts'
+import { RippleRef } from './ref/RippleRef.ts'
 
 import {
   type ConstrOptions,

@@ -1,13 +1,22 @@
 import { useRouter } from 'vue-router'
-import { makeStopPropagation } from '../../functions/event.ts'
+import { makeStopPropagation } from '../../../functions/event.ts'
 
-import { type ConstrEmit } from '../../types/constructor.ts'
-import { type useEnabledItem } from './useEnabled.ts'
+import { type ConstrEmit } from '../../../types/constructor.ts'
+import { type UseEnabledSetup } from './useEnabled.ts'
 
-export type UseEventClickValue = {
+type UseEventClickValue = {
   type: string
   value: any
   detail: Record<string, any> | undefined
+}
+
+export type UseEventClickSetup = {
+  /**
+   * Events when clicking on the button itself.<br>
+   * События при клике на самой кнопке.
+   * @param event press events /<br>события нажатия
+   */
+  onClick (event: MouseEvent): void
 }
 
 export type UseEventClickEmits = {
@@ -29,24 +38,15 @@ export const usePropsEventClick = {
   detail: [Object]
 }
 
-export type usePropsEventClickItem = {
-  /**
-   * Events when clicking on the button itself.<br>
-   * События при клике на самой кнопке.
-   * @param event press events /<br>события нажатия
-   */
-  onClick (event: MouseEvent): void
-}
-
 /**
  * Base class for working with button events.<br>
  * Базовый класс для работы с событиями кнопки.
  */
 export const useEventClick = function (
   props: UseEventClickProps,
-  enabled: useEnabledItem,
+  enabled: UseEnabledSetup,
   emits: ConstrEmit<UseEventClickEmits>
-): usePropsEventClickItem {
+): UseEventClickSetup {
   /**
    * Parameters for the event.<br>
    * Параметры для события.
@@ -79,7 +79,7 @@ export const useEventClick = function (
 
   return {
     onClick (event: MouseEvent) {
-      if (enabled.is() && !router()) {
+      if (enabled.isEnabled.value && !router()) {
         emits('click', event, getOptions(event))
       } else {
         makeStopPropagation(event)

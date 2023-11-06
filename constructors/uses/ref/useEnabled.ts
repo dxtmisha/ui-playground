@@ -1,6 +1,34 @@
-import { computed, type ComputedRef } from 'vue'
+import { computed, type ComputedRef, type PropType } from 'vue'
 
-import { type ProgressProps } from '../Progress/props.ts'
+import { type ProgressProps } from '../../Progress/props.ts'
+
+export type UseEnabledSetup = {
+  disabledBind: ComputedRef<boolean | undefined>
+
+  /**
+   * Checking for the status of the element’s activity.<br>
+   * Проверка на статус активности элемента.
+   */
+  isEnabled: ComputedRef<boolean>
+
+  /**
+   * Checks for read-only status.<br>
+   * Проверяет на статус только для чтения.
+   */
+  isReadonly: ComputedRef<boolean>
+
+  /**
+   * Checks if the element is turned off.<br>
+   * Проверяет, выключен ли элемент.
+   */
+  isDisabled: ComputedRef<boolean>
+
+  /**
+   * Checks for the presence of an element for loading.<br>
+   * Проверяет наличие элемента для загрузки.
+   */
+  isProgress: ComputedRef<boolean>
+}
 
 export type UseEnabledProps = {
   progress?: ProgressProps | boolean
@@ -8,32 +36,10 @@ export type UseEnabledProps = {
   disabled?: boolean
 }
 
-export type useEnabledItem = {
-  disabledBind: ComputedRef<boolean | undefined>
-
-  /**
-   * Checking for the status of the element’s activity.<br>
-   * Проверка на статус активности элемента.
-   */
-  is: () => boolean
-
-  /**
-   * Checks for read-only status.<br>
-   * Проверяет на статус только для чтения.
-   */
-  isReadonly: () => boolean
-
-  /**
-   * Checks if the element is turned off.<br>
-   * Проверяет, выключен ли элемент.
-   */
-  isDisabled: () => boolean
-
-  /**
-   * Checks for the presence of an element for loading.<br>
-   * Проверяет наличие элемента для загрузки.
-   */
-  isProgress: () => boolean
+export const usePropsEnabled = {
+  progress: [Object, Boolean] as PropType<UseEnabledProps['progress']>,
+  readonly: Boolean,
+  disabled: Boolean
 }
 
 /**
@@ -43,21 +49,19 @@ export type useEnabledItem = {
  */
 export const useEnabled = function (
   props: UseEnabledProps
-): useEnabledItem {
-  const item = computed(() =>
-    !props?.disabled &&
-    !props?.readonly &&
-    !props?.progress
-  )
-
+): UseEnabledSetup {
   const isDisabled = (): boolean => Boolean(props?.disabled)
 
   return {
     disabledBind: computed<boolean | undefined>(() => isDisabled() || undefined),
 
-    is: (): boolean => item.value,
-    isReadonly: (): boolean => Boolean(props?.readonly),
-    isDisabled: (): boolean => Boolean(props?.disabled),
-    isProgress: (): boolean => Boolean(props?.progress)
+    isEnabled: computed(() =>
+      !props?.disabled &&
+      !props?.readonly &&
+      !props?.progress
+    ),
+    isReadonly: computed(() => Boolean(props?.readonly)),
+    isDisabled: computed(() => isDisabled()),
+    isProgress: computed(() => Boolean(props?.progress))
   }
 }

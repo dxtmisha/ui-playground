@@ -4,14 +4,28 @@ import {
   type PropType,
   type VNode
 } from 'vue'
-import { getBind } from '../../functions/render.ts'
+import { getBind } from '../../../functions/render.ts'
 
-import { DesignComponents } from '../../classes/ref/DesignComponents.ts'
+import { DesignComponents } from '../../../classes/ref/DesignComponents.ts'
 
-import { type ProgressProps } from './props.ts'
+import { type ProgressProps } from '../props.ts'
 
 export type UseProgressComponent = {
   progress?: object
+}
+
+export type UseProgressSetup = {
+  /**
+   * Parameters for the main loader.<br>
+   * Параметры для главного загрузчика.
+   */
+  progressBind: ComputedRef<ProgressProps>
+
+  /**
+   * A method for rendering.<br>
+   * Метод для рендеринга.
+   */
+  renderProgress (): VNode[]
 }
 
 export type UseProgressProp = {
@@ -22,20 +36,6 @@ export const usePropsProgress = {
   progress: [Boolean, Object] as PropType<UseProgressProp['progress']>
 }
 
-export type useProgressItem = {
-  /**
-   * Parameters for the main loader.<br>
-   * Параметры для главного загрузчика.
-   */
-  bind: ComputedRef<ProgressProps>
-
-  /**
-   * A method for rendering.<br>
-   * Метод для рендеринга.
-   */
-  render (): VNode[]
-}
-
 /**
  * UseProgress
  * @param props input parameter / входной параметр
@@ -43,7 +43,7 @@ export type useProgressItem = {
  * @param classesName class name for the component / название класса для компонента
  * @param extra additional parameter or property name /<br>дополнительный параметр или имя свойства
  */
-export const useProgress = function <
+export const useProgressRef = function <
   COMP extends UseProgressComponent,
   P extends UseProgressProp
 > (
@@ -51,21 +51,20 @@ export const useProgress = function <
   components?: DesignComponents<COMP, P>,
   classesName = 'is-progress',
   extra?: Record<string, any>
-): useProgressItem {
-  const bind = computed(
-    () => getBind(
-      props.progress,
-      {
-        class: classesName,
-        ...extra
-      },
-      'visible'
-    )
-  )
+): UseProgressSetup {
+  const bind = computed(() => getBind(
+    props.progress,
+    {
+      class: classesName,
+      ...extra
+    },
+    'visible'
+  ))
 
   return {
-    bind,
-    render (): VNode[] {
+    progressBind: bind,
+
+    renderProgress (): VNode[] {
       const elements: VNode[] = []
 
       if (

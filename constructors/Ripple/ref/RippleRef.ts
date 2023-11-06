@@ -1,8 +1,8 @@
 import { type Ref, watch } from 'vue'
 
-import { Ripple } from './static/Ripple.ts'
+import { Ripple } from '../static/Ripple.ts'
 
-import { type RippleProps } from './props.ts'
+import { type RippleProps } from '../props.ts'
 
 /**
  * Basic constructor for the wave component.<br>

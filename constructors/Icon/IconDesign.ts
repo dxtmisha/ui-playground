@@ -1,7 +1,7 @@
 import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
-import { IconRef } from './IconRef.ts'
+import { IconRef } from './ref/IconRef.ts'
 
 import {
   type ConstrOptions,
