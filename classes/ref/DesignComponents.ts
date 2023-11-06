@@ -94,7 +94,7 @@ export class DesignComponents<
     PK extends keyof P
   > (
     name: K & string,
-    props?: P[PK] & ConstrItem,
+    props?: P[PK] & ConstrItem | ConstrItem,
     children?: any[],
     index?: PK & string | string
   ): VNode[] {
@@ -130,7 +130,7 @@ export class DesignComponents<
   > (
     item: any[],
     name: K & string,
-    props?: P[PK] & ConstrItem,
+    props?: P[PK] & ConstrItem | ConstrItem,
     children?: any[],
     index?: PK & string | string
   ): this {
