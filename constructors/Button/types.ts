@@ -23,7 +23,10 @@ import {
  */
 export type ButtonComponents =
   UseIconComponent &
-  UseProgressComponent
+  UseProgressComponent &
+  {
+    ripple?: object
+  }
 
 /**
  * Type describing available events.<br>
@@ -63,5 +66,9 @@ export type ButtonSlots = UseLabelSlots
 export type ButtonClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
+  progress: string
+  label: string
+  icon: string
+  trailing: string
   // :classes [!] System label / Системная метка
 }

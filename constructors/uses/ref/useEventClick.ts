@@ -45,7 +45,7 @@ export const usePropsEventClick = {
 export const useEventClick = function (
   props: UseEventClickProps,
   enabled: UseEnabledSetup,
-  emits: ConstrEmit<UseEventClickEmits>
+  emits?: ConstrEmit<UseEventClickEmits>
 ): UseEventClickSetup {
   /**
    * Parameters for the event.<br>
@@ -80,7 +80,7 @@ export const useEventClick = function (
   return {
     onClick (event: MouseEvent) {
       if (enabled.isEnabled.value && !router()) {
-        emits('click', event, getOptions(event))
+        emits?.('click', event, getOptions(event))
       } else {
         makeStopPropagation(event)
       }

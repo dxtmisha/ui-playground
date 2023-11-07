@@ -12,6 +12,7 @@ import pad from './../assets/pad.png'
 import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
 import Md3Progress from '../../md3/Progress/Md3Progress.vue'
 import Md2Ripple from '../../md2/Ripple/Md2Ripple.vue'
+import Md3Button from '../../md3/Button/Md3Button.vue'
 
 const value = ref('edit')
 const active = ref(false)
@@ -41,6 +42,51 @@ setInterval(() => {
 
 <template>
   <div>
+    <div style="display: flex; gap: 16px;">
+      <md3-button label="label" />
+      <md3-button label="label" icon="face" />
+      <md3-button label="label" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-button label="label" icon="face" :disabled="disabled" />
+      <md3-button label="label" icon="face" :readonly="disabled" />
+      <md3-button label="label" icon="face" :icon-hide="active" />
+      <md3-button label="label" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-button elevated label="label" />
+      <md3-button elevated label="label" icon="face" />
+      <md3-button elevated label="selected" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-button elevated label="disabled" icon="face" :disabled="disabled" />
+      <md3-button elevated label="readonly" icon="face" readonly />
+      <md3-button elevated label="icon" icon="face" :icon-hide="active" />
+      <md3-button elevated label="icon-trailing" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-button text label="label" />
+      <md3-button text label="label" icon="face" />
+      <md3-button text label="selected" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-button text label="disabled" icon="face" :disabled="disabled" />
+      <md3-button text label="readonly" icon="face" readonly />
+      <md3-button text label="icon" icon="face" :icon-hide="active" />
+      <md3-button text label="icon-trailing" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-button outlined label="label" />
+      <md3-button outlined label="label" icon="face" />
+      <md3-button outlined label="selected" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-button outlined label="disabled" icon="face" :disabled="disabled" />
+      <md3-button outlined label="readonly" icon="face" readonly />
+      <md3-button outlined label="icon" icon="face" :icon-hide="active" />
+      <md3-button outlined label="icon-trailing" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-button tonal label="label" />
+      <md3-button tonal label="label" icon="face" />
+      <md3-button tonal label="selected" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-button tonal label="disabled" icon="face" :disabled="disabled" />
+      <md3-button tonal label="readonly" icon="face" readonly />
+      <md3-button tonal label="icon" icon="face" :icon-hide="active" />
+      <md3-button tonal label="icon-trailing" icon-trailing="close" />
+    </div>
     <div style="display: flex;">
       <div style="position: relative; width: 240px; height: 240px;">
         <md2-ripple />
@@ -70,6 +116,7 @@ setInterval(() => {
     <div style="display: flex;">
       <md3-icon :icon="value" />
       <md3-icon icon="face" :icon-active="value" :active="active" @load="onLoad" />
+      <md3-icon icon="face" :icon-active="value" animation-show />
       <md3-icon icon="face" :icon-active="value" :disabled="disabled" @load="onLoad" />
       <md3-icon
         icon="face"

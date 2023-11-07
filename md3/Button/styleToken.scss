@@ -2,11 +2,9 @@
 
 @mixin mixinButtonToken {
   // :style [!] System label / Системная метка
+  --md3-button-gap: var(--md3-ref-spacing-2);
+  --md3-button-padding: var(--md3-ref-spacing-6);
   --md3-button-transitionFunction: var(--d-sys-transitionFunction-standard);
-  
-  gap: var(--md3-ref-spacing-2);
-  
-  padding: var(--md3-ref-spacing-6);
   
   font-family: var(--md3-ref-font-family-roboto);
   @include fontSize(#{var(--md3-ref-font-size-md)});
@@ -15,11 +13,11 @@
   letter-spacing: var(--md3-ref-letterSpacing-xs);
   text-transform: none;
   
-  @include color(#{var(--md3-sys-palette-primary)});
+  @include paletteColor(#{var(--md3-sys-palette-primary)});
   
   @include backgroundColor(#{transparent});
-  @include gradient(#{var(--md3-sys-palette-primary)});
   @include gradientOpacity(#{0});
+  @include paletteGradient(#{var(--md3-sys-palette-primary)});
   
   border-radius: var(--md3-sys-rounded-full);
   
@@ -44,11 +42,53 @@
     @include gradientOpacity(#{var(--md3-sys-opacity-012)});
   }
   
-  @include disabled {
-    @include color(#{var(--md3-sys-palette-onSurface)});
+  &--selected {
+    @include paletteColor(#{var(--md3-sys-palette-primaryVariant)});
+    
+    @include paletteGradient(#{var(--md3-sys-palette-primaryVariant)});
+  }
+  
+  &--disabled {
     @include colorOpacity(#{var(--md3-sys-opacity-disabled)});
+    @include paletteColor(#{var(--md3-sys-palette-onSurface)});
     
     transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &--adaptive {
+    &--icon {
+      --md3-button-padding: 0px;
+      
+       .md3-button__label {
+        display: none;
+        
+        @include paddingX(#{0px});
+      }
+    }
+    
+    &--sm {
+      @media screen and (max-width: calc(600px - 1px)) {
+        --md3-button-padding: 0px;
+        
+         .md3-button__label {
+          display: none;
+          
+          @include paddingX(#{0px});
+        }
+      }
+    }
+    
+    &--md {
+      @media screen and (max-width: calc(905px - 1px)) {
+        --md3-button-padding: 0px;
+        
+         .md3-button__label {
+          display: none;
+          
+          @include paddingX(#{0px});
+        }
+      }
+    }
   }
   
   &--height {
@@ -65,16 +105,10 @@
     }
   }
   
-  &--selected {
-    @include color(#{var(--md3-sys-palette-primaryVariant)});
-    
-    @include gradient(#{var(--md3-sys-palette-primaryVariant)});
-  }
-  
   &--filled {
     @include color(#{var(--md3-sys-palette-onPrimary)});
     
-    @include backgroundColor(#{var(--md3-sys-palette-primary)});
+    @include paletteBackground(#{var(--md3-sys-palette-primary)});
     @include gradient(#{var(--md3-sys-palette-onPrimary)});
     
     @include hover('.md3-button') {
@@ -86,8 +120,10 @@
     }
     
     @include disabled('.md3-button') {
-      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
+      @include color(#{var(--md3-sys-palette-onSurface)});
+      
       @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
       
       box-shadow: none;
     }
@@ -95,7 +131,7 @@
     &--selected {
       @include color(#{var(--md3-sys-palette-onPrimary)});
       
-      @include backgroundColor(#{var(--md3-sys-palette-primaryVariant)});
+      @include paletteBackground(#{var(--md3-sys-palette-primaryVariant)});
     }
   }
   
@@ -103,15 +139,15 @@
     @include focus('.md3-button') {
       &::before {
         content: ' ';
-        @include borderColor(#{var(--md3-sys-palette-primary)});
+        @include paletteBorder(#{var(--md3-sys-palette-primary)});
       }
     }
     
     @include disabled('.md3-button') {
       &::before {
         content: ' ';
-        @include borderColor(#{var(--md3-sys-palette-onSurface)});
         @include borderOpacity(#{var(--md3-sys-opacity-012)});
+        @include paletteBorder(#{var(--md3-sys-palette-onSurface)});
       }
     }
     
@@ -123,19 +159,19 @@
       border-radius: inherit;
       border-width: var(--md3-ref-spacing-px);
       border-style: solid;
-      @include borderColor(#{var(--md3-sys-palette-outline)});
+      @include paletteBorder(#{var(--md3-sys-palette-outline)});
     }
     
     &--selected {
       &::before {
         content: ' ';
-        @include borderColor(#{var(--md3-sys-palette-primaryVariant)});
+        @include paletteBorder(#{var(--md3-sys-palette-primaryVariant)});
       }
     }
   }
   
   &--text {
-    padding: var(--md3-ref-spacing-3);
+    --md3-button-padding: var(--md3-ref-spacing-3);
     
     @include hover('.md3-button') {
       transition-duration: var(--d-sys-transitionDuration-lg-close);
@@ -156,15 +192,15 @@
       border-radius: inherit;
       border-width: var(--md3-ref-spacing-px);
       border-style: solid;
-      @include borderColor(#{var(--md3-sys-palette-outline)});
       @include borderOpacity(#{0});
+      @include paletteBorder(#{var(--md3-sys-palette-outline)});
       
       transition: inherit;
     }
   }
   
   &--elevated {
-    @include backgroundColor(#{var(--md3-sys-palette-surfaceContainerLow)});
+    @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerLow)});
     
     box-shadow: var(--md3-ref-shadow-1);
     
@@ -177,21 +213,21 @@
     }
     
     @include disabled('.md3-button') {
-      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
       @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
       
       box-shadow: none;
     }
     
     &--selected {
-      @include backgroundColor(#{var(--md3-sys-palette-surfaceContainerHigh)});
+      @include paletteBackground(#{var(--md3-sys-palette-surfaceContainerHigh)});
     }
   }
   
   &--tonal {
     @include color(#{var(--md3-sys-palette-onSecondaryContainer)});
     
-    @include backgroundColor(#{var(--md3-sys-palette-secondaryContainer)});
+    @include paletteBackground(#{var(--md3-sys-palette-secondaryContainer)});
     @include gradient(#{var(--md3-sys-palette-onSecondaryContainer)});
     
     @include hover('.md3-button') {
@@ -203,14 +239,14 @@
     }
     
     @include disabled('.md3-button') {
-      @include backgroundColor(#{var(--md3-sys-palette-onSurface)});
       @include backgroundOpacity(#{var(--md3-sys-opacity-012)});
+      @include paletteBackground(#{var(--md3-sys-palette-onSurface)});
       
       box-shadow: none;
     }
     
     &--selected {
-      @include backgroundColor(#{var(--md3-sys-palette-secondaryContainerVariant)});
+      @include paletteBackground(#{var(--md3-sys-palette-secondaryContainerVariant)});
     }
   }
   // :style [!] System label / Системная метка

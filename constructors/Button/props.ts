@@ -1,7 +1,7 @@
 import { type PropType } from 'vue'
 
 import { type UseLabelProps, usePropsLabel } from '../uses/ref/useLabel.ts'
-import { type UseIconProps, usePropsIcon } from '../Icon/ref/useIconRef.ts'
+import { type UseIconTrailingProps, usePropsIconTrailing } from '../Icon/ref/useIconRef.ts'
 import { type UseProgressProp, usePropsProgress } from '../Progress/ref/useProgressRef.ts'
 import { type UseEnabledProps, usePropsEnabled } from '../uses/ref/useEnabled.ts'
 import { type UseEventClickProps, usePropsEventClick } from '../uses/ref/useEventClick.ts'
@@ -12,7 +12,7 @@ import { type UseEventClickProps, usePropsEventClick } from '../uses/ref/useEven
  */
 export type ButtonProps =
   UseLabelProps &
-  UseIconProps &
+  UseIconTrailingProps &
   UseProgressProp &
   UseEnabledProps &
   UseEventClickProps &
@@ -22,7 +22,11 @@ export type ButtonProps =
 
     // Tokens
     // :type [!] System label / Системная метка
+    selected?: boolean
+    progress?: boolean
+    disabled?: boolean
     // :type [!] System label / Системная метка
+    // :type.adaptive.none
   }
 
 /**
@@ -43,7 +47,7 @@ export const defaultsButton: ButtonProps = {
  */
 export const propsButton = {
   ...usePropsLabel,
-  ...usePropsIcon,
+  ...usePropsIconTrailing,
   ...usePropsProgress,
   ...usePropsEnabled,
   ...usePropsEventClick,
@@ -57,6 +61,9 @@ export const propsButton = {
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
+    selected: Boolean,
+    progress: Boolean,
+    disabled: Boolean
     // :prop [!] System label / Системная метка
   }
 }

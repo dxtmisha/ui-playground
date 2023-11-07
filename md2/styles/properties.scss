@@ -293,6 +293,94 @@ $designsProperties: (
           ),
         ),
       ),
+      'button':(
+        index: 'button',
+        name: 'd-button',
+        type: 'component',
+        value: (
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'progress':(
+            index: 'progress',
+            name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: '--d-button-padding',
+                    type: 'var',
+                    value: 0px,
+                  ),
+                  ' .??__label':(
+                    index: ' .??__label',
+                    name: ' .d-button__label',
+                    type: 'scss',
+                    value: (
+                      'display':(
+                        index: 'display',
+                        name: 'display',
+                        type: 'property',
+                        value: 'none',
+                      ),
+                      'paddingX':(
+                        index: 'paddingX',
+                        name: 'padding-x',
+                        type: 'property',
+                        value: 0px,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'icon':(
         index: 'icon',
         name: 'd-icon',
@@ -8323,6 +8411,94 @@ $designsProperties: (
             index: 'blackLight',
             name: '&--blackLight',
             type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'button':(
+        index: 'button',
+        name: 'md2-button',
+        type: 'component',
+        value: (
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'progress':(
+            index: 'progress',
+            name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: '--md2-button-padding',
+                    type: 'var',
+                    value: 0px,
+                  ),
+                  ' .??__label':(
+                    index: ' .??__label',
+                    name: ' .md2-button__label',
+                    type: 'scss',
+                    value: (
+                      'display':(
+                        index: 'display',
+                        name: 'display',
+                        type: 'property',
+                        value: 'none',
+                      ),
+                      'paddingX':(
+                        index: 'paddingX',
+                        name: 'padding-x',
+                        type: 'property',
+                        value: 0px,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
             value: (
             ),
           ),

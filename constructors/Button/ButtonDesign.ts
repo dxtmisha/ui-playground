@@ -1,6 +1,12 @@
-import { h, VNode } from 'vue'
+import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+
+import { useLabel } from '../uses/ref/useLabel.ts'
+import { useIconRef, type UseIconSetup } from '../Icon/ref/useIconRef.ts'
+import { useProgressRef } from '../Progress/ref/useProgressRef.ts'
+import { useEnabled } from '../uses/ref/useEnabled.ts'
+import { useEventClick } from '../uses/ref/useEventClick.ts'
 
 import {
   type ConstrOptions,
@@ -37,6 +43,8 @@ export class ButtonDesign<
   CLASSES,
   P
 > {
+  protected readonly icons: UseIconSetup
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -54,8 +62,12 @@ export class ButtonDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
+    this.icons = useIconRef(
+      this.props,
+      this.components,
+      this.getSubClass('icon'),
+      this.getSubClass('trailing')
+    )
 
     this.init()
   }
@@ -65,8 +77,6 @@ export class ButtonDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -75,9 +85,29 @@ export class ButtonDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initSetup (): SETUP {
+    const enabled = useEnabled(this.props)
+
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      ...useLabel(
+        this.props,
+        this.slots,
+        this.getSubClass('label')
+      ),
+
+      ...this.icons,
+
+      ...useProgressRef(
+        this.props,
+        this.components,
+        this.getSubClass('progress')
+      ),
+
+      ...enabled,
+      ...useEventClick(
+        this.props,
+        enabled,
+        this.emits
+      )
     } as SETUP
   }
 
@@ -88,10 +118,7 @@ export class ButtonDesign<
   protected initExpose (): EXPOSE {
     // const setup = this.setup()
 
-    return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
-    } as EXPOSE
+    return {} as EXPOSE
   }
 
   /**
@@ -100,9 +127,15 @@ export class ButtonDesign<
    */
   protected initClasses (): Partial<CLASSES> {
     return {
-      main: {},
+      main: {
+        [this.getStatusClass('icon')]: this.icons.isIcon.value
+      },
       ...{
         // :classes [!] System label / Системная метка
+        progress: this.getSubClass('progress'),
+        label: this.getSubClass('label'),
+        icon: this.getSubClass('icon'),
+        trailing: this.getSubClass('trailing')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -113,10 +146,7 @@ export class ButtonDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
-    }
+    return {}
   }
 
   /**
@@ -124,11 +154,24 @@ export class ButtonDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
+    const setup = this.setup()
+    const children: any[] = [
+      ...setup.renderLabel(),
+      ...setup.renderIcon(),
+      ...setup.renderProgress()
+    ]
 
-    return h('div', {
+    if (setup.isEnabled.value) {
+      this.components.renderAdd(children, 'ripple')
+    }
+
+    return h(this.props?.tag || 'button', {
       ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: setup.classes.value.main,
+      style: setup.styles.value,
+
+      disabled: setup.disabledBind.value,
+      onClick: setup.onClick
+    }, children)
   }
 }

@@ -30,7 +30,7 @@
     transform: scale(.8);
   }
 
-  &--animation-type {
+  &--animationType {
     &--type2 {
       clip-path: inset(0 0 0 0);
 
@@ -48,7 +48,7 @@
     }
   }
 
-  &--animation-show {
+  &--animationShow {
     animation-name: n('??show');
     animation-duration: v('d.sys.transitionDuration.standard');
   }

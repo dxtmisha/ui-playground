@@ -8,21 +8,26 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
-  height: ['sm', 'md', 'lg']
+  adaptive: ['icon', 'sm', 'md'],
+  height: ['sm', 'md', 'lg'],
+  palette: ['primary', 'secondary', 'tertiary', 'error', 'neutral', 'neutralVariant']
   // :values [!] System label / Системная метка
 }
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
   focus?: boolean
-  disabled?: boolean
-  height?: 'sm' | 'md' | 'lg'
   selected?: boolean
+  progress?: boolean
+  disabled?: boolean
+  adaptive?: 'icon' | 'sm' | 'md'
+  height?: 'sm' | 'md' | 'lg'
   filled?: boolean
   outlined?: boolean
   text?: boolean
   elevated?: boolean
   tonal?: boolean
+  palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
   // :type [!] System label / Системная метка
 }
 
@@ -40,6 +45,8 @@ export const defaults: Props = {
   ...defaultsButton,
   ...{
     // :default [!] System label / Системная метка
+    height: 'md',
+    filled: true
     // :default [!] System label / Системная метка
   }
 }
@@ -51,14 +58,23 @@ export const propsInstruction = {
   ...{
     // :prop [!] System label / Системная метка
     focus: Boolean,
-    disabled: Boolean,
-    height: String as PropType<PropsToken['height']>,
     selected: Boolean,
-    filled: Boolean,
+    progress: Boolean,
+    disabled: Boolean,
+    adaptive: String as PropType<PropsToken['adaptive']>,
+    height: {
+      type: String as PropType<PropsToken['height']>,
+      default: defaults?.height
+    },
+    filled: {
+      type: Boolean,
+      default: defaults?.filled
+    },
     outlined: Boolean,
     text: Boolean,
     elevated: Boolean,
-    tonal: Boolean
+    tonal: Boolean,
+    palette: String as PropType<PropsToken['palette']>
     // :prop [!] System label / Системная метка
   }
 }
