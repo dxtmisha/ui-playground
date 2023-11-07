@@ -1,9 +1,21 @@
 import { transformation } from '../../functions/data.ts'
 
 const BASIC = {
+  api: {
+    index: 'UI_API_URL',
+    value: '/api/'
+  },
+  auth: {
+    index: 'UI_AUTH',
+    value: false
+  },
   cache: {
     index: 'UI_CACHE',
     value: 7 * 24 * 60 * 60
+  },
+  iconPath: {
+    index: 'UI_ICON_PATH',
+    value: '/icons/'
   },
   language: {
     index: 'UI_LANGUAGE',
@@ -12,10 +24,6 @@ const BASIC = {
   prefix: {
     index: 'UI_PREFIX',
     value: 'ui-playground-'
-  },
-  iconPath: {
-    index: 'UI_ICON_PATH',
-    value: '/icons/'
   }
 }
 
