@@ -13,7 +13,7 @@ import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
 import Md3Progress from '../../md3/Progress/Md3Progress.vue'
 import Md2Ripple from '../../md2/Ripple/Md2Ripple.vue'
 import Md3Button from '../../md3/Button/Md3Button.vue'
-import { Translate } from '../../classes/static/Translate.ts'
+import { useTranslate } from '../../composables/ref/useTranslate.ts'
 
 const value = ref('edit')
 const active = ref(false)
@@ -40,13 +40,12 @@ setInterval(() => {
   size.value = 'cover'
 }, 2400)
 
-Translate.getList(['test', 'name']).then(text => console.log(text))
-Translate.getList(['test']).then(text => console.log(text))
-Translate.getList(['code']).then(text => console.log(text))
+const testT = useTranslate('test')
 </script>
 
 <template>
   <div>
+    {{ testT }}
     <div style="display: flex; gap: 16px;">
       <md3-button label="label" />
       <md3-button label="label" icon="face" />
