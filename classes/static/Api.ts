@@ -27,44 +27,15 @@ export type ApiFetch = {
  * Класс для работы с запросами.
  */
 export class Api {
-  protected static readonly url = useEnv('api', '/')
-  protected static readonly auth = useEnv('auth', false)
-
-  protected static access?: string
-  protected static refresh?: string
-  protected static signature?: string
-
-  protected static urlCommand: string = 'response'
+  protected static readonly url = useEnv<string>('api', '/')
+  protected static urlCommand: string = 'ui'
 
   /**
-   * To execute a request.<br>
-   * Выполнить запрос.
-   * @param pathRequest query string or list of parameters /<br>строка запроса или список параметров
+   * Is the server local.<br>
+   * Является ли сервер локальный.
    */
-  static async response<T> (pathRequest: string | ApiFetch): Promise<T> {
-    if (isString(pathRequest)) {
-      return await this.fetch<T>({
-        path: pathRequest
-      })
-    }
-
-    return await this.fetch<T>(pathRequest)
-  }
-
-  /**
-   * Execute a query by the name of the team.<br>
-   * Выполнить запрос по названию команды.
-   * @param command name of the team /<br>название команды
-   * @param request query string or list of parameters /<br>строка запроса или список параметров
-   */
-  static async responseByCommand<T> (
-    command: string,
-    request?: ApiFetch
-  ): Promise<T> {
-    return await this.fetch<T>({
-      path: this.getUrlByCommand(command),
-      ...(request ?? {})
-    })
+  static isLocalhost (): boolean {
+    return location.hostname === 'localhost'
   }
 
   /**
@@ -78,22 +49,10 @@ export class Api {
     type = 'application/json;charset=UTF-8'
   ): Record<string, string> | undefined {
     if (value !== null) {
-      const headers = { ...(value ?? {}) }
+      const headers = { ...(value || {}) }
 
       if (type) {
         headers['Content-Type'] = type
-      }
-
-      if (this.access) {
-        headers['API-AUTH'] = this.access
-      }
-
-      if (this.refresh) {
-        headers['API-REFRESH'] = this.refresh
-      }
-
-      if (this.signature) {
-        headers['API-SIGNATURE'] = this.signature
       }
 
       return headers
@@ -148,38 +107,34 @@ export class Api {
   }
 
   /**
-   * Changing data for authorization (access).<br>
-   * Изменение данных для авторизации (access).
-   * @param access
+   * To execute a request.<br>
+   * Выполнить запрос.
+   * @param pathRequest query string or list of parameters /<br>строка запроса или список параметров
    */
-  static setAccess (access: string): void {
-    this.access = access
+  static async response<T> (pathRequest: string | ApiFetch): Promise<T> {
+    if (isString(pathRequest)) {
+      return await this.fetch<T>({
+        path: pathRequest
+      })
+    }
+
+    return await this.fetch<T>(pathRequest)
   }
 
   /**
-   * Changing data for authorization (refresh).<br>
-   * Изменение данных для авторизации (refresh).
-   * @param refresh
+   * Execute a query by the name of the team.<br>
+   * Выполнить запрос по названию команды.
+   * @param command name of the team /<br>название команды
+   * @param request query string or list of parameters /<br>строка запроса или список параметров
    */
-  static setRefresh (refresh: string): void {
-    this.refresh = refresh
-  }
-
-  /**
-   * Changing data for authorization (signature).<br>
-   * Изменение данных для авторизации (signature).
-   * @param signature
-   */
-  static setSignature (signature: string): void {
-    this.signature = signature
-  }
-
-  /**
-   * Is the server local.<br>
-   * Является ли сервер локальный.
-   */
-  protected static isLocalhost (): boolean {
-    return location.hostname === 'localhost'
+  static async responseByCommand<T> (
+    command: string,
+    request?: ApiFetch
+  ): Promise<T> {
+    return await this.fetch<T>({
+      path: this.getUrlByCommand(command),
+      ...(request ?? {})
+    })
   }
 
   /**
@@ -197,34 +152,18 @@ export class Api {
     path = '',
     method = ApiMethodItem.get,
     request = undefined,
-    auth = this.auth,
     headers = {},
     type = 'application/json;charset=UTF-8',
     init = {}
   }: ApiFetch): Promise<T> {
-    const data = await (await fetch(this.getUrl(path), {
+    const dataHeaders = this.getHeaders(headers, type)
+    const dataMethod = dataHeaders && method === ApiMethodItem.get ? ApiMethodItem.post : method
+
+    return await (await fetch(this.getUrl(path), {
       ...init,
-      method,
-      headers: this.getHeaders(headers, type),
+      method: dataMethod,
+      headers: dataHeaders,
       body: this.getBody(request)
     })).json()
-
-    if (
-      auth &&
-      'token' in data &&
-      'refresh' in data
-    ) {
-      return this.fetch({
-        path,
-        method,
-        request,
-        auth,
-        headers,
-        type,
-        init
-      })
-    }
-
-    return data
   }
 }

@@ -13,6 +13,7 @@ import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
 import Md3Progress from '../../md3/Progress/Md3Progress.vue'
 import Md2Ripple from '../../md2/Ripple/Md2Ripple.vue'
 import Md3Button from '../../md3/Button/Md3Button.vue'
+import { Translate } from '../../classes/static/Translate.ts'
 
 const value = ref('edit')
 const active = ref(false)
@@ -38,6 +39,10 @@ setInterval(() => {
   coordinator.value = [25]
   size.value = 'cover'
 }, 2400)
+
+Translate.getList(['test', 'name']).then(text => console.log(text))
+Translate.getList(['test']).then(text => console.log(text))
+Translate.getList(['code']).then(text => console.log(text))
 </script>
 
 <template>

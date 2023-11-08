@@ -5,9 +5,9 @@ const BASIC = {
     index: 'UI_API_URL',
     value: '/api/'
   },
-  auth: {
-    index: 'UI_AUTH',
-    value: false
+  apiTranslate: {
+    index: 'UI_API_TRANSLATE',
+    value: 'ui/?command=translate'
   },
   cache: {
     index: 'UI_CACHE',

@@ -9,6 +9,6 @@ import { Env, EnvIndex } from '../../classes/static/Env.ts'
 export function useEnv<T> (
   index: EnvIndex | string,
   defaultValue?: T
-): T | undefined {
+): T {
   return new Env(index).get(defaultValue)
 }
