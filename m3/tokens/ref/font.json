@@ -1,0 +1,22 @@
+{
+  "family": {
+    "roboto": "Roboto"
+  },
+  "size": {
+    "11": "{ref.spacing.px}*11",
+    "12": "{ref.spacing.px}*12",
+    "14": "{ref.spacing.px}*14",
+    "16": "{ref.spacing.px}*16",
+    "22": "{ref.spacing.px}*22",
+    "24": "{ref.spacing.px}*24",
+    "28": "{ref.spacing.px}*28",
+    "32": "{ref.spacing.px}*32",
+    "36": "{ref.spacing.px}*36",
+    "45": "{ref.spacing.px}*45",
+    "57": "{ref.spacing.px}*57"
+  },
+  "weight": {
+    "400": "400",
+    "500": "500"
+  }
+}

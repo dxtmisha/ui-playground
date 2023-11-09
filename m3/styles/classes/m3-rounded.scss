@@ -1,0 +1,35 @@
+@import "styles/all";
+
+.m3-rounded {
+  &--none {
+    border-radius: var(--m3-sys-rounded-none);
+  }
+  
+  &--standard {
+    border-radius: var(--m3-sys-rounded-standard);
+  }
+  
+  &--sm {
+    border-radius: var(--m3-sys-rounded-sm);
+  }
+  
+  &--md {
+    border-radius: var(--m3-sys-rounded-md);
+  }
+  
+  &--lg {
+    border-radius: var(--m3-sys-rounded-lg);
+  }
+  
+  &--xl {
+    border-radius: var(--m3-sys-rounded-xl);
+  }
+  
+  &--2xl {
+    border-radius: var(--m3-sys-rounded-2xl);
+  }
+  
+  &--full {
+    border-radius: var(--m3-sys-rounded-full);
+  }
+}

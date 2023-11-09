@@ -1,0 +1,32 @@
+{
+  "0": {
+    "background": "{ref.background.0}",
+    "box-shadow": "{ref.shadow.0}",
+    "z-index": "{ref.index.0}"
+  },
+  "1": {
+    "background": "{ref.background.1}",
+    "box-shadow": "{ref.shadow.1}",
+    "z-index": "{ref.index.1}"
+  },
+  "2": {
+    "background": "{ref.background.2}",
+    "box-shadow": "{ref.shadow.2}",
+    "z-index": "{ref.index.2}"
+  },
+  "3": {
+    "background": "{ref.background.3}",
+    "box-shadow": "{ref.shadow.3}",
+    "z-index": "{ref.index.3}"
+  },
+  "4": {
+    "background": "{ref.background.4}",
+    "box-shadow": "{ref.shadow.4}",
+    "z-index": "{ref.index.4}"
+  },
+  "5": {
+    "background": "{ref.background.5}",
+    "box-shadow": "{ref.shadow.5}",
+    "z-index": "{ref.index.5}"
+  }
+}

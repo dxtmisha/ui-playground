@@ -1,0 +1,9 @@
+{
+  "none": "0",
+  "10": "{ref.spacing.px}*.1",
+  "15": "{ref.spacing.px}*.15",
+  "25": "{ref.spacing.px}*.25",
+  "40": "{ref.spacing.px}*.4",
+  "50": "{ref.spacing.px}*.5",
+  "m25": "{ref.spacing.px}*-.25"
+}

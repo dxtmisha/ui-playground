@@ -1,0 +1,164 @@
+@import "styles/all";
+
+.m3-palette {
+  &--primary {
+    --m3-palette-basic-0: var(--m3-ref-palette-primary-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-primary-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-primary-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-primary-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-primary-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-primary-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-primary-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-primary-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-primary-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-primary-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-primary-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-primary-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-primary-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-primary-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-primary-100);
+    --sys-palette: var(--m3-ref-palette-primary-40);
+  }
+  
+  &--secondary {
+    --m3-palette-basic-0: var(--m3-ref-palette-secondary-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-secondary-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-secondary-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-secondary-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-secondary-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-secondary-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-secondary-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-secondary-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-secondary-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-secondary-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-secondary-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-secondary-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-secondary-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-secondary-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-secondary-100);
+    --sys-palette: var(--m3-ref-palette-secondary-40);
+  }
+  
+  &--tertiary {
+    --m3-palette-basic-0: var(--m3-ref-palette-tertiary-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-tertiary-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-tertiary-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-tertiary-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-tertiary-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-tertiary-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-tertiary-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-tertiary-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-tertiary-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-tertiary-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-tertiary-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-tertiary-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-tertiary-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-tertiary-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-tertiary-100);
+    --sys-palette: var(--m3-ref-palette-tertiary-40);
+  }
+  
+  &--red {
+    --m3-palette-basic-0: var(--m3-ref-palette-red-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-red-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-red-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-red-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-red-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-red-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-red-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-red-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-red-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-red-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-red-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-red-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-red-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-red-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-red-100);
+    --sys-palette: var(--m3-ref-palette-red-40);
+  }
+  
+  &--green {
+    --m3-palette-basic-0: var(--m3-ref-palette-green-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-green-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-green-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-green-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-green-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-green-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-green-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-green-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-green-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-green-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-green-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-green-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-green-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-green-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-green-100);
+    --sys-palette: var(--m3-ref-palette-green-40);
+  }
+  
+  &--error {
+    --m3-palette-basic-0: var(--m3-ref-palette-error-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-error-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-error-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-error-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-error-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-error-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-error-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-error-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-error-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-error-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-error-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-error-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-error-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-error-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-error-100);
+    --sys-palette: var(--m3-ref-palette-error-40);
+  }
+  
+  &--neutral {
+    --m3-palette-basic-0: var(--m3-ref-palette-neutral-0);
+    --m3-palette-basic-4: var(--m3-ref-palette-neutral-4);
+    --m3-palette-basic-6: var(--m3-ref-palette-neutral-6);
+    --m3-palette-basic-10: var(--m3-ref-palette-neutral-10);
+    --m3-palette-basic-12: var(--m3-ref-palette-neutral-12);
+    --m3-palette-basic-17: var(--m3-ref-palette-neutral-17);
+    --m3-palette-basic-20: var(--m3-ref-palette-neutral-20);
+    --m3-palette-basic-22: var(--m3-ref-palette-neutral-22);
+    --m3-palette-basic-24: var(--m3-ref-palette-neutral-24);
+    --m3-palette-basic-30: var(--m3-ref-palette-neutral-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-neutral-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-neutral-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-neutral-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-neutral-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-neutral-80);
+    --m3-palette-basic-87: var(--m3-ref-palette-neutral-87);
+    --m3-palette-basic-90: var(--m3-ref-palette-neutral-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-neutral-92);
+    --m3-palette-basic-94: var(--m3-ref-palette-neutral-94);
+    --m3-palette-basic-95: var(--m3-ref-palette-neutral-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-neutral-96);
+    --m3-palette-basic-98: var(--m3-ref-palette-neutral-98);
+    --m3-palette-basic-99: var(--m3-ref-palette-neutral-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-neutral-100);
+    --sys-palette: var(--m3-ref-palette-neutral-40);
+  }
+  
+  &--neutralVariant {
+    --m3-palette-basic-0: var(--m3-ref-palette-neutralVariant-0);
+    --m3-palette-basic-10: var(--m3-ref-palette-neutralVariant-10);
+    --m3-palette-basic-20: var(--m3-ref-palette-neutralVariant-20);
+    --m3-palette-basic-30: var(--m3-ref-palette-neutralVariant-30);
+    --m3-palette-basic-40: var(--m3-ref-palette-neutralVariant-40);
+    --m3-palette-basic-50: var(--m3-ref-palette-neutralVariant-50);
+    --m3-palette-basic-60: var(--m3-ref-palette-neutralVariant-60);
+    --m3-palette-basic-70: var(--m3-ref-palette-neutralVariant-70);
+    --m3-palette-basic-80: var(--m3-ref-palette-neutralVariant-80);
+    --m3-palette-basic-90: var(--m3-ref-palette-neutralVariant-90);
+    --m3-palette-basic-92: var(--m3-ref-palette-neutralVariant-92);
+    --m3-palette-basic-95: var(--m3-ref-palette-neutralVariant-95);
+    --m3-palette-basic-96: var(--m3-ref-palette-neutralVariant-96);
+    --m3-palette-basic-99: var(--m3-ref-palette-neutralVariant-99);
+    --m3-palette-basic-100: var(--m3-ref-palette-neutralVariant-100);
+    --sys-palette: var(--m3-ref-palette-neutralVariant-40);
+  }
+}
