@@ -23,10 +23,10 @@ export type PropsToken = {
   // [constructor] objectWidth?: string | number
   // [constructor] objectHeight?: string | number
   // [constructor] url?: string
-  // [constructor] turn?: boolean
-  // [constructor] disabled?: boolean
-  // [constructor] hide?: boolean
-  // [constructor] adaptive?: boolean
+  turn?: boolean
+  disabled?: boolean
+  hide?: boolean
+  adaptive?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -54,6 +54,10 @@ export const propsInstruction = {
   ...propsImage,
   ...{
     // :prop [!] System label / Системная метка
+    turn: Boolean,
+    disabled: Boolean,
+    hide: Boolean,
+    adaptive: Boolean
     // :prop [!] System label / Системная метка
   }
 }

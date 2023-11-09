@@ -39,9 +39,10 @@ export class PropertiesToPalette extends PropertiesToAbstract {
     this.read()
     this.items.findCategory(PropertyCategory.theme)
       .forEach(({
+        design,
         name,
         item
-      }) => item?.value && isObjectNotArray(item.value) && this.read(item.value, name))
+      }) => item?.value && isObjectNotArray(item.value) && this.read(item.value, name, design))
   }
 
   /**
@@ -126,39 +127,44 @@ export class PropertiesToPalette extends PropertiesToAbstract {
    * @param root the property object, by which it will be added /<br>
    * объект свойства, по которому будет добавлять
    * @param theme the name of the theme /<br>название темы
+   * @param designParent design name /<br>название дизайна
    */
   private read (
     root?: PropertyList,
-    theme = THEME_BASIC
+    theme = THEME_BASIC,
+    designParent?: string
   ) {
     this.palette.forEach(({
+      design,
       item,
       parents,
       index
     }) => {
-      const list = this.getParent(
-        root ? PropertyCategory.colors : PropertyCategory.class,
-        root ?? (parents?.[0].item.value as PropertyList)
-      )
+      if (!designParent || designParent === design) {
+        const list = this.getParent(
+          root ? PropertyCategory.colors : PropertyCategory.class,
+          root ?? (parents?.[0].item.value as PropertyList)
+        )
 
-      if (
-        list &&
-        isObjectNotArray(item.value)
-      ) {
-        forEach(item.value, (shade, name) => {
-          const parent = this.getClass(list, name)
+        if (
+          list &&
+          isObjectNotArray(item.value)
+        ) {
+          forEach(item.value, (shade, name) => {
+            const parent = this.getClass(list, name)
 
-          if (isObjectNotArray(shade.value)) {
-            this.addItem(
-              parent,
-              `${index}.${name}`,
-              theme,
-              shade.value
-            )
-          }
+            if (isObjectNotArray(shade.value)) {
+              this.addItem(
+                parent,
+                `${index}.${name}`,
+                theme,
+                shade.value
+              )
+            }
 
-          this.addDefault(parent, theme, item)
-        })
+            this.addDefault(parent, theme, item)
+          })
+        }
       }
     })
   }
