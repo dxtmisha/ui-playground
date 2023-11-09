@@ -69,7 +69,7 @@ defineExpose(design.expose())
 @import "../../constructors/Image/style";
 @import "styleToken";
 
-@include initDesign('md3.image') {
+@include initDesignBasic('md3.image') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinImage;

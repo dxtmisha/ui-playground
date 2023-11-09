@@ -178,7 +178,7 @@ $designsAnimate: false !default;
   } @else if ($name == 'gradient-opacity') {
     @include gradientOpacity(#{$value});
   } @else if ($name == 'border-color') {
-    @include border(#{$value});
+    @include borderColor(#{$value});
   } @else if ($name == 'border-opacity') {
     @include borderOpacity(#{$value});
   } @else if (

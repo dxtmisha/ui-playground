@@ -65,7 +65,7 @@ defineExpose(design.expose())
 @import "../../constructors/Ripple/style";
 @import "styleToken";
 
-@include initDesign('md2.ripple') {
+@include initDesignBasic('md2.ripple') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinRipple;

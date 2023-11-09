@@ -84,7 +84,9 @@ defineExpose(design.expose())
 </script>
 
 <template>
-  <render />
+  <render>
+    <slot />
+  </render>
 </template>
 
 <style lang="scss">
@@ -93,7 +95,7 @@ defineExpose(design.expose())
 @import "../../constructors/Button/style";
 @import "styleToken";
 
-@include initDesign('md3.button') {
+@include initDesignBasic('md3.button') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinButton;

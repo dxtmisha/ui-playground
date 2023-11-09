@@ -67,7 +67,7 @@
 // :component.once @import "../../constructors/Component/style";
 @import "styleToken";
 
-@include initDesign('[design].[component]') {
+@include initDesignBasic('[design].[component]') {
   // Basic styles for a component
   // Базовый стили для компонента
   // :component.once @include mixinComponent;

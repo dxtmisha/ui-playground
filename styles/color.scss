@@ -189,7 +189,7 @@ $designsShade: () !default;
 
 @mixin paletteBorder($color) {
   --sys-palette-border: #{getPalette($color)};
-  @include border(#{var(--sys-palette-border)});
+  @include borderColor(#{var(--sys-palette-border)});
 }
 
 /* Color */
@@ -313,7 +313,7 @@ $designsShade: () !default;
 
 /* Border */
 
-@mixin border($color, $opacity: null) {
+@mixin borderColor($color, $opacity: null) {
   @if (isColorRbgOrVar($color)) {
     --sys-border: #{toColorRbg($color)};
     @include borderOpacity($opacity);

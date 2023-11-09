@@ -68,7 +68,7 @@ defineExpose(design.expose())
 @import "../../constructors/Button/style";
 @import "styleToken";
 
-@include initDesign('md2.button') {
+@include initDesignBasic('md2.button') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinButton;

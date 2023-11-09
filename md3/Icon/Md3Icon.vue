@@ -89,7 +89,7 @@ defineExpose(design.expose())
 @import "../../constructors/Icon/style";
 @import "styleToken";
 
-@include initDesign('md3.icon') {
+@include initDesignBasic('md3.icon') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinIcon;

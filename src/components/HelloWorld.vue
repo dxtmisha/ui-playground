@@ -10,10 +10,12 @@ import flip from './../assets/Galaxy_Z_Flip5.png'
 import pad from './../assets/pad.png'
 
 import { ImageEventData } from '../../constructors/Image/typesBasic.ts'
+import { useTranslate } from '../../composables/ref/useTranslate.ts'
+
 import Md3Progress from '../../md3/Progress/Md3Progress.vue'
 import Md2Ripple from '../../md2/Ripple/Md2Ripple.vue'
 import Md3Button from '../../md3/Button/Md3Button.vue'
-import { useTranslate } from '../../composables/ref/useTranslate.ts'
+import Md3Chip from '../../md3/Chip/Md3Chip.vue'
 
 const value = ref('edit')
 const active = ref(false)
@@ -47,6 +49,41 @@ const testT = useTranslate('test')
   <div>
     {{ testT }}
     <div style="display: flex; gap: 16px;">
+      <md3-button>slot</md3-button>
+      <md3-button>
+        <template v-slot:default>default</template>
+      </md3-button>
+    </div>
+    <div>chip</div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-chip label="label" />
+      <md3-chip label="label" icon="face" />
+      <md3-chip label="label" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-chip label="label" icon="face" :disabled="disabled" />
+      <md3-chip label="label" icon="face" :readonly="disabled" />
+      <md3-chip label="label" icon="face" :icon-hide="active" />
+      <md3-chip label="label" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-chip elevated label="label" />
+      <md3-chip elevated label="label" icon="face" />
+      <md3-chip elevated label="label" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-chip elevated label="label" icon="face" :disabled="disabled" />
+      <md3-chip elevated label="label" icon="face" :readonly="disabled" />
+      <md3-chip elevated label="label" icon="face" :icon-hide="active" />
+      <md3-chip elevated label="label" icon-trailing="close" />
+    </div>
+    filter
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
+      <md3-chip filter label="label" />
+      <md3-chip filter label="label" icon="face" />
+      <md3-chip filter label="label" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />
+      <md3-chip filter label="label" icon="face" :disabled="disabled" />
+      <md3-chip filter label="label" icon="face" :readonly="disabled" />
+      <md3-chip filter label="label" icon="face" :icon-hide="active" />
+      <md3-chip filter label="label" icon-trailing="close" />
+    </div>
+    <div style="display: flex; gap: 16px; padding-top: 16px;">
       <md3-button label="label" />
       <md3-button label="label" icon="face" />
       <md3-button label="label" :icon="{icon: 'face', iconActive: 'home'}" :selected="active" />

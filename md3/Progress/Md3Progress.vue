@@ -71,7 +71,7 @@ defineExpose(design.expose())
 @import "../../constructors/Progress/style";
 @import "styleToken";
 
-@include initDesign('md3.progress') {
+@include initDesignBasic('md3.progress') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinProgress;

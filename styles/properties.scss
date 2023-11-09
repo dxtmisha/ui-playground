@@ -19,7 +19,7 @@ $designsInit: false !default;
 ///
 /// Генерация стилей для компонента
 /// @param {String} $component
-@mixin initDesign(
+@mixin initDesignBasic(
   $component: 'design.component',
   $root: false
 ) {
@@ -40,11 +40,20 @@ $designsInit: false !default;
         $designsClassName: & !global;
 
         @content;
-
-        @if ($designsInit == false) {
-          @include initPropertiesComponent;
-        }
       }
+    }
+  }
+}
+
+@mixin initDesign(
+  $component: 'design.component',
+  $root: false
+) {
+  @include initDesignBasic($component, $root) {
+    @content;
+
+    @if ($root == false and $designsInit == false) {
+      @include initPropertiesComponent;
     }
   }
 }
