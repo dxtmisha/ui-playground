@@ -6173,6 +6173,18 @@ $designsProperties: (
             name: '&--disabled',
             type: 'state',
             value: (
+              'color':(
+                index: 'color',
+                name: '--m3-image-color',
+                type: 'var',
+                value: 'var(--m3-sys-palette-onSurface)',
+              ),
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: '--m3-image-colorOpacity',
+                type: 'var',
+                value: 'var(--m3-sys-opacity-disabled)',
+              ),
             ),
           ),
           'hide':(

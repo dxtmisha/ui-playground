@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data.ts'
+// import { inArray } from '../../functions/object.ts'
 
 import { ImageDesign } from '../../constructors/Image/ImageDesign'
 
@@ -16,8 +16,8 @@ import {
 } from '../../constructors/Image/types'
 
 import {
-  propsInstruction,
-  propsValues
+  propsInstruction// ,
+  // propsValues
 } from './props'
 
 const emits = defineEmits<ImageEmits>()
@@ -25,7 +25,6 @@ const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
-    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'm3-image': true,
     'm3-image--turn': props.turn,
@@ -34,10 +33,8 @@ const classesToken = computed<ConstrClasses>(() => ({
     'm3-image--adaptive': props.adaptive
     // :classes-values [!] System label / Системная метка
   }
-  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
-  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))
