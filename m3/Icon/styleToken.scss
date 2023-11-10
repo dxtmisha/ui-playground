@@ -1,0 +1,98 @@
+@import "../../styles/all";
+
+@mixin mixinIconToken {
+  // :style [!] System label / Системная метка
+  
+  &--overlay {
+    @include backgroundOpacity(#{var(--m3-sys-opacity-016)});
+  }
+  
+  &--dynamic {
+    @include hover('.m3-icon') {
+      @include gradientOpacity(#{var(--m3-sys-opacity-008)});
+    }
+    
+    @include active('.m3-icon') {
+      @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+    }
+    
+    @include focus('.m3-icon') {
+      @include gradientOpacity(#{var(--m3-sys-opacity-016)});
+    }
+  }
+  
+  &--rounded {
+    &--none {
+      border-radius: var(--m3-sys-rounded-none);
+    }
+    
+    &--standard {
+      border-radius: var(--m3-sys-rounded-standard);
+    }
+    
+    &--sm {
+      border-radius: var(--m3-sys-rounded-sm);
+    }
+    
+    &--md {
+      border-radius: var(--m3-sys-rounded-md);
+    }
+    
+    &--lg {
+      border-radius: var(--m3-sys-rounded-lg);
+    }
+    
+    &--xl {
+      border-radius: var(--m3-sys-rounded-xl);
+    }
+    
+    &--2xl {
+      border-radius: var(--m3-sys-rounded-2xl);
+    }
+    
+    &--full {
+      border-radius: var(--m3-sys-rounded-full);
+    }
+  }
+  
+  &--size {
+    &--xs {
+      --m3-icon-width: var(--m3-ref-spacing-6);
+    }
+    
+    &--sm {
+      --m3-icon-width: var(--m3-ref-spacing-8);
+    }
+    
+    &--md {
+      --m3-icon-width: var(--m3-ref-spacing-10);
+    }
+    
+    &--lg {
+      --m3-icon-width: var(--m3-ref-spacing-14);
+      
+      font-family: var(--m3-ref-font-family-roboto);
+      @include fontSize(#{var(--m3-ref-font-size-22)});
+      font-weight: var(--m3-ref-font-weight-400);
+      @include lineHeight(#{var(--m3-ref-lineHeight-28)});
+      letter-spacing: var(--m3-ref-letterSpacing-none);
+      
+      border-radius: var(--m3-sys-rounded-none);
+    }
+    
+    &--xl {
+      --m3-icon-width: var(--m3-ref-spacing-28);
+      
+      @include aspectRatioWidth(#{28/16});
+      
+      font-family: var(--m3-ref-font-family-roboto);
+      @include fontSize(#{var(--m3-ref-font-size-32)});
+      font-weight: var(--m3-ref-font-weight-400);
+      @include lineHeight(#{var(--m3-ref-lineHeight-40)});
+      letter-spacing: var(--m3-ref-letterSpacing-none);
+      
+      border-radius: var(--m3-sys-rounded-none);
+    }
+  }
+  // :style [!] System label / Системная метка
+}

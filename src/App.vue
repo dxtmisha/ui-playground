@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import DemoImage from './components/DemoImage.vue'
+import DemoIcon from './components/DemoIcon.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import DemoImage from './components/DemoImage.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <demo-icon />
   <demo-image />
 </template>
 
