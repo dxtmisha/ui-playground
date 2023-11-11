@@ -6,14 +6,14 @@ import { type PropType } from 'vue'
  */
 export type ProgressProps = {
   // Values
-  value?: number
-  max?: number
+  value?: number | string
+  max?: number | string
 
   // Status
   visible?: boolean
 
   // Options
-  delay?: number
+  delay?: number | string
 
   // Tokens
   // :type [!] System label / Системная метка
@@ -48,9 +48,9 @@ export const defaultsProgress: ProgressProps = {
  */
 export const propsProgress = {
   // Values
-  value: Number,
+  value: [Number, String],
   max: {
-    type: Number,
+    type: [Number, String],
     default: defaultsProgress?.max
   },
 
@@ -59,7 +59,7 @@ export const propsProgress = {
 
   // Options
   delay: {
-    type: Number,
+    type: [Number, String],
     default: defaultsProgress?.delay
   },
 

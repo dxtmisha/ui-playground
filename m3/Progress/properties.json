@@ -1,0 +1,8 @@
+{
+  "main": "{d.progress}",
+  "linear": {
+    "background-color": {
+      "_type": "property"
+    }
+  }
+}

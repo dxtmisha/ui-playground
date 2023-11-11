@@ -1,3 +1,5 @@
+import { toNumber } from '../../../functions/number.ts'
+
 import { DesignAsyncAbstract } from '../../../classes/static/DesignAsyncAbstract.ts'
 
 import { type ProgressProps } from '../props.ts'
@@ -57,7 +59,7 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
    * Проверяет, передано ли конкретное значение.
    */
   isValue (): this is { props: { value: number } } {
-    return typeof this.getValue() === 'number'
+    return this.getValue() > 0
   }
 
   /**
@@ -72,8 +74,16 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
    * Getting the value.<br>
    * Получение значения.
    */
-  getValue (): number | undefined {
-    return this.props?.value
+  getValue (): number {
+    return toNumber(this.props?.value ?? 0)
+  }
+
+  /**
+   * Getting the maximum allowable value.<br>
+   * Получение максимально допустимого значения.
+   */
+  getMax (): number {
+    return toNumber(this.props?.max ?? 100)
   }
 
   /**
@@ -82,8 +92,8 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
    */
   getValueInPercent (): string | null {
     if (this.isValue()) {
-      const value = this.props?.value
-      const percent = (100 / (this.props?.max ?? 100) * value)
+      const value = this.getValue()
+      const percent = (100 / this.getMax() * value)
 
       if (this.props?.circular) {
         return percent.toString()
@@ -101,7 +111,7 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
    */
   getStyles (): ConstrStyles {
     return {
-      '??--value': this.getValueInPercent()
+      '--??-sys-value': this.getValueInPercent()
     }
   }
 
@@ -127,7 +137,7 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
   protected makeVisible (): Promise<[boolean, boolean]> {
     return new Promise((resolve, reject) => {
       const visible = this.props?.visible
-      const delay = this.props?.delay
+      const delay = toNumber(this.props?.delay ?? 0)
 
       clearTimeout(this.timeout)
 

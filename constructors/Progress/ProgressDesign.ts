@@ -117,7 +117,7 @@ export class ProgressDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      ...this.item.styles.value
+      ...this.toClassName(this.item.styles.value)
     }
   }
 
@@ -139,6 +139,8 @@ export class ProgressDesign<
         })
       )
     }
+
+    console.log(setup.styles.value)
 
     return h(setup.tag.value, {
       ref: this.element,

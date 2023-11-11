@@ -2,35 +2,37 @@
 import { computed } from 'vue'
 
 // import { isFilled } from '../../functions/data.ts'
-// import { isArray } from '../../functions/object.ts'
+import { inArray } from '../../functions/object.ts'
 
-import { ImageDesign } from '../../constructors/Image/ImageDesign'
+import { ProgressDesign } from '../../constructors/Progress/ProgressDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
 } from '../../types/constructor'
 import {
-  type ImageEmits,
-  type ImageSlots
-} from '../../constructors/Image/types'
+  type ProgressEmits,
+  type ProgressSlots
+} from '../../constructors/Progress/types'
 
 import {
-  propsInstruction// ,
-  // propsValues
+  propsInstruction,
+  propsValues
 } from './props'
 
-const emits = defineEmits<ImageEmits>()
+const emits = defineEmits<ProgressEmits>()
 const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // :classes-values [!] System label / Системная метка
-    'md3-image': true,
-    'md3-image--turn': props.turn,
-    'md3-image--disabled': props.disabled,
-    'md3-image--hide': props.hide,
-    'md3-image--adaptive': props.adaptive
+    'm3-progress': true,
+    'm3-progress--linear': props.linear && !props.circular,
+    'm3-progress--circular': props.circular,
+    [`m3-progress--indeterminate--${props.indeterminate}`]: inArray(propsValues.indeterminate, props.indeterminate),
+    [`m3-progress--position--${props.position}`]: inArray(propsValues.position, props.position),
+    'm3-progress--dense': props.dense,
+    'm3-progress--inverse': props.inverse
     // :classes-values [!] System label / Системная метка
   }
 }))
@@ -39,8 +41,8 @@ const stylesToken = computed<ConstrStyles>(() => ({
   // :styles-values [!] System label / Системная метка
 }))
 
-const design = new ImageDesign(
-  'md3.image',
+const design = new ProgressDesign(
+  'm3.progress',
   props,
   {
     emits,
@@ -55,7 +57,7 @@ const design = new ImageDesign(
 // } = design.setup()
 const render = design.render()
 
-defineSlots<ImageSlots>()
+defineSlots<ProgressSlots>()
 defineExpose(design.expose())
 </script>
 
@@ -66,17 +68,17 @@ defineExpose(design.expose())
 <style lang="scss">
 @import "../styles/properties";
 @import "../../styles/properties";
-@import "../../constructors/Image/style";
+@import "../../constructors/Progress/style";
 @import "styleToken";
 
-@include initDesignBasic('md3.image') {
+@include initDesignBasic('m3.progress') {
   // Basic styles for a component
   // Базовый стили для компонента
-  @include mixinImage;
+  @include mixinProgress;
 
   // Styles from tokens
   // Стили из токенов
-  @include mixinImageToken;
+  @include mixinProgressToken;
 
   // Here are the user styles
   // Здесь пользовательские стили

@@ -234,24 +234,24 @@ export abstract class DesignConstructorAbstract<
    * Преобразовывает название класса в стандартное для текущего компонента.
    * @param classes list of classes /<br>список классов
    */
-  protected toClassName (classes?: ConstrClassObject): ConstrClassObject {
+  protected toClassName<T extends ConstrItem> (classes?: ConstrItem): T {
     if (isObject(classes)) {
-      const data: ConstrClassObject = {}
+      const data: ConstrItem = {}
 
       forEach(classes, (value, name: string) => {
-        if (name.match(/^\?\?/)) {
-          data[name.replace(/^\?\?/, this.getName())] = value
-        } else if (name.match(/^\?/)) {
-          data[name.replace(/^\?/, this.name[0])] = value
+        if (name.match(/\?\?/)) {
+          data[name.replace(/\?\?/, this.getName())] = value
+        } else if (name.match(/\?/)) {
+          data[name.replace(/\?/, this.name[0])] = value
         } else {
           data[name] = value
         }
       })
 
-      return data
+      return data as T
     }
 
-    return {}
+    return {} as T
   }
 
   /**

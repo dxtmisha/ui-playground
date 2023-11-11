@@ -73,7 +73,9 @@ defineExpose(design.expose())
 </script>
 
 <template>
-  <render />
+  <render>
+    <slot />
+  </render>
 </template>
 
 <style lang="scss">
