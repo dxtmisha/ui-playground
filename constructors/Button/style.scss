@@ -16,6 +16,10 @@
 
   cursor: pointer;
 
+  @include hover {
+    text-decoration: none;
+  }
+
   @include disabled {
     cursor: default;
   }
@@ -32,7 +36,7 @@
 
     order: 4;
     padding: 0 v('??padding');
-    transition: inherit;
+    transition: opacity #{v('d.sys.transitionDuration.standard')} linear;
   }
 
   &__icon,

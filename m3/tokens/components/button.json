@@ -28,18 +28,18 @@
     "transition-duration": "{d.sys.transitionDuration.sm}"
   },
   "selected": {
-    "color": "{sys.palette.primary-variant}",
-    "gradient": "{sys.palette.primary-variant}"
+    "color": "{sys.palette.primaryVariant}",
+    "gradient": "{sys.palette.primaryVariant}"
   },
   "disabled": {
-    "color": "{sys.palette.on-surface}",
+    "color": "{sys.palette.onSurface}",
     "color-opacity": "{sys.opacity.disabled}",
     "transition-duration": "{d.sys.transitionDuration.sm}"
   },
   "filled": {
-    "color": "{sys.palette.on-primary}",
+    "color": "{sys.palette.onPrimary}",
     "background-color": "{sys.palette.primary}",
-    "gradient": "{sys.palette.on-primary}",
+    "gradient": "{sys.palette.onPrimary}",
     "hover": {
       "box-shadow": "{ref.shadow.1}"
     },
@@ -47,12 +47,12 @@
       "box-shadow": "none"
     },
     "selected": {
-      "color": "{sys.palette.on-primary}",
-      "background-color": "{sys.palette.primary-variant}"
+      "color": "{sys.palette.onPrimary}",
+      "background-color": "{sys.palette.primaryVariant}"
     },
     "disabled": {
-      "color": "{sys.palette.on-surface}",
-      "background-color": "{sys.palette.on-surface}",
+      "color": "{sys.palette.onSurface}",
+      "background-color": "{sys.palette.onSurface}",
       "background-opacity": "{sys.opacity.012}",
       "box-shadow": "none"
     }
@@ -73,12 +73,12 @@
     },
     "selected": {
       "before": {
-        "border-color": "{sys.palette.primary-variant}"
+        "border-color": "{sys.palette.primaryVariant}"
       }
     },
     "disabled": {
       "before": {
-        "border-color": "{sys.palette.on-surface}",
+        "border-color": "{sys.palette.onSurface}",
         "border-opacity": "{sys.opacity.012}"
       }
     }
@@ -105,7 +105,7 @@
     }
   },
   "elevated": {
-    "background-color": "{sys.palette.surface-container-low}",
+    "background-color": "{sys.palette.surfaceContainerLow}",
     "box-shadow": "{ref.shadow.1}",
     "hover": {
       "box-shadow": "{ref.shadow.2}"
@@ -114,18 +114,18 @@
       "box-shadow": "{ref.shadow.1}"
     },
     "selected": {
-      "background-color": "{sys.palette.surface-container-high}"
+      "background-color": "{sys.palette.surfaceContainerHigh}"
     },
     "disabled": {
-      "background-color": "{sys.palette.on-surface}",
+      "background-color": "{sys.palette.onSurface}",
       "background-opacity": "{sys.opacity.012}",
       "box-shadow": "none"
     }
   },
   "tonal": {
-    "color": "{sys.palette.on-secondary-container}",
-    "background-color": "{sys.palette.secondary-container}",
-    "gradient": "{sys.palette.on-secondary-container}",
+    "color": "{sys.palette.onSecondaryContainer}",
+    "background-color": "{sys.palette.secondaryContainer}",
+    "gradient": "{sys.palette.onSecondaryContainer}",
     "hover": {
       "box-shadow": "{ref.shadow.1}"
     },
@@ -133,10 +133,10 @@
       "box-shadow": "none"
     },
     "selected": {
-      "background-color": "{sys.palette.secondary-container-variant}"
+      "background-color": "{sys.palette.secondaryContainerVariant}"
     },
     "disabled": {
-      "background-color": "{sys.palette.on-surface}",
+      "background-color": "{sys.palette.onSurface}",
       "background-opacity": "{sys.opacity.012}",
       "box-shadow": "none"
     }

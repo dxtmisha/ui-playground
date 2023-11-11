@@ -3,8 +3,6 @@ import { ref } from 'vue'
 
 import M3Icon from '../../m3/Icon/M3Icon.vue'
 
-import product1 from '../assets/Galaxy_S23p.png'
-
 const image = 'https://drscdn.500px.org/photo/294267357/q%3D80_m%3D2000/v2?sig=03989c1970e5921d8ab67b23e03e79b8db13b7e7d3bc3f72829cc9eecbb42cf4'
 
 const active = ref(false)

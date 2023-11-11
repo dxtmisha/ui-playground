@@ -140,6 +140,24 @@ export abstract class DesignConstructorAbstract<
   }
 
   /**
+   * Getting additional parameters.<br>
+   * Получение дополнительных параметров.
+   */
+  getAttrs (): ConstrItem {
+    const attrs: ConstrItem = { ...this.attrs ?? {} }
+
+    if ('class' in attrs) {
+      delete attrs.class
+    }
+
+    if ('style' in attrs) {
+      delete attrs.style
+    }
+
+    return attrs
+  }
+
+  /**
    * Execution method to replace setup in Vue.<br>
    * Метод выполнения, для замены setup в Vue.
    */

@@ -140,8 +140,6 @@ export class ProgressDesign<
       )
     }
 
-    console.log(setup.styles.value)
-
     return h(setup.tag.value, {
       ref: this.element,
       class: setup.classes.value.main,

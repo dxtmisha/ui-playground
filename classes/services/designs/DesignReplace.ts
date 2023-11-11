@@ -537,7 +537,7 @@ export class DesignReplace {
       } = item
 
       const index = `props.${name}`
-      const newParent = `${parent}--${name}`
+      const newParent = ('className' in item && item?.className as string) || `${parent}--${name}`
       const newValues = [
         ...values,
         this.isString(value) ? `Boolean(${index})` : index,

@@ -95,7 +95,7 @@ export const useIconRef = function <
         hide: props?.iconHide,
         animationType: 'type2',
         start: true,
-        dataEventType: 'icon'
+        'data-event-type': 'icon'
       },
       'icon'
     )
@@ -110,7 +110,7 @@ export const useIconRef = function <
           turn: props?.iconTurn,
           end: true,
           high: true,
-          dataEventType: 'icon-trailing'
+          'data-event-type': 'icon-trailing'
         },
         'icon'
       )

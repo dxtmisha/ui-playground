@@ -50,7 +50,7 @@ export const useProgressRef = function <
   props: P,
   components?: DesignComponents<COMP, P>,
   classesName = 'is-progress',
-  extra?: Record<string, any>
+  extra?: ProgressProps
 ): UseProgressSetup {
   const bind = computed(() => getBind(
     props.progress,

@@ -158,6 +158,7 @@ export class IconDesign<
     }
 
     return h('span', {
+      ...this.getAttrs(),
       ref: this.element,
       class: setup.classes.value.main
     }, children)

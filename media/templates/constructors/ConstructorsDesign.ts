@@ -127,6 +127,7 @@ export class ConstructorsDesign<
     // const setup = this.setup()
 
     return h('div', {
+      // ...this.getAttrs(),
       ref: this.element,
       class: this.classes?.value.main
     })

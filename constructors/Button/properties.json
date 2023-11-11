@@ -18,6 +18,9 @@
     "_type": "state",
     "_subclass": true
   },
+  "readonly": {
+    "_type": "state"
+  },
   "disabled": {
     "_type": "state"
   },

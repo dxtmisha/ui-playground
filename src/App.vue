@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import DemoImage from './components/DemoImage.vue'
+
+import DemoButton from './components/DemoButton.vue'
 import DemoIcon from './components/DemoIcon.vue'
+import DemoImage from './components/DemoImage.vue'
 import DemoProgress from './components/DemoProgress.vue'
 </script>
 
@@ -15,6 +17,7 @@ import DemoProgress from './components/DemoProgress.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <demo-button />
   <demo-progress />
   <demo-icon />
   <demo-image />

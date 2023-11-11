@@ -312,6 +312,13 @@ $designsProperties: (
             value: (
             ),
           ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
+            type: 'state',
+            value: (
+            ),
+          ),
           'disabled':(
             index: 'disabled',
             name: '&--disabled',
@@ -396,6 +403,13 @@ $designsProperties: (
           'progress':(
             index: 'progress',
             name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
             type: 'state',
             value: (
             ),
@@ -7847,6 +7861,13 @@ $designsProperties: (
           'progress':(
             index: 'progress',
             name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
             type: 'state',
             value: (
             ),

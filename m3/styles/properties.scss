@@ -358,6 +358,13 @@ $designsProperties: (
             value: (
             ),
           ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
+            type: 'state',
+            value: (
+            ),
+          ),
           'disabled':(
             index: 'disabled',
             name: '&--disabled',
@@ -442,6 +449,13 @@ $designsProperties: (
           'progress':(
             index: 'progress',
             name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
             type: 'state',
             value: (
             ),
@@ -5728,6 +5742,898 @@ $designsProperties: (
                 value: 'var(--m3-ref-palette-neutralVariant-40)',
               ),
             ),
+          ),
+        ),
+      ),
+      'button':(
+        index: 'button',
+        name: 'm3-button',
+        type: 'component',
+        value: (
+          'gap':(
+            index: 'gap',
+            name: '--m3-button-gap',
+            type: 'var',
+            value: 'var(--m3-ref-spacing-2)',
+          ),
+          'padding':(
+            index: 'padding',
+            name: '--m3-button-padding',
+            type: 'var',
+            value: 'var(--m3-ref-spacing-6)',
+          ),
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: '--m3-button-transitionFunction',
+            type: 'var',
+            value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--m3-ref-font-family-roboto)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--m3-ref-font-size-14)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--m3-ref-font-weight-500)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--m3-ref-lineHeight-20)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--m3-ref-letterSpacing-10)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'palette-color',
+            type: 'property',
+            value: 'var(--m3-sys-palette-primary)',
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: 'background-color',
+            type: 'property',
+            value: 'transparent',
+          ),
+          'gradientOpacity':(
+            index: 'gradientOpacity',
+            name: 'gradient-opacity',
+            type: 'property',
+            value: 0,
+          ),
+          'gradient':(
+            index: 'gradient',
+            name: 'palette-gradient',
+            type: 'property',
+            value: 'var(--m3-sys-palette-primary)',
+          ),
+          'borderRadius':(
+            index: 'borderRadius',
+            name: 'border-radius',
+            type: 'property',
+            value: 'var(--m3-sys-rounded-full)',
+          ),
+          'boxShadow':(
+            index: 'boxShadow',
+            name: 'box-shadow',
+            type: 'property',
+            value: 'none',
+          ),
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transition-duration',
+            type: 'property',
+            value: 'var(--d-sys-transitionDuration-lg-close)',
+          ),
+          'transitionProperty':(
+            index: 'transitionProperty',
+            name: 'transition-property',
+            type: 'property',
+            value: 'border, box-shadow',
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'gradientOpacity':(
+                index: 'gradientOpacity',
+                name: 'gradient-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-008)',
+              ),
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'active':(
+            index: 'active',
+            name: 'active',
+            type: 'selector',
+            value: (
+              'gradientOpacity':(
+                index: 'gradientOpacity',
+                name: 'gradient-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-012)',
+              ),
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'focus':(
+            index: 'focus',
+            name: 'focus',
+            type: 'selector',
+            value: (
+              'gradientOpacity':(
+                index: 'gradientOpacity',
+                name: 'gradient-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-012)',
+              ),
+            ),
+          ),
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'palette-color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-primaryVariant)',
+              ),
+              'gradient':(
+                index: 'gradient',
+                name: 'palette-gradient',
+                type: 'property',
+                value: 'var(--m3-sys-palette-primaryVariant)',
+              ),
+            ),
+          ),
+          'progress':(
+            index: 'progress',
+            name: '&--progress',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: 'color-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-disabled)',
+              ),
+              'color':(
+                index: 'color',
+                name: 'palette-color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onSurface)',
+              ),
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: '--m3-button-padding',
+                    type: 'var',
+                    value: 0px,
+                  ),
+                  ' .??__label':(
+                    index: ' .??__label',
+                    name: ' .m3-button__label',
+                    type: 'scss',
+                    value: (
+                      'display':(
+                        index: 'display',
+                        name: 'display',
+                        type: 'property',
+                        value: 'none',
+                      ),
+                      'paddingX':(
+                        index: 'paddingX',
+                        name: 'padding-x',
+                        type: 'property',
+                        value: 0px,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'mediaSm':(
+                    index: 'mediaSm',
+                    name: '(max-width: calc(600px - 1px))',
+                    type: 'media-max',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--m3-button-padding',
+                        type: 'var',
+                        value: 0px,
+                      ),
+                      ' .??__label':(
+                        index: ' .??__label',
+                        name: ' .m3-button__label',
+                        type: 'scss',
+                        value: (
+                          'display':(
+                            index: 'display',
+                            name: 'display',
+                            type: 'property',
+                            value: 'none',
+                          ),
+                          'paddingX':(
+                            index: 'paddingX',
+                            name: 'padding-x',
+                            type: 'property',
+                            value: 0px,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'mediaMd':(
+                    index: 'mediaMd',
+                    name: '(max-width: calc(905px - 1px))',
+                    type: 'media-max',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--m3-button-padding',
+                        type: 'var',
+                        value: 0px,
+                      ),
+                      ' .??__label':(
+                        index: ' .??__label',
+                        name: ' .m3-button__label',
+                        type: 'scss',
+                        value: (
+                          'display':(
+                            index: 'display',
+                            name: 'display',
+                            type: 'property',
+                            value: 'none',
+                          ),
+                          'paddingX':(
+                            index: 'paddingX',
+                            name: 'padding-x',
+                            type: 'property',
+                            value: 0px,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-8)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-10)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-12)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'filled':(
+            index: 'filled',
+            name: '&--filled',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onPrimary)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'palette-background',
+                type: 'property',
+                value: 'var(--m3-sys-palette-primary)',
+              ),
+              'gradient':(
+                index: 'gradient',
+                name: 'gradient',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onPrimary)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--m3-ref-shadow-1)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurface)',
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: 'background-opacity',
+                    type: 'property',
+                    value: 'var(--m3-sys-opacity-012)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurface)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&--selected',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onPrimary)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-primaryVariant)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'outlined':(
+            index: 'outlined',
+            name: '&--outlined',
+            type: 'state',
+            value: (
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'before':(
+                    index: 'before',
+                    name: 'before',
+                    type: 'virtual',
+                    value: (
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'palette-border',
+                        type: 'property',
+                        value: 'var(--m3-sys-palette-primary)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'before':(
+                    index: 'before',
+                    name: 'before',
+                    type: 'virtual',
+                    value: (
+                      'borderOpacity':(
+                        index: 'borderOpacity',
+                        name: 'border-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-012)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'palette-border',
+                        type: 'property',
+                        value: 'var(--m3-sys-palette-onSurface)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'before':(
+                index: 'before',
+                name: 'before',
+                type: 'virtual',
+                value: (
+                  'position':(
+                    index: 'position',
+                    name: 'position',
+                    type: 'property',
+                    value: 'absolute',
+                  ),
+                  'inset':(
+                    index: 'inset',
+                    name: 'inset',
+                    type: 'property',
+                    value: 0px,
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                  'borderWidth':(
+                    index: 'borderWidth',
+                    name: 'border-width',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-px)',
+                  ),
+                  'borderStyle':(
+                    index: 'borderStyle',
+                    name: 'border-style',
+                    type: 'property',
+                    value: 'solid',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'palette-border',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-outline)',
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&--selected',
+                type: 'state',
+                value: (
+                  'before':(
+                    index: 'before',
+                    name: 'before',
+                    type: 'virtual',
+                    value: (
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'palette-border',
+                        type: 'property',
+                        value: 'var(--m3-sys-palette-primaryVariant)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'text':(
+            index: 'text',
+            name: '&--text',
+            type: 'state',
+            value: (
+              'padding':(
+                index: 'padding',
+                name: '--m3-button-padding',
+                type: 'var',
+                value: 'var(--m3-ref-spacing-3)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'transitionDuration':(
+                    index: 'transitionDuration',
+                    name: 'transition-duration',
+                    type: 'property',
+                    value: 'var(--d-sys-transitionDuration-lg-close)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'after':(
+                    index: 'after',
+                    name: 'after',
+                    type: 'virtual',
+                    value: (
+                      'borderOpacity':(
+                        index: 'borderOpacity',
+                        name: 'border-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-medium)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'after':(
+                index: 'after',
+                name: 'after',
+                type: 'virtual',
+                value: (
+                  'position':(
+                    index: 'position',
+                    name: 'position',
+                    type: 'property',
+                    value: 'absolute',
+                  ),
+                  'inset':(
+                    index: 'inset',
+                    name: 'inset',
+                    type: 'property',
+                    value: 0px,
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                  'borderWidth':(
+                    index: 'borderWidth',
+                    name: 'border-width',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-px)',
+                  ),
+                  'borderStyle':(
+                    index: 'borderStyle',
+                    name: 'border-style',
+                    type: 'property',
+                    value: 'solid',
+                  ),
+                  'borderOpacity':(
+                    index: 'borderOpacity',
+                    name: 'border-opacity',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'palette-border',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-outline)',
+                  ),
+                  'transition':(
+                    index: 'transition',
+                    name: 'transition',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'elevated':(
+            index: 'elevated',
+            name: '&--elevated',
+            type: 'state',
+            value: (
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'palette-background',
+                type: 'property',
+                value: 'var(--m3-sys-palette-surfaceContainerLow)',
+              ),
+              'boxShadow':(
+                index: 'boxShadow',
+                name: 'box-shadow',
+                type: 'property',
+                value: 'var(--m3-ref-shadow-1)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--m3-ref-shadow-2)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--m3-ref-shadow-1)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: 'background-opacity',
+                    type: 'property',
+                    value: 'var(--m3-sys-opacity-012)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurface)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&--selected',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-surfaceContainerHigh)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'tonal':(
+            index: 'tonal',
+            name: '&--tonal',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onSecondaryContainer)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'palette-background',
+                type: 'property',
+                value: 'var(--m3-sys-palette-secondaryContainer)',
+              ),
+              'gradient':(
+                index: 'gradient',
+                name: 'gradient',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onSecondaryContainer)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--m3-ref-shadow-1)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: 'background-opacity',
+                    type: 'property',
+                    value: 'var(--m3-sys-opacity-012)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurface)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&--selected',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-secondaryContainerVariant)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'palette':(
+            index: 'palette',
+            name: 'palette',
+            type: 'link-class',
+            value: '{m3.palette}',
           ),
         ),
       ),

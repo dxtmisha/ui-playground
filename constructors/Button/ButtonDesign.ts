@@ -99,7 +99,11 @@ export class ButtonDesign<
       ...useProgressRef(
         this.props,
         this.components,
-        this.getSubClass('progress')
+        this.getSubClass('progress'),
+        {
+          circular: true,
+          inverse: true
+        }
       ),
 
       ...enabled,
@@ -156,9 +160,9 @@ export class ButtonDesign<
   protected initRender (): VNode {
     const setup = this.setup()
     const children: any[] = [
+      ...setup.renderProgress(),
       ...setup.renderLabel(),
-      ...setup.renderIcon(),
-      ...setup.renderProgress()
+      ...setup.renderIcon()
     ]
 
     if (setup.isEnabled.value) {
@@ -166,6 +170,7 @@ export class ButtonDesign<
     }
 
     return h(this.props?.tag || 'button', {
+      ...this.getAttrs(),
       ref: this.element,
       class: setup.classes.value.main,
       style: setup.styles.value,
