@@ -1,0 +1,263 @@
+@import "../../styles/all";
+
+@mixin mixinChipToken {
+  // :style [!] System label / Системная метка
+  --m3-chip-padding: var(--m3-ref-spacing-3);
+  --m3-chip-transitionFunction: var(--d-sys-transitionFunction-standard);
+  
+  font-family: var(--m3-ref-font-family-roboto);
+  @include fontSize(#{var(--m3-ref-font-size-14)});
+  font-weight: var(--m3-ref-font-weight-500);
+  @include lineHeight(#{var(--m3-ref-lineHeight-20)});
+  letter-spacing: var(--m3-ref-letterSpacing-10);
+  
+  @include color(#{var(--m3-sys-palette-onSurface)});
+  
+  @include backgroundColor(#{transparent});
+  @include gradientOpacity(#{0});
+  @include paletteGradient(#{var(--m3-sys-palette-onSurfaceVariant)});
+  
+  border-radius: var(--m3-sys-rounded-md);
+  
+  box-shadow: none;
+  
+  transition-duration: var(--d-sys-transitionDuration-lg-close);
+  transition-property: border, box-shadow;
+  
+  @include hover {
+    @include gradientOpacity(#{var(--m3-sys-opacity-008)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  @include active {
+    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  @include focus {
+    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+  }
+  
+  &--selected {
+    @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});
+  }
+  
+  &--disabled {
+    @include color(#{var(--m3-sys-palette-onSurface)});
+    @include colorOpacity(#{var(--m3-sys-opacity-disabled)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+    
+    & .m3-chip__icon {
+      @include color(#{var(--m3-sys-palette-onSurface)});
+    }
+  }
+  
+  &--adaptive {
+    &--icon {
+      --m3-chip-padding: 0px;
+      
+       .m3-chip__label {
+        display: none;
+        
+        @include paddingX(#{0px});
+      }
+    }
+    
+    &--sm {
+      @media screen and (max-width: calc(600px - 1px)) {
+        --m3-chip-padding: 0px;
+        
+         .m3-chip__label {
+          display: none;
+          
+          @include paddingX(#{0px});
+        }
+      }
+    }
+    
+    &--md {
+      @media screen and (max-width: calc(905px - 1px)) {
+        --m3-chip-padding: 0px;
+        
+         .m3-chip__label {
+          display: none;
+          
+          @include paddingX(#{0px});
+        }
+      }
+    }
+  }
+  
+  &--height {
+    &--sm {
+      @include height(#{var(--m3-ref-spacing-7)});
+    }
+    
+    &--md {
+      @include height(#{var(--m3-ref-spacing-8)});
+    }
+    
+    &--lg {
+      @include height(#{var(--m3-ref-spacing-10)});
+    }
+  }
+  
+  &--outlined {
+    @include disabled('.m3-chip') {
+      &::before {
+        content: ' ';
+        @include borderColor(#{var(--m3-sys-palette-onSurfaceVariant)});
+        @include borderOpacity(#{var(--m3-sys-opacity-012)});
+      }
+    }
+    
+    &::before {
+      content: ' ';
+      position: absolute;
+      @include inset(#{0px});
+      
+      border-radius: inherit;
+      border-width: var(--m3-ref-spacing-px);
+      border-style: solid;
+      @include borderColor(#{var(--m3-sys-palette-outline)});
+    }
+    
+    &--selected {
+      &::before {
+        content: ' ';
+        @include borderOpacity(#{0});
+      }
+    }
+  }
+  
+  &--elevated {
+    @include paletteBackground(#{var(--m3-sys-palette-surfaceContainerLow)});
+    
+    box-shadow: var(--m3-ref-shadow-1);
+    
+    @include disabled('.m3-chip') {
+      @include backgroundOpacity(#{var(--m3-sys-opacity-012)});
+      @include paletteBackground(#{var(--m3-sys-palette-onSurfaceVariant)});
+      
+      box-shadow: none;
+    }
+    
+    &--selected {
+      @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});
+    }
+  }
+  
+  &--input {
+    &--outlined {
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-3);
+      }
+    }
+  }
+  
+  &--assist {
+    &--elevated {
+      @include active('.m3-chip') {
+        box-shadow: var(--m3-ref-shadow-2);
+      }
+      
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-2);
+      }
+    }
+  }
+  
+  &--filter {
+    &--selected {
+      & .m3-chip__icon {
+        @include color(#{var(--m3-sys-palette-onSurface)});
+      }
+    }
+    
+    &--outlined {
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-4);
+      }
+      
+      &--selected {
+        @include hover('.m3-chip') {
+          box-shadow: var(--m3-ref-shadow-1);
+        }
+        
+        &--dragged {
+          box-shadow: var(--m3-ref-shadow-4);
+          
+          @include hover('.m3-chip') {
+            box-shadow: var(--m3-ref-shadow-4);
+          }
+        }
+      }
+    }
+    
+    &--elevated {
+      @include hover('.m3-chip') {
+        box-shadow: var(--m3-ref-shadow-2);
+      }
+      
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-4);
+        
+        @include hover('.m3-chip') {
+          box-shadow: var(--m3-ref-shadow-4);
+        }
+      }
+    }
+  }
+  
+  &--suggestion {
+    &--outlined {
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-3);
+      }
+      
+      &--selected {
+        @include hover('.m3-chip') {
+          box-shadow: var(--m3-ref-shadow-1);
+        }
+        
+        @include active('.m3-chip') {
+          box-shadow: var(--m3-ref-shadow-2);
+        }
+        
+        &--dragged {
+          box-shadow: var(--m3-ref-shadow-3);
+        }
+      }
+    }
+    
+    &--elevated {
+      @include active('.m3-chip') {
+        box-shadow: var(--m3-ref-shadow-2);
+      }
+      
+      &--dragged {
+        box-shadow: var(--m3-ref-shadow-3);
+      }
+    }
+  }
+  
+  &--avatar {
+    --iconWidth: calc(var(--sys-height) - var(--m3-ref-spacing-2));
+    
+    border-radius: var(--m3-sys-rounded-full);
+  }
+  
+  &--dragged {
+    @include gradientOpacity(#{var(--m3-sys-opacity-016)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+  }
+  
+  &__icon {
+    @include paletteColor(#{var(--m3-sys-palette-primary)});
+  }
+  // :style [!] System label / Системная метка
+}

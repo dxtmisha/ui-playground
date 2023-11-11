@@ -230,6 +230,10 @@ export class DesignStructureRead extends DesignStructureItemAbstract<DesignStruc
     forEach(this.data, property => {
       property.valueAll = uniqueArray(property.valueAll)
 
+      if (!isFilled(property.value)) {
+        property.value = [true]
+      }
+
       if (!isFilled(property.valueAll)) {
         property.valueAll = [true]
       }

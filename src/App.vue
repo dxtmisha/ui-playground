@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 
 import DemoButton from './components/DemoButton.vue'
+import DemoChip from './components/DemoChip.vue'
 import DemoIcon from './components/DemoIcon.vue'
 import DemoImage from './components/DemoImage.vue'
 import DemoProgress from './components/DemoProgress.vue'
@@ -17,6 +18,7 @@ import DemoProgress from './components/DemoProgress.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <demo-chip />
   <demo-button />
   <demo-progress />
   <demo-icon />

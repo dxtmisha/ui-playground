@@ -1,16 +1,16 @@
 import { type PropType } from 'vue'
 
 import {
-  ButtonProps,
-  defaultsButton,
-  propsButton
-} from '../../constructors/Button/props.ts'
+  ChipProps,
+  defaultsChip,
+  propsChip
+} from '../../constructors/Chip/props.ts'
 
 export const propsValues = {
   // :values [!] System label / Системная метка
   adaptive: ['icon', 'sm', 'md'],
   height: ['sm', 'md', 'lg'],
-  palette: ['primary', 'secondary', 'tertiary', 'error', 'neutral', 'neutralVariant']
+  palette: ['primary', 'secondary', 'tertiary', 'red', 'green', 'error', 'neutral', 'neutralVariant']
   // :values [!] System label / Системная метка
 }
 
@@ -19,15 +19,19 @@ export type PropsToken = {
   focus?: boolean
   selected?: boolean
   progress?: boolean
+  readonly?: boolean
   disabled?: boolean
   adaptive?: 'icon' | 'sm' | 'md'
   height?: 'sm' | 'md' | 'lg'
-  filled?: boolean
   outlined?: boolean
-  text?: boolean
   elevated?: boolean
-  tonal?: boolean
-  palette?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'neutral' | 'neutralVariant'
+  input?: boolean
+  assist?: boolean
+  filter?: boolean
+  suggestion?: boolean
+  avatar?: boolean
+  dragged?: boolean
+  palette?: 'primary' | 'secondary' | 'tertiary' | 'red' | 'green' | 'error' | 'neutral' | 'neutralVariant'
   // :type [!] System label / Системная метка
 }
 
@@ -35,18 +39,19 @@ export type PropsToken = {
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type Props = PropsToken & Omit<ButtonProps, keyof PropsToken>
+export type Props = PropsToken & Omit<ChipProps, keyof PropsToken>
 
 /**
  * Default value for property.<br>
  * Значение по умолчанию для свойства.
  */
 export const defaults: Props = {
-  ...defaultsButton,
+  ...defaultsChip,
   ...{
     // :default [!] System label / Системная метка
     height: 'md',
-    filled: true
+    outlined: true,
+    input: true
     // :default [!] System label / Системная метка
   }
 }
@@ -54,26 +59,33 @@ export const defaults: Props = {
 // Constructor for property
 // Конструктор для свойства
 export const propsInstruction = {
-  ...propsButton,
+  ...propsChip,
   ...{
     // :prop [!] System label / Системная метка
     focus: Boolean,
     selected: Boolean,
     progress: Boolean,
+    readonly: Boolean,
     disabled: Boolean,
     adaptive: String as PropType<PropsToken['adaptive']>,
     height: {
       type: String as PropType<PropsToken['height']>,
       default: defaults?.height
     },
-    filled: {
+    outlined: {
       type: Boolean,
-      default: defaults?.filled
+      default: defaults?.outlined
     },
-    outlined: Boolean,
-    text: Boolean,
     elevated: Boolean,
-    tonal: Boolean,
+    input: {
+      type: Boolean,
+      default: defaults?.input
+    },
+    assist: Boolean,
+    filter: Boolean,
+    suggestion: Boolean,
+    avatar: Boolean,
+    dragged: Boolean,
     palette: String as PropType<PropsToken['palette']>
     // :prop [!] System label / Системная метка
   }

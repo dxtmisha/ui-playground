@@ -530,10 +530,6 @@ const onClickProgress = () => {
 
       text-align: center;
     }
-
-    &__value {
-
-    }
   }
 
   &__title {
