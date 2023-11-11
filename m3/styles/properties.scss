@@ -6794,6 +6794,25 @@ $designsProperties: (
                 type: 'property',
                 value: 'var(--m3-sys-palette-secondaryContainer)',
               ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: 'background-opacity',
+                    type: 'property',
+                    value: 'var(--m3-sys-opacity-012)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'palette-background',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurfaceVariant)',
+                  ),
+                ),
+              ),
             ),
           ),
           'progress':(
@@ -7090,6 +7109,26 @@ $designsProperties: (
                 name: '&--selected',
                 type: 'state',
                 value: (
+                  'disabled':(
+                    index: 'disabled',
+                    name: 'disabled',
+                    type: 'selector',
+                    value: (
+                      'before':(
+                        index: 'before',
+                        name: 'before',
+                        type: 'virtual',
+                        value: (
+                          'borderOpacity':(
+                            index: 'borderOpacity',
+                            name: 'border-opacity',
+                            type: 'property',
+                            value: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   'before':(
                     index: 'before',
                     name: 'before',

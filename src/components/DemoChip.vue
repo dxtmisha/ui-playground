@@ -3,6 +3,8 @@ import { ref } from 'vue'
 
 import M3Chip from '../../m3/Chip/M3Chip.vue'
 
+const image = 'https://drscdn.500px.org/photo/294267357/q%3D80_m%3D2000/v2?sig=03989c1970e5921d8ab67b23e03e79b8db13b7e7d3bc3f72829cc9eecbb42cf4'
+
 const turn = ref(false)
 const hide = ref(false)
 const focus = ref(false)
@@ -169,249 +171,555 @@ const onClickProgress = () => {
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">filled</div>
+    <div class="demo-chip__title">input</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" label="label" />
+          <m3-chip input icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" />
+          <m3-chip input icon="home" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">label</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled label="label" />
+          <m3-chip input label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input label="label" icon-trailing="close" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">selected</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" label="label" selected />
+          <m3-chip input icon="home" label="label" selected />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">disabled</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" label="label" disabled />
+          <m3-chip input icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input icon="home" label="label" dragged />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">progress</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" label="label" progress />
+          <m3-chip input icon="home" label="label" progress />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">palette</div>
         <div class="demo-chip__item__value">
-          <m3-chip filled icon="home" label="label" palette="green" />
+          <m3-chip input icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">outlined</div>
+    <div class="demo-chip__title">input, elevated</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" label="label" />
+          <m3-chip input elevated icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input elevated :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" />
+          <m3-chip input elevated icon="home" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">label</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined label="label" />
+          <m3-chip input elevated label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input elevated label="label" icon-trailing="close" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">selected</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" label="label" selected />
+          <m3-chip input elevated icon="home" label="label" selected />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">disabled</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" label="label" disabled />
+          <m3-chip input elevated icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input elevated icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip input elevated icon="home" label="label" dragged />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">progress</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" label="label" progress />
+          <m3-chip input elevated icon="home" label="label" progress />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">palette</div>
         <div class="demo-chip__item__value">
-          <m3-chip outlined icon="home" label="label" palette="green" />
+          <m3-chip input elevated icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">text</div>
+    <div class="demo-chip__title">assist</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" label="label" />
+          <m3-chip assist icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" />
+          <m3-chip assist icon="home" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">label</div>
         <div class="demo-chip__item__value">
-          <m3-chip text label="label" />
+          <m3-chip assist label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist label="label" icon-trailing="close" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">selected</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" label="label" selected />
+          <m3-chip assist icon="home" label="label" selected />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">disabled</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" label="label" disabled />
+          <m3-chip assist icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist icon="home" label="label" dragged />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">progress</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" label="label" progress />
+          <m3-chip assist icon="home" label="label" progress />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">palette</div>
         <div class="demo-chip__item__value">
-          <m3-chip text icon="home" label="label" palette="green" />
+          <m3-chip assist icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">elevated</div>
+    <div class="demo-chip__title">assist, elevated</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" label="label" />
+          <m3-chip assist elevated icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist elevated :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" />
+          <m3-chip assist elevated icon="home" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">label</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated label="label" />
+          <m3-chip assist elevated label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist elevated label="label" icon-trailing="close" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">selected</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" label="label" selected />
+          <m3-chip assist elevated icon="home" label="label" selected />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">disabled</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" label="label" disabled />
+          <m3-chip assist elevated icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist elevated icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip assist elevated icon="home" label="label" dragged />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">progress</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" label="label" progress />
+          <m3-chip assist elevated icon="home" label="label" progress />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">palette</div>
         <div class="demo-chip__item__value">
-          <m3-chip elevated icon="home" label="label" palette="green" />
+          <m3-chip assist elevated icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">tonal</div>
+    <div class="demo-chip__title">filter</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" label="label" />
+          <m3-chip filter icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" />
+          <m3-chip filter icon="home" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">label</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal label="label" />
+          <m3-chip filter label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter label="label" icon-trailing="close" />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">selected</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" label="label" selected />
+          <m3-chip filter icon="home" label="label" selected />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">disabled</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" label="label" disabled />
+          <m3-chip filter icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter icon="home" label="label" dragged />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">progress</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" label="label" progress />
+          <m3-chip filter icon="home" label="label" progress />
         </div>
       </div>
       <div class="demo-chip__item">
         <div class="demo-chip__item__title">palette</div>
         <div class="demo-chip__item__value">
-          <m3-chip tonal icon="home" label="label" palette="green" />
+          <m3-chip filter icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
-    <div class="demo-chip__title">tag</div>
+    <div class="demo-chip__title">filter, elevated</div>
     <div class="demo-chip">
       <div class="demo-chip__item">
-        <div class="demo-chip__item__title">button</div>
+        <div class="demo-chip__item__title">none</div>
         <div class="demo-chip__item__value">
-          <m3-chip icon="home" label="label" tag="button" />
+          <m3-chip filter elevated icon="home" label="label" />
         </div>
       </div>
       <div class="demo-chip__item">
-        <div class="demo-chip__item__title">a</div>
+        <div class="demo-chip__item__title">avatar</div>
         <div class="demo-chip__item__value">
-          <m3-chip icon="home" label="label" tag="a" />
+          <m3-chip filter elevated :icon="image" label="label" avatar />
         </div>
       </div>
       <div class="demo-chip__item">
-        <div class="demo-chip__item__title">span</div>
+        <div class="demo-chip__item__title">icon</div>
         <div class="demo-chip__item__value">
-          <m3-chip icon="home" label="label" tag="span" />
+          <m3-chip filter elevated icon="home" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated label="label" icon-trailing="close" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" dragged />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">progress</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">palette</div>
+        <div class="demo-chip__item__value">
+          <m3-chip filter elevated icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-chip__title">suggestion</div>
+    <div class="demo-chip">
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">none</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion :icon="image" label="label" avatar />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">icon</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion label="label" icon-trailing="close" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" dragged />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">progress</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">palette</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-chip__title">suggestion, elevated</div>
+    <div class="demo-chip">
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">none</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">avatar</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated :icon="image" label="label" avatar />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">icon</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">label, icon-trailing</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated label="label" icon-trailing="close" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">disabled, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" disabled selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">dragged</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" dragged />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">progress</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">palette</div>
+        <div class="demo-chip__item__value">
+          <m3-chip suggestion elevated icon="home" label="label" palette="green" />
         </div>
       </div>
     </div>
@@ -523,6 +831,63 @@ const onClickProgress = () => {
         <div class="demo-chip__item__title">green, disabled</div>
         <div class="demo-chip__item__value">
           <m3-chip icon="home" label="label" palette="green" disabled />
+        </div>
+      </div>
+    </div>
+    <div class="demo-chip__title">palette, elevated</div>
+    <div class="demo-chip">
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">none</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">primary</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="primary" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">secondary</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="secondary" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">tertiary</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="tertiary" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">error</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="error" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">red</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="red" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">green</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="green" />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">green, selected</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="green" selected />
+        </div>
+      </div>
+      <div class="demo-chip__item">
+        <div class="demo-chip__item__title">green, disabled</div>
+        <div class="demo-chip__item__value">
+          <m3-chip elevated icon="home" label="label" palette="green" disabled />
         </div>
       </div>
     </div>

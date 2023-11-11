@@ -42,6 +42,11 @@
   
   &--selected {
     @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});
+    
+    @include disabled('.m3-chip') {
+      @include backgroundOpacity(#{var(--m3-sys-opacity-012)});
+      @include paletteBackground(#{var(--m3-sys-palette-onSurfaceVariant)});
+    }
   }
   
   &--disabled {
@@ -126,6 +131,13 @@
     }
     
     &--selected {
+      @include disabled('.m3-chip') {
+        &::before {
+          content: ' ';
+          @include borderOpacity(#{0});
+        }
+      }
+      
       &::before {
         content: ' ';
         @include borderOpacity(#{0});

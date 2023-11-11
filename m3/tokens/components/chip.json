@@ -34,7 +34,11 @@
     "transition-duration": "{d.sys.transitionDuration.sm}"
   },
   "selected": {
-    "background-color": "{sys.palette.secondaryContainer}"
+    "background-color": "{sys.palette.secondaryContainer}",
+    "disabled": {
+      "background-color": "{sys.palette.onSurfaceVariant}",
+      "background-opacity": "{sys.opacity.012}"
+    }
   },
   "disabled": {
     "color": "{sys.palette.onSurface}",
@@ -56,6 +60,11 @@
     "selected": {
       "before": {
         "border-opacity": "0"
+      },
+      "disabled": {
+        "before": {
+          "border-opacity": "0"
+        }
       }
     },
     "disabled": {
