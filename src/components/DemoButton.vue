@@ -158,6 +158,231 @@ const onClickProgress = () => {
         </div>
       </div>
     </div>
+    <div class="demo-button__title">filled</div>
+    <div class="demo-button">
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">none</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">icon</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">label</div>
+        <div class="demo-button__item__value">
+          <m3-button filled label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">selected</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">disabled</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">progress</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">palette</div>
+        <div class="demo-button__item__value">
+          <m3-button filled icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-button__title">outlined</div>
+    <div class="demo-button">
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">none</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">icon</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">label</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">selected</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">disabled</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">progress</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">palette</div>
+        <div class="demo-button__item__value">
+          <m3-button outlined icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-button__title">text</div>
+    <div class="demo-button">
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">none</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">icon</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">label</div>
+        <div class="demo-button__item__value">
+          <m3-button text label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">selected</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">disabled</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">progress</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">palette</div>
+        <div class="demo-button__item__value">
+          <m3-button text icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-button__title">elevated</div>
+    <div class="demo-button">
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">none</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">icon</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">label</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">selected</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">disabled</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">progress</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">palette</div>
+        <div class="demo-button__item__value">
+          <m3-button elevated icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
+    <div class="demo-button__title">tonal</div>
+    <div class="demo-button">
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">none</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">icon</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">label</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal label="label" />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">selected</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" label="label" selected />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">disabled</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" label="label" disabled />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">progress</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" label="label" progress />
+        </div>
+      </div>
+      <div class="demo-button__item">
+        <div class="demo-button__item__title">palette</div>
+        <div class="demo-button__item__value">
+          <m3-button tonal icon="home" label="label" palette="green" />
+        </div>
+      </div>
+    </div>
     <div class="demo-button__title">tag</div>
     <div class="demo-button">
       <div class="demo-button__item">
