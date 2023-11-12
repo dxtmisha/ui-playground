@@ -127,7 +127,7 @@
       box-shadow: none;
     }
     
-    &--selected {
+    &.m3-button--selected {
       @include color(#{var(--m3-sys-palette-onPrimary)});
       
       @include paletteBackground(#{var(--m3-sys-palette-primaryVariant)});
@@ -161,7 +161,7 @@
       @include paletteBorder(#{var(--m3-sys-palette-outline)});
     }
     
-    &--selected {
+    &.m3-button--selected {
       &::before {
         content: ' ';
         @include paletteBorder(#{var(--m3-sys-palette-primaryVariant)});
@@ -218,7 +218,7 @@
       box-shadow: none;
     }
     
-    &--selected {
+    &.m3-button--selected {
       @include paletteBackground(#{var(--m3-sys-palette-surfaceContainerHigh)});
     }
   }
@@ -244,7 +244,7 @@
       box-shadow: none;
     }
     
-    &--selected {
+    &.m3-button--selected {
       @include paletteBackground(#{var(--m3-sys-palette-secondaryContainerVariant)});
     }
   }

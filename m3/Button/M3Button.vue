@@ -37,19 +37,10 @@ const classesToken = computed<ConstrClasses>(() => ({
     [`m3-button--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
     [`m3-button--height--${props.height}`]: inArray(propsValues.height, props.height),
     'm3-button--filled': props.filled && !props.outlined && !props.text && !props.elevated && !props.tonal,
-    'm3-button--filled--disabled': props.filled && !props.outlined && !props.text && !props.elevated && !props.tonal && props.disabled,
-    'm3-button--filled--selected': props.filled && !props.outlined && !props.text && !props.elevated && !props.tonal && props.selected,
     'm3-button--outlined': props.outlined,
-    'm3-button--outlined--focus': props.outlined && props.focus,
-    'm3-button--outlined--disabled': props.outlined && props.disabled,
-    'm3-button--outlined--selected': props.outlined && props.selected,
     'm3-button--text': props.text,
     'm3-button--elevated': props.elevated,
-    'm3-button--elevated--disabled': props.elevated && props.disabled,
-    'm3-button--elevated--selected': props.elevated && props.selected,
     'm3-button--tonal': props.tonal,
-    'm3-button--tonal--disabled': props.tonal && props.disabled,
-    'm3-button--tonal--selected': props.tonal && props.selected,
     [`m3-palette--${props.palette}`]: inArray(propsValues.palette, props.palette)
     // :classes-values [!] System label / Системная метка
   }
