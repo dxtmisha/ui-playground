@@ -1,5 +1,7 @@
 @import "../../styles/all";
 
+$designsClassName: 'class' !default;
+
 @mixin mixinChipToken {
   // :style [!] System label / Системная метка
   --m3-chip-padding: var(--m3-ref-spacing-3);
@@ -130,7 +132,7 @@
       @include borderColor(#{var(--m3-sys-palette-outline)});
     }
     
-    &--selected {
+    &#{$designsClassName}--selected {
       @include disabled('.m3-chip') {
         &::before {
           content: ' ';
@@ -157,49 +159,49 @@
       box-shadow: none;
     }
     
-    &--selected {
+    &#{$designsClassName}--selected {
       @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});
     }
   }
   
   &--input {
-    &--outlined {
-      &--dragged {
+    &#{$designsClassName}--outlined {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
     }
   }
   
   &--assist {
-    &--elevated {
+    &#{$designsClassName}--elevated {
       @include active('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &--dragged {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-2);
       }
     }
   }
   
   &--filter {
-    &--selected {
+    &#{$designsClassName}--selected {
       & .m3-chip__icon {
         @include color(#{var(--m3-sys-palette-onSurface)});
       }
     }
     
-    &--outlined {
-      &--dragged {
+    &#{$designsClassName}--outlined {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-4);
       }
       
-      &--selected {
+      &#{$designsClassName}--selected {
         @include hover('.m3-chip') {
           box-shadow: var(--m3-ref-shadow-1);
         }
         
-        &--dragged {
+        &#{$designsClassName}--dragged {
           box-shadow: var(--m3-ref-shadow-4);
           
           @include hover('.m3-chip') {
@@ -209,12 +211,12 @@
       }
     }
     
-    &--elevated {
+    &#{$designsClassName}--elevated {
       @include hover('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &--dragged {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-4);
         
         @include hover('.m3-chip') {
@@ -225,12 +227,12 @@
   }
   
   &--suggestion {
-    &--outlined {
-      &--dragged {
+    &#{$designsClassName}--outlined {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
       
-      &--selected {
+      &#{$designsClassName}--selected {
         @include hover('.m3-chip') {
           box-shadow: var(--m3-ref-shadow-1);
         }
@@ -239,18 +241,18 @@
           box-shadow: var(--m3-ref-shadow-2);
         }
         
-        &--dragged {
+        &#{$designsClassName}--dragged {
           box-shadow: var(--m3-ref-shadow-3);
         }
       }
     }
     
-    &--elevated {
+    &#{$designsClassName}--elevated {
       @include active('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &--dragged {
+      &#{$designsClassName}--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
     }

@@ -1,4 +1,7 @@
+import { isObjectNotArray } from '../../../../functions/data.ts'
+
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 
 import {
   type PropertyItem,
@@ -16,9 +19,10 @@ export class PropertiesToState extends PropertiesToAbstract {
   protected init (): void {
     this.items.findVariable([PropertyType.state]).forEach(({
       name,
-      item
+      item,
+      parents
     }) => {
-      item[PropertyKey.name] = this.getName(name, item)
+      item[PropertyKey.name] = this.getName(name, item, parents)
     })
   }
 
@@ -27,12 +31,26 @@ export class PropertiesToState extends PropertiesToAbstract {
    * Преобразование имени для типа state.
    * @param name base property name /<br>базовое название свойства
    * @param item current element /<br>текущий элемент
+   * @param parents current element /<br>текущий элемент
    */
-  private getName (name: string, item: PropertyItem): string {
+  private getName (
+    name: string,
+    item: PropertyItem,
+    parents: PropertiesItemsItem['parents']
+  ): string {
     const newName = this.items.getReName(name, item)
 
     if (item?.[PropertyKey.fullName]) {
       return `&.${newName}`
+    }
+
+    if (
+      parents.length > 2 &&
+      isObjectNotArray(parents?.[1].item.value) &&
+      name in parents?.[1].item.value &&
+      parents?.[1].item.value[name][PropertyKey.variable] === PropertyType.state
+    ) {
+      return `&#{$designsClassName}--${newName}`
     }
 
     return `&--${newName}`

@@ -20,6 +20,7 @@ export enum PropertyKey {
   sort = '__s',
   order = '__o',
   index = '__i',
+  stateMain = '__m',
   file = '__file',
   wrap = '__wrap'
 }
@@ -96,6 +97,7 @@ export type PropertyItem = {
   __f?: string | string[]
   __s?: string
   __o?: number
+  __m?: boolean
   __file?: string
   __wrap?: boolean
 }

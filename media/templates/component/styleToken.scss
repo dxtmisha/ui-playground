@@ -1,5 +1,7 @@
 @import "../../../styles/all";
 
+$designsClassName: 'class' !default;
+
 @mixin mixinComponentToken {
   // :style [!] System label / Системная метка
   // :style [!] System label / Системная метка
