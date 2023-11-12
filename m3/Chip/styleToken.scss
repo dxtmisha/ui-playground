@@ -1,7 +1,5 @@
 @import "../../styles/all";
 
-$designsClassName: 'class' !default;
-
 @mixin mixinChipToken {
   // :style [!] System label / Системная метка
   --m3-chip-padding: var(--m3-ref-spacing-3);
@@ -132,7 +130,7 @@ $designsClassName: 'class' !default;
       @include borderColor(#{var(--m3-sys-palette-outline)});
     }
     
-    &#{$designsClassName}--selected {
+    &.m3-chip--selected {
       @include disabled('.m3-chip') {
         &::before {
           content: ' ';
@@ -159,49 +157,49 @@ $designsClassName: 'class' !default;
       box-shadow: none;
     }
     
-    &#{$designsClassName}--selected {
+    &.m3-chip--selected {
       @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});
     }
   }
   
   &--input {
-    &#{$designsClassName}--outlined {
-      &#{$designsClassName}--dragged {
+    &.m3-chip--outlined {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
     }
   }
   
   &--assist {
-    &#{$designsClassName}--elevated {
+    &.m3-chip--elevated {
       @include active('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &#{$designsClassName}--dragged {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-2);
       }
     }
   }
   
   &--filter {
-    &#{$designsClassName}--selected {
+    &.m3-chip--selected {
       & .m3-chip__icon {
         @include color(#{var(--m3-sys-palette-onSurface)});
       }
     }
     
-    &#{$designsClassName}--outlined {
-      &#{$designsClassName}--dragged {
+    &.m3-chip--outlined {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-4);
       }
       
-      &#{$designsClassName}--selected {
+      &.m3-chip--selected {
         @include hover('.m3-chip') {
           box-shadow: var(--m3-ref-shadow-1);
         }
         
-        &#{$designsClassName}--dragged {
+        &.m3-chip--dragged {
           box-shadow: var(--m3-ref-shadow-4);
           
           @include hover('.m3-chip') {
@@ -211,12 +209,12 @@ $designsClassName: 'class' !default;
       }
     }
     
-    &#{$designsClassName}--elevated {
+    &.m3-chip--elevated {
       @include hover('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &#{$designsClassName}--dragged {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-4);
         
         @include hover('.m3-chip') {
@@ -227,12 +225,12 @@ $designsClassName: 'class' !default;
   }
   
   &--suggestion {
-    &#{$designsClassName}--outlined {
-      &#{$designsClassName}--dragged {
+    &.m3-chip--outlined {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
       
-      &#{$designsClassName}--selected {
+      &.m3-chip--selected {
         @include hover('.m3-chip') {
           box-shadow: var(--m3-ref-shadow-1);
         }
@@ -241,18 +239,18 @@ $designsClassName: 'class' !default;
           box-shadow: var(--m3-ref-shadow-2);
         }
         
-        &#{$designsClassName}--dragged {
+        &.m3-chip--dragged {
           box-shadow: var(--m3-ref-shadow-3);
         }
       }
     }
     
-    &#{$designsClassName}--elevated {
+    &.m3-chip--elevated {
       @include active('.m3-chip') {
         box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &#{$designsClassName}--dragged {
+      &.m3-chip--dragged {
         box-shadow: var(--m3-ref-shadow-3);
       }
     }

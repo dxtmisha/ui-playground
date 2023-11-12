@@ -50,7 +50,7 @@ export class PropertiesToState extends PropertiesToAbstract {
       name in parents?.[1].item.value &&
       parents?.[1].item.value[name][PropertyKey.variable] === PropertyType.state
     ) {
-      return `&#{$designsClassName}--${newName}`
+      return `&.${parents?.[1].item[PropertyKey.name]}--${newName}`
     }
 
     return `&--${newName}`

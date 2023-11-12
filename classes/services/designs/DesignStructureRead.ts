@@ -52,7 +52,7 @@ export class DesignStructureRead extends DesignStructureItemAbstract<DesignStruc
     this.makeValue()
     this.makeValueAll()
     this.makeValueUnique()
-    this.makeValueState()
+    // this.makeValueState()
   }
 
   /**
@@ -258,7 +258,7 @@ export class DesignStructureRead extends DesignStructureItemAbstract<DesignStruc
       state
     }) => {
       const structure = this.data[index]
-
+      console.log('structure', index, structure)
       if (structure) {
         if (parent) {
           const value: DesignStructureItemSub = {
