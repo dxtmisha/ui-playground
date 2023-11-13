@@ -1,0 +1,5 @@
+@import "../../styles/properties";
+
+@mixin mixinMask {
+  @include initByCustom('color', v('??sys.color', var(--sys-color, inherit)));
+}

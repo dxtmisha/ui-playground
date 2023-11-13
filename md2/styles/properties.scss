@@ -609,6 +609,27 @@ $designsProperties: (
           ),
         ),
       ),
+      'mask':(
+        index: 'mask',
+        name: 'd-mask',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'd-progress',

@@ -655,6 +655,27 @@ $designsProperties: (
           ),
         ),
       ),
+      'mask':(
+        index: 'mask',
+        name: 'd-mask',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'd-progress',
@@ -8027,6 +8048,27 @@ $designsProperties: (
             index: 'adaptive',
             name: '&--adaptive',
             type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'mask':(
+        index: 'mask',
+        name: 'm3-mask',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
             value: (
             ),
           ),
