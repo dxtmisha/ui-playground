@@ -129,7 +129,7 @@ export class MaskDesign<
     // const setup = this.setup()
 
     return h('div', {
-      // ...this.getAttrs(),
+      ...this.getAttrs(),
       ref: this.element,
       class: this.classes?.value.main
     })

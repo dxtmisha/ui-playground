@@ -1,5 +1,9 @@
 import { type PropType } from 'vue'
-import { type MaskItem } from './typesBasic.ts'
+
+import {
+  type MaskItem,
+  type MaskTypeItem
+} from './typesBasic.ts'
 
 /**
  * Type describing incoming properties.<br>
@@ -8,6 +12,9 @@ import { type MaskItem } from './typesBasic.ts'
 export type MaskProps = {
   // Values
   mask?: MaskItem
+
+  // Options
+  type?: MaskTypeItem
 
   // Tokens
   // :type [!] System label / Системная метка
@@ -19,7 +26,7 @@ export type MaskProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsMask: MaskProps = {
-  // TODO: Location for a user-defined default value / Место для пользовательского значения по умолчанию
+  type: 'text',
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -33,6 +40,12 @@ export const defaultsMask: MaskProps = {
 export const propsMask = {
   // Values
   mask: [String, Array, Object] as PropType<MaskProps['mask']>,
+
+  // Options
+  type: {
+    type: String as PropType<MaskProps['type']>,
+    default: defaultsMask?.type
+  },
 
   // Tokens
   ...{

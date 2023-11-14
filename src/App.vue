@@ -6,6 +6,7 @@ import DemoChip from './components/DemoChip.vue'
 import DemoIcon from './components/DemoIcon.vue'
 import DemoImage from './components/DemoImage.vue'
 import DemoProgress from './components/DemoProgress.vue'
+import DemoMask from './components/DemoMask.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import DemoProgress from './components/DemoProgress.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <demo-mask />
   <demo-chip />
   <demo-button />
   <demo-progress />
