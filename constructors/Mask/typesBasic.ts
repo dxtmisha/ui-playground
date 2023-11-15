@@ -15,6 +15,14 @@ export type MaskGroupItem = {
 }
 export type MaskGroup = Record<string, MaskGroupItem>
 
+export type MaskSpecialItem = {
+  rubber?: boolean
+  transitionChar?: string | string[]
+  maxLength?: number
+  minLength?: number
+}
+export type MaskSpecialGroup = Record<string, MaskSpecialItem>
+
 export type MaskPatternItem = {
   type: string
   min: string

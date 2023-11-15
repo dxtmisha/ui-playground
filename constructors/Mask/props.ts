@@ -1,7 +1,7 @@
 import { type PropType } from 'vue'
 
 import {
-  type MaskItem,
+  type MaskItem, MaskSpecialGroup,
   type MaskTypeItem
 } from './typesBasic.ts'
 
@@ -12,9 +12,14 @@ import {
 export type MaskProps = {
   // Values
   mask?: MaskItem
+  special?: string | string[] | MaskSpecialGroup
+  fraction?: boolean | string | number
+  currency?: string
+  match?: RegExp | Record<string, RegExp>
 
   // Options
   type?: MaskTypeItem
+  lang?: string
 
   // Tokens
   // :type [!] System label / Системная метка
@@ -26,6 +31,8 @@ export type MaskProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsMask: MaskProps = {
+  special: '*',
+  match: /[0-9]/,
   type: 'text',
   ...{
     // :default [!] System label / Системная метка
@@ -40,12 +47,23 @@ export const defaultsMask: MaskProps = {
 export const propsMask = {
   // Values
   mask: [String, Array, Object] as PropType<MaskProps['mask']>,
+  special: {
+    type: [String, Array, Object] as PropType<MaskProps['special']>,
+    default: defaultsMask?.special
+  },
+  fraction: [Boolean, String, Number],
+  currency: String,
+  match: {
+    type: [Object, RegExp] as PropType<MaskProps['match']>,
+    default: defaultsMask?.match
+  },
 
   // Options
   type: {
     type: String as PropType<MaskProps['type']>,
     default: defaultsMask?.type
   },
+  lang: String,
 
   // Tokens
   ...{
