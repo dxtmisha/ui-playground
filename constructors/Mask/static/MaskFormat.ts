@@ -8,7 +8,7 @@ import { MaskRubberItem } from './MaskRubberItem.ts'
 import { type MaskProps } from '../props.ts'
 import {
   type MaskGroup,
-  type MaskSpecialGroup
+  type MaskSpecialList
 } from '../typesBasic.ts'
 
 /**
@@ -31,8 +31,8 @@ export class MaskFormat {
   }
 
   /**
-   * Checks if the number is rubber.<br>
-   * Проверяет, является ли число резиновым.
+   * Checks if the number is rubber with residues.<br>
+   * Проверяет, является ли число резиновым с остатками.
    */
   isFractionRubber (): boolean {
     return this.props.fraction === true
@@ -51,13 +51,15 @@ export class MaskFormat {
    * Получение количества чисел остатка.
    */
   getFraction (): number {
-    const fraction = this.props?.fraction
-
     if (this.type.isCurrency()) {
       return 2
     }
 
-    if (typeof fraction === 'number') {
+    const fraction = this.props?.fraction
+
+    if (
+      typeof fraction === 'number'
+    ) {
       return fraction
     }
 
@@ -126,7 +128,7 @@ export class MaskFormat {
    * Getting instructions for data management.<br>
    * Получение инструкции для управления данными.
    */
-  getRubber (): MaskSpecialGroup {
+  getRubber (): MaskSpecialList {
     return {
       n: {
         rubber: true,
@@ -146,7 +148,7 @@ export class MaskFormat {
    * @param value значения для преобразования
    */
   getValue (value: MaskGroup): string {
-    return `${value?.n?.value || '0'}.${value?.f?.value || '0'}`
+    return `${value?.n?.value ?? '0'}.${value?.f?.value ?? '0'}`
   }
 
   /**

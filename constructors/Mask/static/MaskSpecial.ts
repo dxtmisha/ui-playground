@@ -1,9 +1,18 @@
-import { forEach, isArray, isObject, isObjectNotArray, isString } from '../../../functions/data.ts'
+import {
+  forEach,
+  isArray,
+  isObject,
+  isObjectNotArray,
+  isString
+} from '../../../functions/data.ts'
 
 import { MaskType } from './MaskType.ts'
 
 import { type MaskProps } from '../props.ts'
-import { type MaskSpecialGroup } from '../typesBasic.ts'
+import {
+  type MaskSpecialList,
+  type MaskSpecialProp
+} from '../typesBasic.ts'
 
 /**
  * Class for obtaining data about the character by which we determine the place
@@ -45,7 +54,7 @@ export class MaskSpecial {
    * Getting the value of the input character.<br>
    * Получение значения входного символа.
    */
-  getSpecial (): Exclude<MaskProps['special'], undefined> {
+  getSpecial (): MaskSpecialProp {
     return this.props?.special ?? '*'
   }
 
@@ -91,8 +100,8 @@ export class MaskSpecial {
    * Gets all types that have a rubber character.<br>
    * Получает все типы, у которых резиновый символ.
    */
-  getRubber (): MaskSpecialGroup {
-    const data: MaskSpecialGroup = {}
+  getRubber (): MaskSpecialList {
+    const data: MaskSpecialList = {}
     const special = this.getSpecial()
 
     if (isObjectNotArray(special)) {

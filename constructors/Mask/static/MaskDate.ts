@@ -4,7 +4,7 @@ import { MaskType } from './MaskType.ts'
 
 import {
   type MaskGroup,
-  type MaskPatternItem,
+  type MaskPatternElement,
   type MaskPatternList
 } from '../typesBasic.ts'
 
@@ -15,8 +15,8 @@ const patternForDate: MaskPatternList = {
     min: '1',
     max: '12'
   },
-  D: (item: MaskGroup): MaskPatternItem => {
-    const date = new Datetime(`${item?.Y?.value || '2000'}-${item?.M?.value || '01'}-01`)
+  D: (item: MaskGroup): MaskPatternElement => {
+    const date = new Datetime(`${item?.Y?.value ?? '2000'}-${item?.M?.value ?? '01'}-01`)
 
     return {
       type: 'number',

@@ -1,5 +1,6 @@
-import { isObject } from '../../../functions/data.ts'
+import { isObjectNotArray, isString } from '../../../functions/data.ts'
 
+import { type MaskMatchItem } from '../typesBasic.ts'
 import { type MaskProps } from '../props.ts'
 
 /**
@@ -26,21 +27,37 @@ export class MaskMatch {
     char: string,
     index?: string
   ): boolean {
-    const match = this.props?.match
+    const match = this.get(index)
 
     if (match instanceof RegExp) {
       return Boolean(char.match(match))
     }
 
-    if (
-      isObject(match) &&
-      index &&
-      index in match
-    ) {
-      return Boolean(char.match(match[index]))
+    if (isString(match)) {
+      return Boolean(char.match(new RegExp(match)))
     }
 
     return Boolean(char.match(/[0-9]/))
+  }
+
+  /**
+   * Returns the value of the regular expression for checking.<br>
+   * Возвращает значение регулярного выражения для проверки.
+   * @param index group for checking /<br>группа для проверки
+   */
+  get (index?: string): MaskMatchItem {
+    if (index) {
+      const special = this.props?.special
+
+      if (
+        isObjectNotArray(special) &&
+        special?.[index]?.match
+      ) {
+        return special[index].match as MaskMatchItem
+      }
+    }
+
+    return this.props?.match ?? /[0-9]/
   }
 
   /**
