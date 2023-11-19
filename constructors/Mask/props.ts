@@ -25,7 +25,7 @@ export type MaskProps = {
 
   // Options
   type?: MaskTypeItem
-  lang?: string
+  language?: string
 
   // Tokens
   // :type [!] System label / Системная метка
@@ -71,7 +71,7 @@ export const propsMask = {
     type: String as PropType<MaskProps['type']>,
     default: defaultsMask?.type
   },
-  lang: String,
+  language: String,
 
   // Tokens
   ...{

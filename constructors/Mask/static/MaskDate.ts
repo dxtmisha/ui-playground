@@ -68,15 +68,15 @@ export class MaskDate {
   /**
    * Returns the standardized date value.<br>
    * Возвращает стандартизированное значение даты.
-   * @param date values for the date /<br>значения для даты
+   * @param data values for the date /<br>значения для даты
    */
-  getValueStandard (date: MaskGroup): string {
-    const value = `${date?.Y?.value || '2000'}` +
-      `-${date?.M?.value || '01'}` +
-      `-${date?.D?.value || '01'}` +
-      `T${date?.h?.value || '00'}` +
-      `:${date?.m?.value || '00'}` +
-      `:${date?.s?.value || '00'}`
+  getValueStandard (data: MaskGroup): string {
+    const value = `${data?.Y?.value || '2000'}` +
+      `-${data?.M?.value || '01'}` +
+      `-${data?.D?.value || '01'}` +
+      `T${data?.h?.value || '00'}` +
+      `:${data?.m?.value || '00'}` +
+      `:${data?.s?.value || '00'}`
 
     return isNaN(Date.parse(value)) ? '' : this.getDatetime(value).standard(false)
   }

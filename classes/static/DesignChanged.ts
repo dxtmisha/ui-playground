@@ -85,7 +85,7 @@ export class DesignChanged<T extends Record<string, any>> {
           this.cache?.[name] !== prop
         ) {
           this.cache[name] = prop
-          this.add(name)
+          this.data.push(name)
         }
       })
     }

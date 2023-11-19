@@ -19,7 +19,7 @@ export class MaskRubberTransition {
    * @param char transition symbol /<br>символ перехода
    */
   isChar (char: string): boolean {
-    return this.char !== char
+    return this.char === char
   }
 
   /**

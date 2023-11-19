@@ -1,5 +1,6 @@
 import { strFill } from '../../../functions/string.ts'
 
+import { Geo } from '../../../classes/static/Geo.ts'
 import { GeoIntl } from '../../../classes/static/GeoIntl.ts'
 
 import { MaskType } from './MaskType.ts'
@@ -11,6 +12,8 @@ import {
   type MaskSpecialList
 } from '../typesBasic.ts'
 
+const decimals: Record<string, string[]> = {}
+
 /**
  * Class for getting a formatted number.<br>
  * Класс для получения форматированного числа.
@@ -20,7 +23,8 @@ export class MaskFormat {
    * Constructor
    * @param props base data /<br>базовые данные
    * @param type object of the class for obtaining the mask type /<br>объект класса для получения типа маски
-   * @param rubberItem объект класса для управления резиновый номера
+   * @param rubberItem class object for managing rubber numbers /<br>
+   * объект класса для управления резиновыми номерами
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -43,7 +47,15 @@ export class MaskFormat {
    * Получает объект для работы с форматированием данных.
    */
   getIntl (): GeoIntl {
-    return new GeoIntl(this.props?.lang)
+    return new GeoIntl(this.getLanguage())
+  }
+
+  /**
+   * Getting data about the current language.<br>
+   * Получение данных о текущем языке.
+   */
+  getLanguage (): string {
+    return this.props?.language ?? Geo.getLanguage()
   }
 
   /**
@@ -110,7 +122,13 @@ export class MaskFormat {
    * Символ десятичной точки.
    */
   getDecimal (): string[] {
-    return [this.getIntl().decimal(), '.']
+    const language = this.getLanguage()
+
+    if (!(language in decimals)) {
+      decimals[language] = [this.getIntl().decimal(), '.']
+    }
+
+    return decimals[language]
   }
 
   /**
