@@ -1,5 +1,5 @@
-import { executeFunction, isFilled, transformation } from '../../functions/data.ts'
-import { useEnv } from '../../composables/static/useEnv.ts'
+import { executeFunction, isFilled, transformation } from '../functions/data.ts'
+import { useEnv } from '../composables/useEnv.ts'
 
 import { CookieBlock } from './CookieBlock.ts'
 

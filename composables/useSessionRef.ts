@@ -1,6 +1,6 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-import { DataStorage } from '../../classes/static/DataStorage.ts'
+import { DataStorage } from '../classes/DataStorage.ts'
 
 /**
  * Creates a reactive variable to manage session storage.<br>
@@ -8,7 +8,7 @@ import { DataStorage } from '../../classes/static/DataStorage.ts'
  * @param name value name /<br>название значения
  * @param defaultValue default value /<br>значение по умолчанию
  */
-export function useSession<T> (
+export function useSessionRef<T> (
   name: string,
   defaultValue?: T | (() => T)
 ): Ref<T | undefined> {

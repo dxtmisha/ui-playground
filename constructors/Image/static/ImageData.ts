@@ -1,7 +1,7 @@
 import { isString } from '../../../functions/data.ts'
 
 import { DesignAsyncAbstract } from '../../../classes/static/DesignAsyncAbstract.ts'
-import { Icons } from '../../../classes/static/Icons.ts'
+import { Icons } from '../../../classes/Icons.ts'
 
 import { ImageType } from './ImageType.ts'
 import { ImageFile } from './ImageFile.ts'

@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './style.scss'
 import App from './App.vue'
-import { Icons } from '../classes/static/Icons.ts'
+import { Icons } from '../classes/Icons.ts'
 
 import iconVue from './assets/vue.svg'
 

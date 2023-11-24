@@ -1,6 +1,6 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-import { DataStorage } from '../../classes/static/DataStorage.ts'
+import { DataStorage } from '../classes/DataStorage.ts'
 
 /**
  * Creates a reactive variable to manage a local storage.<br>
@@ -9,7 +9,7 @@ import { DataStorage } from '../../classes/static/DataStorage.ts'
  * @param defaultValue default value /<br>значение по умолчанию
  * @param cache cache time /<br>время кэширования
  */
-export function useStorage<T> (
+export function useStorageRef<T> (
   name: string,
   defaultValue?: T | (() => T),
   cache?: number

@@ -1,7 +1,7 @@
 import { strFill } from '../../../functions/string.ts'
 
-import { Geo } from '../../../classes/static/Geo.ts'
-import { GeoIntl } from '../../../classes/static/GeoIntl.ts'
+import { Geo } from '../../../classes/Geo.ts'
+import { GeoIntl } from '../../../classes/GeoIntl.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'

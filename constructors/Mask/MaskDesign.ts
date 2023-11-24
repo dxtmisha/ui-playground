@@ -1,6 +1,6 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 
 import {
   type ConstrOptions,

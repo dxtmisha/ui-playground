@@ -1,6 +1,6 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { RippleRef } from './ref/RippleRef.ts'
 
 import {

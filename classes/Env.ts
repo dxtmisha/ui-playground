@@ -1,4 +1,4 @@
-import { transformation } from '../../functions/data.ts'
+import { transformation } from '../functions/data.ts'
 
 const BASIC = {
   api: {

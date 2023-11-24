@@ -1,6 +1,6 @@
-import { isNull, isObject } from '../../functions/data.ts'
-import { toArray } from '../../functions/object.ts'
-import { getElement, getElementOrWindow, isInDom } from '../../functions/element.ts'
+import { isNull, isObject } from '../functions/data.ts'
+import { toArray } from '../functions/object.ts'
+import { getElement, getElementOrWindow, isInDom } from '../functions/element.ts'
 
 import {
   type ElementOrString,
@@ -8,7 +8,7 @@ import {
   type EventActivityItem,
   type EventListenerDetail,
   type EventOptions
-} from '../../types/element.ts'
+} from '../types/element.ts'
 
 /**
  * Class for working with events.<br>

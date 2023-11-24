@@ -1,6 +1,6 @@
 import { h, onUnmounted, VNode, watch } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/ref/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { ImageRef } from './ref/ImageRef.ts'
 
 import {

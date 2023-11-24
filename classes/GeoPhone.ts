@@ -1,12 +1,12 @@
-import { forEach, isFilled } from '../../functions/data.ts'
-import { toArray } from '../../functions/object.ts'
+import { forEach, isFilled } from '../functions/data.ts'
+import { toArray } from '../functions/object.ts'
 
 import { Geo } from './Geo.ts'
 import {
   type GeoPhoneValue,
   type GeoPhoneMap,
   type GeoPhoneMapInfo
-} from '../../types/geo.ts'
+} from '../types/geo.ts'
 
 /**
  * A class for storing and processing phone number masks.<br>

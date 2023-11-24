@@ -1,4 +1,4 @@
-import { Datetime } from '../../../classes/static/Datetime.ts'
+import { Datetime } from '../../../classes/Datetime.ts'
 
 import { MaskType } from './MaskType.ts'
 

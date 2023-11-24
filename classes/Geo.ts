@@ -1,15 +1,15 @@
-import { isSelected } from '../../functions/data.ts'
-import { copyObject } from '../../functions/object.ts'
-import { useEnv } from '../../composables/static/useEnv.ts'
+import { isSelected } from '../functions/data.ts'
+import { copyObject } from '../functions/object.ts'
+import { useEnv } from '../composables/useEnv.ts'
 
 import { DataStorage } from './DataStorage.ts'
 
 import {
   type GeoItem,
   type GeoItemFull
-} from '../../types/geo.ts'
+} from '../types/geo.ts'
 
-import geo from '../../media/geo.json'
+import geo from '../media/geo.json'
 
 const STORAGE_NAME_CODE = 'geo-code'
 

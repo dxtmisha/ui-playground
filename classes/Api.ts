@@ -1,8 +1,8 @@
-import { isFilled, isString } from '../../functions/data.ts'
+import { isFilled, isString } from '../functions/data.ts'
 
 import { Geo } from './Geo.ts'
 
-import { useEnv } from '../../composables/static/useEnv.ts'
+import { useEnv } from '../composables/useEnv.ts'
 
 export enum ApiMethodItem {
   get = 'GET',

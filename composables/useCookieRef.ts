@@ -1,6 +1,6 @@
-import { Ref, ref, UnwrapRef, watch } from 'vue'
+import { type Ref, ref, type UnwrapRef, watch } from 'vue'
 
-import { Cookie, type CookieOptions } from '../../classes/static/Cookie.ts'
+import { Cookie, type CookieOptions } from '../classes/Cookie.ts'
 
 /**
  * Creates a reactive variable to manage cookies.<br>
@@ -9,7 +9,7 @@ import { Cookie, type CookieOptions } from '../../classes/static/Cookie.ts'
  * @param defaultValue value or function to change data /<br>значение или функция для изменения данных
  * @param options additional parameters /<br>дополнительные параметры
  */
-export function useCookie<T> (
+export function useCookieRef<T> (
   name: string,
   defaultValue?: T | string | (() => (T | string)),
   options?: CookieOptions

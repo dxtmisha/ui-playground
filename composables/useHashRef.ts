@@ -1,6 +1,6 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-import { Hash } from '../../classes/static/Hash.ts'
+import { Hash } from '../classes/Hash.ts'
 
 /**
  * Creates a reactive variable to manage the hash.<br>
@@ -8,7 +8,7 @@ import { Hash } from '../../classes/static/Hash.ts'
  * @param name value name /<br>название значения
  * @param defaultValue default value /<br>значение по умолчанию
  */
-export function useHash<T> (
+export function useHashRef<T> (
   name: string,
   defaultValue?: T | (() => T)
 ) {

@@ -1,17 +1,17 @@
-import { toDate } from '../../functions/date.ts'
-import { toNumber } from '../../functions/number.ts'
+import { toDate } from '../functions/date.ts'
+import { toNumber } from '../functions/number.ts'
 
 import { Geo } from './Geo.ts'
 import {
   type GeoDate,
   type GeoItemFull
-} from '../../types/geo.ts'
+} from '../types/geo.ts'
 
 import {
   type NumberOrStringOrDate,
   type NumberOrString
-} from '../../types/basic.ts'
-import { type ItemValue } from '../../types/object.ts'
+} from '../types/basic.ts'
+import { type ItemValue } from '../types/object.ts'
 
 /**
  * The Intl namespace object contains several constructors as well as functionality common
