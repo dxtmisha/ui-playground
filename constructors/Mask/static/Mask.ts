@@ -3,16 +3,18 @@ import { DesignAbstract } from '../../../classes/static/DesignAbstract.ts'
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
 import { MaskRubberTransition } from './MaskRubberTransition.ts'
-
-import { MaskMatch } from './MaskMatch.ts'
-import { MaskFormat } from './MaskFormat.ts'
-import { MaskSpecial } from './MaskSpecial.ts'
-
 import { MaskDate } from './MaskDate.ts'
 
-import { type MaskProps } from '../props.ts'
+import { MaskCharacterLength } from './MaskCharacterLength.ts'
+
+import { MaskSpecial } from './MaskSpecial.ts'
+import { MaskMatch } from './MaskMatch.ts'
 import { MaskPattern } from './MaskPattern.ts'
+import { MaskFormat } from './MaskFormat.ts'
+
 import { MaskRubber } from './MaskRubber.ts'
+
+import { type MaskProps } from '../props.ts'
 
 /**
  * A class for working with a mask.<br>
@@ -23,6 +25,8 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly rubberItem: MaskRubberItem
   protected readonly rubberTransition: MaskRubberTransition
   protected readonly date: MaskDate
+
+  protected readonly characterLength: MaskCharacterLength
 
   protected readonly special: MaskSpecial
   protected readonly match: MaskMatch
@@ -47,6 +51,8 @@ export class Mask extends DesignAbstract<MaskProps, any> {
     this.rubberItem = new MaskRubberItem()
     this.rubberTransition = new MaskRubberTransition()
     this.date = new MaskDate(this.type)
+
+    this.characterLength = new MaskCharacterLength()
 
     this.special = new MaskSpecial(props, this.type)
     this.match = new MaskMatch(props)

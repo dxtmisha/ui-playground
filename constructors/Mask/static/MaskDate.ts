@@ -85,7 +85,7 @@ export class MaskDate {
    * Returns the mask for types related to date.<br>
    * Возвращает маску для типов, относящихся к дате.
    */
-  getMaskDate (): string[] {
+  getMask (): string[] {
     return this.getDatetime().locale(undefined, '2-digit')
       .replace('1987', 'YYYY')
       .replace('12', 'MM')

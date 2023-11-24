@@ -2,7 +2,7 @@ import { type PropType } from 'vue'
 
 import {
   type MaskFractionItem,
-  type MaskItem,
+  type MaskList,
   type MaskMatchItem,
   type MaskPatternItemOrFunction,
   type MaskSpecialProp,
@@ -15,7 +15,7 @@ import {
  */
 export type MaskProps = {
   // Values
-  mask?: MaskItem
+  mask?: MaskList
   special?: MaskSpecialProp
   match?: MaskMatchItem
   pattern?: MaskPatternItemOrFunction
@@ -52,7 +52,7 @@ export const defaultsMask: MaskProps = {
  */
 export const propsMask = {
   // Values
-  mask: [String, Array, Object] as PropType<MaskProps['mask']>,
+  mask: [String, Array] as PropType<MaskProps['mask']>,
   special: {
     type: [String, Array, Object] as PropType<MaskProps['special']>,
     default: defaultsMask?.special

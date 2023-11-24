@@ -27,13 +27,15 @@ export type MaskSpecialItem = {
   match?: MaskMatchItem
   pattern?: MaskPatternItemOrFunction
 }
+export type MaskSpecialInfo = {
+  index: number
+  key: number
+  char: string
+}
 export type MaskSpecialList = Record<string, MaskSpecialItem>
 export type MaskSpecialProp = string | string[] | MaskSpecialList
 
-export type MaskValue = string | string[]
-export type MaskItem = {
-  value?: MaskValue
-}
+export type MaskList = string | string[]
 
 export type MaskEventData = {
   value: string

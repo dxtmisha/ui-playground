@@ -1,7 +1,10 @@
 import { forEach } from '../../../functions/data.ts'
 import { getExp, strFill } from '../../../functions/string.ts'
 
-// TODO
+/**
+ * Class for storing data about the state of rubber symbols.<br>
+ * Класс для хранения данных о состоянии резиновых символов.
+ */
 export class MaskRubberItem {
   protected value: Record<string, number> = {}
 
@@ -67,13 +70,19 @@ export class MaskRubberItem {
     return this
   }
 
-  // TODO
+  /**
+   * Process the mask so that the length of the rubber records increases
+   * depending on the number of filled records.<br>
+   * Обрабатывайте маску так, чтобы длина резиновых записей увеличивалась в
+   * зависимости от количества заполненных записей.
+   * @param mask selected mask /<br>выбранная маска
+   */
   expandMask (mask: string): string {
     let value = mask
 
     forEach(this.value, (length, index) => {
       value = value.replace(
-        getExp(index, 'ig', '([:value]+)'),
+        getExp(index, 'g', '([:value]+)'),
         (all: string) => `${all}${strFill(index, length)}`
       )
     })
