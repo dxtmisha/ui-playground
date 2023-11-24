@@ -9,21 +9,22 @@ export abstract class DesignAbstract<
   C extends Record<string, any>
 > {
   protected readonly event: C = {} as C
-  protected changed?: DesignChanged<T>
+  protected readonly changed: DesignChanged<T>
 
   /**
    * Constructor
    * @param props base data /<br>базовые данные
    * @param callback callback function when the value changes /<br>
    * функция обратного вызова при изменении значения
-   * @param changedWatch base data /<br>данный для слежения
+   * @param changed base data /<br>данный для слежения
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: T,
     protected readonly callback?: (event: C) => void,
-    protected readonly changedWatch?: string[]
+    changed?: string[]
   ) {
+    this.changed = new DesignChanged(props, changed)
   }
 
   /**
@@ -57,53 +58,7 @@ export abstract class DesignAbstract<
     name: K,
     nameProp?: KT | KT[]
   ): boolean {
-    return !(name in this.event) || this.getChanged().is(nameProp || name)
-  }
-
-  /**
-   * Returns the property value by its name.<br>
-   * Возвращает значение свойства по его названию.
-   * @param name property names /<br>названия свойств
-   */
-  protected get<K extends keyof T> (name: K): T[K] | undefined {
-    return this.props?.[name]
-  }
-
-  /**
-   * Getting an object to check for data changes.<br>
-   * Получение объекта для проверки изменения данных.\
-   */
-  protected getChanged (): DesignChanged<T> {
-    if (this.changed) {
-      return this.changed
-    }
-
-    this.changed = new DesignChanged(this.props, this.changedWatch)
-    return this.changed
-  }
-
-  /**
-   * Updates the property values and triggers data enumeration if the make value is true.<br>
-   * Обновляет значения свойства и вызывает перечисление данных, если значение make = true.
-   * @param name property names /<br>названия свойств
-   * @param value new property value /<br>новое значение свойства
-   * @param make call to update the value /<br>вызов обновления значения
-   */
-  protected set<K extends keyof T, V extends T[K]> (
-    name: K & string,
-    value?: V,
-    make = true
-  ): this {
-    if (this.props?.[name] !== value) {
-      this.props[name] = value as any
-      this.getChanged().add(name)
-
-      if (make) {
-        this.make()
-      }
-    }
-
-    return this
+    return !(name in this.event) || this.changed.is(nameProp || name)
   }
 
   /**
@@ -111,12 +66,11 @@ export abstract class DesignAbstract<
    * Вызывает функцию обратного вызова.
    */
   makeCallback (): void {
-    const changed = this.getChanged()
-
-    changed.resetByCache()
-    this.initEvent()
-    this.makeCallbackItem()
-    changed.reset()
+    if (this.changed.isChanged()) {
+      this.initEvent()
+      this.makeCallbackItem()
+      this.changed.update()
+    }
   }
 
   /**

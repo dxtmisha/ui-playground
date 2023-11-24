@@ -2,7 +2,7 @@ import { type PropType } from 'vue'
 
 import { type UseLabelProps, usePropsLabel } from '../uses/ref/useLabel.ts'
 import { type UseIconTrailingProps, usePropsIconTrailing } from '../Icon/ref/useIconRef.ts'
-import { type UseProgressProp, usePropsProgress } from '../Progress/ref/useProgressRef.ts'
+import { type UseProgressProp, usePropsProgress } from '../Progress/useProgressRef.ts'
 import { type UseEnabledProps, usePropsEnabled } from '../uses/ref/useEnabled.ts'
 import { type UseEventClickProps, usePropsEventClick } from '../uses/ref/useEventClick.ts'
 

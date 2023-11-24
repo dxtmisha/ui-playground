@@ -1,7 +1,7 @@
 import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { ProgressRef } from './ref/ProgressRef.ts'
+import { ProgressRef } from './ProgressRef.ts'
 
 import {
   type ConstrOptions,

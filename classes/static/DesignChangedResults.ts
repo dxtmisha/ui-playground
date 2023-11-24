@@ -1,6 +1,6 @@
 import { forEach } from '../../functions/data.ts'
 
-import { DesignChanged } from './DesignChanged.ts'
+import { DesignChanged } from '../design/DesignChanged.ts'
 
 /**
  * Class for working with cached results.<br>
@@ -38,10 +38,7 @@ export class DesignChangedResults<T extends Record<string, any>> {
     if (
       !(index in this.results) ||
       this.isCheck(index, additionalCheck) ||
-      this.changed
-        .reset()
-        .resetByCache()
-        .isChanged()
+      this.changed.isChanged()
     ) {
       this.results[index] = callback()
     }

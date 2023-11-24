@@ -4,7 +4,7 @@ import { DesignConstructorAbstract } from '../../classes/design/DesignConstructo
 
 import { useLabel } from '../uses/ref/useLabel.ts'
 import { useIconRef, type UseIconSetup } from '../Icon/ref/useIconRef.ts'
-import { useProgressRef } from '../Progress/ref/useProgressRef.ts'
+import { useProgressRef } from '../Progress/useProgressRef.ts'
 import { useEnabled } from '../uses/ref/useEnabled.ts'
 import { useEventClick } from '../uses/ref/useEventClick.ts'
 

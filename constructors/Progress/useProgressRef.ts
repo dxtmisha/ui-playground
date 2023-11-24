@@ -4,11 +4,11 @@ import {
   type PropType,
   type VNode
 } from 'vue'
-import { getBind } from '../../../functions/render.ts'
+import { getBind } from '../../functions/render.ts'
 
-import { DesignComponents } from '../../../classes/design/DesignComponents.ts'
+import { DesignComponents } from '../../classes/design/DesignComponents.ts'
 
-import { type ProgressProps } from '../props.ts'
+import { type ProgressProps } from './props.ts'
 
 export type UseProgressComponent = {
   progress?: object

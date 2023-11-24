@@ -1,6 +1,6 @@
 import { isString } from '../../../functions/data.ts'
 
-import { DesignAsyncAbstract } from '../../../classes/static/DesignAsyncAbstract.ts'
+import { DesignAsyncAbstract } from '../../../classes/design/DesignAsyncAbstract.ts'
 import { Icons } from '../../../classes/Icons.ts'
 
 import { ImageType } from './ImageType.ts'

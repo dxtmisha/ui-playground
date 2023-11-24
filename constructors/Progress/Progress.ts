@@ -1,13 +1,13 @@
-import { toNumber } from '../../../functions/number.ts'
+import { toNumber } from '../../functions/number.ts'
 
-import { DesignAsyncAbstract } from '../../../classes/static/DesignAsyncAbstract.ts'
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts'
 
-import { type ProgressProps } from '../props.ts'
-import { type ProgressEventLoad } from '../typesBasic.ts'
+import { type ProgressProps } from './props.ts'
+import { type ProgressEventLoad } from './typesBasic.ts'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../../types/constructor.ts'
+} from '../../types/constructor.ts'
 
 /**
  * Constructor for warming up.<br>

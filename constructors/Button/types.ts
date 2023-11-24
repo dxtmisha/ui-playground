@@ -10,7 +10,7 @@ import {
 import {
   type UseProgressComponent,
   type UseProgressSetup
-} from '../Progress/ref/useProgressRef.ts'
+} from '../Progress/useProgressRef.ts'
 import { type UseEnabledSetup } from '../uses/ref/useEnabled.ts'
 import {
   type UseEventClickEmits,

@@ -1,6 +1,6 @@
 import { getBind } from '../../../functions/render.ts'
 
-import { DesignAbstract } from '../../../classes/static/DesignAbstract.ts'
+import { DesignAbstract } from '../../../classes/design/DesignAbstract.ts'
 
 import { type IconProps } from '../props.ts'
 import { type IconEventLoad } from '../typesBasic.ts'

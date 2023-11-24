@@ -1,4 +1,4 @@
-import { DesignAbstract } from '../../../classes/static/DesignAbstract.ts'
+import { DesignAbstract } from '../../../classes/design/DesignAbstract.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'

@@ -22,16 +22,11 @@ export abstract class DesignAsyncAbstract<
    * Вызывает функцию обратного вызова.
    */
   async makeCallback (): Promise<void> {
-    const changed = this.getChanged()
-
-    changed.resetByCache()
-    await this.initEvent()
-
-    if (this.callback) {
-      this.callback(this.event)
+    if (this.changed.isChanged()) {
+      await this.initEvent()
+      this.makeCallbackItem()
+      this.changed.update()
     }
-
-    changed.reset()
   }
 
   /**
