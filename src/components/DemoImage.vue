@@ -10,6 +10,8 @@ import product4 from '../assets/pad.png'
 
 const image = 'https://drscdn.500px.org/photo/294267357/q%3D80_m%3D2000/v2?sig=03989c1970e5921d8ab67b23e03e79b8db13b7e7d3bc3f72829cc9eecbb42cf4'
 
+const icon = ref<string | undefined>('home')
+
 const adaptive1 = ref(true)
 const adaptive2 = ref(true)
 const adaptive3 = ref(true)
@@ -19,6 +21,26 @@ const turn = ref(false)
 const disabled = ref(false)
 const hide = ref(false)
 
+const xy = ref(0)
+const size = ref(15)
+const coordinator = ref(0)
+
+const onClickIcon = () => {
+  switch (icon.value) {
+    case 'home':
+      icon.value = '#ff0099'
+      break
+    case '#ff0099':
+      icon.value = image
+      break
+    case image:
+      icon.value = undefined
+      break
+    case undefined:
+      icon.value = 'home'
+      break
+  }
+}
 const onClickAdaptive1 = () => {
   adaptive1.value = !adaptive1.value
 }
@@ -40,6 +62,27 @@ const onClickDisabled = () => {
 const onClickHide = () => {
   hide.value = !hide.value
 }
+const onClickXy = () => {
+  if (xy.value >= 100) {
+    xy.value = 0
+  } else {
+    xy.value += 5
+  }
+}
+const onClickSize = () => {
+  if (size.value >= 100) {
+    size.value = 15
+  } else {
+    size.value += 5
+  }
+}
+const onClickCoordinator = () => {
+  if (coordinator.value >= 45) {
+    coordinator.value = 0
+  } else {
+    coordinator.value += 5
+  }
+}
 </script>
 
 <template>
@@ -50,6 +93,12 @@ const onClickHide = () => {
         <div class="demo-image__item__title">none</div>
         <div class="demo-image__item__value">
           <m3-image />
+        </div>
+      </div>
+      <div class="demo-image__item" @click="onClickIcon">
+        <div class="demo-image__item__title">value:{{ icon }}</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="icon" />
         </div>
       </div>
       <div class="demo-image__item">
@@ -151,6 +200,12 @@ const onClickHide = () => {
           <m3-image :value="product1" />
         </div>
       </div>
+      <div class="demo-image__item" @click="onClickXy">
+        <div class="demo-image__item__title">value:{{ xy }}%</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="product4" :x="`${xy}%`" />
+        </div>
+      </div>
       <div class="demo-image__item">
         <div class="demo-image__item__title">x:25%</div>
         <div class="demo-image__item__value">
@@ -167,6 +222,12 @@ const onClickHide = () => {
         <div class="demo-image__item__title">x:75%</div>
         <div class="demo-image__item__value">
           <m3-image :value="product4" x="75%" />
+        </div>
+      </div>
+      <div class="demo-image__item" @click="onClickXy">
+        <div class="demo-image__item__title">value:{{ xy }}%</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="product1" :y="`${xy}%`" />
         </div>
       </div>
       <div class="demo-image__item">
@@ -191,6 +252,18 @@ const onClickHide = () => {
     <div class="demo-image__title">size</div>
     <div class="demo-image">
       <div class="demo-image__item">
+        <div class="demo-image__item__title">none</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="product1" />
+        </div>
+      </div>
+      <div class="demo-image__item" @click="onClickSize">
+        <div class="demo-image__item__title">value:{{ size }}</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="product1" :size="`${size}%`" />
+        </div>
+      </div>
+      <div class="demo-image__item">
         <div class="demo-image__item__title">auto</div>
         <div class="demo-image__item__value">
           <m3-image :value="product1" size="auto" />
@@ -212,21 +285,27 @@ const onClickHide = () => {
     <div class="demo-image__title">coordinator</div>
     <div class="demo-image">
       <div class="demo-image__item">
-        <div class="demo-image__item__title">[25]</div>
+        <div class="demo-image__item__title">none</div>
         <div class="demo-image__item__value">
-          <m3-image :value="product1" :coordinator="[25]" />
+          <m3-image :value="product3" />
+        </div>
+      </div>
+      <div class="demo-image__item" @click="onClickCoordinator">
+        <div class="demo-image__item__title">value:{{ coordinator }}</div>
+        <div class="demo-image__item__value">
+          <m3-image :value="product3" :coordinator="[coordinator]" />
         </div>
       </div>
       <div class="demo-image__item">
         <div class="demo-image__item__title">[0, 50, 50, 0]</div>
         <div class="demo-image__item__value">
-          <m3-image :value="product1" :coordinator="[0, 50, 50, 0]" />
+          <m3-image :value="product3" :coordinator="[0, 50, 50, 0]" />
         </div>
       </div>
       <div class="demo-image__item">
         <div class="demo-image__item__title">[50, 0, 0, 50]</div>
         <div class="demo-image__item__value">
-          <m3-image :value="product1" :coordinator="[50, 0, 0, 50]" />
+          <m3-image :value="product3" :coordinator="[50, 0, 0, 50]" />
         </div>
       </div>
     </div>
@@ -235,6 +314,7 @@ const onClickHide = () => {
 
 <style lang="scss">
 @import "../../styles/color";
+@import "../../styles/font";
 
 .demo-image {
   display: flex;
@@ -248,9 +328,12 @@ const onClickHide = () => {
       position: relative;
       z-index: 100;
 
+      margin: 0 auto;
       padding: 8px 0;
+      max-width: calc(128px - 16px);
 
       text-align: center;
+      @include truncate;
     }
 
     &__value {

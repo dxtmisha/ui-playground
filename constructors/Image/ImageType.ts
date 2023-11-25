@@ -1,14 +1,16 @@
-import { type ImageProps } from '../props.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
+
+import { type ImageProps } from './props.ts'
 import {
   type ImageTypeItem,
   ImageTypeValue
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Class for working with the image type.<br>
  * Класс для работы с типом изображения.
  */
-export class ImageType {
+export class ImageType extends CacheItem<ImageTypeItem> {
   /**
    * Constructor
    * @param props base data /<br>базовые данные
@@ -17,6 +19,7 @@ export class ImageType {
   constructor (
     protected readonly props: ImageProps
   ) {
+    super(() => this.update())
   }
 
   /**
@@ -24,6 +27,14 @@ export class ImageType {
    * Получения тип изображения.
    */
   get (): ImageTypeItem {
+    return this.getCache([this.props?.value])
+  }
+
+  /**
+   * Data update.<br>
+   * Обновление данных.
+   */
+  protected update (): ImageTypeItem {
     const image = this.props?.value
 
     if (image) {

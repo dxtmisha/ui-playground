@@ -1,4 +1,4 @@
-import { ImageItem } from '../typesBasic.ts'
+import { ImageItem } from './typesBasic.ts'
 
 /**
  * Maximum size allowed without conversion.<br>

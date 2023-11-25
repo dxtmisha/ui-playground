@@ -30,9 +30,10 @@ export abstract class DesignAbstract<
   /**
    * Calls the callback function.<br>
    * Вызывает функцию обратного вызова.
+   * @param compelled forces data to update /<br>вынуждает обновлять данные
    */
-  make (): this {
-    this.makeCallback()
+  make (compelled?: boolean): this {
+    this.makeCallback(compelled)
     return this
   }
 
@@ -64,9 +65,13 @@ export abstract class DesignAbstract<
   /**
    * Calls the callback function.<br>
    * Вызывает функцию обратного вызова.
+   * @param compelled forces data to update /<br>вынуждает обновлять данные
    */
-  makeCallback (): void {
-    if (this.changed.isChanged()) {
+  makeCallback (compelled: boolean = false): void {
+    if (
+      compelled ||
+      this.changed.isChanged()
+    ) {
       this.initEvent()
       this.makeCallbackItem()
       this.changed.update()

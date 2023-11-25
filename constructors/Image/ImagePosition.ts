@@ -1,6 +1,6 @@
 import { ImageCoordinator } from './ImageCoordinator.ts'
 
-import { type ImageProps } from '../props.ts'
+import { type ImageProps } from './props.ts'
 
 /**
  * Class for working with position.<br>

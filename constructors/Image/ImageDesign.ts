@@ -1,7 +1,7 @@
 import { h, onUnmounted, VNode, watch } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { ImageRef } from './ref/ImageRef.ts'
+import { ImageRef } from './ImageRef.ts'
 
 import {
   type ConstrOptions,

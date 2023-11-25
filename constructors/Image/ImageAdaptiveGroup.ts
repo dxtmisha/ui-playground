@@ -1,4 +1,4 @@
-import { EventItem } from '../../../classes/EventItem.ts'
+import { EventItem } from '../../classes/EventItem.ts'
 
 import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'

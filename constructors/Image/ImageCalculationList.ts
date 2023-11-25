@@ -1,4 +1,4 @@
-import { ImageCalculation } from './ImageCalculation'
+import { ImageCalculation } from './ImageCalculation.ts'
 
 /**
  * Class for managing all ImageCalculation objects.<br>

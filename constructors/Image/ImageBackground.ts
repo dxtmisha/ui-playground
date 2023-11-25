@@ -1,11 +1,11 @@
-import { isFilled } from '../../../functions/data.ts'
+import { isFilled } from '../../functions/data.ts'
 
 import { ImageData } from './ImageData.ts'
 import { ImageCoordinator } from './ImageCoordinator.ts'
 import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
 
-import { type NumberOrString } from '../../../types/basic.ts'
-import { type ImageProps } from '../props.ts'
+import { type NumberOrString } from '../../types/basic.ts'
+import { type ImageProps } from './props.ts'
 
 /**
  * Class for generating a link in the background-image property.<br>

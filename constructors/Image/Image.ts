@@ -1,6 +1,6 @@
-import { isString } from '../../../functions/data.ts'
+import { isString } from '../../functions/data.ts'
 
-import { DesignAsyncAbstract } from '../../../classes/design/DesignAsyncAbstract.ts'
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts'
 
 import { ImageType } from './ImageType.ts'
 import { ImageData } from './ImageData.ts'
@@ -14,13 +14,13 @@ import { ImageBackground } from './ImageBackground.ts'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../../types/constructor.ts'
-import { type ImageProps } from '../props.ts'
+} from '../../types/constructor.ts'
+import { type ImageProps } from './props.ts'
 import {
   type ImageElement,
   type ImageEventLoad,
   type ImageTypeItem
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Base class for working with images and icons.<br>
@@ -54,7 +54,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
       if (this.adaptiveItem.is()) {
         this.adaptiveItem.reset()
       } else {
-        this.make()
+        this.make(true)
       }
     })
 
@@ -65,7 +65,10 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
       props,
       this.data,
       element,
-      () => this.make()
+      () => {
+        console.log('asd')
+        this.make(true)
+      }
     )
 
     this.background = new ImageBackground(
@@ -173,6 +176,17 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
    */
   setElement (element: ImageElement): this {
     this.adaptiveItem.setElement(element)
+
+    return this
+  }
+
+  /**
+   * Updates the adapted image.<br>
+   * Обновляет адаптированное изображение.
+   */
+  updateAdaptive (): this {
+    this.adaptiveItem.update()
+    this.make(true)
 
     return this
   }

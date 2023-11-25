@@ -1,4 +1,4 @@
-import { type ImageSize } from '../typesBasic.ts'
+import { type ImageSize } from './typesBasic.ts'
 
 /**
  * Class for managing calculations for a specific group.<br>

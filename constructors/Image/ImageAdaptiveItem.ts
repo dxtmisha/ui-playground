@@ -1,17 +1,17 @@
-import { toNumber } from '../../../functions/number.ts'
-import { getElementId } from '../../../functions/element.ts'
+import { toNumber } from '../../functions/number.ts'
+import { getElementId } from '../../functions/element.ts'
 
 import { ImageData } from './ImageData.ts'
 import { ImageAdaptiveGroup } from './ImageAdaptiveGroup.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'
 
-import { type FunctionVoid } from '../../../types/basic.ts'
-import { type ImageProps } from '../props.ts'
+import { type FunctionVoid } from '../../types/basic.ts'
+import { type ImageProps } from './props.ts'
 import {
   type ImageElement,
   type ImageItem,
   type ImageSize
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 enum ImageAdaptiveItemType {
   x = 'x',
@@ -323,7 +323,7 @@ export class ImageAdaptiveItem {
    * Updating the calculated data.<br>
    * Обновление вычисленных данных.
    */
-  protected update (): void {
+  update (): void {
     if (this.is()) {
       ImageAdaptiveGroup.add(this)
     } else {

@@ -1,11 +1,11 @@
-import { isArray } from '../../../functions/data.ts'
+import { isArray } from '../../functions/data.ts'
 
-import { type Undefined } from '../../../types/basic.ts'
-import { type ImageProps } from '../props.ts'
+import { type Undefined } from '../../types/basic.ts'
+import { type ImageProps } from './props.ts'
 import {
   type ImageCoordinatorItem,
   type ImageSize
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Class for working with coordinates.<br>

@@ -11,18 +11,23 @@ export abstract class DesignAsyncAbstract<
   /**
    * Calls the callback function.<br>
    * Вызывает функцию обратного вызова.
+   * @param compelled forces data to update /<br>вынуждает обновлять данные
    */
-  make (): this {
-    this.makeCallback().then()
+  make (compelled?: boolean): this {
+    this.makeCallback(compelled).then()
     return this
   }
 
   /**
    * Calls the callback function.<br>
    * Вызывает функцию обратного вызова.
+   * @param compelled forces data to update /<br>вынуждает обновлять данные
    */
-  async makeCallback (): Promise<void> {
-    if (this.changed.isChanged()) {
+  async makeCallback (compelled?: boolean): Promise<void> {
+    if (
+      compelled ||
+      this.changed.isChanged()
+    ) {
       await this.initEvent()
       this.makeCallbackItem()
       this.changed.update()
