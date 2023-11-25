@@ -1,9 +1,9 @@
 import { computed, type ComputedRef } from 'vue'
 
-import { Icon } from '../static/Icon.ts'
+import { Icon } from './Icon.ts'
 
-import { type IconProps } from '../props.ts'
-import { type IconEventLoad } from '../typesBasic.ts'
+import { type IconProps } from './props.ts'
+import { type IconEventLoad } from './typesBasic.ts'
 
 /**
  * Class for the icon component constructor.<br>

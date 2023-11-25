@@ -65,10 +65,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
       props,
       this.data,
       element,
-      () => {
-        console.log('asd')
-        this.make(true)
-      }
+      () => this.make(true)
     )
 
     this.background = new ImageBackground(

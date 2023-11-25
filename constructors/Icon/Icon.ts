@@ -1,30 +1,25 @@
-import { getBind } from '../../../functions/render.ts'
+import { getBind } from '../../functions/render.ts'
 
-import { DesignAbstract } from '../../../classes/design/DesignAbstract.ts'
-
-import { type IconProps } from '../props.ts'
-import { type IconEventLoad } from '../typesBasic.ts'
+import { type IconProps } from './props.ts'
+import { type IconEventLoad } from './typesBasic.ts'
 
 /**
  * Class for the icon component constructor.<br>
  * Класс для конструктора компонента иконки.
  */
-export class Icon extends DesignAbstract<IconProps, IconEventLoad> {
+export class Icon {
   /**
    * Constructor
    * @param props base data /<br>базовые данные
    * @param classIcon class name for the main icon /<br>название класса для основной иконки
    * @param classIconActive class name for the additional icon /<br>название класса для дополнительной иконки
-   * @param callback callback function when the value changes /<br>
-   * функция обратного вызова при изменении значения
    */
+  // eslint-disable-next-line no-useless-constructor
   constructor (
-    props: IconProps,
+    protected readonly props: IconProps,
     protected readonly classIcon: string = 'is-icon',
-    protected readonly classIconActive: string = 'is-icon-active',
-    callback?: (event: IconEventLoad) => void
+    protected readonly classIconActive: string = 'is-icon-active'
   ) {
-    super(props, callback)
   }
 
   /**
@@ -67,12 +62,5 @@ export class Icon extends DesignAbstract<IconProps, IconEventLoad> {
     }
 
     return undefined
-  }
-
-  /**
-   * A function that is called each time the input values are changed.<br>
-   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
-   */
-  protected initEvent (): void {
   }
 }

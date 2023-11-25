@@ -1,9 +1,9 @@
 import { computed, type ComputedRef, type PropType, type VNode } from 'vue'
-import { getBind } from '../../../functions/render.ts'
+import { getBind } from '../../functions/render.ts'
 
-import { DesignComponents } from '../../../classes/design/DesignComponents.ts'
+import { DesignComponents } from '../../classes/design/DesignComponents.ts'
 
-import { type IconProps } from '../props.ts'
+import { type IconProps } from './props.ts'
 
 export type UseIconComponent = {
   icon?: object

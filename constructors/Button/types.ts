@@ -6,7 +6,7 @@ import {
 import {
   type UseIconComponent,
   type UseIconSetup
-} from '../Icon/ref/useIconRef.ts'
+} from '../Icon/useIconRef.ts'
 import {
   type UseProgressComponent,
   type UseProgressSetup
