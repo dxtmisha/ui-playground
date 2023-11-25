@@ -1,7 +1,7 @@
 import { isArray } from '../../../functions/data.ts'
 import { getMaxLength } from '../../../functions/object.ts'
 
-import { DesignChangedResults } from '../../../classes/static/DesignChangedResults.ts'
+import { CacheItem } from '../../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
@@ -20,8 +20,8 @@ import {
  * Class for working with a mask.<br>
  * Класс для работы с маской.
  */
-export class MaskItem {
-  protected changed: DesignChangedResults<MaskProps>
+export class MaskItem extends CacheItem<string[]> {
+  protected info: CacheItem<MaskSpecialInfo[]>
 
   /**
    * Constructor
@@ -46,14 +46,36 @@ export class MaskItem {
     protected readonly special: MaskSpecial,
     protected readonly format: MaskFormat
   ) {
-    this.changed = new DesignChangedResults(props, [
-      'mask',
-      'special',
-      'fraction',
-      'currency',
-      'type',
-      'language'
-    ])
+    super(() => {
+      if (this.type.isCurrencyOrNumber()) {
+        return this.format.getMask()
+      }
+
+      if (this.type.isDate()) {
+        return this.date.getMask()
+      }
+
+      return this.getBasic()
+    })
+
+    this.info = new CacheItem(() => {
+      const data: MaskSpecialInfo[] = []
+      let index = 0
+
+      this.getList().forEach((char, key) => {
+        if (this.special.isSpecial(char)) {
+          data.push({
+            index,
+            key,
+            char
+          })
+
+          index++
+        }
+      })
+
+      return data
+    })
   }
 
   /**
@@ -70,23 +92,7 @@ export class MaskItem {
    * Возвращает текущую маску для вывода.
    */
   getList (): string[] {
-    return this.changed.get(
-      'get',
-      () => {
-        if (this.type.isCurrencyOrNumber()) {
-          return this.format.getMask()
-        }
-
-        if (this.type.isDate()) {
-          return this.date.getMask()
-        }
-
-        return this.getBasic()
-      },
-      {
-        characterLength: this.characterLength.get()
-      }
-    )
+    return this.getCache(this.getComparison())
   }
 
   /**
@@ -141,26 +147,36 @@ export class MaskItem {
   }
 
   /**
+   * Returns how many special characters were highlighted.<br>
+   * Возвращает, сколько специальных символов было выделено.
+   * @param start start of selection /<br>начало выделения
+   * @param end end of selection /<br>конец выделения
+   */
+  getQuantity (
+    start: number,
+    end: number
+  ): number {
+    if (start === end) {
+      return 1
+    }
+
+    let quantity = 0
+
+    for (let i = start; i < end; i++) {
+      if (this.special.isSpecial(this.get(i))) {
+        quantity++
+      }
+    }
+
+    return quantity
+  }
+
+  /**
    * Gets an array with information about the location of all special characters.<br>
    * Получает массив с информацией о расположении всех специальных символов.
    */
   protected getSpecialInfo (): MaskSpecialInfo[] {
-    const data: MaskSpecialInfo[] = []
-    let index = 0
-
-    this.getList().forEach((char, key) => {
-      if (this.special.isSpecial(char)) {
-        data.push({
-          index,
-          key,
-          char
-        })
-
-        index++
-      }
-    })
-
-    return data
+    return this.info.getCache(this.getComparison())
   }
 
   /**
@@ -203,5 +219,21 @@ export class MaskItem {
    */
   protected getBasic (): string[] {
     return this.rubberItem.expandMask(this.getMaskActive()).split('')
+  }
+
+  /**
+   * Returns data for checking for changes.<br>
+   * Возвращает данные для проверки на изменения.
+   */
+  protected getComparison (): any[] {
+    return [
+      this.characterLength.get(),
+      this.props?.mask,
+      this.props?.special,
+      this.props?.fraction,
+      this.props?.currency,
+      this.props?.type,
+      this.props?.language
+    ]
   }
 }

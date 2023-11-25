@@ -14,6 +14,8 @@ import { MaskFormat } from './MaskFormat.ts'
 
 import { MaskRubber } from './MaskRubber.ts'
 
+import { MaskItem } from './MaskItem.ts'
+
 import { type MaskProps } from '../props.ts'
 
 /**
@@ -34,6 +36,8 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly format: MaskFormat
 
   protected readonly rubber: MaskRubber
+
+  protected readonly item: MaskItem
 
   /**
    * Constructor
@@ -75,6 +79,16 @@ export class Mask extends DesignAbstract<MaskProps, any> {
       this.rubberTransition,
       this.special,
       this.match,
+      this.format
+    )
+
+    this.item = new MaskItem(
+      props,
+      this.type,
+      this.rubberItem,
+      this.date,
+      this.characterLength,
+      this.special,
       this.format
     )
   }
