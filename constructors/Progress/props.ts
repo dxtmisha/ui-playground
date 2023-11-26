@@ -6,13 +6,33 @@ import { type PropType } from 'vue'
  */
 export type ProgressProps = {
   // Values
+
+  /**
+   * Value. If a value is specified, there will be no loader animation.
+   * Значение. Если указано значение, не будет анимации загрузчика.
+   */
   value?: number | string
+
+  /**
+   * Maximum allowable value.
+   * Максимально допустимое значение.
+   */
   max?: number | string
 
   // Status
+
+  /**
+   * Enable the loader.<br>
+   * Включить загрузчик.
+   */
   visible?: boolean
 
   // Options
+
+  /**
+   * Value indicating how long to delay before enabling the loader.<br>
+   * Значение, указывающее, сколько времени нужно задержать до включения загрузчика.
+   */
   delay?: number | string
 
   // Tokens
@@ -32,7 +52,7 @@ export type ProgressProps = {
  */
 export const defaultsProgress: ProgressProps = {
   max: 100,
-  delay: 480,
+  delay: 360,
   ...{
     // :default [!] System label / Системная метка
     linear: true,

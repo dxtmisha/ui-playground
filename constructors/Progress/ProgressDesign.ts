@@ -20,7 +20,8 @@ import {
 } from './types.ts'
 
 /**
- * ProgressDesign
+ * Class constructor for the loader component.<br>
+ * Класс-конструктор для компонента загрузчика.
  */
 export class ProgressDesign<
   COMP extends ProgressComponents,

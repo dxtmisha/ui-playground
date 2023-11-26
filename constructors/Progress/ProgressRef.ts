@@ -9,8 +9,8 @@ import {
 } from '../../types/constructor.ts'
 
 /**
- * Constructor for warming up.<br>
- * Конструктор для прогрева.
+ * Base class Progress for working in Vue.<br>
+ * Базовый класс Progress для работы в Vue.
  */
 export class ProgressRef {
   protected readonly item: Progress
@@ -28,7 +28,7 @@ export class ProgressRef {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (

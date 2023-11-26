@@ -11,7 +11,8 @@ import {
 } from './types.ts'
 
 /**
- * ChipDesign
+ * Class constructor for the chips component.<br>
+ * Класс-конструктор для компонента чипсов.
  */
 export class ChipDesign<
   COMP extends ChipComponents,

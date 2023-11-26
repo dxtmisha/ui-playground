@@ -10,8 +10,8 @@ import {
 } from '../../types/constructor.ts'
 
 /**
- * Constructor for warming up.<br>
- * Конструктор для прогрева.
+ * Base class for working with the loader.<br>
+ * Базовый класс для работы с загрузчиком.
  */
 export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLoad> {
   protected timeout?: NodeJS.Timeout
@@ -19,9 +19,8 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
-   * @param callback callback function on successful image update or data recalculation /<br>
-   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
+   * @param props input data /<br>входные данные
+   * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -35,28 +34,8 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
   }
 
   /**
-   * A function that is called each time the input values are changed.<br>
-   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
-   */
-  protected async initEvent (): Promise<void> {
-    if (this.isChanged('visible')) {
-      [
-        this.event.hide,
-        this.event.visible
-      ] = await this.makeVisible()
-    }
-
-    if (this.isChanged('classes', [
-      'value',
-      'visible'
-    ])) {
-      this.event.classes = this.initClasses()
-    }
-  }
-
-  /**
-   * Checks if a specific value has been passed.<br>
-   * Проверяет, передано ли конкретное значение.
+   * Checks if there are any values.<br>
+   * Проверяет, есть ли значения.
    */
   isValue (): this is { props: { value: number } } {
     return this.getValue() > 0
@@ -71,24 +50,16 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
   }
 
   /**
-   * Getting the value.<br>
-   * Получение значения.
+   * Returns values.<br>
+   * Возвращает значения.
    */
   getValue (): number {
     return toNumber(this.props?.value ?? 0)
   }
 
   /**
-   * Getting the maximum allowable value.<br>
-   * Получение максимально допустимого значения.
-   */
-  getMax (): number {
-    return toNumber(this.props?.max ?? 100)
-  }
-
-  /**
-   * Values are converted to percentages.<br>
-   * Значения преобразованы в проценты.
+   * Returns values in percentages.<br>
+   * Возвращает значения в процентах.
    */
   getValueInPercent (): string | null {
     if (this.isValue()) {
@@ -106,8 +77,16 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
   }
 
   /**
-   * Values for the style.<br>
-   * Значения для стиля.
+   * Returns the maximum allowable value.<br>
+   * Возвращает максимально допустимое значение.
+   */
+  getMax (): number {
+    return toNumber(this.props?.max ?? 100)
+  }
+
+  /**
+   * Returns the property for style.<br>
+   * Возвращает свойство для стиля.
    */
   getStyles (): ConstrStyles {
     return {
@@ -127,6 +106,26 @@ export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLo
       this.event.classes = this.initClasses()
 
       this.makeCallbackItem()
+    }
+  }
+
+  /**
+   * A function that is called each time the input values are changed.<br>
+   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
+   */
+  protected async initEvent (): Promise<void> {
+    if (this.isChanged('visible')) {
+      [
+        this.event.hide,
+        this.event.visible
+      ] = await this.makeVisible()
+    }
+
+    if (this.isChanged('classes', [
+      'value',
+      'visible'
+    ])) {
+      this.event.classes = this.initClasses()
     }
   }
 

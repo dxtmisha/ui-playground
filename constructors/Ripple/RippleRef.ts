@@ -1,12 +1,12 @@
 import { type Ref, watch } from 'vue'
 
-import { Ripple } from '../static/Ripple.ts'
+import { Ripple } from './Ripple.ts'
 
-import { type RippleProps } from '../props.ts'
+import { type RippleProps } from './props.ts'
 
 /**
- * Basic constructor for the wave component.<br>
- * Базовый конструктор для компонента волна.
+ * Base Ripple class for working in Vue.<br>
+ * Базовый класс Ripple для работы во Vue.
  */
 export class RippleRef {
   protected readonly ripple: Ripple
@@ -15,7 +15,7 @@ export class RippleRef {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param classItem class name for the element /<br>название класса для элемента
    * @param classEnd class name for the end of animation status /<br>название класса для статуса конец анимации

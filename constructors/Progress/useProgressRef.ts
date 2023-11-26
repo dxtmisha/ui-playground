@@ -16,8 +16,8 @@ export type UseProgressComponent = {
 
 export type UseProgressSetup = {
   /**
-   * Parameters for the main loader.<br>
-   * Параметры для главного загрузчика.
+   * Property for the loader.<br>
+   * Свойство для загрузчика.
    */
   progressBind: ComputedRef<ProgressProps>
 
@@ -29,7 +29,11 @@ export type UseProgressSetup = {
 }
 
 export type UseProgressProp = {
-  progress?: ProgressProps | boolean
+  /**
+   * Enable or disable the loader, or an object with properties for the loader.<br>
+   * Включить или отключить загрузчик, или объект со свойствами для загрузчика.
+   */
+  progress?: boolean | ProgressProps
 }
 
 export const usePropsProgress = {
@@ -37,10 +41,11 @@ export const usePropsProgress = {
 }
 
 /**
- * UseProgress
- * @param props input parameter / входной параметр
- * @param components object for working with components / объект для работы с компонентами
- * @param classesName class name for the component / название класса для компонента
+ * The function returns data for working with the Progress component.<br>
+ * Функция возвращает данные для работы с компонентом Progress.
+ * @param props input parameter /<br>входной параметр
+ * @param components object for working with components /<br>объект для работы с компонентами
+ * @param classesName class name for the component /<br>название класса для компонента
  * @param extra additional parameter or property name /<br>дополнительный параметр или имя свойства
  */
 export const useProgressRef = function <
@@ -52,7 +57,7 @@ export const useProgressRef = function <
   classesName = 'is-progress',
   extra?: ProgressProps
 ): UseProgressSetup {
-  const bind = computed(() => getBind(
+  const progressBind = computed(() => getBind(
     props.progress,
     {
       class: classesName,
@@ -62,7 +67,7 @@ export const useProgressRef = function <
   ))
 
   return {
-    progressBind: bind,
+    progressBind,
 
     renderProgress (): VNode[] {
       const elements: VNode[] = []
@@ -74,7 +79,7 @@ export const useProgressRef = function <
         components.renderAdd(
           elements,
           'progress',
-          bind.value
+          progressBind.value
         )
       }
 

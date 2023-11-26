@@ -25,7 +25,8 @@ import {
 } from './types.ts'
 
 /**
- * ButtonDesign
+ * Class constructor for the button component.<br>
+ * Класс-конструктор для компонента кнопки.
  */
 export class ButtonDesign<
   COMP extends ButtonComponents,

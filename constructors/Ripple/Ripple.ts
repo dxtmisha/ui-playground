@@ -1,15 +1,15 @@
-import { createElement } from '../../../functions/element.ts'
+import { createElement } from '../../functions/element.ts'
 
-import { type RippleProps } from '../props.ts'
+import { type RippleProps } from './props.ts'
 
 /**
- * Basic constructor for the wave component.<br>
- * Базовый конструктор для компонента волна.
+ * Base class for working with the wave element.<br>
+ * Базовый класс для работы с элементом волны.
  */
 export class Ripple {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param classItem class name for the element /<br>название класса для элемента
    * @param classEnd class name for the end of animation status /<br>название класса для статуса конец анимации
@@ -37,9 +37,9 @@ export class Ripple {
   }
 
   /**
-   * To change the focus element.<br>
-   * Изменить элемент для фокуса.
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
+   * Change the item.<br>
+   * Изменить элемент.
+   * @param element element /<br>элемент
    */
   setElement (element?: HTMLDivElement): this {
     this.element = element

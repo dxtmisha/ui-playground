@@ -1,7 +1,7 @@
 import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { RippleRef } from './ref/RippleRef.ts'
+import { RippleRef } from './RippleRef.ts'
 
 import {
   type ConstrOptions,
@@ -20,7 +20,8 @@ import {
 } from './types.ts'
 
 /**
- * RippleDesign
+ * Constructor class for the wave component.<br>
+ * Класс-конструктор для компонента волна.
  */
 export class RippleDesign<
   COMP extends RippleComponents,
