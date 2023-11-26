@@ -6,8 +6,8 @@ import { type IconProps } from './props.ts'
 import { type IconEventLoad } from './typesBasic.ts'
 
 /**
- * Class for the icon component constructor.<br>
- * Класс для конструктора компонента иконки.
+ * Base Icon class for working in Vue.<br>
+ * Базовый класс Icon для работы во Vue.
  */
 export class IconRef {
   protected readonly item: Icon
@@ -18,7 +18,7 @@ export class IconRef {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param classIcon class name for the main icon /<br>название класса для основной иконки
    * @param classIconActive class name for the additional icon /<br>название класса для дополнительной иконки
    */

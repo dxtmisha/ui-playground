@@ -19,7 +19,8 @@ import {
 } from './types.ts'
 
 /**
- * IconDesign
+ * Constructor class for the icon component.<br>
+ * Класс-конструктор для компонента иконки.
  */
 export class IconDesign<
   COMP extends IconComponents,

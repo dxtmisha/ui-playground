@@ -4,13 +4,13 @@ import { type IconProps } from './props.ts'
 import { type IconEventLoad } from './typesBasic.ts'
 
 /**
- * Class for the icon component constructor.<br>
- * Класс для конструктора компонента иконки.
+ * Base class for working with icons.<br>
+ * Базовый класс для работы с иконками.
  */
 export class Icon {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param classIcon class name for the main icon /<br>название класса для основной иконки
    * @param classIconActive class name for the additional icon /<br>название класса для дополнительной иконки
    */
@@ -31,8 +31,8 @@ export class Icon {
   }
 
   /**
-   * Returns data for the icon component.<br>
-   * Возвращает данные для компонента иконки.
+   * Returns the property for the base icon.<br>
+   * Возвращает свойство для базовой иконки.
    */
   getIconBind (): IconEventLoad['iconBind'] {
     if (this.props?.icon) {
@@ -48,8 +48,8 @@ export class Icon {
   }
 
   /**
-   * Returns data for the additional icon component.<br>
-   * Возвращает данные для дополнительного компонента иконки.
+   * Returns the property for the additional icon.<br>
+   * Возвращает свойство для дополнительной иконки.
    */
   getIconActiveBind (): IconEventLoad['iconActiveBind'] {
     if (this.props?.iconActive) {

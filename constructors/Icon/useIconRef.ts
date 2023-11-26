@@ -11,45 +11,67 @@ export type UseIconComponent = {
 
 export type UseIconSetup = {
   /**
-   * Parameters for the main icon.<br>
-   * Параметры для главной иконки.
+   * Property for the base icon.<br>
+   * Свойство для базовой иконки.
    */
   iconBind: ComputedRef<IconProps>
 
   /**
-   * Parameters for the secondary icon, if it exists.<br>
-   * Параметры для вторичной иконки, если она есть.
+   * Property for the additional icon.<br>
+   * Свойство для дополнительной иконки.
    */
   trailingBind?: ComputedRef<IconProps>
 
   /**
-   * If the icon is active.<br>
-   * Если иконка активна.
+   * Is the activity status enabled.<br>
+   * Включен ли статус активности.
    */
   isIcon: ComputedRef<boolean>
 
   /**
-   * A method for rendering.<br>
-   * Метод для рендеринга.
+   * Method for rendering the icon component.<br>
+   * Метод для рендеринга компонента иконки.
    */
   renderIcon (): VNode[]
 }
 
 export type UseIconProps = {
   // Values
+
+  /**
+   * Property for the base icon.<br>
+   * Свойство для базовой иконки.
+   */
   icon?: string | IconProps
 
-  // Icon
-  iconTurn?: boolean
-  iconHide?: boolean
-
   // Status
+
+  /**
+   * Enables the selection state, translates the base icon into an active state.<br>
+   * Включает состояние выделения, переводит базовую иконку в активное состояние.
+   */
   selected?: boolean
+
+  /**
+   * Flip the icon. The additional icon is rotated, or the base one if there is no additional one.<br>
+   * Перевернуть иконку. Поворачивается дополнительная иконка или базовая, если дополнительной нет.
+   */
+  iconTurn?: boolean
+
+  /**
+   * Hides the base icon.<br>
+   * Скрывает базовую иконку.
+   */
+  iconHide?: boolean
 }
 
 export type UseIconTrailingProps =
   UseIconProps &
   {
+    /**
+     * Property for the additional icon.<br>
+     * Свойство для дополнительной иконки.
+     */
     iconTrailing?: UseIconProps['icon']
   }
 
@@ -57,12 +79,10 @@ export const usePropsIcon = {
   // Values
   icon: [String, Object] as PropType<UseIconProps['icon']>,
 
-  // Icon
-  iconTurn: Boolean,
-  iconHide: Boolean,
-
   // Status
-  selected: Boolean
+  selected: Boolean,
+  iconTurn: Boolean,
+  iconHide: Boolean
 }
 
 export const usePropsIconTrailing = {
@@ -71,7 +91,8 @@ export const usePropsIconTrailing = {
 }
 
 /**
- * useIcon
+ * The function returns data for working with the Icon component.<br>
+ * Функция возвращает данные для работы с компонентом Icon.
  * @param props input parameter /<br>входной параметр
  * @param components object for working with components /<br>объект для работы с компонентами
  * @param classIcon class name for the component /<br>название класса для компонента
@@ -92,6 +113,7 @@ export const useIconRef = function <
       {
         class: classIcon,
         active: props?.selected,
+        turn: !props?.iconTrailing && props?.iconTurn,
         hide: props?.iconHide,
         animationType: 'type2',
         start: true,

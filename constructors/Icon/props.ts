@@ -7,10 +7,27 @@ import { type ImageProps } from '../Image/props.ts'
  */
 export type IconProps = {
   // Values
-  icon?: string | object | ImageProps
-  iconActive?: string | object | ImageProps
+
+  /**
+   * The value of the icon or an object with all properties for the icon.<br>
+   * Значение иконки или объект со всеми свойствами для иконки.
+   */
+  icon?: string | ImageProps
+
+  /**
+   * The value of the active icon or an object with all properties for the active icon.
+   * This icon is used when the 'active' property is enabled.<br>
+   * Значение активной иконки или объект со всеми свойствами для активной иконки.
+   * Эта иконка используется при включении свойства 'active'.
+   */
+  iconActive?: string | ImageProps
 
   // Status
+
+  /**
+   * Animated transition to the active icon.<br>
+   * Анимированный переход на активную иконку.
+   */
   active?: boolean
 
   // Tokens

@@ -20,7 +20,8 @@ import {
 } from './types.ts'
 
 /**
- * ImageDesign
+ * Constructor class for the image component.<br>
+ * Класс-конструктор для компонента изображения.
  */
 export class ImageDesign<
   COMP extends ImageComponents,

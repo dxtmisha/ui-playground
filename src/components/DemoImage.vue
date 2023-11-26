@@ -342,6 +342,11 @@ const onClickCoordinator = () => {
 
       width: 128px;
       height: 128px;
+
+      &--big {
+        width: 192px;
+        height: 192px;
+      }
     }
 
     &--color {
