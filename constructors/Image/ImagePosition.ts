@@ -3,13 +3,13 @@ import { ImageCoordinator } from './ImageCoordinator.ts'
 import { type ImageProps } from './props.ts'
 
 /**
- * Class for working with position.<br>
- * Класс для работы с позицией.
+ * A class for obtaining data for the background-position property.<br>
+ * Класс для получения данных для свойства background-position.
  */
 export class ImagePosition {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param coordinator coordinates for margins /<br>координаты для отступов
    */
   // eslint-disable-next-line no-useless-constructor

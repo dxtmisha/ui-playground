@@ -21,16 +21,16 @@ enum ImageAdaptiveItemType {
 const GROUP_BASIC = 'main'
 
 /**
- * Value in pixels, defining the limit beyond the screen, up to which the
- * image size is still calculated.<br>
- * Значение в пикселях, определяющее предел за экраном, до которого все
- * еще вычисляется размер изображения.
+ * The value in pixels indicating when an element is still considered active,
+ * even if it has gone off the screen.<br>
+ * Значение в пикселях, указывающее, когда элемент считается еще активным,
+ * даже если он ушел за экран.
  */
 export const MAX_BEYOND = 256
 
 /**
- * Class for managing the scaling of the element. Class for the entry point.<br>
- * Класс для управления масштабированием элемента. Класс для точки входа.
+ * A class for managing the adapted scaling of a specific element.<br>
+ * Класс для управления адаптированным масштабированием конкретного элемента.
  */
 export class ImageAdaptiveItem {
   readonly percent: ImageSize = {
@@ -43,11 +43,11 @@ export class ImageAdaptiveItem {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param element image element for scaling /<br>элемент изображения для масштабирования
-   * @param data data management object /<br>объект управления данными
-   * @param callback callback function on successful image update or data recalculation /<br>
-   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
+   * @param data image data /<br>данные изображения
+   * @param callback callback function when updating the image scale /<br>
+   * функция обратного вызова при обновлении масштаба изображения
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -101,6 +101,14 @@ export class ImageAdaptiveItem {
   }
 
   /**
+   * Returns the name of the group.<br>
+   * Возвращает название группы.
+   */
+  getGroup (): string {
+    return this.props?.adaptiveGroup ?? GROUP_BASIC
+  }
+
+  /**
    * Returns the identifier of the element.<br>
    * Возвращает идентификатор элемента.
    */
@@ -114,14 +122,6 @@ export class ImageAdaptiveItem {
    */
   getElement (): ImageElement {
     return this.element
-  }
-
-  /**
-   * Returns the name of the group.<br>
-   * Возвращает название группы.
-   */
-  getGroup (): string {
-    return this.props?.adaptiveGroup ?? GROUP_BASIC
   }
 
   /**
@@ -141,8 +141,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Directions for alignment.<br>
-   * Направления для выравнивания.
+   * Returns the axis for scaling.<br>
+   * Возвращает ось для масштабирования.
    */
   getType (): ImageAdaptiveItemType | undefined {
     if (
@@ -163,8 +163,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Calculation of the actual size of the object in scale relative to the real size.<br>
-   * Вычисление фактического размера объекта в масштабе относительно реального размера.
+   * Calculation of the base size of the image to determine how to scale the image.<br>
+   * Вычисление базового размера изображения, чтобы определить, как надо масштабировать изображение.
    */
   getSize (): number {
     if (
@@ -185,8 +185,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Multiplier, for determining the scaling of the image, corresponding to the element.<br>
-   * Множитель, для определения масштабирования изображения, соответствующий элементу.
+   * Multiplier for determining the level of image scaling relative to other elements.<br>
+   * Множитель для определения уровня масштабирования изображения относительно других элементов.
    */
   getFactor (): number {
     const element = this.element
@@ -213,8 +213,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Calculation of the value for the background-size property.<br>
-   * Вычисление значения для свойства background-size.
+   * Returns values for the background-size property.<br>
+   * Возвращает значения для свойства background-size.
    */
   getBackgroundSize (): string | null {
     const factorMax = ImageCalculationList.get(this.getGroup()).getFactorMax()
@@ -230,8 +230,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * To change the focus element.<br>
-   * Изменить элемент для фокуса.
+   * Change the element by which the calculations are made.<br>
+   * Изменить элемент, по которому происходят вычисления.
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    */
   setElement (element: ImageElement): this {
@@ -255,8 +255,20 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Updating the enumeration of data.<br>
-   * Обновление перечисления данных.
+   * Updating the activity status of the element.<br>
+   * Обновление статуса активности элемента.
+   */
+  update (): void {
+    if (this.is()) {
+      ImageAdaptiveGroup.add(this)
+    } else {
+      ImageAdaptiveGroup.remove(this)
+    }
+  }
+
+  /**
+   * Recalculate scaling for all active elements.<br>
+   * Пересчитать масштабирование для всех активных элементов.
    */
   reset (): void {
     if (this.is()) {
@@ -269,8 +281,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Removal of the element for scaling.<br>
-   * Удаления элемента для масштабирования.
+   * Removal of an element from the scaling list.<br>
+   * Удаление элемента из списка для масштабирования.
    */
   remove (): void {
     if (this.is()) {
@@ -279,8 +291,8 @@ export class ImageAdaptiveItem {
   }
 
   /**
-   * Updating data on tracking status.<br>
-   * Обновление данных по статусу отслеживания.
+   * Updating the visibility and activity status of the element.<br>
+   * Обновление статуса видимости и активности элемента.
    */
   make (): this {
     this.beyond = false
@@ -317,17 +329,5 @@ export class ImageAdaptiveItem {
   makeCallback (): this {
     this.callback?.()
     return this
-  }
-
-  /**
-   * Updating the calculated data.<br>
-   * Обновление вычисленных данных.
-   */
-  update (): void {
-    if (this.is()) {
-      ImageAdaptiveGroup.add(this)
-    } else {
-      ImageAdaptiveGroup.remove(this)
-    }
   }
 }

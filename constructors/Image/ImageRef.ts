@@ -16,8 +16,8 @@ import {
 } from './typesBasic.ts'
 
 /**
- * Base class for working with images and icons.<br>
- * Базовый класс для работы с изображениями и иконками.
+ * Base Image class for working in Vue.<br>
+ * Базовый класс Image для работы во Vue.
  */
 export class ImageRef {
   protected readonly item: Image
@@ -31,7 +31,7 @@ export class ImageRef {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    */
   constructor (

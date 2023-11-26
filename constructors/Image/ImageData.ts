@@ -18,18 +18,18 @@ import {
 } from './typesBasic.ts'
 
 /**
- * Class for working and processing the image.<br>
- * Класс для работы и обработки изображения.
+ * A class for obtaining image or icon data.<br>
+ * Класс для получения данных изображения или иконки.
  */
 export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
   protected item?: ImageEventItem
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param type image type /<br>тип изображения
-   * @param callback callback function on successful image update or data recalculation /<br>
-   * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
+   * @param callback callback function upon successful image loading /<br>
+   * функция обратного вызова при успешной загрузке изображения
    */
   constructor (
     props: ImageProps,
@@ -96,7 +96,12 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
       switch (this.type.get()) {
         case ImageTypeValue.image:
         case ImageTypeValue.file:
-          return await ImageFile.createImage(image)
+          try {
+            return await ImageFile.createImage(image)
+          } catch {
+            console.error(Image, image)
+          }
+          break
         case ImageTypeValue.public:
           if (isString(image)) {
             return Icons.get(image, this.props?.url)

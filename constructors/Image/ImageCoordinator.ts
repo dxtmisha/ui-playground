@@ -8,13 +8,13 @@ import {
 } from './typesBasic.ts'
 
 /**
- * Class for working with coordinates.<br>
- * Класс для работы с координатами.
+ * A class for calculating the central part of the image by its coordinates.<br>
+ * Класс для вычисления центральной части изображения по его координатам.
  */
 export class ImageCoordinator {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -23,8 +23,8 @@ export class ImageCoordinator {
   }
 
   /**
-   * Checking for availability of coordinates.<br>
-   * Проверка на доступность координат.
+   * Checks if there are coordinates for calculation.<br>
+   * Проверяет, есть ли координаты для вычисления.
    */
   is (): this is { coordinator: Exclude<ImageCoordinatorItem, Undefined> } {
     const coordinator = this.props?.coordinator
@@ -35,8 +35,8 @@ export class ImageCoordinator {
   }
 
   /**
-   * Returns sizes by the input parameter of coordinates.<br>
-   * Возвращает размеры по входному параметру координаты.
+   * Returns the sizes for the background-position property by coordinates.<br>
+   * Возвращает размеры для свойства background-position по координатам.
    */
   get (): ImageSize {
     const coordinator = this.getCoordinator()
@@ -44,19 +44,6 @@ export class ImageCoordinator {
     return {
       width: 100 - coordinator[1] - coordinator[3],
       height: 100 - coordinator[2] - coordinator[0]
-    }
-  }
-
-  /**
-   * Getting the adapted size for the property.<br>
-   * Получение адаптированного размера для свойства.
-   */
-  getSize (): ImageSize<string> {
-    const item = this.get()
-
-    return {
-      width: `${100 / item.width * 100}%`,
-      height: `${100 / item.height * 100}%`
     }
   }
 
@@ -97,5 +84,18 @@ export class ImageCoordinator {
     }
 
     return [0, 0, 0, 0]
+  }
+
+  /**
+   * Returns the values for the background property.<br>
+   * Возвращает значения для свойства background.
+   */
+  getSize (): ImageSize<string> {
+    const item = this.get()
+
+    return {
+      width: `${100 / item.width * 100}%`,
+      height: `${100 / item.height * 100}%`
+    }
   }
 }

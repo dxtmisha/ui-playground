@@ -37,7 +37,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    * @param callback callback function on successful image update or data recalculation /<br>
    * функция обратного вызова при успешном обновлении картинки или при перерасчете данных
@@ -108,8 +108,8 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
   }
 
   /**
-   * Values for the text.<br>
-   * Значения для текста.
+   * Values for the text. Text is used for the type of icon that works as a background.<br>
+   * Значения для текста. Текст используется для типа иконки, который работает как фон.
    */
   getText (): string | undefined {
     const type = this.type.get()
@@ -167,8 +167,10 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
   }
 
   /**
-   * To change the focus element.<br>
-   * Изменить элемент для фокуса.
+   * To change the focus element. Used for an element with active adapted
+   * scaling relative to the physical size of the object in the image.<br>
+   * Изменить элемент. Используется для элемента с активным адаптированным
+   * масштабированием относительно физического размера объекта на изображении.
    * @param element image element for scaling /<br>элемент изображения для масштабирования
    */
   setElement (element: ImageElement): this {
@@ -178,8 +180,8 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
   }
 
   /**
-   * Updates the adapted image.<br>
-   * Обновляет адаптированное изображение.
+   * Updates the adapted elements.<br>
+   * Обновляет адаптированные элементы.
    */
   updateAdaptive (): this {
     this.adaptiveItem.update()
@@ -201,8 +203,8 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
   }
 
   /**
-   * Values for the style.<br>
-   * Значения для стиля.
+   * Calculates all properties for the style of the element.<br>
+   * Вычисляет все свойства для стиля элемента.
    */
   protected initStyles (): ConstrStyles {
     const value = this.getValue()

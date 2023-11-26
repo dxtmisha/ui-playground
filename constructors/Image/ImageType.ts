@@ -13,7 +13,7 @@ import {
 export class ImageType extends CacheItem<ImageTypeItem> {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (

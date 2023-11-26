@@ -8,16 +8,16 @@ export class ImageCalculationList {
   protected static items: ImageCalculation[] = []
 
   /**
-   If the element has a size.
-   * Если у элемента есть размер.<br>
+   * Checks if the group has elements with sizes. It is used to check if there is data for work.<br>
+   * Проверяет, есть ли у группы элементы с размерами. Используется для проверки, есть ли данные для работы.
    */
   static isSize (): boolean {
     return this.items.find(item => item.isSize()) !== undefined
   }
 
   /**
-   * Returning an object for calculation by its name.<br>
-   * Возвращение объекта для вычисления по его имени.
+   * Returns an object with data for calculation by the name of its group.<br>
+   * Возвращает объект с данными для вычисления по названию его группы.
    * @param name group name /<br>название группы
    */
   static get (name: string): ImageCalculation {
@@ -25,16 +25,16 @@ export class ImageCalculationList {
   }
 
   /**
-   * Updating all records for all groups.<br>
-   * Обновление всех записей у всех групп.
+   * Resets all parameters for all groups.<br>
+   * Сбрасывает все параметры для всех групп.
    */
-  static reset () {
+  static reset (): void {
     this.items.forEach(item => item.reset())
   }
 
   /**
-   * Searching for a value by the group name.<br>
-   * Поиск значения по названию группы.
+   * Search for the ImageCalculation object by the name of the group.<br>
+   * Поиск объекта ImageCalculation по названию группы.
    * @param name group name /<br>название группы
    */
   protected static find (name: string): ImageCalculation | undefined {
@@ -42,8 +42,8 @@ export class ImageCalculationList {
   }
 
   /**
-   * Creating a new object.<br>
-   * Создание нового объекта.
+   * Creating a new ImageCalculation object by the name of the group.<br>
+   * Создание нового объекта ImageCalculation по названию группы.
    * @param name group name /<br>название группы
    */
   protected static init (name: string): ImageCalculation {

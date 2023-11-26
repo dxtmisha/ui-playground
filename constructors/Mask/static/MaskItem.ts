@@ -117,6 +117,14 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
+   * Gets an array with information about the location of all special characters.<br>
+   * Получает массив с информацией о расположении всех специальных символов.
+   */
+  getSpecial (): MaskSpecialInfo[] {
+    return this.info.getCache(this.getComparison())
+  }
+
+  /**
    * Returns the length of the active mask.<br>
    * Возвращает длину активной маски.
    */
@@ -129,7 +137,7 @@ export class MaskItem extends CacheItem<string[]> {
    * Возвращает длину только из специальных символов.
    */
   getLengthBySpecial (): number {
-    return this.getSpecialInfo().length
+    return this.getSpecial().length
   }
 
   /**
@@ -169,14 +177,6 @@ export class MaskItem extends CacheItem<string[]> {
     }
 
     return quantity
-  }
-
-  /**
-   * Gets an array with information about the location of all special characters.<br>
-   * Получает массив с информацией о расположении всех специальных символов.
-   */
-  protected getSpecialInfo (): MaskSpecialInfo[] {
-    return this.info.getCache(this.getComparison())
   }
 
   /**

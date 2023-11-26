@@ -4,7 +4,7 @@ import { ImageItem } from './typesBasic.ts'
  * Maximum size allowed without conversion.<br>
  * Максимальный размер, допустимый без преобразования.
  */
-export const MAX_SIZE: number = 600
+export const MAX_SIZE: number = 720
 
 /**
  * Class for working with uploaded images.<br>
@@ -17,7 +17,7 @@ export class ImageFile {
    * @param file verified file /<br>проверяемый файл
    */
   static isImage (file: File): boolean {
-    return !!file.type.match(/^image\//)
+    return Boolean(file.type.match(/^image\//))
   }
 
   /**
@@ -55,7 +55,7 @@ export class ImageFile {
    * @param src file or link /<br>файл или ссылка
    */
   static getPath (src: string | File): Promise<string> {
-    return this.createImage(src).then(item => item?.src || '')
+    return this.createImage(src).then(item => item?.src ?? '')
   }
 
   /**

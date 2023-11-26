@@ -17,8 +17,7 @@ import {
 /**
  * Class for obtaining data about the character by which we determine the place
  * for replacement with a value.<br>
- * Класс для получения данных о символе, по которому определяем место для
- * замены на значение.
+ * Класс для получения данных о символе, по которому определяем место для замены на значение.
  */
 export class MaskSpecial {
   /**

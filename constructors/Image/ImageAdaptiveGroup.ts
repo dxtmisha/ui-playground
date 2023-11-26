@@ -4,8 +4,8 @@ import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'
 
 /**
- * Class for working with image scaling.<br>
- * Класс для работы с масштабированием изображения.
+ * Class for working with image scaling according to the physical size of the object in the image.<br>
+ * Класс для работы с масштабированием изображения по физическому размеру объекта на изображении.
  */
 export class ImageAdaptiveGroup {
   protected static objects: ImageAdaptiveItem[] = []
@@ -17,8 +17,8 @@ export class ImageAdaptiveGroup {
   protected static time?: number
 
   /**
-   * Checks if the object is present in the calculation list.<br>
-   * Проверяет, присутствует ли объект в списке вычислений.
+   * Checks if an element is present in the list.<br>
+   * Проверяет, присутствует ли элемент в списке.
    * @param item object for working with images /<br>объект для работы с изображениями
    */
   static is (item: ImageAdaptiveItem): boolean {
@@ -54,8 +54,8 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Update the data.<br>
-   * Обновить данные.
+   * Resets all cached data and rereads scaling for all elements.<br>
+   * Обнуляет все кэшированные данные и перечитывает масштабирование для всех элементов.
    */
   static reset (): void {
     this.cache = []
@@ -63,8 +63,8 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Starting or stopping tracking the image size.<br>
-   * Запуск или отключение слежения за размером изображения.
+   * Starts the calculation process or turns it off if there are no active elements in the list.<br>
+   * Запускает процесс вычисления или отключает его, если в списке нет активных элементов.
    */
   static make (): void {
     if (
@@ -82,8 +82,8 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Updates the list of visible values and returns this list.<br>
-   * Обновляет список видимых значений и возвращает этот список.
+   * Returns a list of elements that are visible or constantly being calculated.<br>
+   * Возвращает список элементов, которые видны или постоянно вычисляются.
    */
   protected static getItemIdByVisible (): string[] {
     const visible: string[] = []
@@ -98,8 +98,8 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Method for checking the conditions for starting the update of parameters.<br>
-   * Метод проверки условий запуска обновления параметров.
+   * Method for starting the calculation of scaling elements in the list.<br>
+   * Метод для запуска вычисления масштабирования элементов в списке.
    */
   protected static start (): void {
     if (this.isAdaptive()) {
@@ -121,8 +121,10 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Updates the list of active records.<br>
-   * Обновляет список активных записей.
+   * Updates the list of elements available for calculation. These are the
+   * elements that are close to the border of the visible area.<br>
+   * Обновляет список доступных для вычисления элементов. Это те элементы,
+   * которые близки к границе видимой области.
    */
   protected static makeAdaptive (): void {
     this.objectsAdaptive = []
@@ -136,8 +138,10 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Updates the physical and virtual sizes.<br>
-   * Обновляет физические и виртуальные размеры.
+   * Calculates the dimensions of an element relative to the image size,
+   * the size of the element, and its physical location on the image.<br>
+   * Вычисляет размеры элемента относительно размера изображения,
+   * размера элемента и его физического расположения на изображении.
    */
   protected static makeSize (): void {
     ImageCalculationList.reset()
@@ -159,8 +163,8 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Change of the output size.<br>
-   * Изменение выводимого размера.
+   * Calculation of the basic scaling of an element without taking into account other elements.<br>
+   * Вычисление базового масштабирования элемента без учета других элементов.
    */
   protected static makePercent (): void {
     if (ImageCalculationList.isSize()) {
@@ -182,8 +186,12 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Changes of the scaling value.<br>
-   * Изменения масштабирования значения.
+   * Calculation of the largest element to determine the base size.
+   * This parameter is used for scaling other elements,
+   * reducing them to the necessary proportion.<br>
+   * Вычисление самого большого элемента для определения базового размера.
+   * Этот параметр используется для масштабирования других элементов,
+   * уменьшая их до нужной пропорции.
    */
   protected static makeFactorMax (): void {
     if (ImageCalculationList.isSize()) {
@@ -207,20 +215,19 @@ export class ImageAdaptiveGroup {
   }
 
   /**
-   * Checks if the composition of visible values has changed.<br>
-   * Проверяет, изменился ли состав видимых значений.
-   * @param visible list of indexes of visible values /<br>список индексов видимых значений
-   */
-  private static isCache (visible: string[]): boolean {
-    return this.cache.join('|') !== visible.join('|')
-  }
-
-  /**
    * Checks if there is an active element at the moment.<br>
    * Проверяет, есть ли в текущий момент активный элемент.
-   * @private
    */
   private static isAdaptive (): boolean {
     return !!this.objects.find(item => item.is())
+  }
+
+  /**
+   * Checks whether the composition of visible elements has changed.<br>
+   * Проверяет, изменился ли состав видимых элементов.
+   * @param visible list of indices of visible elements /<br>список индексов видимых элементов
+   */
+  private static isCache (visible: string[]): boolean {
+    return this.cache.join('|') !== visible.join('|')
   }
 }

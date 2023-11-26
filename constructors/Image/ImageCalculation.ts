@@ -1,8 +1,8 @@
 import { type ImageSize } from './typesBasic.ts'
 
 /**
- * Class for managing calculations for a specific group.<br>
- * Класс для управления вычислениями для конкретной группы.
+ * A class for storing data for adaptive computation of image scaling for a specific group.<br>
+ * Класс для хранения данных для адаптивного вычисления масштабирования изображения для конкретной группы.
  */
 export class ImageCalculation {
   protected factorMax: number = 1
@@ -28,8 +28,8 @@ export class ImageCalculation {
   }
 
   /**
-   * Checks if this object matches its name.<br>
-   * Проверяет, подходит ли этот объект по его имени.
+   * Checks whether the element belongs to the current group.<br>
+   * Проверяет, принадлежит ли элемент к текущей группе.
    * @param name name of the checked group /<br>название проверяемой группы
    */
   is (name: string): boolean {
@@ -37,24 +37,24 @@ export class ImageCalculation {
   }
 
   /**
-   If the element has a size.<br>
-   * Если у элемента есть размер.
+   * Checks if the group has elements with sizes. It is used to check if there is data for work.<br>
+   * Проверяет, есть ли у группы элементы с размерами. Используется для проверки, есть ли данные для работы.
    */
   isSize (): boolean {
     return Boolean(this.size.width || this.size.width)
   }
 
   /**
-   * Returns the physical width.<br>
-   * Возвращает физическую ширину.
+   * Returns the maximum physical width.<br>
+   * Возвращает максимальную физическую ширину.
    */
   getWidth (): number {
     return this.size.width
   }
 
   /**
-   * Returns the physical height.<br>
-   * Возвращает физическую высоту.
+   * Returns the maximum physical height.<br>
+   * Возвращает максимальную физическую высоту.
    */
   getHeight (): number {
     return this.size.height
@@ -77,16 +77,16 @@ export class ImageCalculation {
   }
 
   /**
-   * Returns the maximum value allowed for scaling.<br>
-   * Возвращает максимальное значение, допустимое для масштабирования.
+   * Returns the maximum multiplier for scaling.<br>
+   * Возвращает максимальный множитель для масштабирования.
    */
   getFactorMax (): number {
     return this.factorMax
   }
 
   /**
-   * Updating size.width, if it is larger than the selected value.<br>
-   * Обновление size.width, если она больше выбранного значения.
+   * Updating size.width, if it is less than the selected value.<br>
+   * Обновление size.width, если она меньше выбранного значения.
    * @param width value of the selected width /<br>значение выбранной ширины
    */
   makeWidth (width: number): this {
@@ -98,8 +98,8 @@ export class ImageCalculation {
   }
 
   /**
-   * Updating size.height, if it is larger than the selected value.<br>
-   * Обновление size.height, если она больше выбранного значения.
+   * Updating size.height, if it is less than the selected value.<br>
+   * Обновление size.height, если она меньше выбранного значения.
    * @param height value of the selected height /<br>значение выбранной высоты
    */
   makeHeight (height: number): this {
@@ -137,8 +137,8 @@ export class ImageCalculation {
   }
 
   /**
-   * Changes the scaling value if it is greater than the checked value.<br>
-   * Изменения значения масштабирования, если он больше проверяемой значения.
+   * Changes the multiplier value if it is greater than the checked value.<br>
+   * Изменяет значение множителя, если оно больше проверяемого значения.
    * @param value values for verification /<br>значения для проверки
    */
   makeFactorMax (value: number): this {

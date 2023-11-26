@@ -477,7 +477,7 @@ export class DesignReplace {
     constructor
       .match(/(?<=type[^{]+Props[^{]+{[^{}]+)(^[^\n{}/]+$)(?=[^{}]+^})/igm)
       ?.forEach(string => {
-        const name = string.match(/[a-z0-9]+(?=[ ?:])/i)?.[0]
+        const name = string.match(/[a-z0-9]+(?=[?:])/i)?.[0]
 
         if (name && props.indexOf(name) === -1) {
           templates.push(`// [constructor] ${string.trim()}`)
