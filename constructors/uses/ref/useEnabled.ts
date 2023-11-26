@@ -3,6 +3,10 @@ import { computed, type ComputedRef, type PropType } from 'vue'
 import { type ProgressProps } from '../../Progress/props.ts'
 
 export type UseEnabledSetup = {
+  /**
+   * Property to determine that the item is disabled.<br>
+   * Свойство для определения, что элемент выключен.
+   */
   disabledBind: ComputedRef<boolean | undefined>
 
   /**
@@ -31,8 +35,22 @@ export type UseEnabledSetup = {
 }
 
 export type UseEnabledProps = {
-  progress?: ProgressProps | boolean
+  /**
+   * Enable or disable the loader, or an object with properties for the loader.<br>
+   * Включить или отключить загрузчик, или объект со свойствами для загрузчика.
+   */
+  progress?: boolean | ProgressProps
+
+  /**
+   * Enable read-only status.<br>
+   * Включить статус только для чтения.
+   */
   readonly?: boolean
+
+  /**
+   * Enable the item disable status.<br>
+   * Включить статус отключения элемента.
+   */
   disabled?: boolean
 }
 
@@ -43,8 +61,8 @@ export const usePropsEnabled = {
 }
 
 /**
- * Class for managing the activity of an element.<br>
- * Класс для управления активности элемента.
+ * Use to control the activity of the item.<br>
+ * Использование для управления активности элемента.
  * @param props input property /<br>входное свойство
  */
 export const useEnabled = function (
