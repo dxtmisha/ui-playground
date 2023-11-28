@@ -1,21 +1,21 @@
 /**
- * A class for storing the transition symbol when entering a fractional part.<br>
- * Класс для хранения символа перехода при вводе дробной части.
+ * Class for storing and working with the transition symbol for the active group of characters.<br>
+ * Класс для хранения и работы со символом перехода для активной группы символов.
  */
 export class MaskRubberTransition {
   protected char: string = ''
 
   /**
-   * Checking the activity of the translation.<br>
-   * Проверка на активность перевода.
+   * Checks if the active group has a transition symbol.<br>
+   * Проверяет, есть ли у активной группы символ перехода.
    */
   is (): boolean {
     return this.char !== ''
   }
 
   /**
-   * Checks if the current symbol is a translation.<br>
-   * Проверяет, является ли текущий символ переводом.
+   * Checks if the current character is a transition character.<br>
+   * Проверяет, является ли текущий символ символом перехода.
    * @param char transition symbol /<br>символ перехода
    */
   isChar (char: string): boolean {
@@ -41,8 +41,8 @@ export class MaskRubberTransition {
   }
 
   /**
-   * Updates the base state.<br>
-   * Обновляет базовое состояние.
+   * Resets the values to the base ones.<br>
+   * Сбрасывает значения до базовых.
    */
   reset (): this {
     return this.set('')

@@ -11,19 +11,16 @@ import {
 } from '../typesBasic.ts'
 
 /**
- * Class for obtaining data to check the input data.<br>
- * Класс для получения данных для проверки вводимых данных.
+ * A class for obtaining data to verify input data by its group.<br>
+ * Класс для получения данных для проверки вводимых данных по его группе.
  */
 export class MaskPattern {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
-   * @param type object of the class for obtaining the mask type /<br>
-   * объект класса для получения типа маски
-   * @param date class object for managing data of type date /<br>
-   * объект класса для управления данными типа дата
-   * @param special class object for managing special characters /<br>
-   * объект класса для управления специальными символами
+   * @param props input data /<br>входные данные
+   * @param type
+   * @param date
+   * @param special
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -35,45 +32,17 @@ export class MaskPattern {
   }
 
   /**
-   * Getting the value for checking.<br>
-   * Получение значения для проверки.
-   * @param index group for checking /<br>группа для проверки
+   * Returns data for verification by the group name.<br>
+   * Возвращает данные для проверки по названию группы.
+   * @param groupName group for checking /<br>группа для проверки
    */
-  getPattern (index?: string): MaskPatternItemOrFunction | undefined {
-    if (index) {
-      const special = this.props?.special
-
-      if (
-        isObjectNotArray(special) &&
-        special?.[index]?.pattern
-      ) {
-        return special[index].pattern as MaskPatternItemOrFunction
-      }
-    }
-
-    return this.props?.pattern
+  get (groupName: string): MaskPatternItemOrFunction | undefined {
+    return this.getList()?.[groupName]
   }
 
   /**
-   * Getting data for verification by its identification.<br>
-   * Получение данных для проверки по его идентификации.
-   * @param index group for checking /<br>группа для проверки
-   */
-  get (index: string): MaskPatternItemOrFunction | undefined {
-    return this.getList()?.[index]
-  }
-
-  /**
-   * Getting global data to check the input data.<br>
-   * Получение глобальных данных для проверки вводимых данных.
-   */
-  getCheck (): MaskPatternItemOrFunction | undefined {
-    return this.props?.check
-  }
-
-  /**
-   * We get an object to check the data.<br>
-   * Получаем объект для проверки данных.
+   * Returns a list of all available properties by groups.<br>
+   * Возвращает список всех доступных свойств по группам.
    */
   getList (): MaskPatternList {
     const patterns = this.getByType()
@@ -93,8 +62,25 @@ export class MaskPattern {
   }
 
   /**
-   * Gets the basic data for checking.<br>
-   * Получает базовые данные для проверки.
+   * Returns values for verification.<br>
+   * Возвращает значения для проверки.
+   * @param groupName group for checking /<br>группа для проверки
+   */
+  getPattern (groupName?: string): MaskPatternItemOrFunction | undefined {
+    return (groupName && this.special.getPattern(groupName)) ?? this.props?.pattern
+  }
+
+  /**
+   * Returns global data for input verification.<br>
+   * Возвращает глобальные данные для проверки вводимых данных.
+   */
+  getCheck (): MaskPatternItemOrFunction | undefined {
+    return this.props?.check
+  }
+
+  /**
+   * Returns a list of basic data for verification.<br>
+   * Возвращает список базовых данных для проверки.
    */
   protected getByType (): MaskPatternList {
     if (this.type.isDate()) {

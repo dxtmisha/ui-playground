@@ -25,57 +25,26 @@ export class MaskItem extends CacheItem<string[]> {
 
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
-   * @param type object of the class for obtaining the mask type /<br>объект класса для получения типа маски
-   * @param rubberItem class object for managing rubber numbers /<br>
-   * объект класса для управления резиновыми номерами
-   * @param date class object for managing data of type date /<br>
-   * объект класса для управления данными типа дата
-   * @param characterLength number of input symbols /<br>количество вводимых символов
-   * @param special class object for managing special characters /<br>
-   * объект класса для управления специальными символами
-   * @param format class object for managing number formatting /<br>
-   * объект класса для управления форматированием числа
+   * @param props input data /<br>входные данные
+   * @param type
+   * @param rubberItem
+   * @param characterLength
+   * @param date
+   * @param format
+   * @param special
    */
   constructor (
     protected readonly props: MaskProps,
     protected readonly type: MaskType,
     protected readonly rubberItem: MaskRubberItem,
-    protected readonly date: MaskDate,
     protected readonly characterLength: MaskCharacterLength,
-    protected readonly special: MaskSpecial,
-    protected readonly format: MaskFormat
+    protected readonly date: MaskDate,
+    protected readonly format: MaskFormat,
+    protected readonly special: MaskSpecial
   ) {
-    super(() => {
-      if (this.type.isCurrencyOrNumber()) {
-        return this.format.getMask()
-      }
+    super(() => this.initMask())
 
-      if (this.type.isDate()) {
-        return this.date.getMask()
-      }
-
-      return this.getBasic()
-    })
-
-    this.info = new CacheItem(() => {
-      const data: MaskSpecialInfo[] = []
-      let index = 0
-
-      this.getList().forEach((char, key) => {
-        if (this.special.isSpecial(char)) {
-          data.push({
-            index,
-            key,
-            char
-          })
-
-          index++
-        }
-      })
-
-      return data
-    })
+    this.info = new CacheItem(() => this.initInfo())
   }
 
   /**
@@ -88,8 +57,16 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Returns the current mask for output.<br>
-   * Возвращает текущую маску для вывода.
+   * Returns an array with information about the location of all special characters.<br>
+   * Возвращает массив с информацией о расположении всех специальных символов.
+   */
+  getInfo (): MaskSpecialInfo[] {
+    return this.info.getCache(this.getComparison())
+  }
+
+  /**
+   * Returns the current mask.<br>
+   * Возвращает текущую маску.
    */
   getList (): string[] {
     return this.getCache(this.getComparison())
@@ -105,6 +82,7 @@ export class MaskItem extends CacheItem<string[]> {
     char: string,
     selection: number = -1
   ): number {
+    // TODO
     let data = selection
 
     this.getList().forEach((item, index) => {
@@ -117,14 +95,6 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Gets an array with information about the location of all special characters.<br>
-   * Получает массив с информацией о расположении всех специальных символов.
-   */
-  getSpecial (): MaskSpecialInfo[] {
-    return this.info.getCache(this.getComparison())
-  }
-
-  /**
    * Returns the length of the active mask.<br>
    * Возвращает длину активной маски.
    */
@@ -133,16 +103,8 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Returns the length of only special characters.<br>
-   * Возвращает длину только из специальных символов.
-   */
-  getLengthBySpecial (): number {
-    return this.getSpecial().length
-  }
-
-  /**
-   * Gets the length of the mask or the maximum length of the masks if there are many.<br>
-   * Получает длину маски или максимальную длину у масок, если их много.
+   * Returns the length of the mask or the maximum length of masks if there are several.<br>
+   * Возвращает длину маски или максимальную длину масок, если их несколько.
    */
   getMaxLength (): number {
     const mask = this.getMask()
@@ -152,6 +114,14 @@ export class MaskItem extends CacheItem<string[]> {
     } else {
       return this.getList().length
     }
+  }
+
+  /**
+   * Returns the length of only special characters.<br>
+   * Возвращает длину только из специальных символов.
+   */
+  getLengthBySpecial (): number {
+    return this.getInfo().length
   }
 
   /**
@@ -180,16 +150,32 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Getting a list of masks.<br>
-   * Получение списка масок.
+   * Returns data for cache to check for changes.<br>
+   * Возвращает данные для кэша для проверки на изменения.
+   */
+  getComparison (): any[] {
+    return [
+      this.characterLength.get(),
+      this.props?.mask,
+      this.props?.special,
+      this.props?.fraction,
+      this.props?.currency,
+      this.props?.type,
+      this.props?.language
+    ]
+  }
+
+  /**
+   * Returns a list of masks.<br>
+   * Возвращает список масок.
    */
   protected getMask (): MaskList {
     return this.props?.mask ?? ''
   }
 
   /**
-   * Getting the active mask.<br>
-   * Получение активной маски.
+   * Returns the active mask.<br>
+   * Возвращает активную маску.
    */
   protected getMaskActive (): string {
     const mask = this.getMask()
@@ -202,8 +188,16 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Calculates the number of special symbols in the current mask.<br>
-   * Вычисляет количество специальных символов в текущей маске.
+   * Returns the number of special characters in the current mask.<br>
+   * Возвращает количество специальных символов в текущей маске.
+   */
+  protected getBasic (): string[] {
+    return this.rubberItem.expandMask(this.getMaskActive()).split('')
+  }
+
+  /**
+   * Returns the number of special characters in the current mask.<br>
+   * Возвращает количество специальных символов в текущей маске.
    * @param mask selected mask /<br>выбранная маска
    */
   protected getSpecialLength (mask: string): number {
@@ -214,26 +208,41 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
-   * Basic processing for custom masks.<br>
-   * Базовая обработка для пользовательских масок.
+   * Generates a mask by type.<br>
+   * Генерирует маску по типу.
    */
-  protected getBasic (): string[] {
-    return this.rubberItem.expandMask(this.getMaskActive()).split('')
+  protected initMask (): string[] {
+    if (this.type.isCurrencyOrNumber()) {
+      return this.format.getMask()
+    }
+
+    if (this.type.isDate()) {
+      return this.date.getMask()
+    }
+
+    return this.getBasic()
   }
 
   /**
-   * Returns data for checking for changes.<br>
-   * Возвращает данные для проверки на изменения.
+   * Generates information about special characters.<br>
+   * Генерирует информацию о специальных символах.
    */
-  protected getComparison (): any[] {
-    return [
-      this.characterLength.get(),
-      this.props?.mask,
-      this.props?.special,
-      this.props?.fraction,
-      this.props?.currency,
-      this.props?.type,
-      this.props?.language
-    ]
+  protected initInfo (): MaskSpecialInfo[] {
+    const data: MaskSpecialInfo[] = []
+    let index = 0
+
+    this.getList().forEach((char, key) => {
+      if (this.special.isSpecial(char)) {
+        data.push({
+          index,
+          key,
+          char
+        })
+
+        index++
+      }
+    })
+
+    return data
   }
 }

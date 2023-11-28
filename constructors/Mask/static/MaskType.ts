@@ -2,13 +2,13 @@ import { type GeoDate } from '../../../types/geo.ts'
 import { type MaskProps } from '../props.ts'
 
 /**
- * A class for working with types.<br>
- * Класс для работы с типами.
+ * Class for defining the mask type.<br>
+ * Класс для определения типа маски.
  */
 export class MaskType {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
+   * @param props input data /<br>входные данные
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -17,24 +17,8 @@ export class MaskType {
   }
 
   /**
-   * Returns the type of mask.<br>
-   * Возвращает тип маски.
-   */
-  get (): string {
-    return this.props?.type ?? 'text'
-  }
-
-  /**
-   * Returns the type of mask for working with dates.<br>
-   * Возвращает тип маски для работы с датами.
-   */
-  getByDate (): GeoDate {
-    return this.isDate() ? (this.get() as GeoDate) : 'date'
-  }
-
-  /**
-   * Is the input mask a number.<br>
-   * Является ли маска для ввода числом.
+   * Is the mask numeric.<br>
+   * Является ли маска числовой.
    */
   isNumber (): boolean {
     return this.get() === 'number'
@@ -84,5 +68,21 @@ export class MaskType {
         'month',
         'day'
       ].indexOf(this.get()) !== -1
+  }
+
+  /**
+   * Returns the type of mask.<br>
+   * Возвращает тип маски.
+   */
+  get (): string {
+    return this.props?.type ?? 'text'
+  }
+
+  /**
+   * Returns the type of mask for working with dates.<br>
+   * Возвращает тип маски для работы с датами.
+   */
+  getByDate (): GeoDate {
+    return this.isDate() ? (this.get() as GeoDate) : 'date'
   }
 }

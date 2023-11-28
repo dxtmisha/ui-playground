@@ -1,7 +1,11 @@
-import { isObjectNotArray, isString } from '../../../functions/data.ts'
+import { isString } from '../../../functions/data.ts'
+
+import { MaskSpecial } from './MaskSpecial.ts'
 
 import { type MaskMatchItem } from '../typesBasic.ts'
 import { type MaskProps } from '../props.ts'
+
+const MATCH_DEFAULT = /[0-9]/
 
 /**
  * Class for checking the incoming character.<br>
@@ -10,10 +14,13 @@ import { type MaskProps } from '../props.ts'
 export class MaskMatch {
   /**
    * Constructor
+   * @param props input data /<br>входные данные
+   * @param special
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: MaskProps
+    protected readonly props: MaskProps,
+    protected readonly special: MaskSpecial
   ) {
   }
 
@@ -21,13 +28,13 @@ export class MaskMatch {
    * Checks if the symbol fits.<br>
    * Проверяет, подходит ли символ.
    * @param char symbol for checking /<br>символ для проверки
-   * @param index group for checking /<br>группа для проверки
+   * @param groupName group for checking /<br>группа для проверки
    */
   is (
     char: string,
-    index?: string
+    groupName?: string
   ): boolean {
-    const match = this.get(index)
+    const match = this.get(groupName)
 
     if (match instanceof RegExp) {
       return Boolean(char.match(match))
@@ -37,37 +44,28 @@ export class MaskMatch {
       return Boolean(char.match(new RegExp(match)))
     }
 
-    return Boolean(char.match(/[0-9]/))
+    return Boolean(char.match(MATCH_DEFAULT))
   }
 
   /**
    * Returns the value of the regular expression for checking.<br>
    * Возвращает значение регулярного выражения для проверки.
-   * @param index group for checking /<br>группа для проверки
+   * @param groupName group for checking /<br>группа для проверки
    */
-  get (index?: string): MaskMatchItem {
-    if (index) {
-      const special = this.props?.special
-
-      if (
-        isObjectNotArray(special) &&
-        special?.[index]?.match
-      ) {
-        return special[index].match as MaskMatchItem
-      }
-    }
-
-    return this.props?.match ?? /[0-9]/
+  get (groupName?: string): MaskMatchItem {
+    return (groupName && this.special.getMatch(groupName)) ?? this.props?.match ?? MATCH_DEFAULT
   }
 
   /**
-   * Returns only characters available for input.<br>
-   * Возвращает только символы, доступные для ввода.
+   * Returns only the characters that can be entered from the string.<br>
+   * Возвращает только символы, доступные для ввода из строки.
    * @param text text for checking /<br>текст для проверки
    */
   filter (text: string): string[] {
+    const special = this.special.get()
+
     return text
       .split('')
-      .filter(char => this.is(char))
+      .filter(char => special.find(groupName => this.is(char, groupName)))
   }
 }

@@ -1,6 +1,6 @@
 /**
- * Class for storing the length of input symbols for mask selection.<br>
- * Класс для хранения длины вводимых символов для подбора маски.
+ * A class for storing the length of input characters.<br>
+ * Класс для хранения длины вводимых символов.
  */
 export class MaskCharacterLength {
   protected length = 0

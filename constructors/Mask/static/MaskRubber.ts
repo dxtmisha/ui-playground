@@ -17,25 +17,19 @@ import {
 } from '../typesBasic.ts'
 
 /**
- * Class for obtaining rubber type data.<br>
- * Класс для получения данных резинового типа.
+ * Class for working with the rubber type.<br>
+ * Класс для работы с резиновым типом.
  */
 export class MaskRubber {
   /**
    * Constructor
    * @param props base data /<br>базовые данные
-   * @param type object of the class for obtaining the mask type /<br>
-   * объект класса для получения типа маски
-   * @param rubberItem class object for managing rubber numbers /<br>
-   * объект класса для управления резиновыми номерами
-   * @param rubberTransition class object for managing delimiter characters /<br>
-   * объект класса для управления символами-разделителями
-   * @param special class object for defining a special character /<br>
-   * объект класса для определения специального символа
-   * @param match class object for determining the input number /<br>
-   * объект класса для определения вводимого числа
-   * @param format class object for managing number formatting /<br>
-   * объект класса для управления форматированием числа
+   * @param type
+   * @param rubberItem
+   * @param rubberTransition
+   * @param special
+   * @param match
+   * @param format
    *
    */
   // eslint-disable-next-line no-useless-constructor
@@ -51,61 +45,65 @@ export class MaskRubber {
   }
 
   /**
-   * Checks if the selected character is a rubber type.<br>
-   * Проверяет, является ли выбранный символ резиновым типом.
-   * @param index checked character code /<br>проверяемый код символа
+   * Checks if the selected group is rubber.<br>
+   * Проверяет, является ли выбранная группа резиновой.
+   * @param groupName group name /<br>название группы
    */
-  is (index: string): boolean {
-    return index in this.getList()
+  is (groupName: string): boolean {
+    return groupName in this.getList()
   }
 
   /**
-   * Checks if the symbol is a transition.<br>
-   * Проверяет, является ли символ переходом.
-   * @param index checked character code /<br>проверяемый код символа
+   * Checks if the group has a transition symbol.<br>
+   * Проверяет, есть ли у группы символ перехода.
+   * @param groupName group name /<br>название группы
    */
-  isTransition (index: string): boolean {
-    return this.getTransitionList().indexOf(index) !== -1
+  isTransition (groupName: string): boolean {
+    return this.getTransitionList().indexOf(groupName) >= 0
   }
 
   /**
-   * Checks if the selected symbol is present.<br>
-   * Проверяет, есть ли данный выбранный символ.
-   * @param data values for the date /<br>значения для даты
-   * @param index checked character code /<br>проверяемый код символа
+   * Checks if the selected group has data and whether it is rubber.<br>
+   * Проверяет, есть ли данные у выбранной группы и является ли она резиновой.
+   * @param data values for verification /<br>значения для проверки
+   * @param groupName group name /<br>название группы
    */
   isValue (
     data: MaskGroup,
-    index: string
+    groupName: string
   ): boolean {
-    return (index in data) && this.is(index)
+    return (groupName in data) && this.is(groupName)
   }
 
   /**
-   * Getting a property by its symbol.<br>
-   * Получение свойства по его символу.
-   * @param index checked character code /<br>проверяемый код символа
+   * Getting properties for the rubber group.<br>
+   * Получение свойства для резиновой группы.
+   * @param groupName group name /<br>название группы
    */
-  get (index: string): MaskSpecialItem | undefined {
-    return this.getList()?.[index]
+  get (groupName: string): MaskSpecialItem | undefined {
+    return this.getList()?.[groupName]
   }
 
   /**
-   * Getting a list of properties for rubber labels.<br>
-   * Получение списка свойств для резиновых меток.
+   * Getting a list of rubber groups.<br>
+   * Получение списка резиновых групп.
    */
   getList (): MaskSpecialList {
-    return this.type.isCurrencyOrNumber() ? this.format.getRubber() : this.special.getRubber()
+    return this.type.isCurrencyOrNumber() ? this.format.getRubber() : this.special.getRubberList()
   }
 
   /**
-   * Getting a list of available transition symbols.<br>
-   * Получение списка доступных символов переходов.
+   * Getting a list of transition symbols.<br>
+   * Получение списка символов перехода.
    */
   getTransitionList (): string[] {
     return getColumn(
-      Object.values(this.getList())
-        .filter(item => 'transitionChar' in item && (isString(item.transitionChar) || isArray(item.transitionChar))),
+      Object.values(this.getList()).filter(
+        item => 'transitionChar' in item && (
+          isString(item.transitionChar) ||
+          isArray(item.transitionChar)
+        )
+      ),
       'transitionChar'
     ).flat() as string[]
   }
@@ -113,17 +111,17 @@ export class MaskRubber {
   /**
    * Updates the group of rubber symbols if all conditions are met and returns true.<br>
    * Обновляет группу резиновых символов, если все условия подходят, и возвращает true.
-   * @param data data for verification /<br>данные для проверки
-   * @param index group name for verification /<br>название группы для проверки
-   * @param char water symbol for verification /<br>символ воды для проверки
+   * @param data values for verification /<br>значения для проверки
+   * @param groupName group name /<br>название группы
+   * @param char symbol for checking /<br>символ для проверки
    */
   update (
     data: MaskGroup,
-    index: string,
+    groupName: string,
     char: string
   ): boolean {
-    const item = this.get(index)
-    const value = data?.[index]
+    const item = this.get(groupName)
+    const value = data?.[groupName]
 
     if (item && value) {
       if (
@@ -132,16 +130,16 @@ export class MaskRubber {
           item?.maxLength <= value?.maxLength
         )
       ) {
-        this.rubberTransition.set(index)
+        this.rubberTransition.set(groupName)
         return false
       }
 
       if (
         value.full &&
-        this.match.is(char, index) &&
-        !this.rubberTransition.isChar(index)
+        this.match.is(char, groupName) &&
+        !this.rubberTransition.isChar(groupName)
       ) {
-        this.rubberItem.add(index)
+        this.rubberItem.add(groupName)
         this.rubberTransition.reset()
       }
 
@@ -154,15 +152,15 @@ export class MaskRubber {
   /**
    * Reduces the length of the entered symbol by its group.<br>
    * Уменьшает длину вводимого символа по его группе.
-   * @param index group name for verification /<br>название группы для проверки
+   * @param groupName group name /<br>название группы
    */
-  pop (index: string): boolean {
-    return this.rubberItem.pop(index)
+  pop (groupName: string): boolean {
+    return this.rubberItem.pop(groupName)
   }
 
   /**
-   * Resets all states in all groups.<br>
-   * Сбрасывает все состояния у всех групп.
+   * Resets all states of all groups to the initial one.<br>
+   * Сбрасывает все состояния всех групп до начального.
    */
   reset (): this {
     this.rubberItem.reset()

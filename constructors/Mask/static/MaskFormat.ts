@@ -15,16 +15,15 @@ import {
 const decimals: Record<string, string[]> = {}
 
 /**
- * Class for getting a formatted number.<br>
- * Класс для получения форматированного числа.
+ * A class for working with a formatted number mask.<br>
+ * Класс для работы с форматированной маской числа.
  */
 export class MaskFormat {
   /**
    * Constructor
-   * @param props base data /<br>базовые данные
-   * @param type object of the class for obtaining the mask type /<br>объект класса для получения типа маски
-   * @param rubberItem class object for managing rubber numbers /<br>
-   * объект класса для управления резиновыми номерами
+   * @param props input data /<br>входные данные
+   * @param type
+   * @param rubberItem
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -35,19 +34,11 @@ export class MaskFormat {
   }
 
   /**
-   * Checks if the number is rubber with residues.<br>
-   * Проверяет, является ли число резиновым с остатками.
+   * Checks if there is a group for the remainder.<br>
+   * Проверяет, есть ли группа для остатка.
    */
   isFractionRubber (): boolean {
     return this.props.fraction === true
-  }
-
-  /**
-   * Gets an object for working with data formatting.<br>
-   * Получает объект для работы с форматированием данных.
-   */
-  getIntl (): GeoIntl {
-    return new GeoIntl(this.getLanguage())
   }
 
   /**
@@ -59,8 +50,16 @@ export class MaskFormat {
   }
 
   /**
-   * Getting the number of remainder digits.<br>
-   * Получение количества чисел остатка.
+   * Gets an object for working with number formatting.<br>
+   * Получает объект для работы с форматированием числа.
+   */
+  getIntl (): GeoIntl {
+    return new GeoIntl(this.getLanguage())
+  }
+
+  /**
+   * Getting the number of digits in the remainder.<br>
+   * Получение количества чисел в остатке.
    */
   getFraction (): number {
     if (this.type.isCurrency()) {
@@ -94,46 +93,8 @@ export class MaskFormat {
   }
 
   /**
-   * Returns the standard form of the number.<br>
-   * Возвращает стандартный вид числа.
-   */
-  getStandardForNumber (): string {
-    return `${this.toNumber()}${this.toFraction()}${this.toCurrency()}`
-  }
-
-  /**
-   * Returns the number type.<br>
-   * Возвращает тип номера.
-   */
-  getNumber (): string {
-    return this.getIntl().number(this.getStandardForNumber(), { maximumFractionDigits: 9 })
-  }
-
-  /**
-   * Returns the currency type.<br>
-   * Возвращает тип валюты.
-   */
-  getCurrency (): string {
-    return this.getIntl().currency(this.getStandardForNumber())
-  }
-
-  /**
-   * Decimal point symbol.<br>
-   * Символ десятичной точки.
-   */
-  getDecimal (): string[] {
-    const language = this.getLanguage()
-
-    if (!(language in decimals)) {
-      decimals[language] = [this.getIntl().decimal(), '.']
-    }
-
-    return decimals[language]
-  }
-
-  /**
-   * Getting the mask for a number or currency.<br>
-   * Получение маски для числа или валюты.
+   * Returns masks for a number or price.<br>
+   * Возвращает маски для числа или цены.
    */
   getMask (): string[] {
     return (this.type.isCurrency() ? this.getCurrency() : this.getNumber())
@@ -143,8 +104,8 @@ export class MaskFormat {
   }
 
   /**
-   * Getting instructions for data management.<br>
-   * Получение инструкции для управления данными.
+   * Getting instructions for forming a rubber mask.<br>
+   * Получение инструкции для формирования резиновой маски.
    */
   getRubber (): MaskSpecialList {
     return {
@@ -161,36 +122,55 @@ export class MaskFormat {
   }
 
   /**
-   * Returns the value in standard form.<br>
-   * Проверяет, является ли число резиновым.
-   * @param value значения для преобразования
+   * Returns the formatted value.<br>
+   * Возвращает отформатированное значение.
+   * @param value a string with a filled date /<br>строка с заполненной датой
    */
-  getValue (value: MaskGroup): string {
+  getValueStandard (value: MaskGroup): string {
     return `${value?.n?.value ?? '0'}.${value?.f?.value ?? '0'}`
   }
 
   /**
-   * Gets the number of digits for substitution in the mask.<br>
-   * Получает количество чисел для подстановки в маске.
+   * Returns the data as a formatted number.<br>
+   * Возвращает данные в виде отформатированного числа.
    */
-  protected toNumber (): string {
-    return strFill('9', this.rubberItem.getByIndex('n') + 1)
+  getNumber (): string {
+    return this.getIntl().number(this.getNumberForString(), { maximumFractionDigits: 9 })
   }
 
   /**
-   * Gets the number of digits for the remainder.<br>
-   * Получает количество чисел для остатка.
+   * Returns the data as a formatted price with a currency symbol.<br>
+   * Возвращает данные в виде отформатированной цены с символом валюты.
    */
-  protected toFraction (): string {
-    const data = this.getFraction()
-    return data ? `.${strFill('3', data)}` : ''
+  getCurrency (): string {
+    return this.getIntl().currency(this.getNumberForString())
   }
 
   /**
-   * Getting the currency value.<br>
-   * Получение значения валюты.
+   * Returns a list of delimiter characters for transitioning to the drop group.<br>
+   * Возвращает список символов-разделителей для перехода в группу дроп.
    */
-  protected toCurrency (): string {
-    return this.type.isCurrency() && this.props?.currency ? ` ${this.props.currency}` : ''
+  getDecimal (): string[] {
+    const language = this.getLanguage()
+
+    if (!(language in decimals)) {
+      decimals[language] = [this.getIntl().decimal(), '.']
+    }
+
+    return decimals[language]
+  }
+
+  /**
+   * Returns a string with values for obtaining a formatted value.<br>
+   * Возвращает строку со значениями для получения отформатированного значения.
+   */
+  protected getNumberForString (): string {
+    const fraction = this.getFraction()
+
+    const number = strFill('9', this.rubberItem.getByIndex('n') + 1)
+    const numberFraction = fraction ? `.${strFill('3', fraction)}` : ''
+    const currency = this.type.isCurrency() && this.props?.currency ? ` ${this.props.currency}` : ''
+
+    return `${number}${numberFraction}${currency}`
   }
 }

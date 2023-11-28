@@ -57,33 +57,8 @@ export class MaskDate {
   }
 
   /**
-   * Returns the formatted value.<br>
-   * Возвращает отформатированное значение.
-   * @param date values for the date /<br>значения для даты
-   */
-  getValue (date?: string): string {
-    return this.getDatetime(date).locale(undefined, '2-digit')
-  }
-
-  /**
-   * Returns the standardized date value.<br>
-   * Возвращает стандартизированное значение даты.
-   * @param data values for the date /<br>значения для даты
-   */
-  getValueStandard (data: MaskGroup): string {
-    const value = `${data?.Y?.value || '2000'}` +
-      `-${data?.M?.value || '01'}` +
-      `-${data?.D?.value || '01'}` +
-      `T${data?.h?.value || '00'}` +
-      `:${data?.m?.value || '00'}` +
-      `:${data?.s?.value || '00'}`
-
-    return isNaN(Date.parse(value)) ? '' : this.getDatetime(value).standard(false)
-  }
-
-  /**
-   * Returns the mask for types related to date.<br>
-   * Возвращает маску для типов, относящихся к дате.
+   * Returns a mask for filling in the date.<br>
+   * Возвращает маску для заполнения даты.
    */
   getMask (): string[] {
     return this.getDatetime().locale(undefined, '2-digit')
@@ -97,17 +72,43 @@ export class MaskDate {
   }
 
   /**
-   * Returns the validation template for the data type.<br>
-   * Возвращает шаблон проверки для типа данных.
+   * Returns the formatted value.<br>
+   * Возвращает отформатированное значение.
+   * @param date a string with a filled date /<br>строка с заполненной датой
+   */
+  getValue (date?: string): string {
+    return this.getDatetime(date).locale(undefined, '2-digit')
+  }
+
+  /**
+   * Returns the standardized date value.<br>
+   * Возвращает стандартизированное значение даты.
+   * @param date an object with a filled date, divided into groups of characters /<br>
+   * объект с заполненной датой, разделенный на группы символов
+   */
+  getValueStandard (date: MaskGroup): string {
+    const value = `${date?.Y?.value || '2000'}` +
+      `-${date?.M?.value || '01'}` +
+      `-${date?.D?.value || '01'}` +
+      `T${date?.h?.value || '00'}` +
+      `:${date?.m?.value || '00'}` +
+      `:${date?.s?.value || '00'}`
+
+    return isNaN(Date.parse(value)) ? '' : this.getDatetime(value).standard(false)
+  }
+
+  /**
+   * Returns a validation template for the date.<br>
+   * Возвращает шаблон проверки для даты.
    */
   getPattern (): MaskPatternList {
     return patternForDate
   }
 
   /**
-   * Returns an object for working with dates.<br>
-   * Возвращает объект для работы с датами.
-   * @param date values for the date /<br>значения для даты
+   * Returns a DateTime object.<br>
+   * Возвращает объект DateTime.
+   * @param date a string with a filled date /<br>строка с заполненной датой
    */
   protected getDatetime (date?: string): Datetime {
     return new Datetime(date ?? '1987-12-18T10:20:30', this.type.getByDate())

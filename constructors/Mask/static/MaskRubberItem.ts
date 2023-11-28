@@ -3,56 +3,56 @@ import { getExp, strFill } from '../../../functions/string.ts'
 
 /**
  * Class for storing data about the state of rubber symbols.<br>
- * Класс для хранения данных о состоянии резиновых символов.
+ * Класс для хранения данных о количество водимый символы для резиновых типы.
  */
 export class MaskRubberItem {
   protected value: Record<string, number> = {}
 
   /**
-   * Checks if there is a value in the record.<br>
-   * Проверяет, есть ли значение в записи.
-   * @param index value for checking /<br>значение для проверки
+   * Checks if the selected group has a value.<br>
+   * Проверяет, есть ли значение у выбранной группы.
+   * @param groupName group name /<br>название группы
    */
-  is (index: string): boolean {
-    return index in this.value
+  is (groupName: string): boolean {
+    return groupName in this.value
   }
 
   /**
-   * Getting the list of records.<br>
-   * Получение списка записей.
+   * Getting the fill list by group.<br>
+   * Получение списка заполнения по группе.
    */
   get (): Record<string, number> {
     return this.value
   }
 
   /**
-   * Getting the value by index.<br>
-   * Получение значения по индексу.
-   * @param index value for checking /<br>значение для проверки
+   * Returns the fill status by the group name.<br>
+   * Возвращает заполненность по названию группы.
+   * @param groupName group name /<br>название группы
    */
-  getByIndex (index: string): number {
-    return this.value?.[index] ?? 0
+  getByIndex (groupName: string): number {
+    return this.value?.[groupName] ?? 0
   }
 
   /**
-   * Adding a new record.<br>
-   * Добавление новой записи.
-   * @param index value for checking /<br>значение для проверки
+   * Adding a fill feature to the group for another 1 character.<br>
+   * Добавление признака заполнения у группы на еще 1 символ.
+   * @param groupName group name /<br>название группы
    */
-  add (index: string): this {
-    this.value[index] = this.getByIndex(index) + 1
+  add (groupName: string): this {
+    this.value[groupName] = this.getByIndex(groupName) + 1
     return this
   }
 
   /**
-   * Deleting a record by its value.<br>
-   * Удаление записи по ее значению.
-   * @param index value for checking /<br>значение для проверки
+   * Decrease by 1 the sign of the filled character in the group.<br>
+   * Уменьшение на 1 признака заполненного символа у группы.
+   * @param groupName group name /<br>название группы
    */
-  pop (index: string): boolean {
-    if (this.is(index)) {
-      if (--this.value[index] <= 0) {
-        delete this.value[index]
+  pop (groupName: string): boolean {
+    if (this.is(groupName)) {
+      if (--this.value[groupName] <= 0) {
+        delete this.value[groupName]
       }
 
       return true
@@ -62,8 +62,8 @@ export class MaskRubberItem {
   }
 
   /**
-   * Deleting a record by its value.<br>
-   * Удаление записи по ее значению.
+   * Reset all records to the initial state.<br>
+   * Сброс всех записей до начального состояния.
    */
   reset (): this {
     this.value = {}
