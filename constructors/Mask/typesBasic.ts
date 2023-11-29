@@ -23,6 +23,7 @@ export type MaskSpecialItem = {
   minLength?: number
   match?: MaskMatchItem
   pattern?: InputPatternItemOrFunction
+  view?: string
 }
 export type MaskSpecialInfo = {
   index: number
@@ -31,6 +32,12 @@ export type MaskSpecialInfo = {
 }
 export type MaskSpecialList = Record<string, MaskSpecialItem>
 export type MaskSpecialProp = string | string[] | MaskSpecialList
+
+export type MaskViewItem = {
+  className: string
+  value: string
+}
+export type MaskViewList = MaskViewItem[]
 
 export type MaskList = string | string[]
 

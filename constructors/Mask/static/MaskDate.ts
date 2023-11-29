@@ -106,6 +106,30 @@ export class MaskDate {
   }
 
   /**
+   * Returns a list of symbols for output by group name.<br>
+   * Возвращает список символов для вывода по названию группы.
+   * @param groupName group name /<br>название группы
+   */
+  getView (groupName: string): string | undefined {
+    return this.getViewList()?.[groupName]
+  }
+
+  /**
+   * Returns a list of symbols for output by group.<br>
+   * Возвращает список символов для вывода по группе.
+   */
+  getViewList (): Record<string, string> {
+    return {
+      Y: 'y',
+      M: 'm',
+      D: 'd',
+      h: 'h',
+      m: 'm',
+      s: 's'
+    }
+  }
+
+  /**
    * Returns a DateTime object.<br>
    * Возвращает объект DateTime.
    * @param date a string with a filled date /<br>строка с заполненной датой

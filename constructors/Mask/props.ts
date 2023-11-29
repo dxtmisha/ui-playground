@@ -25,7 +25,8 @@ export type MaskProps = {
 
   // Options
   type?: MaskTypeItem
-  language?: string
+  language?: string,
+  view?: string
 
   // Tokens
   // :type [!] System label / Системная метка
@@ -40,6 +41,7 @@ export const defaultsMask: MaskProps = {
   match: /[0-9]/,
   special: '*',
   type: 'text',
+  view: '_',
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -72,6 +74,10 @@ export const propsMask = {
     default: defaultsMask?.type
   },
   language: String,
+  view: {
+    type: String,
+    default: defaultsMask?.view
+  },
 
   // Tokens
   ...{

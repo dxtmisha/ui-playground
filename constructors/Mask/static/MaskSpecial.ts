@@ -9,11 +9,13 @@ import { CacheItem } from '../../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
 
+import { type InputPatternItemOrFunction } from '../../Input/typesBasic.ts'
 import { type MaskProps } from '../props.ts'
 import {
-  MaskMatchItem, InputPatternItemOrFunction,
+  type MaskMatchItem,
   type MaskSpecialList,
-  type MaskSpecialProp
+  type MaskSpecialProp,
+  type MaskSpecialItem
 } from '../typesBasic.ts'
 
 /**
@@ -75,17 +77,8 @@ export class MaskSpecial extends CacheItem<string[]> {
    * Возвращает регулярное выражение для проверки входящего символа по группам.
    * @param groupName group name /<br>название группы
    */
-  getMatch (groupName: string) {
-    const special = this.getSpecial()
-
-    if (
-      isObjectNotArray(special) &&
-      special?.[groupName]?.match
-    ) {
-      return special[groupName].match as MaskMatchItem
-    }
-
-    return undefined
+  getMatch (groupName: string): MaskMatchItem | undefined {
+    return this.getSpecialItem(groupName)?.match
   }
 
   /**
@@ -94,16 +87,15 @@ export class MaskSpecial extends CacheItem<string[]> {
    * @param groupName group name /<br>название группы
    */
   getPattern (groupName: string): InputPatternItemOrFunction | undefined {
-    const special = this.getSpecial()
+    return this.getSpecialItem(groupName)?.pattern
+  }
 
-    if (
-      isObjectNotArray(special) &&
-      special?.[groupName]?.pattern
-    ) {
-      return special[groupName].pattern as InputPatternItemOrFunction
-    }
-
-    return undefined
+  /**
+   * Возвращает данные, по который будет отображать на экране.
+   * @param groupName group name /<br>название группы
+   */
+  getView (groupName: string): string | undefined {
+    return this.getSpecialItem(groupName)?.view
   }
 
   /**
@@ -131,6 +123,24 @@ export class MaskSpecial extends CacheItem<string[]> {
    */
   protected getSpecial (): MaskSpecialProp {
     return this.props?.special ?? '*'
+  }
+
+  /**
+   * Getting data about a special symbol by group.<br>
+   * Получение данных о специальном символе по группе.
+   * @param groupName group name /<br>название группы
+   */
+  protected getSpecialItem (groupName: string): MaskSpecialItem | undefined {
+    const special = this.getSpecial()
+
+    if (
+      isObjectNotArray(special) &&
+      groupName in special
+    ) {
+      return special[groupName]
+    }
+
+    return undefined
   }
 
   /**

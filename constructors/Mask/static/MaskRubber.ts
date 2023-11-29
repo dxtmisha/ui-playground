@@ -54,12 +54,12 @@ export class MaskRubber {
   }
 
   /**
-   * Checks if the group has a transition symbol.<br>
-   * Проверяет, есть ли у группы символ перехода.
-   * @param groupName group name /<br>название группы
+   * Checks if the symbol is a transition.<br>
+   * Проверяет, является ли символ перехода.
+   * @param char checkable symbol /<br>проверяемая переменная
    */
-  isTransition (groupName: string): boolean {
-    return this.getTransitionList().indexOf(groupName) >= 0
+  isTransition (char: string): boolean {
+    return this.getTransitionList().indexOf(char) >= 0
   }
 
   /**

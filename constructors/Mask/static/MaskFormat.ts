@@ -161,6 +161,14 @@ export class MaskFormat {
   }
 
   /**
+   * Returns a list of symbols for output by group name.<br>
+   * Возвращает список символов для вывода по названию группы.
+   */
+  getView (): string {
+    return '0'
+  }
+
+  /**
    * Returns a string with values for obtaining a formatted value.<br>
    * Возвращает строку со значениями для получения отформатированного значения.
    */

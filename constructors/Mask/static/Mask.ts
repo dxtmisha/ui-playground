@@ -15,10 +15,13 @@ import { MaskRubber } from './MaskRubber.ts'
 import { MaskItem } from './MaskItem.ts'
 import { MaskSelection } from './MaskSelection.ts'
 import { MaskCharacter } from './MaskCharacter.ts'
-
-import { type MaskProps } from '../props.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValue } from './MaskValue.ts'
+
+import { MaskValidation } from './MaskValidation.ts'
+import { MaskView } from './MaskView.ts'
+
+import { type MaskProps } from '../props.ts'
 
 /**
  * Base class for working with the mask.<br>
@@ -44,13 +47,18 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly valueBasic: MaskValueBasic
   protected readonly value: MaskValue
 
+  protected readonly validation: MaskValidation
+  protected readonly view: MaskView
+
   /**
    * Constructor
    * @param props input data /<br>входные данные
+   * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    * @param callback callback function /<br>функция обратного вызова
    */
   constructor (
     protected readonly props: MaskProps,
+    protected readonly classCharacter: string = 'is-character',
     protected readonly callback?: (event: any) => void
   ) {
     super(props, callback)
@@ -116,6 +124,23 @@ export class Mask extends DesignAbstract<MaskProps, any> {
       this.item,
       this.special,
       this.valueBasic
+    )
+
+    this.validation = new MaskValidation(
+      this.pattern,
+      this.value
+    )
+    this.view = new MaskView(
+      props,
+      this.type,
+      this.date,
+      this.format,
+      this.special,
+      this.rubber,
+      this.item,
+      this.valueBasic,
+      this.validation,
+      classCharacter
     )
   }
 
