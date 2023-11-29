@@ -1,10 +1,10 @@
 import { type PropType } from 'vue'
 
+import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
 import {
   type MaskFractionItem,
   type MaskList,
   type MaskMatchItem,
-  type MaskPatternItemOrFunction,
   type MaskSpecialProp,
   type MaskTypeItem
 } from './typesBasic.ts'
@@ -18,8 +18,8 @@ export type MaskProps = {
   mask?: MaskList
   special?: MaskSpecialProp
   match?: MaskMatchItem
-  pattern?: MaskPatternItemOrFunction
-  check?: MaskPatternItemOrFunction
+  pattern?: InputPatternItemOrFunction
+  check?: InputPatternItemOrFunction
   fraction?: MaskFractionItem
   currency?: string
 

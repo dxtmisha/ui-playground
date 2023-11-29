@@ -1,9 +1,11 @@
 import { GeoDate } from '../../types/geo.ts'
 
+import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
+
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
 
 export type MaskGroupItem = {
-  index: string
+  group: string
   value: string
   maxLength: number
   full: boolean
@@ -14,18 +16,13 @@ export type MaskGroup = Record<string, MaskGroupItem>
 export type MaskMatchItem = RegExp | string
 export type MaskFractionItem = string | boolean | number
 
-export type MaskPatternElement = Partial<HTMLInputElement>
-export type MaskPatternItem = string | MaskPatternElement
-export type MaskPatternItemOrFunction = MaskPatternItem | ((item: MaskGroup) => MaskPatternItem)
-export type MaskPatternList = Record<string, MaskPatternItemOrFunction>
-
 export type MaskSpecialItem = {
   rubber?: boolean
   transitionChar?: string | string[]
   maxLength?: number
   minLength?: number
   match?: MaskMatchItem
-  pattern?: MaskPatternItemOrFunction
+  pattern?: InputPatternItemOrFunction
 }
 export type MaskSpecialInfo = {
   index: number

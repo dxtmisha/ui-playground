@@ -1,20 +1,30 @@
-import { isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data.ts'
+
+import { CacheItem } from '../../../classes/CacheItem.ts'
+
+import {
+  type InputCheckItem,
+  type InputCheckList,
+  useInputCheck
+} from '../../Input/useInputCheck.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskDate } from './MaskDate.ts'
 
-import { type MaskProps } from '../props.ts'
 import {
-  type MaskPatternItemOrFunction,
-  type MaskPatternList
-} from '../typesBasic.ts'
+  type InputPatternItemOrFunction,
+  type InputPatternList
+} from '../../Input/typesBasic.ts'
+import { type MaskProps } from '../props.ts'
 
 /**
  * A class for obtaining data to verify input data by its group.<br>
  * Класс для получения данных для проверки вводимых данных по его группе.
  */
 export class MaskPattern {
+  protected inputs: CacheItem<InputCheckList>
+
   /**
    * Constructor
    * @param props input data /<br>входные данные
@@ -22,13 +32,21 @@ export class MaskPattern {
    * @param date
    * @param special
    */
-  // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: MaskProps,
     protected readonly type: MaskType,
     protected readonly date: MaskDate,
     protected readonly special: MaskSpecial
   ) {
+    this.inputs = new CacheItem(() => this.initInput())
+  }
+
+  /**
+   * Checks if there is a global check of input data.<br>
+   * Проверяет, есть ли глобальная проверка вводимых данных.
+   */
+  isCheck (): boolean {
+    return Boolean(this.props?.check)
   }
 
   /**
@@ -36,7 +54,11 @@ export class MaskPattern {
    * Возвращает данные для проверки по названию группы.
    * @param groupName group for checking /<br>группа для проверки
    */
-  get (groupName: string): MaskPatternItemOrFunction | undefined {
+  get (groupName: string): InputPatternItemOrFunction | undefined {
+    if (groupName === 'check') {
+      return this.getCheck()
+    }
+
     return this.getList()?.[groupName]
   }
 
@@ -44,7 +66,7 @@ export class MaskPattern {
    * Returns a list of all available properties by groups.<br>
    * Возвращает список всех доступных свойств по группам.
    */
-  getList (): MaskPatternList {
+  getList (): InputPatternList {
     const patterns = this.getByType()
 
     for (const index in patterns) {
@@ -66,7 +88,7 @@ export class MaskPattern {
    * Возвращает значения для проверки.
    * @param groupName group for checking /<br>группа для проверки
    */
-  getPattern (groupName?: string): MaskPatternItemOrFunction | undefined {
+  getPattern (groupName?: string): InputPatternItemOrFunction | undefined {
     return (groupName && this.special.getPattern(groupName)) ?? this.props?.pattern
   }
 
@@ -74,25 +96,64 @@ export class MaskPattern {
    * Returns global data for input verification.<br>
    * Возвращает глобальные данные для проверки вводимых данных.
    */
-  getCheck (): MaskPatternItemOrFunction | undefined {
+  getCheck (): InputPatternItemOrFunction | undefined {
     return this.props?.check
+  }
+
+  /**
+   * Returns an object for validation by its group.<br>
+   * Возвращает объект для проверки на валидность по его группе.
+   * @param groupName group for checking /<br>группа для проверки
+   */
+  getInput (groupName: string = 'check'): InputCheckItem | undefined {
+    return this.getInputList()?.[groupName]
+  }
+
+  /**
+   * Returns a list of objects for validation, divided by group name.<br>
+   * Возвращает список объектов для проверки на валидность, разделенных по названию группы.
+   */
+  getInputList (): InputCheckList {
+    return this.inputs.getCache([
+      this.props?.pattern,
+      this.props?.check
+    ])
   }
 
   /**
    * Returns a list of basic data for verification.<br>
    * Возвращает список базовых данных для проверки.
    */
-  protected getByType (): MaskPatternList {
+  protected getByType (): InputPatternList {
     if (this.type.isDate()) {
       return this.date.getPattern()
     }
 
-    const patterns: MaskPatternList = {}
+    const patterns: InputPatternList = {}
 
     this.special.get().forEach(name => {
       patterns[name] = {}
     })
 
     return patterns
+  }
+
+  /**
+   * Initializes a list of input objects for validation.<br>
+   * Инициализирует список объектов ввода для проверки на валидность.
+   */
+  protected initInput (): InputCheckList {
+    const inputList: InputCheckList = {}
+    const check = this.getCheck()
+
+    forEach(this.getList(), (pattern, group) => {
+      inputList[group] = useInputCheck(pattern, group)
+    })
+
+    if (check) {
+      inputList.check = useInputCheck(check)
+    }
+
+    return inputList
   }
 }

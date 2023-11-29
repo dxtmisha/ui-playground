@@ -11,7 +11,7 @@ import { MaskType } from './MaskType.ts'
 
 import { type MaskProps } from '../props.ts'
 import {
-  MaskMatchItem, MaskPatternItemOrFunction,
+  MaskMatchItem, InputPatternItemOrFunction,
   type MaskSpecialList,
   type MaskSpecialProp
 } from '../typesBasic.ts'
@@ -93,14 +93,14 @@ export class MaskSpecial extends CacheItem<string[]> {
    * Возвращает данные для проверки выбранной группы.
    * @param groupName group name /<br>название группы
    */
-  getPattern (groupName: string): MaskPatternItemOrFunction | undefined {
+  getPattern (groupName: string): InputPatternItemOrFunction | undefined {
     const special = this.getSpecial()
 
     if (
       isObjectNotArray(special) &&
       special?.[groupName]?.pattern
     ) {
-      return special[groupName].pattern as MaskPatternItemOrFunction
+      return special[groupName].pattern as InputPatternItemOrFunction
     }
 
     return undefined

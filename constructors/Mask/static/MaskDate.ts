@@ -3,19 +3,19 @@ import { Datetime } from '../../../classes/Datetime.ts'
 import { MaskType } from './MaskType.ts'
 
 import {
-  type MaskGroup,
-  type MaskPatternElement,
-  type MaskPatternList
-} from '../typesBasic.ts'
+  type InputPatternElement,
+  type InputPatternList
+} from '../../Input/typesBasic.ts'
+import { type MaskGroup } from '../typesBasic.ts'
 
-const patternForDate: MaskPatternList = {
+const patternForDate: InputPatternList = {
   Y: '[0-9]{4}',
   M: {
     type: 'number',
     min: '1',
     max: '12'
   },
-  D: (item: MaskGroup): MaskPatternElement => {
+  D: (item: MaskGroup): InputPatternElement => {
     const date = new Datetime(`${item?.Y?.value ?? '2000'}-${item?.M?.value ?? '01'}-01`)
 
     return {
@@ -101,7 +101,7 @@ export class MaskDate {
    * Returns a validation template for the date.<br>
    * Возвращает шаблон проверки для даты.
    */
-  getPattern (): MaskPatternList {
+  getPattern (): InputPatternList {
     return patternForDate
   }
 

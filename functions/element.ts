@@ -1,4 +1,4 @@
-import { executeFunction, forEach, isFilled, isObject } from './data.ts'
+import { executeFunction, forEach, isFilled, isObject, isObjectNotArray } from './data.ts'
 import { random } from './number.ts'
 
 import {
@@ -187,15 +187,15 @@ export function setElementItem<
 export function createElement<T extends HTMLElement> (
   parentElement?: HTMLElement,
   tagName = 'div',
-  options?: Record<keyof T, T[keyof T]> | ((element: T) => void),
+  options?: Partial<T> | Record<keyof T, T[keyof T]> | ((element: T) => void),
   referenceElement?: HTMLElement
 ): T {
   const element = document.createElement(tagName) as T
 
   if (typeof options === 'function') {
     options(element)
-  } else if (isObject(options)) {
-    forEach(options, (value, key) => {
+  } else if (isObjectNotArray(options)) {
+    forEach(options as Record<string, any>, (value, key) => {
       setElementItem(element, key as keyof T, value)
     })
   }

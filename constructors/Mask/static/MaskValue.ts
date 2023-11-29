@@ -57,6 +57,15 @@ export class MaskValue {
   }
 
   /**
+   * Checks if the values are fully filled in for the group.<br>
+   * Проверяет, полностью ли заполнены значения по группе.
+   * @param groupName group name /<br>название группы
+   */
+  isFullByGroup (groupName: string): boolean {
+    return this.getInfoItem(groupName)?.full ?? false
+  }
+
+  /**
    * Getting the final value for export.<br>
    * Получение конечного значения для экспорта.
    */
@@ -84,7 +93,7 @@ export class MaskValue {
     const value = this.get()
 
     return {
-      index: 'check',
+      group: 'check',
       value,
       maxLength: value.length,
       full: this.isFull(),
@@ -132,7 +141,7 @@ export class MaskValue {
   protected add (data: MaskGroup, groupName: string): MaskGroupItem {
     if (!(groupName in data)) {
       data[groupName] = {
-        index: groupName,
+        group: groupName,
         value: '',
         maxLength: 0,
         full: false,
