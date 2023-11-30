@@ -7,8 +7,8 @@ import { MaskItem } from './MaskItem.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValidation } from './MaskValidation.ts'
 
-import { type MaskProps } from '../props.ts'
-import { type MaskViewList } from '../typesBasic.ts'
+import { type MaskProps } from './props.ts'
+import { type MaskViewList } from './typesBasic.ts'
 
 const VIEW_DEFAULT = '_'
 

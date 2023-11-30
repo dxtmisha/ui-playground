@@ -1,27 +1,32 @@
 import { DesignAbstract } from '../../../classes/design/DesignAbstract.ts'
 
-import { MaskType } from './MaskType.ts'
-import { MaskRubberItem } from './MaskRubberItem.ts'
-import { MaskRubberTransition } from './MaskRubberTransition.ts'
-import { MaskCharacterLength } from './MaskCharacterLength.ts'
-import { MaskDate } from './MaskDate.ts'
-import { MaskFormat } from './MaskFormat.ts'
+import { MaskType } from '../MaskType.ts'
+import { MaskBuffer } from '../MaskBuffer.ts'
+import { MaskFocus } from '../MaskFocus.ts'
+import { MaskRubberItem } from '../MaskRubberItem.ts'
+import { MaskRubberTransition } from '../MaskRubberTransition.ts'
+import { MaskCharacterLength } from '../MaskCharacterLength.ts'
+import { MaskDate } from '../MaskDate.ts'
+import { MaskFormat } from '../MaskFormat.ts'
 
-import { MaskSpecial } from './MaskSpecial.ts'
-import { MaskMatch } from './MaskMatch.ts'
-import { MaskPattern } from './MaskPattern.ts'
-import { MaskRubber } from './MaskRubber.ts'
+import { MaskSpecial } from '../MaskSpecial.ts'
+import { MaskMatch } from '../MaskMatch.ts'
+import { MaskPattern } from '../MaskPattern.ts'
+import { MaskRubber } from '../MaskRubber.ts'
 
-import { MaskItem } from './MaskItem.ts'
-import { MaskSelection } from './MaskSelection.ts'
-import { MaskCharacter } from './MaskCharacter.ts'
-import { MaskValueBasic } from './MaskValueBasic.ts'
-import { MaskValue } from './MaskValue.ts'
+import { MaskItem } from '../MaskItem.ts'
+import { MaskSelection } from '../MaskSelection.ts'
+import { MaskCharacter } from '../MaskCharacter.ts'
+import { MaskValueBasic } from '../MaskValueBasic.ts'
+import { MaskValue } from '../MaskValue.ts'
 
-import { MaskValidation } from './MaskValidation.ts'
-import { MaskView } from './MaskView.ts'
+import { MaskValidation } from '../MaskValidation.ts'
+import { MaskView } from '../MaskView.ts'
+
+import { MaskData } from '../MaskData.ts'
 
 import { type MaskProps } from '../props.ts'
+import { MaskElement } from '../typesBasic.ts'
 
 /**
  * Base class for working with the mask.<br>
@@ -29,6 +34,8 @@ import { type MaskProps } from '../props.ts'
  */
 export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly type: MaskType
+  protected readonly buffer: MaskBuffer
+  protected readonly focus: MaskFocus
   protected readonly rubberItem: MaskRubberItem
   protected readonly rubberTransition: MaskRubberTransition
   protected readonly characterLength: MaskCharacterLength
@@ -50,20 +57,26 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly validation: MaskValidation
   protected readonly view: MaskView
 
+  protected readonly data: MaskData
+
   /**
    * Constructor
    * @param props input data /<br>входные данные
+   * @param element element for managing the selection location /<br>элемент для управления местом выделения
    * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    * @param callback callback function /<br>функция обратного вызова
    */
   constructor (
     protected readonly props: MaskProps,
+    element?: MaskElement,
     protected readonly classCharacter: string = 'is-character',
     protected readonly callback?: (event: any) => void
   ) {
     super(props, callback)
 
     this.type = new MaskType(props)
+    this.buffer = new MaskBuffer()
+    this.focus = new MaskFocus(this.buffer)
     this.rubberItem = new MaskRubberItem()
     this.rubberTransition = new MaskRubberTransition()
     this.characterLength = new MaskCharacterLength()
@@ -142,6 +155,32 @@ export class Mask extends DesignAbstract<MaskProps, any> {
       this.validation,
       classCharacter
     )
+
+    this.data = new MaskData(
+      this.type,
+      this.buffer,
+      this.focus,
+      this.rubberTransition,
+      this.date,
+      this.match,
+      this.rubber,
+      this.item,
+      this.selection,
+      this.character,
+      this.valueBasic,
+      this.value,
+      element
+    )
+  }
+
+  /**
+   * Changes in an element.<br>
+   * Изменения в элементе.
+   * @param element new element /<br>новый элемент
+   */
+  setElement (element: MaskElement): this {
+    this.data.setElement(element)
+    return this
   }
 
   /**

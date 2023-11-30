@@ -1,7 +1,7 @@
-import { isArray } from '../../../functions/data.ts'
-import { getMaxLength } from '../../../functions/object.ts'
+import { isArray } from '../../functions/data.ts'
+import { getMaxLength } from '../../functions/object.ts'
 
-import { CacheItem } from '../../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
@@ -10,11 +10,11 @@ import { MaskCharacterLength } from './MaskCharacterLength.ts'
 import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskFormat } from './MaskFormat.ts'
 
-import { type MaskProps } from '../props.ts'
+import { type MaskProps } from './props.ts'
 import {
   type MaskList,
   type MaskSpecialInfo
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Class for working with a mask.<br>

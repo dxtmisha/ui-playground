@@ -1,5 +1,5 @@
-import { forEach } from '../../../functions/data.ts'
-import { getExp, strFill } from '../../../functions/string.ts'
+import { forEach } from '../../functions/data.ts'
+import { getExp, strFill } from '../../functions/string.ts'
 
 /**
  * Class for storing data about the state of rubber symbols.<br>

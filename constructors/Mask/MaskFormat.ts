@@ -1,16 +1,16 @@
-import { strFill } from '../../../functions/string.ts'
+import { strFill } from '../../functions/string.ts'
 
-import { Geo } from '../../../classes/Geo.ts'
-import { GeoIntl } from '../../../classes/GeoIntl.ts'
+import { Geo } from '../../classes/Geo.ts'
+import { GeoIntl } from '../../classes/GeoIntl.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
 
-import { type MaskProps } from '../props.ts'
+import { type MaskProps } from './props.ts'
 import {
   type MaskGroup,
   type MaskSpecialList
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 const decimals: Record<string, string[]> = {}
 

@@ -1,4 +1,4 @@
-import { CacheItem } from '../../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
 
 import { MaskRubberTransition } from './MaskRubberTransition.ts'
 import { MaskItem } from './MaskItem.ts'

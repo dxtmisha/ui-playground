@@ -1,9 +1,9 @@
-import { isString } from '../../../functions/data.ts'
+import { isString } from '../../functions/data.ts'
 
 import { MaskSpecial } from './MaskSpecial.ts'
 
-import { type MaskMatchItem } from '../typesBasic.ts'
-import { type MaskProps } from '../props.ts'
+import { type MaskMatchItem } from './typesBasic.ts'
+import { type MaskProps } from './props.ts'
 
 const MATCH_DEFAULT = /[0-9]/
 

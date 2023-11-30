@@ -1,12 +1,12 @@
-import { Datetime } from '../../../classes/Datetime.ts'
+import { Datetime } from '../../classes/Datetime.ts'
 
 import { MaskType } from './MaskType.ts'
 
 import {
   type InputPatternElement,
   type InputPatternList
-} from '../../Input/typesBasic.ts'
-import { type MaskGroup } from '../typesBasic.ts'
+} from '../Input/typesBasic.ts'
+import { type MaskGroup } from './typesBasic.ts'
 
 const patternForDate: InputPatternList = {
   Y: '[0-9]{4}',
@@ -54,6 +54,15 @@ export class MaskDate {
   constructor (
     protected readonly type: MaskType
   ) {
+  }
+
+  /**
+   * Returns a DateTime object.<br>
+   * Возвращает объект DateTime.
+   * @param date a string with a filled date /<br>строка с заполненной датой
+   */
+  getDatetime (date?: string): Datetime {
+    return new Datetime(date ?? '1987-12-18T10:20:30', this.type.getByDate())
   }
 
   /**
@@ -127,14 +136,5 @@ export class MaskDate {
       m: 'm',
       s: 's'
     }
-  }
-
-  /**
-   * Returns a DateTime object.<br>
-   * Возвращает объект DateTime.
-   * @param date a string with a filled date /<br>строка с заполненной датой
-   */
-  protected getDatetime (date?: string): Datetime {
-    return new Datetime(date ?? '1987-12-18T10:20:30', this.type.getByDate())
   }
 }

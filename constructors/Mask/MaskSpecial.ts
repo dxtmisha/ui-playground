@@ -3,20 +3,20 @@ import {
   isArray,
   isObject,
   isObjectNotArray
-} from '../../../functions/data.ts'
+} from '../../functions/data.ts'
 
-import { CacheItem } from '../../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
 
-import { type InputPatternItemOrFunction } from '../../Input/typesBasic.ts'
-import { type MaskProps } from '../props.ts'
+import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
+import { type MaskProps } from './props.ts'
 import {
   type MaskMatchItem,
   type MaskSpecialList,
   type MaskSpecialProp,
   type MaskSpecialItem
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * A class for working with groups according to their special symbols.<br>

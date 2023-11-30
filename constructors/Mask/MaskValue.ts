@@ -1,4 +1,4 @@
-import { CacheItem } from '../../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskDate } from './MaskDate.ts'
@@ -10,7 +10,7 @@ import { MaskValueBasic } from './MaskValueBasic.ts'
 import {
   type MaskGroup,
   type MaskGroupItem
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Class for transforming the entered data into the final result.<br>

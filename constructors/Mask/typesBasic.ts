@@ -3,6 +3,7 @@ import { GeoDate } from '../../types/geo.ts'
 import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
 
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
+export type MaskElement = HTMLInputElement | undefined
 
 export type MaskGroupItem = {
   group: string

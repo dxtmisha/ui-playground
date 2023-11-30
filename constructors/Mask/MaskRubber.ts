@@ -1,5 +1,5 @@
-import { isArray, isSelected, isString } from '../../../functions/data.ts'
-import { getColumn } from '../../../functions/object.ts'
+import { isArray, isSelected, isString } from '../../functions/data.ts'
+import { getColumn } from '../../functions/object.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
@@ -9,12 +9,12 @@ import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskMatch } from './MaskMatch.ts'
 import { MaskFormat } from './MaskFormat.ts'
 
-import { type MaskProps } from '../props.ts'
+import { type MaskProps } from './props.ts'
 import {
   type MaskGroup,
   type MaskSpecialItem,
   type MaskSpecialList
-} from '../typesBasic.ts'
+} from './typesBasic.ts'
 
 /**
  * Class for working with the rubber type.<br>
