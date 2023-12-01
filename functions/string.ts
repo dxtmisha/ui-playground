@@ -1,4 +1,4 @@
-import { executeFunction, forEach } from './data'
+import { executeFunction, forEach, isObject, isString } from './data'
 import { arrFill } from './object'
 
 import { type FunctionReturn } from '../types/basic.ts'
@@ -35,6 +35,23 @@ export function getExp (
  */
 export async function getClipboardData (event?: ClipboardEvent): Promise<string> {
   return event?.clipboardData?.getData('text') ?? (await navigator.clipboard.readText() || '')
+}
+
+/**
+ * Conversion of a value to a string.<br>
+ * Преобразование значения в строку.
+ * @param value values for conversion /<br>значения для преобразования
+ */
+export function toString<V> (value: V): string {
+  if (isString(value)) {
+    return value
+  }
+
+  if (isObject(value)) {
+    return JSON.stringify(value)
+  }
+
+  return value?.toString() ?? ''
 }
 
 /**

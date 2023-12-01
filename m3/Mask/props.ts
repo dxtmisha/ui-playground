@@ -13,7 +13,16 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
-  // [constructor] mask: MaskItem
+  // [constructor] mask?: MaskList
+  // [constructor] special?: MaskSpecialProp
+  // [constructor] match?: MaskMatchItem
+  // [constructor] pattern?: InputPatternItemOrFunction
+  // [constructor] check?: InputPatternItemOrFunction
+  // [constructor] fraction?: MaskFractionItem
+  // [constructor] currency?: string
+  // [constructor] type?: MaskTypeItem
+  // [constructor] language?: string,
+  // [constructor] view?: string
   // :type [!] System label / Системная метка
 }
 

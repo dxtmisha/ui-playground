@@ -1,11 +1,16 @@
-import { h, VNode } from 'vue'
+import { h, ref, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { MaskRef } from './MaskRef.ts'
 
 import {
   type ConstrOptions,
   type ConstrStyles
 } from '../../types/constructor.ts'
+import {
+  type MaskElementInput,
+  type MaskEventData
+} from './typesBasic.ts'
 import {
   type MaskProps
 } from './props.ts'
@@ -28,7 +33,7 @@ export class MaskDesign<
   CLASSES extends MaskClasses,
   P extends MaskProps
 > extends DesignConstructorAbstract<
-  HTMLDivElement,
+  HTMLInputElement,
   COMP,
   MaskEmits,
   SETUP,
@@ -37,6 +42,10 @@ export class MaskDesign<
   CLASSES,
   P
 > {
+  protected readonly elementCharacter = ref<MaskElementInput>()
+
+  protected readonly mask: MaskRef
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -54,10 +63,52 @@ export class MaskDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
+    this.mask = new MaskRef(
+      props,
+      this.element,
+      this.elementCharacter,
+      this.getSubClass('character'),
+      (event: Event, value: MaskEventData) => {
+        this.emits?.(value?.type as 'input', event as InputEvent, value)
+      }
+    )
 
     this.init()
+  }
+
+  /**
+   * Rendering method for input.<br>
+   * Метод рендеринга для ввода.
+   */
+  renderInput (): VNode {
+    const setup = this.setup()
+
+    return h('input', {
+      ref: this.element,
+      class: setup.classes.value.input,
+      onFocus: setup.onFocus,
+      onBlur: setup.onBlur
+    })
+  }
+
+  renderView (): VNode {
+    const setup = this.setup()
+    const children: any[] = []
+
+    setup.view.value.forEach((character, key) => {
+      children.push(
+        h('span', {
+          key,
+          class: character.className
+        }, character.value)
+      )
+    })
+
+    return h('span', {
+      class: setup.classes.value.character,
+      onFocus: setup.onFocus,
+      onBlur: setup.onBlur
+    }, children)
   }
 
   /**
@@ -76,8 +127,10 @@ export class MaskDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      view: this.mask.view,
+
+      onFocus: this.mask.onFocus,
+      onBlur: this.mask.onBlur
     } as SETUP
   }
 
@@ -126,12 +179,15 @@ export class MaskDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
+    const setup = this.setup()
+    const children: any[] = [
+      this.renderInput(),
+      this.renderView()
+    ]
 
-    return h('div', {
+    return h('label', {
       ...this.getAttrs(),
-      ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: setup.classes.value.main
+    }, children)
   }
 }

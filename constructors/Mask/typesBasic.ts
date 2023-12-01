@@ -1,9 +1,13 @@
 import { GeoDate } from '../../types/geo.ts'
 
-import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
+import {
+  type InputPatternItemOrFunction,
+  type InputValidationItem
+} from '../Input/typesBasic.ts'
 
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
-export type MaskElement = HTMLInputElement | undefined
+export type MaskElementInput = HTMLInputElement | undefined
+export type MaskElementCharacter = HTMLSpanElement | undefined
 
 export type MaskGroupItem = {
   group: string
@@ -42,6 +46,4 @@ export type MaskViewList = MaskViewItem[]
 
 export type MaskList = string | string[]
 
-export type MaskEventData = {
-  value: string
-}
+export type MaskEventData = InputValidationItem<string, 'focus' | 'blur' | 'input' | 'change'>

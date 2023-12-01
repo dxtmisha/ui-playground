@@ -5,11 +5,13 @@ export type InputPatternItem = string | InputPatternElement
 export type InputPatternItemOrFunction = InputPatternItem | ((item: MaskGroup) => InputPatternItem)
 export type InputPatternList = Record<string, InputPatternItemOrFunction>
 
-export type InputValidationItem<P extends InputPatternItemOrFunction = InputPatternItemOrFunction> = {
-  group: string
-  status: boolean
-  input: HTMLInputElement
-  validationMessage: string
-  validity: ValidityState
-  pattern: P
+export type InputValidationItem<V = string, T extends string = string> = {
+  type?: T
+  group?: string
+  status?: boolean
+  input?: HTMLInputElement
+  validationMessage?: string
+  validity?: ValidityState
+  pattern?: InputPatternItemOrFunction
+  value?: V
 }

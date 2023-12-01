@@ -1,4 +1,5 @@
 import { executeFunction, isFilled, isObjectNotArray, isString } from '../../functions/data.ts'
+import { toString } from '../../functions/string.ts'
 import { createElement } from '../../functions/element.ts'
 
 import {
@@ -7,14 +8,14 @@ import {
   type InputValidationItem
 } from './typesBasic.ts'
 
-export type InputCheckItem<P extends InputPatternItemOrFunction = InputPatternItemOrFunction> = {
+export type InputCheckItem<V = string> = {
   group: string
   input: HTMLInputElement
-  pattern: P
-  check (value: string): InputValidationItem<P>
+  pattern: InputPatternItemOrFunction
+  check (value: V): InputValidationItem<V>
 }
 
-export type InputCheckList = Record<string, InputCheckItem>
+export type InputCheckList<V = string> = Record<string, InputCheckItem<V>>
 
 /**
  * Generates an object to work with the validation of data for input.<br>
@@ -22,18 +23,18 @@ export type InputCheckList = Record<string, InputCheckItem>
  * @param pattern property for verification /<br>свойство для проверки
  * @param groupName group name /<br>название группы
  */
-export function useInputCheck<P extends InputPatternItemOrFunction> (
-  pattern: P,
+export function useInputCheck<V> (
+  pattern: InputPatternItemOrFunction,
   groupName: string = 'check'
-): InputCheckItem<P> {
+): InputCheckItem<V> {
   const input = createElement<HTMLInputElement>(undefined, 'input', getAttributes(pattern))
 
   return {
     group: groupName,
     input,
     pattern,
-    check (value: string): InputValidationItem<P> {
-      input.value = value
+    check<V> (value: V): InputValidationItem<V> {
+      input.value = toString(value)
 
       return {
         group: groupName,
@@ -41,7 +42,8 @@ export function useInputCheck<P extends InputPatternItemOrFunction> (
         status: input.checkValidity(),
         validationMessage: input.validationMessage,
         validity: input.validity,
-        pattern
+        pattern,
+        value
       }
     }
   }

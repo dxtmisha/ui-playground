@@ -14,7 +14,7 @@ import { MaskCharacter } from './MaskCharacter.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValue } from './MaskValue.ts'
 
-import { type MaskElement } from './typesBasic.ts'
+import { type MaskElementInput } from './typesBasic.ts'
 
 /**
  * Class for working with behavior when entering data.<br>
@@ -35,7 +35,7 @@ export class MaskData {
    * @param character
    * @param valueBasic
    * @param value
-   * @param element element for managing the selection location /<br>элемент для управления местом выделения
+   * @param element input element /<br>элемент ввода
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -51,7 +51,7 @@ export class MaskData {
     protected readonly character: MaskCharacter,
     protected readonly valueBasic: MaskValueBasic,
     protected readonly value: MaskValue,
-    protected element?: MaskElement
+    protected element?: MaskElementInput
   ) {
   }
 
@@ -60,7 +60,7 @@ export class MaskData {
    * Изменения в элементе.
    * @param element new element /<br>новый элемент
    */
-  setElement (element: MaskElement): this {
+  setElement (element: MaskElementInput): this {
     this.element = element
     return this
   }

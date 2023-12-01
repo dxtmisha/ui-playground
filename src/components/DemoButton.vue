@@ -61,7 +61,7 @@ const onClickProgress = () => {
       <div class="demo-button__item">
         <div class="demo-button__item__title">label</div>
         <div class="demo-button__item__value">
-          <m3-button label="label" />
+          <m3-button label="label" @click="onClick" />
         </div>
       </div>
       <div class="demo-button__item">

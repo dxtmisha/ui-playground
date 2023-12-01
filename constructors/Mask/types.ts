@@ -1,5 +1,9 @@
 import { type ConstrClass } from '../../types/constructor.ts'
-import { type MaskEventData } from './typesBasic.ts'
+import {
+  type MaskEventData,
+  type MaskViewList
+} from './typesBasic.ts'
+import { ComputedRef } from 'vue'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
@@ -14,10 +18,22 @@ export type MaskComponents = {
  * Тип, описывающий доступные события.
  */
 export type MaskEmits = {
-  focus: [value: MaskEventData]
-  blur: [value: MaskEventData]
-  input: [value: MaskEventData]
-  change: [value: MaskEventData]
+  focus: [
+    event: FocusEvent,
+    value: MaskEventData
+  ]
+  blur: [
+    event: FocusEvent,
+    value: MaskEventData
+  ]
+  input: [
+    event: InputEvent,
+    value: MaskEventData
+  ]
+  change: [
+    event: Event,
+    value: MaskEventData
+  ]
 }
 
 /**
@@ -25,7 +41,10 @@ export type MaskEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MaskSetup = {
-  // TODO
+  view: ComputedRef<MaskViewList>
+
+  onFocus: (event: FocusEvent) => void
+  onBlur: (event: FocusEvent) => void
 }
 
 /**
