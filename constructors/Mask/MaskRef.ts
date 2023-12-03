@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, type Ref, watch } from 'vue'
+import { type Ref, shallowRef, type ShallowRef, watch } from 'vue'
 
 import { Mask } from './Mask.ts'
 
@@ -17,10 +17,15 @@ import { type MaskProps } from './props.ts'
 export class MaskRef {
   protected mask: Mask
 
-  readonly view: ComputedRef<MaskViewList>
+  readonly value: ShallowRef<string>
+  readonly view: ShallowRef<MaskViewList>
 
   readonly onFocus: (event: FocusEvent) => void
   readonly onBlur: (event: FocusEvent) => void
+  readonly onKeydown: (event: KeyboardEvent) => void
+  readonly onBeforeinput: (event: InputEvent) => void
+  readonly onInput: (event: InputEvent) => void
+  readonly onPaste: (event: ClipboardEvent) => void
 
   /**
    * Constructor
@@ -34,27 +39,34 @@ export class MaskRef {
     props: MaskProps,
     elementInput: Ref<MaskElementInput>,
     elementCharacter: Ref<MaskElementCharacter>,
-    classCharacter = 'is-character',
-    callbackEvent?: (event: Event, value: MaskEventData) => void
+    callbackEvent?: (event: Event, value: MaskEventData) => void,
+    classCharacter = 'is-character'
   ) {
     this.mask = new Mask(
       props,
       elementInput.value,
       elementCharacter.value,
-      classCharacter,
-      () => {
+      (event, value) => {
+        this.value.value = this.mask.getValue()
+        this.view.value = this.mask.getView()
 
+        callbackEvent?.(event, value)
       },
-      callbackEvent
+      classCharacter
     )
 
     if (elementInput) {
       watch(elementInput, value => this.mask.setElement(value))
     }
 
-    this.view = computed(() => this.mask.getView())
+    this.value = shallowRef(this.mask.getValue())
+    this.view = shallowRef(this.mask.getView())
 
     this.onFocus = (event: FocusEvent) => this.mask.getEvent().onFocus(event)
     this.onBlur = (event: FocusEvent) => this.mask.getEvent().onBlur(event)
+    this.onKeydown = (event: KeyboardEvent) => this.mask.getEvent().onKeydown(event)
+    this.onBeforeinput = (event: InputEvent) => this.mask.getEvent().onBeforeinput(event)
+    this.onInput = (event: InputEvent) => this.mask.getEvent().onInput(event)
+    this.onPaste = (event: ClipboardEvent) => this.mask.getEvent().onPaste(event)
   }
 }

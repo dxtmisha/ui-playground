@@ -1,6 +1,15 @@
 import { type ImageCoordinator } from '../types/image.ts'
 
 /**
+ * Returns the pressed key.<br>
+ * Возвращает нажатую клавишу.
+ * @param event event object /<br>объект события
+ */
+export function getKey (event: KeyboardEvent): string {
+  return event?.key ?? event?.code ?? event?.keyCode?.toString()
+}
+
+/**
  * Returns the position of the mouse cursor or the location of the click.<br>
  * Возвращает позицию курсора мыши или место нажатия.
  * @param event event object /<br>объект события

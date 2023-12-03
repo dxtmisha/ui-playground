@@ -82,7 +82,7 @@ export class MaskSelection {
    * @param selection selection number /<br>номер выделения
    * @param focus is the element in focus /<br>элемент в фокусе ли
    */
-  setByMask (selection: number, focus = true as boolean): this {
+  setByMask (selection: number, focus = true): this {
     if (focus) {
       let value: number | undefined
       let immediate: number | undefined

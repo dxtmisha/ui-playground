@@ -13,5 +13,5 @@ export type InputValidationItem<V = string, T extends string = string> = {
   validationMessage?: string
   validity?: ValidityState
   pattern?: InputPatternItemOrFunction
-  value?: V
+  value: V
 }

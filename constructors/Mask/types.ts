@@ -26,12 +26,20 @@ export type MaskEmits = {
     event: FocusEvent,
     value: MaskEventData
   ]
+  keydown: [
+    event: KeyboardEvent,
+    value: MaskEventData
+  ]
+  beforeinput: [
+    event: InputEvent,
+    value: MaskEventData
+  ]
   input: [
     event: InputEvent,
     value: MaskEventData
   ]
   change: [
-    event: Event,
+    event: InputEvent,
     value: MaskEventData
   ]
 }
@@ -41,10 +49,15 @@ export type MaskEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MaskSetup = {
+  value: ComputedRef<string>
   view: ComputedRef<MaskViewList>
 
-  onFocus: (event: FocusEvent) => void
-  onBlur: (event: FocusEvent) => void
+  onFocus (event: FocusEvent): void
+  onBlur (event: FocusEvent): void
+  onKeydown (event: KeyboardEvent): void
+  onBeforeinput (event: InputEvent): void
+  onInput (event: InputEvent): void
+  onPaste (event: ClipboardEvent): void
 }
 
 /**

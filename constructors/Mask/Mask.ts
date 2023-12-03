@@ -1,5 +1,3 @@
-import { DesignAbstract } from '../../classes/design/DesignAbstract.ts'
-
 import { MaskType } from './MaskType.ts'
 import { MaskBuffer } from './MaskBuffer.ts'
 import { MaskFocus } from './MaskFocus.ts'
@@ -23,12 +21,15 @@ import { MaskValue } from './MaskValue.ts'
 import { MaskValidation } from './MaskValidation.ts'
 import { MaskView } from './MaskView.ts'
 
+import { MaskEmit } from './MaskEmit.ts'
 import { MaskData } from './MaskData.ts'
 import { MaskEvent } from './MaskEvent.ts'
 
 import {
   type MaskElementInput,
-  type MaskElementCharacter, MaskEventData, MaskViewList
+  type MaskElementCharacter,
+  type MaskEventData,
+  type MaskViewList
 } from './typesBasic.ts'
 import { type MaskProps } from './props.ts'
 
@@ -36,7 +37,7 @@ import { type MaskProps } from './props.ts'
  * Base class for working with the mask.<br>
  * Базовый класс для работы с маской.
  */
-export class Mask extends DesignAbstract<MaskProps, any> {
+export class Mask {
   protected readonly type: MaskType
   protected readonly buffer: MaskBuffer
   protected readonly focus: MaskFocus
@@ -61,6 +62,7 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   protected readonly validation: MaskValidation
   protected readonly view: MaskView
 
+  protected readonly emit: MaskEmit
   protected readonly data: MaskData
   protected readonly event: MaskEvent
 
@@ -69,20 +71,16 @@ export class Mask extends DesignAbstract<MaskProps, any> {
    * @param props input data /<br>входные данные
    * @param element input element /<br>элемент ввода
    * @param elementCharacter element for managing the selection location /<br>элемент для управления местом выделения
-   * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
-   * @param callback callback function /<br>функция обратного вызова
    * @param callbackEvent the function is called when an event is triggered /<br>функция вызывается, когда срабатывает событие
+   * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    */
   constructor (
     protected readonly props: MaskProps,
     element: MaskElementInput,
     elementCharacter: MaskElementCharacter,
-    classCharacter: string = 'is-character',
-    protected readonly callback?: (event: any) => void,
-    callbackEvent?: (event: Event, value: MaskEventData) => void
+    callbackEvent: (event: Event, value: MaskEventData) => void,
+    classCharacter: string = 'is-character'
   ) {
-    super(props, callback)
-
     this.type = new MaskType(props)
     this.buffer = new MaskBuffer()
     this.focus = new MaskFocus(this.buffer)
@@ -165,6 +163,10 @@ export class Mask extends DesignAbstract<MaskProps, any> {
       classCharacter
     )
 
+    this.emit = new MaskEmit(
+      this.validation,
+      callbackEvent
+    )
     this.data = new MaskData(
       this.type,
       this.buffer,
@@ -178,14 +180,25 @@ export class Mask extends DesignAbstract<MaskProps, any> {
       this.character,
       this.valueBasic,
       this.value,
+      this.emit,
       element
     )
     this.event = new MaskEvent(
+      this.buffer,
       this.focus,
+      this.selection,
       this.validation,
-      this.data,
-      callbackEvent
+      this.emit,
+      this.data
     )
+  }
+
+  /**
+   * Getting the final value for export.<br>
+   * Получение конечного значения для экспорта.
+   */
+  getValue (): string {
+    return this.value.get()
   }
 
   /**
@@ -212,12 +225,5 @@ export class Mask extends DesignAbstract<MaskProps, any> {
   setElement (element: MaskElementInput): this {
     this.data.setElement(element)
     return this
-  }
-
-  /**
-   * A function that is called each time the input values are changed.<br>
-   * Функция, которая вызывается каждый раз, когда изменяются входные значения.
-   */
-  protected initEvent (): void {
   }
 }

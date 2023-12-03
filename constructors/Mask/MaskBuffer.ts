@@ -32,15 +32,19 @@ export class MaskBuffer {
     return this
   }
 
-  // TODO
-  init (key: string): boolean {
+  /**
+   * Starts buffering data if data is being processed.<br>
+   * Начинает буферизировать данные, если в обработке идут данные.
+   * @param key symbol that needs to be added /<br>символ, который необходимо добавить
+   */
+  go (key: string): boolean {
     if (this.start) {
       this.add(key)
       return false
-    } else {
-      this.start = true
-      return true
     }
+
+    this.start = true
+    return true
   }
 
   /**

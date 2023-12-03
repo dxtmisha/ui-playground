@@ -41,7 +41,7 @@ export class MaskValidation {
    * We get an object with information about the error if there is an error, or undefined.<br>
    * Получаем объект с информацией об ошибке, если есть ошибка, или undefined.
    */
-  get (): InputValidationItem | undefined {
+  get (): InputValidationItem {
     for (const input of Object.values(this.pattern.getInputList())) {
       const item = this.value.getInfoItem(input.group)
 
@@ -69,19 +69,23 @@ export class MaskValidation {
    * Getting global check data.<br>
    * Получение данных глобальной проверки.
    */
-  protected getValidationCheck (): InputValidationItem | undefined {
-    if (
-      this.value.isFull() &&
-      this.pattern.isCheck()
-    ) {
+  protected getValidationCheck (): InputValidationItem {
+    if (this.value.isFull()) {
       const item = this.value.getForCheck()
-      const check = this.pattern.getInput(item.group)?.check(item.value)
 
-      if (check && !check.status) {
-        return check
+      if (this.pattern.isCheck()) {
+        const check = this.pattern.getInput(item.group)?.check(item.value)
+
+        if (check && !check.status) {
+          return check
+        }
+      }
+
+      return {
+        value: item.value
       }
     }
 
-    return undefined
+    return { value: this.value.get() }
   }
 }

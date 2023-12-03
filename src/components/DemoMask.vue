@@ -10,6 +10,14 @@ const onFocus = (event: FocusEvent, value: MaskEventData) => {
 const onBlur = (event: FocusEvent, value: MaskEventData) => {
   console.log('onBlur', event, value)
 }
+
+const onInput = (event: InputEvent, value: MaskEventData) => {
+  console.log('onInput', event, value)
+}
+
+const onChange = (event: InputEvent, value: MaskEventData) => {
+  console.log('onChange', event, value)
+}
 </script>
 
 <template>
@@ -23,12 +31,14 @@ const onBlur = (event: FocusEvent, value: MaskEventData) => {
         </div>
       </div>
       <div class="demo-mask__item">
-        <div class="demo-mask__item__title">**.****.***</div>
+        <div class="demo-mask__item__title">**.****.TEST.***</div>
         <div class="demo-mask__item__value">
           <m3-mask
-            mask="**.****.***"
+            mask="**.****.TEST.***"
             @focus="onFocus"
             @blur="onBlur"
+            @input="onInput"
+            @change="onChange"
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { h, ref, VNode } from 'vue'
+import { h, ref, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { MaskRef } from './MaskRef.ts'
@@ -67,10 +67,10 @@ export class MaskDesign<
       props,
       this.element,
       this.elementCharacter,
-      this.getSubClass('character'),
       (event: Event, value: MaskEventData) => {
         this.emits?.(value?.type as 'input', event as InputEvent, value)
-      }
+      },
+      this.getSubClass('character')
     )
 
     this.init()
@@ -86,11 +86,21 @@ export class MaskDesign<
     return h('input', {
       ref: this.element,
       class: setup.classes.value.input,
+      value: setup.value.value,
+
       onFocus: setup.onFocus,
-      onBlur: setup.onBlur
+      onBlur: setup.onBlur,
+      onKeydown: setup.onKeydown,
+      onBeforeinput: setup.onBeforeinput,
+      onInput: setup.onInput,
+      onPaste: setup.onPaste
     })
   }
 
+  /**
+   * Rendering method for displaying the mask and the input data.<br>
+   * Метод рендеринга для вывода маски и вводимых данных.
+   */
   renderView (): VNode {
     const setup = this.setup()
     const children: any[] = []
@@ -116,8 +126,6 @@ export class MaskDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -127,10 +135,15 @@ export class MaskDesign<
    */
   protected initSetup (): SETUP {
     return {
+      value: this.mask.value,
       view: this.mask.view,
 
       onFocus: this.mask.onFocus,
-      onBlur: this.mask.onBlur
+      onBlur: this.mask.onBlur,
+      onKeydown: this.mask.onKeydown,
+      onBeforeinput: this.mask.onBeforeinput,
+      onInput: this.mask.onInput,
+      onPaste: this.mask.onPaste
     } as SETUP
   }
 

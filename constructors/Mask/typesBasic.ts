@@ -46,4 +46,10 @@ export type MaskViewList = MaskViewItem[]
 
 export type MaskList = string | string[]
 
-export type MaskEventData = InputValidationItem<string, 'focus' | 'blur' | 'input' | 'change'>
+export type MaskEventData = InputValidationItem<string, 'focus' | 'blur' | 'keydown' | 'input' | 'change'>
+export type MaskEventSelection = {
+  target: HTMLInputElement
+  start: number
+  end: number
+  length: number
+}
