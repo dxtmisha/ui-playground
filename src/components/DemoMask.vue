@@ -27,18 +27,36 @@ const onChange = (event: InputEvent, value: MaskEventData) => {
       <div class="demo-mask__item">
         <div class="demo-mask__item__title">none</div>
         <div class="demo-mask__item__value">
-          <m3-mask />
+          <m3-mask
+            class="demo-mask__item__value__mask"
+          />
         </div>
       </div>
       <div class="demo-mask__item">
-        <div class="demo-mask__item__title">**.****.TEST.***</div>
+        <div class="demo-mask__item__title">basic</div>
         <div class="demo-mask__item__value">
           <m3-mask
+            class="demo-mask__item__value__mask"
             mask="**.****.TEST.***"
-            @focus="onFocus"
-            @blur="onBlur"
-            @input="onInput"
-            @change="onChange"
+          />
+        </div>
+      </div>
+      <div class="demo-mask__item">
+        <div class="demo-mask__item__title">right</div>
+        <div class="demo-mask__item__value">
+          <m3-mask
+            class="demo-mask__item__value__mask"
+            mask="**.****.TEST.***"
+            right
+          />
+        </div>
+      </div>
+      <div class="demo-mask__item">
+        <div class="demo-mask__item__title">3 mask</div>
+        <div class="demo-mask__item__value">
+          <m3-mask
+            class="demo-mask__item__value__mask"
+            :mask="['mask1: ***.**', 'mask2 (6): ***.***', 'mask3 (end): **.**.****']"
           />
         </div>
       </div>
@@ -47,7 +65,46 @@ const onChange = (event: InputEvent, value: MaskEventData) => {
 </template>
 
 <style lang="scss">
-.demo-mask {
+@import "../../styles/color";
+@import "../../styles/font";
 
+.demo-mask {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+
+  &__item {
+    &__title {
+      position: relative;
+      z-index: 100;
+
+      padding: 8px 0;
+      max-width: calc(128px - 16px);
+
+      @include truncate;
+    }
+
+    &__value {
+      display: flex;
+      position: relative;
+
+      width: 256px;
+
+      &__mask {
+        padding: 8px 16px;
+        width: 100%;
+
+        border: 1px solid rgba(0, 0, 0, .12);
+      }
+    }
+
+    &--color {
+      @include color(#0000ff);
+    }
+  }
+
+  &__title {
+    padding: 0 16px;
+  }
 }
 </style>

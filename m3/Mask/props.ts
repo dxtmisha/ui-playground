@@ -1,4 +1,4 @@
-// import { type PropType } from 'vue'
+import { type PropType } from 'vue'
 
 import {
   MaskProps,
@@ -8,6 +8,7 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
+  dir: ['ltr', 'rtl']
   // :values [!] System label / Системная метка
 }
 
@@ -20,9 +21,14 @@ export type PropsToken = {
   // [constructor] check?: InputPatternItemOrFunction
   // [constructor] fraction?: MaskFractionItem
   // [constructor] currency?: string
+  // [constructor] name?: string
+  // [constructor] value?: string
   // [constructor] type?: MaskTypeItem
-  // [constructor] language?: string,
+  // [constructor] language?: string
   // [constructor] view?: string
+  visible?: boolean
+  right?: boolean
+  dir?: 'ltr' | 'rtl'
   // :type [!] System label / Системная метка
 }
 
@@ -50,6 +56,9 @@ export const propsInstruction = {
   ...propsMask,
   ...{
     // :prop [!] System label / Системная метка
+    visible: Boolean,
+    right: Boolean,
+    dir: String as PropType<PropsToken['dir']>
     // :prop [!] System label / Системная метка
   }
 }

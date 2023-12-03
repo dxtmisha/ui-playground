@@ -43,7 +43,6 @@ export class DesignStructureClasses extends DesignStructureItemAbstract<DesignSt
     parent: string[] = []
   ): DesignStructureClassesList {
     const list: DesignStructureClassesList = []
-
     if (
       isFilled(properties) &&
       isObjectNotArray(properties)
@@ -52,13 +51,14 @@ export class DesignStructureClasses extends DesignStructureItemAbstract<DesignSt
         if (this.isClasses(item)) {
           const names = this.getNames(item, parent)
 
-          list.push({
-            index: toCamelCase(names.join('-')),
-            full: item?.[PropertyKey.fullName] ?? false,
-            className: names.join('__')
-          })
-
-          Object.assign(list, this.make(item?.value, names))
+          list.push(
+            {
+              index: toCamelCase(names.join('-')),
+              full: item?.[PropertyKey.fullName] ?? false,
+              className: names.join('__')
+            },
+            ...this.make(item?.value, names)
+          )
         }
       })
     }

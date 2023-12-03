@@ -7,7 +7,6 @@ import {
 
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
 export type MaskElementInput = HTMLInputElement | undefined
-export type MaskElementCharacter = HTMLSpanElement | undefined
 
 export type MaskGroupItem = {
   group: string

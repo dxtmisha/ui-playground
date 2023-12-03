@@ -9,6 +9,8 @@ import { MaskEmit } from './MaskEmit.ts'
 
 import { type MaskEventSelection } from './typesBasic.ts'
 import { getClipboardData } from '../../functions/string.ts'
+import { MaskRight } from './MaskRight.ts'
+import { MaskValueBasic } from './MaskValueBasic.ts'
 
 /**
  * Class for working with events.<br>
@@ -22,7 +24,9 @@ export class MaskEvent {
    * Constructor
    * @param buffer
    * @param focus
+   * @param right
    * @param selection
+   * @param valueBasic
    * @param validation
    * @param emit
    * @param data
@@ -31,7 +35,9 @@ export class MaskEvent {
   constructor (
     protected readonly buffer: MaskBuffer,
     protected readonly focus: MaskFocus,
+    protected readonly right: MaskRight,
     protected readonly selection: MaskSelection,
+    protected readonly valueBasic: MaskValueBasic,
     protected readonly validation: MaskValidation,
     protected readonly emit: MaskEmit,
     protected readonly data: MaskData
@@ -104,6 +110,13 @@ export class MaskEvent {
           this.data.pop(start, end)
             .add(this.selection.getShift(), event.key)
         }
+      } else if ([
+        'ArrowUp',
+        'ArrowRight',
+        'ArrowDown',
+        'ArrowLeft'
+      ].indexOf(event.key) >= 0) {
+        this.makeToEnd(event)
       }
     } else {
       this.unidentified = info
@@ -159,6 +172,15 @@ export class MaskEvent {
   }
 
   /**
+   * Перехвать события изменения, это для перехвать события автозавпольнения у браузеры.
+   * @param event invoked event /<br>вызываемое событие
+   */
+  onChange (event: Event): void {
+    const target = event.target as HTMLInputElement
+    this.data.reset(target.value)
+  }
+
+  /**
    * Intercepting the event of data insertion from the buffer.<br>
    * Перехват события вставки данных из буфера.
    * @param event invoked event /<br>вызываемое событие
@@ -183,6 +205,17 @@ export class MaskEvent {
       .catch(() => {
         console.error('getClipboardData')
       })
+
+    event.preventDefault()
+  }
+
+  /**
+   * Intercepting the click event to change the selection location, if necessary.<br>
+   * Перехват события клика для изменения места выделения, если это необходимо.
+   * @param event invoked event /<br>вызываемое событие
+   */
+  onClick (event: MouseEvent): void {
+    this.makeToEnd(event)
   }
 
   /**
@@ -208,7 +241,7 @@ export class MaskEvent {
    * Получение данных о выделении у элемента события.
    * @param event invoked event /<br>вызываемое событие
    */
-  protected getSelectionInfo (event: KeyboardEvent | ClipboardEvent): MaskEventSelection {
+  protected getSelectionInfo (event: Event): MaskEventSelection {
     const target = event.target as HTMLInputElement
 
     return {
@@ -229,5 +262,31 @@ export class MaskEvent {
 
     this.emit.set('input', event)
     this.emit.go()
+  }
+
+  /**
+   * Changes the cursor position if the alignment is right.<br>
+   * Изменяет место указателя, если выравнивание справа.
+   * @param event invoked event /<br>вызываемое событие
+   */
+  protected makeToEnd (event: Event): void {
+    if (this.right.isRight()) {
+      requestAnimationFrame(() => {
+        const length = this.valueBasic.getLength()
+        const {
+          target,
+          start,
+          end
+        } = this.getSelectionInfo(event)
+
+        if (start > length) {
+          target.selectionStart = length
+        }
+
+        if (end > length) {
+          target.selectionEnd = length
+        }
+      })
+    }
   }
 }

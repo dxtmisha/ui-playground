@@ -1,4 +1,34 @@
 {
+  "color": {
+    "_type": "var"
+  },
+  "color-opacity": {
+    "_type": "var"
+  },
+  "caret-opacity": {
+    "_type": "var"
+  },
   "#input": {},
-  "#character": {}
+  "#character": {
+    "#item": {
+      "placeholder": {
+        "_type": "state"
+      }
+    }
+  },
+  "visible": {
+    "_type": "state"
+  },
+  "right": {
+    "_type": "state"
+  },
+  "dir": {
+    "ltr": {
+      "_type": "state"
+    },
+    "rtl": {
+      "_type": "state"
+    },
+    "_type": "state"
+  }
 }

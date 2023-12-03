@@ -2,5 +2,26 @@
 
 @mixin mixinMaskToken {
   // :style [!] System label / Системная метка
+  --m3-mask-color: var(--m3-sys-palette-onSurface);
+  --m3-mask-colorOpacity: var(--m3-sys-opacity-disabled);
+  --m3-mask-caretOpacity: var(--m3-sys-opacity-high);
+  
+  &__character {
+    &__item {
+      
+      &--standard {
+        @include colorOpacity(#{var(--m3-sys-opacity-medium)});
+      }
+      
+      &--special {
+        @include colorOpacity(#{var(--m3-sys-opacity-high)});
+      }
+      
+      &--error {
+        @include color(#{var(--m3-sys-palette-onError)});
+        @include colorOpacity(#{var(--m3-sys-opacity-high)});
+      }
+    }
+  }
   // :style [!] System label / Системная метка
 }

@@ -660,6 +660,41 @@ $designsProperties: (
         name: 'd-mask',
         type: 'component',
         value: (
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'right':(
+            index: 'right',
+            name: '&--right',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dir':(
+            index: 'dir',
+            name: '&--dir',
+            type: 'state',
+            value: (
+              'ltr':(
+                index: 'ltr',
+                name: '&--ltr',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rtl':(
+                index: 'rtl',
+                name: '&--rtl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
           'input':(
             index: 'input',
             name: '&__input',
@@ -672,6 +707,20 @@ $designsProperties: (
             name: '&__character',
             type: 'subclass',
             value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -8058,6 +8107,59 @@ $designsProperties: (
         name: 'm3-mask',
         type: 'component',
         value: (
+          'color':(
+            index: 'color',
+            name: '--m3-mask-color',
+            type: 'var',
+            value: 'var(--m3-sys-palette-onSurface)',
+          ),
+          'colorOpacity':(
+            index: 'colorOpacity',
+            name: '--m3-mask-colorOpacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-disabled)',
+          ),
+          'caretOpacity':(
+            index: 'caretOpacity',
+            name: '--m3-mask-caretOpacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-high)',
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'right':(
+            index: 'right',
+            name: '&--right',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dir':(
+            index: 'dir',
+            name: '&--dir',
+            type: 'state',
+            value: (
+              'ltr':(
+                index: 'ltr',
+                name: '&--ltr',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rtl':(
+                index: 'rtl',
+                name: '&--rtl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
           'input':(
             index: 'input',
             name: '&__input',
@@ -8070,6 +8172,65 @@ $designsProperties: (
             name: '&__character',
             type: 'subclass',
             value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'standard':(
+                    index: 'standard',
+                    name: '&--standard',
+                    type: 'state',
+                    value: (
+                      'colorOpacity':(
+                        index: 'colorOpacity',
+                        name: 'color-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-medium)',
+                      ),
+                    ),
+                  ),
+                  'special':(
+                    index: 'special',
+                    name: '&--special',
+                    type: 'state',
+                    value: (
+                      'colorOpacity':(
+                        index: 'colorOpacity',
+                        name: 'color-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-high)',
+                      ),
+                    ),
+                  ),
+                  'error':(
+                    index: 'error',
+                    name: '&--error',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--m3-sys-palette-onError)',
+                      ),
+                      'colorOpacity':(
+                        index: 'colorOpacity',
+                        name: 'color-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-high)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

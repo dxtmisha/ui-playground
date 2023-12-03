@@ -614,6 +614,41 @@ $designsProperties: (
         name: 'd-mask',
         type: 'component',
         value: (
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'right':(
+            index: 'right',
+            name: '&--right',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dir':(
+            index: 'dir',
+            name: '&--dir',
+            type: 'state',
+            value: (
+              'ltr':(
+                index: 'ltr',
+                name: '&--ltr',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rtl':(
+                index: 'rtl',
+                name: '&--rtl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
           'input':(
             index: 'input',
             name: '&__input',
@@ -626,6 +661,20 @@ $designsProperties: (
             name: '&__character',
             type: 'subclass',
             value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -7984,6 +8033,27 @@ $designsProperties: (
             name: '&__item',
             type: 'subclass',
             value: (
+            ),
+          ),
+        ),
+      ),
+      'mask':(
+        index: 'mask',
+        name: 'md2-mask',
+        type: 'component',
+        value: (
+          'character':(
+            index: 'character',
+            name: '&--character',
+            type: 'state',
+            value: (
+              'standard':(
+                index: 'standard',
+                name: '&--standard',
+                type: 'state',
+                value: (
+                ),
+              ),
             ),
           ),
         ),

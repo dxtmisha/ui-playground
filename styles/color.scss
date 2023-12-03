@@ -194,13 +194,13 @@ $designsShade: () !default;
 
 /* Color */
 
-@mixin color($color, $opacity: null) {
+@mixin color($color, $opacity: null, $propertyName: 'color') {
   @if (isColorRbgOrVar($color)) {
     --sys-color: #{toColorRbg($color)};
     @include colorOpacity($opacity);
-    @include colorInit;
+    @include colorInit($propertyName);
   } @else {
-    color: $color;
+    #{$propertyName}: $color;
   }
 }
 
@@ -210,8 +210,8 @@ $designsShade: () !default;
   }
 }
 
-@mixin colorInit() {
-  color: rgba(var(--sys-color), var(--sys-color-opacity, 1));
+@mixin colorInit($propertyName: 'color') {
+  #{$propertyName}: rgba(var(--sys-color), var(--sys-color-opacity, 1));
 }
 
 /* Stroke */

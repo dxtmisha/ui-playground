@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 // import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+import { inArray } from '../../functions/object.ts'
 
 import { MaskDesign } from '../../constructors/Mask/MaskDesign'
 
@@ -16,8 +16,8 @@ import {
 } from '../../constructors/Mask/types'
 
 import {
-  propsInstruction// ,
-  // propsValues
+  propsInstruction,
+  propsValues
 } from './props'
 
 const emits = defineEmits<MaskEmits>()
@@ -26,7 +26,10 @@ const props = defineProps({ ...propsInstruction })
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // :classes-values [!] System label / Системная метка
-    'm3-mask': true
+    'm3-mask': true,
+    'm3-mask--visible': props.visible,
+    'm3-mask--right': props.right,
+    [`m3-mask--dir--${props.dir}`]: inArray(propsValues.dir, props.dir)
     // :classes-values [!] System label / Системная метка
   }
 }))

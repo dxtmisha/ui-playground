@@ -1,4 +1,4 @@
-import { h, ref, type VNode } from 'vue'
+import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { MaskRef } from './MaskRef.ts'
@@ -8,7 +8,6 @@ import {
   type ConstrStyles
 } from '../../types/constructor.ts'
 import {
-  type MaskElementInput,
   type MaskEventData
 } from './typesBasic.ts'
 import {
@@ -42,8 +41,6 @@ export class MaskDesign<
   CLASSES,
   P
 > {
-  protected readonly elementCharacter = ref<MaskElementInput>()
-
   protected readonly mask: MaskRef
 
   /**
@@ -66,14 +63,31 @@ export class MaskDesign<
     this.mask = new MaskRef(
       props,
       this.element,
-      this.elementCharacter,
       (event: Event, value: MaskEventData) => {
         this.emits?.(value?.type as 'input', event as InputEvent, value)
       },
-      this.getSubClass('character')
+      this.getSubClass(['character', 'item'])
     )
 
     this.init()
+  }
+
+  /**
+   * Element for storing the final data.<br>
+   * Элемент для хранения конечных данных.
+   */
+  renderData (): VNode | undefined {
+    const setup = this.setup()
+
+    if (this.props?.name) {
+      return h('input', {
+        type: 'hidden',
+        name: this.props.name,
+        value: setup.value.value
+      })
+    }
+
+    return undefined
   }
 
   /**
@@ -86,14 +100,16 @@ export class MaskDesign<
     return h('input', {
       ref: this.element,
       class: setup.classes.value.input,
-      value: setup.value.value,
+      value: setup.valueBasic.value,
 
       onFocus: setup.onFocus,
       onBlur: setup.onBlur,
       onKeydown: setup.onKeydown,
       onBeforeinput: setup.onBeforeinput,
       onInput: setup.onInput,
-      onPaste: setup.onPaste
+      onChange: setup.onChange,
+      onPaste: setup.onPaste,
+      onClick: setup.onClick
     })
   }
 
@@ -103,22 +119,27 @@ export class MaskDesign<
    */
   renderView (): VNode {
     const setup = this.setup()
-    const children: any[] = []
+    const view = setup.view.value
 
-    setup.view.value.forEach((character, key) => {
-      children.push(
-        h('span', {
-          key,
-          class: character.className
-        }, character.value)
-      )
-    })
+    if (view.length > 0) {
+      const children: any[] = []
+
+      view.forEach((character, key) => {
+        children.push(
+          h('span', {
+            key,
+            class: character.className
+          }, character.value)
+        )
+      })
+
+      return h('span', { class: setup.classes.value.character }, children)
+    }
 
     return h('span', {
       class: setup.classes.value.character,
-      onFocus: setup.onFocus,
-      onBlur: setup.onBlur
-    }, children)
+      innerHTML: '&nbsp;'
+    })
   }
 
   /**
@@ -135,6 +156,7 @@ export class MaskDesign<
    */
   protected initSetup (): SETUP {
     return {
+      valueBasic: this.mask.valueBasic,
       value: this.mask.value,
       view: this.mask.view,
 
@@ -143,7 +165,9 @@ export class MaskDesign<
       onKeydown: this.mask.onKeydown,
       onBeforeinput: this.mask.onBeforeinput,
       onInput: this.mask.onInput,
-      onPaste: this.mask.onPaste
+      onChange: this.mask.onChange,
+      onPaste: this.mask.onPaste,
+      onClick: this.mask.onClick
     } as SETUP
   }
 
@@ -166,11 +190,14 @@ export class MaskDesign<
    */
   protected initClasses (): Partial<CLASSES> {
     return {
-      main: {},
+      main: {
+        ...this.toClassName(this.mask.classes.value)
+      },
       ...{
         // :classes [!] System label / Системная метка
         input: this.getSubClass('input'),
-        character: this.getSubClass('character')
+        character: this.getSubClass('character'),
+        characterItem: this.getSubClass('character__item')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -181,10 +208,7 @@ export class MaskDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
-    }
+    return {}
   }
 
   /**
@@ -194,6 +218,7 @@ export class MaskDesign<
   protected initRender (): VNode {
     const setup = this.setup()
     const children: any[] = [
+      this.renderData(),
       this.renderInput(),
       this.renderView()
     ]

@@ -10,6 +10,8 @@ import { MaskFormat } from './MaskFormat.ts'
 import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskMatch } from './MaskMatch.ts'
 import { MaskPattern } from './MaskPattern.ts'
+import { MaskRight } from './MaskRight.ts'
+
 import { MaskRubber } from './MaskRubber.ts'
 
 import { MaskItem } from './MaskItem.ts'
@@ -25,9 +27,9 @@ import { MaskEmit } from './MaskEmit.ts'
 import { MaskData } from './MaskData.ts'
 import { MaskEvent } from './MaskEvent.ts'
 
+import { type ConstrClassObject } from '../../types/constructor.ts'
 import {
   type MaskElementInput,
-  type MaskElementCharacter,
   type MaskEventData,
   type MaskViewList
 } from './typesBasic.ts'
@@ -50,6 +52,7 @@ export class Mask {
   protected readonly special: MaskSpecial
   protected readonly match: MaskMatch
   protected readonly pattern: MaskPattern
+  protected readonly right: MaskRight
 
   protected readonly rubber: MaskRubber
 
@@ -70,14 +73,12 @@ export class Mask {
    * Constructor
    * @param props input data /<br>входные данные
    * @param element input element /<br>элемент ввода
-   * @param elementCharacter element for managing the selection location /<br>элемент для управления местом выделения
    * @param callbackEvent the function is called when an event is triggered /<br>функция вызывается, когда срабатывает событие
    * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    */
   constructor (
     protected readonly props: MaskProps,
     element: MaskElementInput,
-    elementCharacter: MaskElementCharacter,
     callbackEvent: (event: Event, value: MaskEventData) => void,
     classCharacter: string = 'is-character'
   ) {
@@ -101,6 +102,10 @@ export class Mask {
       this.type,
       this.date,
       this.special
+    )
+    this.right = new MaskRight(
+      props,
+      this.type
     )
 
     this.rubber = new MaskRubber(
@@ -186,11 +191,31 @@ export class Mask {
     this.event = new MaskEvent(
       this.buffer,
       this.focus,
+      this.right,
       this.selection,
+      this.valueBasic,
       this.validation,
       this.emit,
       this.data
     )
+  }
+
+  /**
+   * Receiving basic standard values.<br>
+   * Получение базовых стандартных значений.
+   */
+  getValueBasic (): string {
+    if (this.right.isRight()) {
+      let data = ''
+
+      this.view.get().forEach(item => {
+        data += item.value
+      })
+
+      return data
+    }
+
+    return this.valueBasic.get()
   }
 
   /**
@@ -215,6 +240,16 @@ export class Mask {
    */
   getEvent (): MaskEvent {
     return this.event
+  }
+
+  /**
+   * Values for the class.<br>
+   * Значения для класса.
+   */
+  getClasses (): ConstrClassObject {
+    return {
+      '??--right': this.right.isRight()
+    }
   }
 
   /**

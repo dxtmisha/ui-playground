@@ -49,6 +49,7 @@ export type MaskEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MaskSetup = {
+  valueBasic: ComputedRef<string>
   value: ComputedRef<string>
   view: ComputedRef<MaskViewList>
 
@@ -57,7 +58,9 @@ export type MaskSetup = {
   onKeydown (event: KeyboardEvent): void
   onBeforeinput (event: InputEvent): void
   onInput (event: InputEvent): void
+  onChange (event: Event): void
   onPaste (event: ClipboardEvent): void
+  onClick (event: MouseEvent): void
 }
 
 /**
@@ -85,5 +88,6 @@ export type MaskClasses = {
   // :classes [!] System label / Системная метка
   input: string
   character: string
+  characterItem: string
   // :classes [!] System label / Системная метка
 }

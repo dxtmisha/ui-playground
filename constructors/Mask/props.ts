@@ -22,14 +22,19 @@ export type MaskProps = {
   check?: InputPatternItemOrFunction
   fraction?: MaskFractionItem
   currency?: string
+  name?: string
+  value?: string
 
   // Options
   type?: MaskTypeItem
-  language?: string,
+  language?: string
   view?: string
 
   // Tokens
   // :type [!] System label / Системная метка
+  visible?: boolean
+  right?: boolean
+  dir?: 'ltr' | 'rtl'
   // :type [!] System label / Системная метка
 }
 
@@ -38,8 +43,8 @@ export type MaskProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsMask: MaskProps = {
-  match: /[0-9]/,
   special: '*',
+  match: /[0-9]/,
   type: 'text',
   view: '_',
   ...{
@@ -67,6 +72,8 @@ export const propsMask = {
   check: Object as PropType<MaskProps['check']>,
   fraction: [String, Boolean, Number],
   currency: String,
+  name: String,
+  value: String,
 
   // Options
   type: {
@@ -82,6 +89,9 @@ export const propsMask = {
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
+    visible: Boolean,
+    right: Boolean,
+    dir: String as PropType<MaskProps['dir']>
     // :prop [!] System label / Системная метка
   }
 }
