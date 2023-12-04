@@ -10,6 +10,9 @@
       "special": {
         "color-opacity": "{sys.opacity.high}"
       },
+      "transition": {
+        "color-opacity": "{sys.opacity.high}"
+      },
       "error": {
         "color": "{sys.palette.onError}",
         "color-opacity": "{sys.opacity.high}"

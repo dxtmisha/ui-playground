@@ -1,14 +1,14 @@
-import { computed, type ComputedRef, type Ref, shallowRef, type ShallowRef, watch } from 'vue'
+import { computed, type ComputedRef, type Ref, shallowRef, type ShallowRef, toRefs, watch } from 'vue'
 
 import { Mask } from './Mask.ts'
 
+import { type ConstrClassObject } from '../../types/constructor.ts'
 import {
   type MaskElementInput,
   type MaskEventData,
   type MaskViewList
 } from './typesBasic.ts'
 import { type MaskProps } from './props.ts'
-import { ConstrClassObject } from '../../types/constructor.ts'
 
 /**
  * A class for working with a mask.<br>
@@ -45,14 +45,13 @@ export class MaskRef {
     callbackEvent?: (event: Event, value: MaskEventData) => void,
     classCharacter = 'is-character'
   ) {
+    const refs = toRefs(props)
+
     this.mask = new Mask(
       props,
       elementInput.value,
       (event, value) => {
-        this.valueBasic.value = this.mask.getValueBasic()
-        this.value.value = this.mask.getValue()
-        this.view.value = this.mask.getView()
-
+        this.updateValue()
         callbackEvent?.(event, value)
       },
       classCharacter
@@ -60,6 +59,13 @@ export class MaskRef {
 
     if (elementInput) {
       watch(elementInput, value => this.mask.setElement(value))
+    }
+
+    if (refs?.value) {
+      watch(refs.value, () => {
+        this.mask.reset(props?.value)
+        this.updateValue()
+      })
     }
 
     this.valueBasic = shallowRef(this.mask.getValueBasic())
@@ -76,5 +82,17 @@ export class MaskRef {
     this.onClick = (event: MouseEvent) => this.mask.getEvent().onClick(event)
 
     this.classes = computed(() => this.mask.getClasses())
+  }
+
+  /**
+   * Updating the entered data.<br>
+   * Обновление введенных данных.
+   */
+  updateValue (): this {
+    this.valueBasic.value = this.mask.getValueBasic()
+    this.value.value = this.mask.getValue()
+    this.view.value = this.mask.getView()
+
+    return this
   }
 }

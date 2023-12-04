@@ -9,6 +9,7 @@ export type InputValidationItem<V = string, T extends string = string> = {
   type?: T
   group?: string
   status?: boolean
+  required?: boolean
   input?: HTMLInputElement
   validationMessage?: string
   validity?: ValidityState

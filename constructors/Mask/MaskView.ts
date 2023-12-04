@@ -8,7 +8,7 @@ import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValidation } from './MaskValidation.ts'
 
 import { type MaskProps } from './props.ts'
-import { type MaskViewList } from './typesBasic.ts'
+import { CHAR_DELETE, type MaskViewList } from './typesBasic.ts'
 
 const VIEW_DEFAULT = '_'
 
@@ -53,9 +53,11 @@ export class MaskView {
     const data: MaskViewList = []
 
     this.mask.getList().forEach((char, index) => {
+      const value = this.valueBasic.getChar(index)
+
       data.push({
-        className: `${this.className} ${this.className}--${this.getStatus(char, index)}`,
-        value: this.getValue(char, index)
+        className: `${this.className} ${this.className}--${this.getStatus(char, value)}`,
+        value: this.getValue(char, value)
       })
     })
 
@@ -63,13 +65,42 @@ export class MaskView {
   }
 
   /**
+   * Getting the basic standard values for the input field.<br>
+   * Получение базовых стандартных значений для поля ввода.
+   */
+  getInput (): string {
+    const value: string[] = []
+
+    this.valueBasic.get().split('').forEach((char, index) => {
+      if (char === CHAR_DELETE) {
+        value.push(
+          this.getSpecialToView(this.mask.get(index) ?? '') ?? char
+        )
+      } else {
+        value.push(char)
+      }
+    })
+
+    return value.join('')
+  }
+
+  /**
+   * Checks if the value is filled in.<br>
+   * Проверяет, заполнено ли значение.
+   * @param value input values /<br>вводимые значения
+   */
+  protected isValue (value?: string): value is string {
+    return Boolean(value && value !== CHAR_DELETE)
+  }
+
+  /**
    * Returns the status by the entered symbol and the location.<br>
    * Возвращает статус по введенному символу и месту.
    * @param char checkable symbol /<br>проверяемая переменная
-   * @param index key symbol number in a mask /<br>номер ключа символа в маске
+   * @param value input values /<br>вводимые значения
    */
-  protected getStatus (char: string, index: number): string {
-    if (this.valueBasic.getLength() > index) {
+  protected getStatus (char: string, value?: string): string {
+    if (this.isValue(value)) {
       if (!this.special.isSpecial(char)) {
         return 'standard'
       }
@@ -92,10 +123,10 @@ export class MaskView {
    * Returns a symbol from a filled value by mask or special symbol.<br>
    * Возвращает символ из заполненного значения по маске или специальному символу.
    * @param char checkable symbol /<br>проверяемая переменная
-   * @param index key symbol number in a mask /<br>номер ключа символа в маске
+   * @param value input values /<br>вводимые значения
    */
-  protected getValue (char: string, index: number): string {
-    return this.valueBasic.getChar(index) ?? this.getSpecialToView(char)
+  protected getValue (char: string, value?: string): string {
+    return this.isValue(value) ? value : this.getSpecialToView(char)
   }
 
   /**

@@ -82,10 +82,14 @@ export class MaskValidation {
       }
 
       return {
-        value: item.value
+        value: item.value,
+        required: true
       }
     }
 
-    return { value: this.value.get() }
+    return {
+      value: this.value.get(),
+      required: false
+    }
   }
 }

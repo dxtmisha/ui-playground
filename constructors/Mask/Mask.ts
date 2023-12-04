@@ -1,3 +1,5 @@
+import { toAnyToString } from '../../functions/string.ts'
+
 import { MaskType } from './MaskType.ts'
 import { MaskBuffer } from './MaskBuffer.ts'
 import { MaskFocus } from './MaskFocus.ts'
@@ -77,7 +79,7 @@ export class Mask {
    * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    */
   constructor (
-    protected readonly props: MaskProps,
+    props: MaskProps,
     element: MaskElementInput,
     callbackEvent: (event: Event, value: MaskEventData) => void,
     classCharacter: string = 'is-character'
@@ -133,6 +135,7 @@ export class Mask {
     )
     this.character = new MaskCharacter(
       this.characterLength,
+      this.special,
       this.item,
       this.selection
     )
@@ -198,6 +201,10 @@ export class Mask {
       this.emit,
       this.data
     )
+
+    if (props?.value) {
+      this.data.reset(toAnyToString(props.value))
+    }
   }
 
   /**
@@ -215,7 +222,7 @@ export class Mask {
       return data
     }
 
-    return this.valueBasic.get()
+    return this.view.getInput()
   }
 
   /**
@@ -259,6 +266,18 @@ export class Mask {
    */
   setElement (element: MaskElementInput): this {
     this.data.setElement(element)
+    return this
+  }
+
+  /**
+   * Resets all values or updates to the new one.<br>
+   * Сбрасывает все значения или обновляется до нового.
+   * @param value new values /<br>новые значения
+   */
+  reset (value?: string | number): this {
+    this.data.reset(toAnyToString(value))
+    this.emit.set('reset', {} as Event).go()
+
     return this
   }
 }

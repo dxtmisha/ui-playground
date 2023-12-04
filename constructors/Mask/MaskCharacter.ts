@@ -1,6 +1,9 @@
 import { MaskItem } from './MaskItem.ts'
+import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskSelection } from './MaskSelection.ts'
 import { MaskCharacterLength } from './MaskCharacterLength.ts'
+
+import { CHAR_DELETE } from './typesBasic.ts'
 
 /**
  * Class for working with and storing input characters.<br>
@@ -12,15 +15,28 @@ export class MaskCharacter {
   /**
    * Constructor
    * @param characterLength
+   * @param special
    * @param mask
    * @param selection
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly characterLength: MaskCharacterLength,
+    protected readonly special: MaskSpecial,
     protected readonly mask: MaskItem,
     protected readonly selection: MaskSelection
   ) {
+  }
+
+  /**
+   * Checks if the selected character was previously deleted.<br>
+   * Проверяет, является ли выделенный символ ранее удаленным.
+   */
+  isCharDelete (): boolean {
+    const key = this.selection.get()
+
+    return key in this.value &&
+      this.value[key] === CHAR_DELETE
   }
 
   /**
@@ -61,7 +77,7 @@ export class MaskCharacter {
    * @param char entered character /<br>введенный символ
    */
   add (char: string): this {
-    this.value.splice(this.selection.get(), 0, char)
+    this.value.splice(this.selection.get(), this.isCharDelete() ? 1 : 0, char)
     this.selection.goNext().resetImmediate()
     this.updateLength()
 
@@ -73,9 +89,16 @@ export class MaskCharacter {
    * Удаление 1 введенного символа по месту его выделения.
    */
   pop (): this {
-    this.value.splice(this.selection.get() - 1, 1)
+    const key = this.selection.get() - 1
+
+    if (this.isSpecialNextAnother()) {
+      this.value[key] = CHAR_DELETE
+    } else {
+      this.value.splice(key, 1)
+      this.updateLength()
+    }
+
     this.selection.goBack().resetImmediate()
-    this.updateLength()
 
     return this
   }
@@ -100,6 +123,33 @@ export class MaskCharacter {
   shift (status: number = 1): this {
     this.characterLength.set(this.value.length + status)
     return this
+  }
+
+  /**
+   * Checks if there is another group of special characters ahead.<br>
+   * Проверяет, если впереди другая группа специальных символов.
+   */
+  protected isSpecialNextAnother (): boolean {
+    const selection = this.selection.get() - 1
+    const length = this.value.length
+
+    if (selection <= length) {
+      const info = this.mask.getInfo()
+      const char = info[selection].char
+
+      for (let i: number = selection; i < length; i++) {
+        const charNext = info[i].char
+
+        if (
+          this.special.isSpecial(charNext) &&
+          char !== charNext
+        ) {
+          return true
+        }
+      }
+    }
+
+    return false
   }
 
   /**

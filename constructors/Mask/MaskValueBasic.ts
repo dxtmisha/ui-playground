@@ -25,7 +25,7 @@ export class MaskValueBasic extends CacheItem<string> {
    */
   get (): string {
     return this.getCache([
-      ...this.mask.getComparison(),
+      ...this.mask.getList(),
       ...this.character.get()
     ])
   }
@@ -64,6 +64,7 @@ export class MaskValueBasic extends CacheItem<string> {
 
         if (
           key >= character.length &&
+          this.rubberTransition.is() &&
           !this.rubberTransition.isChar(char)
         ) {
           break

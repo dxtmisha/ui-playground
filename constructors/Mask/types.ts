@@ -42,6 +42,10 @@ export type MaskEmits = {
     event: InputEvent,
     value: MaskEventData
   ]
+  reset: [
+    event: Event,
+    value: MaskEventData
+  ]
 }
 
 /**

@@ -65,6 +65,7 @@ export class CacheItem<T> {
    */
   private isUpdate (comparison: any[]): boolean {
     if (
+      this.cache === undefined ||
       this.comparisons.length !== comparison.length ||
       this.comparisons.findIndex((value, index) => value !== comparison[index]) >= 0
     ) {

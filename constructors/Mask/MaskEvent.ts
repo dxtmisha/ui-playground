@@ -1,16 +1,16 @@
+import { getClipboardData } from '../../functions/string.ts'
 import { makeStopPropagation } from '../../functions/event.ts'
 
 import { MaskBuffer } from './MaskBuffer.ts'
 import { MaskFocus } from './MaskFocus.ts'
+import { MaskRight } from './MaskRight.ts'
 import { MaskSelection } from './MaskSelection.ts'
+import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValidation } from './MaskValidation.ts'
-import { MaskData } from './MaskData.ts'
 import { MaskEmit } from './MaskEmit.ts'
+import { MaskData } from './MaskData.ts'
 
 import { type MaskEventSelection } from './typesBasic.ts'
-import { getClipboardData } from '../../functions/string.ts'
-import { MaskRight } from './MaskRight.ts'
-import { MaskValueBasic } from './MaskValueBasic.ts'
 
 /**
  * Class for working with events.<br>
@@ -172,12 +172,17 @@ export class MaskEvent {
   }
 
   /**
-   * Перехвать события изменения, это для перехвать события автозавпольнения у браузеры.
+   * Intercepting the change event, this is for intercepting the browser’s autocomplete event.<br>
+   * Перехват события изменения, это для перехвата события автозаполнения в браузере.
    * @param event invoked event /<br>вызываемое событие
    */
   onChange (event: Event): void {
     const target = event.target as HTMLInputElement
+
     this.data.reset(target.value)
+    this.emit
+      .set('change', event)
+      .go()
   }
 
   /**

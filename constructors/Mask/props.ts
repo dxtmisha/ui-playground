@@ -23,7 +23,7 @@ export type MaskProps = {
   fraction?: MaskFractionItem
   currency?: string
   name?: string
-  value?: string
+  value?: string | number
 
   // Options
   type?: MaskTypeItem
@@ -73,7 +73,7 @@ export const propsMask = {
   fraction: [String, Boolean, Number],
   currency: String,
   name: String,
-  value: String,
+  value: [String, Number],
 
   // Options
   type: {

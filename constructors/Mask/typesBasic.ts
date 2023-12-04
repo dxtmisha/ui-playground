@@ -43,7 +43,7 @@ export type MaskViewItem = {
 }
 export type MaskViewList = MaskViewItem[]
 
-export type MaskList = string | string[]
+export type MaskList = (string) | string[]
 
 export type MaskEventData = InputValidationItem<string, 'focus' | 'blur' | 'keydown' | 'input' | 'change'>
 export type MaskEventSelection = {
@@ -52,3 +52,5 @@ export type MaskEventSelection = {
   end: number
   length: number
 }
+
+export const CHAR_DELETE = '~'

@@ -82,7 +82,6 @@ export class MaskItem extends CacheItem<string[]> {
     char: string,
     selection: number = -1
   ): number {
-    // TODO
     let data = selection
 
     this.getList().forEach((item, index) => {

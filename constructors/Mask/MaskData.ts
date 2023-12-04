@@ -13,9 +13,9 @@ import { MaskSelection } from './MaskSelection.ts'
 import { MaskCharacter } from './MaskCharacter.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValue } from './MaskValue.ts'
+import { MaskEmit } from './MaskEmit.ts'
 
 import { type MaskElementInput } from './typesBasic.ts'
-import { MaskEmit } from './MaskEmit.ts'
 
 /**
  * Class for working with behavior when entering data.<br>
@@ -96,8 +96,10 @@ export class MaskData {
         this.character.shift()
 
         if (
-          this.character.getFocus() &&
-          this.mask.getMaxLength() > this.valueBasic.getLength()
+          this.character.getFocus() && (
+            this.mask.getMaxLength() > this.valueBasic.getLength() ||
+            this.character.isCharDelete()
+          )
         ) {
           this.character.add(char)
           update = true

@@ -8,6 +8,7 @@ import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
 
 import {
+  CHAR_DELETE,
   type MaskGroup,
   type MaskGroupItem
 } from './typesBasic.ts'
@@ -27,7 +28,6 @@ export class MaskValue {
    * @param mask
    * @param special
    * @param valueBasic
-   * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -36,8 +36,7 @@ export class MaskValue {
     protected readonly format: MaskFormat,
     protected readonly mask: MaskItem,
     protected readonly special: MaskSpecial,
-    protected readonly valueBasic: MaskValueBasic,
-    protected readonly callback?: (value: MaskGroup) => void
+    protected readonly valueBasic: MaskValueBasic
   ) {
     this.info = new CacheItem(() => this.initInfo())
   }
@@ -164,7 +163,10 @@ export class MaskValue {
       if (this.special.isSpecial(char)) {
         const value = this.add(data, char)
 
-        if (this.isStandard(index)) {
+        if (
+          this.isStandard(index) &&
+          standard[index] !== CHAR_DELETE
+        ) {
           value.chars.push(standard[index])
         }
 
