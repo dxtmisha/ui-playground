@@ -2,7 +2,7 @@ import {
   forEach,
   isArray,
   isObject,
-  isObjectNotArray
+  isObjectNotArray, isSelected
 } from '../../functions/data.ts'
 
 import { CacheItem } from '../../classes/CacheItem.ts'
@@ -46,6 +46,22 @@ export class MaskSpecial extends CacheItem<string[]> {
   }
 
   /**
+   * Returns the transition symbol for the selected group.<br>
+   * Проверяет, является ли символ перехода для выбранной группы.
+   * @param groupName group name /<br>название группы
+   * @param char symbol for checking /<br>символ для проверки
+   */
+  isTransitionChar (groupName: string, char: string): boolean {
+    const list = this.getTransitionChar(groupName)
+
+    if (list) {
+      return isSelected(char, list)
+    }
+
+    return false
+  }
+
+  /**
    * Checks if the special character is only 1.<br>
    * Проверяет, является ли специальный символ только 1.
    */
@@ -70,6 +86,24 @@ export class MaskSpecial extends CacheItem<string[]> {
    */
   getFirst (): string {
     return this.get()?.[0] ?? '*'
+  }
+
+  /**
+   * Returns the default values.<br>
+   * Возвращает значения по умолчанию.
+   * @param groupName group name /<br>название группы
+   */
+  getDefault (groupName: string): MaskMatchItem | undefined {
+    return this.getSpecialItem(groupName)?.defaultValue
+  }
+
+  /**
+   * Returns the transition symbol for the selected group.<br>
+   * Возвращает символ перехода для выбранной группы.
+   * @param groupName group name /<br>название группы
+   */
+  getTransitionChar (groupName: string): string | string[] | undefined {
+    return this.getSpecialItem(groupName)?.transitionChar
   }
 
   /**

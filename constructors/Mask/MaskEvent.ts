@@ -98,7 +98,7 @@ export class MaskEvent {
 
     if (this.isKey(event)) {
       if (event.key === 'Backspace') {
-        if (start > 0) {
+        if (start > 0 || start !== end) {
           this.data.pop(start, end)
         }
       } else if (event.key.length <= 1) {
@@ -206,12 +206,15 @@ export class MaskEvent {
           this.data.pop(start, end)
             .add(this.selection.getShift(), text)
         }
+
+        this.change = true
+        this.emit
+          .set('paste', event)
+          .go()
       })
       .catch(() => {
         console.error('getClipboardData')
       })
-
-    event.preventDefault()
   }
 
   /**

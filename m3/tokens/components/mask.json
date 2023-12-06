@@ -14,7 +14,7 @@
         "color-opacity": "{sys.opacity.high}"
       },
       "error": {
-        "color": "{sys.palette.onError}",
+        "color": "{sys.palette.error}",
         "color-opacity": "{sys.opacity.high}"
       }
     }

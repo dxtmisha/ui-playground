@@ -292,7 +292,7 @@ export class Datetime {
     const date: string[] = []
     let time: string | undefined
 
-    geo.setHour24(false)
+    geo.setHour24(true)
 
     if (this.type === 'hour-minute') {
       time = geo.locale(this.type, {

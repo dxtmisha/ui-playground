@@ -155,6 +155,7 @@ export class MaskItem extends CacheItem<string[]> {
   getComparison (): any[] {
     return [
       this.characterLength.get(),
+      this.rubberItem.getCode(),
       this.props?.mask,
       this.props?.special,
       this.props?.fraction,

@@ -133,18 +133,21 @@ export class MaskCharacter {
     const selection = this.selection.get() - 1
     const length = this.value.length
 
-    if (selection <= length) {
+    if (selection > 0 && selection <= length) {
       const info = this.mask.getInfo()
+
       const char = info[selection].char
 
       for (let i: number = selection; i < length; i++) {
-        const charNext = info[i].char
+        if (i in info) {
+          const charNext = info[i].char
 
-        if (
-          this.special.isSpecial(charNext) &&
-          char !== charNext
-        ) {
-          return true
+          if (
+            this.special.isSpecial(charNext) &&
+            char !== charNext
+          ) {
+            return true
+          }
         }
       }
     }

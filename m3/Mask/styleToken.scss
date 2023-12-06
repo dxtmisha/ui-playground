@@ -17,8 +17,12 @@
         @include colorOpacity(#{var(--m3-sys-opacity-high)});
       }
       
+      &--transition {
+        @include colorOpacity(#{var(--m3-sys-opacity-high)});
+      }
+      
       &--error {
-        @include color(#{var(--m3-sys-palette-onError)});
+        @include color(#{var(--m3-sys-palette-error)});
         @include colorOpacity(#{var(--m3-sys-opacity-high)});
       }
     }

@@ -8210,6 +8210,19 @@ $designsProperties: (
                       ),
                     ),
                   ),
+                  'transition':(
+                    index: 'transition',
+                    name: '&--transition',
+                    type: 'state',
+                    value: (
+                      'colorOpacity':(
+                        index: 'colorOpacity',
+                        name: 'color-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-high)',
+                      ),
+                    ),
+                  ),
                   'error':(
                     index: 'error',
                     name: '&--error',
@@ -8219,7 +8232,7 @@ $designsProperties: (
                         index: 'color',
                         name: 'color',
                         type: 'property',
-                        value: 'var(--m3-sys-palette-onError)',
+                        value: 'var(--m3-sys-palette-error)',
                       ),
                       'colorOpacity':(
                         index: 'colorOpacity',

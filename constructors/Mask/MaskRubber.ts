@@ -1,5 +1,5 @@
 import { isArray, isSelected, isString } from '../../functions/data.ts'
-import { getColumn } from '../../functions/object.ts'
+import { getColumn, replaceRecursive } from '../../functions/object.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskRubberItem } from './MaskRubberItem.ts'
@@ -15,12 +15,13 @@ import {
   type MaskSpecialItem,
   type MaskSpecialList
 } from './typesBasic.ts'
+import { CacheItem } from '../../classes/CacheItem.ts'
 
 /**
  * Class for working with the rubber type.<br>
  * Класс для работы с резиновым типом.
  */
-export class MaskRubber {
+export class MaskRubber extends CacheItem<MaskSpecialList> {
   /**
    * Constructor
    * @param props base data /<br>базовые данные
@@ -42,6 +43,7 @@ export class MaskRubber {
     protected readonly match: MaskMatch,
     protected readonly format: MaskFormat
   ) {
+    super(() => this.initList())
   }
 
   /**
@@ -89,7 +91,10 @@ export class MaskRubber {
    * Получение списка резиновых групп.
    */
   getList (): MaskSpecialList {
-    return this.type.isCurrencyOrNumber() ? this.format.getRubber() : this.special.getRubberList()
+    return this.getCache([
+      this.props?.type,
+      this.props?.special
+    ])
   }
 
   /**
@@ -167,5 +172,22 @@ export class MaskRubber {
     this.rubberTransition.reset()
 
     return this
+  }
+
+  /**
+   * Processes data to get an object to work with elastic groups.<br>
+   * Обрабатывает данные для получения объекта для работы с резиновыми группами.
+   */
+  protected initList (): MaskSpecialList {
+    if (
+      this.type.isCurrencyOrNumber()
+    ) {
+      return replaceRecursive(
+        this.format.getRubber(),
+        this.special.getRubberList()
+      )
+    }
+
+    return this.special.getRubberList()
   }
 }

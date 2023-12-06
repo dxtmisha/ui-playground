@@ -63,12 +63,13 @@ export class MaskValueBasic extends CacheItem<string> {
         value.push(character[key++])
 
         if (
-          key >= character.length &&
+          key > character.length &&
           this.rubberTransition.is() &&
           !this.rubberTransition.isChar(char)
         ) {
           break
         }
+        console.log('rubberTransition', this.rubberTransition.get(), char)
       } else {
         break
       }

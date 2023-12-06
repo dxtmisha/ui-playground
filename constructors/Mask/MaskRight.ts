@@ -16,13 +16,20 @@ export class MaskRight {
   }
 
   /**
+   * Returns whether the type is a number or mirror.<br>
+   * Возвращает, является ли тип номером или зеркальным.
+   */
+  isEnd (): boolean {
+    return this.type.isCurrencyOrNumber() ||
+      this.props?.dir === 'rtl' ||
+      false
+  }
+
+  /**
    * Checks if the alignment value is right.<br>
    * Проверяет, является ли значение выравнивания справа.
    */
   isRight (): boolean {
-    return this.type.isCurrencyOrNumber() ||
-      this.props?.right ||
-      this.props?.dir === 'rtl' ||
-      false
+    return this.props?.right || this.isEnd()
   }
 }

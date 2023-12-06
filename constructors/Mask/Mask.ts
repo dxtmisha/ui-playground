@@ -71,6 +71,8 @@ export class Mask {
   protected readonly data: MaskData
   protected readonly event: MaskEvent
 
+  protected oldValue: string = ''
+
   /**
    * Constructor
    * @param props input data /<br>входные данные
@@ -90,7 +92,7 @@ export class Mask {
     this.rubberItem = new MaskRubberItem()
     this.rubberTransition = new MaskRubberTransition()
     this.characterLength = new MaskCharacterLength()
-    this.date = new MaskDate(this.type)
+    this.date = new MaskDate(props, this.type)
     this.format = new MaskFormat(
       props,
       this.type,
@@ -203,7 +205,8 @@ export class Mask {
     )
 
     if (props?.value) {
-      this.data.reset(toAnyToString(props.value))
+      this.oldValue = toAnyToString(props?.value)
+      this.data.reset(this.oldValue)
     }
   }
 
@@ -255,7 +258,7 @@ export class Mask {
    */
   getClasses (): ConstrClassObject {
     return {
-      '??--right': this.right.isRight()
+      '??--end': this.right.isEnd()
     }
   }
 
@@ -274,10 +277,15 @@ export class Mask {
    * Сбрасывает все значения или обновляется до нового.
    * @param value new values /<br>новые значения
    */
-  reset (value?: string | number): this {
-    this.data.reset(toAnyToString(value))
-    this.emit.set('reset', {} as Event).go()
+  reset (value?: string | number): boolean {
+    const newValue = toAnyToString(value)
 
-    return this
+    if (this.oldValue !== newValue) {
+      this.data.reset(newValue)
+      this.emit.set('reset', {} as Event).go()
+      return true
+    }
+
+    return false
   }
 }

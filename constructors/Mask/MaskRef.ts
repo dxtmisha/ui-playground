@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, type Ref, shallowRef, type ShallowRef, toRefs, watch } from 'vue'
+import { computed, type ComputedRef, type Ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
 
 import { Mask } from './Mask.ts'
 
@@ -17,9 +17,9 @@ import { type MaskProps } from './props.ts'
 export class MaskRef {
   protected mask: Mask
 
-  readonly valueBasic: ShallowRef<string>
-  readonly value: ShallowRef<string>
-  readonly view: ShallowRef<MaskViewList>
+  readonly valueBasic: ShallowRef<string> = shallowRef('')
+  readonly value: ShallowRef<string> = shallowRef('')
+  readonly view: ShallowRef<MaskViewList> = shallowRef([])
 
   readonly onFocus: (event: FocusEvent) => void
   readonly onBlur: (event: FocusEvent) => void
@@ -45,13 +45,14 @@ export class MaskRef {
     callbackEvent?: (event: Event, value: MaskEventData) => void,
     classCharacter = 'is-character'
   ) {
-    const refs = toRefs(props)
-
     this.mask = new Mask(
       props,
       elementInput.value,
       (event, value) => {
-        this.updateValue()
+        if (['input', 'paste'].indexOf(value?.type ?? '') !== -1) {
+          this.updateValue()
+        }
+
         callbackEvent?.(event, value)
       },
       classCharacter
@@ -61,16 +62,11 @@ export class MaskRef {
       watch(elementInput, value => this.mask.setElement(value))
     }
 
-    if (refs?.value) {
-      watch(refs.value, () => {
-        this.mask.reset(props?.value)
+    watchEffect(() => {
+      if (this.mask.reset(props?.value)) {
         this.updateValue()
-      })
-    }
-
-    this.valueBasic = shallowRef(this.mask.getValueBasic())
-    this.value = shallowRef(this.mask.getValue())
-    this.view = shallowRef(this.mask.getView())
+      }
+    })
 
     this.onFocus = (event: FocusEvent) => this.mask.getEvent().onFocus(event)
     this.onBlur = (event: FocusEvent) => this.mask.getEvent().onBlur(event)
@@ -82,6 +78,7 @@ export class MaskRef {
     this.onClick = (event: MouseEvent) => this.mask.getEvent().onClick(event)
 
     this.classes = computed(() => this.mask.getClasses())
+    this.updateValue()
   }
 
   /**

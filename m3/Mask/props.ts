@@ -22,7 +22,7 @@ export type PropsToken = {
   // [constructor] fraction?: MaskFractionItem
   // [constructor] currency?: string
   // [constructor] name?: string
-  // [constructor] value?: string
+  // [constructor] value?: string | number
   // [constructor] type?: MaskTypeItem
   // [constructor] language?: string
   // [constructor] view?: string

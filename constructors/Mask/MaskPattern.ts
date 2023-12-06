@@ -76,7 +76,7 @@ export class MaskPattern {
         isObjectNotArray(item) &&
         isObjectNotArray(patterns[index])
       ) {
-        Object.assign(patterns[index], index)
+        Object.assign(patterns[index], item)
       }
     }
 

@@ -19,6 +19,7 @@ import {
  */
 export class MaskValue {
   protected info: CacheItem<MaskGroup>
+  protected valueFinal: CacheItem<string>
 
   /**
    * Constructor
@@ -39,6 +40,7 @@ export class MaskValue {
     protected readonly valueBasic: MaskValueBasic
   ) {
     this.info = new CacheItem(() => this.initInfo())
+    this.valueFinal = new CacheItem(() => this.initValue())
   }
 
   /**
@@ -75,13 +77,16 @@ export class MaskValue {
 
     if (this.type.isDate()) {
       if (this.isFull()) {
-        return this.date.getValue()
+        return this.date.getValueStandard(this.getInfo())
       }
 
       return ''
     }
 
-    return this.valueBasic.get()
+    return this.valueFinal.getCache([
+      this.mask.getList().join(''),
+      this.valueBasic.get()
+    ])
   }
 
   /**
@@ -175,6 +180,26 @@ export class MaskValue {
         value.value = value.full ? value.chars.join('') : ''
       }
     })
+
+    return data
+  }
+
+  protected initValue (): string {
+    const basic = this.valueBasic.get().split('')
+    const mask = this.mask.getList()
+    let data: string = ''
+
+    for (const index in mask) {
+      if (index in basic) {
+        data += basic[index]
+      } else {
+        const defaultValue = this.special.getDefault(mask[index])
+
+        if (defaultValue) {
+          data += defaultValue
+        }
+      }
+    }
 
     return data
   }

@@ -42,6 +42,10 @@ export type MaskEmits = {
     event: InputEvent,
     value: MaskEventData
   ]
+  paste: [
+    event: ClipboardEvent,
+    value: MaskEventData
+  ]
   reset: [
     event: Event,
     value: MaskEventData

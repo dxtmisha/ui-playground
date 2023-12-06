@@ -7,6 +7,7 @@ import {
   type InputPatternList
 } from '../Input/typesBasic.ts'
 import { type MaskGroup } from './typesBasic.ts'
+import { type MaskProps } from './props.ts'
 
 const patternForDate: InputPatternList = {
   Y: '[0-9]{4}',
@@ -48,10 +49,12 @@ const patternForDate: InputPatternList = {
 export class MaskDate {
   /**
    * Constructor
+   * @param props input data /<br>входные данные
    * @param type object of the mask type class /<br>объект класса тип маски
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly props: MaskProps,
     protected readonly type: MaskType
   ) {
   }
@@ -62,7 +65,7 @@ export class MaskDate {
    * @param date a string with a filled date /<br>строка с заполненной датой
    */
   getDatetime (date?: string): Datetime {
-    return new Datetime(date ?? '1987-12-18T10:20:30', this.type.getByDate())
+    return new Datetime(date ?? '1987-12-18T10:20:30', this.type.getByDate(), this.props?.language)
   }
 
   /**
@@ -70,7 +73,9 @@ export class MaskDate {
    * Возвращает маску для заполнения даты.
    */
   getMask (): string[] {
-    return this.getDatetime().locale(undefined, '2-digit')
+    return this.getDatetime()
+      .setHour24(true)
+      .locale(undefined, '2-digit')
       .replace('1987', 'YYYY')
       .replace('12', 'MM')
       .replace('18', 'DD')

@@ -21,6 +21,7 @@ export type MaskMatchItem = RegExp | string
 export type MaskFractionItem = string | boolean | number
 
 export type MaskSpecialItem = {
+  defaultValue?: string
   rubber?: boolean
   transitionChar?: string | string[]
   maxLength?: number

@@ -18,11 +18,22 @@ export class MaskRubberItem {
   }
 
   /**
-   * Getting the fill list by group.<br>
-   * Получение списка заполнения по группе.
+   * Returns the filling list by groups.<br>
+   * Возвращает список заполнения по группам.
    */
   get (): Record<string, number> {
     return this.value
+  }
+
+  /**
+   * Returns data for caching.<br>
+   * Возвращает данные для кеширования.
+   */
+  getCode (): (string | number)[] {
+    return [
+      ...Object.keys(this.value),
+      ...Object.values(this.value)
+    ]
   }
 
   /**

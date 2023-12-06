@@ -112,11 +112,11 @@ export class MaskFormat {
       n: {
         rubber: true,
         transitionChar: this.getDecimal(),
-        maxLength: 12
+        maxLength: 10
       },
       f: {
         rubber: this.isFractionRubber(),
-        maxLength: 6
+        maxLength: 4
       }
     }
   }
@@ -127,7 +127,7 @@ export class MaskFormat {
    * @param value a string with a filled date /<br>строка с заполненной датой
    */
   getValueStandard (value: MaskGroup): string {
-    return `${value?.n?.value ?? '0'}.${value?.f?.value ?? '0'}`
+    return `${value?.n?.value || '0'}.${value?.f?.value || '0'}`
   }
 
   /**

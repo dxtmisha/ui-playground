@@ -86,13 +86,14 @@ export class MaskData {
     this.rubberTransition.reset()
 
     toArray(chars).forEach(char => {
+      const groupName = this.character.getFocus()
       const immediate = this.character.getImmediate()
 
       this.selection.setShift(
         this.rubber.update(this.value.getInfo(), immediate, char)
       )
 
-      if (this.match.is(char, immediate)) {
+      if (this.match.is(char, groupName)) {
         this.character.shift()
 
         if (

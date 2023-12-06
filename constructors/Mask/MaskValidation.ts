@@ -26,7 +26,14 @@ export class MaskValidation {
    * @param groupName group name /<br>название группы
    */
   isError (groupName: string): boolean {
-    return this.get()?.group === groupName
+    const groupError = this.get()?.group
+
+    return Boolean(
+      groupError && (
+        groupError === groupName ||
+        groupError === 'check'
+      )
+    )
   }
 
   /**
