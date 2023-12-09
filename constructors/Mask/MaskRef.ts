@@ -87,9 +87,16 @@ export class MaskRef {
    * Обновление введенных данных.
    */
   updateValue (): this {
-    this.valueBasic.value = this.mask.getValueBasic()
+    const valueBasic = this.mask.getValueBasic()
+    const isDifferentLength = valueBasic.length !== this.valueBasic.value.length
+
+    this.valueBasic.value = valueBasic
     this.value.value = this.mask.getValue()
     this.view.value = this.mask.getView()
+
+    if (isDifferentLength) {
+      this.mask.goSelection()
+    }
 
     return this
   }

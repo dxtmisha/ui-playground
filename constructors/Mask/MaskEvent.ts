@@ -67,7 +67,6 @@ export class MaskEvent {
    * @param event event object /<br>объект события
    */
   onBlur (event: FocusEvent): void {
-    console.log('this.change', this.change)
     if (this.change) {
       this.emit
         .setType('change')
@@ -107,7 +106,6 @@ export class MaskEvent {
         }
       } else if (event.key.length <= 1) {
         if (start === end) {
-          console.log('event.key', event.key)
           if (this.buffer.go(event.key)) {
             this.data.add(start, event.key)
           }
@@ -137,8 +135,6 @@ export class MaskEvent {
     this.emit
       .set('beforeinput', event)
       .go()
-
-    console.log('beforeinput')
 
     if (!this.unidentified) {
       this.makeChange(event)

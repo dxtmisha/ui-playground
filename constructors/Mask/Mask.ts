@@ -267,6 +267,15 @@ export class Mask {
   }
 
   /**
+   * Restores the selection location.<br>
+   * Восстанавливает место выделения.
+   */
+  goSelection (): this {
+    this.data.goSelection(false)
+    return this
+  }
+
+  /**
    * Changes in an element.<br>
    * Изменения в элементе.
    * @param element new element /<br>новый элемент

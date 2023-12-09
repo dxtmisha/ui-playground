@@ -84,7 +84,6 @@ export class MaskData {
 
     this.selection.setByMask(selection, focus)
     this.rubberTransition.reset()
-    console.log('chars', chars, selection, this.selection.get())
 
     toArray(chars).forEach(char => {
       const groupName = this.character.getFocus()
@@ -178,14 +177,17 @@ export class MaskData {
    * Restores the selection location.<br>
    * Восстанавливает место выделения.
    */
-  goSelection (): this {
+  goSelection (updateBuffer = true): this {
     if (this.focus.is()) {
       requestAnimationFrame(() => {
-        if (!this.goBuffer() && this.element) {
+        if (
+          this.element && (
+            !updateBuffer ||
+            !this.goBuffer()
+          )
+        ) {
           this.element.selectionEnd = this.selection.getShift()
           this.element.selectionStart = this.selection.getShift()
-
-          console.log('this.element.selectionEnd', this.element.selectionEnd)
         }
       })
     }
