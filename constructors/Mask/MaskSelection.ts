@@ -31,6 +31,14 @@ export class MaskSelection {
   }
 
   /**
+   * Returns the selection number for the first element that is a special symbol.
+   * Возвращает номер выделения для первого элемента, являющегося специальным символом.
+   */
+  getFirst (): number {
+    return this.mask.getInfo()?.[0]?.key
+  }
+
+  /**
    * Getting the current key of the selected character.<br>
    * Получение текущего ключа выделенного символа.
    */
@@ -59,6 +67,7 @@ export class MaskSelection {
    * Получение номера ключа, сдвинутого в левом направлении.
    */
   getShift (): number {
+    console.log('this.shift', this.shift, this.value)
     if (this.shift) {
       return this.value > 0 ? (this.getCharacter(this.value - 1) + 1) : 0
     }
@@ -165,6 +174,7 @@ export class MaskSelection {
   protected getCharacter (selection: number): number {
     for (const item of this.mask.getInfo()) {
       if (item.index >= selection) {
+        console.log('item.key', item.key)
         return item.key
       }
     }

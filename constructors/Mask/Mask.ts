@@ -35,7 +35,8 @@ import {
   type MaskEventData,
   type MaskViewList
 } from './typesBasic.ts'
-import { type MaskProps } from './props.ts'
+import type { MaskProps } from './props.ts'
+import type { MaskEmits } from './types.ts'
 
 /**
  * Base class for working with the mask.<br>
@@ -83,7 +84,7 @@ export class Mask {
   constructor (
     props: MaskProps,
     element: MaskElementInput,
-    callbackEvent: (event: Event, value: MaskEventData) => void,
+    callbackEvent: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
     classCharacter: string = 'is-character'
   ) {
     this.type = new MaskType(props)
@@ -136,8 +137,10 @@ export class Mask {
       this.item
     )
     this.character = new MaskCharacter(
+      this.rubberItem,
       this.characterLength,
       this.special,
+      this.rubber,
       this.item,
       this.selection
     )
@@ -196,6 +199,7 @@ export class Mask {
     this.event = new MaskEvent(
       this.buffer,
       this.focus,
+      this.characterLength,
       this.right,
       this.selection,
       this.valueBasic,

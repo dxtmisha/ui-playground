@@ -122,7 +122,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             name="test"
             @input="onInputBasic"
             @change="onInputBasic"
-            @paste="onInputBasic"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -200,7 +199,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             view="0"
             @input="onInputRubber"
             @change="onInputRubber"
-            @paste="onInputRubber"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -223,7 +221,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             view="0"
             @input="onInputRubber2"
             @change="onInputRubber2"
-            @paste="onInputRubber2"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -251,7 +248,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             type="datetime"
             @input="onInputDate"
             @change="onInputDate"
-            @paste="onInputDate"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -303,7 +299,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             language="en-US"
             @input="onInputDateUS"
             @change="onInputDateUS"
-            @paste="onInputDateUS"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -344,7 +339,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             type="number"
             @input="onInputNumber"
             @change="onInputNumber"
-            @paste="onInputNumber"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -361,7 +355,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             type="number"
             @change="onInputFraction"
             @input="onInputFraction"
-            @paste="onInputFraction"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -396,10 +389,9 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             class="demo-mask__item__value__mask"
             type="number"
             :special="{n:{rubber:true,maxLength:6,pattern:{type:'number', max:'500000'}}}"
-            :check="{type:'number', max:'500000'}"
+            :check="{type:'number', max:'500000',step:'0.12'}"
             @input="onInputFractionMax"
             @change="onInputFractionMax"
-            @paste="onInputFractionMax"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -422,7 +414,6 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
             currency="RUB"
             @change="onInputCurrency"
             @input="onInputCurrency"
-            @paste="onInputCurrency"
           />
         </div>
         <div class="demo-mask__item__description">
@@ -473,6 +464,7 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
 
 .demo-mask {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   padding: 16px;
 

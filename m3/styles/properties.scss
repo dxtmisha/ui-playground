@@ -8197,22 +8197,22 @@ $designsProperties: (
                       ),
                     ),
                   ),
-                  'special':(
-                    index: 'special',
-                    name: '&--special',
+                  'transition':(
+                    index: 'transition',
+                    name: '&--transition',
                     type: 'state',
                     value: (
                       'colorOpacity':(
                         index: 'colorOpacity',
                         name: 'color-opacity',
                         type: 'property',
-                        value: 'var(--m3-sys-opacity-high)',
+                        value: 'var(--m3-sys-opacity-medium)',
                       ),
                     ),
                   ),
-                  'transition':(
-                    index: 'transition',
-                    name: '&--transition',
+                  'special':(
+                    index: 'special',
+                    name: '&--special',
                     type: 'state',
                     value: (
                       'colorOpacity':(

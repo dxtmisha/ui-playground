@@ -18,22 +18,10 @@ export type MaskComponents = {
  * Тип, описывающий доступные события.
  */
 export type MaskEmits = {
-  focus: [
-    event: FocusEvent,
-    value: MaskEventData
-  ]
-  blur: [
-    event: FocusEvent,
-    value: MaskEventData
-  ]
-  keydown: [
-    event: KeyboardEvent,
-    value: MaskEventData
-  ]
-  beforeinput: [
-    event: InputEvent,
-    value: MaskEventData
-  ]
+  focus: [event: FocusEvent]
+  blur: [event: FocusEvent]
+  keydown: [event: KeyboardEvent]
+  beforeinput: [event: InputEvent]
   input: [
     event: InputEvent,
     value: MaskEventData
@@ -42,14 +30,8 @@ export type MaskEmits = {
     event: InputEvent,
     value: MaskEventData
   ]
-  paste: [
-    event: ClipboardEvent,
-    value: MaskEventData
-  ]
-  reset: [
-    event: Event,
-    value: MaskEventData
-  ]
+  paste: [event: ClipboardEvent]
+  reset: [event: Event]
 }
 
 /**

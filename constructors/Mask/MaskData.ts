@@ -84,6 +84,7 @@ export class MaskData {
 
     this.selection.setByMask(selection, focus)
     this.rubberTransition.reset()
+    console.log('chars', chars, selection, this.selection.get())
 
     toArray(chars).forEach(char => {
       const groupName = this.character.getFocus()
@@ -180,12 +181,12 @@ export class MaskData {
   goSelection (): this {
     if (this.focus.is()) {
       requestAnimationFrame(() => {
-        if (this.element) {
+        if (!this.goBuffer() && this.element) {
           this.element.selectionEnd = this.selection.getShift()
           this.element.selectionStart = this.selection.getShift()
-        }
 
-        this.goBuffer()
+          console.log('this.element.selectionEnd', this.element.selectionEnd)
+        }
       })
     }
 
@@ -196,12 +197,17 @@ export class MaskData {
    * Checks if the data is in the buffer. If it is, then add it.<br>
    * Проверяет, если данный в буфер. Если есть, то добавляем.
    */
-  protected goBuffer (): this {
+  protected goBuffer (): boolean {
     if (this.buffer.is()) {
       this.add(this.selection.getShift(), this.buffer.get())
+      this.buffer.resetChars()
+
+      return true
     }
 
     this.buffer.reset()
-    return this
+    this.emit.go()
+
+    return false
   }
 }

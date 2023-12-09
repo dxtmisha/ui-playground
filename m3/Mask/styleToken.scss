@@ -13,11 +13,11 @@
         @include colorOpacity(#{var(--m3-sys-opacity-medium)});
       }
       
-      &--special {
-        @include colorOpacity(#{var(--m3-sys-opacity-high)});
+      &--transition {
+        @include colorOpacity(#{var(--m3-sys-opacity-medium)});
       }
       
-      &--transition {
+      &--special {
         @include colorOpacity(#{var(--m3-sys-opacity-high)});
       }
       

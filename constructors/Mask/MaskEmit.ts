@@ -8,7 +8,7 @@ import { type MaskEmits } from './types.ts'
  * Класс для вызова события.
  */
 export class MaskEmit {
-  protected type?: keyof MaskEmits | string
+  protected type?: string & keyof MaskEmits
   protected event?: Event
 
   /**
@@ -19,8 +19,16 @@ export class MaskEmit {
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly validation: MaskValidation,
-    protected readonly callbackEvent: (event: Event, value: MaskEventData) => void
+    protected readonly callbackEvent: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void
   ) {
+  }
+
+  /**
+   * Checks whether additional data needs to be generated for the current event.<br>
+   * Проверяет, надо ли генерировать дополнительные данные для текущего события.
+   */
+  isValue (): boolean {
+    return Boolean(this.type && ['input', 'change'].indexOf(this.type) >= 0)
   }
 
   /**
@@ -29,12 +37,8 @@ export class MaskEmit {
    */
   go (): this {
     if (this.type && this.event) {
-      const validation = this.validation.get()
-
-      this.callbackEvent(this.event, {
-        type: this.type,
-        ...validation
-      } as MaskEventData)
+      const validation = this.isValue() ? this.validation.get() : undefined
+      this.callbackEvent(this.type, this.event, validation as MaskEventData)
     }
 
     return this
@@ -47,7 +51,7 @@ export class MaskEmit {
    * @param event event object /<br>объект события
    */
   set<E extends Event> (
-    type: keyof MaskEmits | string,
+    type: string & keyof MaskEmits,
     event: E
   ): this {
     this.setType(type)
@@ -61,7 +65,7 @@ export class MaskEmit {
    * Изменяет тип события.
    * @param type event name /<br>название события
    */
-  setType (type: keyof MaskEmits | string): this {
+  setType (type: string & keyof MaskEmits): this {
     this.type = type
     return this
   }
@@ -80,10 +84,28 @@ export class MaskEmit {
    * Resets the state.<br>
    * Сбрасывает состояние.
    */
-  protected reset (): this {
-    this.type = undefined
-    this.event = undefined
+  reset (): this {
+    this.resetType()
+    this.resetEvent()
 
+    return this
+  }
+
+  /**
+   * Resets the type state.<br>
+   * Сбрасывает состояние тип.
+   */
+  resetType (): this {
+    this.type = undefined
+    return this
+  }
+
+  /**
+   * Resets the event state.<br>
+   * Сбрасывает состояние события.
+   */
+  resetEvent (): this {
+    this.event = undefined
     return this
   }
 }

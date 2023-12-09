@@ -52,9 +52,18 @@ export class MaskBuffer {
    * Сбрасывает все значения до исходного.
    */
   reset (): this {
-    this.chars = []
+    this.resetChars()
     this.start = false
 
+    return this
+  }
+
+  /**
+   * Resets the saved values.<br>
+   * Сбрасывает сохраненные значения.
+   */
+  resetChars (): this {
+    this.chars = []
     return this
   }
 }

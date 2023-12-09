@@ -63,8 +63,16 @@ export class MaskDesign<
     this.mask = new MaskRef(
       props,
       this.element,
-      (event: Event, value: MaskEventData) => {
-        this.emits?.(value?.type as 'input', event as InputEvent, value)
+      (
+        type: keyof MaskEmits,
+        event: Event,
+        value?: MaskEventData
+      ) => {
+        this.emits?.(
+          type as 'input',
+          event as InputEvent,
+          value as MaskEventData
+        )
       },
       this.getSubClass(['character', 'item'])
     )

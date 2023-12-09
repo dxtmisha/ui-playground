@@ -7,10 +7,10 @@
       "standard": {
         "color-opacity": "{sys.opacity.medium}"
       },
-      "special": {
-        "color-opacity": "{sys.opacity.high}"
-      },
       "transition": {
+        "color-opacity": "{sys.opacity.medium}"
+      },
+      "special": {
         "color-opacity": "{sys.opacity.high}"
       },
       "error": {

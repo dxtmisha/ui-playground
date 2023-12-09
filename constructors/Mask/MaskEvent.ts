@@ -3,6 +3,7 @@ import { makeStopPropagation } from '../../functions/event.ts'
 
 import { MaskBuffer } from './MaskBuffer.ts'
 import { MaskFocus } from './MaskFocus.ts'
+import { MaskCharacterLength } from './MaskCharacterLength.ts'
 import { MaskRight } from './MaskRight.ts'
 import { MaskSelection } from './MaskSelection.ts'
 import { MaskValueBasic } from './MaskValueBasic.ts'
@@ -24,6 +25,7 @@ export class MaskEvent {
    * Constructor
    * @param buffer
    * @param focus
+   * @param characterLength
    * @param right
    * @param selection
    * @param valueBasic
@@ -35,6 +37,7 @@ export class MaskEvent {
   constructor (
     protected readonly buffer: MaskBuffer,
     protected readonly focus: MaskFocus,
+    protected readonly characterLength: MaskCharacterLength,
     protected readonly right: MaskRight,
     protected readonly selection: MaskSelection,
     protected readonly valueBasic: MaskValueBasic,
@@ -64,6 +67,7 @@ export class MaskEvent {
    * @param event event object /<br>объект события
    */
   onBlur (event: FocusEvent): void {
+    console.log('this.change', this.change)
     if (this.change) {
       this.emit
         .setType('change')
@@ -103,6 +107,7 @@ export class MaskEvent {
         }
       } else if (event.key.length <= 1) {
         if (start === end) {
+          console.log('event.key', event.key)
           if (this.buffer.go(event.key)) {
             this.data.add(start, event.key)
           }
@@ -132,6 +137,8 @@ export class MaskEvent {
     this.emit
       .set('beforeinput', event)
       .go()
+
+    console.log('beforeinput')
 
     if (!this.unidentified) {
       this.makeChange(event)
@@ -172,20 +179,6 @@ export class MaskEvent {
   }
 
   /**
-   * Intercepting the change event, this is for intercepting the browser’s autocomplete event.<br>
-   * Перехват события изменения, это для перехвата события автозаполнения в браузере.
-   * @param event invoked event /<br>вызываемое событие
-   */
-  onChange (event: Event): void {
-    const target = event.target as HTMLInputElement
-
-    this.data.reset(target.value)
-    this.emit
-      .set('change', event)
-      .go()
-  }
-
-  /**
    * Intercepting the event of data insertion from the buffer.<br>
    * Перехват события вставки данных из буфера.
    * @param event invoked event /<br>вызываемое событие
@@ -212,9 +205,21 @@ export class MaskEvent {
           .set('paste', event)
           .go()
       })
-      .catch(() => {
-        console.error('getClipboardData')
-      })
+      .catch(error => console.error('getClipboardData', error))
+  }
+
+  /**
+   * Intercepting the change event, this is for intercepting the browser’s autocomplete event.<br>
+   * Перехват события изменения, это для перехвата события автозаполнения в браузере.
+   * @param event invoked event /<br>вызываемое событие
+   */
+  onChange (event: Event): void {
+    const target = event.target as HTMLInputElement
+
+    this.data.reset(target.value)
+    this.emit
+      .set('change', event)
+      .go()
   }
 
   /**
@@ -224,6 +229,7 @@ export class MaskEvent {
    */
   onClick (event: MouseEvent): void {
     this.makeToEnd(event)
+    this.makeToStart(event)
   }
 
   /**
@@ -269,7 +275,13 @@ export class MaskEvent {
     this.change = true
 
     this.emit.set('input', event)
+
+    if (this.buffer.is()) {
+      return
+    }
+
     this.emit.go()
+    this.emit.resetType()
   }
 
   /**
@@ -279,22 +291,38 @@ export class MaskEvent {
    */
   protected makeToEnd (event: Event): void {
     if (this.right.isRight()) {
-      requestAnimationFrame(() => {
-        const length = this.valueBasic.getLength()
-        const {
-          target,
-          start,
-          end
-        } = this.getSelectionInfo(event)
+      const length = this.valueBasic.getLength()
+      const {
+        target,
+        start,
+        end
+      } = this.getSelectionInfo(event)
 
-        if (start > length) {
-          target.selectionStart = length
-        }
+      if (start > length) {
+        target.selectionStart = length
+      }
 
-        if (end > length) {
-          target.selectionEnd = length
-        }
-      })
+      if (end > length) {
+        target.selectionEnd = length
+      }
+    }
+  }
+
+  /**
+   * Check when selecting from the front, before all special characters.<br>
+   * Проверка при выделении спереди, перед всеми специальными символами.
+   * @param event invoked event /<br>вызываемое событие
+   */
+  protected makeToStart (event: Event): void {
+    const selection = this.selection.getFirst()
+    const {
+      target,
+      start
+    } = this.getSelectionInfo(event)
+
+    if (start < selection) {
+      target.selectionStart = selection
+      target.selectionEnd = selection
     }
   }
 }

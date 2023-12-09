@@ -69,7 +69,6 @@ export class MaskValueBasic extends CacheItem<string> {
         ) {
           break
         }
-        console.log('rubberTransition', this.rubberTransition.get(), char)
       } else {
         break
       }

@@ -8,7 +8,8 @@ import {
   type MaskEventData,
   type MaskViewList
 } from './typesBasic.ts'
-import { type MaskProps } from './props.ts'
+import type { MaskProps } from './props.ts'
+import type { MaskEmits } from './types.ts'
 
 /**
  * A class for working with a mask.<br>
@@ -42,18 +43,18 @@ export class MaskRef {
   constructor (
     props: MaskProps,
     elementInput: Ref<MaskElementInput>,
-    callbackEvent?: (event: Event, value: MaskEventData) => void,
+    callbackEvent?: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
     classCharacter = 'is-character'
   ) {
     this.mask = new Mask(
       props,
       elementInput.value,
-      (event, value) => {
-        if (['input', 'paste'].indexOf(value?.type ?? '') !== -1) {
+      (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => {
+        if (type === 'input') {
           this.updateValue()
         }
 
-        callbackEvent?.(event, value)
+        callbackEvent?.(type, event, value)
       },
       classCharacter
     )

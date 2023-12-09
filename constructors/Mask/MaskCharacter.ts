@@ -1,9 +1,11 @@
 import { MaskItem } from './MaskItem.ts'
 import { MaskSpecial } from './MaskSpecial.ts'
+import { MaskRubber } from './MaskRubber.ts'
 import { MaskSelection } from './MaskSelection.ts'
 import { MaskCharacterLength } from './MaskCharacterLength.ts'
 
 import { CHAR_DELETE } from './typesBasic.ts'
+import { MaskRubberItem } from './MaskRubberItem.ts'
 
 /**
  * Class for working with and storing input characters.<br>
@@ -14,15 +16,19 @@ export class MaskCharacter {
 
   /**
    * Constructor
+   * @param rubberItem
    * @param characterLength
    * @param special
+   * @param rubber
    * @param mask
    * @param selection
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly rubberItem: MaskRubberItem,
     protected readonly characterLength: MaskCharacterLength,
     protected readonly special: MaskSpecial,
+    protected readonly rubber: MaskRubber,
     protected readonly mask: MaskItem,
     protected readonly selection: MaskSelection
   ) {
@@ -133,20 +139,24 @@ export class MaskCharacter {
     const selection = this.selection.get() - 1
     const length = this.value.length
 
-    if (selection > 0 && selection <= length) {
+    if (
+      selection >= 0 &&
+      selection <= length
+    ) {
       const info = this.mask.getInfo()
-
       const char = info[selection].char
 
-      for (let i: number = selection; i < length; i++) {
-        if (i in info) {
-          const charNext = info[i].char
+      if (!this.rubberItem.is(char)) {
+        for (let i: number = selection; i < length; i++) {
+          if (i in info) {
+            const charNext = info[i].char
 
-          if (
-            this.special.isSpecial(charNext) &&
-            char !== charNext
-          ) {
-            return true
+            if (
+              this.special.isSpecial(charNext) &&
+              char !== charNext
+            ) {
+              return true
+            }
           }
         }
       }
