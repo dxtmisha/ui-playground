@@ -21,6 +21,7 @@ export type MaskEmits = {
   focus: [event: FocusEvent]
   blur: [event: FocusEvent]
   keydown: [event: KeyboardEvent]
+  keyup: [event: KeyboardEvent]
   beforeinput: [event: InputEvent]
   input: [
     event: InputEvent,
@@ -46,6 +47,7 @@ export type MaskSetup = {
   onFocus (event: FocusEvent): void
   onBlur (event: FocusEvent): void
   onKeydown (event: KeyboardEvent): void
+  onKeyup (event: KeyboardEvent): void
   onBeforeinput (event: InputEvent): void
   onInput (event: InputEvent): void
   onChange (event: Event): void

@@ -2,12 +2,14 @@ import {
   forEach,
   isArray,
   isObject,
-  isObjectNotArray, isSelected
+  isObjectNotArray,
+  isSelected
 } from '../../functions/data.ts'
 
 import { CacheItem } from '../../classes/CacheItem.ts'
 
 import { MaskType } from './MaskType.ts'
+import { MaskFormat } from './MaskFormat.ts'
 
 import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
 import { type MaskProps } from './props.ts'
@@ -27,11 +29,13 @@ export class MaskSpecial extends CacheItem<string[]> {
    * Constructor
    * @param props input data /<br>входные данные
    * @param type
+   * @param format
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: MaskProps,
-    protected readonly type: MaskType
+    protected readonly type: MaskType,
+    protected readonly format: MaskFormat
   ) {
     super(() => this.initValue())
   }
@@ -67,6 +71,15 @@ export class MaskSpecial extends CacheItem<string[]> {
    */
   isString (): boolean {
     return this.get().length <= 1
+  }
+
+  /**
+   * Checks if there are default values.<br>
+   * Проверяет, есть ли значения по умолчанию.
+   * @param groupName group name /<br>название группы
+   */
+  isDefault (groupName: string): boolean {
+    return Boolean(this.getDefault(groupName))
   }
 
   /**
@@ -156,6 +169,10 @@ export class MaskSpecial extends CacheItem<string[]> {
    * Получение специального символа из props.
    */
   protected getSpecial (): MaskSpecialProp {
+    if (this.type.isCurrencyOrNumber()) {
+      return this.format.getSpecial()
+    }
+
     return this.props?.special ?? '*'
   }
 

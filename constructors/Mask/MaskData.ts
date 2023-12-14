@@ -186,8 +186,12 @@ export class MaskData {
             !this.goBuffer()
           )
         ) {
-          this.element.selectionEnd = this.selection.getShift()
-          this.element.selectionStart = this.selection.getShift()
+          const length = this.valueBasic.getLength()
+          const shift = this.selection.getShift()
+          const newSelection = length < shift ? length : shift
+
+          this.element.selectionEnd = newSelection
+          this.element.selectionStart = newSelection
         }
       })
     }

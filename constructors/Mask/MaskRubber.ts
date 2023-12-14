@@ -179,15 +179,17 @@ export class MaskRubber extends CacheItem<MaskSpecialList> {
    * Обрабатывает данные для получения объекта для работы с резиновыми группами.
    */
   protected initList (): MaskSpecialList {
+    const special = this.special.getRubberList()
+
     if (
       this.type.isCurrencyOrNumber()
     ) {
       return replaceRecursive(
         this.format.getRubber(),
-        this.special.getRubberList()
+        special
       )
     }
 
-    return this.special.getRubberList()
+    return special
   }
 }

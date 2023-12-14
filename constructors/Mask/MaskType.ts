@@ -40,6 +40,11 @@ export class MaskType {
     return this.isNumber() || this.isCurrency()
   }
 
+  // TODO
+  isEmail (): boolean {
+    return this.get() === 'email'
+  }
+
   /**
    * Is the mask one of the types for time input.<br>
    * Является ли маска одним из типов для ввода времени.

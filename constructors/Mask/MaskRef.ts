@@ -25,6 +25,7 @@ export class MaskRef {
   readonly onFocus: (event: FocusEvent) => void
   readonly onBlur: (event: FocusEvent) => void
   readonly onKeydown: (event: KeyboardEvent) => void
+  readonly onKeyup: (event: KeyboardEvent) => void
   readonly onBeforeinput: (event: InputEvent) => void
   readonly onInput: (event: InputEvent) => void
   readonly onChange: (event: Event) => void
@@ -72,6 +73,7 @@ export class MaskRef {
     this.onFocus = (event: FocusEvent) => this.mask.getEvent().onFocus(event)
     this.onBlur = (event: FocusEvent) => this.mask.getEvent().onBlur(event)
     this.onKeydown = (event: KeyboardEvent) => this.mask.getEvent().onKeydown(event)
+    this.onKeyup = (event: KeyboardEvent) => this.mask.getEvent().onKeyup(event)
     this.onBeforeinput = (event: InputEvent) => this.mask.getEvent().onBeforeinput(event)
     this.onInput = (event: InputEvent) => this.mask.getEvent().onInput(event)
     this.onChange = (event: Event) => this.mask.getEvent().onChange(event)
@@ -87,10 +89,10 @@ export class MaskRef {
    * Обновление введенных данных.
    */
   updateValue (): this {
-    const valueBasic = this.mask.getValueBasic()
-    const isDifferentLength = valueBasic.length !== this.valueBasic.value.length
+    const newValueBasic = this.mask.getValueBasic()
+    const isDifferentLength = newValueBasic !== this.valueBasic.value
 
-    this.valueBasic.value = valueBasic
+    this.valueBasic.value = newValueBasic
     this.value.value = this.mask.getValue()
     this.view.value = this.mask.getView()
 

@@ -176,8 +176,8 @@ export class MaskValue {
         }
 
         value.maxLength++
-        value.full = value.maxLength === value.chars.length
         value.value = value.full ? value.chars.join('') : ''
+        value.full = this.special.isDefault(char) || value.maxLength === value.chars.length
       }
     })
 

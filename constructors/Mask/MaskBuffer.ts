@@ -43,8 +43,17 @@ export class MaskBuffer {
       return false
     }
 
-    this.start = true
+    this.goStart()
     return true
+  }
+
+  // TODO
+  /**
+   *
+   */
+  goStart (): this {
+    this.start = true
+    return this
   }
 
   /**

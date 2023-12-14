@@ -100,7 +100,11 @@ export class Mask {
       this.rubberItem
     )
 
-    this.special = new MaskSpecial(props, this.type)
+    this.special = new MaskSpecial(
+      props,
+      this.type,
+      this.format
+    )
     this.match = new MaskMatch(props, this.special)
     this.pattern = new MaskPattern(
       props,

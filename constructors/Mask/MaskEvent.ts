@@ -110,19 +110,41 @@ export class MaskEvent {
             this.data.add(start, event.key)
           }
         } else {
+          this.buffer.goStart()
           this.data.pop(start, end)
             .add(this.selection.getShift(), event.key)
         }
-      } else if ([
+      }
+    } else {
+      this.unidentified = info
+    }
+  }
+
+  // TODO
+  /**
+   *
+   * @param event invoked event /<br>вызываемое событие
+   */
+  onKeyup (event: KeyboardEvent): void {
+    this.emit
+      .set('keyup', event)
+      .go()
+
+    if (this.isMetaKey(event)) {
+      return undefined
+    }
+
+    if (
+      this.isKey(event) &&
+      [
         'ArrowUp',
         'ArrowRight',
         'ArrowDown',
         'ArrowLeft'
-      ].indexOf(event.key) >= 0) {
-        this.makeToEnd(event)
-      }
-    } else {
-      this.unidentified = info
+      ].indexOf(event.key) >= 0
+    ) {
+      this.makeToEnd(event)
+      this.makeToStart(event)
     }
   }
 

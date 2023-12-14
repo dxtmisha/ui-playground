@@ -455,6 +455,24 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
         </div>
       </div>
     </div>
+    <div class="demo-mask__title">...</div>
+    <div class="demo-mask">
+      <div class="demo-mask__item">
+        <div class="demo-mask__item__title">...</div>
+        <div class="demo-mask__item__value">
+          <m3-mask
+            class="demo-mask__item__value__mask"
+            type="number"
+            @input="onInputNumber"
+            @change="onInputNumber"
+          />
+        </div>
+        <div class="demo-mask__item__description">
+          value: {{ numberValue }}<br />
+          full: {{ numberFull }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
