@@ -93,7 +93,12 @@ export class MaskData {
         this.rubber.update(this.value.getInfo(), immediate, char)
       )
 
-      if (this.match.is(char, groupName)) {
+      if (this.rubberTransition.is()) {
+        this.selection.setByMask(
+          this.mask.getByChar(this.rubberTransition.get(), this.selection.getImmediate()) + 1,
+          focus
+        )
+      } else if (this.match.is(char, groupName)) {
         this.character.shift()
 
         if (
@@ -105,11 +110,6 @@ export class MaskData {
           this.character.add(char)
           update = true
         }
-      } else if (this.rubberTransition.is()) {
-        this.selection.setByMask(
-          this.mask.getByChar(this.rubberTransition.get(), this.selection.getImmediate()) + 1,
-          focus
-        )
       }
     })
 

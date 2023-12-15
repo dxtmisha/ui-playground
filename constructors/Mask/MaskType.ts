@@ -40,7 +40,10 @@ export class MaskType {
     return this.isNumber() || this.isCurrency()
   }
 
-  // TODO
+  /**
+   * Is this a mask for email input.<br>
+   * Является ли это маской для ввода email.
+   */
   isEmail (): boolean {
     return this.get() === 'email'
   }

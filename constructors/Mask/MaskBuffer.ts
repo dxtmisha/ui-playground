@@ -47,9 +47,9 @@ export class MaskBuffer {
     return true
   }
 
-  // TODO
   /**
-   *
+   * Starts buffering data
+   * Начинает буферизировать данные.
    */
   goStart (): this {
     this.start = true

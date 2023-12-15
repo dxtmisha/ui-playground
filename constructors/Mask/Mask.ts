@@ -266,6 +266,7 @@ export class Mask {
    */
   getClasses (): ConstrClassObject {
     return {
+      '??--value': this.characterLength.is(),
       '??--end': this.right.isEnd()
     }
   }

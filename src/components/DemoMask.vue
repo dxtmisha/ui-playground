@@ -8,6 +8,7 @@ import {
   type MaskEventData,
   type MaskSpecialList
 } from '../../constructors/Mask/typesBasic.ts'
+import { GeoPhone } from '../../classes/GeoPhone.ts'
 
 const value = ref(1000)
 const valueDate = ref('1987-09-21')
@@ -32,6 +33,32 @@ const fractionMaxFull = ref(false)
 const fractionMaxError = ref('')
 const currencyValue = ref('')
 const currencyFull = ref(false)
+const visible = ref(true)
+
+const codePhoneMask = ref<string | string[]>('+******')
+const codePhoneValue = ref('')
+const codePhoneFull = ref(false)
+
+const emailMask = ref<string | string[]>('n@w.d')
+const emailSpecial: MaskSpecialList = {
+  n: {
+    match: /[@a-zA-Z0-9_.+-]/,
+    rubber: true,
+    transitionChar: '@'
+  },
+  w: {
+    match: /[a-zA-Z0-9-]/,
+    rubber: true,
+    transitionChar: '.',
+    defaultValue: '0'
+  },
+  d: {
+    match: /[a-zA-Z0-9-.]+/,
+    rubber: true
+  }
+}
+const emailValue = ref('')
+const emailFull = ref(false)
 
 const special1: ShallowRef<MaskSpecialList> = shallowRef({
   '@': {
@@ -98,6 +125,43 @@ const onInputFractionMax = (_: Event, value: MaskEventData) => {
 const onInputCurrency = (_: Event, value: MaskEventData) => {
   currencyValue.value = value.value
   currencyFull.value = Boolean(value.required)
+}
+const onVisible = () => {
+  visible.value = !visible.value
+}
+
+const onCodePhoneMask = (_: Event, value: MaskEventData) => {
+  const number = value.value
+  const phone = GeoPhone.getByPhone(number)
+
+  if (phone?.item) {
+    if (
+      phone.item?.maskFull &&
+      phone.item?.maskFull?.length > 0
+    ) {
+      codePhoneMask.value = phone.item.maskFull
+    }
+  } else {
+    codePhoneMask.value = '+******'
+  }
+
+  if (phone.phone?.match(/^0/)) {
+    codePhoneValue.value = `${phone.item?.info?.phone}${phone.phone?.replace(/^0/, '')}`
+  } else {
+    codePhoneValue.value = number
+  }
+
+  codePhoneFull.value = Boolean(value.required)
+}
+
+const onEmailMask = (_: Event, value: MaskEventData) => {
+  const number = value.value
+  console.log('number', number)
+  if (number.match(/^[@0-9]+$/)) {
+    emailMask.value = 'n@w'
+  } else {
+    emailMask.value = 'n@w.d'
+  }
 }
 </script>
 
@@ -234,10 +298,26 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
         </div>
       </div>
     </div>
+    <div class="demo-mask">
+      <div class="demo-mask__item">
+        <div class="demo-mask__item__title" @click="onVisible">Скрыть незаполненную часть</div>
+        <div class="demo-mask__item__value">
+          <m3-mask
+            class="demo-mask__item__value__mask"
+            mask="+7 (***) ***-**-**"
+            name="test"
+            :visible="visible"
+          />
+        </div>
+        <div class="demo-mask__item__description" @click="onVisible">
+          Проверка на скрытие незаполненной части маски.
+          <b style="cursor: pointer;">Нажмите на этот текст для изменения режима скрытия</b>.
+        </div>
+      </div>
+    </div>
     <div class="demo-mask__title">Тип дата</div>
     <div class="demo-mask__description">
       Встроенные маски для работы с датами, внешний вид зависит от языка сайта.<br />
-      Должен высвечивать красным тот час, у которого ошибка, и выводить сообщение об ошибке.
     </div>
     <div class="demo-mask">
       <div class="demo-mask__item">
@@ -254,6 +334,9 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
           value: {{ dateValue }}<br />
           full: {{ dateFull }}<br />
           error: {{ dateError }}
+        </div>
+        <div class="demo-mask__item__description">
+          Должен высвечивать красным тот час, у которого ошибка, и выводить сообщение об ошибке.
         </div>
       </div>
       <div class="demo-mask__item">
@@ -455,21 +538,30 @@ const onInputCurrency = (_: Event, value: MaskEventData) => {
         </div>
       </div>
     </div>
-    <div class="demo-mask__title">...</div>
+    <div class="demo-mask__title">Дополнительная проверка</div>
+    <div class="demo-mask__description">
+      Проверка на удобство внедрения маски.<br />
+    </div>
     <div class="demo-mask">
       <div class="demo-mask__item">
-        <div class="demo-mask__item__title">...</div>
+        <div class="demo-mask__item__title">GeoPhone</div>
         <div class="demo-mask__item__value">
           <m3-mask
             class="demo-mask__item__value__mask"
-            type="number"
-            @input="onInputNumber"
-            @change="onInputNumber"
+            type="text"
+            :mask="codePhoneMask"
+            :value="codePhoneValue"
+            @input="onCodePhoneMask"
           />
         </div>
         <div class="demo-mask__item__description">
-          value: {{ numberValue }}<br />
-          full: {{ numberFull }}
+          mask: {{ codePhoneMask }}<br />
+          value: {{ codePhoneValue }}<br />
+          full: {{ codePhoneFull }}
+        </div>
+        <div class="demo-mask__item__description">
+          Проверка динамического обновления маски, основанного на вводе номера страны.<br />
+          Для получения маски используем класс GeoPhone.
         </div>
       </div>
     </div>

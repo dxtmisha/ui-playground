@@ -92,7 +92,10 @@ export class MaskFormat {
       .split('')
   }
 
-  // TODO
+  /**
+   * Returns the settings of special characters for input.<br>
+   * Возвращает настройки специальных символов для ввода.
+   */
   getSpecial (): MaskSpecialProp {
     return {
       n: {},

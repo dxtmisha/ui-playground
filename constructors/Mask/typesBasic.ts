@@ -5,7 +5,7 @@ import {
   type InputValidationItem
 } from '../Input/typesBasic.ts'
 
-export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency' | 'email'
+export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
 export type MaskElementInput = HTMLInputElement | undefined
 
 export type MaskGroupItem = {
@@ -44,7 +44,7 @@ export type MaskViewItem = {
 }
 export type MaskViewList = MaskViewItem[]
 
-export type MaskList = (string) | string[] | ((char: string, value: string) => string)
+export type MaskList = (string) | string[]
 
 export type MaskEventData = InputValidationItem<string, 'focus' | 'blur' | 'keydown' | 'input' | 'change'>
 export type MaskEventSelection = {

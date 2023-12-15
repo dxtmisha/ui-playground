@@ -120,9 +120,9 @@ export class MaskEvent {
     }
   }
 
-  // TODO
   /**
-   *
+   * Intercept key release to check for arrow presses.<br>
+   * Перехват отпуска клавиши для проверки нажатия на стрелки.
    * @param event invoked event /<br>вызываемое событие
    */
   onKeyup (event: KeyboardEvent): void {

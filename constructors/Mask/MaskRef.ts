@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, type Ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
+import { type Ref, shallowRef, type ShallowRef, toRefs, watch, watchEffect } from 'vue'
 
 import { Mask } from './Mask.ts'
 
@@ -21,6 +21,7 @@ export class MaskRef {
   readonly valueBasic: ShallowRef<string> = shallowRef('')
   readonly value: ShallowRef<string> = shallowRef('')
   readonly view: ShallowRef<MaskViewList> = shallowRef([])
+  readonly classes: ShallowRef<ConstrClassObject> = shallowRef({})
 
   readonly onFocus: (event: FocusEvent) => void
   readonly onBlur: (event: FocusEvent) => void
@@ -31,8 +32,6 @@ export class MaskRef {
   readonly onChange: (event: Event) => void
   readonly onPaste: (event: ClipboardEvent) => void
   readonly onClick: (event: MouseEvent) => void
-
-  readonly classes: ComputedRef<ConstrClassObject>
 
   /**
    * Constructor
@@ -47,6 +46,8 @@ export class MaskRef {
     callbackEvent?: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
     classCharacter = 'is-character'
   ) {
+    const refs = toRefs(props)
+
     this.mask = new Mask(
       props,
       elementInput.value,
@@ -62,6 +63,10 @@ export class MaskRef {
 
     if (elementInput) {
       watch(elementInput, value => this.mask.setElement(value))
+    }
+
+    if ('mask' in refs && refs.mask) {
+      watch(refs.mask, () => this.updateValue())
     }
 
     watchEffect(() => {
@@ -80,7 +85,6 @@ export class MaskRef {
     this.onPaste = (event: ClipboardEvent) => this.mask.getEvent().onPaste(event)
     this.onClick = (event: MouseEvent) => this.mask.getEvent().onClick(event)
 
-    this.classes = computed(() => this.mask.getClasses())
     this.updateValue()
   }
 
@@ -99,6 +103,8 @@ export class MaskRef {
     if (isDifferentLength) {
       this.mask.goSelection()
     }
+
+    this.classes.value = this.mask.getClasses()
 
     return this
   }

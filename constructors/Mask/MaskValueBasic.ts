@@ -20,6 +20,14 @@ export class MaskValueBasic extends CacheItem<string> {
   }
 
   /**
+   * Checks if the values are filled in.<br>
+   * Проверяет, заполнены ли значения.
+   */
+  is (): boolean {
+    return this.getLength() > 0
+  }
+
+  /**
    * Receiving basic standard values.<br>
    * Получение базовых стандартных значений.
    */
