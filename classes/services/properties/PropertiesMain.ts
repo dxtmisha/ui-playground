@@ -3,6 +3,7 @@ import { isFilled } from '../../../functions/data.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 import { PropertiesPath } from './PropertiesPath.ts'
 
+import { PropertiesConvector } from './PropertiesConvector.ts'
 import { PropertiesStandard } from './PropertiesStandard.ts'
 import { PropertiesImport } from './PropertiesImport.ts'
 import { PropertiesSeparator } from './PropertiesSeparator.ts'
@@ -39,6 +40,8 @@ export class PropertiesMain {
       let properties = PropertiesCache.read<PropertyList>([...path, FILE_PROPERTY])
 
       if (isFilled(properties)) {
+        PropertiesConvector.to(properties)
+
         properties = PropertiesStandard.to({ [design]: properties })
         properties = new PropertiesImport(properties, path).to()
 

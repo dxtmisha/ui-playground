@@ -36,7 +36,7 @@
             "type": "borderRadius"
           },
           "pill": {
-            "value": "ot.dimension.1000",
+            "value": "{ot.dimension.1000}",
             "type": "borderRadius"
           }
         }

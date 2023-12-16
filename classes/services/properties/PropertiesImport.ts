@@ -5,6 +5,7 @@ import { PropertiesFile, type PropertiesFilePath } from './PropertiesFile.ts'
 import { PropertiesCache } from './PropertiesCache.ts'
 import { PropertiesTypes } from './PropertiesTypes.ts'
 
+import { PropertiesConvector } from './PropertiesConvector.ts'
 import { PropertiesStandard } from './PropertiesStandard.ts'
 
 import {
@@ -56,6 +57,8 @@ export class PropertiesImport {
         const read = this.readByLink(this.read(path), link)
 
         if (isFilled(read)) {
+          PropertiesConvector.to(read)
+
           data = replaceRecursive(data, this.to(
             PropertiesStandard.to(read),
             [PropertiesFile.getPathDir(path)]
