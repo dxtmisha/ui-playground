@@ -49,8 +49,11 @@ export class PropertiesImport {
         typeof item.value === 'string' &&
         PropertiesTypes.isInType(item[PropertyKey.type], [PropertyType.file])
       ) {
-        const path = this.getPath(root, item.value)
-        const read = this.read(path)
+        const {
+          path,
+          link
+        } = this.initLink(root, item.value)
+        const read = this.readByLink(this.read(path), link)
 
         if (isFilled(read)) {
           data = replaceRecursive(data, this.to(
@@ -87,6 +90,21 @@ export class PropertiesImport {
   }
 
   /**
+   * Generates the path to the file and prepares entries in the tree to go through.<br>
+   * Генерирует путь к файлу и подготавливает записи в дереве, по которому надо пройтись.
+   * @param root path to the directory /<br>путь к директории
+   * @param value object with data /<br>объект с данными
+   */
+  private initLink (root: string[], value: string) {
+    const link = value.split('#', 2)
+
+    return {
+      path: this.getPath(root, link[0]),
+      link: link?.[1]
+    }
+  }
+
+  /**
    * Reads a file or an entire directory.<br>
    * Читает файл или всю директорию.
    * @param path path to file /<br>путь к файлу
@@ -97,6 +115,31 @@ export class PropertiesImport {
     }
 
     return PropertiesCache.read<PropertyListOrData>(path) ?? {}
+  }
+
+  /**
+   * Reads the file and leaves the data only along the selected path.<br>
+   * Читает файл и оставляет данные только по выделенному пути.
+   * @param read read data /<br>прочитанные данные
+   * @param link the path to the entry that needs to be used /<br>путь к записи, который надо использовать
+   */
+  private readByLink (
+    read: PropertyListOrData | undefined,
+    link?: string
+  ): PropertyListOrData | undefined {
+    let data = read
+
+    if (data && link) {
+      for (const name of link.split('.')) {
+        if (name in data) {
+          data = data[name]
+        } else {
+          return undefined
+        }
+      }
+    }
+
+    return data
   }
 
   /**

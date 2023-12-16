@@ -1,0 +1,26 @@
+{
+  "ot": {
+    "value": {
+      "base": {
+        "size": {
+          "px": {
+            "_replace": {
+              "pattern": "^(.*?)$",
+              "replace": "$1 * 1px"
+            }
+          }
+        }
+      },
+      "file|ot": "tokens/_init/ot.json#ot"
+    },
+    "_type": "var",
+    "_category": "root"
+  },
+  "st": {
+    "value": {
+      "file|sys": "tokens/_init/st.json#st"
+    },
+    "_type": "var",
+    "_category": "root"
+  }
+}
