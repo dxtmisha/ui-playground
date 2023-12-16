@@ -153,7 +153,10 @@ export class PropertiesToPalette extends PropertiesToAbstract {
           forEach(item.value, (shade, name) => {
             const parent = this.getClass(list, name)
 
-            if (isObjectNotArray(shade.value)) {
+            if (
+              isObjectNotArray(shade.value) &&
+              shade?.[PropertyKey.category] !== PropertyCategory.paletteNone
+            ) {
               this.addItem(
                 parent,
                 `${index}.${name}`,

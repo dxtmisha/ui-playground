@@ -25,7 +25,6 @@ export class PropertiesConvector {
         item?.type &&
         item.type in LIST
       ) {
-        console.log('item 2', item.type, item)
         item.value = LIST[item.type](item.value)
       } else if (
         item?.value &&

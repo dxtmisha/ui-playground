@@ -1,0 +1,273 @@
+@import "styles/all";
+
+.cc2-palette {
+  &--carmine {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-carmine-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-carmine-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-carmine-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-carmine-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-carmine-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-carmine-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-carmine-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-carmine-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-carmine-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-carmine-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-carmine-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-carmine-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-carmine-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-carmine-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-carmine-300);
+  }
+  
+  &--iris {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-iris-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-iris-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-iris-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-iris-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-iris-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-iris-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-iris-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-iris-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-iris-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-iris-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-iris-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-iris-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-iris-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-iris-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-iris-300);
+  }
+  
+  &--redfish {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-redfish-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-redfish-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-redfish-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-redfish-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-redfish-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-redfish-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-redfish-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-redfish-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-redfish-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-redfish-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-redfish-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-redfish-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-redfish-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-redfish-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-redfish-300);
+  }
+  
+  &--goldenrod {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-goldenrod-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-goldenrod-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-goldenrod-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-goldenrod-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-goldenrod-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-goldenrod-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-goldenrod-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-goldenrod-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-goldenrod-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-goldenrod-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-goldenrod-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-goldenrod-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-goldenrod-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-goldenrod-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-goldenrod-300);
+  }
+  
+  &--asparagus {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-asparagus-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-asparagus-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-asparagus-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-asparagus-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-asparagus-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-asparagus-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-asparagus-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-asparagus-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-asparagus-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-asparagus-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-asparagus-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-asparagus-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-asparagus-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-asparagus-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-asparagus-300);
+  }
+  
+  &--slate {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-slate-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-slate-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-slate-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-slate-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-slate-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-slate-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-slate-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-slate-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-slate-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-slate-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-slate-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-slate-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-slate-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-slate-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-slate-300);
+  }
+  
+  &--gray {
+    --cc2-palette-basic-0: var(--cc2-ot-light-semantic-color-gray-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-semantic-color-gray-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-semantic-color-gray-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-semantic-color-gray-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-semantic-color-gray-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-semantic-color-gray-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-semantic-color-gray-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-semantic-color-gray-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-semantic-color-gray-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-semantic-color-gray-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-semantic-color-gray-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-semantic-color-gray-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-semantic-color-gray-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-semantic-color-gray-900);
+    --sys-palette: var(--cc2-ot-light-semantic-color-gray-300);
+  }
+  
+  &--pistachio {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-pistachio-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-pistachio-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-pistachio-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-pistachio-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-pistachio-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-pistachio-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-pistachio-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-pistachio-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-pistachio-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-pistachio-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-pistachio-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-pistachio-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-pistachio-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-pistachio-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-pistachio-300);
+  }
+  
+  &--mint {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-mint-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-mint-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-mint-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-mint-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-mint-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-mint-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-mint-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-mint-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-mint-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-mint-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-mint-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-mint-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-mint-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-mint-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-mint-300);
+  }
+  
+  &--jade {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-jade-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-jade-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-jade-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-jade-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-jade-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-jade-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-jade-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-jade-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-jade-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-jade-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-jade-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-jade-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-jade-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-jade-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-jade-300);
+  }
+  
+  &--teal {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-teal-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-teal-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-teal-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-teal-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-teal-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-teal-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-teal-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-teal-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-teal-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-teal-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-teal-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-teal-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-teal-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-teal-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-teal-300);
+  }
+  
+  &--celestial {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-celestial-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-celestial-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-celestial-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-celestial-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-celestial-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-celestial-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-celestial-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-celestial-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-celestial-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-celestial-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-celestial-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-celestial-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-celestial-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-celestial-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-celestial-300);
+  }
+  
+  &--indigo {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-indigo-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-indigo-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-indigo-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-indigo-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-indigo-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-indigo-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-indigo-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-indigo-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-indigo-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-indigo-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-indigo-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-indigo-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-indigo-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-indigo-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-indigo-300);
+  }
+  
+  &--orchid {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-orchid-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-orchid-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-orchid-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-orchid-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-orchid-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-orchid-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-orchid-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-orchid-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-orchid-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-orchid-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-orchid-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-orchid-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-orchid-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-orchid-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-orchid-300);
+  }
+  
+  &--cerise {
+    --cc2-palette-basic-0: var(--cc2-ot-light-asemantic-color-cerise-0);
+    --cc2-palette-basic-20: var(--cc2-ot-light-asemantic-color-cerise-20);
+    --cc2-palette-basic-40: var(--cc2-ot-light-asemantic-color-cerise-40);
+    --cc2-palette-basic-60: var(--cc2-ot-light-asemantic-color-cerise-60);
+    --cc2-palette-basic-80: var(--cc2-ot-light-asemantic-color-cerise-80);
+    --cc2-palette-basic-100: var(--cc2-ot-light-asemantic-color-cerise-100);
+    --cc2-palette-basic-200: var(--cc2-ot-light-asemantic-color-cerise-200);
+    --cc2-palette-basic-300: var(--cc2-ot-light-asemantic-color-cerise-300);
+    --cc2-palette-basic-400: var(--cc2-ot-light-asemantic-color-cerise-400);
+    --cc2-palette-basic-500: var(--cc2-ot-light-asemantic-color-cerise-500);
+    --cc2-palette-basic-600: var(--cc2-ot-light-asemantic-color-cerise-600);
+    --cc2-palette-basic-700: var(--cc2-ot-light-asemantic-color-cerise-700);
+    --cc2-palette-basic-800: var(--cc2-ot-light-asemantic-color-cerise-800);
+    --cc2-palette-basic-900: var(--cc2-ot-light-asemantic-color-cerise-900);
+    --sys-palette: var(--cc2-ot-light-asemantic-color-cerise-300);
+  }
+}

@@ -58,6 +58,7 @@ export enum PropertyCategory {
   theme = 'theme',
   shade = 'shade',
   palette = 'palette',
+  paletteNone = 'palette-none',
   color = 'color',
   colors = 'colors'
 }
