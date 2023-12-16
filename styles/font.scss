@@ -1,5 +1,11 @@
 @import "dir";
 
+@mixin paragraphSpacingInit {
+  p + p {
+    padding-top: var(--sys-paragraph-spacing, 0);
+  }
+}
+
 @mixin fontSize($value) {
   --sys-font-size: #{$value};
   font-size: var(--sys-font-size);
@@ -28,6 +34,15 @@
   }
 }
 
+@mixin textCase($value) {
+  text-transform: $value;
+}
+
+@mixin textSelectNone {
+  touch-callout: none;
+  user-select: none;
+}
+
 @mixin clamp($clamp) {
   display: -webkit-box;
   overflow: hidden;
@@ -43,7 +58,6 @@
   white-space: nowrap;
 }
 
-@mixin textSelectNone {
-  touch-callout: none;
-  user-select: none;
+@mixin paragraphSpacing($value) {
+  --sys-paragraph-spacing: $value;
 }

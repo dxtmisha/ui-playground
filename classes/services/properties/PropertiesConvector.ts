@@ -1,11 +1,13 @@
 import { forEach, isObjectNotArray } from '../../../functions/data.ts'
 
 import { convectorShadow } from './convector/convectorShadow.ts'
+import { convectorTypography } from './convector/convectorTypography.ts'
 
-import type { PropertyListOrData } from '../../../types/property.ts'
+import type { PropertyItemInput, PropertyListOrData } from '../../../types/property.ts'
 
-const LIST: Record<string, (value: any) => string> = {
-  boxShadow: convectorShadow
+const LIST: Record<string, (item: PropertyItemInput) => void> = {
+  boxShadow: convectorShadow,
+  typography: convectorTypography
 }
 
 /**
@@ -25,7 +27,7 @@ export class PropertiesConvector {
         item?.type &&
         item.type in LIST
       ) {
-        item.value = LIST[item.type](item.value)
+        LIST[item.type](item)
       } else if (
         item?.value &&
         isObjectNotArray(item.value)

@@ -45,6 +45,7 @@ export class PropertiesToState extends PropertiesToAbstract {
     }
 
     if (
+      !item?.[PropertyKey.state] &&
       parents.length > 2 &&
       isObjectNotArray(parents?.[1].item.value) &&
       name in parents?.[1].item.value &&

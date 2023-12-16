@@ -29,7 +29,8 @@ export class PropertiesToVariable extends PropertiesToAbstract {
       item,
       parent
     }) => {
-      item[PropertyKey.variable] = this.getByVarParent(parent) ??
+      item[PropertyKey.variable] = this.getByNone(item) ??
+        this.getByVarParent(parent) ??
         item?.[PropertyKey.type] ??
         this.getByCategory(item) ??
         this.getByMain(design, component, name) ??
@@ -115,6 +116,15 @@ export class PropertiesToVariable extends PropertiesToAbstract {
    */
   private getByVarParent (parent?: PropertyItem): PropertyType | undefined {
     return PropertiesTypes.isInType(parent?.[PropertyKey.variable], [PropertyType.var]) ? PropertyType.var : undefined
+  }
+
+  /**
+   * Checks if the type is hidden.<br>
+   * Проверяет, является ли тип скрытым.
+   * @param item current property /<br>текущее свойство
+   */
+  private getByNone (item: PropertyItem): PropertyType | undefined {
+    return item?.[PropertyKey.type] === PropertyType.none ? PropertyType.none : undefined
   }
 
   /**

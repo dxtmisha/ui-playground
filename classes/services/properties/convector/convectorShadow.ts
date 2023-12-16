@@ -1,6 +1,8 @@
 import { isObject } from '../../../../functions/data.ts'
 import { toArray } from '../../../../functions/object.ts'
 
+import type { PropertyItemInput } from '../../../../types/property.ts'
+
 export type ConvectorShadowItem = {
   type: string
   color: string
@@ -13,9 +15,11 @@ export type ConvectorShadowItem = {
 /**
  * Transforming data into shadow.<br>
  * Преобразование данных в тень.
- * @param data data for transformation /<br>данные для преобразования
+ * @param item values for conversion /<br>значения для преобразования
  */
-export function convectorShadow (data: string | ConvectorShadowItem | ConvectorShadowItem[]): string {
+export function convectorShadow (item: PropertyItemInput): void {
+  const data: string | ConvectorShadowItem | ConvectorShadowItem[] = item?.value
+
   if (isObject(data)) {
     const shadows: string[] = []
 
@@ -46,8 +50,6 @@ export function convectorShadow (data: string | ConvectorShadowItem | ConvectorS
         shadows.push(shadow.join(' ').trim())
       })
 
-    return shadows.join(', ')
+    item.value = shadows.join(', ')
   }
-
-  return data
 }

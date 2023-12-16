@@ -1,6 +1,7 @@
 export enum PropertyKey {
   category = '_category',
   type = '_type',
+  state = '_state',
   subclass = '_subclass',
   rename = '_rename',
   prop = '_prop',
@@ -77,6 +78,7 @@ export type PropertyItem = {
   description?: string
 
   _type?: PropertyType | null
+  _state?: boolean
   _subclass?: boolean
   _category?: PropertyCategory | string
   _rename?: string

@@ -205,6 +205,7 @@ export const cssTypography: string[] = [
   'orphans', // устанавливает минимальное число строк в блочном контейнере, которое должно быть показано внизу страницы
 
   'text-transform',
+  'text-case',
   'text-indent', // определяет размер отступа перед строкой в текстовом блоке
 
   'text-decoration',
@@ -247,7 +248,9 @@ export const cssTypography: string[] = [
   'list-style', // установить все свойства стиля списка одновременно
   'list-style-position',
   'list-style-type',
-  'list-style-image'
+  'list-style-image',
+
+  'paragraph-spacing'
 ]
 
 export const cssMath: string[] = [

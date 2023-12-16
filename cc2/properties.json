@@ -62,10 +62,44 @@
   },
   "st": {
     "value": {
-      "file|sys": "tokens/_init/st.json#st",
-      "file|light": "tokens/_init/theme/light.json#st"
+      "file|import-st": "tokens/_init/st.json#st",
+      "file|import-light": "tokens/_init/theme/light.json#st",
+      "file|import-web": "tokens/platform/web.json#st",
+      "web": {
+        "_type": "none"
+      }
     },
     "_type": "var",
     "_category": "root"
+  },
+  "dark": {
+    "value": {
+      "ot": {
+        "value": {
+          "light": {
+            "file|light": "tokens/_init/ot.json#ot.dark"
+          }
+        },
+        "_type": "var"
+      },
+      "st": {
+        "value": {
+          "file|sys": "tokens/_init/theme/dark.json#st"
+        },
+        "_type": "var"
+      }
+    },
+    "_category": "theme"
+  },
+  "font": {
+    "value": {
+      "basic": "{st.web.text}",
+      "extras": {
+        "caption": {
+          "_state": true
+        }
+      }
+    },
+    "_category": "class"
   }
 }

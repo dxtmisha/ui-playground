@@ -50,6 +50,8 @@ export const TYPES: string[] = [
   'text-overflow',
   'clamp',
   'text-select-none',
+  'text-case',
+  'paragraph-spacing',
 
   /* Color */
   'palette',
