@@ -1,6 +1,6 @@
 import { toCamelCase } from '../../../../functions/string.ts'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem, type PropertiesItemsParent } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
 import {
@@ -25,7 +25,8 @@ export class PropertiesToVar extends PropertiesToAbstract {
         design,
         component,
         value,
-        item
+        item,
+        parents
       } = property
 
       if (
@@ -36,12 +37,17 @@ export class PropertiesToVar extends PropertiesToAbstract {
         const fullValue = item?.[PropertyKey.css] ?? this.items.getLinkToValue(design, component, value)
 
         item[PropertyKey.name] = this.getName(property)
-        item[PropertyKey.css] = this.toValue(
-          this.toCalculator(fullValue, item?.[PropertyKey.fullValue]), item?.[PropertyKey.default]
-        )
 
-        if (item?.[PropertyKey.important]) {
-          item[PropertyKey.css] += ' !important'
+        if (this.isNone(parents)) {
+          item[PropertyKey.css] = undefined
+        } else {
+          item[PropertyKey.css] = this.toValue(
+            this.toCalculator(fullValue, item?.[PropertyKey.fullValue]), item?.[PropertyKey.default]
+          )
+
+          if (item?.[PropertyKey.important]) {
+            item[PropertyKey.css] += ' !important'
+          }
         }
       }
     })
@@ -116,5 +122,21 @@ export class PropertiesToVar extends PropertiesToAbstract {
     }
 
     return value
+  }
+
+  /**
+   * Checks if the values are hidden.<br>
+   * Проверяет, являются ли значения скрытыми.
+   * @param parents list of ancestors /<br>список предков
+   * @private
+   */
+  private isNone (parents: PropertiesItemsParent[]): boolean {
+    for (const parent of parents) {
+      if (parent.item?.[PropertyKey.type] === PropertyType.none) {
+        return true
+      }
+    }
+
+    return false
   }
 }

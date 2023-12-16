@@ -4,12 +4,7 @@ import { splice } from '../../../../functions/object.ts'
 import { PropertiesTypes } from '../PropertiesTypes.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-import {
-  type PropertyItem,
-  PropertyKey,
-  type PropertyList,
-  PropertyType
-} from '../../../../types/property.ts'
+import { type PropertyItem, PropertyKey, type PropertyList, PropertyType } from '../../../../types/property.ts'
 
 type PropertiesLinkItem = {
   name: string,
@@ -183,6 +178,25 @@ export class PropertiesToLink extends PropertiesToAbstract {
   private isData (value: PropertyItem['value']): value is PropertyList {
     return isObjectNotArray(value) && Object.keys(value).length > 0
   }
+
+  /**
+   * Checks if the values are hidden.<br>
+   * Проверяет, являются ли значения скрытыми.
+   * @param parents list of ancestors /<br>список предков
+   * @private
+   */
+
+  /*
+  private isNone (parents: PropertiesItemsParent[]): boolean {
+    for (const parent of parents) {
+      if (parent.item?.[PropertyKey.type] === PropertyType.none) {
+        return true
+      }
+    }
+
+    return false
+  }
+  */
 
   /**
    * Adds new entries.<br>

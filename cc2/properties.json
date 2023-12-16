@@ -55,6 +55,9 @@
             }
           }
         }
+      },
+      "dark": {
+        "_type": "none"
       }
     },
     "_type": "var",
