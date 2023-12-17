@@ -57,7 +57,26 @@
         }
       },
       "dark": {
-        "_type": "none"
+        "semantic": {
+          "color": {
+            "_category": "palette",
+            "_theme": "dark",
+            "_default": {
+              "basic": "300",
+              "dark": "300"
+            }
+          }
+        },
+        "asemantic": {
+          "color": {
+            "_category": "palette",
+            "_theme": "dark",
+            "_default": {
+              "basic": "300",
+              "dark": "300"
+            }
+          }
+        }
       }
     },
     "_type": "var",
@@ -77,14 +96,6 @@
   },
   "dark": {
     "value": {
-      "ot": {
-        "value": {
-          "light": {
-            "file|light": "tokens/_init/ot.json#ot.dark"
-          }
-        },
-        "_type": "var"
-      },
       "st": {
         "value": {
           "file|sys": "tokens/_init/theme/dark.json#st"

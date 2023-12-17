@@ -141,32 +141,36 @@ export class PropertiesToPalette extends PropertiesToAbstract {
       index
     }) => {
       if (!designParent || designParent === design) {
-        const list = this.getParent(
-          root ? PropertyCategory.colors : PropertyCategory.class,
-          root ?? (parents?.[0].item.value as PropertyList)
-        )
+        const themeName = item?.[PropertyKey.theme]
 
-        if (
-          list &&
-          isObjectNotArray(item.value)
-        ) {
-          forEach(item.value, (shade, name) => {
-            const parent = this.getClass(list, name)
+        if (!themeName || themeName === theme) {
+          const list = this.getParent(
+            root ? PropertyCategory.colors : PropertyCategory.class,
+            root ?? (parents?.[0].item.value as PropertyList)
+          )
 
-            if (
-              isObjectNotArray(shade.value) &&
-              shade?.[PropertyKey.category] !== PropertyCategory.paletteNone
-            ) {
-              this.addItem(
-                parent,
-                `${index}.${name}`,
-                theme,
-                shade.value
-              )
-            }
+          if (
+            list &&
+            isObjectNotArray(item.value)
+          ) {
+            forEach(item.value, (shade, name) => {
+              const parent = this.getClass(list, name)
 
-            this.addDefault(parent, theme, item)
-          })
+              if (
+                isObjectNotArray(shade.value) &&
+                shade?.[PropertyKey.category] !== PropertyCategory.paletteNone
+              ) {
+                this.addItem(
+                  parent,
+                  `${index}.${name}`,
+                  theme,
+                  shade.value
+                )
+              }
+
+              this.addDefault(parent, theme, item)
+            })
+          }
         }
       }
     })
