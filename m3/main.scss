@@ -9,5 +9,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone");
 
 @include dirInit;
+@include paragraphSpacingInit;
 
 @include initDesignBody('m3.main');

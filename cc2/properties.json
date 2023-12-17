@@ -94,6 +94,12 @@
     "_type": "var",
     "_category": "root"
   },
+  "main": {
+    "font": "{st.web.text.body.b2Regular}",
+    "color": "{st.content.fg.color.neutral.primary}",
+    "background-color": "{st.content.bg.color.default.solid.normal}",
+    "_category": "class"
+  },
   "dark": {
     "value": {
       "st": {
@@ -111,6 +117,11 @@
       "extras": {
         "caption": {
           "_state": true
+        }
+      },
+      "family": {
+        "font-family": {
+          "basic": "{ot.typography.fontFamily}"
         }
       }
     },

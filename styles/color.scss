@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use "sass:meta";
 @use "sass:string";
 
@@ -136,10 +137,16 @@ $designsShade: () !default;
 /// @return {String}
 @function toColorRbg($color) {
   @if (meta.type-of($color) == color) {
+    $opacity: color.alpha($color);
+
+    @if ($opacity != 1) {
+      @return red($color) + ', ' + green($color) + ', ' + blue($color) + ', ' + $opacity;
+    }
+
     @return red($color) + ', ' + green($color) + ', ' + blue($color);
-  } @else {
-    @return $color;
   }
+
+  @return $color;
 }
 
 /// Conversion of color into images for working with background-image

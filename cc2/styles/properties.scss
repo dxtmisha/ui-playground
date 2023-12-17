@@ -10,6 +10,7 @@ $designsRoot: (
 $designsMedia: ();
 $designsClasses: (
   'cc2.dark',
+  'cc2.main',
   'cc2.font',
   'cc2.palette',);
 $designsPalette: (
@@ -4125,37 +4126,37 @@ $designsProperties: (
                     index: 'global',
                     name: '--cc2-ot-typography-fontFamily-global',
                     type: 'var',
-                    value: 'Inter',
+                    value: ''Inter', sans-serif',
                   ),
                   'geo':(
                     index: 'geo',
                     name: '--cc2-ot-typography-fontFamily-geo',
                     type: 'var',
-                    value: 'Noto Sans Georgian',
+                    value: ''Noto Sans Georgian', sans-serif',
                   ),
                   'isr':(
                     index: 'isr',
                     name: '--cc2-ot-typography-fontFamily-isr',
                     type: 'var',
-                    value: 'Noto Sans Hebrew',
+                    value: ''Noto Sans Hebrew', sans-serif',
                   ),
                   'tha':(
                     index: 'tha',
                     name: '--cc2-ot-typography-fontFamily-tha',
                     type: 'var',
-                    value: 'Noto Sans Thai',
+                    value: ''Noto Sans Thai', sans-serif',
                   ),
                   'kor':(
                     index: 'kor',
                     name: '--cc2-ot-typography-fontFamily-kor',
                     type: 'var',
-                    value: 'Noto Sans KR',
+                    value: ''Noto Sans KR', sans-serif',
                   ),
                   'arm':(
                     index: 'arm',
                     name: '--cc2-ot-typography-fontFamily-arm',
                     type: 'var',
-                    value: 'Noto Sans Armenian',
+                    value: ''Noto Sans Armenian', sans-serif',
                   ),
                   'base':(
                     index: 'base',
@@ -12902,6 +12903,73 @@ $designsProperties: (
           ),
         ),
       ),
+      'main':(
+        index: 'main',
+        name: 'cc2-main',
+        type: 'component',
+        value: (
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-fontFamily-base)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-fontSize-size-scale-100)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-fontWeight-400)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-lineHeight-150)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-tracking-base)',
+          ),
+          'textCase':(
+            index: 'textCase',
+            name: 'text-case',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-textCase-none)',
+          ),
+          'textDecoration':(
+            index: 'textDecoration',
+            name: 'text-decoration',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-textDecoration-none)',
+          ),
+          'paragraphSpacing':(
+            index: 'paragraphSpacing',
+            name: 'paragraph-spacing',
+            type: 'property',
+            value: 'var(--cc2-ot-typography-paragraphSpacing-size-scale-75)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--cc2-st-content-fg-color-neutral-primary)',
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: 'background-color',
+            type: 'property',
+            value: 'var(--cc2-st-content-bg-color-default-solid-normal)',
+          ),
+        ),
+      ),
       'font':(
         index: 'font',
         name: 'cc2-font',
@@ -14977,6 +15045,111 @@ $designsProperties: (
                         name: 'paragraph-spacing',
                         type: 'property',
                         value: 'var(--cc2-ot-typography-paragraphSpacing-size-scale-50)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'family':(
+            index: 'family',
+            name: '&--family',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: '&--fontFamily',
+                type: 'state',
+                value: (
+                  'global':(
+                    index: 'global',
+                    name: '&--global',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Inter', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'geo':(
+                    index: 'geo',
+                    name: '&--geo',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Noto Sans Georgian', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'isr':(
+                    index: 'isr',
+                    name: '&--isr',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Noto Sans Hebrew', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'tha':(
+                    index: 'tha',
+                    name: '&--tha',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Noto Sans Thai', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'kor':(
+                    index: 'kor',
+                    name: '&--kor',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Noto Sans KR', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'arm':(
+                    index: 'arm',
+                    name: '&--arm',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: ''Noto Sans Armenian', sans-serif',
+                      ),
+                    ),
+                  ),
+                  'base':(
+                    index: 'base',
+                    name: '&--base',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--cc2-ot-typography-fontFamily-global)',
                       ),
                     ),
                   ),

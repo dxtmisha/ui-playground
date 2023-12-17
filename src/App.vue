@@ -7,6 +7,7 @@ import DemoIcon from './components/DemoIcon.vue'
 import DemoImage from './components/DemoImage.vue'
 import DemoProgress from './components/DemoProgress.vue'
 import DemoMask from './components/DemoMask.vue'
+import DemoCc2Token from './components/demo/cc2/DemoCc2Token.vue'
 </script>
 
 <template>
@@ -19,6 +20,9 @@ import DemoMask from './components/DemoMask.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <div class="demo-main cc2-main">
+    <demo-cc2-token />
+  </div>
   <demo-mask />
   <demo-chip />
   <demo-button />
@@ -27,19 +31,8 @@ import DemoMask from './components/DemoMask.vue'
   <demo-image />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style>
+.demo-main {
+  padding: 32px 16px;
 }
 </style>

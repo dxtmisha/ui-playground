@@ -1,12 +1,14 @@
 import { forEach, isObjectNotArray } from '../../../functions/data.ts'
 
 import { convectorShadow } from './convector/convectorShadow.ts'
+import { convectorFontFamilies } from './convector/convectorFontFamilies.ts'
 import { convectorTypography } from './convector/convectorTypography.ts'
 
 import type { PropertyItemInput, PropertyListOrData } from '../../../types/property.ts'
 
 const LIST: Record<string, (item: PropertyItemInput) => void> = {
   boxShadow: convectorShadow,
+  fontFamilies: convectorFontFamilies,
   typography: convectorTypography
 }
 

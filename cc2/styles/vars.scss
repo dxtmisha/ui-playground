@@ -502,12 +502,12 @@
   --cc2-ot-dark-asemantic-color-cerise-700: #{toColorRbg(#fb98a7)};
   --cc2-ot-dark-asemantic-color-cerise-800: #{toColorRbg(#fecad0)};
   --cc2-ot-dark-asemantic-color-cerise-900: #{toColorRbg(#fffafa)};
-  --cc2-ot-typography-fontFamily-global: Inter;
-  --cc2-ot-typography-fontFamily-geo: Noto Sans Georgian;
-  --cc2-ot-typography-fontFamily-isr: Noto Sans Hebrew;
-  --cc2-ot-typography-fontFamily-tha: Noto Sans Thai;
-  --cc2-ot-typography-fontFamily-kor: Noto Sans KR;
-  --cc2-ot-typography-fontFamily-arm: Noto Sans Armenian;
+  --cc2-ot-typography-fontFamily-global: 'Inter', sans-serif;
+  --cc2-ot-typography-fontFamily-geo: 'Noto Sans Georgian', sans-serif;
+  --cc2-ot-typography-fontFamily-isr: 'Noto Sans Hebrew', sans-serif;
+  --cc2-ot-typography-fontFamily-tha: 'Noto Sans Thai', sans-serif;
+  --cc2-ot-typography-fontFamily-kor: 'Noto Sans KR', sans-serif;
+  --cc2-ot-typography-fontFamily-arm: 'Noto Sans Armenian', sans-serif;
   --cc2-ot-typography-fontFamily-base: var(--cc2-ot-typography-fontFamily-global);
   --cc2-ot-typography-fontSize-size-scale-50: calc(var(--cc2-ot-typography-fontSize-size-scale-base) * 50);
   --cc2-ot-typography-fontSize-size-scale-62: calc(var(--cc2-ot-typography-fontSize-size-scale-base) * 62.5);

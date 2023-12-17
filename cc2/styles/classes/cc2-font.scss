@@ -419,4 +419,36 @@
       }
     }
   }
+  
+  &--family {
+    &--fontFamily {
+      &--global {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      &--geo {
+        font-family: 'Noto Sans Georgian', sans-serif;
+      }
+      
+      &--isr {
+        font-family: 'Noto Sans Hebrew', sans-serif;
+      }
+      
+      &--tha {
+        font-family: 'Noto Sans Thai', sans-serif;
+      }
+      
+      &--kor {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      
+      &--arm {
+        font-family: 'Noto Sans Armenian', sans-serif;
+      }
+      
+      &--base {
+        font-family: var(--cc2-ot-typography-fontFamily-global);
+      }
+    }
+  }
 }
