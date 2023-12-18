@@ -28,6 +28,19 @@ export class PropertiesValues {
   }
 
   /**
+   * Checks if the value is a color with transparency.<br>
+   * Проверяет, является ли значение цветом с прозрачности.
+   * @param value property value /<br>значение свойства
+   */
+  static isColorWithOpacity (value: PropertyItemPartial['__c']): boolean {
+    return Boolean(
+      typeof value === 'string' && (
+        value.match(/^#[a-z0-9]{8}/i)
+      )
+    )
+  }
+
+  /**
    * Removes unnecessary values from the values.<br>
    * Убирает лишние значения из значений.
    * @param value property value /<br>значение свойства

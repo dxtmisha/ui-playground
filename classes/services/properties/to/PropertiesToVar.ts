@@ -8,6 +8,8 @@ import {
   PropertyKey,
   PropertyType
 } from '../../../../types/property.ts'
+import { PropertiesValues } from '../PropertiesValues.ts'
+import { isString } from '../../../../functions/data.ts'
 
 const REG_VAR = /\{([^{}]+)}/ig
 
@@ -44,6 +46,10 @@ export class PropertiesToVar extends PropertiesToAbstract {
           item[PropertyKey.css] = this.toValue(
             this.toCalculator(fullValue, item?.[PropertyKey.fullValue]), item?.[PropertyKey.default]
           )
+
+          if (this.isColorWithOpacity(property)) {
+            item[PropertyKey.cssColorOpacity] = true
+          }
 
           if (item?.[PropertyKey.important]) {
             item[PropertyKey.css] += ' !important'
@@ -134,6 +140,32 @@ export class PropertiesToVar extends PropertiesToAbstract {
     for (const parent of parents) {
       if (parent.item?.[PropertyKey.type] === PropertyType.none) {
         return true
+      }
+    }
+
+    return false
+  }
+
+  private isColorWithOpacity (property: PropertiesItemsItem): boolean {
+    const {
+      design,
+      component,
+      value
+    } = property
+
+    if (
+      component &&
+      isString(value)
+    ) {
+      if (value.match(/^\{[^}]+}$/)) {
+        const link = this.items.getLink(design, component, value)
+        const data = this.items.getInfo(link)
+
+        if (data) {
+          return this.isColorWithOpacity(data)
+        }
+      } else {
+        return PropertiesValues.isColorWithOpacity(value)
       }
     }
 

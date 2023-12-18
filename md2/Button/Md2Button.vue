@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data.ts'
+// import { inArray } from '../../functions/object.ts'
 
 import { ButtonDesign } from '../../constructors/Button/ButtonDesign'
 
@@ -16,8 +16,8 @@ import {
 } from '../../constructors/Button/types'
 
 import {
-  propsInstruction,
-  propsValues
+  propsInstruction //,
+  // propsValues
 } from './props'
 
 const emits = defineEmits<ButtonEmits>()

@@ -119,10 +119,8 @@
           "_state": true
         }
       },
-      "family": {
-        "font-family": {
-          "basic": "{ot.typography.fontFamily}"
-        }
+      "font-family": {
+        "basic": "{ot.typography.fontFamily}"
       }
     },
     "_category": "class"

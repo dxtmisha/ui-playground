@@ -4,9 +4,27 @@
 @use "sass:selector";
 @use "sass:string";
 
-/// Finding a value in a tree-like array
-///
-/// Поиск значения в древовидном массиве
+/// Checks if the variable is a property.<br>
+/// Проверяет, является ли переменная свойством.
+/// @param {string} $value values for checking /<br>значения для проверки
+@function isCustomVar($value) {
+  $textStart: 'var(';
+  $textEnd: ')';
+
+  @if (
+          meta.type-of($value) == 'string' and
+          string.index($value, $textStart) == 1 and
+          string.index($value, $textEnd) == string.length($value) and
+          list.length(string.split($value, $textStart)) == 2
+  ) {
+    @return true
+  }
+
+  @return false
+}
+
+/// Finding a value in a tree-like array.<br>
+/// Поиск значения в древовидном массиве.
 /// @param {Map} $map input array / массив входных данных
 /// @param {List} $index list of keys to traverse / список ключей для обхода
 /// @param {*} $default default values if not found / значения по умолчанию, если не было найдено
@@ -52,20 +70,18 @@
   }
 }
 
-/// Changes values in an array
-///
-/// Меняет значения в массиве
-/// @param {Map} $map input array / массив входных данных
+/// Changes values in an array.<br>
+/// Меняет значения в массиве.
+/// @param {Map} $map input array /<br>массив входных данных
 /// @param {String} $index
-/// @param {*} $value values to be saved / значения для сохранения
+/// @param {*} $value values to be saved /<br>значения для сохранения
 /// @return {*}
 @function setMapItem($map, $index, $value) {
   @return map.merge($map, (#{$index}: $value));
 }
 
-/// Returns the name of the first selector
-///
-/// Возвращает название первого селектора
+/// Returns the name of the first selector.<br>
+/// Возвращает название первого селектора.
 /// @param {List} $selector
 /// @return {String}
 @function getFirstSelector($selector: &) {
@@ -75,11 +91,10 @@
   @return list.nth(selector.simple-selectors(list.nth($value, 1)), 1);
 }
 
-/// Split a string by a string
-///
-/// Разбивает строку с помощью разделителя
-/// @param {String} $value the input string / входная строка
-/// @param {String} $separator the boundary string / разделитель
+/// Split a string by a string.<br>
+/// Разбивает строку с помощью разделителя.
+/// @param {String} $value the input string /<br>входная строка
+/// @param {String} $separator the boundary string /<br>разделитель
 /// @return {String}
 @function strToList($value, $separator: '.') {
   $index: string.index($value, $separator);
@@ -91,13 +106,12 @@
   }
 }
 
-/// Replace all occurrences of the search string with the replacement string
-///
-/// Заменяет все вхождения строки поиска на строку замены
-/// @param {String} $value the string or array being searched and replaced on / строка в котором
-/// производится поиск и замена
-/// @param {String} $pattern the value being searched / искомое значение
-/// @param {String} $replacement the replacement value that replaces found search values / значение замены
+/// Replace all occurrences of the search string with the replacement string.<br>
+/// Заменяет все вхождения строки поиска на строку замены.
+/// @param {String} $value the string or array being searched and replaced on /<br>
+/// строка в котором производится поиск и замена
+/// @param {String} $pattern the value being searched /<br>искомое значение
+/// @param {String} $replacement the replacement value that replaces found search values /<br>значение замены
 /// @return {String}
 @function strReplace($value, $pattern, $replacement) {
   $index: string.index($value, $pattern);

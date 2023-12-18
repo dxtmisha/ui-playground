@@ -39,27 +39,6 @@ const codePhoneMask = ref<string | string[]>('+******')
 const codePhoneValue = ref('')
 const codePhoneFull = ref(false)
 
-const emailMask = ref<string | string[]>('n@w.d')
-const emailSpecial: MaskSpecialList = {
-  n: {
-    match: /[@a-zA-Z0-9_.+-]/,
-    rubber: true,
-    transitionChar: '@'
-  },
-  w: {
-    match: /[a-zA-Z0-9-]/,
-    rubber: true,
-    transitionChar: '.',
-    defaultValue: '0'
-  },
-  d: {
-    match: /[a-zA-Z0-9-.]+/,
-    rubber: true
-  }
-}
-const emailValue = ref('')
-const emailFull = ref(false)
-
 const special1: ShallowRef<MaskSpecialList> = shallowRef({
   '@': {
     match: /[a-zA-Z]+/,
@@ -152,16 +131,6 @@ const onCodePhoneMask = (_: Event, value: MaskEventData) => {
   }
 
   codePhoneFull.value = Boolean(value.required)
-}
-
-const onEmailMask = (_: Event, value: MaskEventData) => {
-  const number = value.value
-  console.log('number', number)
-  if (number.match(/^[@0-9]+$/)) {
-    emailMask.value = 'n@w'
-  } else {
-    emailMask.value = 'n@w.d'
-  }
 }
 </script>
 

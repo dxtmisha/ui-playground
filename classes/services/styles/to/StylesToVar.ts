@@ -32,6 +32,10 @@ export class StylesToVar extends StylesToAbstract {
           item?.[PropertyKey.css]
         ) {
           data.push(this.getCode(item))
+
+          if (item?.[PropertyKey.cssColorOpacity]) {
+            data.push(this.getCodeColorOpacity(item))
+          }
         }
       })
 
@@ -58,5 +62,12 @@ export class StylesToVar extends StylesToAbstract {
     }
 
     return `${item?.[PropertyKey.name]}: ${value};`
+  }
+
+  private getCodeColorOpacity (
+    item: PropertyItem = this.item
+  ): string {
+    const value = item?.[PropertyKey.css]
+    return `${item?.[PropertyKey.name]}-opacity: #{toColorOpacity(${value})};`
   }
 }

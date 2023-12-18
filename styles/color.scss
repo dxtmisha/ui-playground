@@ -2,13 +2,14 @@
 @use "sass:meta";
 @use "sass:string";
 
+@import "rules";
+
 $designsDesign: 'design' !default;
 $designsPalette: () !default;
 $designsShade: () !default;
 
-/// Checks if a value is a color
-///
-/// Проверяет, является ли значение цветом
+/// Checks if a value is a color.<br>
+/// Проверяет, является ли значение цветом.
 /// @param {Color} $color
 /// @return {Boolean}
 @function isColorRbgOrVar($color) {
@@ -20,18 +21,16 @@ $designsShade: () !default;
   )
 }
 
-/// Checks if a color is suitable for the palette
-///
-/// Проверяет, является ли цвет подходящим для палитры
+/// Checks if a color is suitable for the palette.<br>
+/// Проверяет, является ли цвет подходящим для палитры.
 /// @param {Color} $color
 /// @return {Boolean}
 @function isPalette($color) {
   @return string.index($color, '--') != null
 }
 
-/// Returns color value by its code
-///
-/// Возвращает значение цвета по его коду
+/// Returns color value by its code.<br>
+/// Возвращает значение цвета по его коду.
 /// @param {Color} $color
 /// @param {Number} $opacity
 /// @param {Boolean} $gradient if true, returns as an image / если true, возвращает в виде изображения
@@ -54,9 +53,8 @@ $designsShade: () !default;
   }
 }
 
-/// Checking if a color is part of the list of used colors
-///
-/// Проверка, является ли цвет частью списка используемых цветов
+/// Checking if a color is part of the list of used colors.<br
+/// Проверка, является ли цвет частью списка используемых цветов.
 /// @param {Color} $color
 /// @return {String}
 @function getColorByPalette($color) {
@@ -69,9 +67,8 @@ $designsShade: () !default;
   @return null;
 }
 
-/// Checking if a color is part of the list of saturation levels
-///
-/// Проверка, является ли цвет частью списка насыщенности
+/// Checking if a color is part of the list of saturation levels.<br>
+/// Проверка, является ли цвет частью списка насыщенности.
 /// @param {Color} $color
 /// @return {String}
 @function getColorByShade($color) {
@@ -88,9 +85,8 @@ $designsShade: () !default;
   @return null;
 }
 
-/// Returns value for palette
-///
-/// Возвращает значение для палитры
+/// Returns value for palette.<br>
+/// Возвращает значение для палитры.
 /// @param {Color} $color
 /// @return {String}
 @function getPalette($color) {
@@ -110,9 +106,8 @@ $designsShade: () !default;
   @return #{var(--sys-palette, #{toColorRbg($color)})}
 }
 
-/// Returns value for palette
-///
-/// Возвращает значение для поиск нужный цветов
+/// Returns value for palette.<br>
+/// Возвращает значение для поиск нужный цветов.
 /// @param {List} $palette
 /// @param {Color|String} $color
 /// @return {String}
@@ -130,37 +125,69 @@ $designsShade: () !default;
   }
 }
 
-/// Color conversion to rgb type
-///
-/// Преобразование цвета в тип RGB
+@function getColorValueSys($name) {
+  @return rgba(var(--sys-#{$name}), var(--sys-#{$name}-opacity, var(--sys-#{$name}-opacity-custom, 1)));
+}
+
+/// Color conversion to rgb type.<br
+/// Преобразование цвета в тип RGB.
 /// @param {Color} $color
 /// @return {String}
 @function toColorRbg($color) {
   @if (meta.type-of($color) == color) {
-    $opacity: color.alpha($color);
-
-    @if ($opacity != 1) {
-      @return red($color) + ', ' + green($color) + ', ' + blue($color) + ', ' + $opacity;
-    }
-
     @return red($color) + ', ' + green($color) + ', ' + blue($color);
   }
 
   @return $color;
 }
 
-/// Conversion of color into images for working with background-image
-///
-/// Преобразование цвета в изображения для работы с background-image
+/// Gets the transparency of the color.<br
+/// Получает прозрачность цвета.
+/// @param {Color} $color
+/// @return {String}
+@function toColorOpacity($color) {
+  @if (meta.type-of($color) == color) {
+    @return color.alpha($color);
+  } @else if (isCustomVar(#{$color})) {
+    @return toCustomVarOpacity($color);
+  }
+
+  @return $color;
+}
+
+/// Conversion of color into images for working with background-image.<br
+/// Преобразование цвета в изображения для работы с background-image.
 /// @param {Color} $color
 /// @return {String}
 @function toGradient($color) {
   @return linear-gradient(0deg, #{$color}, #{$color});
 }
 
+/// Adding the transparency property.<br>
+/// Добавление свойства прозрачности.
+@function toCustomVarOpacity($color) {
+  @return strReplace($color, ')', '-opacity)');
+}
+
 @mixin paletteGlobal {
   --sys-background-opacity: 1;
   --sys-gradient-opacity: 1;
+}
+
+@mixin colorSys($name, $color) {
+  --sys-#{$name}: #{toColorRbg($color)};
+
+  @if (isCustomVar($color)) {
+    --sys-#{$name}-opacity-custom: #{toCustomVarOpacity($color)};
+  }
+}
+
+@mixin colorSysPalette($name, $color) {
+  --sys-palette-#{$name}: #{getPalette($color)};
+
+  @if (isCustomVar($color)) {
+    --sys-palette-#{$name}-opacity: #{toCustomVarOpacity($color)};
+  }
 }
 
 /* Palette */
@@ -170,32 +197,32 @@ $designsShade: () !default;
 }
 
 @mixin paletteColor($color) {
-  --sys-palette-color: #{getPalette($color)};
+  @include colorSysPalette('color', $color);
   @include color(#{var(--sys-palette-color)});
 }
 
 @mixin paletteStroke($color) {
-  --sys-palette-color: #{getPalette($color)};
+  @include colorSysPalette('color', $color);
   @include stroke(#{var(--sys-palette-color)});
 }
 
 @mixin paletteBackground($color) {
-  --sys-palette-background: #{getPalette($color)};
+  @include colorSysPalette('background', $color);
   @include backgroundColor(#{var(--sys-palette-background)});
 }
 
 @mixin paletteFill($color) {
-  --sys-palette-background: #{getPalette($color)};
+  @include colorSysPalette('background', $color);
   @include fill(#{var(--sys-palette-background)});
 }
 
 @mixin paletteGradient($color) {
-  --sys-palette-gradient: #{getPalette($color)};
+  @include colorSysPalette('gradient', $color);
   @include gradient(#{var(--sys-palette-gradient)});
 }
 
 @mixin paletteBorder($color) {
-  --sys-palette-border: #{getPalette($color)};
+  @include colorSysPalette('border', $color);
   @include borderColor(#{var(--sys-palette-border)});
 }
 
@@ -203,7 +230,7 @@ $designsShade: () !default;
 
 @mixin color($color, $opacity: null, $propertyName: 'color') {
   @if (isColorRbgOrVar($color)) {
-    --sys-color: #{toColorRbg($color)};
+    @include colorSys('color', $color);
     @include colorOpacity($opacity);
     @include colorInit($propertyName);
   } @else {
@@ -218,14 +245,14 @@ $designsShade: () !default;
 }
 
 @mixin colorInit($propertyName: 'color') {
-  #{$propertyName}: rgba(var(--sys-color), var(--sys-color-opacity, 1));
+  #{$propertyName}: getColorValueSys('color');
 }
 
 /* Stroke */
 
 @mixin stroke($color, $opacity: null) {
   @if (isColorRbgOrVar($color)) {
-    --sys-color: #{toColorRbg($color)};
+    @include colorSys('color', $color);
     @include strokeOpacity($opacity);
     @include strokeInit;
   } @else {
@@ -240,7 +267,7 @@ $designsShade: () !default;
 }
 
 @mixin strokeInit() {
-  stroke: rgba(var(--sys-color), var(--sys-color-opacity, 1));
+  @include colorInit('stroke');
 }
 
 /* Background */
@@ -251,7 +278,7 @@ $designsShade: () !default;
   } @else if ($color == transparent) {
     @include backgroundColor(#000000, 0);
   } @else if (isColorRbgOrVar($color)) {
-    --sys-background: #{toColorRbg($color)};
+    @include colorSys('background', $color);
     @include backgroundOpacity($opacity);
     @include backgroundInit;
   } @else {
@@ -271,14 +298,14 @@ $designsShade: () !default;
 }
 
 @mixin backgroundInit() {
-  background-color: rgba(var(--sys-background), var(--sys-background-opacity, 1));
+  background-color: getColorValueSys('background');
 }
 
 /* Fill */
 
 @mixin fill($color, $opacity: null) {
   @if (isColorRbgOrVar($color)) {
-    --sys-background: #{toColorRbg($color)};
+    @include colorSys('background', $color);
     @include fillOpacity($opacity);
     @include fillInit;
   } @else {
@@ -293,14 +320,14 @@ $designsShade: () !default;
 }
 
 @mixin fillInit() {
-  fill: rgba(var(--sys-background), var(--sys-background-opacity, 1));
+  fill: getColorValueSys('background');
 }
 
 /* Gradient */
 
 @mixin gradient($color, $opacity: null) {
   @if (isColorRbgOrVar($color)) {
-    --sys-gradient: #{toColorRbg($color)};
+    @include colorSys('gradient', $color);
     @include gradientOpacity($opacity);
     @include gradientInit;
   } @else {
@@ -315,14 +342,14 @@ $designsShade: () !default;
 }
 
 @mixin gradientInit() {
-  background-image: #{toGradient(#{rgba(var(--sys-gradient), var(--sys-gradient-opacity, 1))})};
+  background-image: #{toGradient(#{getColorValueSys('gradient')})};
 }
 
 /* Border */
 
 @mixin borderColor($color, $opacity: null) {
   @if (isColorRbgOrVar($color)) {
-    --sys-border: #{toColorRbg($color)};
+    @include colorSys('border', $color);
     @include borderOpacity($opacity);
     @include borderInit;
   } @else {
@@ -337,7 +364,7 @@ $designsShade: () !default;
 }
 
 @mixin borderInit() {
-  border-color: rgba(var(--sys-border), var(--sys-border-opacity, 1));
+  border-color: getColorValueSys('border');
 }
 
 /* As */

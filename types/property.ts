@@ -18,6 +18,7 @@ export enum PropertyKey {
   nameIndex = '__ni',
   variable = '__v',
   css = '__c',
+  cssColorOpacity = '__cco',
   code = '__f',
   sort = '__s',
   order = '__o',
@@ -99,6 +100,7 @@ export type PropertyItem = {
   __ni?: string
   __v?: PropertyType
   __c?: string
+  __cco?: boolean
   __f?: string | string[]
   __s?: string
   __o?: number

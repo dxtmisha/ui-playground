@@ -15052,106 +15052,99 @@ $designsProperties: (
               ),
             ),
           ),
-          'family':(
-            index: 'family',
-            name: '&--family',
+          'fontFamily':(
+            index: 'fontFamily',
+            name: '&--fontFamily',
             type: 'state',
             value: (
-              'fontFamily':(
-                index: 'fontFamily',
-                name: '&--fontFamily',
+              'global':(
+                index: 'global',
+                name: '&--global',
                 type: 'state',
                 value: (
-                  'global':(
-                    index: 'global',
-                    name: '&--global',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Inter', sans-serif',
-                      ),
-                    ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Inter', sans-serif',
                   ),
-                  'geo':(
-                    index: 'geo',
-                    name: '&--geo',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Noto Sans Georgian', sans-serif',
-                      ),
-                    ),
+                ),
+              ),
+              'geo':(
+                index: 'geo',
+                name: '&--geo',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Noto Sans Georgian', sans-serif',
                   ),
-                  'isr':(
-                    index: 'isr',
-                    name: '&--isr',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Noto Sans Hebrew', sans-serif',
-                      ),
-                    ),
+                ),
+              ),
+              'isr':(
+                index: 'isr',
+                name: '&--isr',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Noto Sans Hebrew', sans-serif',
                   ),
-                  'tha':(
-                    index: 'tha',
-                    name: '&--tha',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Noto Sans Thai', sans-serif',
-                      ),
-                    ),
+                ),
+              ),
+              'tha':(
+                index: 'tha',
+                name: '&--tha',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Noto Sans Thai', sans-serif',
                   ),
-                  'kor':(
-                    index: 'kor',
-                    name: '&--kor',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Noto Sans KR', sans-serif',
-                      ),
-                    ),
+                ),
+              ),
+              'kor':(
+                index: 'kor',
+                name: '&--kor',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Noto Sans KR', sans-serif',
                   ),
-                  'arm':(
-                    index: 'arm',
-                    name: '&--arm',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: ''Noto Sans Armenian', sans-serif',
-                      ),
-                    ),
+                ),
+              ),
+              'arm':(
+                index: 'arm',
+                name: '&--arm',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: ''Noto Sans Armenian', sans-serif',
                   ),
-                  'base':(
-                    index: 'base',
-                    name: '&--base',
-                    type: 'state',
-                    value: (
-                      'fontFamily':(
-                        index: 'fontFamily',
-                        name: 'font-family',
-                        type: 'property',
-                        value: 'var(--cc2-ot-typography-fontFamily-global)',
-                      ),
-                    ),
+                ),
+              ),
+              'base':(
+                index: 'base',
+                name: '&--base',
+                type: 'state',
+                value: (
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--cc2-ot-typography-fontFamily-global)',
                   ),
                 ),
               ),
