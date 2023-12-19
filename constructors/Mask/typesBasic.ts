@@ -13,6 +13,7 @@ export type MaskGroupItem = {
   value: string
   maxLength: number
   full: boolean
+  end: boolean
   chars: string[]
 }
 export type MaskGroup = Record<string, MaskGroupItem>

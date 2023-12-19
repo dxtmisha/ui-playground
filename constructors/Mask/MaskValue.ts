@@ -58,6 +58,20 @@ export class MaskValue {
   }
 
   /**
+   * Checks if the mask is fully filled by length.<br>
+   * Проверяет, полностью ли заполнена маска по длине.
+   */
+  isEnd (): boolean {
+    for (const item of Object.values(this.getInfo())) {
+      if (!item.end) {
+        return false
+      }
+    }
+
+    return true
+  }
+
+  /**
    * Checks if the values are fully filled in for the group.<br>
    * Проверяет, полностью ли заполнены значения по группе.
    * @param groupName group name /<br>название группы
@@ -84,8 +98,7 @@ export class MaskValue {
     }
 
     return this.valueFinal.getCache([
-      this.mask.getList().join(''),
-      this.valueBasic.get()
+      ...this.valueBasic.get()
     ])
   }
 
@@ -101,6 +114,7 @@ export class MaskValue {
       value,
       maxLength: value.length,
       full: this.isFull(),
+      end: this.isEnd(),
       chars: value.split('')
     }
   }
@@ -149,6 +163,7 @@ export class MaskValue {
         value: '',
         maxLength: 0,
         full: false,
+        end: false,
         chars: []
       }
     }
@@ -178,6 +193,7 @@ export class MaskValue {
         value.maxLength++
         value.value = value.full ? value.chars.join('') : ''
         value.full = this.special.isDefault(char) || value.maxLength === value.chars.length
+        value.end = value.maxLength === value.chars.length
       }
     })
 

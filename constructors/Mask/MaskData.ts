@@ -6,6 +6,7 @@ import { MaskBuffer } from './MaskBuffer.ts'
 import { MaskFocus } from './MaskFocus.ts'
 import { MaskRubberTransition } from './MaskRubberTransition.ts'
 import { MaskDate } from './MaskDate.ts'
+import { MaskSpecial } from './MaskSpecial.ts'
 import { MaskMatch } from './MaskMatch.ts'
 import { MaskRubber } from './MaskRubber.ts'
 import { MaskItem } from './MaskItem.ts'
@@ -29,6 +30,7 @@ export class MaskData {
    * @param focus
    * @param rubberTransition
    * @param date
+   * @param special
    * @param match
    * @param rubber
    * @param mask
@@ -46,6 +48,7 @@ export class MaskData {
     protected readonly focus: MaskFocus,
     protected readonly rubberTransition: MaskRubberTransition,
     protected readonly date: MaskDate,
+    protected readonly special: MaskSpecial,
     protected readonly match: MaskMatch,
     protected readonly rubber: MaskRubber,
     protected readonly mask: MaskItem,
@@ -171,6 +174,65 @@ export class MaskData {
     }
 
     return this
+  }
+
+  /**
+   * Removing extra values for insertion.<br>
+   * Удаление лишних значений для вставки.
+   * @param chars insertion of symbols /<br>вставка символов
+   */
+  extra (chars: string[]): string[] {
+    if (this.character.is()) {
+      return chars
+    }
+
+    const list = this.mask.getList()
+    const data: string[] = [...chars]
+
+    let match = this.match.get(this.mask.getInfo()?.[0]?.char)
+    let key = 0
+
+    if (match) {
+      for (const index in list) {
+        const maskChar = list[index]
+        if (this.special.isSpecial(maskChar)) {
+          for (let indexChar = key; indexChar < data.length; indexChar++) {
+            key++
+
+            if (data[indexChar].match(match)) {
+              break
+            }
+          }
+
+          match = this.match.get(maskChar)
+        } else if (maskChar.match(match)) {
+          let exit = false
+
+          for (let indexChar = key; indexChar < data.length; indexChar++) {
+            const dataChar = data[indexChar]
+
+            key++
+
+            if (dataChar.match(match)) {
+              if (maskChar === dataChar) {
+                data.splice(indexChar, 1)
+                key--
+              } else {
+                exit = true
+              }
+
+              break
+            }
+          }
+
+          if (exit) {
+            break
+          }
+        }
+      }
+    }
+
+    return data
   }
 
   /**

@@ -35,6 +35,14 @@ export class MaskCharacter {
   }
 
   /**
+   * Checks if the value is filled.<br>
+   * Проверяет, заполнено ли значение.
+   */
+  is (): boolean {
+    return this.value.length > 0
+  }
+
+  /**
    * Checks if the selected character was previously deleted.<br>
    * Проверяет, является ли выделенный символ ранее удаленным.
    */

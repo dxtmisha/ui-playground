@@ -51,9 +51,10 @@ export class MaskView {
    */
   get (): MaskViewList {
     const data: MaskViewList = []
+    const valueBasic = this.valueBasic.get()
 
     this.mask.getList().forEach((char, index) => {
-      const value = this.valueBasic.getChar(index)
+      const value = valueBasic?.[index]
 
       data.push({
         className: `${this.className} ${this.className}--${this.getStatus(char, value)}`,
@@ -70,11 +71,12 @@ export class MaskView {
    */
   getInput (): string {
     const value: string[] = []
+    const list = this.mask.getList()
 
     this.valueBasic.get().split('').forEach((char, index) => {
       if (char === CHAR_DELETE) {
         value.push(
-          this.getSpecialToView(this.mask.get(index) ?? '') ?? char
+          this.getSpecialToView(list?.[index] ?? '') ?? char
         )
       } else {
         value.push(char)

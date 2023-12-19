@@ -212,10 +212,10 @@ export class MaskEvent {
         const text = data.split('')
 
         if (start === end) {
-          this.data.add(start, text)
+          this.data.add(start, this.data.extra(text))
         } else {
           this.data.pop(start, end)
-            .add(this.selection.getShift(), text)
+            .add(this.selection.getShift(), this.data.extra(text))
         }
 
         this.change = true

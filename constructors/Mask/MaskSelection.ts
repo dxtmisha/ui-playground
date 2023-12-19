@@ -55,6 +55,14 @@ export class MaskSelection {
   }
 
   /**
+   * Getting the previous key of the selected symbol.<br>
+   * Получение предыдущего ключа выделенного символа.
+   */
+  getPrevious (): number {
+    return this.getCharacter(this.value - 1)
+  }
+
+  /**
    * Getting the key number of the nearest special character.<br>
    * Получение номера ключа ближайшего специального символа.
    */

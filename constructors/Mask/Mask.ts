@@ -190,6 +190,7 @@ export class Mask {
       this.focus,
       this.rubberTransition,
       this.date,
+      this.special,
       this.match,
       this.rubber,
       this.item,

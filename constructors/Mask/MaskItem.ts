@@ -65,6 +65,17 @@ export class MaskItem extends CacheItem<string[]> {
   }
 
   /**
+   * Returns information about the selection location.<br>
+   * Возвращает информацию о месте выделения.
+   * @param selection
+   */
+  getInfoBySelection (selection: number): MaskSpecialInfo {
+    const info = this.getInfo()
+
+    return info.find(item => item.key >= selection) ?? info[info.length - 1]
+  }
+
+  /**
    * Returns the current mask.<br>
    * Возвращает текущую маску.
    */
@@ -155,7 +166,7 @@ export class MaskItem extends CacheItem<string[]> {
   getComparison (): any[] {
     return [
       this.characterLength.get(),
-      this.rubberItem.getCode(),
+      ...this.rubberItem.getCode(),
       this.props?.mask,
       this.props?.special,
       this.props?.fraction,

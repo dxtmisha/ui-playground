@@ -140,7 +140,7 @@ export class MaskRubber extends CacheItem<MaskSpecialList> {
       }
 
       if (
-        value.full &&
+        value.end &&
         this.match.is(char, groupName) &&
         !this.rubberTransition.isChar(groupName)
       ) {

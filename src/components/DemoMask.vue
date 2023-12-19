@@ -273,7 +273,7 @@ const onCodePhoneMask = (_: Event, value: MaskEventData) => {
         <div class="demo-mask__item__value">
           <m3-mask
             class="demo-mask__item__value__mask"
-            mask="+7 (***) ***-**-**"
+            mask="+84 (***) ***-**-**"
             name="test"
             :visible="visible"
           />
