@@ -49,7 +49,7 @@
   white-space: pre-wrap;
 
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: $clamp;
+  -webkit-line-clamp: #{$clamp};
 }
 
 @mixin truncate {
@@ -59,5 +59,5 @@
 }
 
 @mixin paragraphSpacing($value) {
-  --sys-paragraph-spacing: $value;
+  --sys-paragraph-spacing: #{$value};
 }

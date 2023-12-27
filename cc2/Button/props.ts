@@ -8,31 +8,30 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
-  icon: ['none', 'only'],
-  size: ['xl', 'lg', 'md', 'sm', 'xs', 'x'],
-  intent: ['positive', 'negative', 'neutral', 'informative', true],
-  primary: ['select', 'skeleton', true],
-  secondary: ['skeleton', 'select', true],
-  outline: ['skeleton', 'select', 'padding', true],
-  ghost: ['skeleton', 'select', true]
+  icon: ['none', 'left', 'right', 'only'],
+  intent: ['default', 'positive', 'negative', 'neutral', 'informative'],
+  size: ['xl', 'lg', 'md', 'sm', 'xs', 'x']
   // :values [!] System label / Системная метка
 }
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
-  icon?: 'none' | 'only'
+  focus?: boolean
+  icon?: 'none' | 'left' | 'right' | 'only'
   selected?: boolean
   progress?: boolean
   readonly?: boolean
   disabled?: boolean
   adaptive?: boolean
+  intent?: 'default' | 'positive' | 'negative' | 'neutral' | 'informative'
   size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'x'
-  intent?: boolean | 'positive' | 'negative' | 'neutral' | 'informative' | true
-  primary?: boolean | 'select' | 'skeleton' | true
-  secondary?: boolean | 'skeleton' | 'select' | true
-  outline?: boolean | 'skeleton' | 'select' | 'padding' | true
-  ghost?: boolean | 'skeleton' | 'select' | true
-  disable?: boolean
+  normal?: boolean
+  loading?: boolean
+  primary?: boolean
+  secondary?: boolean
+  outline?: boolean
+  ghost?: boolean
+  link?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -51,8 +50,8 @@ export const defaults: Props = {
   ...{
     // :default [!] System label / Системная метка
     icon: 'none',
-    size: 'xl',
     intent: 'default',
+    size: 'xl',
     primary: true
     // :default [!] System label / Системная метка
   }
@@ -64,6 +63,7 @@ export const propsInstruction = {
   ...propsButton,
   ...{
     // :prop [!] System label / Системная метка
+    focus: Boolean,
     icon: {
       type: String as PropType<PropsToken['icon']>,
       default: defaults?.icon
@@ -73,22 +73,24 @@ export const propsInstruction = {
     readonly: Boolean,
     disabled: Boolean,
     adaptive: Boolean,
+    intent: {
+      type: String as PropType<PropsToken['intent']>,
+      default: defaults?.intent
+    },
     size: {
       type: String as PropType<PropsToken['size']>,
       default: defaults?.size
     },
-    intent: {
-      type: [String, Boolean] as PropType<PropsToken['intent']>,
-      default: defaults?.intent
-    },
+    normal: Boolean,
+    loading: Boolean,
     primary: {
-      type: [String, Boolean] as PropType<PropsToken['primary']>,
+      type: Boolean,
       default: defaults?.primary
     },
-    secondary: [String, Boolean] as PropType<PropsToken['secondary']>,
-    outline: [String, Boolean] as PropType<PropsToken['outline']>,
-    ghost: [String, Boolean] as PropType<PropsToken['ghost']>,
-    disable: Boolean
+    secondary: Boolean,
+    outline: Boolean,
+    ghost: Boolean,
+    link: Boolean
     // :prop [!] System label / Системная метка
   }
 }

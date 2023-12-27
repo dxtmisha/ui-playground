@@ -4,6 +4,7 @@ import { PropertiesTool } from '../../properties/PropertiesTool.ts'
 import { StylesToAbstract } from './StylesToAbstract.ts'
 
 import { PropertyKey } from '../../../../types/property.ts'
+import { StylesTool } from '../StylesTool.ts'
 
 export const TYPES: string[] = [
   /* Flex */
@@ -131,7 +132,7 @@ export class StylesToProperty extends StylesToAbstract {
    */
   private getPropertyValue (): string {
     const name = this.getName()
-    const value = this.getValue()
+    const value = this.getValue() ?? 'unset'
 
     if (
       this.item?.[PropertyKey.modification] !== false &&
@@ -140,6 +141,6 @@ export class StylesToProperty extends StylesToAbstract {
       return `@include ${toCamelCase(name)}(#{${value}});`
     }
 
-    return `${name}: ${value};`
+    return `${name}: ${StylesTool.toFunctionCss(value)};`
   }
 }

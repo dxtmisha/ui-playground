@@ -10,5 +10,16 @@
     },
     "_type": "none",
     "_settingClone": true
+  },
+  "intent": {
+    "_settingClone": true
+  },
+  "icon": {
+    "_type": "none",
+    "_settingClone": true
+  },
+  "skeleton": {
+    "_type": "none",
+    "_settingClone": true
   }
 }

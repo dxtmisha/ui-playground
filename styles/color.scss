@@ -163,9 +163,21 @@ $designsShade: () !default;
   @return linear-gradient(0deg, #{$color}, #{$color});
 }
 
+@function toCustomVarRgb($color) {
+  @if (isCustomVar($color)) {
+    @return rgba(#{$color}, #{toCustomVarOpacity($color, 1)})
+  }
+
+  @return $color
+}
+
 /// Adding the transparency property.<br>
 /// Добавление свойства прозрачности.
-@function toCustomVarOpacity($color) {
+@function toCustomVarOpacity($color, $defaultValue: null) {
+  @if ($defaultValue) {
+    @return strReplace($color, ')', '-opacity, '#{$defaultValue}')');
+  }
+
   @return strReplace($color, ')', '-opacity)');
 }
 

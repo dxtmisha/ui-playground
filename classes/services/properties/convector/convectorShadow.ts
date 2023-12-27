@@ -35,16 +35,20 @@ export function convectorShadow (item: PropertyItemInput): void {
           spread
         } = item
 
+        const colorValue = color.match(/^{/)
+          ? `@toCustomVarRgb(${color})`
+          : color
+
         if (type === 'innerShadow') {
           shadow.push('inset')
         }
 
         shadow.push(
-          x ?? '0',
-          y ?? '0',
-          blur ?? '0',
-          spread ?? '',
-          color ?? 'rgba(0, 0, 0, 1)'
+          x && x !== '0' && x.match(/^[0-9]+$/) ? `${x}px` : x ?? '0',
+          y && y !== '0' && y.match(/^[0-9]+$/) ? `${y}px` : y ?? '0',
+          blur && blur !== '0' && blur.match(/^[0-9]+$/) ? `${blur}px` : blur ?? '0',
+          spread && spread !== '0' && spread.match(/^[0-9]+$/) ? `${spread}px` : spread ?? '0',
+          colorValue ?? 'rgba(0, 0, 0, 1)'
         )
 
         shadows.push(shadow.join(' ').trim())

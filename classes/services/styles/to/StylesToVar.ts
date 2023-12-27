@@ -10,6 +10,7 @@ import {
   PropertyKey,
   PropertyType
 } from '../../../../types/property.ts'
+import { StylesTool } from '../StylesTool.ts'
 
 /**
  * CSS variable converter class.<br>
@@ -61,7 +62,7 @@ export class StylesToVar extends StylesToAbstract {
       value = `#{toColorRbg(${value})}`
     }
 
-    return `${item?.[PropertyKey.name]}: ${value};`
+    return `${item?.[PropertyKey.name]}: ${StylesTool.toFunctionCss(value)};`
   }
 
   private getCodeColorOpacity (

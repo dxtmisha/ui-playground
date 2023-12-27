@@ -1,11 +1,7 @@
 import { type PropertiesItemsItem } from '../PropertiesItems.ts'
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
-import {
-  type PropertyItem,
-  PropertyKey,
-  PropertyType
-} from '../../../../types/property.ts'
+import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
 
 /**
  * A class for transforming subclass.<br>
@@ -34,7 +30,13 @@ export class PropertiesToSubclass extends PropertiesToAbstract {
    * массив со всеми свойствами предков по дереву от верхнего уровня
    */
   private isParentState (parents: PropertiesItemsItem['parents']): boolean {
-    return parents[parents.length - 1].item?.[PropertyKey.variable] === PropertyType.state
+    const type = parents[parents.length - 1].item?.[PropertyKey.variable] ?? PropertyType.subclass
+
+    return [
+      PropertyType.component,
+      PropertyType.subclass,
+      PropertyType.classType
+    ].indexOf(type) < 0
   }
 
   /**

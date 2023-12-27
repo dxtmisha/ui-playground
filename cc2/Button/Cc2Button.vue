@@ -27,24 +27,22 @@ const classesToken = computed<ConstrClasses>(() => ({
     // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'cc2-button': true,
+    'cc2-button--focus': props.focus,
     [`cc2-button--icon--${props.icon}`]: inArray(propsValues.icon, props.icon),
     'cc2-button--selected': props.selected,
     'cc2-button--progress': props.progress,
     'cc2-button--readonly': props.readonly,
     'cc2-button--disabled': props.disabled,
     'cc2-button--adaptive': props.adaptive,
-    [`cc2-button--size--${props.size}`]: inArray(propsValues.size, props.size),
-    'cc2-button--intent': Boolean(props.intent),
     [`cc2-button--intent--${props.intent}`]: inArray(propsValues.intent, props.intent),
-    'cc2-button--primary': Boolean(props.primary) && !props.secondary && !props.outline && !props.ghost,
-    [`cc2-button--primary--${props.primary}`]: inArray(propsValues.primary, props.primary),
-    'cc2-button--secondary': Boolean(props.secondary),
-    [`cc2-button--secondary--${props.secondary}`]: inArray(propsValues.secondary, props.secondary),
-    'cc2-button--outline': Boolean(props.outline),
-    [`cc2-button--outline--${props.outline}`]: inArray(propsValues.outline, props.outline),
-    'cc2-button--ghost': Boolean(props.ghost),
-    [`cc2-button--ghost--${props.ghost}`]: inArray(propsValues.ghost, props.ghost),
-    'cc2-button--disable': props.disable
+    [`cc2-button--size--${props.size}`]: inArray(propsValues.size, props.size),
+    'cc2-button--normal': props.normal,
+    'cc2-button--loading': props.loading,
+    'cc2-button--primary': props.primary && !props.secondary && !props.outline && !props.ghost && !props.link,
+    'cc2-button--secondary': props.secondary,
+    'cc2-button--outline': props.outline,
+    'cc2-button--ghost': props.ghost,
+    'cc2-button--link': props.link
     // :classes-values [!] System label / Системная метка
   }
   // TODO: User subclasses / Пользовательские подклассы
@@ -93,6 +91,8 @@ defineExpose(design.expose())
   // Styles from tokens
   // Стили из токенов
   @include mixinButtonToken;
+
+  padding: var(--cc2-button-padding);
 
   // Here are the user styles
   // Здесь пользовательские стили
