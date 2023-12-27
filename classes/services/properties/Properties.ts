@@ -38,6 +38,8 @@ import {
   NAME_CONSTRUCTOR,
   type PropertyList
 } from '../../../types/property.ts'
+import { PropertiesToDrag } from './to/PropertiesToDrag.ts'
+import { PropertiesToClone } from './to/PropertiesToClone.ts'
 
 const FILE_CACHE = 'properties'
 
@@ -145,6 +147,8 @@ export class Properties {
     new PropertiesToPalette(properties).to()
     new PropertiesToLink(properties).to()
     new PropertiesToSub(properties).to()
+    new PropertiesToClone(properties).to()
+    new PropertiesToDrag(properties).to()
     new PropertiesToVariable(properties).to()
   }
 }

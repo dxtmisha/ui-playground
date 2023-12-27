@@ -16626,6 +16626,329 @@ $designsProperties: (
         name: 'cc2-button',
         type: 'component',
         value: (
+          'link':(
+            index: 'link',
+            name: 'link',
+            type: 'selector',
+            value: (
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-focus)',
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'default':(
+                    index: 'default',
+                    name: 'default',
+                    type: 'selector',
+                    value: (
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: '0px 0px 0px 2px #111',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: '0px 0px 0px 2px #111',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: '0px 0px 0px 2px #111',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: '0px 0px 0px 2px #111',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: '0px 0px 0px 1px #111',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '&.cc2-button--icon',
+                type: 'state',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'select':(
+                index: 'select',
+                name: '&--select',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&--icon',
+            type: 'state',
+            value: (
+              'none':(
+                index: 'none',
+                name: '&--none',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'only':(
+                index: 'only',
+                name: '&--only',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -16661,7 +16984,7 @@ $designsProperties: (
             value: (
               'icon':(
                 index: 'icon',
-                name: '&--icon',
+                name: '&.cc2-button--icon',
                 type: 'state',
                 value: (
                   'padding':(
@@ -16693,16 +17016,2607 @@ $designsProperties: (
               ),
             ),
           ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'xs':(
+                index: 'xs',
+                name: '&--xs',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'x':(
+                index: 'x',
+                name: '&--x',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'intent':(
+            index: 'intent',
+            name: '&--intent',
+            type: 'state',
+            value: (
+              'default':(
+                index: 'default',
+                name: 'default',
+                type: 'selector',
+                value: (
+                ),
+              ),
+              'positive':(
+                index: 'positive',
+                name: '&--positive',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'negative':(
+                index: 'negative',
+                name: '&--negative',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'neutral':(
+                index: 'neutral',
+                name: '&--neutral',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'informative':(
+                index: 'informative',
+                name: '&--informative',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'primary':(
+            index: 'primary',
+            name: '&--primary',
+            type: 'state',
+            value: (
+              'padding':(
+                index: 'padding',
+                name: '--cc2-button-padding',
+                type: 'var',
+                value: 'var(--cc2-st-global-distance-space-inset-2xl)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-bg-color-primary-solid-normal)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--cc2-st-selectable-borderRadius-size-xl)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-solid-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-solid-active)',
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: '0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-xl)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-lg)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-md)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-md)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-sm)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-xs)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '&.cc2-button--icon',
+                        type: 'state',
+                        value: (
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'borderRadius':(
+                                index: 'borderRadius',
+                                name: 'border-radius',
+                                type: 'property',
+                                value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xl':(
+                    index: 'xl',
+                    name: '&--xl',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'default':(
+                    index: 'default',
+                    name: 'default',
+                    type: 'selector',
+                    value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '&.cc2-button--icon',
+                        type: 'state',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'only':(
+                            index: 'only',
+                            name: '&--only',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-positive-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-informative-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-negative-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-solid-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-solid-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-solid-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-solid-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'select':(
+                index: 'select',
+                name: '&--select',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-solid-select)',
+                  ),
+                ),
+              ),
+              'skeleton':(
+                index: 'skeleton',
+                name: '&--skeleton',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-content-bg-color-neutral-disable)',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '&.cc2-button--icon',
+                type: 'state',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'secondary':(
+            index: 'secondary',
+            name: '&--secondary',
+            type: 'state',
+            value: (
+              'padding':(
+                index: 'padding',
+                name: '--cc2-button-padding',
+                type: 'var',
+                value: 'var(--cc2-st-global-distance-space-inset-2xl)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-bg-color-primary-subtle-normal)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--cc2-st-selectable-borderRadius-size-xl)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-subtle-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-subtle-active)',
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: '0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-xl)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-lg)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-md)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-md)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-sm)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-xs)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xl':(
+                    index: 'xl',
+                    name: '&--xl',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+              'skeleton':(
+                index: 'skeleton',
+                name: '&--skeleton',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-content-bg-color-neutral-disable)',
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'default':(
+                    index: 'default',
+                    name: 'default',
+                    type: 'selector',
+                    value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '&.cc2-button--icon',
+                        type: 'state',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'only':(
+                            index: 'only',
+                            name: '&--only',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-positive-subtle-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-subtle-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-subtle-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-positive-subtle-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-informative-subtle-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-subtle-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-subtle-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-subtle-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-negative-subtle-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-subtle-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-subtle-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-negative-subtle-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-subtle-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-subtle-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-subtle-active)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-subtle-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'select':(
+                index: 'select',
+                name: '&--select',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-primary-subtle-select)',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '&.cc2-button--icon',
+                type: 'state',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: '&--outline',
+            type: 'state',
+            value: (
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--cc2-st-selectable-borderRadius-size-xl)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-active)',
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: '0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-xl)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-lg)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-md)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-md)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-sm)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-xs)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xl':(
+                    index: 'xl',
+                    name: '&--xl',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+              'skeleton':(
+                index: 'skeleton',
+                name: '&--skeleton',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-content-bg-color-neutral-disable)',
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'default':(
+                    index: 'default',
+                    name: 'default',
+                    type: 'selector',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-active)',
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-normal)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '&.cc2-button--icon',
+                        type: 'state',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'only':(
+                            index: 'only',
+                            name: '&--only',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'normal':(
+                        index: 'normal',
+                        name: '&--normal',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-normal)',
+                          ),
+                        ),
+                      ),
+                      'disable':(
+                        index: 'disable',
+                        name: '&.cc2-button--disable',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-normal)',
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-normal)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-border-color-neutral-subtle-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-active)',
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-normal)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-select)',
+                          ),
+                        ),
+                      ),
+                      'normal':(
+                        index: 'normal',
+                        name: '&--normal',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-normal)',
+                          ),
+                        ),
+                      ),
+                      'disable':(
+                        index: 'disable',
+                        name: '&.cc2-button--disable',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-normal)',
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-positive-normal)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-active)',
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-normal)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-select)',
+                          ),
+                        ),
+                      ),
+                      'normal':(
+                        index: 'normal',
+                        name: '&--normal',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-normal)',
+                          ),
+                        ),
+                      ),
+                      'disable':(
+                        index: 'disable',
+                        name: '&.cc2-button--disable',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-normal)',
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-bg-color-informative-normal)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-active)',
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-normal)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-select)',
+                          ),
+                        ),
+                      ),
+                      'normal':(
+                        index: 'normal',
+                        name: '&--normal',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-normal)',
+                          ),
+                        ),
+                      ),
+                      'disable':(
+                        index: 'disable',
+                        name: '&.cc2-button--disable',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-normal)',
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-negative-normal)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-active)',
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-normal)',
+                          ),
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-select)',
+                          ),
+                        ),
+                      ),
+                      'normal':(
+                        index: 'normal',
+                        name: '&--normal',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-normal)',
+                          ),
+                        ),
+                      ),
+                      'disable':(
+                        index: 'disable',
+                        name: '&.cc2-button--disable',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-normal)',
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                          'border':(
+                            index: 'border',
+                            name: 'border',
+                            type: 'property',
+                            value: '1px solid var(--cc2-st-action-fg-color-neutral-normal)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'select':(
+                index: 'select',
+                name: '&--select',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-select)',
+                  ),
+                ),
+              ),
+              'padding':(
+                index: 'padding',
+                name: '&--padding',
+                type: 'state',
+                value: (
+                  'outline':(
+                    index: 'outline',
+                    name: 'outline',
+                    type: 'property',
+                    value: 'var(--cc2-st-global-distance-space-inset-2xl)',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '&.cc2-button--icon',
+                type: 'state',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'ghost':(
+            index: 'ghost',
+            name: '&--ghost',
+            type: 'state',
+            value: (
+              'padding':(
+                index: 'padding',
+                name: '--cc2-button-padding',
+                type: 'var',
+                value: 'var(--cc2-st-global-distance-space-inset-2xl)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--cc2-st-selectable-borderRadius-size-xl)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-active)',
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-focus)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: '0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-xl)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-lg)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-md)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-lg)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-md)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
+                      ),
+                      'intent':(
+                        index: 'intent',
+                        name: '&.cc2-button--intent',
+                        type: 'state',
+                        value: (
+                          'negative':(
+                            index: 'negative',
+                            name: '&--negative',
+                            type: 'state',
+                            value: (
+                              'icon':(
+                                index: 'icon',
+                                name: '&.cc2-button--icon',
+                                type: 'state',
+                                value: (
+                                  'only':(
+                                    index: 'only',
+                                    name: '&--only',
+                                    type: 'state',
+                                    value: (
+                                      'disable':(
+                                        index: 'disable',
+                                        name: '&.cc2-button--disable',
+                                        type: 'state',
+                                        value: (
+                                          'backgroundColor':(
+                                            index: 'backgroundColor',
+                                            name: 'background-color',
+                                            type: 'property',
+                                            value: 'var(--cc2-st-action-bg-color-negative-subtle-normal)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: '--cc2-button-padding',
+                        type: 'var',
+                        value: 'var(--cc2-st-global-distance-space-inset-sm)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--cc2-st-selectable-borderRadius-size-xs)',
+                      ),
+                      'intent':(
+                        index: 'intent',
+                        name: '&.cc2-button--intent',
+                        type: 'state',
+                        value: (
+                          'negative':(
+                            index: 'negative',
+                            name: '&--negative',
+                            type: 'state',
+                            value: (
+                              'icon':(
+                                index: 'icon',
+                                name: '&.cc2-button--icon',
+                                type: 'state',
+                                value: (
+                                  'only':(
+                                    index: 'only',
+                                    name: '&--only',
+                                    type: 'state',
+                                    value: (
+                                      'disable':(
+                                        index: 'disable',
+                                        name: '&.cc2-button--disable',
+                                        type: 'state',
+                                        value: (
+                                          'backgroundColor':(
+                                            index: 'backgroundColor',
+                                            name: 'background-color',
+                                            type: 'property',
+                                            value: 'var(--cc2-st-action-bg-color-negative-subtle-normal)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'skeleton':(
+                        index: 'skeleton',
+                        name: '&--skeleton',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xl':(
+                    index: 'xl',
+                    name: '&--xl',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+              'skeleton':(
+                index: 'skeleton',
+                name: '&--skeleton',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-content-bg-color-neutral-disable)',
+                  ),
+                ),
+              ),
+              'select':(
+                index: 'select',
+                name: '&--select',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-select)',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '&.cc2-button--icon',
+                type: 'state',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&--loading',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'default':(
+                    index: 'default',
+                    name: 'default',
+                    type: 'selector',
+                    value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '&.cc2-button--icon',
+                        type: 'state',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'only':(
+                            index: 'only',
+                            name: '&--only',
+                            type: 'state',
+                            value: (
+                              'skeleton':(
+                                index: 'skeleton',
+                                name: '&--skeleton',
+                                type: 'state',
+                                value: (
+                                  'opacity':(
+                                    index: 'opacity',
+                                    name: 'opacity',
+                                    type: 'property',
+                                    value: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                        ),
+                      ),
+                      'select':(
+                        index: 'select',
+                        name: '&--select',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'disable':(
+            index: 'disable',
+            name: '&--disable',
+            type: 'state',
+            value: (
+              'opacity':(
+                index: 'opacity',
+                name: 'opacity',
+                type: 'property',
+                value: 0.5,
+              ),
+            ),
+          ),
           'label':(
             index: 'label',
             name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
             type: 'subclass',
             value: (
             ),

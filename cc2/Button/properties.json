@@ -1,3 +1,13 @@
 {
-  "main": "{d.button}"
+  "main": "{d.button}",
+  "container": {
+    "content": {
+      "label": {
+        "_drag": ".."
+      },
+      "_drag": "../../label"
+    },
+    "_type": "none",
+    "_settingClone": true
+  }
 }

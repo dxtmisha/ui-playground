@@ -2,9 +2,86 @@
 
 @mixin mixinButtonToken {
   // :style [!] System label / Системная метка
+  &:link {
+    @include hover('.cc2-button') {
+    }
+    
+    @include active('.cc2-button') {
+    }
+    
+    @include focus('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-focus)});
+    }
+    
+    &.cc2-button--intent {
+      & {
+        @include focus('.cc2-button') {
+            box-shadow: 0px 0px 0px 2px #111;
+        }
+      }
+      
+      &--positive {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+        
+        @include focus('.cc2-button') {
+          box-shadow: 0px 0px 0px 2px #111;
+        }
+      }
+      
+      &--informative {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+        
+        @include focus('.cc2-button') {
+          box-shadow: 0px 0px 0px 2px #111;
+        }
+      }
+      
+      &--negative {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+        
+        @include focus('.cc2-button') {
+          box-shadow: 0px 0px 0px 2px #111;
+        }
+      }
+      
+      &--neutral {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+        
+        @include focus('.cc2-button') {
+          box-shadow: 0px 0px 0px 1px #111;
+        }
+      }
+    }
+    
+    &.cc2-button--icon {
+      &--only {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+    }
+  }
   
   &--adaptive {
-    &--icon {
+    &.cc2-button--icon {
       --cc2-button-padding: 0px;
       
        .cc2-button__label {
@@ -13,6 +90,715 @@
         @include paddingX(#{0px});
       }
     }
+  }
+  
+  &--intent {
+    &:default {
+    }
+  }
+  
+  &--primary {
+    --cc2-button-padding: var(--cc2-st-global-distance-space-inset-2xl);
+    
+    @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-normal)});
+    
+    border-radius: var(--cc2-st-selectable-borderRadius-size-xl);
+    
+    @include hover('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-active)});
+    }
+    
+    @include focus('.cc2-button') {
+      box-shadow: 0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF;
+    }
+    
+    &.cc2-button--size {
+      &--lg {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+      }
+      
+      &--md {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+      }
+      
+      &--sm {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--xs {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--x {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+        
+        &.cc2-button--icon {
+          &--right {
+            border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+          }
+        }
+      }
+    }
+    
+    &.cc2-button--intent {
+      &:default {
+        &.cc2-button--icon {
+          &--none {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+          
+          &--only {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      
+      &--positive {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-select)});
+        }
+      }
+      
+      &--informative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-select)});
+        }
+      }
+      
+      &--negative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-select)});
+        }
+      }
+      
+      &--neutral {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-select)});
+        }
+      }
+    }
+    
+    &--select {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-select)});
+    }
+    
+    &--skeleton {
+      @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+    }
+  }
+  
+  &--secondary {
+    --cc2-button-padding: var(--cc2-st-global-distance-space-inset-2xl);
+    
+    @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-normal)});
+    
+    border-radius: var(--cc2-st-selectable-borderRadius-size-xl);
+    
+    @include hover('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-active)});
+    }
+    
+    @include focus('.cc2-button') {
+      box-shadow: 0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF;
+    }
+    
+    &.cc2-button--size {
+      &--lg {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+      }
+      
+      &--md {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+      }
+      
+      &--sm {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--xs {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--x {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+      }
+    }
+    
+    &--skeleton {
+      @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+    }
+    
+    &.cc2-button--intent {
+      &:default {
+        &.cc2-button--icon {
+          &--none {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+          
+          &--only {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      
+      &--positive {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-select)});
+        }
+      }
+      
+      &--informative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-select)});
+        }
+      }
+      
+      &--negative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-select)});
+        }
+      }
+      
+      &--neutral {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-normal)});
+        
+        @include hover('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-hover)});
+        }
+        
+        @include active('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-active)});
+        }
+        
+        &--select {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-select)});
+        }
+      }
+    }
+    
+    &--select {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-select)});
+    }
+    
+    &.cc2-button--icon {
+      &--only {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+    }
+  }
+  
+  &--outline {
+    @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-normal)});
+    
+    border-radius: var(--cc2-st-selectable-borderRadius-size-xl);
+    
+    @include hover('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
+    }
+    
+    @include focus('.cc2-button') {
+      box-shadow: 0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF;
+    }
+    
+    &.cc2-button--size {
+      &--lg {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+      }
+      
+      &--md {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+      }
+      
+      &--sm {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--xs {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--x {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+      }
+    }
+    
+    &--skeleton {
+      @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+    }
+    
+    &.cc2-button--intent {
+      &:default {
+        @include hover('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-hover);
+        }
+        
+        @include active('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-active);
+        }
+        
+        @include focus('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-normal);
+        }
+        
+        &.cc2-button--icon {
+          &--none {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+          
+          &--only {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+        }
+        
+        &--normal {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-normal);
+        }
+        
+        &.cc2-button--disable {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-normal);
+        }
+        
+        &--loading {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-normal);
+        }
+        
+        &--select {
+          border: 1px solid var(--cc2-st-action-border-color-neutral-subtle-select);
+        }
+      }
+      
+      &--positive {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include hover('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-hover);
+        }
+        
+        @include active('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-active);
+        }
+        
+        @include focus('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+          
+          border: 1px solid var(--cc2-st-action-fg-color-positive-normal);
+        }
+        
+        &--select {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-select);
+        }
+        
+        &--normal {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-normal);
+        }
+        
+        &.cc2-button--disable {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-normal);
+        }
+        
+        &--loading {
+          border: 1px solid var(--cc2-st-action-fg-color-positive-normal);
+        }
+      }
+      
+      &--informative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include hover('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-hover);
+        }
+        
+        @include active('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-active);
+        }
+        
+        @include focus('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+          
+          border: 1px solid var(--cc2-st-action-bg-color-informative-normal);
+        }
+        
+        &--select {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-select);
+        }
+        
+        &--normal {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-normal);
+        }
+        
+        &.cc2-button--disable {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-normal);
+        }
+        
+        &--loading {
+          border: 1px solid var(--cc2-st-action-bg-color-informative-normal);
+        }
+      }
+      
+      &--negative {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include hover('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-hover);
+        }
+        
+        @include active('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-active);
+        }
+        
+        @include focus('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+          
+          border: 1px solid var(--cc2-st-action-fg-color-negative-normal);
+        }
+        
+        &--select {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-select);
+        }
+        
+        &--normal {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-normal);
+        }
+        
+        &.cc2-button--disable {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-normal);
+        }
+        
+        &--loading {
+          border: 1px solid var(--cc2-st-action-fg-color-negative-normal);
+        }
+      }
+      
+      &--neutral {
+        @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include hover('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-hover);
+        }
+        
+        @include active('.cc2-button') {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-active);
+        }
+        
+        @include focus('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+          
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-normal);
+        }
+        
+        &--select {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-select);
+        }
+        
+        &--normal {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-normal);
+        }
+        
+        &.cc2-button--disable {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-normal);
+        }
+        
+        &--loading {
+          border: 1px solid var(--cc2-st-action-fg-color-neutral-normal);
+        }
+      }
+    }
+    
+    &--select {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
+    }
+    
+    &--padding {
+      outline: var(--cc2-st-global-distance-space-inset-2xl);
+    }
+    
+    &.cc2-button--icon {
+      &--only {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+    }
+  }
+  
+  &--ghost {
+    --cc2-button-padding: var(--cc2-st-global-distance-space-inset-2xl);
+    
+    @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
+    
+    border-radius: var(--cc2-st-selectable-borderRadius-size-xl);
+    
+    @include hover('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-active)});
+    }
+    
+    @include focus('.cc2-button') {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-focus)});
+      
+      box-shadow: 0px 0px 0px 4px #111, 0px 0px 0px 2px #FFF;
+    }
+    
+    &.cc2-button--size {
+      &--lg {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+      }
+      
+      &--md {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+      }
+      
+      &--sm {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+      }
+      
+      &--xs {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &.cc2-button--intent {
+          &--negative {
+            &.cc2-button--icon {
+              &--only {
+                &.cc2-button--disable {
+                  @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      &--x {
+        --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
+        
+        border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+        
+        &.cc2-button--intent {
+          &--negative {
+            &.cc2-button--icon {
+              &--only {
+                &.cc2-button--disable {
+                  @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    &--skeleton {
+      @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+    }
+    
+    &--select {
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-select)});
+    }
+    
+    &.cc2-button--icon {
+      &--only {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+    }
+    
+    &.cc2-button--intent {
+      &:default {
+        &.cc2-button--icon {
+          &--none {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+          
+          &--only {
+            &--skeleton {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      
+      &--positive {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+      
+      &--negative {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+      
+      &--neutral {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+      
+      &--informative {
+        @include hover('.cc2-button') {
+        }
+        
+        @include active('.cc2-button') {
+        }
+      }
+    }
+  }
+  
+  &--disable {
+    opacity: 0.5;
   }
   // :style [!] System label / Системная метка
 }

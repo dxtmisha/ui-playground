@@ -1,16 +1,19 @@
 export enum PropertyKey {
+  value = 'value',
   category = '_category',
   theme = '_theme',
   type = '_type',
   state = '_state',
   subclass = '_subclass',
   rename = '_rename',
+  drag = '_drag',
   prop = '_prop',
   default = '_default',
   replace = '_replace',
   important = '_important',
   varKey = '_var',
   modification = '_modification',
+  settingClone = '_settingClone',
   fullName = '_fullName',
   fullValue = '_fullValue',
   style = '_style',
@@ -85,12 +88,14 @@ export type PropertyItem = {
   _category?: PropertyCategory | string
   _theme?: string
   _rename?: string
+  _drag?: string
   _prop?: string | boolean
   _default?: string | number | boolean
   _replace?: string | PropertyReplace
   _important?: boolean
   _var?: boolean
   _modification?: boolean
+  _settingClone?: boolean
   _fullName?: boolean
   _fullValue?: boolean
   _style?: boolean
