@@ -5,7 +5,8 @@
       "label": {
         "_drag": ".."
       },
-      "_drag": "../../label"
+      "_drag": "../../label",
+      "_dragSetting": "{??label}"
     },
     "_type": "none",
     "_settingClone": true

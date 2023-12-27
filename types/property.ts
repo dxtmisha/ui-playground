@@ -7,6 +7,7 @@ export enum PropertyKey {
   subclass = '_subclass',
   rename = '_rename',
   drag = '_drag',
+  dragSetting = '_dragSetting',
   prop = '_prop',
   default = '_default',
   replace = '_replace',
@@ -89,6 +90,7 @@ export type PropertyItem = {
   _theme?: string
   _rename?: string
   _drag?: string
+  _dragSetting?: string
   _prop?: string | boolean
   _default?: string | number | boolean
   _replace?: string | PropertyReplace

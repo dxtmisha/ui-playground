@@ -106,10 +106,18 @@
     
     @include hover('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-hover)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
+      }
     }
     
     @include active('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-active)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
+      }
     }
     
     @include focus('.cc2-button') {
@@ -121,24 +129,128 @@
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-sm);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--md {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--sm {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--xs {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--x {
@@ -150,6 +262,32 @@
           &--right {
             border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
           }
+        }
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
         }
       }
     }
@@ -224,24 +362,82 @@
         
         @include hover('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-hover)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-active)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
+          }
         }
         
         &--select {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-select)});
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-bg-color-neutral-invert-normal)});
         }
       }
     }
     
     &--select {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-select)});
+      
+      & .cc2-button__label {
+        @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
+      }
     }
     
     &--skeleton {
       @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+      
+      & .cc2-button__label {
+        font-family: var(--cc2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+        font-weight: var(--cc2-ot-typography-fontWeight-400);
+        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+        text-decoration: var(--cc2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        
+        @include color(#{var(--cc2-st-content-fg-color-neutral-disable)});
+      }
+    }
+    
+    &.cc2-button--icon {
+      &--only {
+        &--loading {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-invert-normal)});
+          }
+        }
+      }
+    }
+    
+    & .cc2-button__label {
+      gap: var(--cc2-st-global-distance-space-inline-md);
+      
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-lg);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
+      @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
     }
   }
   
@@ -254,10 +450,18 @@
     
     @include hover('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-hover)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
+      }
     }
     
     @include active('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-active)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-active)});
+      }
     }
     
     @include focus('.cc2-button') {
@@ -269,35 +473,178 @@
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-sm);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--md {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--sm {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--xs {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--x {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
     }
     
     &--skeleton {
       @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+      
+      & .cc2-button__label {
+        font-family: var(--cc2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+        font-weight: var(--cc2-ot-typography-fontWeight-400);
+        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+        text-decoration: var(--cc2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        
+        @include color(#{var(--cc2-st-content-fg-color-neutral-disable)});
+      }
     }
     
     &.cc2-button--intent {
@@ -322,14 +669,30 @@
         
         @include hover('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-hover)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-active)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
+          }
         }
         
         &--select {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-select)});
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-positive-normal)});
         }
       }
       
@@ -338,14 +701,26 @@
         
         @include hover('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-hover)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-informative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-active)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-informative-active)});
+          }
         }
         
         &--select {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-select)});
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-informative-normal)});
         }
       }
       
@@ -354,14 +729,30 @@
         
         @include hover('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-hover)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-active)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
+          }
         }
         
         &--select {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-select)});
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-negative-normal)});
         }
       }
       
@@ -370,30 +761,87 @@
         
         @include hover('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-hover)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-active)});
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
+          }
         }
         
         &--select {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-select)});
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
         }
       }
     }
     
     &--select {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-select)});
+      
+      & .cc2-button__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-select)});
+      }
     }
     
     &.cc2-button--icon {
       &--only {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
+          }
+        }
+        
+        &--loading {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-invert-normal)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
         }
       }
+    }
+    
+    & .cc2-button__label {
+      gap: var(--cc2-st-global-distance-space-inline-md);
+      
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-lg);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
+      @include color(#{var(--cc2-st-action-fg-color-primary-normal)});
     }
   }
   
@@ -404,10 +852,18 @@
     
     @include hover('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
+      }
     }
     
     @include active('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
+      }
     }
     
     @include focus('.cc2-button') {
@@ -419,35 +875,178 @@
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-sm);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--md {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--sm {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--xs {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--x {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
     }
     
     &--skeleton {
       @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+      
+      & .cc2-button__label {
+        font-family: var(--cc2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+        font-weight: var(--cc2-ot-typography-fontWeight-400);
+        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+        text-decoration: var(--cc2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        
+        @include color(#{var(--cc2-st-content-fg-color-neutral-disable)});
+      }
     }
     
     &.cc2-button--intent {
@@ -500,10 +1099,18 @@
         
         @include hover('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-positive-hover);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-positive-active);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
+          }
         }
         
         @include focus('.cc2-button') {
@@ -514,6 +1121,10 @@
         
         &--select {
           border: 1px solid var(--cc2-st-action-fg-color-positive-select);
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-select)});
+          }
         }
         
         &--normal {
@@ -527,6 +1138,10 @@
         &--loading {
           border: 1px solid var(--cc2-st-action-fg-color-positive-normal);
         }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-positive-normal)});
+        }
       }
       
       &--informative {
@@ -534,10 +1149,18 @@
         
         @include hover('.cc2-button') {
           border: 1px solid var(--cc2-st-action-bg-color-informative-hover);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           border: 1px solid var(--cc2-st-action-bg-color-informative-active);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-active)});
+          }
         }
         
         @include focus('.cc2-button') {
@@ -548,6 +1171,10 @@
         
         &--select {
           border: 1px solid var(--cc2-st-action-bg-color-informative-select);
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-select)});
+          }
         }
         
         &--normal {
@@ -561,6 +1188,10 @@
         &--loading {
           border: 1px solid var(--cc2-st-action-bg-color-informative-normal);
         }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-bg-color-informative-normal)});
+        }
       }
       
       &--negative {
@@ -568,10 +1199,18 @@
         
         @include hover('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-negative-hover);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-negative-active);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
+          }
         }
         
         @include focus('.cc2-button') {
@@ -582,6 +1221,10 @@
         
         &--select {
           border: 1px solid var(--cc2-st-action-fg-color-negative-select);
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-select)});
+          }
         }
         
         &--normal {
@@ -595,6 +1238,10 @@
         &--loading {
           border: 1px solid var(--cc2-st-action-fg-color-negative-normal);
         }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-negative-normal)});
+        }
       }
       
       &--neutral {
@@ -602,10 +1249,18 @@
         
         @include hover('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-neutral-hover);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
+          }
         }
         
         @include active('.cc2-button') {
           border: 1px solid var(--cc2-st-action-fg-color-neutral-active);
+          
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
+          }
         }
         
         @include focus('.cc2-button') {
@@ -616,6 +1271,10 @@
         
         &--select {
           border: 1px solid var(--cc2-st-action-fg-color-neutral-select);
+          
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
+          }
         }
         
         &--normal {
@@ -629,11 +1288,19 @@
         &--loading {
           border: 1px solid var(--cc2-st-action-fg-color-neutral-normal);
         }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
+        }
       }
     }
     
     &--select {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
+      
+      & .cc2-button__label {
+        @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
+      }
     }
     
     &--padding {
@@ -643,11 +1310,48 @@
     &.cc2-button--icon {
       &--only {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
+          }
+        }
+        
+        &--loading {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-invert-normal)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
         }
       }
+    }
+    
+    & .cc2-button__label {
+      gap: var(--cc2-st-global-distance-space-inline-md);
+      
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-lg);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
+      @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
     }
   }
   
@@ -660,10 +1364,18 @@
     
     @include hover('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-hover)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
+      }
     }
     
     @include active('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-active)});
+      
+      &__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-active)});
+      }
     }
     
     @include focus('.cc2-button') {
@@ -677,18 +1389,96 @@
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-sm);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--md {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-md);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+          letter-spacing: var(--cc2-ot-typography-tracking-base);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        }
       }
       
       &--sm {
         --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
         
         border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
       
       &--xs {
@@ -706,6 +1496,32 @@
               }
             }
           }
+        }
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
         }
       }
       
@@ -725,23 +1541,88 @@
             }
           }
         }
+        
+        &--skeleton {
+          & .cc2-button__label {
+            font-family: var(--cc2-ot-typography-fontFamily-base);
+            @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+            font-weight: var(--cc2-ot-typography-fontWeight-400);
+            @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+            letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+            @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+            text-decoration: var(--cc2-ot-typography-textDecoration-none);
+            @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+          }
+        }
+        
+        & .cc2-button__label {
+          gap: var(--cc2-st-global-distance-space-inline-xs);
+          
+          font-family: var(--cc2-ot-typography-fontFamily-base);
+          @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+          font-weight: var(--cc2-ot-typography-fontWeight-500);
+          @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+          letter-spacing: var(--cc2-ot-typography-tracking-md);
+          @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+          text-decoration: var(--cc2-ot-typography-textDecoration-none);
+          @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+        }
       }
     }
     
     &--skeleton {
       @include backgroundColor(#{var(--cc2-st-content-bg-color-neutral-disable)});
+      
+      & .cc2-button__label {
+        font-family: var(--cc2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+        font-weight: var(--cc2-ot-typography-fontWeight-400);
+        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--cc2-ot-typography-tracking-skeleton);
+        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+        text-decoration: var(--cc2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+        
+        @include color(#{var(--cc2-st-content-fg-color-neutral-disable)});
+      }
     }
     
     &--select {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-select)});
+      
+      & .cc2-button__label {
+        @include color(#{var(--cc2-st-action-fg-color-primary-select)});
+      }
     }
     
     &.cc2-button--icon {
       &--only {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
+          }
+        }
+        
+        &--loading {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-invert-normal)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
         }
       }
     }
@@ -765,35 +1646,108 @@
       
       &--positive {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-positive-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-positive-normal)});
         }
       }
       
       &--negative {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-negative-normal)});
         }
       }
       
       &--neutral {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
         }
       }
       
       &--informative {
         @include hover('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
+          }
         }
         
         @include active('.cc2-button') {
+          &__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-active)});
+          }
+        }
+        
+        &--select {
+          & .cc2-button__label {
+            @include color(#{var(--cc2-st-action-bg-color-informative-select)});
+          }
+        }
+        
+        & .cc2-button__label {
+          @include color(#{var(--cc2-st-action-bg-color-informative-normal)});
         }
       }
+    }
+    
+    & .cc2-button__label {
+      gap: var(--cc2-st-global-distance-space-inline-md);
+      
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-lg);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
+      @include color(#{var(--cc2-st-action-fg-color-primary-normal)});
     }
   }
   
