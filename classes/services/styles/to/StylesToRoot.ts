@@ -1,6 +1,6 @@
 import { StylesToAbstract } from './StylesToAbstract.ts'
 
-export class StyleToRoot extends StylesToAbstract {
+export class StylesToRoot extends StylesToAbstract {
   protected treatment (): string[] {
     return [
       ...this.addEmptyString(),

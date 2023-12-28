@@ -10,13 +10,13 @@ import { StylesToSelector } from './to/StylesToSelector.ts'
 import { StylesToVirtual } from './to/StylesToVirtual.ts'
 import { StylesToMedia } from './to/StylesToMedia.ts'
 import { StylesToAnimate } from './to/StylesToAnimate.ts'
+import { StylesToRoot } from './to/StylesToRoot.ts'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
 } from '../../../types/property.ts'
-import { StyleToRoot } from './to/StyleToRoot.ts'
 
 const TYPE_AUXILIARY = [
   'selector',
@@ -36,6 +36,8 @@ const TYPE_BASIC = [
 export class StylesProperties {
   private readonly item: PropertyItem
   private readonly data: string[] = []
+
+  private first: boolean = false
 
   /**
    * Constructor
@@ -77,7 +79,13 @@ export class StylesProperties {
           `${this.space}}`
         )
       } else {
-        this.data.push(...this.toByType(property))
+        const data = this.toByType(property)
+
+        if (data.length > 0) {
+          this.first = true
+        }
+
+        this.data.push(...data)
       }
     }, this.property)
 
@@ -126,8 +134,8 @@ export class StylesProperties {
    */
   private getArgumentsForTo (
     property: PropertiesItemsItem
-  ): [PropertiesItemsItem, string, () => string[]] {
-    return [property, this.space, this.getContent(property)]
+  ): [PropertiesItemsItem, string, () => string[], boolean] {
+    return [property, this.space, this.getContent(property), this.first]
   }
 
   /**
@@ -155,7 +163,7 @@ export class StylesProperties {
       case PropertyType.animate:
         return new StylesToAnimate(...argumentsValue).make()
       case PropertyType.root:
-        return new StyleToRoot(...argumentsValue).make()
+        return new StylesToRoot(...argumentsValue).make()
       case PropertyType.state:
       case PropertyType.subclass:
       case PropertyType.classType:

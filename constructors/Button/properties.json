@@ -5,9 +5,18 @@
   "padding": {
     "_type": "var"
   },
+  "transition-property": "background-color, background-image, border, box-shadow",
+  "transition-duration": "{d.sys.transitionDuration.lg.close}",
+  "transition-function": "{d.sys.transitionFunction.standard}",
   "#label": {},
   "#icon": {},
   "#trailing": {},
+  "hover": {
+    "transition-duration": "{d.sys.transitionDuration.sm}"
+  },
+  "active": {
+    "transition-duration": "{d.sys.transitionDuration.sm}"
+  },
   "selected": {
     "_type": "state"
   },
@@ -22,6 +31,7 @@
     "_type": "state"
   },
   "disabled": {
+    "transition-duration": "{d.sys.transitionDuration.sm}",
     "_type": "state"
   },
   "adaptive": {

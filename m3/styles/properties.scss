@@ -344,6 +344,50 @@ $designsProperties: (
         name: 'd-button',
         type: 'component',
         value: (
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: '--d-button-transitionFunction',
+            type: 'var',
+            value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transition-duration',
+            type: 'property',
+            value: 'var(--d-sys-transitionDuration-lg-close)',
+          ),
+          'transitionProperty':(
+            index: 'transitionProperty',
+            name: 'transition-property',
+            type: 'property',
+            value: 'background-color, background-image, border, box-shadow',
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'active':(
+            index: 'active',
+            name: 'active',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -370,6 +414,12 @@ $designsProperties: (
             name: '&--disabled',
             type: 'state',
             value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
             ),
           ),
           'adaptive':(
@@ -439,6 +489,50 @@ $designsProperties: (
         name: 'd-chip',
         type: 'component',
         value: (
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: '--d-chip-transitionFunction',
+            type: 'var',
+            value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transition-duration',
+            type: 'property',
+            value: 'var(--d-sys-transitionDuration-lg-close)',
+          ),
+          'transitionProperty':(
+            index: 'transitionProperty',
+            name: 'transition-property',
+            type: 'property',
+            value: 'background-color, background-image, border, box-shadow',
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'active':(
+            index: 'active',
+            name: 'active',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -465,6 +559,12 @@ $designsProperties: (
             name: '&--disabled',
             type: 'state',
             value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
             ),
           ),
           'adaptive':(
@@ -6339,7 +6439,7 @@ $designsProperties: (
             index: 'transitionProperty',
             name: 'transition-property',
             type: 'property',
-            value: 'border, box-shadow',
+            value: 'background-color, background-image, border, box-shadow',
           ),
           'hover':(
             index: 'hover',

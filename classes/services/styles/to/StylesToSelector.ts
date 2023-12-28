@@ -14,12 +14,18 @@ export class StylesToSelector extends StylesToAbstract {
    * Метод преобразования данных в структуру стиля.
    */
   protected treatment (): string[] {
-    return [
-      ...this.addEmptyString(),
-      `${this.getSelector()} {`,
-      ...this.content(),
-      '}'
-    ]
+    const content = this.content()
+
+    if (content.length > 0) {
+      return [
+        ...this.addEmptyString(),
+        `${this.getSelector()} {`,
+        ...this.content(),
+        '}'
+      ]
+    }
+
+    return []
   }
 
   /**

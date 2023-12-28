@@ -23,7 +23,7 @@
   box-shadow: none;
   
   transition-duration: var(--d-sys-transitionDuration-lg-close);
-  transition-property: border, box-shadow;
+  transition-property: background-color, background-image, border, box-shadow;
   
   @include hover {
     @include gradientOpacity(#{var(--m3-sys-opacity-008)});

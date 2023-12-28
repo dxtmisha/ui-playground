@@ -16,11 +16,13 @@ export abstract class StylesToAbstract {
    * @param property current branch /<br>текущая ветка
    * @param space space /<br>пробел
    * @param content callable function for sub property /<br>вызываемая функция для под свойства
+   * @param first the first element in the list /<br>первый элемент в списке
    */
   constructor (
     protected property: PropertiesItemsItem,
     protected space: string,
-    protected content: () => string[] = () => []
+    protected content: () => string[] = () => [],
+    protected first: boolean = true
   ) {
     this.item = property.item
   }
@@ -69,6 +71,6 @@ export abstract class StylesToAbstract {
    * Добавляет пустую строку, если элемент не является первым в дереве.
    */
   protected addEmptyString (): string[] {
-    return (this.property?.previous ? [''] : [])
+    return (this.first ? [''] : [])
   }
 }

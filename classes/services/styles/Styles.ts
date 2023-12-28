@@ -1,16 +1,16 @@
 import { forEach } from '../../../functions/data.ts'
 
+import { Properties } from '../properties/Properties.ts'
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 import { PropertiesItems } from '../properties/PropertiesItems.ts'
+import { PropertiesScss } from '../properties/PropertiesScss.ts'
 
-import { Properties } from '../properties/Properties.ts'
 import { StylesTool } from './StylesTool.ts'
 
 import { StylesRoot } from './StylesRoot.ts'
 import { StylesClasses } from './StylesClasses.ts'
 
 import { EXTENSION_STYLE_FILE, NAME_CONSTRUCTOR } from '../../../types/property.ts'
-import { PropertiesScss } from '../properties/PropertiesScss.ts'
 
 const FILE_VAR = 'vars'
 const FILE_CLASS = 'classes'
