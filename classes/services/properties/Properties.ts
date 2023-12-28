@@ -12,6 +12,9 @@ import { PropertiesToReplace } from './to/PropertiesToReplace.ts'
 import { PropertiesToPalette } from './to/PropertiesToPalette.ts'
 import { PropertiesToLink } from './to/PropertiesToLink.ts'
 import { PropertiesToSub } from './to/PropertiesToSub.ts'
+import { PropertiesToClone } from './to/PropertiesToClone.ts'
+import { PropertiesToDrag } from './to/PropertiesToDrag.ts'
+import { PropertiesToRemove } from './to/PropertiesToRemove.ts'
 import { PropertiesToVariable } from './to/PropertiesToVariable.ts'
 
 import { PropertiesToSimilar } from './to/PropertiesToSimilar.ts'
@@ -38,8 +41,6 @@ import {
   NAME_CONSTRUCTOR,
   type PropertyList
 } from '../../../types/property.ts'
-import { PropertiesToDrag } from './to/PropertiesToDrag.ts'
-import { PropertiesToClone } from './to/PropertiesToClone.ts'
 
 const FILE_CACHE = 'properties'
 
@@ -128,10 +129,12 @@ export class Properties {
    */
   private readFiles (): PropertiesItems {
     const path = new PropertiesPath(this.designs)
+    const settings = new PropertiesSettings(path).get()
+
     return new PropertiesItems(
       replaceRecursive(
-        new PropertiesSettings(path).get(),
-        new PropertiesMain(path).get()
+        settings,
+        new PropertiesMain(path).getBySettings(settings)
       )
     )
   }
@@ -149,6 +152,7 @@ export class Properties {
     new PropertiesToSub(properties).to()
     new PropertiesToClone(properties).to()
     new PropertiesToDrag(properties).to()
+    new PropertiesToRemove(properties).to()
     new PropertiesToVariable(properties).to()
   }
 }

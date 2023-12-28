@@ -86,7 +86,7 @@
 /// @return {String}
 @function getFirstSelector($selector: &) {
   $value: strToList(#{$selector}, ' ');
-  $value: strToList(#{$value}, ':');
+  $value: strToList(#{list.nth($value, 1)}, ':');
 
   @return list.nth(selector.simple-selectors(list.nth($value, 1)), 1);
 }

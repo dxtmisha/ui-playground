@@ -1,4 +1,4 @@
-import { isFilled } from '../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
 
 import { PropertiesCache } from './PropertiesCache.ts'
 import { PropertiesPath } from './PropertiesPath.ts'
@@ -10,7 +10,7 @@ import { PropertiesSeparator } from './PropertiesSeparator.ts'
 import { PropertiesWrap } from './PropertiesWrap.ts'
 
 import {
-  FILE_PROPERTY,
+  FILE_PROPERTY, PropertyItem,
   type PropertyList
 } from '../../../types/property.ts'
 
@@ -53,5 +53,68 @@ export class PropertiesMain {
 
       return properties ?? {}
     }) as PropertyList
+  }
+
+  /**
+   * We get the main property taking into account the change of settings.<br>
+   * Получаем главное свойство с учетом изменения настроек.
+   * @param list list of settings /<br>список настроек
+   */
+  getBySettings (list: PropertyList): PropertyList {
+    const data = this.get()
+
+    forEach(list, (designItems, design) => {
+      const dataDesign = data?.[design]?.value
+
+      if (
+        dataDesign &&
+        isObjectNotArray(dataDesign) &&
+        isObjectNotArray(designItems.value)
+      ) {
+        forEach(designItems.value, (componentItems, component) => {
+          const dataComponent = dataDesign?.[component]?.value
+
+          if (
+            dataComponent &&
+            isObjectNotArray(dataComponent) &&
+            isObjectNotArray(componentItems.value)
+          ) {
+            forEach(componentItems.value, (item, name) => {
+              this.copySettings(
+                item,
+                dataComponent?.[name]
+              )
+            })
+          }
+        })
+      }
+    })
+
+    return data
+  }
+
+  /**
+   * We copy the settings.<br>
+   * Копируем настройки.
+   * @param item element with settings /<br>элемент с настройками
+   * @param itemCopy element for copying settings /<br>элемент для копирования настроек
+   */
+  protected copySettings (
+    item: PropertyItem,
+    itemCopy?: PropertyItem
+  ): this {
+    if (itemCopy) {
+      forEach(item, (value, property: keyof PropertyItem) => {
+        if (
+          property.match(/^_/) &&
+          property in itemCopy &&
+          itemCopy[property] !== value
+        ) {
+          itemCopy[property] = value as never
+        }
+      })
+    }
+
+    return this
   }
 }

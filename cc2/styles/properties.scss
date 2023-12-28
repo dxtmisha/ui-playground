@@ -16647,41 +16647,6 @@ $designsProperties: (
             value: (
             ),
           ),
-          'icon':(
-            index: 'icon',
-            name: '&--icon',
-            type: 'state',
-            value: (
-              'none':(
-                index: 'none',
-                name: '&--none',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'left':(
-                index: 'left',
-                name: '&--left',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'right':(
-                index: 'right',
-                name: '&--right',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'only':(
-                index: 'only',
-                name: '&--only',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -16723,7 +16688,7 @@ $designsProperties: (
             value: (
               'icon':(
                 index: 'icon',
-                name: '&.cc2-button--icon',
+                name: '&--icon',
                 type: 'state',
                 value: (
                   'padding':(
@@ -17292,8 +17257,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'right':(
                             index: 'right',
@@ -17627,8 +17592,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -17642,7 +17607,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -17669,7 +17634,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -17708,8 +17673,8 @@ $designsProperties: (
                     value: (
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'none':(
                             index: 'none',
@@ -17759,8 +17724,8 @@ $designsProperties: (
               ),
               'icon':(
                 index: 'icon',
-                name: '&.cc2-button--icon',
-                type: 'state',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
                 value: (
                   'only':(
                     index: 'only',
@@ -17774,7 +17739,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -18451,8 +18416,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -18466,7 +18431,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18493,7 +18458,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18707,8 +18672,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -18722,7 +18687,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18749,7 +18714,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18872,8 +18837,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -18887,7 +18852,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18914,7 +18879,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -18953,8 +18918,8 @@ $designsProperties: (
                     value: (
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'none':(
                             index: 'none',
@@ -19004,8 +18969,8 @@ $designsProperties: (
               ),
               'icon':(
                 index: 'icon',
-                name: '&.cc2-button--icon',
-                type: 'state',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
                 value: (
                   'only':(
                     index: 'only',
@@ -19019,7 +18984,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19039,7 +19004,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19059,7 +19024,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19079,7 +19044,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19094,7 +19059,7 @@ $designsProperties: (
                       ),
                       'label':(
                         index: 'label',
-                        name: '& .cc2-button__label',
+                        name: '& .cc2-button__icon__label',
                         type: 'subclass',
                         value: (
                           'color':(
@@ -19119,7 +19084,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19146,7 +19111,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -19872,8 +19837,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -19887,7 +19852,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -19914,7 +19879,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20056,8 +20021,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -20071,7 +20036,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20098,7 +20063,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20240,8 +20205,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -20255,7 +20220,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20282,7 +20247,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20424,8 +20389,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -20439,7 +20404,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20466,7 +20431,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -20505,8 +20470,8 @@ $designsProperties: (
                     value: (
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'none':(
                             index: 'none',
@@ -20562,8 +20527,8 @@ $designsProperties: (
               ),
               'icon':(
                 index: 'icon',
-                name: '&.cc2-button--icon',
-                type: 'state',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
                 value: (
                   'only':(
                     index: 'only',
@@ -20577,7 +20542,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -20597,7 +20562,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -20617,7 +20582,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -20637,7 +20602,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -20652,7 +20617,7 @@ $designsProperties: (
                       ),
                       'label':(
                         index: 'label',
-                        name: '& .cc2-button__label',
+                        name: '& .cc2-button__icon__label',
                         type: 'subclass',
                         value: (
                           'color':(
@@ -20677,7 +20642,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -20704,7 +20669,7 @@ $designsProperties: (
                         value: (
                           'label':(
                             index: 'label',
-                            name: '& .cc2-button__label',
+                            name: '& .cc2-button__icon__label',
                             type: 'subclass',
                             value: (
                               'color':(
@@ -21158,8 +21123,8 @@ $designsProperties: (
                             value: (
                               'icon':(
                                 index: 'icon',
-                                name: '&.cc2-button--icon',
-                                type: 'state',
+                                name: '& .cc2-button__icon',
+                                type: 'subclass',
                                 value: (
                                   'only':(
                                     index: 'only',
@@ -21279,8 +21244,8 @@ $designsProperties: (
                             value: (
                               'icon':(
                                 index: 'icon',
-                                name: '&.cc2-button--icon',
-                                type: 'state',
+                                name: '& .cc2-button__icon',
+                                type: 'subclass',
                                 value: (
                                   'only':(
                                     index: 'only',
@@ -21399,167 +21364,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'icon':(
-                index: 'icon',
-                name: '&.cc2-button--icon',
-                type: 'state',
-                value: (
-                  'only':(
-                    index: 'only',
-                    name: '&--only',
-                    type: 'state',
-                    value: (
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-onprimary-active)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-onprimary-select)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      'loading':(
-                        index: 'loading',
-                        name: '&.cc2-button--loading',
-                        type: 'state',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-invert-normal)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-onprimary-normal)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'left':(
-                    index: 'left',
-                    name: '&--left',
-                    type: 'state',
-                    value: (
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-primary-select)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'right':(
-                    index: 'right',
-                    name: '&--right',
-                    type: 'state',
-                    value: (
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-primary-select)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
               'intent':(
                 index: 'intent',
                 name: '&.cc2-button--intent',
@@ -21632,8 +21436,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -21647,7 +21451,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -21674,7 +21478,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -21833,8 +21637,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -21848,7 +21652,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -21875,7 +21679,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -21974,8 +21778,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -21989,7 +21793,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -22016,7 +21820,7 @@ $designsProperties: (
                                 value: (
                                   'label':(
                                     index: 'label',
-                                    name: '& .cc2-button__label',
+                                    name: '& .cc2-button__icon__label',
                                     type: 'subclass',
                                     value: (
                                       'color':(
@@ -22055,8 +21859,8 @@ $designsProperties: (
                     value: (
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'none':(
                             index: 'none',
@@ -22070,6 +21874,167 @@ $designsProperties: (
                             name: '&--only',
                             type: 'state',
                             value: (
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-select)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'loading':(
+                        index: 'loading',
+                        name: '&.cc2-button--loading',
+                        type: 'state',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-invert-normal)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'label':(
+                        index: 'label',
+                        name: '& .cc2-button__icon__label',
+                        type: 'subclass',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-onprimary-normal)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: '&--left',
+                    type: 'state',
+                    value: (
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-select)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: '&--right',
+                    type: 'state',
+                    value: (
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-select)',
+                              ),
                             ),
                           ),
                         ),
@@ -22245,8 +22210,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -22321,8 +22286,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -22431,8 +22396,8 @@ $designsProperties: (
                       ),
                       'icon':(
                         index: 'icon',
-                        name: '&.cc2-button--icon',
-                        type: 'state',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
                         value: (
                           'left':(
                             index: 'left',
@@ -22468,10 +22433,59 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'selected':(
+                index: 'selected',
+                name: '&.cc2-button--selected',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
               'icon':(
                 index: 'icon',
-                name: '&.cc2-button--icon',
-                type: 'state',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
                 value: (
                   'only':(
                     index: 'only',
@@ -22531,55 +22545,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'selected':(
-                index: 'selected',
-                name: '&.cc2-button--selected',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'size':(
-                index: 'size',
-                name: '&.cc2-button--size',
-                type: 'state',
-                value: (
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'xs':(
-                    index: 'xs',
-                    name: '&--xs',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'x':(
-                    index: 'x',
-                    name: '&--x',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
             ),
           ),
           'label':(
@@ -22587,6 +22552,41 @@ $designsProperties: (
             name: '&__label',
             type: 'subclass',
             value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+              'none':(
+                index: 'none',
+                name: '&--none',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'only':(
+                index: 'only',
+                name: '&--only',
+                type: 'state',
+                value: (
+                ),
+              ),
             ),
           ),
           'trailing':(

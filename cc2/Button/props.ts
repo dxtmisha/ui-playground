@@ -8,7 +8,7 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
-  icon: ['none', 'left', 'right', 'only'],
+  adaptive: ['icon'],
   intent: ['default', 'positive', 'negative', 'neutral', 'informative'],
   size: ['xl', 'lg', 'md', 'sm', 'xs', 'x']
   // :values [!] System label / Системная метка
@@ -17,12 +17,11 @@ export const propsValues = {
 export type PropsToken = {
   // :type [!] System label / Системная метка
   focus?: boolean
-  icon?: 'none' | 'left' | 'right' | 'only'
   selected?: boolean
   progress?: boolean
   readonly?: boolean
   disabled?: boolean
-  adaptive?: boolean
+  adaptive?: 'icon'
   intent?: 'default' | 'positive' | 'negative' | 'neutral' | 'informative'
   size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'x'
   normal?: boolean
@@ -49,7 +48,6 @@ export const defaults: Props = {
   ...defaultsButton,
   ...{
     // :default [!] System label / Системная метка
-    icon: 'none',
     intent: 'default',
     size: 'xl',
     primary: true
@@ -64,15 +62,11 @@ export const propsInstruction = {
   ...{
     // :prop [!] System label / Системная метка
     focus: Boolean,
-    icon: {
-      type: String as PropType<PropsToken['icon']>,
-      default: defaults?.icon
-    },
     selected: Boolean,
     progress: Boolean,
     readonly: Boolean,
     disabled: Boolean,
-    adaptive: Boolean,
+    adaptive: String as PropType<PropsToken['adaptive']>,
     intent: {
       type: String as PropType<PropsToken['intent']>,
       default: defaults?.intent

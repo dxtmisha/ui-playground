@@ -18,6 +18,7 @@ export enum PropertyKey {
   fullName = '_fullName',
   fullValue = '_fullValue',
   style = '_style',
+  remove = '_remove',
   name = '__n',
   nameIndex = '__ni',
   variable = '__v',
@@ -101,6 +102,7 @@ export type PropertyItem = {
   _fullName?: boolean
   _fullValue?: boolean
   _style?: boolean
+  _remove?: boolean
 
   __i?: string
   __n?: string

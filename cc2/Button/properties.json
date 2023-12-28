@@ -15,11 +15,11 @@
     "_settingClone": true
   },
   "icon": {
-    "_type": "none",
+    "_type": "subclass",
     "_settingClone": true
   },
   "skeleton": {
-    "_type": "none",
+    "_remove": "none",
     "_settingClone": true
   }
 }

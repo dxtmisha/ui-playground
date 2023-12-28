@@ -422,6 +422,23 @@ export class PropertiesItems {
   }
 
   /**
+   * Search for a record by selected conditions.<br>
+   * Поиск записи по выбранным условиям.
+   * @param callback function for checking the condition /<br>функция для проверки условия
+   */
+  find (callback: (property: PropertiesItemsItem) => boolean): PropertiesItemsItem[] {
+    const data: PropertiesItemsItem[] = []
+
+    this.each(property => {
+      if (callback(property)) {
+        data.push(property)
+      }
+    })
+
+    return data
+  }
+
+  /**
    * Searching for records with selected categories.<br>
    * Поиск записей с выделенными категориями.
    * @param category names of categories /<br>названия категорий
