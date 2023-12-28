@@ -34,6 +34,7 @@ import { PropertiesToAnimate } from './to/PropertiesToAnimate.ts'
 
 import { PropertiesToSort } from './to/PropertiesToSort.ts'
 import { PropertiesToNone } from './to/PropertiesToNone.ts'
+import { PropertiesToDuplicate } from './to/PropertiesToDuplicate.ts'
 
 import { PropertiesScss } from './PropertiesScss.ts'
 
@@ -107,6 +108,7 @@ export class Properties {
 
       new PropertiesToSort(properties).to()
       new PropertiesToNone(properties).to()
+      new PropertiesToDuplicate(properties).to()
 
       console.info('[Properties]', 'init')
 

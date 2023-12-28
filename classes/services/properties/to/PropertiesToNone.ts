@@ -15,7 +15,7 @@ const TYPES = [
  * Класс для очистки всех пустых записей для облечения массива.
  */
 export class PropertiesToNone extends PropertiesToAbstract {
-  protected readonly FILE_CACHE = '999-none'
+  protected readonly FILE_CACHE = '900-none'
 
   /**
    * Removes all empty entries from the data.<br>

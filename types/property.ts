@@ -29,6 +29,7 @@ export enum PropertyKey {
   order = '__o',
   index = '__i',
   stateMain = '__m',
+  duplicate = '__d',
   file = '__file',
   wrap = '__wrap'
 }
@@ -114,6 +115,7 @@ export type PropertyItem = {
   __s?: string
   __o?: number
   __m?: boolean
+  __d?: string
   __file?: string
   __wrap?: boolean
 }
