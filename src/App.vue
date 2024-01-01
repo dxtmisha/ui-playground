@@ -26,6 +26,7 @@ import Cc2Button from '../cc2/Button/Cc2Button.vue'
   </div>
 
   <cc2-button label="label" />
+  <cc2-button label="label" intent="informative" />
   <cc2-button label="label" size="md" />
   <cc2-button label="label" size="x" />
   <cc2-button label="label" selected />

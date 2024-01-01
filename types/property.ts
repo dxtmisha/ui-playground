@@ -69,7 +69,9 @@ export enum PropertyCategory {
   palette = 'palette',
   paletteNone = 'palette-none',
   color = 'color',
-  colors = 'colors'
+  colors = 'colors',
+
+  style = 'style'
 }
 
 export type PropertyReplace = {
