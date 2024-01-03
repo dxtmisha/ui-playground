@@ -16767,19 +16767,6 @@ $designsProperties: (
                 type: 'property',
                 value: 'var(--d-sys-transitionDuration-sm)',
               ),
-              'label':(
-                index: 'label',
-                name: '& .cc2-button__label',
-                type: 'subclass',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-fg-color-primary-hover)',
-                  ),
-                ),
-              ),
             ),
           ),
           'active':(
@@ -16793,19 +16780,6 @@ $designsProperties: (
                 type: 'property',
                 value: 'var(--d-sys-transitionDuration-sm)',
               ),
-              'label':(
-                index: 'label',
-                name: '& .cc2-button__label',
-                type: 'subclass',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-fg-color-primary-active)',
-                  ),
-                ),
-              ),
             ),
           ),
           'focus':(
@@ -16813,18 +16787,6 @@ $designsProperties: (
             name: 'focus',
             type: 'selector',
             value: (
-              'backgroundColor':(
-                index: 'backgroundColor',
-                name: 'background-color',
-                type: 'property',
-                value: 'var(--cc2-st-action-bg-color-neutral-ghost-focus)',
-              ),
-              'boxShadow':(
-                index: 'boxShadow',
-                name: 'box-shadow',
-                type: 'property',
-                value: 'var(--cc2-st-elevation-onLight-focus-md)',
-              ),
             ),
           ),
           'selected':(
@@ -16866,12 +16828,6 @@ $designsProperties: (
             name: '&--disabled',
             type: 'state',
             value: (
-              'opacity':(
-                index: 'opacity',
-                name: 'opacity',
-                type: 'property',
-                value: 0.5,
-              ),
               'transitionDuration':(
                 index: 'transitionDuration',
                 name: 'transition-duration',
@@ -16936,46 +16892,6 @@ $designsProperties: (
                 name: '&--positive',
                 type: 'state',
                 value: (
-                  'hover':(
-                    index: 'hover',
-                    name: 'hover',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-hover)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'active':(
-                    index: 'active',
-                    name: 'active',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-active)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.cc2-button--selected',
@@ -17077,46 +16993,6 @@ $designsProperties: (
                 name: '&--negative',
                 type: 'state',
                 value: (
-                  'hover':(
-                    index: 'hover',
-                    name: 'hover',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-hover)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'active':(
-                    index: 'active',
-                    name: 'active',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-active)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.cc2-button--selected',
@@ -17218,46 +17094,6 @@ $designsProperties: (
                 name: '&--neutral',
                 type: 'state',
                 value: (
-                  'hover':(
-                    index: 'hover',
-                    name: 'hover',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-hover)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'active':(
-                    index: 'active',
-                    name: 'active',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-active)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.cc2-button--selected',
@@ -17359,46 +17195,6 @@ $designsProperties: (
                 name: '&--informative',
                 type: 'state',
                 value: (
-                  'hover':(
-                    index: 'hover',
-                    name: 'hover',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-hover)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'active':(
-                    index: 'active',
-                    name: 'active',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-active)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.cc2-button--selected',
@@ -17526,6 +17322,20 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-selectable-borderRadius-size-lg)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .cc2-button__icon',
+                    type: 'subclass',
+                    value: (
+                      'only':(
+                        index: 'only',
+                        name: '&--only',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
                   'label':(
                     index: 'label',
                     name: '& .cc2-button__label',
@@ -17605,6 +17415,20 @@ $designsProperties: (
                     name: 'border-radius',
                     type: 'property',
                     value: 'var(--cc2-st-selectable-borderRadius-size-md)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .cc2-button__icon',
+                    type: 'subclass',
+                    value: (
+                      'only':(
+                        index: 'only',
+                        name: '&--only',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
                   ),
                   'label':(
                     index: 'label',
@@ -17686,6 +17510,20 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .cc2-button__icon',
+                    type: 'subclass',
+                    value: (
+                      'only':(
+                        index: 'only',
+                        name: '&--only',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
                   'label':(
                     index: 'label',
                     name: '& .cc2-button__label',
@@ -17766,6 +17604,20 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-selectable-borderRadius-size-sm)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .cc2-button__icon',
+                    type: 'subclass',
+                    value: (
+                      'only':(
+                        index: 'only',
+                        name: '&--only',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
+                  ),
                   'label':(
                     index: 'label',
                     name: '& .cc2-button__label',
@@ -17845,6 +17697,20 @@ $designsProperties: (
                     name: 'border-radius',
                     type: 'property',
                     value: 'var(--cc2-st-selectable-borderRadius-size-xs)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .cc2-button__icon',
+                    type: 'subclass',
+                    value: (
+                      'only':(
+                        index: 'only',
+                        name: '&--only',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                    ),
                   ),
                   'label':(
                     index: 'label',
@@ -17993,24 +17859,24 @@ $designsProperties: (
                 name: 'focus',
                 type: 'selector',
                 value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
                     type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-primary-solid-normal)',
+                    value: 'var(--cc2-st-elevation-onLight-focus-md)',
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .cc2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-onprimary-normal)',
-                      ),
-                    ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
                   ),
                 ),
               ),
@@ -18144,19 +18010,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-positive-normal)',
-                          ),
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -18209,19 +18062,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-normal)',
-                          ),
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -18271,19 +18111,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-negative-active)',
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-negative-normal)',
                           ),
                         ),
                       ),
@@ -18365,32 +18192,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-solid-normal)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -18467,26 +18268,6 @@ $designsProperties: (
                                   ),
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                  'label':(
-                                    index: 'label',
-                                    name: '& .cc2-button__icon__label',
-                                    type: 'subclass',
-                                    value: (
-                                      'color':(
-                                        index: 'color',
-                                        name: 'color',
-                                        type: 'property',
-                                        value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
                               'selected':(
                                 index: 'selected',
                                 name: '&.cc2-button--selected',
@@ -18549,26 +18330,6 @@ $designsProperties: (
                                         name: 'color',
                                         type: 'property',
                                         value: 'var(--cc2-st-action-bg-color-neutral-invert-active)',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                  'label':(
-                                    index: 'label',
-                                    name: '& .cc2-button__icon__label',
-                                    type: 'subclass',
-                                    value: (
-                                      'color':(
-                                        index: 'color',
-                                        name: 'color',
-                                        type: 'property',
-                                        value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
                                       ),
                                     ),
                                   ),
@@ -18643,6 +18404,20 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'icon':(
+                index: 'icon',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
               'label':(
                 index: 'label',
                 name: '& .cc2-button__label',
@@ -18680,6 +18455,19 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-action-bg-color-primary-subtle-hover)',
                   ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                      ),
+                    ),
+                  ),
                 ),
               ),
               'active':(
@@ -18693,6 +18481,19 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-action-bg-color-primary-subtle-active)',
                   ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-primary-active)',
+                      ),
+                    ),
+                  ),
                 ),
               ),
               'focus':(
@@ -18700,11 +18501,24 @@ $designsProperties: (
                 name: 'focus',
                 type: 'selector',
                 value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
                     type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-primary-subtle-normal)',
+                    value: 'var(--cc2-st-elevation-onLight-focus-md)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
                   ),
                 ),
               ),
@@ -18748,6 +18562,19 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-positive-subtle-hover)',
                           ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       'active':(
@@ -18761,18 +18588,18 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-positive-subtle-active)',
                           ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-positive-subtle-normal)',
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-active)',
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -18786,6 +18613,107 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-positive-subtle-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -18854,32 +18782,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-subtle-normal)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-informative-normal)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -18943,26 +18845,6 @@ $designsProperties: (
                                   ),
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                  'label':(
-                                    index: 'label',
-                                    name: '& .cc2-button__icon__label',
-                                    type: 'subclass',
-                                    value: (
-                                      'color':(
-                                        index: 'color',
-                                        name: 'color',
-                                        type: 'property',
-                                        value: 'var(--cc2-st-action-fg-color-informative-normal)',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
                             ),
                           ),
                           'right':(
@@ -19010,26 +18892,6 @@ $designsProperties: (
                                   ),
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                  'label':(
-                                    index: 'label',
-                                    name: '& .cc2-button__icon__label',
-                                    type: 'subclass',
-                                    value: (
-                                      'color':(
-                                        index: 'color',
-                                        name: 'color',
-                                        type: 'property',
-                                        value: 'var(--cc2-st-action-fg-color-informative-normal)',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
                             ),
                           ),
                         ),
@@ -19071,6 +18933,19 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-negative-subtle-hover)',
                           ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       'active':(
@@ -19084,18 +18959,18 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-negative-subtle-active)',
                           ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-negative-subtle-normal)',
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-active)',
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -19109,6 +18984,107 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-negative-subtle-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -19136,6 +19112,19 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-neutral-subtle-hover)',
                           ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       'active':(
@@ -19149,18 +19138,18 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--cc2-st-action-bg-color-neutral-subtle-active)',
                           ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-subtle-normal)',
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -19177,631 +19166,104 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                  'default':(
-                    index: 'default',
-                    name: '&--default',
-                    type: 'state',
-                    value: (
                       'icon':(
                         index: 'icon',
                         name: '& .cc2-button__icon',
                         type: 'subclass',
                         value: (
-                          'none':(
-                            index: 'none',
-                            name: '&--none',
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
                             type: 'state',
                             value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          'only':(
-                            index: 'only',
-                            name: '&--only',
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
                             type: 'state',
                             value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'size':(
-                index: 'size',
-                name: '&.cc2-button--size',
-                type: 'state',
-                value: (
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'xs':(
-                    index: 'xs',
-                    name: '&--xs',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'x':(
-                    index: 'x',
-                    name: '&--x',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'outline':(
-            index: 'outline',
-            name: '&.cc2-button--outline',
-            type: 'state',
-            value: (
-              'backgroundColor':(
-                index: 'backgroundColor',
-                name: 'background-color',
-                type: 'property',
-                value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
-              ),
-              'borderWidth':(
-                index: 'borderWidth',
-                name: 'border-width',
-                type: 'property',
-                value: 1px,
-              ),
-              'borderStyle':(
-                index: 'borderStyle',
-                name: 'border-style',
-                type: 'property',
-                value: 'solid',
-              ),
-              'borderColor':(
-                index: 'borderColor',
-                name: 'border-color',
-                type: 'property',
-                value: 'var(--cc2-st-action-border-color-neutral-subtle-normal)',
-              ),
-              'hover':(
-                index: 'hover',
-                name: 'hover',
-                type: 'selector',
-                value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-neutral-invert-hover)',
-                  ),
-                  'borderWidth':(
-                    index: 'borderWidth',
-                    name: 'border-width',
-                    type: 'property',
-                    value: 1px,
-                  ),
-                  'borderStyle':(
-                    index: 'borderStyle',
-                    name: 'border-style',
-                    type: 'property',
-                    value: 'solid',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-border-color-neutral-subtle-hover)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .cc2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'active':(
-                index: 'active',
-                name: 'active',
-                type: 'selector',
-                value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-neutral-invert-active)',
-                  ),
-                  'borderWidth':(
-                    index: 'borderWidth',
-                    name: 'border-width',
-                    type: 'property',
-                    value: 1px,
-                  ),
-                  'borderStyle':(
-                    index: 'borderStyle',
-                    name: 'border-style',
-                    type: 'property',
-                    value: 'solid',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-border-color-neutral-subtle-active)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .cc2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'focus':(
-                index: 'focus',
-                name: 'focus',
-                type: 'selector',
-                value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
-                  ),
-                  'borderWidth':(
-                    index: 'borderWidth',
-                    name: 'border-width',
-                    type: 'property',
-                    value: 1px,
-                  ),
-                  'borderStyle':(
-                    index: 'borderStyle',
-                    name: 'border-style',
-                    type: 'property',
-                    value: 'solid',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-border-color-neutral-subtle-normal)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .cc2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-neutral-normal)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'selected':(
-                index: 'selected',
-                name: '&.cc2-button--selected',
-                type: 'state',
-                value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-bg-color-neutral-invert-select)',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--cc2-st-action-border-color-neutral-subtle-select)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .cc2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-neutral-select)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'intent':(
-                index: 'intent',
-                name: '&.cc2-button--intent',
-                type: 'state',
-                value: (
-                  'positive':(
-                    index: 'positive',
-                    name: '&--positive',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-positive-normal)',
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-hover)',
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-active)',
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-normal)',
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-positive-select)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'informative':(
-                    index: 'informative',
-                    name: '&--informative',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-bg-color-informative-normal)',
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-hover)',
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-active)',
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-normal)',
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-informative-select)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'negative':(
-                    index: 'negative',
-                    name: '&--negative',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-negative-normal)',
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-hover)',
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-active)',
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-normal)',
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-negative-select)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'neutral':(
-                    index: 'neutral',
-                    name: '&--neutral',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--cc2-st-action-fg-color-neutral-normal)',
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-hover)',
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-active)',
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-normal)',
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-neutral-select)',
                           ),
                         ),
                       ),
@@ -19884,6 +19346,1223 @@ $designsProperties: (
                 name: '& .cc2-button__icon',
                 type: 'subclass',
                 value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: '&--left',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: '&--right',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: '&.cc2-button--outline',
+            type: 'state',
+            value: (
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-bg-color-neutral-invert-normal)',
+              ),
+              'borderWidth':(
+                index: 'borderWidth',
+                name: 'border-width',
+                type: 'property',
+                value: 1px,
+              ),
+              'borderStyle':(
+                index: 'borderStyle',
+                name: 'border-style',
+                type: 'property',
+                value: 'solid',
+              ),
+              'borderColor':(
+                index: 'borderColor',
+                name: 'border-color',
+                type: 'property',
+                value: 'var(--cc2-st-action-border-color-neutral-subtle-normal)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-hover)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-border-color-neutral-subtle-hover)',
+                  ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-active)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-border-color-neutral-subtle-active)',
+                  ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--cc2-st-elevation-onLight-focus-md)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&.cc2-button--selected',
+                type: 'state',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-invert-select)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-border-color-neutral-subtle-select)',
+                  ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-neutral-select)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.cc2-button--intent',
+                type: 'state',
+                value: (
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-positive-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-positive-active)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-positive-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-informative-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-active)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-bg-color-informative-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-informative-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-negative-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-negative-active)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-negative-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-neutral-normal)',
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                          ),
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.cc2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--cc2-st-action-fg-color-neutral-select)',
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'default':(
+                    index: 'default',
+                    name: '&--default',
+                    type: 'state',
+                    value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                            ),
+                          ),
+                          'only':(
+                            index: 'only',
+                            name: '&--only',
+                            type: 'state',
+                            value: (
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.cc2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   'left':(
                     index: 'left',
                     name: '&--left',
@@ -19924,26 +20603,6 @@ $designsProperties: (
                                 name: 'color',
                                 type: 'property',
                                 value: 'var(--cc2-st-action-fg-color-neutral-active)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__icon__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-neutral-normal)',
                               ),
                             ),
                           ),
@@ -20016,26 +20675,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'label':(
-                            index: 'label',
-                            name: '& .cc2-button__icon__label',
-                            type: 'subclass',
-                            value: (
-                              'color':(
-                                index: 'color',
-                                name: 'color',
-                                type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-neutral-normal)',
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -20097,6 +20736,19 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--cc2-st-action-bg-color-neutral-ghost-hover)',
                   ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                      ),
+                    ),
+                  ),
                 ),
               ),
               'active':(
@@ -20109,6 +20761,51 @@ $designsProperties: (
                     name: 'background-color',
                     type: 'property',
                     value: 'var(--cc2-st-action-bg-color-neutral-ghost-active)',
+                  ),
+                  'label':(
+                    index: 'label',
+                    name: '& .cc2-button__label',
+                    type: 'subclass',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--cc2-st-action-fg-color-primary-active)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-focus)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--cc2-st-elevation-onLight-focus-md)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
                   ),
                 ),
               ),
@@ -20254,15 +20951,15 @@ $designsProperties: (
                 name: '&.cc2-button--intent',
                 type: 'state',
                 value: (
-                  'negative':(
-                    index: 'negative',
-                    name: '&--negative',
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
                     type: 'state',
                     value: (
-                      'selected':(
-                        index: 'selected',
-                        name: '&.cc2-button--selected',
-                        type: 'state',
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
                         value: (
                           'label':(
                             index: 'label',
@@ -20273,7 +20970,27 @@ $designsProperties: (
                                 index: 'color',
                                 name: 'color',
                                 type: 'property',
-                                value: 'var(--cc2-st-action-fg-color-negative-normal)',
+                                value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-neutral-active)',
                               ),
                             ),
                           ),
@@ -20289,10 +21006,10 @@ $designsProperties: (
                             name: '&--left',
                             type: 'state',
                             value: (
-                              'selected':(
-                                index: 'selected',
-                                name: '&.cc2-button--selected',
-                                type: 'state',
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
                                 value: (
                                   'label':(
                                     index: 'label',
@@ -20303,7 +21020,27 @@ $designsProperties: (
                                         index: 'color',
                                         name: 'color',
                                         type: 'property',
-                                        value: 'var(--cc2-st-action-fg-color-negative-normal)',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
                                       ),
                                     ),
                                   ),
@@ -20316,10 +21053,10 @@ $designsProperties: (
                             name: '&--right',
                             type: 'state',
                             value: (
-                              'selected':(
-                                index: 'selected',
-                                name: '&.cc2-button--selected',
-                                type: 'state',
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
                                 value: (
                                   'label':(
                                     index: 'label',
@@ -20330,7 +21067,471 @@ $designsProperties: (
                                         index: 'color',
                                         name: 'color',
                                         type: 'property',
-                                        value: 'var(--cc2-st-action-fg-color-negative-normal)',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-neutral-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-positive-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-positive-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-bg-color-informative-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-bg-color-informative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-negative-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .cc2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&--left',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'right':(
+                            index: 'right',
+                            name: '&--right',
+                            type: 'state',
+                            value: (
+                              'hover':(
+                                index: 'hover',
+                                name: 'hover',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-hover)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'active':(
+                                index: 'active',
+                                name: 'active',
+                                type: 'selector',
+                                value: (
+                                  'label':(
+                                    index: 'label',
+                                    name: '& .cc2-button__icon__label',
+                                    type: 'subclass',
+                                    value: (
+                                      'color':(
+                                        index: 'color',
+                                        name: 'color',
+                                        type: 'property',
+                                        value: 'var(--cc2-st-action-fg-color-negative-active)',
                                       ),
                                     ),
                                   ),
@@ -20364,6 +21565,154 @@ $designsProperties: (
                             name: '&--only',
                             type: 'state',
                             value: (
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .cc2-button__icon',
+                type: 'subclass',
+                value: (
+                  'only':(
+                    index: 'only',
+                    name: '&--only',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-onprimary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: '&--left',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-active)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: '&--right',
+                    type: 'state',
+                    value: (
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'label':(
+                            index: 'label',
+                            name: '& .cc2-button__icon__label',
+                            type: 'subclass',
+                            value: (
+                              'color':(
+                                index: 'color',
+                                name: 'color',
+                                type: 'property',
+                                value: 'var(--cc2-st-action-fg-color-primary-active)',
+                              ),
                             ),
                           ),
                         ),
@@ -20410,11 +21759,30 @@ $designsProperties: (
                 name: 'focus',
                 type: 'selector',
                 value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--cc2-st-action-bg-color-neutral-ghost-focus)',
+                  ),
                   'boxShadow':(
                     index: 'boxShadow',
                     name: 'box-shadow',
                     type: 'property',
                     value: 'var(--cc2-st-elevation-onLight-focus-sm)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
                   ),
                 ),
               ),
@@ -20486,13 +21854,6 @@ $designsProperties: (
                                 value: (
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
                               'selected':(
                                 index: 'selected',
                                 name: '&.cc2-button--selected',
@@ -20517,13 +21878,6 @@ $designsProperties: (
                               'active':(
                                 index: 'active',
                                 name: 'active',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
                                 type: 'selector',
                                 value: (
                                 ),
@@ -20560,13 +21914,6 @@ $designsProperties: (
                         value: (
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -20598,13 +21945,6 @@ $designsProperties: (
                                 value: (
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
                               'selected':(
                                 index: 'selected',
                                 name: '&.cc2-button--selected',
@@ -20629,13 +21969,6 @@ $designsProperties: (
                               'active':(
                                 index: 'active',
                                 name: 'active',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
                                 type: 'selector',
                                 value: (
                                 ),
@@ -20672,13 +22005,6 @@ $designsProperties: (
                         value: (
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -20710,13 +22036,6 @@ $designsProperties: (
                                 value: (
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
                               'selected':(
                                 index: 'selected',
                                 name: '&.cc2-button--selected',
@@ -20741,13 +22060,6 @@ $designsProperties: (
                               'active':(
                                 index: 'active',
                                 name: 'active',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
                                 type: 'selector',
                                 value: (
                                 ),
@@ -20784,13 +22096,6 @@ $designsProperties: (
                         value: (
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
                       'icon':(
                         index: 'icon',
                         name: '& .cc2-button__icon',
@@ -20815,13 +22120,6 @@ $designsProperties: (
                                 value: (
                                 ),
                               ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
                             ),
                           ),
                           'right':(
@@ -20839,13 +22137,6 @@ $designsProperties: (
                               'active':(
                                 index: 'active',
                                 name: 'active',
-                                type: 'selector',
-                                value: (
-                                ),
-                              ),
-                              'focus':(
-                                index: 'focus',
-                                name: 'focus',
                                 type: 'selector',
                                 value: (
                                 ),
@@ -20931,13 +22222,6 @@ $designsProperties: (
                         value: (
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -20966,13 +22250,6 @@ $designsProperties: (
                         value: (
                         ),
                       ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
                       'selected':(
                         index: 'selected',
                         name: '&.cc2-button--selected',
@@ -20997,13 +22274,6 @@ $designsProperties: (
                       'active':(
                         index: 'active',
                         name: 'active',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
                         type: 'selector',
                         value: (
                         ),
@@ -21184,46 +22454,6 @@ $designsProperties: (
                 name: '&--only',
                 type: 'state',
                 value: (
-                  'hover':(
-                    index: 'hover',
-                    name: 'hover',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__icon__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-onprimary-hover)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'active':(
-                    index: 'active',
-                    name: 'active',
-                    type: 'selector',
-                    value: (
-                      'label':(
-                        index: 'label',
-                        name: '& .cc2-button__icon__label',
-                        type: 'subclass',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--cc2-st-action-fg-color-onprimary-active)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.cc2-button--selected',
