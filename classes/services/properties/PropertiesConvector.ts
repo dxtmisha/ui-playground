@@ -1,5 +1,6 @@
 import { forEach, isObjectNotArray } from '../../../functions/data.ts'
 
+import { convectorColor } from './convector/convectorColor.ts'
 import { convectorShadow } from './convector/convectorShadow.ts'
 import { convectorFontFamilies } from './convector/convectorFontFamilies.ts'
 import { convectorTypography } from './convector/convectorTypography.ts'
@@ -8,6 +9,7 @@ import type { PropertyItemInput, PropertyListOrData } from '../../../types/prope
 
 const LIST: Record<string, (item: PropertyItemInput) => void> = {
   boxShadow: convectorShadow,
+  color: convectorColor,
   fontFamilies: convectorFontFamilies,
   typography: convectorTypography
 }

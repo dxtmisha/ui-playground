@@ -388,6 +388,19 @@ $designsProperties: (
               ),
             ),
           ),
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -407,19 +420,6 @@ $designsProperties: (
             name: '&--readonly',
             type: 'state',
             value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-              'transitionDuration':(
-                index: 'transitionDuration',
-                name: 'transition-duration',
-                type: 'property',
-                value: 'var(--d-sys-transitionDuration-sm)',
-              ),
             ),
           ),
           'adaptive':(
@@ -533,6 +533,19 @@ $designsProperties: (
               ),
             ),
           ),
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
           'selected':(
             index: 'selected',
             name: '&--selected',
@@ -552,19 +565,6 @@ $designsProperties: (
             name: '&--readonly',
             type: 'state',
             value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-              'transitionDuration':(
-                index: 'transitionDuration',
-                name: 'transition-duration',
-                type: 'property',
-                value: 'var(--d-sys-transitionDuration-sm)',
-              ),
             ),
           ),
           'adaptive':(
@@ -6441,6 +6441,19 @@ $designsProperties: (
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
           ),
+          'focus':(
+            index: 'focus',
+            name: 'focus',
+            type: 'selector',
+            value: (
+              'gradientOpacity':(
+                index: 'gradientOpacity',
+                name: 'gradient-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-012)',
+              ),
+            ),
+          ),
           'hover':(
             index: 'hover',
             name: 'hover',
@@ -6479,16 +6492,28 @@ $designsProperties: (
               ),
             ),
           ),
-          'focus':(
-            index: 'focus',
-            name: 'focus',
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
             type: 'selector',
             value: (
-              'gradientOpacity':(
-                index: 'gradientOpacity',
-                name: 'gradient-opacity',
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: 'color-opacity',
                 type: 'property',
-                value: 'var(--m3-sys-opacity-012)',
+                value: 'var(--m3-sys-opacity-disabled)',
+              ),
+              'color':(
+                index: 'color',
+                name: 'palette-color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-onSurface)',
+              ),
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
               ),
             ),
           ),
@@ -6523,31 +6548,6 @@ $designsProperties: (
             name: '&--readonly',
             type: 'state',
             value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-              'colorOpacity':(
-                index: 'colorOpacity',
-                name: 'color-opacity',
-                type: 'property',
-                value: 'var(--m3-sys-opacity-disabled)',
-              ),
-              'color':(
-                index: 'color',
-                name: 'palette-color',
-                type: 'property',
-                value: 'var(--m3-sys-palette-onSurface)',
-              ),
-              'transitionDuration':(
-                index: 'transitionDuration',
-                name: 'transition-duration',
-                type: 'property',
-                value: 'var(--d-sys-transitionDuration-sm)',
-              ),
             ),
           ),
           'adaptive':(
@@ -7327,6 +7327,19 @@ $designsProperties: (
             type: 'property',
             value: 'border, box-shadow',
           ),
+          'focus':(
+            index: 'focus',
+            name: 'focus',
+            type: 'selector',
+            value: (
+              'gradientOpacity':(
+                index: 'gradientOpacity',
+                name: 'gradient-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-012)',
+              ),
+            ),
+          ),
           'hover':(
             index: 'hover',
             name: 'hover',
@@ -7365,16 +7378,41 @@ $designsProperties: (
               ),
             ),
           ),
-          'focus':(
-            index: 'focus',
-            name: 'focus',
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
             type: 'selector',
             value: (
-              'gradientOpacity':(
-                index: 'gradientOpacity',
-                name: 'gradient-opacity',
+              'color':(
+                index: 'color',
+                name: 'color',
                 type: 'property',
-                value: 'var(--m3-sys-opacity-012)',
+                value: 'var(--m3-sys-palette-onSurface)',
+              ),
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: 'color-opacity',
+                type: 'property',
+                value: 'var(--m3-sys-opacity-disabled)',
+              ),
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .m3-chip__icon',
+                type: 'subclass',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-onSurface)',
+                  ),
+                ),
               ),
             ),
           ),
@@ -7422,44 +7460,6 @@ $designsProperties: (
             name: '&--readonly',
             type: 'state',
             value: (
-            ),
-          ),
-          'disabled':(
-            index: 'disabled',
-            name: '&--disabled',
-            type: 'state',
-            value: (
-              'color':(
-                index: 'color',
-                name: 'color',
-                type: 'property',
-                value: 'var(--m3-sys-palette-onSurface)',
-              ),
-              'colorOpacity':(
-                index: 'colorOpacity',
-                name: 'color-opacity',
-                type: 'property',
-                value: 'var(--m3-sys-opacity-disabled)',
-              ),
-              'transitionDuration':(
-                index: 'transitionDuration',
-                name: 'transition-duration',
-                type: 'property',
-                value: 'var(--d-sys-transitionDuration-sm)',
-              ),
-              'icon':(
-                index: 'icon',
-                name: '& .m3-chip__icon',
-                type: 'subclass',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--m3-sys-palette-onSurface)',
-                  ),
-                ),
-              ),
             ),
           ),
           'adaptive':(
@@ -8255,6 +8255,19 @@ $designsProperties: (
             name: '&--dynamic',
             type: 'state',
             value: (
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--m3-sys-opacity-016)',
+                  ),
+                ),
+              ),
               'hover':(
                 index: 'hover',
                 name: 'hover',
@@ -8278,19 +8291,6 @@ $designsProperties: (
                     name: 'gradient-opacity',
                     type: 'property',
                     value: 'var(--m3-sys-opacity-012)',
-                  ),
-                ),
-              ),
-              'focus':(
-                index: 'focus',
-                name: 'focus',
-                type: 'selector',
-                value: (
-                  'gradientOpacity':(
-                    index: 'gradientOpacity',
-                    name: 'gradient-opacity',
-                    type: 'property',
-                    value: 'var(--m3-sys-opacity-016)',
                   ),
                 ),
               ),

@@ -28,10 +28,10 @@ const classesToken = computed<ConstrClasses>(() => ({
     // :classes-values [!] System label / Системная метка
     'cc2-button': true,
     'cc2-button--focus': props.focus,
+    'cc2-button--disabled': props.disabled,
     'cc2-button--selected': props.selected,
     'cc2-button--progress': props.progress,
     'cc2-button--readonly': props.readonly,
-    'cc2-button--disabled': props.disabled,
     [`cc2-button--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
     [`cc2-button--intent--${props.intent}`]: inArray(propsValues.intent, props.intent),
     [`cc2-button--size--${props.size}`]: inArray(propsValues.size, props.size),

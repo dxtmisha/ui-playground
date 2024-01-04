@@ -5,6 +5,17 @@
   --cc2-button-padding: var(--cc2-st-global-distance-space-inset-2xl);
   --cc2-button-transitionFunction: var(--d-sys-transitionFunction-standard);
   
+  font-family: var(--cc2-ot-typography-fontFamily-base);
+  @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
+  font-weight: var(--cc2-ot-typography-fontWeight-500);
+  @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+  letter-spacing: var(--cc2-ot-typography-tracking-lg);
+  @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+  text-decoration: var(--cc2-ot-typography-textDecoration-none);
+  @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+  
+  @include color(#{var(--cc2-st-action-fg-color-primary-normal)});
+  
   border-radius: var(--cc2-st-selectable-borderRadius-size-xl);
   
   transition-duration: var(--d-sys-transitionDuration-lg-close);
@@ -18,14 +29,12 @@
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  &--selected {
-    & .cc2-button__label {
-      @include color(#{var(--cc2-st-action-fg-color-primary-select)});
-    }
+  @include disabled {
+    transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  &--disabled {
-    transition-duration: var(--d-sys-transitionDuration-sm);
+  &--selected {
+    @include color(#{var(--cc2-st-action-fg-color-primary-select)});
   }
   
   &--adaptive {
@@ -42,122 +51,34 @@
   
   &--intent {
     &--positive {
+      @include color(#{var(--cc2-st-action-fg-color-positive-normal)});
+      
       &.cc2-button--selected {
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-fg-color-positive-select)});
-        }
-      }
-      
-      & .cc2-button__icon {
-        &--left {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-positive-select)});
-            }
-          }
-        }
-        
-        &--right {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-positive-select)});
-            }
-          }
-        }
-      }
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-positive-normal)});
+        @include color(#{var(--cc2-st-action-fg-color-positive-select)});
       }
     }
     
     &--negative {
+      @include color(#{var(--cc2-st-action-fg-color-negative-normal)});
+      
       &.cc2-button--selected {
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-fg-color-negative-select)});
-        }
-      }
-      
-      & .cc2-button__icon {
-        &--left {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-negative-select)});
-            }
-          }
-        }
-        
-        &--right {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-negative-select)});
-            }
-          }
-        }
-      }
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-negative-normal)});
+        @include color(#{var(--cc2-st-action-fg-color-negative-select)});
       }
     }
     
     &--neutral {
+      @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
+      
       &.cc2-button--selected {
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-        }
-      }
-      
-      & .cc2-button__icon {
-        &--left {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-            }
-          }
-        }
-        
-        &--right {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-            }
-          }
-        }
-      }
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
+        @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
       }
     }
     
     &--informative {
+      @include color(#{var(--cc2-st-action-bg-color-informative-normal)});
+      
       &.cc2-button--selected {
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-bg-color-informative-select)});
-        }
-      }
-      
-      & .cc2-button__icon {
-        &--left {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-bg-color-informative-select)});
-            }
-          }
-        }
-        
-        &--right {
-          &.cc2-button--selected {
-            & .cc2-button__icon__label {
-              @include color(#{var(--cc2-st-action-bg-color-informative-select)});
-            }
-          }
-        }
-      }
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-bg-color-informative-normal)});
+        @include color(#{var(--cc2-st-action-bg-color-informative-select)});
       }
     }
   }
@@ -166,142 +87,128 @@
     &--lg {
       --cc2-button-padding: var(--cc2-st-global-distance-space-inset-xl);
       
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-base);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
       border-radius: var(--cc2-st-selectable-borderRadius-size-lg);
       
       & .cc2-button__label {
         gap: var(--cc2-st-global-distance-space-inline-sm);
-        
-        font-family: var(--cc2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
-        font-weight: var(--cc2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
-        letter-spacing: var(--cc2-ot-typography-tracking-base);
-        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-        text-decoration: var(--cc2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
       }
     }
     
     &--md {
       --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
       
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--cc2-ot-typography-tracking-base);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
+      
       border-radius: var(--cc2-st-selectable-borderRadius-size-md);
       
       & .cc2-button__label {
         gap: var(--cc2-st-global-distance-space-inline-xs);
-        
-        font-family: var(--cc2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-100)});
-        font-weight: var(--cc2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
-        letter-spacing: var(--cc2-ot-typography-tracking-base);
-        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-        text-decoration: var(--cc2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
       }
     }
     
     &--sm {
       --cc2-button-padding: var(--cc2-st-global-distance-space-inset-lg);
       
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--cc2-ot-typography-tracking-md);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+      
       border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
       
       & .cc2-button__label {
         gap: var(--cc2-st-global-distance-space-inline-xs);
-        
-        font-family: var(--cc2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--cc2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--cc2-ot-typography-tracking-md);
-        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-        text-decoration: var(--cc2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
       }
     }
     
     &--xs {
       --cc2-button-padding: var(--cc2-st-global-distance-space-inset-md);
       
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--cc2-ot-typography-tracking-md);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+      
       border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
       
       & .cc2-button__label {
         gap: var(--cc2-st-global-distance-space-inline-xs);
-        
-        font-family: var(--cc2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--cc2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--cc2-ot-typography-tracking-md);
-        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-        text-decoration: var(--cc2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
       }
     }
     
     &--x {
       --cc2-button-padding: var(--cc2-st-global-distance-space-inset-sm);
       
+      font-family: var(--cc2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--cc2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--cc2-ot-typography-tracking-md);
+      @include textCase(#{var(--cc2-ot-typography-textCase-none)});
+      text-decoration: var(--cc2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
+      
       border-radius: var(--cc2-st-selectable-borderRadius-size-xs);
       
       & .cc2-button__label {
         gap: var(--cc2-st-global-distance-space-inline-xs);
-        
-        font-family: var(--cc2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--cc2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--cc2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--cc2-ot-typography-tracking-md);
-        @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-        text-decoration: var(--cc2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-62)});
       }
     }
   }
   
   &.cc2-button--primary {
+    @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
+    
     @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-normal)});
-    
-    @include hover('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-hover)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
-      }
-    }
-    
-    @include active('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-active)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
-      }
-    }
     
     @include focus('.cc2-button') {
       box-shadow: var(--cc2-st-elevation-onLight-focus-md);
+    }
+    
+    @include hover('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
+      
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
+      
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-active)});
     }
     
     @include disabled('.cc2-button') {
       opacity: 0.5;
     }
     
-    &.cc2-button--size {
-      &--x {
-        & .cc2-button__icon {
-          &--right {
-            border-radius: var(--cc2-st-selectable-borderRadius-size-sm);
-          }
-        }
-      }
-    }
-    
     &.cc2-button--selected {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-select)});
+      @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
       
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
-      }
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-solid-select)});
     }
     
     &.cc2-button--intent {
@@ -354,106 +261,48 @@
       }
       
       &--neutral {
+        @include color(#{var(--cc2-st-action-bg-color-neutral-invert-normal)});
+        
         @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-normal)});
         
         @include hover('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-hover)});
+          @include color(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-hover)});
         }
         
         @include active('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-active)});
+          @include color(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-active)});
         }
         
         &.cc2-button--selected {
+          @include color(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
+          
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-solid-select)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
-          }
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
-              }
-            }
-            
-            &.cc2-button--selected {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
-              }
-            }
-            
-            &.cc2-button--selected {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
-              }
-            }
-          }
-        }
-        
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-bg-color-neutral-invert-normal)});
         }
       }
-    }
-    
-    & .cc2-button__label {
-      @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
     }
   }
   
   &.cc2-button--secondary {
     @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-normal)});
     
+    @include focus('.cc2-button') {
+      box-shadow: var(--cc2-st-elevation-onLight-focus-md);
+    }
+    
     @include hover('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-hover)});
+      @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
       
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-      }
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-hover)});
     }
     
     @include active('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-active)});
+      @include color(#{var(--cc2-st-action-fg-color-primary-active)});
       
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-      }
-    }
-    
-    @include focus('.cc2-button') {
-      box-shadow: var(--cc2-st-elevation-onLight-focus-md);
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-primary-subtle-active)});
     }
     
     @include disabled('.cc2-button') {
@@ -469,111 +318,41 @@
         @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-normal)});
         
         @include hover('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-hover)});
+          @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-hover)});
         }
         
         @include active('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-active)});
+          @include color(#{var(--cc2-st-action-fg-color-positive-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-active)});
         }
         
         &.cc2-button--selected {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-positive-subtle-select)});
         }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
-        }
       }
       
       &--informative {
+        @include color(#{var(--cc2-st-action-fg-color-informative-normal)});
+        
         @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-normal)});
         
         @include hover('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-hover)});
+          @include color(#{var(--cc2-st-action-fg-color-informative-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-informative-hover)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-hover)});
         }
         
         @include active('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-active)});
+          @include color(#{var(--cc2-st-action-fg-color-informative-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-informative-active)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-active)});
         }
         
         &.cc2-button--selected {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-informative-subtle-select)});
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-informative-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-informative-active)});
-              }
-            }
-          }
-        }
-        
-        & .cc2-button__label {
-          @include color(#{var(--cc2-st-action-fg-color-informative-normal)});
         }
       }
       
@@ -581,53 +360,19 @@
         @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
         
         @include hover('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-hover)});
+          @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-hover)});
         }
         
         @include active('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-active)});
+          @include color(#{var(--cc2-st-action-fg-color-negative-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-active)});
         }
         
         &.cc2-button--selected {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-select)});
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
         }
       }
       
@@ -635,131 +380,51 @@
         @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-normal)});
         
         @include hover('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-hover)});
+          @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-hover)});
         }
         
         @include active('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-active)});
+          @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-          }
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-active)});
         }
         
         &.cc2-button--selected {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-subtle-select)});
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
-        }
-      }
-    }
-    
-    & .cc2-button__icon {
-      &--only {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
-          }
-        }
-      }
-      
-      &--left {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-          }
-        }
-      }
-      
-      &--right {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-          }
         }
       }
     }
   }
   
   &.cc2-button--outline {
+    @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
+    
     @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-normal)});
     
     border-width: 1px;
     border-style: solid;
     @include borderColor(#{var(--cc2-st-action-border-color-neutral-subtle-normal)});
     
+    @include focus('.cc2-button') {
+      box-shadow: var(--cc2-st-elevation-onLight-focus-md);
+    }
+    
     @include hover('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
+      
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-hover)});
       
       @include borderColor(#{var(--cc2-st-action-border-color-neutral-subtle-hover)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-      }
     }
     
     @include active('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
+      
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-active)});
       
       @include borderColor(#{var(--cc2-st-action-border-color-neutral-subtle-active)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-      }
-    }
-    
-    @include focus('.cc2-button') {
-      box-shadow: var(--cc2-st-elevation-onLight-focus-md);
     }
     
     @include disabled('.cc2-button') {
@@ -767,13 +432,11 @@
     }
     
     &.cc2-button--selected {
+      @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
+      
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-invert-select)});
       
       @include borderColor(#{var(--cc2-st-action-border-color-neutral-subtle-select)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-      }
     }
     
     &.cc2-button--intent {
@@ -782,58 +445,24 @@
         
         @include borderColor(#{var(--cc2-st-action-fg-color-positive-normal)});
         
-        @include hover('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-positive-hover)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-positive-active)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-          }
-        }
-        
         @include focus('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
         }
         
-        &.cc2-button--selected {
-          @include borderColor(#{var(--cc2-st-action-fg-color-positive-select)});
+        @include hover('.cc2-button') {
+          @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
+          
+          @include borderColor(#{var(--cc2-st-action-fg-color-positive-hover)});
         }
         
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
+        @include active('.cc2-button') {
+          @include color(#{var(--cc2-st-action-fg-color-positive-active)});
           
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
+          @include borderColor(#{var(--cc2-st-action-fg-color-positive-active)});
+        }
+        
+        &.cc2-button--selected {
+          @include borderColor(#{var(--cc2-st-action-fg-color-positive-select)});
         }
       }
       
@@ -842,58 +471,24 @@
         
         @include borderColor(#{var(--cc2-st-action-bg-color-informative-normal)});
         
-        @include hover('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-bg-color-informative-hover)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-bg-color-informative-active)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-          }
-        }
-        
         @include focus('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
         }
         
-        &.cc2-button--selected {
-          @include borderColor(#{var(--cc2-st-action-bg-color-informative-select)});
+        @include hover('.cc2-button') {
+          @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
+          
+          @include borderColor(#{var(--cc2-st-action-bg-color-informative-hover)});
         }
         
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-              }
-            }
-          }
+        @include active('.cc2-button') {
+          @include color(#{var(--cc2-st-action-bg-color-informative-active)});
           
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-              }
-            }
-          }
+          @include borderColor(#{var(--cc2-st-action-bg-color-informative-active)});
+        }
+        
+        &.cc2-button--selected {
+          @include borderColor(#{var(--cc2-st-action-bg-color-informative-select)});
         }
       }
       
@@ -902,58 +497,24 @@
         
         @include borderColor(#{var(--cc2-st-action-fg-color-negative-normal)});
         
-        @include hover('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-negative-hover)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-negative-active)});
-          
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-          }
-        }
-        
         @include focus('.cc2-button') {
           @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
         }
         
-        &.cc2-button--selected {
-          @include borderColor(#{var(--cc2-st-action-fg-color-negative-select)});
+        @include hover('.cc2-button') {
+          @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
+          
+          @include borderColor(#{var(--cc2-st-action-fg-color-negative-hover)});
         }
         
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
+        @include active('.cc2-button') {
+          @include color(#{var(--cc2-st-action-fg-color-negative-active)});
           
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
+          @include borderColor(#{var(--cc2-st-action-fg-color-negative-active)});
+        }
+        
+        &.cc2-button--selected {
+          @include borderColor(#{var(--cc2-st-action-fg-color-negative-select)});
         }
       }
       
@@ -962,146 +523,48 @@
         
         @include borderColor(#{var(--cc2-st-action-fg-color-neutral-normal)});
         
+        @include focus('.cc2-button') {
+          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+        }
+        
         @include hover('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-neutral-hover)});
+          @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-          }
+          @include borderColor(#{var(--cc2-st-action-fg-color-neutral-hover)});
         }
         
         @include active('.cc2-button') {
-          @include borderColor(#{var(--cc2-st-action-fg-color-neutral-active)});
+          @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
           
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-          }
-        }
-        
-        @include focus('.cc2-button') {
-          @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-invert-focus)});
+          @include borderColor(#{var(--cc2-st-action-fg-color-neutral-active)});
         }
         
         &.cc2-button--selected {
           @include borderColor(#{var(--cc2-st-action-fg-color-neutral-select)});
         }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
-        }
       }
-    }
-    
-    & .cc2-button__icon {
-      &--only {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
-          }
-        }
-      }
-      
-      &--left {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-          }
-        }
-        
-        &.cc2-button--selected {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-          }
-        }
-      }
-      
-      &--right {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-          }
-        }
-        
-        &.cc2-button--selected {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-select)});
-          }
-        }
-      }
-    }
-    
-    & .cc2-button__label {
-      @include color(#{var(--cc2-st-action-fg-color-neutral-normal)});
     }
   }
   
   &.cc2-button--ghost {
     @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-normal)});
     
-    @include hover('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-hover)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-      }
-    }
-    
-    @include active('.cc2-button') {
-      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-active)});
-      
-      & .cc2-button__label {
-        @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-      }
-    }
-    
     @include focus('.cc2-button') {
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-focus)});
       
       box-shadow: var(--cc2-st-elevation-onLight-focus-md);
+    }
+    
+    @include hover('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
+      
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-hover)});
+    }
+    
+    @include active('.cc2-button') {
+      @include color(#{var(--cc2-st-action-fg-color-primary-active)});
+      
+      @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-active)});
     }
     
     @include disabled('.cc2-button') {
@@ -1112,254 +575,44 @@
       @include backgroundColor(#{var(--cc2-st-action-bg-color-neutral-ghost-select)});
     }
     
-    &.cc2-button--size {
-      &--xs {
-        &.cc2-button--intent {
-          &--negative {
-            & .cc2-button__icon {
-              &--only {
-                @include disabled('.cc2-button') {
-                  @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
-                }
-              }
-            }
-          }
-        }
-      }
-      
-      &--x {
-        &.cc2-button--intent {
-          &--negative {
-            & .cc2-button__icon {
-              &--only {
-                @include disabled('.cc2-button') {
-                  @include backgroundColor(#{var(--cc2-st-action-bg-color-negative-subtle-normal)});
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    
     &.cc2-button--intent {
       &--neutral {
         @include hover('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-          }
+          @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
         }
         
         @include active('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-          }
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
-              }
-            }
-          }
+          @include color(#{var(--cc2-st-action-fg-color-neutral-active)});
         }
       }
       
       &--positive {
         @include hover('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-          }
+          @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
         }
         
         @include active('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-          }
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-positive-active)});
-              }
-            }
-          }
+          @include color(#{var(--cc2-st-action-fg-color-positive-active)});
         }
       }
       
       &--informative {
         @include hover('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-          }
+          @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
         }
         
         @include active('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-          }
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-bg-color-informative-active)});
-              }
-            }
-          }
+          @include color(#{var(--cc2-st-action-bg-color-informative-active)});
         }
       }
       
       &--negative {
         @include hover('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-          }
+          @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
         }
         
         @include active('.cc2-button') {
-          & .cc2-button__label {
-            @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-          }
-        }
-        
-        & .cc2-button__icon {
-          &--left {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
-          
-          &--right {
-            @include hover('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-hover)});
-              }
-            }
-            
-            @include active('.cc2-button') {
-              & .cc2-button__icon__label {
-                @include color(#{var(--cc2-st-action-fg-color-negative-active)});
-              }
-            }
-          }
-        }
-      }
-    }
-    
-    & .cc2-button__icon {
-      &--only {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-onprimary-active)});
-          }
-        }
-      }
-      
-      &--left {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-          }
-        }
-      }
-      
-      &--right {
-        @include hover('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-hover)});
-          }
-        }
-        
-        @include active('.cc2-button') {
-          & .cc2-button__icon__label {
-            @include color(#{var(--cc2-st-action-fg-color-primary-active)});
-          }
+          @include color(#{var(--cc2-st-action-fg-color-negative-active)});
         }
       }
     }
@@ -1367,6 +620,10 @@
   
   &.cc2-button--link {
     --cc2-button-padding: 0;
+    
+    font: inherit;
+    
+    @include color(#{inherit});
     
     border-radius: unset;
     
@@ -1390,62 +647,11 @@
     
     & .cc2-button__label {
       gap: unset;
-      
-      font: inherit;
-      
-      @include color(#{inherit});
     }
   }
   
   &__label {
     gap: var(--cc2-st-global-distance-space-inline-md);
-    
-    font-family: var(--cc2-ot-typography-fontFamily-base);
-    @include fontSize(#{var(--cc2-ot-typography-fontSize-size-scale-112)});
-    font-weight: var(--cc2-ot-typography-fontWeight-500);
-    @include lineHeight(#{var(--cc2-ot-typography-lineHeight-150)});
-    letter-spacing: var(--cc2-ot-typography-tracking-lg);
-    @include textCase(#{var(--cc2-ot-typography-textCase-none)});
-    text-decoration: var(--cc2-ot-typography-textDecoration-none);
-    @include paragraphSpacing(#{var(--cc2-ot-typography-paragraphSpacing-size-scale-75)});
-    
-    @include color(#{var(--cc2-st-action-fg-color-primary-normal)});
-  }
-  
-  &__icon {
-    &--left {
-      &.cc2-button--selected {
-        & .cc2-button__icon__label {
-          @include color(#{var(--cc2-st-action-fg-color-primary-select)});
-        }
-      }
-    }
-    
-    &--right {
-      &.cc2-button--selected {
-        & .cc2-button__icon__label {
-          @include color(#{var(--cc2-st-action-fg-color-primary-select)});
-        }
-      }
-    }
-    
-    &--only {
-      &.cc2-button--selected {
-        & .cc2-button__icon__label {
-          @include color(#{var(--cc2-st-action-fg-color-onprimary-select)});
-        }
-      }
-      
-      &.cc2-button--loading {
-        & .cc2-button__icon__label {
-          @include color(#{var(--cc2-st-action-fg-color-invert-normal)});
-        }
-      }
-      
-      & .cc2-button__icon__label {
-        @include color(#{var(--cc2-st-action-fg-color-onprimary-normal)});
-      }
-    }
   }
   // :style [!] System label / Системная метка
 }

@@ -22,10 +22,10 @@ export type ButtonProps =
 
     // Tokens
     // :type [!] System label / Системная метка
+    disabled?: boolean
     selected?: boolean
     progress?: boolean
     readonly?: boolean
-    disabled?: boolean
     // :type [!] System label / Системная метка
     // :type.adaptive.none
   }
@@ -62,10 +62,10 @@ export const propsButton = {
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
+    disabled: Boolean,
     selected: Boolean,
     progress: Boolean,
-    readonly: Boolean,
-    disabled: Boolean
+    readonly: Boolean
     // :prop [!] System label / Системная метка
   }
 }

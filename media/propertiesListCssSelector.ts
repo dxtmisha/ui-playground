@@ -64,11 +64,11 @@ export const cssSelector = [
   // Status
   'fullscreen',
 
-  'hover',
-  'active',
   'focus',
   'focus-visible',
   'focus-within', // соответствует элементу, который находится в фокусе сам или содержит элемент, который находится в фокусе
+  'hover',
+  'active',
   'enabled', // находит любой включённый элемент
   'disabled'
 ]

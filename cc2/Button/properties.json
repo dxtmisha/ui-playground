@@ -3,7 +3,7 @@
   "container": {
     "content": {
       "label": {
-        "_drag": ".."
+        "_drag": "../../.."
       },
       "_drag": "../../label",
       "_dragSetting": "{??label}"
@@ -15,11 +15,20 @@
     "_settingClone": true
   },
   "icon": {
+    "left": {
+      "_remove": true
+    },
+    "right": {
+      "_remove": true
+    },
+    "only": {
+      "_remove": true
+    },
     "_type": "subclass",
     "_settingClone": true
   },
   "skeleton": {
-    "_remove": "none",
+    "_remove": true,
     "_settingClone": true
   }
 }

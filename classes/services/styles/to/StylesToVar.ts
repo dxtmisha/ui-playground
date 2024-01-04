@@ -65,10 +65,24 @@ export class StylesToVar extends StylesToAbstract {
     return `${item?.[PropertyKey.name]}: ${StylesTool.toFunctionCss(value)};`
   }
 
+  /**
+   * Adds a property responsible for transparency.<br>
+   * Добавляет свойство, отвечающее за прозрачность.
+   * @param item current element /<br>текущий элемент
+   */
   private getCodeColorOpacity (
     item: PropertyItem = this.item
   ): string {
     const value = item?.[PropertyKey.css]
+    const opacity = item?.[PropertyKey.cssColorOpacity]
+
+    if (
+      opacity &&
+      typeof opacity !== 'boolean'
+    ) {
+      return `${item?.[PropertyKey.name]}-opacity: ${opacity};`
+    }
+
     return `${item?.[PropertyKey.name]}-opacity: #{toColorOpacity(${value})};`
   }
 }

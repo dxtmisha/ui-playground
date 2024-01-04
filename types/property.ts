@@ -112,7 +112,7 @@ export type PropertyItem = {
   __ni?: string
   __v?: PropertyType
   __c?: string
-  __cco?: boolean
+  __cco?: boolean | string
   __f?: string | string[]
   __s?: string
   __o?: number

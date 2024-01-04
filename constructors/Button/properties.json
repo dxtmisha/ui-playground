@@ -31,8 +31,7 @@
     "_type": "state"
   },
   "disabled": {
-    "transition-duration": "{d.sys.transitionDuration.sm}",
-    "_type": "state"
+    "transition-duration": "{d.sys.transitionDuration.sm}"
   },
   "adaptive": {
     "~icon": {
