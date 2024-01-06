@@ -1,0 +1,9 @@
+@import "../../styles/all";
+
+@mixin mixinImageToken {
+  // :style [!] System label / Системная метка
+  &--disabled {
+    --c2-image-colorOpacity: var(--c2-ot-opacity-50);
+  }
+  // :style [!] System label / Системная метка
+}

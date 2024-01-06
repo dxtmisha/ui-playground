@@ -1,11 +1,14 @@
 export enum StorybookControl {
   text = 'text',
-  select = 'select'
+  boolean = 'boolean',
+  number = 'number',
+  select = 'select',
+  object = 'object'
 }
 
 export type StorybookArgsItem = {
-  control?: StorybookControl
-  options?: any[]
+  control?: StorybookControl | ({ type: StorybookControl } & Record<string, any>)
+  options?: any[] | Record<string, any>
   table?: {
     category?: string
     defaultValue?: { summary: any, detail?: string }

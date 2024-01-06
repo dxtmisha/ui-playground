@@ -20048,5 +20048,46 @@ $designsProperties: (
           ),
         ),
       ),
+      'image':(
+        index: 'image',
+        name: 'c2-image',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: '--c2-image-colorOpacity',
+                type: 'var',
+                value: 'var(--c2-ot-opacity-50)',
+              ),
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
     ),
   ),);

@@ -1,13 +1,6 @@
-import {
-  defaults,
-  propsValues
-} from '../../Button/props.ts'
+import { defaults, propsValues } from '../../Button/props.ts'
 
-import {
-  type StorybookArgs,
-  type StorybookArgsValue,
-  StorybookControl
-} from '../../../types/storybook.ts'
+import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook.ts'
 
 import { StorybookCategory } from '../types.ts'
 
@@ -19,6 +12,9 @@ export const buttonArgs: StorybookArgs = {
       type: { summary: 'string' }
     },
     description: 'Text on the button. Not necessary if there is an icon'
+  },
+  icon: {
+    control: StorybookControl.select
   },
   height: {
     control: StorybookControl.select,

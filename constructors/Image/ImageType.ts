@@ -5,6 +5,7 @@ import {
   type ImageTypeItem,
   ImageTypeValue
 } from './typesBasic.ts'
+import { Icons } from '../../classes/Icons.ts'
 
 /**
  * Class for working with the image type.<br>
@@ -54,10 +55,18 @@ export class ImageType extends CacheItem<ImageTypeItem> {
         return ImageTypeValue.public
       }
 
+      if (image.match(/^\$/)) {
+        return ImageTypeValue.material
+      }
+
       const sub = image.match(/^(filled|outlined|round|sharp|two-tone)-/)
 
       if (sub) {
         return sub[1] as ImageTypeItem
+      }
+
+      if (Icons.is(image)) {
+        return ImageTypeValue.public
       }
 
       return ImageTypeValue.material

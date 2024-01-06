@@ -1,0 +1,693 @@
+{
+  "size": {
+    "xs": {
+      "_type": "state"
+    },
+    "sm": {
+      "_type": "state"
+    },
+    "md": {
+      "_type": "state"
+    },
+    "lg": {
+      "_type": "state"
+    },
+    "xl": {
+      "_type": "state"
+    },
+    "_type": "state",
+    "_default": "xs"
+  },
+  "type": {
+    "photo": {
+      "_type": "state"
+    },
+    "name": {
+      "_type": "state"
+    },
+    "icon": {
+      "_type": "state"
+    },
+    "_type": "state",
+    "_default": "photo"
+  },
+  "normal": {},
+  "hover": {},
+  "focus": {},
+  "badge": {
+    "true": {
+      "_type": "state"
+    },
+    "false": {
+      "_type": "state"
+    },
+    "_type": "state",
+    "_default": "false"
+  },
+  "status-dot": {
+    "true": {
+      "_type": "state"
+    },
+    "false": {
+      "_type": "state"
+    },
+    "_type": "state",
+    "_default": "false"
+  },
+  "avatar": {
+    "_type": "state",
+    "_category": "style",
+    "_default": true,
+    "gap": "8px",
+    "user-photo": {
+      "width": "auto",
+      "height": "auto",
+      "border-radius": "{st.selectable.borderRadius.size.pill}",
+      "background-color": "{st.content.bg.color.neutral.subtle}"
+    },
+    "size": {
+      "md": {
+        "user-photo": {
+          "width": "40",
+          "height": "40"
+        },
+        "type": {
+          "name": {
+            "user-photo": {
+              "width": "39px",
+              "padding": "10 1px 10 0",
+              "font": "{st.web.text.caption.c1Medium}"
+            },
+            "hover": {
+              "badge": {
+                "true": {
+                  "status-dot": {
+                    "false": {
+                      "user-photo": {
+                        "padding": "10 0 10 1px"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "focus": {
+              "badge": {
+                "true": {
+                  "status-dot": {
+                    "false": {
+                      "user-photo": {
+                        "padding": "10 0 10 1px"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "width": "39px",
+                    "padding": "10 1px 10 0",
+                    "font": "{st.web.text.caption.c1Medium}"
+                  }
+                }
+              }
+            }
+          },
+          "icon": {
+            "user-photo": {
+              "padding": "8px",
+              "user-01": {
+                "width": "24px",
+                "height": "24px"
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "width": "40",
+                    "padding": "8px",
+                    "user-01": {
+                      "width": "24px",
+                      "height": "24px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "photo": {
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "width": "40"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "width": "12px",
+                  "height": "12px",
+                  "status-container": {
+                    "width": "{ct.selectable.icon.size.xs}",
+                    "height": "{ct.selectable.icon.size.xs}",
+                    "icon-color": {
+                      "width": "{ct.selectable.icon.size.xs}",
+                      "height": "{ct.selectable.icon.size.xs}"
+                    }
+                  }
+                }
+              },
+              "false": {
+                "height": "40"
+              }
+            }
+          },
+          "true": {
+            "status-dot": {
+              "false": {
+                "badge": {
+                  "right": "0",
+                  "bottom": "0",
+                  "badge-xs": {
+                    "padding": "0 {st.global.distance.space.inset.sm}",
+                    "gap": "{st.global.distance.space.inline.xs}",
+                    "border-radius": "{st.selectable.borderRadius.size.pill}",
+                    "border-width": "1px",
+                    "border-style": "solid",
+                    "border-color": "{st.content.fg.color.neutral.secondary}",
+                    "background-color": "{st.content.bg.color.default.solid.normal}",
+                    "color": "{st.content.fg.color.neutral.secondary}",
+                    "font": "{st.web.text.caption.c2Medium}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "user-photo": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "width": "12px",
+                  "height": "12px",
+                  "status-container": {
+                    "width": "{ct.selectable.icon.size.xs}",
+                    "height": "{ct.selectable.icon.size.xs}",
+                    "icon-color": {
+                      "width": "{ct.selectable.icon.size.xs}",
+                      "height": "{ct.selectable.icon.size.xs}"
+                    }
+                  }
+                }
+              },
+              "false": {
+                "width": "48px",
+                "height": "48px"
+              }
+            }
+          },
+          "true": {
+            "status-dot": {
+              "false": {
+                "badge": {
+                  "right": "0",
+                  "bottom": "0",
+                  "badge-xs": {
+                    "padding": "0 {st.global.distance.space.inset.sm}",
+                    "gap": "{st.global.distance.space.inline.xs}",
+                    "border-radius": "{st.selectable.borderRadius.size.pill}",
+                    "border-width": "1px",
+                    "border-style": "solid",
+                    "border-color": "{st.content.fg.color.neutral.secondary}",
+                    "background-color": "{st.content.bg.color.default.solid.normal}",
+                    "color": "{st.content.fg.color.neutral.secondary}",
+                    "font": "{st.web.text.caption.c2Medium}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "type": {
+          "icon": {
+            "user-photo": {
+              "padding": "10",
+              "user-01": {
+                "width": "28px",
+                "height": "28px"
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "padding": "10",
+                    "user-01": {
+                      "width": "28px",
+                      "height": "28px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "user-photo": {
+              "padding": "14px 0",
+              "font": "{st.web.text.caption.c1Medium}"
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "padding": "14px 0",
+                    "font": "{st.web.text.caption.c1Medium}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "xl": {
+        "user-photo": {
+          "width": "56px",
+          "height": "56px"
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "width": "16px",
+                  "height": "16px",
+                  "status-container": {
+                    "width": "16px",
+                    "height": "16px",
+                    "icon-color": {
+                      "width": "16px",
+                      "height": "16px"
+                    }
+                  }
+                }
+              },
+              "false": {
+                "width": "56px",
+                "height": "56px"
+              }
+            }
+          },
+          "true": {
+            "status-dot": {
+              "false": {
+                "badge": {
+                  "right": "0",
+                  "bottom": "0",
+                  "badge-sm": {
+                    "padding": "{st.global.distance.space.inset.x}{st.global.distance.space.inset.md}",
+                    "gap": "4px",
+                    "border-radius": "{st.selectable.borderRadius.size.pill}",
+                    "border-width": "1px",
+                    "border-style": "solid",
+                    "border-color": "{st.content.fg.color.neutral.secondary}",
+                    "background-color": "{st.content.bg.color.default.solid.normal}",
+                    "color": "{st.content.fg.color.neutral.secondary}",
+                    "font": "{st.web.text.caption.c2Medium}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "type": {
+          "icon": {
+            "user-photo": {
+              "padding": "12px",
+              "user-01": {
+                "width": "32px",
+                "height": "32px"
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "padding": "12px",
+                    "user-01": {
+                      "width": "32px",
+                      "height": "32px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "user-photo": {
+              "padding": "16px 0",
+              "font": "{st.web.text.body.b2Medium}"
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "padding": "16px 0",
+                    "font": "{st.web.text.body.b2Medium}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "status-dot": {
+          "true": {
+            "user-photo": {
+              "width": "32px",
+              "height": "32px"
+            }
+          }
+        },
+        "type": {
+          "icon": {
+            "status-dot": {
+              "true": {
+                "user-photo": {
+                  "width": "32px"
+                }
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "true": {
+                    "user-photo": {
+                      "padding": "6px",
+                      "user-01": {
+                        "width": "20",
+                        "height": "20"
+                      }
+                    }
+                  },
+                  "false": {
+                    "width": "32px",
+                    "padding": "6px",
+                    "user-01": {
+                      "width": "20",
+                      "height": "20"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "status-dot": {
+              "true": {
+                "user-photo": {
+                  "width": "31px"
+                }
+              }
+            },
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "true": {
+                    "user-photo": {
+                      "padding": "8px 1px 8px 0",
+                      "font": "{st.web.text.caption.c2Medium}"
+                    }
+                  },
+                  "false": {
+                    "width": "31px",
+                    "padding": "8px 1px 8px 0",
+                    "font": "{st.web.text.caption.c2Medium}"
+                  }
+                }
+              }
+            }
+          },
+          "photo": {
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "false": {
+                    "width": "32px"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "status-container": {
+                    "width": "8px",
+                    "height": "8px",
+                    "icon-color": {
+                      "width": "8px",
+                      "height": "8px"
+                    }
+                  }
+                }
+              },
+              "false": {
+                "height": "32px"
+              }
+            }
+          }
+        }
+      },
+      "xs": {
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "status-container": {
+                    "width": "6px",
+                    "height": "6px",
+                    "icon-color": {
+                      "width": "6px",
+                      "height": "6px"
+                    }
+                  }
+                }
+              },
+              "false": {
+                "width": "24px",
+                "height": "24px"
+              }
+            }
+          }
+        },
+        "type": {
+          "icon": {
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "true": {
+                    "user-photo": {
+                      "padding": "4px",
+                      "user-01": {
+                        "width": "16px",
+                        "height": "16px"
+                      }
+                    }
+                  },
+                  "false": {
+                    "padding": "4px",
+                    "user-01": {
+                      "width": "16px",
+                      "height": "16px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "badge": {
+              "false": {
+                "status-dot": {
+                  "true": {
+                    "user-photo": {
+                      "padding": "4px 0",
+                      "font": "{st.web.text.caption.c3Medium}"
+                    }
+                  },
+                  "false": {
+                    "padding": "4px 0",
+                    "font": "{st.web.text.caption.c3Medium}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "status-dot": {
+      "true": {
+        "user-photo": {
+          "width": "24px",
+          "height": "24px"
+        }
+      }
+    },
+    "type": {
+      "icon": {
+        "user-photo": {
+          "background-color": "{st.content.bg.color.neutral.onsubtle}"
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "border-color": "{st.content.bg.color.default.subtle.normal}"
+                }
+              },
+              "false": {
+                "background-color": "{st.content.bg.color.neutral.onsubtle}"
+              }
+            }
+          }
+        }
+      },
+      "name": {
+        "user-photo": {
+          "background-color": "{st.content.bg.color.neutral.onsubtle}",
+          "color": "{st.content.fg.color.neutral.tetriary}",
+          "text-align": "center"
+        },
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "border-color": "{st.action.fg.color.invert.normal}"
+                }
+              },
+              "false": {
+                "background-color": "{st.content.bg.color.neutral.onsubtle}",
+                "color": "{st.content.fg.color.neutral.tetriary}",
+                "text-align": "center"
+              }
+            }
+          }
+        }
+      },
+      "photo": {
+        "badge": {
+          "false": {
+            "status-dot": {
+              "true": {
+                "status-dot": {
+                  "border-color": "{st.action.fg.color.invert.normal}"
+                }
+              }
+            }
+          }
+        },
+        "focus": {
+          "badge": {
+            "false": {
+              "status-dot": {
+                "false": {
+                  "background-color": "{st.content.bg.color.neutral.subtle}"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "badge": {
+      "false": {
+        "status-dot": {
+          "true": {
+            "status-dot": {
+              "gap": "8px",
+              "right": "0",
+              "bottom": "0",
+              "border-radius": "1000",
+              "border-width": "2px",
+              "border-style": "solid",
+              "status-container": {
+                "gap": "8px"
+              }
+            }
+          },
+          "false": {
+            "border-radius": "{st.selectable.borderRadius.size.pill}"
+          }
+        }
+      }
+    },
+    "hover": {
+      "user-photo": {
+        "border-width": "1px",
+        "border-style": "solid",
+        "border-color": "{st.content.border.color.default.alpha}"
+      },
+      "badge": {
+        "false": {
+          "status-dot": {
+            "false": {
+              "border-width": "1px",
+              "border-style": "solid",
+              "border-color": "{st.content.border.color.default.alpha}"
+            }
+          }
+        }
+      }
+    },
+    "focus": {
+      "user-photo": {
+        "border-width": "1px",
+        "border-style": "solid",
+        "border-color": "{st.content.border.color.default.alpha}"
+      },
+      "badge": {
+        "false": {
+          "status-dot": {
+            "true": {
+              "user-photo": {
+                "box-shadow": "{st.elevation.onLight.focus.md}"
+              }
+            },
+            "false": {
+              "border-width": "1px",
+              "border-style": "solid",
+              "border-color": "{st.content.border.color.default.alpha}",
+              "box-shadow": "{st.elevation.onLight.focus.md}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

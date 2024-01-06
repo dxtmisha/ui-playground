@@ -4,5 +4,6 @@ export enum StorybookCategory {
   option = 'Options',
   status = 'Status',
   style = 'Styles',
+  token = 'Tokens',
   value = 'Values'
 }

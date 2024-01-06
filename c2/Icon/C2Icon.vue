@@ -1,0 +1,87 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+// import { isFilled } from '../../functions/data.ts'
+// import { inArray } from '../../functions/object.ts'
+
+import { IconDesign } from '../../constructors/Icon/IconDesign.ts'
+
+import C2Image from '../Image/C2Image.vue'
+
+import {
+  type ConstrClasses,
+  type ConstrStyles
+} from '../../types/constructor.ts'
+import {
+  type IconEmits,
+  type IconSlots
+} from '../../constructors/Icon/types.ts'
+
+import {
+  propsInstruction // ,
+  // propsValues
+} from './props.ts'
+
+const emits = defineEmits<IconEmits>()
+const props = defineProps({ ...propsInstruction })
+
+const classesToken = computed<ConstrClasses>(() => ({
+  main: {
+    // :classes-values [!] System label / Системная метка
+    'c2-icon': true
+    // :classes-values [!] System label / Системная метка
+  }
+}))
+const stylesToken = computed<ConstrStyles>(() => ({
+  // :styles-values [!] System label / Системная метка
+  // :styles-values [!] System label / Системная метка
+}))
+
+const design = new IconDesign(
+  'c2.icon',
+  props,
+  {
+    components: {
+      image: C2Image
+    },
+    emits,
+    classes: classesToken,
+    styles: stylesToken
+  }
+)
+
+// const {
+//   classes,
+//   styles
+// } = design.setup()
+const render = design.render()
+
+defineSlots<IconSlots>()
+defineExpose(design.expose())
+</script>
+
+<template>
+  <render>
+    <slot />
+  </render>
+</template>
+
+<style lang="scss">
+@import "../styles/properties";
+@import "../../styles/properties";
+@import "../../constructors/Icon/style";
+@import "styleToken";
+
+@include initDesignBasic('c2.icon') {
+  // Basic styles for a component
+  // Базовый стили для компонента
+  @include mixinIcon;
+
+  // Styles from tokens
+  // Стили из токенов
+  @include mixinIconToken;
+
+  // Here are the user styles
+  // Здесь пользовательские стили
+}
+</style>

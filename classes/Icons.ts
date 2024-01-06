@@ -11,6 +11,15 @@ export class Icons {
   protected static readonly url: string = useEnv('iconPath') ?? '/icons/'
 
   /**
+   * Checks if the given icon is in the list of connected icons.<br>
+   * Проверяет, есть ли данная иконка в списке подключенных иконок.
+   * @param index icon name /<br>название иконки
+   */
+  static is (index: string): boolean {
+    return index in this.icons
+  }
+
+  /**
    * Returns the icon by the name.<br>
    * Возвращает иконку по названию.
    * @param index icon name /<br>название иконки
