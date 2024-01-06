@@ -17,10 +17,10 @@ export const propsValues = {
 export type PropsToken = {
   // :type [!] System label / Системная метка
   focus?: boolean
+  disabled?: boolean
   selected?: boolean
   progress?: boolean
   readonly?: boolean
-  disabled?: boolean
   adaptive?: 'icon' | 'sm' | 'md'
   height?: 'sm' | 'md' | 'lg'
   filled?: boolean
@@ -59,10 +59,10 @@ export const propsInstruction = {
   ...{
     // :prop [!] System label / Системная метка
     focus: Boolean,
+    disabled: Boolean,
     selected: Boolean,
     progress: Boolean,
     readonly: Boolean,
-    disabled: Boolean,
     adaptive: String as PropType<PropsToken['adaptive']>,
     height: {
       type: String as PropType<PropsToken['height']>,

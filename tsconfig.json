@@ -24,10 +24,10 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "cc2/**/*.ts",
-    "cc2/**/*.d.ts",
-    "cc2/**/*.tsx",
-    "cc2/**/*.vue",
+    "c2/**/*.ts",
+    "c2/**/*.d.ts",
+    "c2/**/*.tsx",
+    "c2/**/*.vue",
     "classes/**/*.ts",
     "classes/**/*.tsx",
     "commands/**/*.ts",

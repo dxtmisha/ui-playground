@@ -35,10 +35,10 @@
   },
   "adaptive": {
     "~icon": {
-      "padding": "0px",
+      "padding": "0",
       "& .??__label": {
         "display": "none",
-        "padding-x": "0px"
+        "padding-x": "0"
       }
     }
   }

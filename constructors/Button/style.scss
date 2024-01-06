@@ -1,6 +1,8 @@
 @import "../../styles/properties";
 
 @mixin mixinButton {
+  @include initByCustom('padding', 0);
+
   @include flexInlineCenter;
   box-sizing: border-box;
   position: relative;

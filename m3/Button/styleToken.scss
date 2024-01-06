@@ -25,6 +25,10 @@
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: background-color, background-image, border, box-shadow;
   
+  @include focus {
+    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+  }
+  
   @include hover {
     @include gradientOpacity(#{var(--m3-sys-opacity-008)});
     
@@ -37,8 +41,11 @@
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  @include focus {
-    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+  @include disabled {
+    @include colorOpacity(#{var(--m3-sys-opacity-disabled)});
+    @include paletteColor(#{var(--m3-sys-palette-onSurface)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
   &--selected {
@@ -47,44 +54,37 @@
     @include paletteGradient(#{var(--m3-sys-palette-primaryVariant)});
   }
   
-  &--disabled {
-    @include colorOpacity(#{var(--m3-sys-opacity-disabled)});
-    @include paletteColor(#{var(--m3-sys-palette-onSurface)});
-    
-    transition-duration: var(--d-sys-transitionDuration-sm);
-  }
-  
   &--adaptive {
     &--icon {
-      --m3-button-padding: 0px;
+      --m3-button-padding: 0;
       
        .m3-button__label {
         display: none;
         
-        @include paddingX(#{0px});
+        @include paddingX(#{0});
       }
     }
     
     &--sm {
       @media screen and (max-width: calc(600px - 1px)) {
-        --m3-button-padding: 0px;
+        --m3-button-padding: 0;
         
          .m3-button__label {
           display: none;
           
-          @include paddingX(#{0px});
+          @include paddingX(#{0});
         }
       }
     }
     
     &--md {
       @media screen and (max-width: calc(905px - 1px)) {
-        --m3-button-padding: 0px;
+        --m3-button-padding: 0;
         
          .m3-button__label {
           display: none;
           
-          @include paddingX(#{0px});
+          @include paddingX(#{0});
         }
       }
     }
@@ -104,7 +104,7 @@
     }
   }
   
-  &--filled {
+  &.m3-button--filled {
     @include color(#{var(--m3-sys-palette-onPrimary)});
     
     @include paletteBackground(#{var(--m3-sys-palette-primary)});
@@ -134,7 +134,7 @@
     }
   }
   
-  &--outlined {
+  &.m3-button--outlined {
     @include focus('.m3-button') {
       &::before {
         content: ' ';
@@ -169,7 +169,7 @@
     }
   }
   
-  &--text {
+  &.m3-button--text {
     --m3-button-padding: var(--m3-ref-spacing-3);
     
     @include hover('.m3-button') {
@@ -198,7 +198,7 @@
     }
   }
   
-  &--elevated {
+  &.m3-button--elevated {
     @include paletteBackground(#{var(--m3-sys-palette-surfaceContainerLow)});
     
     box-shadow: var(--m3-ref-shadow-1);
@@ -223,7 +223,7 @@
     }
   }
   
-  &--tonal {
+  &.m3-button--tonal {
     @include color(#{var(--m3-sys-palette-onSecondaryContainer)});
     
     @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});

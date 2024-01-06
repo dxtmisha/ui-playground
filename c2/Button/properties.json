@@ -1,5 +1,8 @@
 {
   "main": "{d.button}",
+  "padding": {
+    "_type": "property"
+  },
   "container": {
     "content": {
       "label": {
