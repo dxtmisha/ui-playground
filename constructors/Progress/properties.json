@@ -5,7 +5,11 @@
   "background-color": {
     "_type": "var"
   },
+  "opacity": {
+    "_type": "var"
+  },
   "#circle": {},
+  "#circleSub": {},
   "linear": {
     "_type": "state",
     "_category": "appearance",
@@ -25,6 +29,7 @@
   "indeterminate": {
     "~type1": {},
     "~type2": {},
+    "~type3": {},
     "_type": "state",
     "_default": "type1"
   },

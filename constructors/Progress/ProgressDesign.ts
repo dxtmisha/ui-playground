@@ -106,7 +106,8 @@ export class ProgressDesign<
       },
       ...{
         // :classes [!] System label / Системная метка
-        circle: this.getSubClass('circle')
+        circle: this.getSubClass('circle'),
+        circleSub: this.getSubClass('circleSub')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -131,6 +132,17 @@ export class ProgressDesign<
     const children: any[] = []
 
     if (this.props?.circular) {
+      if (this.props?.indeterminate === 'type3') {
+        children.push(
+          h('circle', {
+            class: setup.classes.value.circleSub,
+            cx: '24',
+            cy: '24',
+            r: '20'
+          })
+        )
+      }
+
       children.push(
         h('circle', {
           class: setup.classes.value.circle,

@@ -998,6 +998,13 @@ $designsProperties: (
                 value: (
                 ),
               ),
+              'type3':(
+                index: 'type3',
+                name: '&--type3',
+                type: 'state',
+                value: (
+                ),
+              ),
             ),
           ),
           'position':(
@@ -1038,6 +1045,13 @@ $designsProperties: (
           'circle':(
             index: 'circle',
             name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
             type: 'subclass',
             value: (
             ),
@@ -20048,6 +20062,97 @@ $designsProperties: (
           ),
         ),
       ),
+      'icon':(
+        index: 'icon',
+        name: 'c2-icon',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'animationType':(
+            index: 'animationType',
+            name: '&--animationType',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'animationShow':(
+            index: 'animationShow',
+            name: '&--animationShow',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'overlay':(
+            index: 'overlay',
+            name: '&--overlay',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dynamic':(
+            index: 'dynamic',
+            name: '&--dynamic',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'start':(
+            index: 'start',
+            name: '&--start',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'end':(
+            index: 'end',
+            name: '&--end',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'high':(
+            index: 'high',
+            name: '&--high',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'image':(
         index: 'image',
         name: 'c2-image',
@@ -20085,6 +20190,1648 @@ $designsProperties: (
             name: '&--adaptive',
             type: 'state',
             value: (
+            ),
+          ),
+        ),
+      ),
+      'progress':(
+        index: 'progress',
+        name: 'c2-progress',
+        type: 'component',
+        value: (
+          'height':(
+            index: 'height',
+            name: '--c2-progress-height',
+            type: 'var',
+            value: 'var(--c2-st-global-distance-space-inline-xs)',
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--c2-progress-backgroundColor',
+            type: 'var',
+            value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+          ),
+          'opacity':(
+            index: 'opacity',
+            name: '--c2-progress-opacity',
+            type: 'var',
+            value: 'var(--c2-ot-opacity-25)',
+          ),
+          'linear':(
+            index: 'linear',
+            name: '&--linear',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circular':(
+            index: 'circular',
+            name: '&--circular',
+            type: 'state',
+            value: (
+              'width':(
+                index: 'width',
+                name: '--c2-progress-width',
+                type: 'var',
+                value: 'var(--c2-ot-dimension-300)',
+              ),
+              'inset':(
+                index: 'inset',
+                name: 'inset',
+                type: 'property',
+                value: 'var(--c2-st-global-distance-space-inline-xs)',
+                var: true,
+              ),
+            ),
+          ),
+          'indeterminate':(
+            index: 'indeterminate',
+            name: '&--indeterminate',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type3':(
+                index: 'type3',
+                name: '&--type3',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'position':(
+            index: 'position',
+            name: '&--position',
+            type: 'state',
+            value: (
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'avatar':(
+        index: 'avatar',
+        name: 'c2-avatar',
+        type: 'component',
+        value: (
+          'focus':(
+            index: 'focus',
+            name: 'focus',
+            type: 'selector',
+            value: (
+            ),
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+            ),
+          ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              'xs':(
+                index: 'xs',
+                name: '&--xs',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'normal':(
+            index: 'normal',
+            name: '&--normal',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'badge':(
+            index: 'badge',
+            name: '&--badge',
+            type: 'state',
+            value: (
+              'true':(
+                index: 'true',
+                name: '&--true',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'false':(
+                index: 'false',
+                name: '&--false',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'statusDot':(
+            index: 'statusDot',
+            name: '&--statusDot',
+            type: 'state',
+            value: (
+              'true':(
+                index: 'true',
+                name: '&--true',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'false':(
+                index: 'false',
+                name: '&--false',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'avatar':(
+            index: 'avatar',
+            name: '&.c2-avatar--avatar',
+            type: 'state',
+            value: (
+              'gap':(
+                index: 'gap',
+                name: 'gap',
+                type: 'property',
+                value: 8px,
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'userPhoto':(
+                    index: 'userPhoto',
+                    name: '&--userPhoto',
+                    type: 'state',
+                    value: (
+                      'borderWidth':(
+                        index: 'borderWidth',
+                        name: 'border-width',
+                        type: 'property',
+                        value: 1px,
+                      ),
+                      'borderStyle':(
+                        index: 'borderStyle',
+                        name: 'border-style',
+                        type: 'property',
+                        value: 'solid',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-content-border-color-default-alpha)',
+                      ),
+                    ),
+                  ),
+                  'badge':(
+                    index: 'badge',
+                    name: '&.c2-avatar--badge',
+                    type: 'state',
+                    value: (
+                      'false':(
+                        index: 'false',
+                        name: '&--false',
+                        type: 'state',
+                        value: (
+                          'statusDot':(
+                            index: 'statusDot',
+                            name: '&.c2-avatar--statusDot',
+                            type: 'state',
+                            value: (
+                              'true':(
+                                index: 'true',
+                                name: '&--true',
+                                type: 'state',
+                                value: (
+                                  'userPhoto':(
+                                    index: 'userPhoto',
+                                    name: '&--userPhoto',
+                                    type: 'state',
+                                    value: (
+                                      'boxShadow':(
+                                        index: 'boxShadow',
+                                        name: 'box-shadow',
+                                        type: 'property',
+                                        value: 'var(--c2-st-elevation-onLight-focus-md)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'false':(
+                                index: 'false',
+                                name: '&--false',
+                                type: 'state',
+                                value: (
+                                  'borderWidth':(
+                                    index: 'borderWidth',
+                                    name: 'border-width',
+                                    type: 'property',
+                                    value: 1px,
+                                  ),
+                                  'borderStyle':(
+                                    index: 'borderStyle',
+                                    name: 'border-style',
+                                    type: 'property',
+                                    value: 'solid',
+                                  ),
+                                  'borderColor':(
+                                    index: 'borderColor',
+                                    name: 'border-color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-content-border-color-default-alpha)',
+                                  ),
+                                  'boxShadow':(
+                                    index: 'boxShadow',
+                                    name: 'box-shadow',
+                                    type: 'property',
+                                    value: 'var(--c2-st-elevation-onLight-focus-md)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'userPhoto':(
+                    index: 'userPhoto',
+                    name: '&--userPhoto',
+                    type: 'state',
+                    value: (
+                      'borderWidth':(
+                        index: 'borderWidth',
+                        name: 'border-width',
+                        type: 'property',
+                        value: 1px,
+                      ),
+                      'borderStyle':(
+                        index: 'borderStyle',
+                        name: 'border-style',
+                        type: 'property',
+                        value: 'solid',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-content-border-color-default-alpha)',
+                      ),
+                    ),
+                  ),
+                  'badge':(
+                    index: 'badge',
+                    name: '&.c2-avatar--badge',
+                    type: 'state',
+                    value: (
+                      'false':(
+                        index: 'false',
+                        name: '&--false',
+                        type: 'state',
+                        value: (
+                          'statusDot':(
+                            index: 'statusDot',
+                            name: '&.c2-avatar--statusDot',
+                            type: 'state',
+                            value: (
+                              'false':(
+                                index: 'false',
+                                name: '&--false',
+                                type: 'state',
+                                value: (
+                                  'borderWidth':(
+                                    index: 'borderWidth',
+                                    name: 'border-width',
+                                    type: 'property',
+                                    value: 1px,
+                                  ),
+                                  'borderStyle':(
+                                    index: 'borderStyle',
+                                    name: 'border-style',
+                                    type: 'property',
+                                    value: 'solid',
+                                  ),
+                                  'borderColor':(
+                                    index: 'borderColor',
+                                    name: 'border-color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-content-border-color-default-alpha)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'userPhoto':(
+                index: 'userPhoto',
+                name: '&--userPhoto',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: 'width',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-content-bg-color-neutral-subtle)',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.c2-avatar--size',
+                type: 'state',
+                value: (
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'userPhoto':(
+                        index: 'userPhoto',
+                        name: '&--userPhoto',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: 'width',
+                            type: 'property',
+                            value: 40,
+                          ),
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 40,
+                          ),
+                        ),
+                      ),
+                      'badge':(
+                        index: 'badge',
+                        name: '&.c2-avatar--badge',
+                        type: 'state',
+                        value: (
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'true':(
+                                    index: 'true',
+                                    name: '&--true',
+                                    type: 'state',
+                                    value: (
+                                      'statusDot':(
+                                        index: 'statusDot',
+                                        name: '&.c2-avatar--statusDot',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 12px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 12px,
+                                          ),
+                                          'statusContainer':(
+                                            index: 'statusContainer',
+                                            name: '&--statusContainer',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                              ),
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 40,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'true':(
+                            index: 'true',
+                            name: '&--true',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'badge':(
+                                        index: 'badge',
+                                        name: '&.c2-avatar--badge',
+                                        type: 'state',
+                                        value: (
+                                          'right':(
+                                            index: 'right',
+                                            name: 'right',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'bottom':(
+                                            index: 'bottom',
+                                            name: 'bottom',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'badgeXs':(
+                                            index: 'badgeXs',
+                                            name: '&--badgeXs',
+                                            type: 'state',
+                                            value: (
+                                              'gap':(
+                                                index: 'gap',
+                                                name: 'gap',
+                                                type: 'property',
+                                                value: 'var(--c2-st-global-distance-space-inline-xs)',
+                                              ),
+                                              'padding':(
+                                                index: 'padding',
+                                                name: 'padding',
+                                                type: 'property',
+                                                value: '0 var(--c2-st-global-distance-space-inset-sm)',
+                                              ),
+                                              'fontFamily':(
+                                                index: 'fontFamily',
+                                                name: 'font-family',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontFamily-base)',
+                                              ),
+                                              'fontSize':(
+                                                index: 'fontSize',
+                                                name: 'font-size',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontSize-size-enum-13)',
+                                              ),
+                                              'fontWeight':(
+                                                index: 'fontWeight',
+                                                name: 'font-weight',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontWeight-500)',
+                                              ),
+                                              'lineHeight':(
+                                                index: 'lineHeight',
+                                                name: 'line-height',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-lineHeight-100)',
+                                              ),
+                                              'letterSpacing':(
+                                                index: 'letterSpacing',
+                                                name: 'letter-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-tracking-sm)',
+                                              ),
+                                              'textCase':(
+                                                index: 'textCase',
+                                                name: 'text-case',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textCase-none)',
+                                              ),
+                                              'textDecoration':(
+                                                index: 'textDecoration',
+                                                name: 'text-decoration',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textDecoration-none)',
+                                              ),
+                                              'paragraphSpacing':(
+                                                index: 'paragraphSpacing',
+                                                name: 'paragraph-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-50)',
+                                              ),
+                                              'color':(
+                                                index: 'color',
+                                                name: 'color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                              'backgroundColor':(
+                                                index: 'backgroundColor',
+                                                name: 'background-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-bg-color-default-solid-normal)',
+                                              ),
+                                              'borderRadius':(
+                                                index: 'borderRadius',
+                                                name: 'border-radius',
+                                                type: 'property',
+                                                value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                              ),
+                                              'borderWidth':(
+                                                index: 'borderWidth',
+                                                name: 'border-width',
+                                                type: 'property',
+                                                value: 1px,
+                                              ),
+                                              'borderStyle':(
+                                                index: 'borderStyle',
+                                                name: 'border-style',
+                                                type: 'property',
+                                                value: 'solid',
+                                              ),
+                                              'borderColor':(
+                                                index: 'borderColor',
+                                                name: 'border-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'userPhoto':(
+                        index: 'userPhoto',
+                        name: '&--userPhoto',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: 'width',
+                            type: 'property',
+                            value: 48px,
+                          ),
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 48px,
+                          ),
+                        ),
+                      ),
+                      'badge':(
+                        index: 'badge',
+                        name: '&.c2-avatar--badge',
+                        type: 'state',
+                        value: (
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'true':(
+                                    index: 'true',
+                                    name: '&--true',
+                                    type: 'state',
+                                    value: (
+                                      'statusDot':(
+                                        index: 'statusDot',
+                                        name: '&.c2-avatar--statusDot',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 12px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 12px,
+                                          ),
+                                          'statusContainer':(
+                                            index: 'statusContainer',
+                                            name: '&--statusContainer',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                              ),
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-xs)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 48px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 48px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'true':(
+                            index: 'true',
+                            name: '&--true',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'badge':(
+                                        index: 'badge',
+                                        name: '&.c2-avatar--badge',
+                                        type: 'state',
+                                        value: (
+                                          'right':(
+                                            index: 'right',
+                                            name: 'right',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'bottom':(
+                                            index: 'bottom',
+                                            name: 'bottom',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'badgeXs':(
+                                            index: 'badgeXs',
+                                            name: '&--badgeXs',
+                                            type: 'state',
+                                            value: (
+                                              'gap':(
+                                                index: 'gap',
+                                                name: 'gap',
+                                                type: 'property',
+                                                value: 'var(--c2-st-global-distance-space-inline-xs)',
+                                              ),
+                                              'padding':(
+                                                index: 'padding',
+                                                name: 'padding',
+                                                type: 'property',
+                                                value: '0 var(--c2-st-global-distance-space-inset-sm)',
+                                              ),
+                                              'fontFamily':(
+                                                index: 'fontFamily',
+                                                name: 'font-family',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontFamily-base)',
+                                              ),
+                                              'fontSize':(
+                                                index: 'fontSize',
+                                                name: 'font-size',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontSize-size-enum-13)',
+                                              ),
+                                              'fontWeight':(
+                                                index: 'fontWeight',
+                                                name: 'font-weight',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontWeight-500)',
+                                              ),
+                                              'lineHeight':(
+                                                index: 'lineHeight',
+                                                name: 'line-height',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-lineHeight-100)',
+                                              ),
+                                              'letterSpacing':(
+                                                index: 'letterSpacing',
+                                                name: 'letter-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-tracking-sm)',
+                                              ),
+                                              'textCase':(
+                                                index: 'textCase',
+                                                name: 'text-case',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textCase-none)',
+                                              ),
+                                              'textDecoration':(
+                                                index: 'textDecoration',
+                                                name: 'text-decoration',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textDecoration-none)',
+                                              ),
+                                              'paragraphSpacing':(
+                                                index: 'paragraphSpacing',
+                                                name: 'paragraph-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-50)',
+                                              ),
+                                              'color':(
+                                                index: 'color',
+                                                name: 'color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                              'backgroundColor':(
+                                                index: 'backgroundColor',
+                                                name: 'background-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-bg-color-default-solid-normal)',
+                                              ),
+                                              'borderRadius':(
+                                                index: 'borderRadius',
+                                                name: 'border-radius',
+                                                type: 'property',
+                                                value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                              ),
+                                              'borderWidth':(
+                                                index: 'borderWidth',
+                                                name: 'border-width',
+                                                type: 'property',
+                                                value: 1px,
+                                              ),
+                                              'borderStyle':(
+                                                index: 'borderStyle',
+                                                name: 'border-style',
+                                                type: 'property',
+                                                value: 'solid',
+                                              ),
+                                              'borderColor':(
+                                                index: 'borderColor',
+                                                name: 'border-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xl':(
+                    index: 'xl',
+                    name: '&--xl',
+                    type: 'state',
+                    value: (
+                      'userPhoto':(
+                        index: 'userPhoto',
+                        name: '&--userPhoto',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: 'width',
+                            type: 'property',
+                            value: 56px,
+                          ),
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 56px,
+                          ),
+                        ),
+                      ),
+                      'badge':(
+                        index: 'badge',
+                        name: '&.c2-avatar--badge',
+                        type: 'state',
+                        value: (
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'true':(
+                                    index: 'true',
+                                    name: '&--true',
+                                    type: 'state',
+                                    value: (
+                                      'statusDot':(
+                                        index: 'statusDot',
+                                        name: '&.c2-avatar--statusDot',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 16px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 16px,
+                                          ),
+                                          'statusContainer':(
+                                            index: 'statusContainer',
+                                            name: '&--statusContainer',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 16px,
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 16px,
+                                              ),
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 16px,
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 16px,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 56px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 56px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'true':(
+                            index: 'true',
+                            name: '&--true',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'badge':(
+                                        index: 'badge',
+                                        name: '&.c2-avatar--badge',
+                                        type: 'state',
+                                        value: (
+                                          'right':(
+                                            index: 'right',
+                                            name: 'right',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'bottom':(
+                                            index: 'bottom',
+                                            name: 'bottom',
+                                            type: 'property',
+                                            value: 0,
+                                          ),
+                                          'badgeSm':(
+                                            index: 'badgeSm',
+                                            name: '&--badgeSm',
+                                            type: 'state',
+                                            value: (
+                                              'gap':(
+                                                index: 'gap',
+                                                name: 'gap',
+                                                type: 'property',
+                                                value: 4px,
+                                              ),
+                                              'padding':(
+                                                index: 'padding',
+                                                name: 'padding',
+                                                type: 'property',
+                                                value: 'var(--c2-st-global-distance-space-inset-x)var(--c2-st-global-distance-space-inset-md)',
+                                              ),
+                                              'fontFamily':(
+                                                index: 'fontFamily',
+                                                name: 'font-family',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontFamily-base)',
+                                              ),
+                                              'fontSize':(
+                                                index: 'fontSize',
+                                                name: 'font-size',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontSize-size-enum-13)',
+                                              ),
+                                              'fontWeight':(
+                                                index: 'fontWeight',
+                                                name: 'font-weight',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-fontWeight-500)',
+                                              ),
+                                              'lineHeight':(
+                                                index: 'lineHeight',
+                                                name: 'line-height',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-lineHeight-100)',
+                                              ),
+                                              'letterSpacing':(
+                                                index: 'letterSpacing',
+                                                name: 'letter-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-tracking-sm)',
+                                              ),
+                                              'textCase':(
+                                                index: 'textCase',
+                                                name: 'text-case',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textCase-none)',
+                                              ),
+                                              'textDecoration':(
+                                                index: 'textDecoration',
+                                                name: 'text-decoration',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-textDecoration-none)',
+                                              ),
+                                              'paragraphSpacing':(
+                                                index: 'paragraphSpacing',
+                                                name: 'paragraph-spacing',
+                                                type: 'property',
+                                                value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-50)',
+                                              ),
+                                              'color':(
+                                                index: 'color',
+                                                name: 'color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                              'backgroundColor':(
+                                                index: 'backgroundColor',
+                                                name: 'background-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-bg-color-default-solid-normal)',
+                                              ),
+                                              'borderRadius':(
+                                                index: 'borderRadius',
+                                                name: 'border-radius',
+                                                type: 'property',
+                                                value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                              ),
+                                              'borderWidth':(
+                                                index: 'borderWidth',
+                                                name: 'border-width',
+                                                type: 'property',
+                                                value: 1px,
+                                              ),
+                                              'borderStyle':(
+                                                index: 'borderStyle',
+                                                name: 'border-style',
+                                                type: 'property',
+                                                value: 'solid',
+                                              ),
+                                              'borderColor':(
+                                                index: 'borderColor',
+                                                name: 'border-color',
+                                                type: 'property',
+                                                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'statusDot':(
+                        index: 'statusDot',
+                        name: '&.c2-avatar--statusDot',
+                        type: 'state',
+                        value: (
+                          'true':(
+                            index: 'true',
+                            name: '&--true',
+                            type: 'state',
+                            value: (
+                              'userPhoto':(
+                                index: 'userPhoto',
+                                name: '&--userPhoto',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: 'width',
+                                    type: 'property',
+                                    value: 32px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 32px,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'badge':(
+                        index: 'badge',
+                        name: '&.c2-avatar--badge',
+                        type: 'state',
+                        value: (
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'true':(
+                                    index: 'true',
+                                    name: '&--true',
+                                    type: 'state',
+                                    value: (
+                                      'statusDot':(
+                                        index: 'statusDot',
+                                        name: '&.c2-avatar--statusDot',
+                                        type: 'state',
+                                        value: (
+                                          'statusContainer':(
+                                            index: 'statusContainer',
+                                            name: '&--statusContainer',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 8px,
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 8px,
+                                              ),
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 8px,
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 8px,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 32px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'badge':(
+                        index: 'badge',
+                        name: '&.c2-avatar--badge',
+                        type: 'state',
+                        value: (
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'true':(
+                                    index: 'true',
+                                    name: '&--true',
+                                    type: 'state',
+                                    value: (
+                                      'statusDot':(
+                                        index: 'statusDot',
+                                        name: '&.c2-avatar--statusDot',
+                                        type: 'state',
+                                        value: (
+                                          'statusContainer':(
+                                            index: 'statusContainer',
+                                            name: '&--statusContainer',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 6px,
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 6px,
+                                              ),
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 6px,
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 6px,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  'false':(
+                                    index: 'false',
+                                    name: '&--false',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'statusDot':(
+                index: 'statusDot',
+                name: '&.c2-avatar--statusDot',
+                type: 'state',
+                value: (
+                  'true':(
+                    index: 'true',
+                    name: '&--true',
+                    type: 'state',
+                    value: (
+                      'userPhoto':(
+                        index: 'userPhoto',
+                        name: '&--userPhoto',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: 'width',
+                            type: 'property',
+                            value: 24px,
+                          ),
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 24px,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'badge':(
+                index: 'badge',
+                name: '&.c2-avatar--badge',
+                type: 'state',
+                value: (
+                  'false':(
+                    index: 'false',
+                    name: '&--false',
+                    type: 'state',
+                    value: (
+                      'statusDot':(
+                        index: 'statusDot',
+                        name: '&.c2-avatar--statusDot',
+                        type: 'state',
+                        value: (
+                          'true':(
+                            index: 'true',
+                            name: '&--true',
+                            type: 'state',
+                            value: (
+                              'statusDot':(
+                                index: 'statusDot',
+                                name: '&.c2-avatar--statusDot',
+                                type: 'state',
+                                value: (
+                                  'right':(
+                                    index: 'right',
+                                    name: 'right',
+                                    type: 'property',
+                                    value: 0,
+                                  ),
+                                  'bottom':(
+                                    index: 'bottom',
+                                    name: 'bottom',
+                                    type: 'property',
+                                    value: 0,
+                                  ),
+                                  'gap':(
+                                    index: 'gap',
+                                    name: 'gap',
+                                    type: 'property',
+                                    value: 8px,
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 1000,
+                                  ),
+                                  'borderWidth':(
+                                    index: 'borderWidth',
+                                    name: 'border-width',
+                                    type: 'property',
+                                    value: 2px,
+                                  ),
+                                  'borderStyle':(
+                                    index: 'borderStyle',
+                                    name: 'border-style',
+                                    type: 'property',
+                                    value: 'solid',
+                                  ),
+                                  'statusContainer':(
+                                    index: 'statusContainer',
+                                    name: '&--statusContainer',
+                                    type: 'state',
+                                    value: (
+                                      'gap':(
+                                        index: 'gap',
+                                        name: 'gap',
+                                        type: 'property',
+                                        value: 8px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'false':(
+                            index: 'false',
+                            name: '&--false',
+                            type: 'state',
+                            value: (
+                              'borderRadius':(
+                                index: 'borderRadius',
+                                name: 'border-radius',
+                                type: 'property',
+                                value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

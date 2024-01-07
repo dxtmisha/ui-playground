@@ -870,6 +870,13 @@ $designsProperties: (
                 value: (
                 ),
               ),
+              'type3':(
+                index: 'type3',
+                name: '&--type3',
+                type: 'state',
+                value: (
+                ),
+              ),
             ),
           ),
           'position':(
@@ -910,6 +917,13 @@ $designsProperties: (
           'circle':(
             index: 'circle',
             name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
             type: 'subclass',
             value: (
             ),
@@ -8790,17 +8804,17 @@ $designsProperties: (
             type: 'var',
             value: 'var(--m3-sys-palette-primary)',
           ),
+          'opacity':(
+            index: 'opacity',
+            name: '--m3-progress-opacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-012)',
+          ),
           'linear':(
             index: 'linear',
             name: '&--linear',
             type: 'state',
             value: (
-              'backgroundColor':(
-                index: 'backgroundColor',
-                name: 'background-color',
-                type: 'property',
-                value: 'var(--m3-sys-palette-surfaceContainerHighest)',
-              ),
             ),
           ),
           'circular':(
@@ -8838,6 +8852,13 @@ $designsProperties: (
               'type2':(
                 index: 'type2',
                 name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type3':(
+                index: 'type3',
+                name: '&--type3',
                 type: 'state',
                 value: (
                 ),
@@ -8882,6 +8903,13 @@ $designsProperties: (
           'circle':(
             index: 'circle',
             name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
             type: 'subclass',
             value: (
             ),

@@ -2,6 +2,7 @@
 
 @mixin mixinProgress {
   @include initByCustom('palette', v('??sys.color', v('??backgroundColor')));
+  @include initByCustom('opacity', v('??sys.opacity', .1));
   @include initByCustom('transitionDuration', 20s);
 
   display: none;
@@ -15,7 +16,8 @@
 
   appearance: none;
 
-  &__circle {
+  &__circle,
+  &__circleSub {
     transition-property: background-color, stroke-dasharray;
 
     fill: transparent;
@@ -62,7 +64,7 @@
     width: 100%;
     height: v('??height');
 
-    @include backgroundColor(v('??palette'));
+    @include backgroundColor(v('??palette'), v('??opacity'));
 
     &::after,
     &::before {
@@ -73,7 +75,7 @@
       right: 100%;
 
       content: ' ';
-      @include backgroundColor(v('??palette'));
+      @include backgroundColor(v('??palette'), 1);
 
       transition-property: background-color;
       transition-duration: inherit;
@@ -147,6 +149,12 @@
           animation: #{n('??linear-type2')} 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
         }
       }
+
+      &--type3 {
+        &::after {
+          animation: #{n('??linear-type4')} 1.2s linear infinite;
+        }
+      }
     }
   }
 
@@ -187,6 +195,20 @@
         @include subclass('circle') {
           transform-origin: center;
           animation: #{n('??circle-type2')} 2s linear infinite, #{n('??circle-type3')} 1.5s ease-in-out infinite;
+        }
+      }
+
+      &--type3 {
+        @include subclass('circle') {
+          stroke-dasharray: 32, 200;
+          stroke-dashoffset: 0;
+          transform-origin: center;
+          animation: #{n('??circle-type2')} 1.2s linear infinite;
+        }
+
+        @include subclass('circleSub') {
+          stroke-dasharray: none;
+          @include strokeOpacity(v('??opacity'))
         }
       }
     }
@@ -256,6 +278,17 @@
     100% {
       left: 107%;
       right: -8%
+    }
+  }
+
+  @keyframes #{n('??linear-type4')} {
+    0% {
+      left: -25%;
+      right: 100%;
+    }
+    100% {
+      left: 100%;
+      right: -25%;
     }
   }
 

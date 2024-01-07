@@ -56,5 +56,6 @@ export type ProgressClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
   circle: string
+  circleSub: string
   // :classes [!] System label / Системная метка
 }

@@ -1,0 +1,16 @@
+@import "../../styles/all";
+
+@mixin mixinProgressToken {
+  // :style [!] System label / Системная метка
+  --c2-progress-height: var(--c2-st-global-distance-space-inline-xs);
+  --c2-progress-backgroundColor: var(--c2-st-action-bg-color-primary-solid-normal);
+  --c2-progress-opacity: var(--c2-ot-opacity-25);
+  
+  &--circular {
+    --c2-progress-width: var(--c2-ot-dimension-300);
+    
+    --c2-progress-inset: var(--c2-st-global-distance-space-inline-xs);
+    @include inset(#{var(--c2-st-global-distance-space-inline-xs)});
+  }
+  // :style [!] System label / Системная метка
+}

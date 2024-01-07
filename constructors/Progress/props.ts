@@ -39,7 +39,7 @@ export type ProgressProps = {
   // :type [!] System label / Системная метка
   linear?: boolean
   circular?: boolean
-  indeterminate?: 'type1' | 'type2'
+  indeterminate?: 'type1' | 'type2' | 'type3'
   position?: 'top' | 'bottom'
   dense?: boolean
   inverse?: boolean
