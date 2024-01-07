@@ -8,15 +8,6 @@ import { StorybookCategory } from '../types.ts'
 import { imageArgs } from './image.ts'
 
 export const iconArgs: StorybookArgs = {
-  icon: {
-    ...imageArgs.value,
-    description: 'Значение иконки или объект со всеми свойствами для иконки'
-  },
-  iconActive: {
-    ...imageArgs.value,
-    description: 'Значение активной иконки или объект со всеми свойствами для активной иконки. ' +
-      'Эта иконка используется при включении свойства \'active\''
-  },
   active: {
     control: StorybookControl.boolean,
     table: {
@@ -29,6 +20,15 @@ export const iconArgs: StorybookArgs = {
   turn: imageArgs.turn,
   disabled: imageArgs.disabled,
   hide: imageArgs.hide,
+  icon: {
+    ...imageArgs.value,
+    description: 'Значение иконки или объект со всеми свойствами для иконки'
+  },
+  iconActive: {
+    ...imageArgs.value,
+    description: 'Значение активной иконки или объект со всеми свойствами для активной иконки. ' +
+      'Эта иконка используется при включении свойства \'active\''
+  },
   animationType: {
     control: StorybookControl.select,
     options: [
@@ -81,6 +81,7 @@ export const iconArgs: StorybookArgs = {
 }
 
 export const iconValues: StorybookArgsValue = {
+  active: false,
   icon: 'search',
   iconActive: 'home'
 }

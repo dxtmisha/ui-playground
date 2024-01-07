@@ -9,15 +9,6 @@ import { imageArgs } from './image.ts'
 import { defaults, propsValues } from '../../Icon/props.ts'
 
 export const iconArgs: StorybookArgs = {
-  icon: {
-    ...imageArgs.value,
-    description: 'The value of the icon or an object with all properties for the icon'
-  },
-  iconActive: {
-    ...imageArgs.value,
-    description: 'The value of the active icon or an object with all properties for the active icon. ' +
-      'This icon is used when the \'active\' property is enabled'
-  },
   active: {
     control: StorybookControl.boolean,
     table: {
@@ -30,6 +21,15 @@ export const iconArgs: StorybookArgs = {
   turn: imageArgs.turn,
   disabled: imageArgs.disabled,
   hide: imageArgs.hide,
+  icon: {
+    ...imageArgs.value,
+    description: 'The value of the icon or an object with all properties for the icon'
+  },
+  iconActive: {
+    ...imageArgs.value,
+    description: 'The value of the active icon or an object with all properties for the active icon. ' +
+      'This icon is used when the \'active\' property is enabled'
+  },
   animationType: {
     control: StorybookControl.select,
     options: propsValues.animationType,
@@ -124,6 +124,7 @@ export const iconArgs: StorybookArgs = {
 }
 
 export const iconValues: StorybookArgsValue = {
+  active: false,
   icon: 'search',
   iconActive: 'home'
 }

@@ -536,9 +536,9 @@ $designsProperties: (
             value: (
             ),
           ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
+          'loading':(
+            index: 'loading',
+            name: '&--loading',
             type: 'state',
             value: (
             ),
@@ -681,9 +681,9 @@ $designsProperties: (
             value: (
             ),
           ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
+          'loading':(
+            index: 'loading',
+            name: '&--loading',
             type: 'state',
             value: (
             ),
@@ -16890,9 +16890,9 @@ $designsProperties: (
               ),
             ),
           ),
-          'progress':(
-            index: 'progress',
-            name: '&--progress',
+          'loading':(
+            index: 'loading',
+            name: '&--loading',
             type: 'state',
             value: (
             ),
@@ -17597,13 +17597,6 @@ $designsProperties: (
           'normal':(
             index: 'normal',
             name: '&--normal',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'loading':(
-            index: 'loading',
-            name: '&--loading',
             type: 'state',
             value: (
             ),

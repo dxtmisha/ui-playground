@@ -8,6 +8,7 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
+  animationType: ['type1', 'type2']
   // :values [!] System label / Системная метка
 }
 
@@ -16,16 +17,16 @@ export type PropsToken = {
   // [constructor] icon?: string | ImageProps
   // [constructor] iconActive?: string | ImageProps
   // [constructor] active?: boolean
-  // [constructor] turn?: boolean
-  // [constructor] disabled?: boolean
-  // [constructor] hide?: boolean
-  // [constructor] animationType?: 'type1' | 'type2'
-  // [constructor] animationShow?: boolean
-  // [constructor] overlay?: boolean
-  // [constructor] dynamic?: boolean
-  // [constructor] start?: boolean
-  // [constructor] end?: boolean
-  // [constructor] high?: boolean
+  turn?: boolean
+  disabled?: boolean
+  hide?: boolean
+  animationType?: 'type1' | 'type2'
+  animationShow?: boolean
+  overlay?: boolean
+  dynamic?: boolean
+  start?: boolean
+  end?: boolean
+  high?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -43,6 +44,7 @@ export const defaults: Props = {
   ...defaultsIcon,
   ...{
     // :default [!] System label / Системная метка
+    animationType: 'type1'
     // :default [!] System label / Системная метка
   }
 }
@@ -53,6 +55,19 @@ export const propsInstruction = {
   ...propsIcon,
   ...{
     // :prop [!] System label / Системная метка
+    turn: Boolean,
+    disabled: Boolean,
+    hide: Boolean,
+    animationType: {
+      type: String as PropType<PropsToken['animationType']>,
+      default: defaults?.animationType
+    },
+    animationShow: Boolean,
+    overlay: Boolean,
+    dynamic: Boolean,
+    start: Boolean,
+    end: Boolean,
+    high: Boolean
     // :prop [!] System label / Системная метка
   }
 }

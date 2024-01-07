@@ -60,11 +60,11 @@
     @include initByCustom('padding', #{calc(var(--sys-height) / 2)});
   }
 
-  &--progress {
+  &--loading {
     cursor: default;
   }
 
-  &__progress#{'.'}#{n('?progress--visible')} ~ * {
+  &__loading#{'.'}#{n('?progress--visible')} ~ * {
     opacity: v('??colorOpacity', 0);
   }
 }

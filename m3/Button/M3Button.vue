@@ -32,7 +32,7 @@ const classesToken = computed<ConstrClasses>(() => ({
     'm3-button--focus': props.focus,
     'm3-button--disabled': props.disabled,
     'm3-button--selected': props.selected,
-    'm3-button--progress': props.progress,
+    'm3-button--loading': props.loading,
     'm3-button--readonly': props.readonly,
     [`m3-button--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
     [`m3-button--height--${props.height}`]: inArray(propsValues.height, props.height),

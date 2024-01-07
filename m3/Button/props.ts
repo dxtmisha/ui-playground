@@ -19,7 +19,7 @@ export type PropsToken = {
   focus?: boolean
   disabled?: boolean
   selected?: boolean
-  progress?: boolean
+  loading?: boolean
   readonly?: boolean
   adaptive?: 'icon' | 'sm' | 'md'
   height?: 'sm' | 'md' | 'lg'
@@ -61,7 +61,7 @@ export const propsInstruction = {
     focus: Boolean,
     disabled: Boolean,
     selected: Boolean,
-    progress: Boolean,
+    loading: Boolean,
     readonly: Boolean,
     adaptive: String as PropType<PropsToken['adaptive']>,
     height: {

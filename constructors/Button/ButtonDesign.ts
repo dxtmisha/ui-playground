@@ -100,7 +100,7 @@ export class ButtonDesign<
       ...useProgressRef(
         this.props,
         this.components,
-        this.getSubClass('progress'),
+        this.getSubClass('loading'),
         {
           circular: true,
           inverse: true
@@ -137,7 +137,7 @@ export class ButtonDesign<
       },
       ...{
         // :classes [!] System label / Системная метка
-        progress: this.getSubClass('progress'),
+        loading: this.getSubClass('loading'),
         label: this.getSubClass('label'),
         icon: this.getSubClass('icon'),
         trailing: this.getSubClass('trailing')

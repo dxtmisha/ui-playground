@@ -11,27 +11,6 @@ const nPlane: string[] = [
 ]
 
 export const imageArgs: StorybookArgs = {
-  value: {
-    control: StorybookControl.select,
-    options: {
-      Search: 'search',
-      Home: 'home',
-      'Account circle': 'account_circle',
-      Settings: 'settings',
-      Done: 'done',
-      Info: 'info',
-      'Check circle': 'check_circle',
-      Delete: 'delete',
-      Visibility: 'visibility',
-      'Image (1)': 'https://drscdn.500px.org/photo/294267357/q%3D80_m%3D2000/v2?sig=03989c1970e5921d8ab67b23e03e79b8db13b7e7d3bc3f72829cc9eecbb42cf4',
-      'Image (2)': 'https://drscdn.500px.org/photo/292683549/q%3D80_m%3D2000/v2?sig=bcf16bbbd7b11052a17012bf2be91a0c95edb8d0a45f2928ab72b027ca30fb85'
-    },
-    table: {
-      category: StorybookCategory.value,
-      type: { summary: 'string' }
-    },
-    description: 'The input value can be the name of an icon, a link to an image, or a File object'
-  },
   // Status
   turn: {
     control: StorybookControl.boolean,
@@ -62,6 +41,28 @@ export const imageArgs: StorybookArgs = {
     },
     // Скрывает иконку или изображение
     description: 'Hides the icon or image'
+  },
+  // Values
+  value: {
+    control: StorybookControl.select,
+    options: {
+      Search: 'search',
+      Home: 'home',
+      'Account circle': 'account_circle',
+      Settings: 'settings',
+      Done: 'done',
+      Info: 'info',
+      'Check circle': 'check_circle',
+      Delete: 'delete',
+      Visibility: 'visibility',
+      'Image (1)': 'https://drscdn.500px.org/photo/294267357/q%3D80_m%3D2000/v2?sig=03989c1970e5921d8ab67b23e03e79b8db13b7e7d3bc3f72829cc9eecbb42cf4',
+      'Image (2)': 'https://drscdn.500px.org/photo/292683549/q%3D80_m%3D2000/v2?sig=bcf16bbbd7b11052a17012bf2be91a0c95edb8d0a45f2928ab72b027ca30fb85'
+    },
+    table: {
+      category: StorybookCategory.value,
+      type: { summary: 'string' }
+    },
+    description: 'The input value can be the name of an icon, a link to an image, or a File object'
   },
   // Image
   coordinator: {
@@ -108,5 +109,6 @@ export const imageArgs: StorybookArgs = {
 }
 
 export const imageValues: StorybookArgsValue = {
+  turn: false,
   value: 'search'
 }

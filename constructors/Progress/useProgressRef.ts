@@ -33,11 +33,11 @@ export type UseProgressProp = {
    * Enable or disable the loader, or an object with properties for the loader.<br>
    * Включить или отключить загрузчик, или объект со свойствами для загрузчика.
    */
-  progress?: boolean | ProgressProps
+  loading?: boolean | ProgressProps
 }
 
 export const usePropsProgress = {
-  progress: [Boolean, Object] as PropType<UseProgressProp['progress']>
+  progress: [Boolean, Object] as PropType<UseProgressProp['loading']>
 }
 
 /**
@@ -58,7 +58,7 @@ export const useProgressRef = function <
   extra?: ProgressProps
 ): UseProgressSetup {
   const progressBind = computed(() => getBind(
-    props.progress,
+    props.loading,
     {
       class: classesName,
       ...extra
@@ -74,7 +74,7 @@ export const useProgressRef = function <
 
       if (
         components &&
-        props?.progress
+        props?.loading
       ) {
         components.renderAdd(
           elements,

@@ -1,9 +1,9 @@
 export enum StorybookCategory {
-  event = 'Events',
-  icon = 'Icons',
-  option = 'Options',
-  status = 'Status',
-  style = 'Styles',
-  value = 'Values',
-  token = 'Tokens'
+  event = 'События',
+  icon = 'Иконки',
+  option = 'Параметры',
+  status = 'Статус',
+  style = 'Стили',
+  value = 'Значения',
+  token = 'Токены'
 }

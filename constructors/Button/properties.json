@@ -20,7 +20,7 @@
   "selected": {
     "_type": "state"
   },
-  "progress": {
+  "loading": {
     "color-opacity": {
       "_type": "var"
     },

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 // import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+import { inArray } from '../../functions/object.ts'
 
 import { IconDesign } from '../../constructors/Icon/IconDesign.ts'
 
@@ -18,8 +18,8 @@ import {
 } from '../../constructors/Icon/types.ts'
 
 import {
-  propsInstruction // ,
-  // propsValues
+  propsInstruction,
+  propsValues
 } from './props.ts'
 
 const emits = defineEmits<IconEmits>()
@@ -28,7 +28,17 @@ const props = defineProps({ ...propsInstruction })
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
     // :classes-values [!] System label / Системная метка
-    'c2-icon': true
+    'c2-icon': true,
+    'c2-icon--turn': props.turn,
+    'c2-icon--disabled': props.disabled,
+    'c2-icon--hide': props.hide,
+    [`c2-icon--animationType--${props.animationType}`]: inArray(propsValues.animationType, props.animationType),
+    'c2-icon--animationShow': props.animationShow,
+    'c2-icon--overlay': props.overlay,
+    'c2-icon--dynamic': props.dynamic,
+    'c2-icon--start': props.start,
+    'c2-icon--end': props.end,
+    'c2-icon--high': props.high
     // :classes-values [!] System label / Системная метка
   }
 }))

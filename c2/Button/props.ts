@@ -19,13 +19,12 @@ export type PropsToken = {
   focus?: boolean
   disabled?: boolean
   selected?: boolean
-  progress?: boolean
+  loading?: boolean
   readonly?: boolean
   adaptive?: 'icon'
   intent?: 'default' | 'positive' | 'negative' | 'neutral' | 'informative'
   size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'x'
   normal?: boolean
-  loading?: boolean
   primary?: boolean
   secondary?: boolean
   outline?: boolean
@@ -64,7 +63,7 @@ export const propsInstruction = {
     focus: Boolean,
     disabled: Boolean,
     selected: Boolean,
-    progress: Boolean,
+    loading: Boolean,
     readonly: Boolean,
     adaptive: String as PropType<PropsToken['adaptive']>,
     intent: {
@@ -76,7 +75,6 @@ export const propsInstruction = {
       default: defaults?.size
     },
     normal: Boolean,
-    loading: Boolean,
     primary: {
       type: Boolean,
       default: defaults?.primary
