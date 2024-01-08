@@ -24,12 +24,11 @@ export type PropsToken = {
   adaptive?: 'icon'
   intent?: 'default' | 'positive' | 'negative' | 'neutral' | 'informative'
   size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'x'
-  normal?: boolean
+  outline?: boolean
+  link?: boolean
   primary?: boolean
   secondary?: boolean
-  outline?: boolean
   ghost?: boolean
-  link?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -48,7 +47,7 @@ export const defaults: Props = {
   ...{
     // :default [!] System label / Системная метка
     intent: 'default',
-    size: 'xl',
+    size: 'md',
     primary: true
     // :default [!] System label / Системная метка
   }
@@ -74,15 +73,14 @@ export const propsInstruction = {
       type: String as PropType<PropsToken['size']>,
       default: defaults?.size
     },
-    normal: Boolean,
+    outline: Boolean,
+    link: Boolean,
     primary: {
       type: Boolean,
       default: defaults?.primary
     },
     secondary: Boolean,
-    outline: Boolean,
-    ghost: Boolean,
-    link: Boolean
+    ghost: Boolean
     // :prop [!] System label / Системная метка
   }
 }

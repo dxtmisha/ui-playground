@@ -10,7 +10,7 @@ import { PropertyKey } from '../../../../types/property.ts'
  * Класс для удаления свойства.
  */
 export class PropertiesToRemove extends PropertiesToAbstract {
-  protected readonly FILE_CACHE = '007-03-remove'
+  protected readonly FILE_CACHE = '007-02-remove'
 
   protected init (): void {
     this.items.find(({ item }) => item?.[PropertyKey.remove] ?? false)

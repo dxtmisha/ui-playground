@@ -39,7 +39,7 @@ export type UseEnabledProps = {
    * Enable or disable the loader, or an object with properties for the loader.<br>
    * Включить или отключить загрузчик, или объект со свойствами для загрузчика.
    */
-  progress?: boolean | ProgressProps
+  loading?: boolean | ProgressProps
 
   /**
    * Enable read-only status.<br>
@@ -55,7 +55,7 @@ export type UseEnabledProps = {
 }
 
 export const usePropsEnabled = {
-  progress: [Object, Boolean] as PropType<UseEnabledProps['progress']>,
+  progress: [Object, Boolean] as PropType<UseEnabledProps['loading']>,
   readonly: Boolean,
   disabled: Boolean
 }
@@ -76,10 +76,10 @@ export const useEnabled = function (
     isEnabled: computed(() =>
       !props?.disabled &&
       !props?.readonly &&
-      !props?.progress
+      !props?.loading
     ),
     isReadonly: computed(() => Boolean(props?.readonly)),
     isDisabled: computed(() => isDisabled()),
-    isProgress: computed(() => Boolean(props?.progress))
+    isProgress: computed(() => Boolean(props?.loading))
   }
 }

@@ -490,6 +490,27 @@ $designsProperties: (
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
           ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'hover':(
             index: 'hover',
             name: 'hover',
@@ -589,27 +610,6 @@ $designsProperties: (
               ),
             ),
           ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
         ),
       ),
       'chip':(
@@ -634,6 +634,27 @@ $designsProperties: (
             name: 'transition-property',
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
           ),
           'hover':(
             index: 'hover',
@@ -732,27 +753,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
             ),
           ),
         ),
@@ -888,6 +888,34 @@ $designsProperties: (
         name: 'd-mask',
         type: 'component',
         value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
+            value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
           'visible':(
             index: 'visible',
             name: '&--visible',
@@ -923,34 +951,6 @@ $designsProperties: (
               ),
             ),
           ),
-          'input':(
-            index: 'input',
-            name: '&__input',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'character':(
-            index: 'character',
-            name: '&__character',
-            type: 'subclass',
-            value: (
-              'item':(
-                index: 'item',
-                name: '&__item',
-                type: 'subclass',
-                value: (
-                  'placeholder':(
-                    index: 'placeholder',
-                    name: '&--placeholder',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
         ),
       ),
       'progress':(
@@ -958,6 +958,20 @@ $designsProperties: (
         name: 'd-progress',
         type: 'component',
         value: (
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'linear':(
             index: 'linear',
             name: '&--linear',
@@ -1039,20 +1053,6 @@ $designsProperties: (
             index: 'inverse',
             name: '&--inverse',
             type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'circleSub':(
-            index: 'circleSub',
-            name: '&__circleSub',
-            type: 'subclass',
             value: (
             ),
           ),
@@ -16746,6 +16746,12 @@ $designsProperties: (
             type: 'var',
             value: 'var(--d-sys-transitionFunction-standard)',
           ),
+          'gap':(
+            index: 'gap',
+            name: 'gap',
+            type: 'property',
+            value: 'var(--c2-st-global-distance-space-inline-md)',
+          ),
           'padding':(
             index: 'padding',
             name: 'padding',
@@ -16824,6 +16830,34 @@ $designsProperties: (
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
           ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+              'none':(
+                index: 'none',
+                name: '&--none',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'focus':(
             index: 'focus',
             name: 'focus',
@@ -16880,13 +16914,6 @@ $designsProperties: (
                 name: 'color',
                 type: 'property',
                 value: 'var(--c2-st-action-fg-color-primary-select)',
-              ),
-              'label':(
-                index: 'label',
-                name: '& .c2-button__label',
-                type: 'subclass',
-                value: (
-                ),
               ),
             ),
           ),
@@ -16966,6 +16993,13 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-positive-normal)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.c2-button--selected',
@@ -16977,27 +17011,6 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-positive-select)',
                       ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
                     ),
                   ),
                 ),
@@ -17013,6 +17026,13 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-negative-normal)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.c2-button--selected',
@@ -17024,27 +17044,6 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-negative-select)',
                       ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
                     ),
                   ),
                 ),
@@ -17060,6 +17059,13 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-neutral-normal)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.c2-button--selected',
@@ -17071,27 +17077,6 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-neutral-select)',
                       ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
                     ),
                   ),
                 ),
@@ -17107,6 +17092,13 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-informative-normal)',
                   ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
                   'selected':(
                     index: 'selected',
                     name: '&.c2-button--selected',
@@ -17118,27 +17110,6 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-informative-select)',
                       ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
                     ),
                   ),
                 ),
@@ -17162,6 +17133,12 @@ $designsProperties: (
                 name: '&--lg',
                 type: 'state',
                 value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-sm)',
+                  ),
                   'padding':(
                     index: 'padding',
                     name: 'padding',
@@ -17229,19 +17206,6 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'gap':(
-                        index: 'gap',
-                        name: 'gap',
-                        type: 'property',
-                        value: 'var(--c2-st-global-distance-space-inline-sm)',
-                      ),
-                    ),
-                  ),
                 ),
               ),
               'md':(
@@ -17249,6 +17213,12 @@ $designsProperties: (
                 name: '&--md',
                 type: 'state',
                 value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-xs)',
+                  ),
                   'padding':(
                     index: 'padding',
                     name: 'padding',
@@ -17316,19 +17286,6 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'gap':(
-                        index: 'gap',
-                        name: 'gap',
-                        type: 'property',
-                        value: 'var(--c2-st-global-distance-space-inline-xs)',
-                      ),
-                    ),
-                  ),
                 ),
               ),
               'sm':(
@@ -17336,6 +17293,12 @@ $designsProperties: (
                 name: '&--sm',
                 type: 'state',
                 value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-xs)',
+                  ),
                   'padding':(
                     index: 'padding',
                     name: 'padding',
@@ -17403,19 +17366,6 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'gap':(
-                        index: 'gap',
-                        name: 'gap',
-                        type: 'property',
-                        value: 'var(--c2-st-global-distance-space-inline-xs)',
-                      ),
-                    ),
-                  ),
                 ),
               ),
               'xs':(
@@ -17423,6 +17373,12 @@ $designsProperties: (
                 name: '&--xs',
                 type: 'state',
                 value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-xs)',
+                  ),
                   'padding':(
                     index: 'padding',
                     name: 'padding',
@@ -17490,19 +17446,6 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                      'gap':(
-                        index: 'gap',
-                        name: 'gap',
-                        type: 'property',
-                        value: 'var(--c2-st-global-distance-space-inline-xs)',
-                      ),
-                    ),
-                  ),
                 ),
               ),
               'x':(
@@ -17510,6 +17453,12 @@ $designsProperties: (
                 name: '&--x',
                 type: 'state',
                 value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-xs)',
+                  ),
                   'padding':(
                     index: 'padding',
                     name: 'padding',
@@ -17577,28 +17526,1309 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: '&.c2-button--outline',
+            type: 'state',
+            value: (
+              'borderWidth':(
+                index: 'borderWidth',
+                name: '--c2-button-borderWidth',
+                type: 'var',
+                value: 1px,
+              ),
+              'borderStyle':(
+                index: 'borderStyle',
+                name: '--c2-button-borderStyle',
+                type: 'var',
+                value: 'solid',
+              ),
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--c2-st-action-fg-color-neutral-normal)',
+              ),
+              'backgroundColor':(
+                index: 'backgroundColor',
+                name: 'background-color',
+                type: 'property',
+                value: 'var(--c2-st-action-bg-color-neutral-invert-normal)',
+              ),
+              'borderColor':(
+                index: 'borderColor',
+                name: 'border-color',
+                type: 'property',
+                value: 'var(--c2-st-action-border-color-neutral-subtle-normal)',
+              ),
+              'before':(
+                index: 'before',
+                name: 'before',
+                type: 'virtual',
+                value: (
+                  'position':(
+                    index: 'position',
+                    name: 'position',
+                    type: 'property',
+                    value: 'absolute',
+                  ),
+                  'inset':(
+                    index: 'inset',
+                    name: 'inset',
+                    type: 'property',
+                    value: 0px,
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                  'border':(
+                    index: 'border',
+                    name: 'border',
+                    type: 'property',
+                    value: 'var(--c2-button-borderWidth) var(--c2-button-borderStyle)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .c2-button__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--c2-st-elevation-onLight-focus-md)',
+                  ),
+                ),
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-neutral-hover)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-bg-color-neutral-invert-hover)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-border-color-neutral-subtle-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-neutral-active)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-bg-color-neutral-invert-active)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-border-color-neutral-subtle-active)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&.c2-button--selected',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-neutral-select)',
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-bg-color-neutral-invert-select)',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'border-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-border-color-neutral-subtle-select)',
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.c2-button--intent',
+                type: 'state',
+                value: (
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
                     value: (
-                      'gap':(
-                        index: 'gap',
-                        name: 'gap',
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
                         type: 'property',
-                        value: 'var(--c2-st-global-distance-space-inline-xs)',
+                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
                       ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-positive-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-hover)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-active)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-informative-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-hover)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-active)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-negative-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-hover)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-active)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
+                      ),
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-neutral-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
+                          ),
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-hover)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-active)',
+                          ),
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'borderColor':(
+                            index: 'borderColor',
+                            name: 'border-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'default':(
+                    index: 'default',
+                    name: '&--default',
+                    type: 'state',
+                    value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                          'none':(
+                            index: 'none',
+                            name: '&--none',
+                            type: 'state',
+                            value: (
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.c2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          'normal':(
-            index: 'normal',
-            name: '&--normal',
+          'link':(
+            index: 'link',
+            name: '&.c2-button--link',
             type: 'state',
             value: (
+              'padding':(
+                index: 'padding',
+                name: 'padding',
+                type: 'property',
+                value: 0,
+              ),
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontFamily-base)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontSize-size-scale-112)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontWeight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c2-ot-typography-lineHeight-150)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c2-ot-typography-tracking-lg)',
+              ),
+              'textCase':(
+                index: 'textCase',
+                name: 'text-case',
+                type: 'property',
+                value: 'var(--c2-ot-typography-textCase-none)',
+              ),
+              'textDecoration':(
+                index: 'textDecoration',
+                name: 'text-decoration',
+                type: 'property',
+                value: 'var(--c2-ot-typography-textDecoration-none)',
+              ),
+              'paragraphSpacing':(
+                index: 'paragraphSpacing',
+                name: 'paragraph-spacing',
+                type: 'property',
+                value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-75)',
+              ),
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--c2-st-action-fg-color-primary-normal)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'unset',
+              ),
+              'label':(
+                index: 'label',
+                name: '& .c2-button__label',
+                type: 'subclass',
+                value: (
+                  'borderBottom':(
+                    index: 'borderBottom',
+                    name: 'border-bottom',
+                    type: 'property',
+                    value: '1px dashed',
+                  ),
+                ),
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .c2-button__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-bg-color-neutral-ghost-focus)',
+                  ),
+                  'boxShadow':(
+                    index: 'boxShadow',
+                    name: 'box-shadow',
+                    type: 'property',
+                    value: 'var(--c2-st-elevation-onLight-focus-sm)',
+                  ),
+                ),
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-primary-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-primary-active)',
+                  ),
+                ),
+              ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: 'opacity',
+                    type: 'property',
+                    value: 0.5,
+                  ),
+                ),
+              ),
+              'intent':(
+                index: 'intent',
+                name: '&.c2-button--intent',
+                type: 'state',
+                value: (
+                  'neutral':(
+                    index: 'neutral',
+                    name: '&--neutral',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-neutral-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'focus':(
+                        index: 'focus',
+                        name: 'focus',
+                        type: 'selector',
+                        value: (
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: 'var(--c2-st-elevation-onLight-focus-xs)',
+                          ),
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-neutral-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'positive':(
+                    index: 'positive',
+                    name: '&--positive',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-positive-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-positive-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'informative':(
+                    index: 'informative',
+                    name: '&--informative',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-informative-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-active)',
+                          ),
+                        ),
+                      ),
+                      'selected':(
+                        index: 'selected',
+                        name: '&.c2-button--selected',
+                        type: 'state',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-informative-select)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'negative':(
+                    index: 'negative',
+                    name: '&--negative',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-negative-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
+                      'hover':(
+                        index: 'hover',
+                        name: 'hover',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-hover)',
+                          ),
+                        ),
+                      ),
+                      'active':(
+                        index: 'active',
+                        name: 'active',
+                        type: 'selector',
+                        value: (
+                          'color':(
+                            index: 'color',
+                            name: 'color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-fg-color-negative-active)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'selected':(
+                index: 'selected',
+                name: '&.c2-button--selected',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-primary-select)',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: '&.c2-button--size',
+                type: 'state',
+                value: (
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontFamily-base)',
+                      ),
+                      'fontSize':(
+                        index: 'fontSize',
+                        name: 'font-size',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontSize-size-scale-100)',
+                      ),
+                      'fontWeight':(
+                        index: 'fontWeight',
+                        name: 'font-weight',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontWeight-500)',
+                      ),
+                      'lineHeight':(
+                        index: 'lineHeight',
+                        name: 'line-height',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-lineHeight-150)',
+                      ),
+                      'letterSpacing':(
+                        index: 'letterSpacing',
+                        name: 'letter-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-tracking-base)',
+                      ),
+                      'textCase':(
+                        index: 'textCase',
+                        name: 'text-case',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textCase-none)',
+                      ),
+                      'textDecoration':(
+                        index: 'textDecoration',
+                        name: 'text-decoration',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textDecoration-none)',
+                      ),
+                      'paragraphSpacing':(
+                        index: 'paragraphSpacing',
+                        name: 'paragraph-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-75)',
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontFamily-base)',
+                      ),
+                      'fontSize':(
+                        index: 'fontSize',
+                        name: 'font-size',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontSize-size-scale-100)',
+                      ),
+                      'fontWeight':(
+                        index: 'fontWeight',
+                        name: 'font-weight',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontWeight-500)',
+                      ),
+                      'lineHeight':(
+                        index: 'lineHeight',
+                        name: 'line-height',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-lineHeight-150)',
+                      ),
+                      'letterSpacing':(
+                        index: 'letterSpacing',
+                        name: 'letter-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-tracking-base)',
+                      ),
+                      'textCase':(
+                        index: 'textCase',
+                        name: 'text-case',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textCase-none)',
+                      ),
+                      'textDecoration':(
+                        index: 'textDecoration',
+                        name: 'text-decoration',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textDecoration-none)',
+                      ),
+                      'paragraphSpacing':(
+                        index: 'paragraphSpacing',
+                        name: 'paragraph-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-75)',
+                      ),
+                    ),
+                  ),
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontFamily-base)',
+                      ),
+                      'fontSize':(
+                        index: 'fontSize',
+                        name: 'font-size',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontSize-size-scale-87)',
+                      ),
+                      'fontWeight':(
+                        index: 'fontWeight',
+                        name: 'font-weight',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontWeight-500)',
+                      ),
+                      'lineHeight':(
+                        index: 'lineHeight',
+                        name: 'line-height',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-lineHeight-125)',
+                      ),
+                      'letterSpacing':(
+                        index: 'letterSpacing',
+                        name: 'letter-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-tracking-md)',
+                      ),
+                      'textCase':(
+                        index: 'textCase',
+                        name: 'text-case',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textCase-none)',
+                      ),
+                      'textDecoration':(
+                        index: 'textDecoration',
+                        name: 'text-decoration',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textDecoration-none)',
+                      ),
+                      'paragraphSpacing':(
+                        index: 'paragraphSpacing',
+                        name: 'paragraph-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-62)',
+                      ),
+                    ),
+                  ),
+                  'xs':(
+                    index: 'xs',
+                    name: '&--xs',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontFamily-base)',
+                      ),
+                      'fontSize':(
+                        index: 'fontSize',
+                        name: 'font-size',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontSize-size-scale-87)',
+                      ),
+                      'fontWeight':(
+                        index: 'fontWeight',
+                        name: 'font-weight',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontWeight-500)',
+                      ),
+                      'lineHeight':(
+                        index: 'lineHeight',
+                        name: 'line-height',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-lineHeight-125)',
+                      ),
+                      'letterSpacing':(
+                        index: 'letterSpacing',
+                        name: 'letter-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-tracking-md)',
+                      ),
+                      'textCase':(
+                        index: 'textCase',
+                        name: 'text-case',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textCase-none)',
+                      ),
+                      'textDecoration':(
+                        index: 'textDecoration',
+                        name: 'text-decoration',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textDecoration-none)',
+                      ),
+                      'paragraphSpacing':(
+                        index: 'paragraphSpacing',
+                        name: 'paragraph-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-62)',
+                      ),
+                    ),
+                  ),
+                  'x':(
+                    index: 'x',
+                    name: '&--x',
+                    type: 'state',
+                    value: (
+                      'fontFamily':(
+                        index: 'fontFamily',
+                        name: 'font-family',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontFamily-base)',
+                      ),
+                      'fontSize':(
+                        index: 'fontSize',
+                        name: 'font-size',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontSize-size-scale-87)',
+                      ),
+                      'fontWeight':(
+                        index: 'fontWeight',
+                        name: 'font-weight',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-fontWeight-500)',
+                      ),
+                      'lineHeight':(
+                        index: 'lineHeight',
+                        name: 'line-height',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-lineHeight-125)',
+                      ),
+                      'letterSpacing':(
+                        index: 'letterSpacing',
+                        name: 'letter-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-tracking-md)',
+                      ),
+                      'textCase':(
+                        index: 'textCase',
+                        name: 'text-case',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textCase-none)',
+                      ),
+                      'textDecoration':(
+                        index: 'textDecoration',
+                        name: 'text-decoration',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-textDecoration-none)',
+                      ),
+                      'paragraphSpacing':(
+                        index: 'paragraphSpacing',
+                        name: 'paragraph-spacing',
+                        type: 'property',
+                        value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-62)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
           'primary':(
@@ -17617,6 +18847,13 @@ $designsProperties: (
                 name: 'background-color',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .c2-button__icon',
+                type: 'subclass',
+                value: (
+                ),
               ),
               'focus':(
                 index: 'focus',
@@ -17648,13 +18885,6 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-hover)',
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
                 ),
               ),
               'active':(
@@ -17673,13 +18903,6 @@ $designsProperties: (
                     name: 'background-color',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-active)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
                   ),
                 ),
               ),
@@ -17761,13 +18984,6 @@ $designsProperties: (
                     name: 'background-color',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-select)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
                   ),
                 ),
               ),
@@ -17949,6 +19165,13 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-neutral-solid-normal)',
                       ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -17965,13 +19188,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -17992,13 +19208,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
                         ),
                       ),
                       'selected':(
@@ -18018,27 +19227,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-select)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -18066,20 +19254,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'icon':(
-                index: 'icon',
-                name: '& .c2-button__icon',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-              'label':(
-                index: 'label',
-                name: '& .c2-button__label',
-                type: 'subclass',
-                value: (
-                ),
-              ),
             ),
           ),
           'secondary':(
@@ -18092,6 +19266,13 @@ $designsProperties: (
                 name: 'background-color',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-primary-subtle-normal)',
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .c2-button__icon',
+                type: 'subclass',
+                value: (
+                ),
               ),
               'focus':(
                 index: 'focus',
@@ -18123,13 +19304,6 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-subtle-hover)',
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
                 ),
               ),
               'active':(
@@ -18148,13 +19322,6 @@ $designsProperties: (
                     name: 'background-color',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-subtle-active)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
                   ),
                 ),
               ),
@@ -18200,6 +19367,13 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-positive-subtle-normal)',
                       ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -18216,13 +19390,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -18243,13 +19410,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
                         ),
                       ),
                       'selected':(
@@ -18263,13 +19423,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-select)',
                           ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -18291,6 +19444,13 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-informative-subtle-normal)',
                       ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -18307,13 +19467,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-subtle-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -18334,13 +19487,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-subtle-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
                         ),
                       ),
                       'selected':(
@@ -18356,20 +19502,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                      'label':(
-                        index: 'label',
-                        name: '& .c2-button__label',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
                     ),
                   ),
                   'negative':(
@@ -18382,6 +19514,13 @@ $designsProperties: (
                         name: 'background-color',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-negative-subtle-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
                       ),
                       'hover':(
                         index: 'hover',
@@ -18399,13 +19538,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-subtle-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -18426,13 +19558,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-subtle-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
                         ),
                       ),
                       'selected':(
@@ -18448,13 +19573,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
                     ),
                   ),
                   'neutral':(
@@ -18467,6 +19585,13 @@ $designsProperties: (
                         name: 'background-color',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-neutral-subtle-normal)',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
                       ),
                       'hover':(
                         index: 'hover',
@@ -18484,13 +19609,6 @@ $designsProperties: (
                             name: 'background-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-subtle-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -18511,13 +19629,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-subtle-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
                         ),
                       ),
                       'selected':(
@@ -18533,13 +19644,6 @@ $designsProperties: (
                           ),
                         ),
                       ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
                     ),
                   ),
                   'default':(
@@ -18605,672 +19709,6 @@ $designsProperties: (
                     value: (
                     ),
                   ),
-                ),
-              ),
-              'icon':(
-                index: 'icon',
-                name: '& .c2-button__icon',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'outline':(
-            index: 'outline',
-            name: '&.c2-button--outline',
-            type: 'state',
-            value: (
-              'color':(
-                index: 'color',
-                name: 'color',
-                type: 'property',
-                value: 'var(--c2-st-action-fg-color-neutral-normal)',
-              ),
-              'backgroundColor':(
-                index: 'backgroundColor',
-                name: 'background-color',
-                type: 'property',
-                value: 'var(--c2-st-action-bg-color-neutral-invert-normal)',
-              ),
-              'borderWidth':(
-                index: 'borderWidth',
-                name: 'border-width',
-                type: 'property',
-                value: 1px,
-              ),
-              'borderStyle':(
-                index: 'borderStyle',
-                name: 'border-style',
-                type: 'property',
-                value: 'solid',
-              ),
-              'borderColor':(
-                index: 'borderColor',
-                name: 'border-color',
-                type: 'property',
-                value: 'var(--c2-st-action-border-color-neutral-subtle-normal)',
-              ),
-              'focus':(
-                index: 'focus',
-                name: 'focus',
-                type: 'selector',
-                value: (
-                  'boxShadow':(
-                    index: 'boxShadow',
-                    name: 'box-shadow',
-                    type: 'property',
-                    value: 'var(--c2-st-elevation-onLight-focus-md)',
-                  ),
-                ),
-              ),
-              'hover':(
-                index: 'hover',
-                name: 'hover',
-                type: 'selector',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-neutral-hover)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-bg-color-neutral-invert-hover)',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-border-color-neutral-subtle-hover)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-              'active':(
-                index: 'active',
-                name: 'active',
-                type: 'selector',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-neutral-active)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-bg-color-neutral-invert-active)',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-border-color-neutral-subtle-active)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-              'disabled':(
-                index: 'disabled',
-                name: 'disabled',
-                type: 'selector',
-                value: (
-                  'opacity':(
-                    index: 'opacity',
-                    name: 'opacity',
-                    type: 'property',
-                    value: 0.5,
-                  ),
-                ),
-              ),
-              'selected':(
-                index: 'selected',
-                name: '&.c2-button--selected',
-                type: 'state',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-neutral-select)',
-                  ),
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-bg-color-neutral-invert-select)',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'border-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-border-color-neutral-subtle-select)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-              'intent':(
-                index: 'intent',
-                name: '&.c2-button--intent',
-                type: 'state',
-                value: (
-                  'positive':(
-                    index: 'positive',
-                    name: '&--positive',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-positive-normal)',
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                        ),
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-positive-hover)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-positive-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-positive-active)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-positive-active)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-positive-select)',
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'informative':(
-                    index: 'informative',
-                    name: '&--informative',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-informative-normal)',
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                        ),
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-informative-hover)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-informative-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-informative-active)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-informative-active)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-informative-select)',
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'negative':(
-                    index: 'negative',
-                    name: '&--negative',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-negative-normal)',
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                        ),
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-negative-hover)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-negative-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-negative-active)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-negative-active)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-negative-select)',
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'neutral':(
-                    index: 'neutral',
-                    name: '&--neutral',
-                    type: 'state',
-                    value: (
-                      'backgroundColor':(
-                        index: 'backgroundColor',
-                        name: 'background-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
-                      ),
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-neutral-normal)',
-                      ),
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'backgroundColor':(
-                            index: 'backgroundColor',
-                            name: 'background-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-bg-color-neutral-ghost-invert-focus)',
-                          ),
-                        ),
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-neutral-hover)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-neutral-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                          'color':(
-                            index: 'color',
-                            name: 'color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-neutral-active)',
-                          ),
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-neutral-active)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                          'borderColor':(
-                            index: 'borderColor',
-                            name: 'border-color',
-                            type: 'property',
-                            value: 'var(--c2-st-action-fg-color-neutral-select)',
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'default':(
-                    index: 'default',
-                    name: '&--default',
-                    type: 'state',
-                    value: (
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                          'none':(
-                            index: 'none',
-                            name: '&--none',
-                            type: 'state',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'size':(
-                index: 'size',
-                name: '&.c2-button--size',
-                type: 'state',
-                value: (
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'xs':(
-                    index: 'xs',
-                    name: '&--xs',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'x':(
-                    index: 'x',
-                    name: '&--x',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-              'icon':(
-                index: 'icon',
-                name: '& .c2-button__icon',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-              'label':(
-                index: 'label',
-                name: '& .c2-button__label',
-                type: 'subclass',
-                value: (
                 ),
               ),
             ),
@@ -19285,6 +19723,13 @@ $designsProperties: (
                 name: 'background-color',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
+              ),
+              'icon':(
+                index: 'icon',
+                name: '& .c2-button__icon',
+                type: 'subclass',
+                value: (
+                ),
               ),
               'focus':(
                 index: 'focus',
@@ -19322,13 +19767,6 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-hover)',
                   ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
                 ),
               ),
               'active':(
@@ -19347,13 +19785,6 @@ $designsProperties: (
                     name: 'background-color',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-active)',
-                  ),
-                  'label':(
-                    index: 'label',
-                    name: '& .c2-button__label',
-                    type: 'subclass',
-                    value: (
-                    ),
                   ),
                 ),
               ),
@@ -19477,6 +19908,13 @@ $designsProperties: (
                     name: '&--neutral',
                     type: 'state',
                     value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -19487,13 +19925,6 @@ $designsProperties: (
                             name: 'color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -19508,20 +19939,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -19531,6 +19948,13 @@ $designsProperties: (
                     name: '&--positive',
                     type: 'state',
                     value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -19541,13 +19965,6 @@ $designsProperties: (
                             name: 'color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -19562,20 +19979,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -19585,6 +19988,13 @@ $designsProperties: (
                     name: '&--informative',
                     type: 'state',
                     value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -19595,13 +20005,6 @@ $designsProperties: (
                             name: 'color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -19616,20 +20019,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -19639,6 +20028,13 @@ $designsProperties: (
                     name: '&--negative',
                     type: 'state',
                     value: (
+                      'icon':(
+                        index: 'icon',
+                        name: '& .c2-button__icon',
+                        type: 'subclass',
+                        value: (
+                        ),
+                      ),
                       'hover':(
                         index: 'hover',
                         name: 'hover',
@@ -19649,13 +20045,6 @@ $designsProperties: (
                             name: 'color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-hover)',
-                          ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
                           ),
                         ),
                       ),
@@ -19670,20 +20059,6 @@ $designsProperties: (
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-active)',
                           ),
-                          'label':(
-                            index: 'label',
-                            name: '& .c2-button__label',
-                            type: 'subclass',
-                            value: (
-                            ),
-                          ),
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
                         ),
                       ),
                     ),
@@ -19711,346 +20086,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'icon':(
-                index: 'icon',
-                name: '& .c2-button__icon',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'link':(
-            index: 'link',
-            name: '&.c2-button--link',
-            type: 'state',
-            value: (
-              'padding':(
-                index: 'padding',
-                name: 'padding',
-                type: 'property',
-                value: 0,
-              ),
-              'font':(
-                index: 'font',
-                name: 'font',
-                type: 'property',
-                value: 'inherit',
-              ),
-              'color':(
-                index: 'color',
-                name: 'color',
-                type: 'property',
-                value: 'inherit',
-              ),
-              'borderRadius':(
-                index: 'borderRadius',
-                name: 'border-radius',
-                type: 'property',
-                value: 'unset',
-              ),
-              'focus':(
-                index: 'focus',
-                name: 'focus',
-                type: 'selector',
-                value: (
-                  'backgroundColor':(
-                    index: 'backgroundColor',
-                    name: 'background-color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-bg-color-neutral-ghost-focus)',
-                  ),
-                  'boxShadow':(
-                    index: 'boxShadow',
-                    name: 'box-shadow',
-                    type: 'property',
-                    value: 'var(--c2-st-elevation-onLight-focus-sm)',
-                  ),
-                ),
-              ),
-              'hover':(
-                index: 'hover',
-                name: 'hover',
-                type: 'selector',
-                value: (
-                ),
-              ),
-              'active':(
-                index: 'active',
-                name: 'active',
-                type: 'selector',
-                value: (
-                ),
-              ),
-              'disabled':(
-                index: 'disabled',
-                name: 'disabled',
-                type: 'selector',
-                value: (
-                  'opacity':(
-                    index: 'opacity',
-                    name: 'opacity',
-                    type: 'property',
-                    value: 0.5,
-                  ),
-                ),
-              ),
-              'intent':(
-                index: 'intent',
-                name: '&.c2-button--intent',
-                type: 'state',
-                value: (
-                  'neutral':(
-                    index: 'neutral',
-                    name: '&--neutral',
-                    type: 'state',
-                    value: (
-                      'focus':(
-                        index: 'focus',
-                        name: 'focus',
-                        type: 'selector',
-                        value: (
-                          'boxShadow':(
-                            index: 'boxShadow',
-                            name: 'box-shadow',
-                            type: 'property',
-                            value: 'var(--c2-st-elevation-onLight-focus-xs)',
-                          ),
-                        ),
-                      ),
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'positive':(
-                    index: 'positive',
-                    name: '&--positive',
-                    type: 'state',
-                    value: (
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'informative':(
-                    index: 'informative',
-                    name: '&--informative',
-                    type: 'state',
-                    value: (
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'selected':(
-                        index: 'selected',
-                        name: '&.c2-button--selected',
-                        type: 'state',
-                        value: (
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                  'negative':(
-                    index: 'negative',
-                    name: '&--negative',
-                    type: 'state',
-                    value: (
-                      'hover':(
-                        index: 'hover',
-                        name: 'hover',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'active':(
-                        index: 'active',
-                        name: 'active',
-                        type: 'selector',
-                        value: (
-                        ),
-                      ),
-                      'icon':(
-                        index: 'icon',
-                        name: '& .c2-button__icon',
-                        type: 'subclass',
-                        value: (
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'selected':(
-                index: 'selected',
-                name: '&.c2-button--selected',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'size':(
-                index: 'size',
-                name: '&.c2-button--size',
-                type: 'state',
-                value: (
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'xs':(
-                    index: 'xs',
-                    name: '&--xs',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                  'x':(
-                    index: 'x',
-                    name: '&--x',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-              'icon':(
-                index: 'icon',
-                name: '& .c2-button__icon',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-              'label':(
-                index: 'label',
-                name: '& .c2-button__label',
-                type: 'subclass',
-                value: (
-                  'gap':(
-                    index: 'gap',
-                    name: 'gap',
-                    type: 'property',
-                    value: 'unset',
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-              'gap':(
-                index: 'gap',
-                name: 'gap',
-                type: 'property',
-                value: 'var(--c2-st-global-distance-space-inline-md)',
-              ),
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-              'none':(
-                index: 'none',
-                name: '&--none',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
             ),
           ),
         ),
@@ -20210,6 +20245,20 @@ $designsProperties: (
             type: 'var',
             value: 'var(--c2-ot-opacity-25)',
           ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'linear':(
             index: 'linear',
             name: '&--linear',
@@ -20232,7 +20281,7 @@ $designsProperties: (
                 index: 'inset',
                 name: 'inset',
                 type: 'property',
-                value: 'var(--c2-st-global-distance-space-inline-xs)',
+                value: 'var(--c2-st-global-distance-space-inline-md)',
                 var: true,
               ),
             ),
@@ -20297,20 +20346,6 @@ $designsProperties: (
             index: 'inverse',
             name: '&--inverse',
             type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'circleSub':(
-            index: 'circleSub',
-            name: '&__circleSub',
-            type: 'subclass',
             value: (
             ),
           ),

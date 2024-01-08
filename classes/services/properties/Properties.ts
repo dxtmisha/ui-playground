@@ -153,8 +153,8 @@ export class Properties {
     new PropertiesToLink(properties).to()
     new PropertiesToSub(properties).to()
     new PropertiesToClone(properties).to()
-    new PropertiesToDrag(properties).to()
     new PropertiesToRemove(properties).to()
+    new PropertiesToDrag(properties).to()
     new PropertiesToVariable(properties).to()
   }
 }

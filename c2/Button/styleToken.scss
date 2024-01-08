@@ -4,6 +4,8 @@
   // :style [!] System label / Системная метка
   --c2-button-transitionFunction: var(--d-sys-transitionFunction-standard);
   
+  gap: var(--c2-st-global-distance-space-inline-md);
+  
   padding: var(--c2-st-global-distance-space-inset-2xl);
   
   font-family: var(--c2-ot-typography-fontFamily-base);
@@ -86,6 +88,8 @@
   
   &--size {
     &--lg {
+      gap: var(--c2-st-global-distance-space-inline-sm);
+      
       padding: var(--c2-st-global-distance-space-inset-xl);
       
       font-family: var(--c2-ot-typography-fontFamily-base);
@@ -98,13 +102,11 @@
       @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
       
       border-radius: var(--c2-st-selectable-borderRadius-size-lg);
-      
-      & .c2-button__label {
-        gap: var(--c2-st-global-distance-space-inline-sm);
-      }
     }
     
     &--md {
+      gap: var(--c2-st-global-distance-space-inline-xs);
+      
       padding: var(--c2-st-global-distance-space-inset-lg);
       
       font-family: var(--c2-ot-typography-fontFamily-base);
@@ -117,13 +119,11 @@
       @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
       
       border-radius: var(--c2-st-selectable-borderRadius-size-md);
-      
-      & .c2-button__label {
-        gap: var(--c2-st-global-distance-space-inline-xs);
-      }
     }
     
     &--sm {
+      gap: var(--c2-st-global-distance-space-inline-xs);
+      
       padding: var(--c2-st-global-distance-space-inset-lg);
       
       font-family: var(--c2-ot-typography-fontFamily-base);
@@ -136,13 +136,11 @@
       @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
       
       border-radius: var(--c2-st-selectable-borderRadius-size-sm);
-      
-      & .c2-button__label {
-        gap: var(--c2-st-global-distance-space-inline-xs);
-      }
     }
     
     &--xs {
+      gap: var(--c2-st-global-distance-space-inline-xs);
+      
       padding: var(--c2-st-global-distance-space-inset-md);
       
       font-family: var(--c2-ot-typography-fontFamily-base);
@@ -155,13 +153,11 @@
       @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
       
       border-radius: var(--c2-st-selectable-borderRadius-size-sm);
-      
-      & .c2-button__label {
-        gap: var(--c2-st-global-distance-space-inline-xs);
-      }
     }
     
     &--x {
+      gap: var(--c2-st-global-distance-space-inline-xs);
+      
       padding: var(--c2-st-global-distance-space-inset-sm);
       
       font-family: var(--c2-ot-typography-fontFamily-base);
@@ -174,9 +170,330 @@
       @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
       
       border-radius: var(--c2-st-selectable-borderRadius-size-xs);
+    }
+  }
+  
+  &.c2-button--outline {
+    --c2-button-borderWidth: 1px;
+    --c2-button-borderStyle: solid;
+    
+    @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
+    
+    @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-normal)});
+    
+    @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-normal)});
+    
+    &::before {
+      content: ' ';
+      position: absolute;
+      @include inset(#{0px});
       
-      & .c2-button__label {
-        gap: var(--c2-st-global-distance-space-inline-xs);
+      border-radius: inherit;
+      border: var(--c2-button-borderWidth) var(--c2-button-borderStyle);
+      @include borderColor(#{inherit});
+    }
+    
+    @include focus('.c2-button') {
+      box-shadow: var(--c2-st-elevation-onLight-focus-md);
+    }
+    
+    @include hover('.c2-button') {
+      @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+      
+      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-hover)});
+      
+      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-hover)});
+    }
+    
+    @include active('.c2-button') {
+      @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+      
+      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-active)});
+      
+      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-active)});
+    }
+    
+    @include disabled('.c2-button') {
+      opacity: 0.5;
+    }
+    
+    &.c2-button--selected {
+      @include color(#{var(--c2-st-action-fg-color-neutral-select)});
+      
+      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-select)});
+      
+      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-select)});
+    }
+    
+    &.c2-button--intent {
+      &--positive {
+        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include borderColor(#{var(--c2-st-action-fg-color-positive-normal)});
+        
+        @include focus('.c2-button') {
+          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
+        }
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-positive-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-positive-active)});
+        }
+        
+        &.c2-button--selected {
+          @include borderColor(#{var(--c2-st-action-fg-color-positive-select)});
+        }
+      }
+      
+      &--informative {
+        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include borderColor(#{var(--c2-st-action-bg-color-informative-normal)});
+        
+        @include focus('.c2-button') {
+          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
+        }
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
+          
+          @include borderColor(#{var(--c2-st-action-bg-color-informative-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-bg-color-informative-active)});
+          
+          @include borderColor(#{var(--c2-st-action-bg-color-informative-active)});
+        }
+        
+        &.c2-button--selected {
+          @include borderColor(#{var(--c2-st-action-bg-color-informative-select)});
+        }
+      }
+      
+      &--negative {
+        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include borderColor(#{var(--c2-st-action-fg-color-negative-normal)});
+        
+        @include focus('.c2-button') {
+          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
+        }
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-negative-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-negative-active)});
+        }
+        
+        &.c2-button--selected {
+          @include borderColor(#{var(--c2-st-action-fg-color-negative-select)});
+        }
+      }
+      
+      &--neutral {
+        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
+        
+        @include borderColor(#{var(--c2-st-action-fg-color-neutral-normal)});
+        
+        @include focus('.c2-button') {
+          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
+        }
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-neutral-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+          
+          @include borderColor(#{var(--c2-st-action-fg-color-neutral-active)});
+        }
+        
+        &.c2-button--selected {
+          @include borderColor(#{var(--c2-st-action-fg-color-neutral-select)});
+        }
+      }
+    }
+  }
+  
+  &.c2-button--link {
+    padding: 0;
+    
+    font-family: var(--c2-ot-typography-fontFamily-base);
+    @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
+    font-weight: var(--c2-ot-typography-fontWeight-500);
+    @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+    letter-spacing: var(--c2-ot-typography-tracking-lg);
+    @include textCase(#{var(--c2-ot-typography-textCase-none)});
+    text-decoration: var(--c2-ot-typography-textDecoration-none);
+    @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    
+    @include color(#{var(--c2-st-action-fg-color-primary-normal)});
+    
+    border-radius: unset;
+    
+    & .c2-button__label {
+      border-bottom: 1px dashed;
+    }
+    
+    @include focus('.c2-button') {
+      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
+      
+      box-shadow: var(--c2-st-elevation-onLight-focus-sm);
+    }
+    
+    @include hover('.c2-button') {
+      @include color(#{var(--c2-st-action-fg-color-primary-hover)});
+    }
+    
+    @include active('.c2-button') {
+      @include color(#{var(--c2-st-action-fg-color-primary-active)});
+    }
+    
+    @include disabled('.c2-button') {
+      opacity: 0.5;
+    }
+    
+    &.c2-button--intent {
+      &--neutral {
+        @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
+        
+        @include focus('.c2-button') {
+          box-shadow: var(--c2-st-elevation-onLight-focus-xs);
+        }
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+        }
+        
+        &.c2-button--selected {
+          @include color(#{var(--c2-st-action-fg-color-neutral-select)});
+        }
+      }
+      
+      &--positive {
+        @include color(#{var(--c2-st-action-fg-color-positive-normal)});
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+        }
+        
+        &.c2-button--selected {
+          @include color(#{var(--c2-st-action-fg-color-positive-select)});
+        }
+      }
+      
+      &--informative {
+        @include color(#{var(--c2-st-action-bg-color-informative-normal)});
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-bg-color-informative-active)});
+        }
+        
+        &.c2-button--selected {
+          @include color(#{var(--c2-st-action-bg-color-informative-select)});
+        }
+      }
+      
+      &--negative {
+        @include color(#{var(--c2-st-action-fg-color-negative-normal)});
+        
+        @include hover('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+        }
+        
+        @include active('.c2-button') {
+          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+        }
+      }
+    }
+    
+    &.c2-button--selected {
+      @include color(#{var(--c2-st-action-fg-color-primary-select)});
+    }
+    
+    &.c2-button--size {
+      &--lg {
+        font-family: var(--c2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
+        font-weight: var(--c2-ot-typography-fontWeight-500);
+        @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--c2-ot-typography-tracking-base);
+        @include textCase(#{var(--c2-ot-typography-textCase-none)});
+        text-decoration: var(--c2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+      }
+      
+      &--md {
+        font-family: var(--c2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
+        font-weight: var(--c2-ot-typography-fontWeight-500);
+        @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+        letter-spacing: var(--c2-ot-typography-tracking-base);
+        @include textCase(#{var(--c2-ot-typography-textCase-none)});
+        text-decoration: var(--c2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+      }
+      
+      &--sm {
+        font-family: var(--c2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+        font-weight: var(--c2-ot-typography-fontWeight-500);
+        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+        letter-spacing: var(--c2-ot-typography-tracking-md);
+        @include textCase(#{var(--c2-ot-typography-textCase-none)});
+        text-decoration: var(--c2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+      }
+      
+      &--xs {
+        font-family: var(--c2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+        font-weight: var(--c2-ot-typography-fontWeight-500);
+        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+        letter-spacing: var(--c2-ot-typography-tracking-md);
+        @include textCase(#{var(--c2-ot-typography-textCase-none)});
+        text-decoration: var(--c2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+      }
+      
+      &--x {
+        font-family: var(--c2-ot-typography-fontFamily-base);
+        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+        font-weight: var(--c2-ot-typography-fontWeight-500);
+        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+        letter-spacing: var(--c2-ot-typography-tracking-md);
+        @include textCase(#{var(--c2-ot-typography-textCase-none)});
+        text-decoration: var(--c2-ot-typography-textDecoration-none);
+        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
       }
     }
   }
@@ -399,154 +716,6 @@
     }
   }
   
-  &.c2-button--outline {
-    @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
-    
-    @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-normal)});
-    
-    border-width: 1px;
-    border-style: solid;
-    @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-normal)});
-    
-    @include focus('.c2-button') {
-      box-shadow: var(--c2-st-elevation-onLight-focus-md);
-    }
-    
-    @include hover('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
-      
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-hover)});
-      
-      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-hover)});
-    }
-    
-    @include active('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-neutral-active)});
-      
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-active)});
-      
-      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-active)});
-    }
-    
-    @include disabled('.c2-button') {
-      opacity: 0.5;
-    }
-    
-    &.c2-button--selected {
-      @include color(#{var(--c2-st-action-fg-color-neutral-select)});
-      
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-select)});
-      
-      @include borderColor(#{var(--c2-st-action-border-color-neutral-subtle-select)});
-    }
-    
-    &.c2-button--intent {
-      &--positive {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
-        
-        @include borderColor(#{var(--c2-st-action-fg-color-positive-normal)});
-        
-        @include focus('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
-        }
-        
-        @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-positive-hover)});
-        }
-        
-        @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-active)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-positive-active)});
-        }
-        
-        &.c2-button--selected {
-          @include borderColor(#{var(--c2-st-action-fg-color-positive-select)});
-        }
-      }
-      
-      &--informative {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
-        
-        @include borderColor(#{var(--c2-st-action-bg-color-informative-normal)});
-        
-        @include focus('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
-        }
-        
-        @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
-          
-          @include borderColor(#{var(--c2-st-action-bg-color-informative-hover)});
-        }
-        
-        @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-active)});
-          
-          @include borderColor(#{var(--c2-st-action-bg-color-informative-active)});
-        }
-        
-        &.c2-button--selected {
-          @include borderColor(#{var(--c2-st-action-bg-color-informative-select)});
-        }
-      }
-      
-      &--negative {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
-        
-        @include borderColor(#{var(--c2-st-action-fg-color-negative-normal)});
-        
-        @include focus('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
-        }
-        
-        @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-negative-hover)});
-        }
-        
-        @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-active)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-negative-active)});
-        }
-        
-        &.c2-button--selected {
-          @include borderColor(#{var(--c2-st-action-fg-color-negative-select)});
-        }
-      }
-      
-      &--neutral {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
-        
-        @include borderColor(#{var(--c2-st-action-fg-color-neutral-normal)});
-        
-        @include focus('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-invert-focus)});
-        }
-        
-        @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-neutral-hover)});
-        }
-        
-        @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
-          
-          @include borderColor(#{var(--c2-st-action-fg-color-neutral-active)});
-        }
-        
-        &.c2-button--selected {
-          @include borderColor(#{var(--c2-st-action-fg-color-neutral-select)});
-        }
-      }
-    }
-  }
-  
   &.c2-button--ghost {
     @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
     
@@ -617,42 +786,6 @@
         }
       }
     }
-  }
-  
-  &.c2-button--link {
-    padding: 0;
-    
-    font: inherit;
-    
-    @include color(#{inherit});
-    
-    border-radius: unset;
-    
-    @include focus('.c2-button') {
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
-      
-      box-shadow: var(--c2-st-elevation-onLight-focus-sm);
-    }
-    
-    @include disabled('.c2-button') {
-      opacity: 0.5;
-    }
-    
-    &.c2-button--intent {
-      &--neutral {
-        @include focus('.c2-button') {
-          box-shadow: var(--c2-st-elevation-onLight-focus-xs);
-        }
-      }
-    }
-    
-    & .c2-button__label {
-      gap: unset;
-    }
-  }
-  
-  &__label {
-    gap: var(--c2-st-global-distance-space-inline-md);
   }
   // :style [!] System label / Системная метка
 }

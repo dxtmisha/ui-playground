@@ -66,9 +66,9 @@ export type ButtonSlots = UseLabelSlots
 export type ButtonClasses = {
   main: ConstrClass
   // :classes [!] System label / Системная метка
-  loading: string
   label: string
   icon: string
   trailing: string
+  loading: string
   // :classes [!] System label / Системная метка
 }

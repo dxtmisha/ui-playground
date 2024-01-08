@@ -137,10 +137,10 @@ export class ButtonDesign<
       },
       ...{
         // :classes [!] System label / Системная метка
-        loading: this.getSubClass('loading'),
         label: this.getSubClass('label'),
         icon: this.getSubClass('icon'),
-        trailing: this.getSubClass('trailing')
+        trailing: this.getSubClass('trailing'),
+        loading: this.getSubClass('loading')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>

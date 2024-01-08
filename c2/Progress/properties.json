@@ -1,3 +1,6 @@
 {
-  "main": "{d.progress}"
+  "main": "{d.progress}",
+  "indeterminate": {
+    "_default": "type3"
+  }
 }

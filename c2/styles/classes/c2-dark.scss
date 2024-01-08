@@ -88,6 +88,7 @@
   --c2-st-action-bg-color-primary-subtle-active: var(--c2-st-action-bg-color-primary-solid-active);
   --c2-st-action-bg-color-primary-subtle-active-opacity: 0.25;
   --c2-st-action-bg-color-primary-subtle-select: var(--c2-st-action-bg-color-primary-subtle-hover);
+  --c2-st-action-bg-color-primary-subtle-select-opacity: #{toColorOpacity(var(--c2-st-action-bg-color-primary-subtle-hover))};
   --c2-st-action-bg-color-neutral-solid-normal: var(--c2-ot-light-semantic-color-alpha-white-1000);
   --c2-st-action-bg-color-neutral-solid-hover: var(--c2-ot-light-semantic-color-alpha-white-900);
   --c2-st-action-bg-color-neutral-solid-hover-opacity: #{toColorOpacity(var(--c2-ot-light-semantic-color-alpha-white-900))};
@@ -139,6 +140,7 @@
   --c2-st-action-bg-color-positive-subtle-active: var(--c2-st-action-bg-color-positive-active);
   --c2-st-action-bg-color-positive-subtle-active-opacity: 0.25;
   --c2-st-action-bg-color-positive-subtle-select: var(--c2-st-action-bg-color-positive-subtle-hover);
+  --c2-st-action-bg-color-positive-subtle-select-opacity: #{toColorOpacity(var(--c2-st-action-bg-color-positive-subtle-hover))};
   --c2-st-action-bg-color-negative-normal: var(--c2-ot-dark-semantic-color-redfish-300);
   --c2-st-action-bg-color-negative-hover: var(--c2-ot-dark-semantic-color-redfish-400);
   --c2-st-action-bg-color-negative-active: var(--c2-ot-dark-semantic-color-redfish-500);
@@ -150,6 +152,7 @@
   --c2-st-action-bg-color-negative-subtle-active: var(--c2-st-action-bg-color-negative-active);
   --c2-st-action-bg-color-negative-subtle-active-opacity: 0.25;
   --c2-st-action-bg-color-negative-subtle-select: var(--c2-st-action-bg-color-negative-subtle-hover);
+  --c2-st-action-bg-color-negative-subtle-select-opacity: #{toColorOpacity(var(--c2-st-action-bg-color-negative-subtle-hover))};
   --c2-st-action-bg-color-informative-normal: var(--c2-ot-dark-semantic-color-iris-300);
   --c2-st-action-bg-color-informative-hover: var(--c2-ot-dark-semantic-color-iris-400);
   --c2-st-action-bg-color-informative-active: var(--c2-ot-dark-semantic-color-iris-500);
@@ -161,6 +164,7 @@
   --c2-st-action-bg-color-informative-subtle-active: var(--c2-st-action-bg-color-informative-active);
   --c2-st-action-bg-color-informative-subtle-active-opacity: 0.25;
   --c2-st-action-bg-color-informative-subtle-select: var(--c2-st-action-bg-color-informative-subtle-hover);
+  --c2-st-action-bg-color-informative-subtle-select-opacity: #{toColorOpacity(var(--c2-st-action-bg-color-informative-subtle-hover))};
   --c2-st-action-fg-color-neutral-normal: var(--c2-st-action-bg-color-neutral-solid-normal);
   --c2-st-action-fg-color-neutral-normal-opacity: #{toColorOpacity(var(--c2-st-action-bg-color-neutral-solid-normal))};
   --c2-st-action-fg-color-neutral-hover: var(--c2-st-action-bg-color-neutral-solid-hover);

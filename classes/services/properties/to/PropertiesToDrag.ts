@@ -1,4 +1,4 @@
-import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data.ts'
 
 import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
 
@@ -17,7 +17,7 @@ import {
  * Класс для управления переводом свойства из одной ветки в другую.
  */
 export class PropertiesToDrag extends PropertiesToAbstract {
-  protected readonly FILE_CACHE = '007-02-drag'
+  protected readonly FILE_CACHE = '007-03-drag'
 
   protected init (): void {
     this.read()
@@ -201,6 +201,8 @@ export class PropertiesToDrag extends PropertiesToAbstract {
       forEach(item.value, (value, index) => {
         if (!(index in itemDragValue)) {
           itemDragValue[index] = value
+        } else if (!isFilled(itemDragValue[index].value)) {
+          itemDragValue[index].value = value.value
         }
       })
 

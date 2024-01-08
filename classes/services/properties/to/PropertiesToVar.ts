@@ -47,7 +47,10 @@ export class PropertiesToVar extends PropertiesToAbstract {
             this.toCalculator(fullValue, item?.[PropertyKey.fullValue]), item?.[PropertyKey.default]
           )
 
-          if (this.isColorWithOpacity(property)) {
+          if (
+            !(PropertyKey.cssColorOpacity in item) &&
+            this.isColorWithOpacity(property)
+          ) {
             item[PropertyKey.cssColorOpacity] = true
           }
 
@@ -134,7 +137,6 @@ export class PropertiesToVar extends PropertiesToAbstract {
    * Checks if the values are hidden.<br>
    * Проверяет, являются ли значения скрытыми.
    * @param parents list of ancestors /<br>список предков
-   * @private
    */
   private isNone (parents: PropertiesItemsParent[]): boolean {
     for (const parent of parents) {
@@ -146,12 +148,23 @@ export class PropertiesToVar extends PropertiesToAbstract {
     return false
   }
 
+  /**
+   * Checks if the element has transparency.<br>
+   * Проверяет, есть ли прозрачность у элемента.
+   * @param property property value /<br>значение свойства
+   */
   private isColorWithOpacity (property: PropertiesItemsItem): boolean {
     const {
       design,
       component,
-      value
+      value,
+      item
     } = property
+
+    if (item?.[PropertyKey.cssColorOpacity]) {
+      console.log('in', property.name, value, Boolean(item?.[PropertyKey.cssColorOpacity]))
+      return true
+    }
 
     if (
       component &&
@@ -160,7 +173,6 @@ export class PropertiesToVar extends PropertiesToAbstract {
       if (value.match(/^\{[^}]+}$/)) {
         const link = this.items.getLink(design, component, value)
         const data = this.items.getInfo(link)
-
         if (data) {
           return this.isColorWithOpacity(data)
         }

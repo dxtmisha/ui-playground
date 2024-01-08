@@ -9,8 +9,8 @@
   &--circular {
     --c2-progress-width: var(--c2-ot-dimension-300);
     
-    --c2-progress-inset: var(--c2-st-global-distance-space-inline-xs);
-    @include inset(#{var(--c2-st-global-distance-space-inline-xs)});
+    --c2-progress-inset: var(--c2-st-global-distance-space-inline-md);
+    @include inset(#{var(--c2-st-global-distance-space-inline-md)});
   }
   // :style [!] System label / Системная метка
 }

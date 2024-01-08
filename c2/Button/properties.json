@@ -1,5 +1,8 @@
 {
   "main": "{d.button}",
+  "gap": {
+    "_type": "property"
+  },
   "padding": {
     "_type": "property"
   },
@@ -8,8 +11,7 @@
       "label": {
         "_drag": "../../.."
       },
-      "_drag": "../../label",
-      "_dragSetting": "{??label}"
+      "_drag": "../.."
     },
     "_type": "none",
     "_settingClone": true
@@ -30,8 +32,44 @@
     "_type": "subclass",
     "_settingClone": true
   },
+  "normal": {
+    "_remove": true,
+    "_settingClone": true
+  },
   "skeleton": {
     "_remove": true,
     "_settingClone": true
+  },
+  "size": {
+    "_default": "md"
+  },
+  "outline": {
+    "border-width": {
+      "_type": "var"
+    },
+    "border-style": {
+      "_type": "var"
+    },
+    "before": {
+      "position": "absolute",
+      "inset": "0px",
+      "border-radius": "inherit",
+      "border": "{??borderWidth} {??borderStyle}",
+      "border-color": "inherit"
+    }
+  },
+  "link": {
+    "container": {
+      "content": {
+        "_remove": true
+      },
+      "label": {
+        "_drag": "../.."
+      },
+      "_settingClone": true
+    },
+    "#label": {
+      "border-bottom": "1px dashed"
+    }
   }
 }

@@ -66,23 +66,23 @@ export const sortList: Item<string[][]>[] = [
     ]
   },
   {
-    index: PropertyType.selector,
-    value: [
-      cssSelector
-    ]
-  },
-  {
     index: PropertyType.virtual,
     value: [
       cssVirtual
     ]
   },
   {
-    index: PropertyType.state,
+    index: PropertyType.subclass,
     value: []
   },
   {
-    index: PropertyType.subclass,
+    index: PropertyType.selector,
+    value: [
+      cssSelector
+    ]
+  },
+  {
+    index: PropertyType.state,
     value: []
   },
   {

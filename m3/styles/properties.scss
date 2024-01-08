@@ -362,6 +362,27 @@ $designsProperties: (
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
           ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'hover':(
             index: 'hover',
             name: 'hover',
@@ -461,27 +482,6 @@ $designsProperties: (
               ),
             ),
           ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
         ),
       ),
       'chip':(
@@ -506,6 +506,27 @@ $designsProperties: (
             name: 'transition-property',
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
           ),
           'hover':(
             index: 'hover',
@@ -604,27 +625,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
             ),
           ),
         ),
@@ -760,6 +760,34 @@ $designsProperties: (
         name: 'd-mask',
         type: 'component',
         value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
+            value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
           'visible':(
             index: 'visible',
             name: '&--visible',
@@ -795,34 +823,6 @@ $designsProperties: (
               ),
             ),
           ),
-          'input':(
-            index: 'input',
-            name: '&__input',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'character':(
-            index: 'character',
-            name: '&__character',
-            type: 'subclass',
-            value: (
-              'item':(
-                index: 'item',
-                name: '&__item',
-                type: 'subclass',
-                value: (
-                  'placeholder':(
-                    index: 'placeholder',
-                    name: '&--placeholder',
-                    type: 'state',
-                    value: (
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
         ),
       ),
       'progress':(
@@ -830,6 +830,20 @@ $designsProperties: (
         name: 'd-progress',
         type: 'component',
         value: (
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'linear':(
             index: 'linear',
             name: '&--linear',
@@ -911,20 +925,6 @@ $designsProperties: (
             index: 'inverse',
             name: '&--inverse',
             type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'circleSub':(
-            index: 'circleSub',
-            name: '&__circleSub',
-            type: 'subclass',
             value: (
             ),
           ),
@@ -6455,6 +6455,27 @@ $designsProperties: (
             type: 'property',
             value: 'background-color, background-image, border, box-shadow',
           ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
           'focus':(
             index: 'focus',
             name: 'focus',
@@ -6833,6 +6854,49 @@ $designsProperties: (
             name: '&.m3-button--outlined',
             type: 'state',
             value: (
+              'before':(
+                index: 'before',
+                name: 'before',
+                type: 'virtual',
+                value: (
+                  'position':(
+                    index: 'position',
+                    name: 'position',
+                    type: 'property',
+                    value: 'absolute',
+                  ),
+                  'inset':(
+                    index: 'inset',
+                    name: 'inset',
+                    type: 'property',
+                    value: 0px,
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                  'borderWidth':(
+                    index: 'borderWidth',
+                    name: 'border-width',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-px)',
+                  ),
+                  'borderStyle':(
+                    index: 'borderStyle',
+                    name: 'border-style',
+                    type: 'property',
+                    value: 'solid',
+                  ),
+                  'borderColor':(
+                    index: 'borderColor',
+                    name: 'palette-border',
+                    type: 'property',
+                    value: 'var(--m3-sys-palette-outline)',
+                  ),
+                ),
+              ),
               'focus':(
                 index: 'focus',
                 name: 'focus',
@@ -6879,49 +6943,6 @@ $designsProperties: (
                   ),
                 ),
               ),
-              'before':(
-                index: 'before',
-                name: 'before',
-                type: 'virtual',
-                value: (
-                  'position':(
-                    index: 'position',
-                    name: 'position',
-                    type: 'property',
-                    value: 'absolute',
-                  ),
-                  'inset':(
-                    index: 'inset',
-                    name: 'inset',
-                    type: 'property',
-                    value: 0px,
-                  ),
-                  'borderRadius':(
-                    index: 'borderRadius',
-                    name: 'border-radius',
-                    type: 'property',
-                    value: 'inherit',
-                  ),
-                  'borderWidth':(
-                    index: 'borderWidth',
-                    name: 'border-width',
-                    type: 'property',
-                    value: 'var(--m3-ref-spacing-px)',
-                  ),
-                  'borderStyle':(
-                    index: 'borderStyle',
-                    name: 'border-style',
-                    type: 'property',
-                    value: 'solid',
-                  ),
-                  'borderColor':(
-                    index: 'borderColor',
-                    name: 'palette-border',
-                    type: 'property',
-                    value: 'var(--m3-sys-palette-outline)',
-                  ),
-                ),
-              ),
               'selected':(
                 index: 'selected',
                 name: '&.m3-button--selected',
@@ -6954,39 +6975,6 @@ $designsProperties: (
                 name: '--m3-button-padding',
                 type: 'var',
                 value: 'var(--m3-ref-spacing-3)',
-              ),
-              'hover':(
-                index: 'hover',
-                name: 'hover',
-                type: 'selector',
-                value: (
-                  'transitionDuration':(
-                    index: 'transitionDuration',
-                    name: 'transition-duration',
-                    type: 'property',
-                    value: 'var(--d-sys-transitionDuration-lg-close)',
-                  ),
-                ),
-              ),
-              'active':(
-                index: 'active',
-                name: 'active',
-                type: 'selector',
-                value: (
-                  'after':(
-                    index: 'after',
-                    name: 'after',
-                    type: 'virtual',
-                    value: (
-                      'borderOpacity':(
-                        index: 'borderOpacity',
-                        name: 'border-opacity',
-                        type: 'property',
-                        value: 'var(--m3-sys-opacity-medium)',
-                      ),
-                    ),
-                  ),
-                ),
               ),
               'after':(
                 index: 'after',
@@ -7040,6 +7028,39 @@ $designsProperties: (
                     name: 'transition',
                     type: 'property',
                     value: 'inherit',
+                  ),
+                ),
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'transitionDuration':(
+                    index: 'transitionDuration',
+                    name: 'transition-duration',
+                    type: 'property',
+                    value: 'var(--d-sys-transitionDuration-lg-close)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'after':(
+                    index: 'after',
+                    name: 'after',
+                    type: 'virtual',
+                    value: (
+                      'borderOpacity':(
+                        index: 'borderOpacity',
+                        name: 'border-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-medium)',
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -7217,27 +7238,6 @@ $designsProperties: (
               ),
             ),
           ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
-            ),
-          ),
           'palette':(
             index: 'palette',
             name: 'palette',
@@ -7340,6 +7340,33 @@ $designsProperties: (
             name: 'transition-property',
             type: 'property',
             value: 'border, box-shadow',
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'palette-color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-primary)',
+              ),
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
           ),
           'focus':(
             index: 'focus',
@@ -7644,32 +7671,6 @@ $designsProperties: (
             name: '&.m3-chip--outlined',
             type: 'state',
             value: (
-              'disabled':(
-                index: 'disabled',
-                name: 'disabled',
-                type: 'selector',
-                value: (
-                  'before':(
-                    index: 'before',
-                    name: 'before',
-                    type: 'virtual',
-                    value: (
-                      'borderColor':(
-                        index: 'borderColor',
-                        name: 'border-color',
-                        type: 'property',
-                        value: 'var(--m3-sys-palette-onSurfaceVariant)',
-                      ),
-                      'borderOpacity':(
-                        index: 'borderOpacity',
-                        name: 'border-opacity',
-                        type: 'property',
-                        value: 'var(--m3-sys-opacity-012)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
               'before':(
                 index: 'before',
                 name: 'before',
@@ -7713,11 +7714,50 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'disabled':(
+                index: 'disabled',
+                name: 'disabled',
+                type: 'selector',
+                value: (
+                  'before':(
+                    index: 'before',
+                    name: 'before',
+                    type: 'virtual',
+                    value: (
+                      'borderColor':(
+                        index: 'borderColor',
+                        name: 'border-color',
+                        type: 'property',
+                        value: 'var(--m3-sys-palette-onSurfaceVariant)',
+                      ),
+                      'borderOpacity':(
+                        index: 'borderOpacity',
+                        name: 'border-opacity',
+                        type: 'property',
+                        value: 'var(--m3-sys-opacity-012)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               'selected':(
                 index: 'selected',
                 name: '&.m3-chip--selected',
                 type: 'state',
                 value: (
+                  'before':(
+                    index: 'before',
+                    name: 'before',
+                    type: 'virtual',
+                    value: (
+                      'borderOpacity':(
+                        index: 'borderOpacity',
+                        name: 'border-opacity',
+                        type: 'property',
+                        value: 0,
+                      ),
+                    ),
+                  ),
                   'disabled':(
                     index: 'disabled',
                     name: 'disabled',
@@ -7735,19 +7775,6 @@ $designsProperties: (
                             value: 0,
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  'before':(
-                    index: 'before',
-                    name: 'before',
-                    type: 'virtual',
-                    value: (
-                      'borderOpacity':(
-                        index: 'borderOpacity',
-                        name: 'border-opacity',
-                        type: 'property',
-                        value: 0,
                       ),
                     ),
                   ),
@@ -8160,33 +8187,6 @@ $designsProperties: (
                 type: 'property',
                 value: 'var(--d-sys-transitionDuration-sm)',
               ),
-            ),
-          ),
-          'label':(
-            index: 'label',
-            name: '&__label',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'icon':(
-            index: 'icon',
-            name: '&__icon',
-            type: 'subclass',
-            value: (
-              'color':(
-                index: 'color',
-                name: 'palette-color',
-                type: 'property',
-                value: 'var(--m3-sys-palette-primary)',
-              ),
-            ),
-          ),
-          'trailing':(
-            index: 'trailing',
-            name: '&__trailing',
-            type: 'subclass',
-            value: (
             ),
           ),
           'palette':(
@@ -8664,41 +8664,6 @@ $designsProperties: (
             type: 'var',
             value: 'var(--m3-sys-opacity-high)',
           ),
-          'visible':(
-            index: 'visible',
-            name: '&--visible',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'right':(
-            index: 'right',
-            name: '&--right',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'dir':(
-            index: 'dir',
-            name: '&--dir',
-            type: 'state',
-            value: (
-              'ltr':(
-                index: 'ltr',
-                name: '&--ltr',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'rtl':(
-                index: 'rtl',
-                name: '&--rtl',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
           'input':(
             index: 'input',
             name: '&__input',
@@ -8785,6 +8750,41 @@ $designsProperties: (
               ),
             ),
           ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'right':(
+            index: 'right',
+            name: '&--right',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dir':(
+            index: 'dir',
+            name: '&--dir',
+            type: 'state',
+            value: (
+              'ltr':(
+                index: 'ltr',
+                name: '&--ltr',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rtl':(
+                index: 'rtl',
+                name: '&--rtl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
         ),
       ),
       'progress':(
@@ -8809,6 +8809,20 @@ $designsProperties: (
             name: '--m3-progress-opacity',
             type: 'var',
             value: 'var(--m3-sys-opacity-012)',
+          ),
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
           ),
           'linear':(
             index: 'linear',
@@ -8897,20 +8911,6 @@ $designsProperties: (
             index: 'inverse',
             name: '&--inverse',
             type: 'state',
-            value: (
-            ),
-          ),
-          'circle':(
-            index: 'circle',
-            name: '&__circle',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'circleSub':(
-            index: 'circleSub',
-            name: '&__circleSub',
-            type: 'subclass',
             value: (
             ),
           ),

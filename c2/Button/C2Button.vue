@@ -6,6 +6,9 @@ import { inArray } from '../../functions/object.ts'
 
 import { ButtonDesign } from '../../constructors/Button/ButtonDesign'
 
+import C2Icon from '../Icon/C2Icon.vue'
+import C2Progress from '../Progress/C2Progress.vue'
+
 import {
   type ConstrClasses,
   type ConstrStyles
@@ -35,12 +38,11 @@ const classesToken = computed<ConstrClasses>(() => ({
     [`c2-button--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
     [`c2-button--intent--${props.intent}`]: inArray(propsValues.intent, props.intent),
     [`c2-button--size--${props.size}`]: inArray(propsValues.size, props.size),
-    'c2-button--normal': props.normal,
-    'c2-button--primary': props.primary && !props.secondary && !props.outline && !props.ghost && !props.link,
-    'c2-button--secondary': props.secondary,
     'c2-button--outline': props.outline,
-    'c2-button--ghost': props.ghost,
-    'c2-button--link': props.link
+    'c2-button--link': props.link,
+    'c2-button--primary': props.primary && !props.outline && !props.link && !props.secondary && !props.ghost,
+    'c2-button--secondary': props.secondary,
+    'c2-button--ghost': props.ghost
     // :classes-values [!] System label / Системная метка
   }
 }))
@@ -53,6 +55,10 @@ const design = new ButtonDesign(
   'c2.button',
   props,
   {
+    components: {
+      icon: C2Icon,
+      progress: C2Progress
+    },
     emits,
     classes: classesToken,
     styles: stylesToken
