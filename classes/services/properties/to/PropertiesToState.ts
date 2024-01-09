@@ -1,8 +1,9 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-
-import { PropertyCategory, type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
 import { isObjectNotArray } from '../../../../functions/data.ts'
+
+import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+
+import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
 
 /**
  * A class for transforming components.<br>
@@ -40,13 +41,11 @@ export class PropertiesToState extends PropertiesToAbstract {
     }
 
     if (
-      item?.[PropertyKey.category] === PropertyCategory.style || (
-        !item?.[PropertyKey.state] &&
-        parents.length > 2 &&
-        isObjectNotArray(parents?.[1].item.value) &&
-        name in parents?.[1].item.value &&
-        parents?.[1].item.value[name][PropertyKey.variable] === PropertyType.state
-      )
+      !item?.[PropertyKey.state] &&
+      parents.length > 2 &&
+      isObjectNotArray(parents?.[1].item.value) &&
+      name in parents?.[1].item.value &&
+      parents?.[1].item.value[name][PropertyKey.variable] === PropertyType.state
     ) {
       return `&.${parents?.[1].item[PropertyKey.name]}--${newName}`
     }

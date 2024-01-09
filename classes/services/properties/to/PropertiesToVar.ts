@@ -162,7 +162,6 @@ export class PropertiesToVar extends PropertiesToAbstract {
     } = property
 
     if (item?.[PropertyKey.cssColorOpacity]) {
-      console.log('in', property.name, value, Boolean(item?.[PropertyKey.cssColorOpacity]))
       return true
     }
 

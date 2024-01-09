@@ -16808,7 +16808,7 @@ $designsProperties: (
           ),
           'color':(
             index: 'color',
-            name: 'color',
+            name: 'palette-color',
             type: 'property',
             value: 'var(--c2-st-action-fg-color-primary-normal)',
           ),
@@ -16911,7 +16911,7 @@ $designsProperties: (
             value: (
               'color':(
                 index: 'color',
-                name: 'color',
+                name: 'palette-color',
                 type: 'property',
                 value: 'var(--c2-st-action-fg-color-primary-select)',
               ),
@@ -16963,152 +16963,6 @@ $designsProperties: (
                         name: 'padding-x',
                         type: 'property',
                         value: 0,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'intent':(
-            index: 'intent',
-            name: '&--intent',
-            type: 'state',
-            value: (
-              'default':(
-                index: 'default',
-                name: '&--default',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'positive':(
-                index: 'positive',
-                name: '&--positive',
-                type: 'state',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-positive-normal)',
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'selected':(
-                    index: 'selected',
-                    name: '&.c2-button--selected',
-                    type: 'state',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-positive-select)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'negative':(
-                index: 'negative',
-                name: '&--negative',
-                type: 'state',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-negative-normal)',
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'selected':(
-                    index: 'selected',
-                    name: '&.c2-button--selected',
-                    type: 'state',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-negative-select)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'neutral':(
-                index: 'neutral',
-                name: '&--neutral',
-                type: 'state',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-fg-color-neutral-normal)',
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'selected':(
-                    index: 'selected',
-                    name: '&.c2-button--selected',
-                    type: 'state',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-fg-color-neutral-select)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'informative':(
-                index: 'informative',
-                name: '&--informative',
-                type: 'state',
-                value: (
-                  'color':(
-                    index: 'color',
-                    name: 'color',
-                    type: 'property',
-                    value: 'var(--c2-st-action-bg-color-informative-normal)',
-                  ),
-                  'icon':(
-                    index: 'icon',
-                    name: '& .c2-button__icon',
-                    type: 'subclass',
-                    value: (
-                    ),
-                  ),
-                  'selected':(
-                    index: 'selected',
-                    name: '&.c2-button--selected',
-                    type: 'state',
-                    value: (
-                      'color':(
-                        index: 'color',
-                        name: 'color',
-                        type: 'property',
-                        value: 'var(--c2-st-action-bg-color-informative-select)',
                       ),
                     ),
                   ),
@@ -17532,7 +17386,7 @@ $designsProperties: (
           ),
           'outline':(
             index: 'outline',
-            name: '&.c2-button--outline',
+            name: '&--outline',
             type: 'state',
             value: (
               'borderWidth':(
@@ -17549,7 +17403,7 @@ $designsProperties: (
               ),
               'color':(
                 index: 'color',
-                name: 'color',
+                name: 'palette-color',
                 type: 'property',
                 value: 'var(--c2-st-action-fg-color-neutral-normal)',
               ),
@@ -17629,7 +17483,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-neutral-hover)',
                   ),
@@ -17654,7 +17508,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-neutral-active)',
                   ),
@@ -17692,7 +17546,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-neutral-select)',
                   ),
@@ -17759,7 +17613,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-hover)',
                           ),
@@ -17778,7 +17632,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-active)',
                           ),
@@ -17849,7 +17703,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-hover)',
                           ),
@@ -17868,7 +17722,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-active)',
                           ),
@@ -17939,7 +17793,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-hover)',
                           ),
@@ -17958,7 +17812,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-active)',
                           ),
@@ -18029,7 +17883,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-hover)',
                           ),
@@ -18048,7 +17902,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-active)',
                           ),
@@ -18144,7 +17998,7 @@ $designsProperties: (
           ),
           'link':(
             index: 'link',
-            name: '&.c2-button--link',
+            name: '&--link',
             type: 'state',
             value: (
               'padding':(
@@ -18203,7 +18057,7 @@ $designsProperties: (
               ),
               'color':(
                 index: 'color',
-                name: 'color',
+                name: 'palette-color',
                 type: 'property',
                 value: 'var(--c2-st-action-fg-color-primary-normal)',
               ),
@@ -18240,7 +18094,7 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-focus)',
                   ),
@@ -18259,7 +18113,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-hover)',
                   ),
@@ -18272,7 +18126,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-active)',
                   ),
@@ -18303,7 +18157,7 @@ $designsProperties: (
                     value: (
                       'color':(
                         index: 'color',
-                        name: 'color',
+                        name: 'palette-color',
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-neutral-normal)',
                       ),
@@ -18334,7 +18188,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-hover)',
                           ),
@@ -18347,7 +18201,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-active)',
                           ),
@@ -18360,7 +18214,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-select)',
                           ),
@@ -18375,7 +18229,7 @@ $designsProperties: (
                     value: (
                       'color':(
                         index: 'color',
-                        name: 'color',
+                        name: 'palette-color',
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-positive-normal)',
                       ),
@@ -18393,7 +18247,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-hover)',
                           ),
@@ -18406,7 +18260,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-active)',
                           ),
@@ -18419,7 +18273,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-select)',
                           ),
@@ -18434,7 +18288,7 @@ $designsProperties: (
                     value: (
                       'color':(
                         index: 'color',
-                        name: 'color',
+                        name: 'palette-color',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-informative-normal)',
                       ),
@@ -18452,7 +18306,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-hover)',
                           ),
@@ -18465,7 +18319,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-active)',
                           ),
@@ -18478,7 +18332,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-select)',
                           ),
@@ -18493,7 +18347,7 @@ $designsProperties: (
                     value: (
                       'color':(
                         index: 'color',
-                        name: 'color',
+                        name: 'palette-color',
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-negative-normal)',
                       ),
@@ -18511,7 +18365,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-hover)',
                           ),
@@ -18524,7 +18378,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-active)',
                           ),
@@ -18541,7 +18395,7 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-select)',
                   ),
@@ -18831,9 +18685,155 @@ $designsProperties: (
               ),
             ),
           ),
+          'intent':(
+            index: 'intent',
+            name: '&--intent',
+            type: 'state',
+            value: (
+              'default':(
+                index: 'default',
+                name: '&--default',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'positive':(
+                index: 'positive',
+                name: '&--positive',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'palette-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-positive-normal)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                  'selected':(
+                    index: 'selected',
+                    name: '&.c2-button--selected',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'palette-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-positive-select)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'negative':(
+                index: 'negative',
+                name: '&--negative',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'palette-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-negative-normal)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                  'selected':(
+                    index: 'selected',
+                    name: '&.c2-button--selected',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'palette-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-negative-select)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'neutral':(
+                index: 'neutral',
+                name: '&--neutral',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'palette-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-fg-color-neutral-normal)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                  'selected':(
+                    index: 'selected',
+                    name: '&.c2-button--selected',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'palette-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-fg-color-neutral-select)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'informative':(
+                index: 'informative',
+                name: '&--informative',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'palette-color',
+                    type: 'property',
+                    value: 'var(--c2-st-action-bg-color-informative-normal)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '& .c2-button__icon',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                  'selected':(
+                    index: 'selected',
+                    name: '&.c2-button--selected',
+                    type: 'state',
+                    value: (
+                      'color':(
+                        index: 'color',
+                        name: 'palette-color',
+                        type: 'property',
+                        value: 'var(--c2-st-action-bg-color-informative-select)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
           'primary':(
             index: 'primary',
-            name: '&.c2-button--primary',
+            name: '&--primary',
             type: 'state',
             value: (
               'color':(
@@ -18844,7 +18844,7 @@ $designsProperties: (
               ),
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'background-color',
+                name: 'palette-background',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
               ),
@@ -18881,7 +18881,7 @@ $designsProperties: (
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-hover)',
                   ),
@@ -18900,7 +18900,7 @@ $designsProperties: (
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-active)',
                   ),
@@ -18981,7 +18981,7 @@ $designsProperties: (
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-solid-select)',
                   ),
@@ -18999,7 +18999,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-positive-normal)',
                       ),
@@ -19010,7 +19010,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-hover)',
                           ),
@@ -19023,7 +19023,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-active)',
                           ),
@@ -19036,7 +19036,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-select)',
                           ),
@@ -19051,7 +19051,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-informative-normal)',
                       ),
@@ -19062,7 +19062,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-hover)',
                           ),
@@ -19075,7 +19075,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-active)',
                           ),
@@ -19088,7 +19088,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-select)',
                           ),
@@ -19103,7 +19103,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-negative-normal)',
                       ),
@@ -19114,7 +19114,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-hover)',
                           ),
@@ -19127,7 +19127,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-active)',
                           ),
@@ -19140,7 +19140,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-select)',
                           ),
@@ -19161,7 +19161,7 @@ $designsProperties: (
                       ),
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-neutral-solid-normal)',
                       ),
@@ -19185,7 +19185,7 @@ $designsProperties: (
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-hover)',
                           ),
@@ -19204,7 +19204,7 @@ $designsProperties: (
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-active)',
                           ),
@@ -19223,7 +19223,7 @@ $designsProperties: (
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-solid-select)',
                           ),
@@ -19258,12 +19258,12 @@ $designsProperties: (
           ),
           'secondary':(
             index: 'secondary',
-            name: '&.c2-button--secondary',
+            name: '&--secondary',
             type: 'state',
             value: (
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'background-color',
+                name: 'palette-background',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-primary-subtle-normal)',
               ),
@@ -19294,13 +19294,13 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-hover)',
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-subtle-hover)',
                   ),
@@ -19313,13 +19313,13 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-active)',
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-subtle-active)',
                   ),
@@ -19345,7 +19345,7 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-primary-subtle-select)',
                   ),
@@ -19363,7 +19363,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-positive-subtle-normal)',
                       ),
@@ -19381,13 +19381,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-hover)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-hover)',
                           ),
@@ -19400,13 +19400,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-active)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-active)',
                           ),
@@ -19419,7 +19419,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-positive-subtle-select)',
                           ),
@@ -19434,13 +19434,13 @@ $designsProperties: (
                     value: (
                       'color':(
                         index: 'color',
-                        name: 'color',
+                        name: 'palette-color',
                         type: 'property',
                         value: 'var(--c2-st-action-fg-color-informative-normal)',
                       ),
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-informative-subtle-normal)',
                       ),
@@ -19458,13 +19458,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-informative-hover)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-subtle-hover)',
                           ),
@@ -19477,13 +19477,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-informative-active)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-subtle-active)',
                           ),
@@ -19496,7 +19496,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-subtle-select)',
                           ),
@@ -19511,7 +19511,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-negative-subtle-normal)',
                       ),
@@ -19529,13 +19529,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-hover)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-subtle-hover)',
                           ),
@@ -19548,13 +19548,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-active)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-subtle-active)',
                           ),
@@ -19567,7 +19567,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-negative-subtle-select)',
                           ),
@@ -19582,7 +19582,7 @@ $designsProperties: (
                     value: (
                       'backgroundColor':(
                         index: 'backgroundColor',
-                        name: 'background-color',
+                        name: 'palette-background',
                         type: 'property',
                         value: 'var(--c2-st-action-bg-color-neutral-subtle-normal)',
                       ),
@@ -19600,13 +19600,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-hover)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-subtle-hover)',
                           ),
@@ -19619,13 +19619,13 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-active)',
                           ),
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-subtle-active)',
                           ),
@@ -19638,7 +19638,7 @@ $designsProperties: (
                         value: (
                           'backgroundColor':(
                             index: 'backgroundColor',
-                            name: 'background-color',
+                            name: 'palette-background',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-neutral-subtle-select)',
                           ),
@@ -19715,12 +19715,12 @@ $designsProperties: (
           ),
           'ghost':(
             index: 'ghost',
-            name: '&.c2-button--ghost',
+            name: '&--ghost',
             type: 'state',
             value: (
               'backgroundColor':(
                 index: 'backgroundColor',
-                name: 'background-color',
+                name: 'palette-background',
                 type: 'property',
                 value: 'var(--c2-st-action-bg-color-neutral-ghost-normal)',
               ),
@@ -19738,7 +19738,7 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-focus)',
                   ),
@@ -19757,13 +19757,13 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-hover)',
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-hover)',
                   ),
@@ -19776,13 +19776,13 @@ $designsProperties: (
                 value: (
                   'color':(
                     index: 'color',
-                    name: 'color',
+                    name: 'palette-color',
                     type: 'property',
                     value: 'var(--c2-st-action-fg-color-primary-active)',
                   ),
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-active)',
                   ),
@@ -19808,7 +19808,7 @@ $designsProperties: (
                 value: (
                   'backgroundColor':(
                     index: 'backgroundColor',
-                    name: 'background-color',
+                    name: 'palette-background',
                     type: 'property',
                     value: 'var(--c2-st-action-bg-color-neutral-ghost-select)',
                   ),
@@ -19922,7 +19922,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-hover)',
                           ),
@@ -19935,7 +19935,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-neutral-active)',
                           ),
@@ -19962,7 +19962,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-hover)',
                           ),
@@ -19975,7 +19975,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-positive-active)',
                           ),
@@ -20002,7 +20002,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-hover)',
                           ),
@@ -20015,7 +20015,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-bg-color-informative-active)',
                           ),
@@ -20042,7 +20042,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-hover)',
                           ),
@@ -20055,7 +20055,7 @@ $designsProperties: (
                         value: (
                           'color':(
                             index: 'color',
-                            name: 'color',
+                            name: 'palette-color',
                             type: 'property',
                             value: 'var(--c2-st-action-fg-color-negative-active)',
                           ),
@@ -20087,6 +20087,12 @@ $designsProperties: (
                 ),
               ),
             ),
+          ),
+          'palette':(
+            index: 'palette',
+            name: 'palette',
+            type: 'link-class',
+            value: '{c2.palette}',
           ),
         ),
       ),
@@ -20463,7 +20469,7 @@ $designsProperties: (
           ),
           'avatar':(
             index: 'avatar',
-            name: '&.c2-avatar--avatar',
+            name: '&--avatar',
             type: 'state',
             value: (
               'gap':(

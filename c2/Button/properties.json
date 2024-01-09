@@ -6,6 +6,12 @@
   "padding": {
     "_type": "property"
   },
+  "color": {
+    "_rename": "palette-color"
+  },
+  "background-color": {
+    "_rename": "palette-background"
+  },
   "container": {
     "content": {
       "label": {
@@ -14,9 +20,6 @@
       "_drag": "../.."
     },
     "_type": "none",
-    "_settingClone": true
-  },
-  "intent": {
     "_settingClone": true
   },
   "icon": {
@@ -44,6 +47,9 @@
     "_default": "md"
   },
   "outline": {
+    "background-color": {
+      "_rename": "background-color"
+    },
     "border-width": {
       "_type": "var"
     },
@@ -71,5 +77,14 @@
     "#label": {
       "border-bottom": "1px dashed"
     }
-  }
+  },
+  "intent": {
+    "_settingClone": true
+  },
+  "primary": {
+    "color": {
+      "_rename": "color"
+    }
+  },
+  "@@palette": "{palette}"
 }

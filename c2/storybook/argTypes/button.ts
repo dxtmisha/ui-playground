@@ -140,6 +140,16 @@ export const buttonArgs: StorybookArgs = {
     },
     description: 'Кнопки распределены по ролям, для обозначения типов действия. ' +
       'Если тип действия не подходит ни под одну роль, рекомендуется использовать Default кнопки'
+  },
+  palette: {
+    control: StorybookControl.select,
+    options: propsValues.palette,
+    table: {
+      category: StorybookCategory.token,
+      type: { summary: propsValues.palette.join(' | ') }
+    },
+    // Additional palettes. Use only if the task requires it
+    description: 'Дополнительные палитры. Использовать только если задача в этом требует.'
   }
 }
 

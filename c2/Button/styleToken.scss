@@ -17,7 +17,7 @@
   text-decoration: var(--c2-ot-typography-textDecoration-none);
   @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
   
-  @include color(#{var(--c2-st-action-fg-color-primary-normal)});
+  @include paletteColor(#{var(--c2-st-action-fg-color-primary-normal)});
   
   border-radius: var(--c2-st-selectable-borderRadius-size-xl);
   
@@ -37,7 +37,7 @@
   }
   
   &--selected {
-    @include color(#{var(--c2-st-action-fg-color-primary-select)});
+    @include paletteColor(#{var(--c2-st-action-fg-color-primary-select)});
   }
   
   &--adaptive {
@@ -48,40 +48,6 @@
         display: none;
         
         @include paddingX(#{0});
-      }
-    }
-  }
-  
-  &--intent {
-    &--positive {
-      @include color(#{var(--c2-st-action-fg-color-positive-normal)});
-      
-      &.c2-button--selected {
-        @include color(#{var(--c2-st-action-fg-color-positive-select)});
-      }
-    }
-    
-    &--negative {
-      @include color(#{var(--c2-st-action-fg-color-negative-normal)});
-      
-      &.c2-button--selected {
-        @include color(#{var(--c2-st-action-fg-color-negative-select)});
-      }
-    }
-    
-    &--neutral {
-      @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
-      
-      &.c2-button--selected {
-        @include color(#{var(--c2-st-action-fg-color-neutral-select)});
-      }
-    }
-    
-    &--informative {
-      @include color(#{var(--c2-st-action-bg-color-informative-normal)});
-      
-      &.c2-button--selected {
-        @include color(#{var(--c2-st-action-bg-color-informative-select)});
       }
     }
   }
@@ -173,11 +139,11 @@
     }
   }
   
-  &.c2-button--outline {
+  &--outline {
     --c2-button-borderWidth: 1px;
     --c2-button-borderStyle: solid;
     
-    @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
+    @include paletteColor(#{var(--c2-st-action-fg-color-neutral-normal)});
     
     @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-normal)});
     
@@ -198,7 +164,7 @@
     }
     
     @include hover('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-neutral-hover)});
       
       @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-hover)});
       
@@ -206,7 +172,7 @@
     }
     
     @include active('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-neutral-active)});
       
       @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-active)});
       
@@ -218,7 +184,7 @@
     }
     
     &.c2-button--selected {
-      @include color(#{var(--c2-st-action-fg-color-neutral-select)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-neutral-select)});
       
       @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-invert-select)});
       
@@ -236,13 +202,13 @@
         }
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-hover)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-positive-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-active)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-positive-active)});
         }
@@ -262,13 +228,13 @@
         }
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-hover)});
           
           @include borderColor(#{var(--c2-st-action-bg-color-informative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-active)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-active)});
           
           @include borderColor(#{var(--c2-st-action-bg-color-informative-active)});
         }
@@ -288,13 +254,13 @@
         }
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-hover)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-negative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-active)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-negative-active)});
         }
@@ -314,13 +280,13 @@
         }
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-hover)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-neutral-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-active)});
           
           @include borderColor(#{var(--c2-st-action-fg-color-neutral-active)});
         }
@@ -332,7 +298,7 @@
     }
   }
   
-  &.c2-button--link {
+  &--link {
     padding: 0;
     
     font-family: var(--c2-ot-typography-fontFamily-base);
@@ -344,7 +310,7 @@
     text-decoration: var(--c2-ot-typography-textDecoration-none);
     @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
     
-    @include color(#{var(--c2-st-action-fg-color-primary-normal)});
+    @include paletteColor(#{var(--c2-st-action-fg-color-primary-normal)});
     
     border-radius: unset;
     
@@ -353,17 +319,17 @@
     }
     
     @include focus('.c2-button') {
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
       
       box-shadow: var(--c2-st-elevation-onLight-focus-sm);
     }
     
     @include hover('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-hover)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-hover)});
     }
     
     @include active('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-active)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-active)});
     }
     
     @include disabled('.c2-button') {
@@ -372,72 +338,72 @@
     
     &.c2-button--intent {
       &--neutral {
-        @include color(#{var(--c2-st-action-fg-color-neutral-normal)});
+        @include paletteColor(#{var(--c2-st-action-fg-color-neutral-normal)});
         
         @include focus('.c2-button') {
           box-shadow: var(--c2-st-elevation-onLight-focus-xs);
         }
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-active)});
         }
         
         &.c2-button--selected {
-          @include color(#{var(--c2-st-action-fg-color-neutral-select)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-select)});
         }
       }
       
       &--positive {
-        @include color(#{var(--c2-st-action-fg-color-positive-normal)});
+        @include paletteColor(#{var(--c2-st-action-fg-color-positive-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-active)});
         }
         
         &.c2-button--selected {
-          @include color(#{var(--c2-st-action-fg-color-positive-select)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-select)});
         }
       }
       
       &--informative {
-        @include color(#{var(--c2-st-action-bg-color-informative-normal)});
+        @include paletteColor(#{var(--c2-st-action-bg-color-informative-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-active)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-active)});
         }
         
         &.c2-button--selected {
-          @include color(#{var(--c2-st-action-bg-color-informative-select)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-select)});
         }
       }
       
       &--negative {
-        @include color(#{var(--c2-st-action-fg-color-negative-normal)});
+        @include paletteColor(#{var(--c2-st-action-fg-color-negative-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-active)});
         }
       }
     }
     
     &.c2-button--selected {
-      @include color(#{var(--c2-st-action-fg-color-primary-select)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-select)});
     }
     
     &.c2-button--size {
@@ -498,10 +464,44 @@
     }
   }
   
-  &.c2-button--primary {
+  &--intent {
+    &--positive {
+      @include paletteColor(#{var(--c2-st-action-fg-color-positive-normal)});
+      
+      &.c2-button--selected {
+        @include paletteColor(#{var(--c2-st-action-fg-color-positive-select)});
+      }
+    }
+    
+    &--negative {
+      @include paletteColor(#{var(--c2-st-action-fg-color-negative-normal)});
+      
+      &.c2-button--selected {
+        @include paletteColor(#{var(--c2-st-action-fg-color-negative-select)});
+      }
+    }
+    
+    &--neutral {
+      @include paletteColor(#{var(--c2-st-action-fg-color-neutral-normal)});
+      
+      &.c2-button--selected {
+        @include paletteColor(#{var(--c2-st-action-fg-color-neutral-select)});
+      }
+    }
+    
+    &--informative {
+      @include paletteColor(#{var(--c2-st-action-bg-color-informative-normal)});
+      
+      &.c2-button--selected {
+        @include paletteColor(#{var(--c2-st-action-bg-color-informative-select)});
+      }
+    }
+  }
+  
+  &--primary {
     @include color(#{var(--c2-st-action-fg-color-onprimary-normal)});
     
-    @include backgroundColor(#{var(--c2-st-action-bg-color-primary-solid-normal)});
+    @include paletteBackground(#{var(--c2-st-action-bg-color-primary-solid-normal)});
     
     @include focus('.c2-button') {
       box-shadow: var(--c2-st-elevation-onLight-focus-md);
@@ -510,13 +510,13 @@
     @include hover('.c2-button') {
       @include color(#{var(--c2-st-action-fg-color-onprimary-hover)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-solid-hover)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-solid-hover)});
     }
     
     @include active('.c2-button') {
       @include color(#{var(--c2-st-action-fg-color-onprimary-active)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-solid-active)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-solid-active)});
     }
     
     @include disabled('.c2-button') {
@@ -526,101 +526,101 @@
     &.c2-button--selected {
       @include color(#{var(--c2-st-action-fg-color-onprimary-select)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-solid-select)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-solid-select)});
     }
     
     &.c2-button--intent {
       &--positive {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-positive-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-positive-normal)});
         
         @include hover('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-hover)});
         }
         
         @include active('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-select)});
         }
       }
       
       &--informative {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-informative-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-informative-normal)});
         
         @include hover('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-hover)});
         }
         
         @include active('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-select)});
         }
       }
       
       &--negative {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-negative-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-negative-normal)});
         
         @include hover('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-hover)});
         }
         
         @include active('.c2-button') {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-select)});
         }
       }
       
       &--neutral {
         @include color(#{var(--c2-st-action-bg-color-neutral-invert-normal)});
         
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-solid-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-solid-normal)});
         
         @include hover('.c2-button') {
           @include color(#{var(--c2-st-action-bg-color-neutral-invert-hover)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-solid-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-solid-hover)});
         }
         
         @include active('.c2-button') {
           @include color(#{var(--c2-st-action-bg-color-neutral-invert-active)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-solid-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-solid-active)});
         }
         
         &.c2-button--selected {
           @include color(#{var(--c2-st-action-bg-color-neutral-invert-select)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-solid-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-solid-select)});
         }
       }
     }
   }
   
-  &.c2-button--secondary {
-    @include backgroundColor(#{var(--c2-st-action-bg-color-primary-subtle-normal)});
+  &--secondary {
+    @include paletteBackground(#{var(--c2-st-action-bg-color-primary-subtle-normal)});
     
     @include focus('.c2-button') {
       box-shadow: var(--c2-st-elevation-onLight-focus-md);
     }
     
     @include hover('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-hover)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-hover)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-subtle-hover)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-subtle-hover)});
     }
     
     @include active('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-active)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-active)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-subtle-active)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-subtle-active)});
     }
     
     @include disabled('.c2-button') {
@@ -628,113 +628,113 @@
     }
     
     &.c2-button--selected {
-      @include backgroundColor(#{var(--c2-st-action-bg-color-primary-subtle-select)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-primary-subtle-select)});
     }
     
     &.c2-button--intent {
       &--positive {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-positive-subtle-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-positive-subtle-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-hover)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-subtle-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-subtle-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-active)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-subtle-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-subtle-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-positive-subtle-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-positive-subtle-select)});
         }
       }
       
       &--informative {
-        @include color(#{var(--c2-st-action-fg-color-informative-normal)});
+        @include paletteColor(#{var(--c2-st-action-fg-color-informative-normal)});
         
-        @include backgroundColor(#{var(--c2-st-action-bg-color-informative-subtle-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-informative-subtle-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-informative-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-informative-hover)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-subtle-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-subtle-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-informative-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-informative-active)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-subtle-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-subtle-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-informative-subtle-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-informative-subtle-select)});
         }
       }
       
       &--negative {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-negative-subtle-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-negative-subtle-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-hover)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-subtle-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-subtle-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-active)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-subtle-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-subtle-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-negative-subtle-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-negative-subtle-select)});
         }
       }
       
       &--neutral {
-        @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-subtle-normal)});
+        @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-subtle-normal)});
         
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-hover)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-subtle-hover)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-subtle-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-active)});
           
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-subtle-active)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-subtle-active)});
         }
         
         &.c2-button--selected {
-          @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-subtle-select)});
+          @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-subtle-select)});
         }
       }
     }
   }
   
-  &.c2-button--ghost {
-    @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
+  &--ghost {
+    @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-normal)});
     
     @include focus('.c2-button') {
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-focus)});
       
       box-shadow: var(--c2-st-elevation-onLight-focus-md);
     }
     
     @include hover('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-hover)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-hover)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-hover)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-hover)});
     }
     
     @include active('.c2-button') {
-      @include color(#{var(--c2-st-action-fg-color-primary-active)});
+      @include paletteColor(#{var(--c2-st-action-fg-color-primary-active)});
       
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-active)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-active)});
     }
     
     @include disabled('.c2-button') {
@@ -742,47 +742,47 @@
     }
     
     &.c2-button--selected {
-      @include backgroundColor(#{var(--c2-st-action-bg-color-neutral-ghost-select)});
+      @include paletteBackground(#{var(--c2-st-action-bg-color-neutral-ghost-select)});
     }
     
     &.c2-button--intent {
       &--neutral {
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-neutral-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-neutral-active)});
         }
       }
       
       &--positive {
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-positive-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-positive-active)});
         }
       }
       
       &--informative {
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-hover)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-bg-color-informative-active)});
+          @include paletteColor(#{var(--c2-st-action-bg-color-informative-active)});
         }
       }
       
       &--negative {
         @include hover('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-hover)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-hover)});
         }
         
         @include active('.c2-button') {
-          @include color(#{var(--c2-st-action-fg-color-negative-active)});
+          @include paletteColor(#{var(--c2-st-action-fg-color-negative-active)});
         }
       }
     }

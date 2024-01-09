@@ -36,13 +36,14 @@ const classesToken = computed<ConstrClasses>(() => ({
     'c2-button--loading': props.loading,
     'c2-button--readonly': props.readonly,
     [`c2-button--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
-    [`c2-button--intent--${props.intent}`]: inArray(propsValues.intent, props.intent),
     [`c2-button--size--${props.size}`]: inArray(propsValues.size, props.size),
     'c2-button--outline': props.outline,
     'c2-button--link': props.link,
+    [`c2-button--intent--${props.intent}`]: inArray(propsValues.intent, props.intent),
     'c2-button--primary': props.primary && !props.outline && !props.link && !props.secondary && !props.ghost,
     'c2-button--secondary': props.secondary,
-    'c2-button--ghost': props.ghost
+    'c2-button--ghost': props.ghost,
+    [`c2-palette--${props.palette}`]: inArray(propsValues.palette, props.palette)
     // :classes-values [!] System label / Системная метка
   }
 }))
