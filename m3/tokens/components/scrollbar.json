@@ -1,0 +1,18 @@
+{
+  "size": "{ref.spacing.2}",
+  "background": "{sys.palette.outlineVariant}",
+  "backgroundOpacity": "{sys.opacity.016}",
+  "thumb": {
+    "background": "{sys.palette.outlineVariant}",
+    "opacity": "{sys.opacity.disabled}",
+    "rounded": "{ref.spacing.2}",
+    "hover": {
+      "opacity": "1"
+    }
+  },
+  "outline": {
+    "width": "{ref.spacing.px}",
+    "color": "{sys.palette.outlineVariant}",
+    "opacity": "1"
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../styles/all";
+
+@mixin mixinWindowToken {
+  // :style [!] System label / Системная метка
+  z-index: var(--m3-ref-index-4);
+  
+  padding: var(--m3-ref-spacing-4);
+  
+  &__body {
+    z-index: var(--m3-ref-index-4);
+    
+    background: var(--m3-ref-background-4);
+    
+    box-shadow: var(--m3-ref-shadow-4);
+  }
+  
+  &--width {
+    &--sm {
+      --m3-window-width: calc(var(--m3-ref-spacing-px) * 512);
+    }
+    
+    &--md {
+      --m3-window-width: calc(var(--m3-ref-spacing-px) * 768);
+    }
+    
+    &--lg {
+      --m3-window-width: calc(var(--m3-ref-spacing-px) * 1024);
+    }
+    
+    &--custom {
+      --m3-window-width: var(--m3-window-sys-width);
+    }
+  }
+  
+  &--height {
+    &--sm {
+      --m3-window-height: calc(var(--m3-ref-spacing-px) * 256);
+    }
+    
+    &--md {
+      --m3-window-height: calc(var(--m3-ref-spacing-px) * 384);
+    }
+    
+    &--lg {
+      --m3-window-height: calc(var(--m3-ref-spacing-px) * 512);
+    }
+    
+    &--custom {
+      --m3-window-height: var(--m3-window-sys-height);
+    }
+  }
+  
+  &--menu {
+    &.m3-window--width {
+      &--sm {
+        @include width(#{calc(var(--m3-ref-spacing-px) * 128)});
+      }
+      
+      &--md {
+        @include width(#{calc(var(--m3-ref-spacing-px) * 192)});
+      }
+      
+      &--lg {
+        @include width(#{calc(var(--m3-ref-spacing-px) * 256)});
+      }
+    }
+    
+    &.m3-window--height {
+      &--sm {
+        @include height(#{calc(var(--m3-ref-spacing-px) * 64)});
+      }
+      
+      &--md {
+        @include height(#{calc(var(--m3-ref-spacing-px) * 192)});
+      }
+      
+      &--lg {
+        @include height(#{calc(var(--m3-ref-spacing-px) * 256)});
+      }
+    }
+  }
+  // :style [!] System label / Системная метка
+}

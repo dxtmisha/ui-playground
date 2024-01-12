@@ -1,0 +1,29 @@
+{
+  "z-index": "{ref.index.4}",
+  "padding": "{ref.spacing.4}",
+  "width": {
+    "sm": "{ref.spacing.px} * 512",
+    "md": "{ref.spacing.px} * 768",
+    "lg": "{ref.spacing.px} * 1024"
+  },
+  "height": {
+    "sm": "{ref.spacing.px} * 256",
+    "md": "{ref.spacing.px} * 384",
+    "lg": "{ref.spacing.px} * 512"
+  },
+  "body": {
+    "elevation": "{elevation.4}"
+  },
+  "menu": {
+    "width": {
+      "sm": "{ref.spacing.px} * 128",
+      "md": "{ref.spacing.px} * 192",
+      "lg": "{ref.spacing.px} * 256"
+    },
+    "height": {
+      "sm": "{ref.spacing.px} * 64",
+      "md": "{ref.spacing.px} * 192",
+      "lg": "{ref.spacing.px} * 256"
+    }
+  }
+}

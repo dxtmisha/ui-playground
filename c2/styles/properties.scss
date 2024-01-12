@@ -1072,6 +1072,132 @@ $designsProperties: (
           ),
         ),
       ),
+      'scrollbar':(
+        index: 'scrollbar',
+        name: 'd-scrollbar',
+        type: 'component',
+        value: (
+          'thumb':(
+            index: 'thumb',
+            name: 'thumb',
+            type: 'var',
+            value: (
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'var',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: 'outline',
+            type: 'var',
+            value: (
+            ),
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'border':(
+            index: 'border',
+            name: '&--border',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'window':(
+        index: 'window',
+        name: 'd-window',
+        type: 'component',
+        value: (
+          'body':(
+            index: 'body',
+            name: '&__body',
+            type: 'subclass',
+            value: (
+              'context':(
+                index: 'context',
+                name: '&__context',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'control':(
+            index: 'control',
+            name: '&__control',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'width':(
+            index: 'width',
+            name: '&--width',
+            type: 'state',
+            value: (
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 'var(--d-window-sys-width)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 'var(--d-window-sys-height)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'menu':(
+            index: 'menu',
+            name: '&--menu',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
     ),
   ),
   'c2':(

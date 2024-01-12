@@ -19,7 +19,6 @@ $designsClassName: 'class' !default;
 }
 
 /// Returns the class name
-///
 /// Возвращает название класса
 /// @param {String} $name
 /// @return {String}
@@ -28,7 +27,6 @@ $designsClassName: 'class' !default;
 }
 
 /// Returns the variable name
-///
 /// Возвращает название переменной
 /// @param {String} $name
 /// @return {String}
@@ -37,7 +35,6 @@ $designsClassName: 'class' !default;
 }
 
 /// Returns the variable name
-///
 /// Возвращает название переменной
 /// @param {String} $name
 /// @param {String} $default default values / значения по умолчанию
@@ -72,7 +69,6 @@ $designsClassName: 'class' !default;
 }
 
 /// Transforming a name string, changing it to full format
-///
 /// Преобразование строки названия, изменяющей ее на полный формат
 /// @param {String} $name
 /// @return {String}

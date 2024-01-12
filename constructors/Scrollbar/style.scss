@@ -1,0 +1,79 @@
+@import "../../styles/properties";
+
+@mixin mixinScrollbar {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  &:not(#{c('??-disabled')}) {
+    scrollbar-color: rgba(v('??thumb.background'), v('??thumb.opacity')) v('??background');
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      appearance: none;
+      width: v('??size');
+      height: v('??size');
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include backgroundColor(v('??thumb.background'), v('??thumb.opacity'));
+      border: none;
+      border-radius: v('??thumb.rounded');
+    }
+
+    &::-webkit-scrollbar-track {
+      @include backgroundColor(v('??background'), v('??backgroundOpacity'));
+    }
+
+    &:hover {
+      @include initByCustom('thumb.opacity', v('??thumb.hover.opacity'));
+    }
+  }
+
+  &--border {
+    $thisBorder: &;
+
+    @include initByCustom('sys.outline.top', 0);
+    @include initByCustom('sys.outline.bottom', 0);
+    @include initByCustom('sys.outline.opacity.top', v('??sys.outline.top'));
+    @include initByCustom('sys.outline.opacity.bottom', v('??sys.outline.bottom'));
+
+    border-top-style: solid;
+    border-top-width: v('??outline.width');
+    border-top-color: rgba(v('??outline.color'), v('??sys.outline.opacity.top'));
+    border-bottom-style: solid;
+    border-bottom-width: v('??outline.width');
+    border-bottom-color: rgba(v('??outline.color'), v('??sys.outline.opacity.bottom'));
+
+    transition-property: border-color;
+    transition-duration: v('d.sys.transitionDuration.fade.through');
+    transition-timing-function: linear;
+
+    &--top {
+      @include initByCustom('sys.outline.top', #{v('??outline.opacity')})
+    }
+
+    &--bottom {
+      @include initByCustom('sys.outline.bottom', #{v('??outline.opacity')})
+    }
+
+    @include state('inverse') {
+      @include initByCustom('sys.outline.opacity.top', v('??sys.outline.bottom'));
+      @include initByCustom('sys.outline.opacity.bottom', v('??sys.outline.top'));
+
+      &#{$thisBorder}--top#{$thisBorder}--bottom {
+        @include initByCustom('sys.outline.opacity.top', 0);
+        @include initByCustom('sys.outline.opacity.bottom', 0);
+      }
+    }
+  }
+
+  &--visible {
+    overflow-x: visible;
+    overflow-y: visible;
+
+    height: auto !important;
+  }
+}

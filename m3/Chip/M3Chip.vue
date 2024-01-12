@@ -31,10 +31,10 @@ const classesToken = computed<ConstrClasses>(() => ({
     // :classes-values [!] System label / Системная метка
     'm3-chip': true,
     'm3-chip--focus': props.focus,
-    'm3-chip--selected': props.selected,
-    'm3-chip--progress': props.progress,
-    'm3-chip--readonly': props.readonly,
     'm3-chip--disabled': props.disabled,
+    'm3-chip--selected': props.selected,
+    'm3-chip--loading': props.loading,
+    'm3-chip--readonly': props.readonly,
     [`m3-chip--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
     [`m3-chip--height--${props.height}`]: inArray(propsValues.height, props.height),
     'm3-chip--outlined': props.outlined && !props.elevated,

@@ -1,0 +1,35 @@
+{
+  "size": {
+    "_type": "var"
+  },
+  "background": {
+    "_type": "var"
+  },
+  "backgroundOpacity": {
+    "_type": "var"
+  },
+  "thumb": {
+    "background": {},
+    "opacity": {},
+    "rounded": {},
+    "hover": {
+      "opacity": {}
+    },
+    "_type": "var"
+  },
+  "outline": {
+    "width": {},
+    "color": {},
+    "opacity": {},
+    "_type": "var"
+  },
+  "visible": {
+    "_type": "state"
+  },
+  "border": {
+    "_type": "state"
+  },
+  "inverse": {
+    "_type": "state"
+  }
+}

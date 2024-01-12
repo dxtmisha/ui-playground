@@ -34,7 +34,7 @@ export class PropertiesToStyle extends PropertiesToAbstract {
           value: {
             [name]: {
               value: `{${design}.${component}.sys.${name}}`,
-              [PropertyKey.variable]: PropertyType.property
+              [PropertyKey.variable]: item?.[PropertyKey.varKey] ? PropertyType.var : PropertyType.property
             }
           },
           [PropertyKey.variable]: PropertyType.state

@@ -16,7 +16,6 @@ $designsInit: false !default;
 @import "./services/propertiesTool";
 
 /// Generating styles for the component
-///
 /// Генерация стилей для компонента
 /// @param {String} $component
 @mixin initDesignBasic(
@@ -72,7 +71,6 @@ $designsInit: false !default;
 }
 
 /// Generating all properties
-///
 /// Генерация всех свойств
 @mixin initPropertiesComponent {
   $value: map.get($designsValues, 'value');
@@ -81,7 +79,6 @@ $designsInit: false !default;
 }
 
 /// Generating all properties by reference
-///
 /// Генерация всех свойств по ссылке
 /// @param {String} $link
 @mixin initByLink($link) {
@@ -104,7 +101,6 @@ $designsInit: false !default;
 }
 
 /// Mixin for generating custom properties
-///
 /// Миксин для генерации пользовательских свойств
 /// @param {String} $name property names / названия свойств
 /// @param {String} $value property values / значения свойства
@@ -118,7 +114,6 @@ $designsInit: false !default;
 }
 
 /// Mixin for generating custom properties with 'var' value type
-///
 /// Миксин для генерации пользовательских свойств с типом значений 'var'
 /// @param {String} $name property names / названия свойств
 /// @param {String} $value property values / значения свойства
@@ -134,7 +129,6 @@ $designsInit: false !default;
 }
 
 /// Mixin for generating custom properties at the design level
-///
 /// Миксин для генерации пользовательских свойств на уровне дизайна
 /// @param {String} $name property names / названия свойств
 /// @param {String} $value property values / значения свойства
@@ -148,7 +142,6 @@ $designsInit: false !default;
 }
 
 /// Mixin for generating a sub-class
-///
 /// Миксин для генерации класса статуса
 /// @param {String} $name status names / названия статуса
 @mixin state($name) {
@@ -158,7 +151,6 @@ $designsInit: false !default;
 }
 
 /// Mixin for generating status class
-///
 /// Миксин для генерации саб класса
 /// @param {String} $name
 @mixin subclass($name) {
@@ -168,7 +160,6 @@ $designsInit: false !default;
 }
 
 /// Returns the name of the design
-///
 /// Возвращает название дизайна
 /// @return {String}
 @function __getDesign() {
@@ -184,7 +175,6 @@ $designsInit: false !default;
 }
 
 /// Returns the component name
-///
 /// Возвращает название компонента
 /// @return {String}
 @function __getComponent() {

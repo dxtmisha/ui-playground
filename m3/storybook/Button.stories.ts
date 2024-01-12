@@ -15,7 +15,8 @@ const meta = {
     design: 'm3',
     docs: {
       description: {
-        component: 'Common buttons prompt most actions in a UI.'
+        component: 'Common buttons prompt most actions in a UI.<br>' +
+          '<small>Общие кнопки позволяют выполнять большинство действий в пользовательском интерфейсе.</small>'
       }
     }
   },

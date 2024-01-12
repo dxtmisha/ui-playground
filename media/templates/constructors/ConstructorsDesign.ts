@@ -125,6 +125,7 @@ export class ConstructorsDesign<
    */
   protected initRender (): VNode {
     // const setup = this.setup()
+    // const children: any[] = []
 
     return h('div', {
       // ...this.getAttrs(),

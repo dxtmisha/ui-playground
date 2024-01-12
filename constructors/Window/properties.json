@@ -1,0 +1,15 @@
+{
+  "width": {
+    "_var": true,
+    "_style": true
+  },
+  "height": {
+    "_var": true,
+    "_style": true
+  },
+  "#body": {
+    "#context": {}
+  },
+  "#control": {},
+  "menu": {}
+}

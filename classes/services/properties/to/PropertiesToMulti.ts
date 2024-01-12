@@ -32,7 +32,12 @@ export class PropertiesToMulti extends PropertiesToAbstract {
       name,
       value
     }) => {
-      this.read(this.items.getReName(name, item), value as PropertyList)
+      this.read(
+        this.items.getReName(name, item),
+        value as PropertyList,
+        item?.[PropertyKey.varKey] ?? false
+      )
+
       item[PropertyKey.variable] = PropertyType.state
     })
   }
@@ -64,8 +69,13 @@ export class PropertiesToMulti extends PropertiesToAbstract {
    * @param name property name /<br>название свойства transformed /<br>
    * массив, который нужно преобразовать
    * @param properties array with all property records /<br>массив со всеми записями свойств
+   * @param isVar should i convert the type to var /<br>надо ли преобразовывать тип в var
    */
-  private read (name: string, properties: PropertyList) {
+  private read (
+    name: string,
+    properties: PropertyList,
+    isVar: boolean
+  ) {
     forEach(properties, item => {
       if (
         typeof item.value === 'string' &&
@@ -76,7 +86,7 @@ export class PropertiesToMulti extends PropertiesToAbstract {
         item.value = {
           [name]: {
             value: item.value,
-            [PropertyKey.variable]: PropertyType.property
+            [PropertyKey.variable]: isVar ? PropertyType.var : PropertyType.property
           }
         } as PropertyItem['value']
       }

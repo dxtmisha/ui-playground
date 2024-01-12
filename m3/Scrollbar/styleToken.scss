@@ -1,0 +1,16 @@
+@import "../../styles/all";
+
+@mixin mixinScrollbarToken {
+  // :style [!] System label / Системная метка
+  --m3-scrollbar-size: var(--m3-ref-spacing-2);
+  --m3-scrollbar-background: var(--m3-sys-palette-outlineVariant);
+  --m3-scrollbar-backgroundOpacity: var(--m3-sys-opacity-016);
+  --m3-scrollbar-thumb-background: var(--m3-sys-palette-outlineVariant);
+  --m3-scrollbar-thumb-opacity: var(--m3-sys-opacity-disabled);
+  --m3-scrollbar-thumb-rounded: var(--m3-ref-spacing-2);
+  --m3-scrollbar-thumb-hover-opacity: 1;
+  --m3-scrollbar-outline-width: var(--m3-ref-spacing-px);
+  --m3-scrollbar-outline-color: var(--m3-sys-palette-outlineVariant);
+  --m3-scrollbar-outline-opacity: 1;
+  // :style [!] System label / Системная метка
+}

@@ -24,10 +24,10 @@ export type ChipProps =
 
     // Tokens
     // :type [!] System label / Системная метка
-    selected?: boolean
-    progress?: boolean
-    readonly?: boolean
     disabled?: boolean
+    selected?: boolean
+    loading?: boolean
+    readonly?: boolean
     // :type [!] System label / Системная метка
     // :type.adaptive.none
   }
@@ -64,10 +64,10 @@ export const propsChip = {
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
+    disabled: Boolean,
     selected: Boolean,
-    progress: Boolean,
-    readonly: Boolean,
-    disabled: Boolean
+    loading: Boolean,
+    readonly: Boolean
     // :prop [!] System label / Системная метка
   }
 }

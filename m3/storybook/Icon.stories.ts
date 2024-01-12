@@ -15,8 +15,11 @@ const meta = {
     design: 'm3',
     docs: {
       description: {
-        component: 'A basic component that extends the Image component, ' +
-          'adding the ability to work with two icons and transition between them.'
+        component:
+          'A basic component that extends the Image component, ' +
+          'adding the ability to work with two icons and transition between them.<br>' +
+          '<small>Базовый компонент, который расширяет компонент Image, ' +
+          'добавляя ему возможность работы с двумя иконками и переходом между ними.</small>'
       }
     }
   },

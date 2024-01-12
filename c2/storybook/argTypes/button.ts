@@ -149,7 +149,7 @@ export const buttonArgs: StorybookArgs = {
       type: { summary: propsValues.palette.join(' | ') }
     },
     // Additional palettes. Use only if the task requires it
-    description: 'Дополнительные палитры. Использовать только если задача в этом требует.'
+    description: 'Дополнительные палитры. Использовать только если задача в этом требует'
   }
 }
 

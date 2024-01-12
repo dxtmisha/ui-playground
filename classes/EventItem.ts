@@ -96,6 +96,14 @@ export class EventItem<
   }
 
   /**
+   * Checks whether event listening is currently enabled.<br>
+   * Проверяет, включено ли сейчас прослушивание события.
+   */
+  isActive (): boolean {
+    return this.activity
+  }
+
+  /**
    * Change of an element for tracking.<br>
    * Изменение элемента для прослеживания.
    * @param elementSelector element /<br>элемент

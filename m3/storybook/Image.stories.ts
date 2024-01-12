@@ -15,10 +15,10 @@ const meta = {
     design: 'm3',
     docs: {
       description: {
-        // Базовый компонент для отображения графических материалов.
-        // Компонент используется для работы с SVG файлами, графическими файлами (загруженными через input или по url) и иконками
         component: 'Basic component for displaying graphic materials. ' +
-          'The component is used to work with SVG files, graphic files (uploaded via input or by url) and icons'
+          'The component is used to work with SVG files, graphic files (uploaded via input or by url) and icons.<br>' +
+          '<small>Базовый компонент для отображения графических материалов. ' +
+          'Компонент используется для работы с SVG файлами, графическими файлами (загруженными через input или по url) и иконками.</small>'
       }
     }
   },

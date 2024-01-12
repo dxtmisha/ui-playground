@@ -24,6 +24,14 @@
   transition-duration: var(--d-sys-transitionDuration-lg-close);
   transition-property: border, box-shadow;
   
+  &__icon {
+    @include paletteColor(#{var(--m3-sys-palette-primary)});
+  }
+  
+  @include focus {
+    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+  }
+  
   @include hover {
     @include gradientOpacity(#{var(--m3-sys-opacity-008)});
     
@@ -36,8 +44,15 @@
     transition-duration: var(--d-sys-transitionDuration-sm);
   }
   
-  @include focus {
-    @include gradientOpacity(#{var(--m3-sys-opacity-012)});
+  @include disabled {
+    @include color(#{var(--m3-sys-palette-onSurface)});
+    @include colorOpacity(#{var(--m3-sys-opacity-disabled)});
+    
+    transition-duration: var(--d-sys-transitionDuration-sm);
+    
+    & .m3-chip__icon {
+      @include color(#{var(--m3-sys-palette-onSurface)});
+    }
   }
   
   &--selected {
@@ -49,48 +64,37 @@
     }
   }
   
-  &--disabled {
-    @include color(#{var(--m3-sys-palette-onSurface)});
-    @include colorOpacity(#{var(--m3-sys-opacity-disabled)});
-    
-    transition-duration: var(--d-sys-transitionDuration-sm);
-    
-    & .m3-chip__icon {
-      @include color(#{var(--m3-sys-palette-onSurface)});
-    }
-  }
-  
   &--adaptive {
     &--icon {
-      --m3-chip-padding: 0px;
+      --m3-chip-padding: 0;
       
        .m3-chip__label {
         display: none;
         
-        @include paddingX(#{0px});
+        @include paddingX(#{0});
       }
     }
     
     &--sm {
       @media screen and (max-width: calc(600px - 1px)) {
-        --m3-chip-padding: 0px;
+        --m3-chip-padding: 0;
         
          .m3-chip__label {
           display: none;
           
-          @include paddingX(#{0px});
+          @include paddingX(#{0});
         }
       }
     }
     
     &--md {
       @media screen and (max-width: calc(905px - 1px)) {
-        --m3-chip-padding: 0px;
+        --m3-chip-padding: 0;
         
          .m3-chip__label {
           display: none;
           
-          @include paddingX(#{0px});
+          @include paddingX(#{0});
         }
       }
     }
@@ -111,14 +115,6 @@
   }
   
   &--outlined {
-    @include disabled('.m3-chip') {
-      &::before {
-        content: ' ';
-        @include borderColor(#{var(--m3-sys-palette-onSurfaceVariant)});
-        @include borderOpacity(#{var(--m3-sys-opacity-012)});
-      }
-    }
-    
     &::before {
       content: ' ';
       position: absolute;
@@ -130,17 +126,25 @@
       @include borderColor(#{var(--m3-sys-palette-outline)});
     }
     
+    @include disabled('.m3-chip') {
+      &::before {
+        content: ' ';
+        @include borderColor(#{var(--m3-sys-palette-onSurfaceVariant)});
+        @include borderOpacity(#{var(--m3-sys-opacity-012)});
+      }
+    }
+    
     &.m3-chip--selected {
+      &::before {
+        content: ' ';
+        @include borderOpacity(#{0});
+      }
+      
       @include disabled('.m3-chip') {
         &::before {
           content: ' ';
           @include borderOpacity(#{0});
         }
-      }
-      
-      &::before {
-        content: ' ';
-        @include borderOpacity(#{0});
       }
     }
   }
@@ -266,10 +270,6 @@
     @include gradientOpacity(#{var(--m3-sys-opacity-016)});
     
     transition-duration: var(--d-sys-transitionDuration-sm);
-  }
-  
-  &__icon {
-    @include paletteColor(#{var(--m3-sys-palette-primary)});
   }
   // :style [!] System label / Системная метка
 }

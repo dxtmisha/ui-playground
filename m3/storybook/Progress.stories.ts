@@ -15,8 +15,8 @@ const meta = {
     design: 'm3',
     docs: {
       description: {
-        // Компонент для работы с отображением загрузчика
-        component: 'Component for working with the display of the loader.'
+        component: 'Component for working with the display of the loader.<br>' +
+          '<small>Компонент для работы с отображением загрузчика.</small>'
       }
     }
   },

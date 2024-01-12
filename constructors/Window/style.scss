@@ -1,0 +1,68 @@
+@import "../../styles/properties";
+
+@mixin mixinWindow {
+  @include initByCustom('opacity', 0);
+  @include initByCustom('transform', none);
+  @include initByCustom('transition', none);
+  @include initByCustom('transitionBody', none);
+
+  position: fixed;
+  @include inset;
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: v('??transition');
+
+  &__body {
+    display: flex;
+    overflow-y: auto;
+
+    flex-flow: column;
+    flex-shrink: 1;
+
+    width: v('??width', auto);
+    height: v('??height', auto);
+    max-width: 100%;
+    max-height: 100%;
+
+    opacity: v('??opacity');
+
+    transform: v('??transform');
+    transform-origin: center;
+    transition: v('??transitionBody');
+
+    &__context {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+
+  &--status {
+    &--preparation {
+      @include initByCustom('transform', scale(.8));
+
+      display: flex;
+    }
+
+    &--flash {
+      display: flex;
+
+      transition: none;
+    }
+
+    &--open {
+      @include initByCustom('opacity', 1);
+      @include initByCustom('transform', none);
+      @include initByCustom('transition', background #{v('d.sys.transitionDuration.fade.enter')} linear);
+      @include initByCustom('transitionBody', opacity #{v('d.sys.transitionDuration.xs')} linear, transform #{v('d.sys.transitionDuration.fade.enter')} #{v('d.sys.transitionFunction.deceleration')});
+
+      display: flex;
+    }
+
+    &--hide {
+      display: flex;
+    }
+  }
+}

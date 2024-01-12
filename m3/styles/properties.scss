@@ -944,6 +944,132 @@ $designsProperties: (
           ),
         ),
       ),
+      'scrollbar':(
+        index: 'scrollbar',
+        name: 'd-scrollbar',
+        type: 'component',
+        value: (
+          'thumb':(
+            index: 'thumb',
+            name: 'thumb',
+            type: 'var',
+            value: (
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'var',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: 'outline',
+            type: 'var',
+            value: (
+            ),
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'border':(
+            index: 'border',
+            name: '&--border',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'window':(
+        index: 'window',
+        name: 'd-window',
+        type: 'component',
+        value: (
+          'body':(
+            index: 'body',
+            name: '&__body',
+            type: 'subclass',
+            value: (
+              'context':(
+                index: 'context',
+                name: '&__context',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'control':(
+            index: 'control',
+            name: '&__control',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'width':(
+            index: 'width',
+            name: '&--width',
+            type: 'state',
+            value: (
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 'var(--d-window-sys-width)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 'var(--d-window-sys-height)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'menu':(
+            index: 'menu',
+            name: '&--menu',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
     ),
   ),
   'm3':(
@@ -8912,6 +9038,392 @@ $designsProperties: (
             name: '&--inverse',
             type: 'state',
             value: (
+            ),
+          ),
+        ),
+      ),
+      'scrollbar':(
+        index: 'scrollbar',
+        name: 'm3-scrollbar',
+        type: 'component',
+        value: (
+          'size':(
+            index: 'size',
+            name: '--m3-scrollbar-size',
+            type: 'var',
+            value: 'var(--m3-ref-spacing-2)',
+          ),
+          'background':(
+            index: 'background',
+            name: '--m3-scrollbar-background',
+            type: 'var',
+            value: 'var(--m3-sys-palette-outlineVariant)',
+          ),
+          'backgroundOpacity':(
+            index: 'backgroundOpacity',
+            name: '--m3-scrollbar-backgroundOpacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-016)',
+          ),
+          'thumb':(
+            index: 'thumb',
+            name: 'thumb',
+            type: 'var',
+            value: (
+              'background':(
+                index: 'background',
+                name: '--m3-scrollbar-thumb-background',
+                type: 'var',
+                value: 'var(--m3-sys-palette-outlineVariant)',
+              ),
+              'opacity':(
+                index: 'opacity',
+                name: '--m3-scrollbar-thumb-opacity',
+                type: 'var',
+                value: 'var(--m3-sys-opacity-disabled)',
+              ),
+              'rounded':(
+                index: 'rounded',
+                name: '--m3-scrollbar-thumb-rounded',
+                type: 'var',
+                value: 'var(--m3-ref-spacing-2)',
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'var',
+                value: (
+                  'opacity':(
+                    index: 'opacity',
+                    name: '--m3-scrollbar-thumb-hover-opacity',
+                    type: 'var',
+                    value: 1,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: 'outline',
+            type: 'var',
+            value: (
+              'width':(
+                index: 'width',
+                name: '--m3-scrollbar-outline-width',
+                type: 'var',
+                value: 'var(--m3-ref-spacing-px)',
+              ),
+              'color':(
+                index: 'color',
+                name: '--m3-scrollbar-outline-color',
+                type: 'var',
+                value: 'var(--m3-sys-palette-outlineVariant)',
+              ),
+              'opacity':(
+                index: 'opacity',
+                name: '--m3-scrollbar-outline-opacity',
+                type: 'var',
+                value: 1,
+              ),
+            ),
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'border':(
+            index: 'border',
+            name: '&--border',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'window':(
+        index: 'window',
+        name: 'm3-window',
+        type: 'component',
+        value: (
+          'zIndex':(
+            index: 'zIndex',
+            name: 'z-index',
+            type: 'property',
+            value: 'var(--m3-ref-index-4)',
+          ),
+          'padding':(
+            index: 'padding',
+            name: 'padding',
+            type: 'property',
+            value: 'var(--m3-ref-spacing-4)',
+          ),
+          'body':(
+            index: 'body',
+            name: '&__body',
+            type: 'subclass',
+            value: (
+              'zIndex':(
+                index: 'zIndex',
+                name: 'z-index',
+                type: 'property',
+                value: 'var(--m3-ref-index-4)',
+              ),
+              'background':(
+                index: 'background',
+                name: 'background',
+                type: 'property',
+                value: 'var(--m3-ref-background-4)',
+              ),
+              'boxShadow':(
+                index: 'boxShadow',
+                name: 'box-shadow',
+                type: 'property',
+                value: 'var(--m3-ref-shadow-4)',
+              ),
+              'context':(
+                index: 'context',
+                name: '&__context',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'control':(
+            index: 'control',
+            name: '&__control',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'width':(
+            index: 'width',
+            name: '&--width',
+            type: 'state',
+            value: (
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 768)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 1024)',
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'var(--m3-window-sys-width)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 256)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 384)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'var(--m3-window-sys-height)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'menu':(
+            index: 'menu',
+            name: '&--menu',
+            type: 'state',
+            value: (
+              'width':(
+                index: 'width',
+                name: '&.m3-window--width',
+                type: 'state',
+                value: (
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'width':(
+                        index: 'width',
+                        name: 'width',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 128)',
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'width':(
+                        index: 'width',
+                        name: 'width',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 192)',
+                      ),
+                    ),
+                  ),
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'width':(
+                        index: 'width',
+                        name: 'width',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 256)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'height':(
+                index: 'height',
+                name: '&.m3-window--height',
+                type: 'state',
+                value: (
+                  'sm':(
+                    index: 'sm',
+                    name: '&--sm',
+                    type: 'state',
+                    value: (
+                      'height':(
+                        index: 'height',
+                        name: 'height',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 64)',
+                      ),
+                    ),
+                  ),
+                  'md':(
+                    index: 'md',
+                    name: '&--md',
+                    type: 'state',
+                    value: (
+                      'height':(
+                        index: 'height',
+                        name: 'height',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 192)',
+                      ),
+                    ),
+                  ),
+                  'lg':(
+                    index: 'lg',
+                    name: '&--lg',
+                    type: 'state',
+                    value: (
+                      'height':(
+                        index: 'height',
+                        name: 'height',
+                        type: 'property',
+                        value: 'calc(var(--m3-ref-spacing-px) * 256)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

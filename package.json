@@ -1,7 +1,7 @@
 {
   "name": "@dxtmisha/ui-playground",
   "private": true,
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.2",
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
