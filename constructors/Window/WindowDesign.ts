@@ -1,6 +1,7 @@
-import { h, VNode } from 'vue'
+import { h, Teleport, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { WindowRef } from './WindowRef.ts'
 
 import {
   type ConstrOptions,
@@ -17,7 +18,6 @@ import {
   type WindowSetup,
   type WindowSlots
 } from './types.ts'
-import { WindowRef } from './WindowRef.ts'
 
 /**
  * WindowDesign
@@ -92,7 +92,8 @@ export class WindowDesign<
         oncontextmenu: (event: MouseEvent & TouchEvent) => {
           console.log(event)
         }
-      }
+      },
+      renderBodyContext: () => this.renderBodyContext()
     } as SETUP
   }
 
@@ -143,27 +144,51 @@ export class WindowDesign<
    */
   protected initRender (): (VNode | any)[] {
     const setup = this.setup()
-    const main: any[] = []
-    const children: any[] = [
-      h('div', {
-        class: setup.classes.value.body
+    const children: any[] = [this.renderBody()]
+
+    return [
+      this.initSlot('control'),
+      h(Teleport, {
+        to: 'body'
       }, [
         h('div', {
-          class: setup.classes.value.bodyContext
-        }, 'text...')
+          ...this.getAttrs(),
+          ref: this.element,
+          class: setup.classes.value.main
+        }, children)
       ])
     ]
+  }
 
-    this.initSlot('control', main, setup.slotControl)
+  /**
+   * Render body element.<br>
+   * Рендер элемента тела.
+   */
+  protected renderBody (): VNode {
+    const setup = this.setup()
+    const children: any[] = [
+      this.initSlot('title'),
+      this.renderBodyContext(),
+      this.initSlot('footer')
+    ]
 
-    main.push(
-      h('div', {
-        ...this.getAttrs(),
-        ref: this.element,
-        class: setup.classes.value.main
-      }, children)
-    )
+    return h('div', {
+      class: setup.classes.value.body
+    }, children)
+  }
 
-    return main
+  /**
+   * Render context element.<br>
+   * Рендер элемента контекста.
+   */
+  protected renderBodyContext (): VNode {
+    const setup = this.setup()
+    const children: any[] = [this.initSlot('default')]
+    const props = {
+      class: setup.classes.value.bodyContext
+    }
+
+    return this.components.renderOne('scrollbar', props, children) ??
+      h('div', props, children)
   }
 }

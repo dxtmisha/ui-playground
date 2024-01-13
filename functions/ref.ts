@@ -2,6 +2,8 @@ import { computed, type ComputedRef, h, isRef, type Ref, ref, type VNode } from 
 import { getBind, getIndex } from './render.ts'
 
 import {
+  type RawChildren,
+  type RawSlots,
   type RefOrNormal
 } from '../types/ref.ts'
 import { type ConstrItem } from '../types/constructor.ts'
@@ -51,7 +53,7 @@ export function toRefItem<T> (item: RefOrNormal<T>): Ref<T> {
 export function render<T extends ConstrItem> (
   name: string,
   props?: T,
-  children?: any[],
+  children?: RawChildren | RawSlots,
   index?: string
 ): VNode {
   const code = getIndex(name, props, index)

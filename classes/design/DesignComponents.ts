@@ -3,6 +3,7 @@ import { type VNode } from 'vue'
 import { forEach, isObjectNotArray } from '../../functions/data.ts'
 import { getRef, render } from '../../functions/ref.ts'
 
+import { type RawChildren, type RawSlots } from '../../types/ref.ts'
 import {
   type ConstrComponent,
   type ConstrComponentMod,
@@ -95,23 +96,52 @@ export class DesignComponents<
   > (
     name: K & string,
     props?: P[PK] & ConstrItem | ConstrItem,
-    children?: any[],
+    children?: RawChildren | RawSlots,
     index?: PK & string | string
   ): VNode[] {
-    if (this.is(name)) {
-      const indexItem = index ?? name
+    const item = this.renderOne(
+      name,
+      props,
+      children,
+      index
+    )
 
-      return [
-        render(
-          this.get(name),
-          this.getModification(indexItem, props),
-          children,
-          indexItem
-        )
-      ]
+    if (item) {
+      return [item]
     }
 
     return []
+  }
+
+  /**
+   * Rendering a component by its name.<br>
+   * Рендеринг компонента по его имени.
+   * @param name name of the component /<br>названия компонента
+   * @param props property of the component /<br>свойство компонента
+   * @param children sub-elements of the component /<br>под элементы компонента
+   * @param index the name of the key /<br>названия ключа
+   */
+  renderOne<
+    K extends keyof COMP,
+    PK extends keyof P
+  > (
+    name: K & string,
+    props?: P[PK] & ConstrItem | ConstrItem,
+    children?: RawChildren | RawSlots,
+    index?: PK & string | string
+  ): VNode | undefined {
+    if (this.is(name)) {
+      const indexItem = index ?? name
+
+      return render(
+        this.get(name),
+        this.getModification(indexItem, props),
+        children,
+        indexItem
+      )
+    }
+
+    return undefined
   }
 
   /**
@@ -131,7 +161,7 @@ export class DesignComponents<
     item: any[],
     name: K & string,
     props?: P[PK] & ConstrItem | ConstrItem,
-    children?: any[],
+    children?: RawChildren | RawSlots,
     index?: PK & string | string
   ): this {
     item.push(...this.render(name, props, children, index))

@@ -1,3 +1,4 @@
+import { type VNode } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 
 /**
@@ -5,7 +6,7 @@ import { type ConstrClass } from '../../types/constructor.ts'
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
 export type WindowComponents = {
-  // componentName: object
+  scrollbar?: object
 }
 
 /**
@@ -25,7 +26,8 @@ export type WindowSetup = {
     class: string
     onclick: (event: MouseEvent & TouchEvent) => void
     oncontextmenu: (event: MouseEvent & TouchEvent) => void
-  }
+  },
+  renderBodyContext (): VNode | undefined
 }
 
 /**

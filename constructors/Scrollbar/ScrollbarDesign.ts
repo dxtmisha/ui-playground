@@ -75,10 +75,7 @@ export class ScrollbarDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initSetup (): SETUP {
-    return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
-    } as SETUP
+    return {} as SETUP
   }
 
   /**
@@ -88,10 +85,7 @@ export class ScrollbarDesign<
   protected initExpose (): EXPOSE {
     // const setup = this.setup()
 
-    return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
-    } as EXPOSE
+    return {} as EXPOSE
   }
 
   /**
@@ -115,10 +109,7 @@ export class ScrollbarDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
-    }
+    return {}
   }
 
   /**
@@ -127,9 +118,7 @@ export class ScrollbarDesign<
    */
   protected initRender (): VNode {
     const setup = this.setup()
-    const children: any[] = []
-
-    this.initSlot('default', children)
+    const children: any[] = [this.initSlot('default')]
 
     return h(this.props.tag, {
       ...this.getAttrs(),

@@ -6,6 +6,8 @@ import { inArray } from '../../functions/object.ts'
 
 import { WindowDesign } from '../../constructors/Window/WindowDesign.ts'
 
+import M3Scrollbar from '../Scrollbar/M3Scrollbar.vue'
+
 import {
   type ConstrClasses,
   type ConstrStyles
@@ -50,6 +52,9 @@ const design = new WindowDesign(
   props,
   {
     emits,
+    components: {
+      scrollbar: M3Scrollbar
+    },
     classes: classesToken,
     styles: stylesToken
   }
