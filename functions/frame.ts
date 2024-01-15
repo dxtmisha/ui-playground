@@ -14,7 +14,7 @@
  */
 export function frame (
   callback: () => void,
-  next?: () => false,
+  next?: () => boolean,
   end?: () => void
 ) {
   requestAnimationFrame(() => {

@@ -5,7 +5,25 @@ import { type PropType } from 'vue'
  * Тип, описывающий входящие свойства.
  */
 export type WindowProps = {
-  // TODO: Location for a custom property / Место для пользовательского свойства
+  // Status
+  disabled?: boolean
+
+  // Event
+  preparation? (open: boolean): Promise<boolean>
+  beforeOpening? (open: boolean): Promise<boolean>
+  opening? (open: boolean): Promise<boolean>
+
+  // Options
+  contextmenu?: boolean
+
+  axis?: 'x' | 'y'
+  indent?: number
+  persistent?: boolean
+
+  autoClose?: boolean
+  flash?: boolean
+  inDom?: boolean
+
   // Tokens
   // :type [!] System label / Системная метка
   minWidth?: string | 'custom'
@@ -19,7 +37,8 @@ export type WindowProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsWindow: WindowProps = {
-  // TODO: Location for a user-defined default value / Место для пользовательского значения по умолчанию
+  axis: 'y',
+  indent: 4,
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -31,7 +50,31 @@ export const defaultsWindow: WindowProps = {
  * Конструктор для свойства.
  */
 export const propsWindow = {
-  // TODO: Location for a custom property / Место для пользовательского свойства
+  // Status
+  disabled: Boolean,
+
+  // Event
+  preparation: Function as PropType<WindowProps['preparation']>,
+  beforeOpening: Function as PropType<WindowProps['beforeOpening']>,
+  opening: Function as PropType<WindowProps['opening']>,
+
+  // Options
+  contextmenu: Boolean,
+
+  axis: {
+    type: String as PropType<WindowProps['axis']>,
+    default: defaultsWindow?.axis
+  },
+  indent: {
+    type: Number as PropType<WindowProps['indent']>,
+    default: defaultsWindow?.indent
+  },
+  persistent: Boolean,
+
+  autoClose: Boolean,
+  flash: Boolean,
+  inDom: Boolean,
+
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
