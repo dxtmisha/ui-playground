@@ -1,6 +1,5 @@
 import { getElementId } from '../../functions/element.ts'
 
-import { WindowStatus } from './WindowStatus.ts'
 import { WindowPersistent } from './WindowPersistent.ts'
 
 import { type ConstrClassObject } from '../../types/constructor.ts'
@@ -19,7 +18,6 @@ export class WindowClasses {
 
   /**
    * Constructor
-   * @param status object for working with statuses /<br>объект для работы со статусами
    * @param persistent object for working with the animation before turning off the window /<br>объект для работы с анимацией перед выключением окна
    * @param className class name /<br>название класса
    * @param classControl control element class name /<br>название класса элемента управления
@@ -27,7 +25,6 @@ export class WindowClasses {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly status: WindowStatus,
     protected readonly persistent: WindowPersistent,
     protected readonly className: string = 'is-window',
     protected readonly classControl: string = 'is-control',
@@ -76,7 +73,7 @@ export class WindowClasses {
    * @param status названия статуса
    */
   getClassStatus (status: WindowStatusItem): string {
-    return `${this.className}--status--${status}`
+    return `${this.className}[data-status="${status}"]`
   }
 
   /**
@@ -86,7 +83,6 @@ export class WindowClasses {
   getClasses (): ConstrClassObject {
     return {
       [this.getId()]: true,
-      [this.getClassStatus(this.status.get())]: true,
       '??--persistent': this.persistent.get()
     }
   }

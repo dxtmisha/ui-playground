@@ -58,8 +58,8 @@ export class WindowDesign<
     )
 
     this.window = new WindowRef(
-      // this.props,
-      // this.element,
+      this.props,
+      this.element,
       this.getName(),
       this.getSubClass('control'),
       this.getSubClass('body')
@@ -84,6 +84,8 @@ export class WindowDesign<
    */
   protected initSetup (): SETUP {
     return {
+      id: this.window.getId(),
+      status: this.window.status.value,
       slotControl: {
         class: this.window.getClassControl(),
         onclick: (event: MouseEvent & TouchEvent) => {
@@ -102,11 +104,10 @@ export class WindowDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
-    // const setup = this.setup()
+    const setup = this.setup()
 
     return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
+      id: setup.id
     } as EXPOSE
   }
 
@@ -116,7 +117,9 @@ export class WindowDesign<
    */
   protected initClasses (): Partial<CLASSES> {
     return {
-      main: {},
+      main: {
+        ...this.toClassName(this.window.classes.value)
+      },
       ...{
         // :classes [!] System label / Системная метка
         body: this.getSubClass('body'),
@@ -154,7 +157,9 @@ export class WindowDesign<
         h('div', {
           ...this.getAttrs(),
           ref: this.element,
-          class: setup.classes.value.main
+          class: setup.classes.value.main,
+          'data-window': setup.id,
+          'data-status': setup.status
         }, children)
       ])
     ]

@@ -15,7 +15,12 @@ import { WindowOpen } from './WindowOpen.ts'
 import { WindowVerification } from './WindowVerification.ts'
 
 import { type WindowProps } from './props.ts'
+import { WindowStatusItem } from './typesBasic.ts'
 
+/**
+ * The base class for working with the window.<br>
+ * Базовый класс для работы с окном.
+ */
 export class Window {
   protected readonly status: WindowStatus
   protected readonly client: WindowClient
@@ -33,6 +38,15 @@ export class Window {
   protected readonly open: WindowOpen
   protected readonly verification: WindowVerification
 
+  /**
+   * Constructor
+   * @param props input data /<br>входные данные
+   * @param element window element /<br>элемент окна
+   * @param callback callback function /<br>функция обратного вызова
+   * @param className class name /<br>название класса
+   * @param classControl control element class name /<br>название класса элемента управления
+   * @param classBody class name for the body /<br>название класса для тела
+   */
   constructor (
     props: WindowProps,
     element?: HTMLDivElement,
@@ -47,7 +61,6 @@ export class Window {
     this.hook = new WindowHook(props)
 
     this.classes = new WindowClasses(
-      this.status,
       this.persistent,
       className,
       classControl,
@@ -101,6 +114,14 @@ export class Window {
   }
 
   /**
+   * Returns the current status of the window.<br>
+   * Возвращает текущий статус окна.
+   */
+  getStatus (): WindowStatusItem {
+    return this.status.get()
+  }
+
+  /**
    * Returns an object for working with classes.<br>
    * Возвращает объект для работы с классами.
    */
@@ -114,10 +135,5 @@ export class Window {
    */
   getElement (): WindowElement {
     return this.element
-  }
-
-  setElement (element?: HTMLDivElement): this {
-    console.log('element', element)
-    return this
   }
 }

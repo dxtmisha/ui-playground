@@ -22,6 +22,8 @@ export type WindowEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type WindowSetup = {
+  id: string
+  status: string
   slotControl: {
     class: string
     onclick: (event: MouseEvent & TouchEvent) => void
@@ -35,7 +37,7 @@ export type WindowSetup = {
  * Тип, описывающий доступные свойства.
  */
 export type WindowExpose = {
-  // TODO
+  id: string
 }
 
 /**
