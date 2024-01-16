@@ -48,7 +48,7 @@ export class WindowOrigin {
    * Returns styles for the initial point of the animation.<br>
    * Возвращает стили для начальной точки анимации.
    */
-  getStyle (): ConstrStyles {
+  getStyles (): ConstrStyles {
     return {
       '--??-origin-x': this.getStyleX(),
       '--??-origin-y': this.getStyleY()

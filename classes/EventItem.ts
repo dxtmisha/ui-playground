@@ -17,7 +17,7 @@ import {
 export class EventItem<
   E extends ElementOrWindow,
   O extends Event,
-  D extends Record<string, any>
+  D extends Record<string, any> = Record<string, any>
 > {
   /**
    * Element.<br>

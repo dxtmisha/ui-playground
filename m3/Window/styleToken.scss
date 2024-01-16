@@ -2,6 +2,10 @@
 
 @mixin mixinWindowToken {
   // :style [!] System label / Системная метка
+  --m3-window-menuSizeMultiplier: 1;
+  --m3-window-backgroundColor: var(--m3-sys-palette-scrim);
+  --m3-window-backgroundOpacity: var(--m3-sys-opacity-scrim);
+  
   z-index: var(--m3-ref-index-4);
   
   padding: var(--m3-ref-spacing-4);
@@ -10,6 +14,8 @@
     z-index: var(--m3-ref-index-4);
     
     background: var(--m3-ref-background-4);
+    
+    border-radius: var(--m3-sys-rounded-2xl);
     
     box-shadow: var(--m3-ref-shadow-4);
   }
@@ -50,32 +56,34 @@
     }
   }
   
-  &--menu {
-    &.m3-window--width {
-      &--sm {
-        @include width(#{calc(var(--m3-ref-spacing-px) * 128)});
+  &--adaptive {
+    &--menu {
+      --m3-window-menuSizeMultiplier: 0.25;
+      --m3-window-backgroundOpacity: 0;
+      --m3-window-transformOrigin: var(--m3-window-origin-x) var(--m3-window-origin-y);
+      
+      top: var(--m3-window-sys-inset-y);
+      @include right(#{auto});
+      bottom: auto;
+      @include left(#{var(--m3-window-sys-inset-x)});
+      
+      padding: 0;
+      
+      content: '--MENU--';
+      
+      &--body {
+        z-index: var(--m3-ref-index-2);
+        
+        background: var(--m3-ref-background-2);
+        
+        border-radius: var(--m3-sys-rounded-sm);
+        
+        box-shadow: var(--m3-ref-shadow-2);
       }
       
-      &--md {
-        @include width(#{calc(var(--m3-ref-spacing-px) * 192)});
-      }
-      
-      &--lg {
-        @include width(#{calc(var(--m3-ref-spacing-px) * 256)});
-      }
-    }
-    
-    &.m3-window--height {
-      &--sm {
-        @include height(#{calc(var(--m3-ref-spacing-px) * 64)});
-      }
-      
-      &--md {
-        @include height(#{calc(var(--m3-ref-spacing-px) * 192)});
-      }
-      
-      &--lg {
-        @include height(#{calc(var(--m3-ref-spacing-px) * 256)});
+       .m3-window__body {
+        max-width: 100dvw;
+        max-height: 100dvh;
       }
     }
   }

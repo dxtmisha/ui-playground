@@ -26,9 +26,9 @@ export type WindowProps = {
 
   // Tokens
   // :type [!] System label / Системная метка
-  minWidth?: string | 'custom'
-  minHeight?: string | 'custom'
-  menu?: boolean
+  width?: string | 'custom'
+  height?: string | 'custom'
+  adaptive?: 'menu'
   // :type [!] System label / Системная метка
 }
 
@@ -78,9 +78,9 @@ export const propsWindow = {
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
-    minWidth: String as PropType<WindowProps['minWidth']>,
-    minHeight: String as PropType<WindowProps['minHeight']>,
-    menu: Boolean
+    width: String as PropType<WindowProps['width']>,
+    height: String as PropType<WindowProps['height']>,
+    adaptive: String as PropType<WindowProps['adaptive']>
     // :prop [!] System label / Системная метка
   }
 }

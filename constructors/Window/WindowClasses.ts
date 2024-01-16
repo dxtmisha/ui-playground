@@ -64,6 +64,14 @@ export class WindowClasses {
    * Возвращает название класса для контроля.
    */
   getClassControl (): string {
+    return this.classControl
+  }
+
+  /**
+   * Returns the class name for control along with the ID.<br>
+   * Возвращает название класса для управления вместе с ID.
+   */
+  getClassControlAndId (): string {
     return `${this.classControl} ${this.getId()}`
   }
 
@@ -85,6 +93,14 @@ export class WindowClasses {
       [this.getId()]: true,
       '??--persistent': this.persistent.get()
     }
+  }
+
+  /**
+   * Returns the class selector for control.<br>
+   * Возвращает селектор класса для управления.
+   */
+  getSelectorControl (): string {
+    return `.${this.classControl}.${this.getId()}`
   }
 
   /**
@@ -120,7 +136,7 @@ export class WindowClasses {
    */
   findControlByElement (element?: HTMLElement): HTMLElement | undefined {
     if (element) {
-      return document.querySelector<HTMLElement>(`.${this.getClassControl()}.${element.dataset.window}`) ?? undefined
+      return document.querySelector<HTMLElement>(`.${this.getClassControl()}.${element.dataset?.window}`) ?? undefined
     }
 
     return undefined

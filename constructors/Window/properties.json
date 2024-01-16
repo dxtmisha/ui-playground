@@ -1,4 +1,5 @@
 {
+  "menuSizeMultiplier": "1",
   "width": {
     "_var": true,
     "_style": true
@@ -7,9 +8,37 @@
     "_var": true,
     "_style": true
   },
+  "background-color": {
+    "_type": "var"
+  },
+  "background-opacity": {
+    "_type": "var"
+  },
+  "transform": {
+    "_type": "var"
+  },
+  "transform-origin": {
+    "_type": "var"
+  },
   "#body": {
     "#context": {}
   },
   "#control": {},
-  "menu": {}
+  "adaptive": {
+    "~menu": {
+      "menuSizeMultiplier": "0.25",
+      "content": "'--MENU--'",
+      "top": "{??sys.inset.y}",
+      "right": "auto",
+      "bottom": "auto",
+      "left": "{??sys.inset.x}",
+      "padding": "0",
+      "background-opacity": "0",
+      "transform-origin": "{??origin.x} {??origin.y}",
+      "& .??__body": {
+        "max-width": "100dvw",
+        "max-height": "100dvh"
+      }
+    }
+  }
 }

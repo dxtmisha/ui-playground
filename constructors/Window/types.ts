@@ -1,4 +1,4 @@
-import { type VNode } from 'vue'
+import { ShallowRef, type VNode } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 
 /**
@@ -23,12 +23,15 @@ export type WindowEmits = {
  */
 export type WindowSetup = {
   id: string
-  status: string
+  status: ShallowRef<string>
+  inDom: ShallowRef<boolean>
   slotControl: {
     class: string
-    onclick: (event: MouseEvent & TouchEvent) => void
-    oncontextmenu: (event: MouseEvent & TouchEvent) => void
+    onclick: (event: MouseEvent & TouchEvent) => Promise<void>
+    oncontextmenu: (event: MouseEvent & TouchEvent) => Promise<void>
   },
+  onTransition (): void
+  onPersistent (): void
   renderBodyContext (): VNode | undefined
 }
 

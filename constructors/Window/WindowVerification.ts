@@ -14,6 +14,7 @@ import { WindowStatusControlItem } from './typesBasic.ts'
  */
 export class WindowVerification {
   protected target?: HTMLElement
+  protected focus?: HTMLElement
 
   /**
    * Constructor
@@ -42,19 +43,20 @@ export class WindowVerification {
    */
   async update (target: HTMLElement): Promise<void> {
     this.target = target
+    this.focus = this.getFocus()
 
     if (this.open.get()) {
       if (this.isContextmenu()) {
         await this.open.reset()
           .watchPosition()
-      } else if (this.getFocus() === null) {
+      } else if (this.focus === null) {
         await this.open.toggle()
       } else if (!this.isFocus()) {
         if (this.isNotBlock()) {
           if (this.isChildren()) {
             requestAnimationFrame(async () => {
               if (
-                ['open', 'flash'].indexOf(this.getFocus()?.dataset.status || '') === -1
+                ['open', 'flash'].indexOf(this.focus?.dataset.status || '') === -1
               ) {
                 await this.open.toggle()
               }
@@ -79,6 +81,10 @@ export class WindowVerification {
     }
   }
 
+  /**
+   * Returns the element in focus.<br>
+   * Возвращает элемент в фокусе.
+   */
   getFocus () {
     return this.classes.findMain(this.getTarget())
   }
@@ -92,7 +98,7 @@ export class WindowVerification {
    * Проверяет, находится ли выбранный элемент в фокусе.
    */
   protected isFocus (): boolean {
-    return this.element.getMain() === this.getFocus()
+    return this.element.getMain() === this.focus
   }
 
   /**
@@ -126,8 +132,10 @@ export class WindowVerification {
    * Проверяет, включено ли окно или подходят ли условия для открытия окна.
    */
   protected isEnabled (): boolean {
+    const classControlStatic = this.classes.getSelectorStatusControl(WindowStatusControlItem.controlStatic)
+
     return !this.props.disabled &&
-      !this.getTarget().closest(this.classes.getSelectorStatusControl(WindowStatusControlItem.controlStatic))
+      !this.getTarget().closest(classControlStatic)
   }
 
   /**
@@ -149,7 +157,7 @@ export class WindowVerification {
     const classBlock = this.classes.getSelectorStatusControl(WindowStatusControlItem.block)
 
     return !this.classes.isWindow(this.getTarget()) &&
-      !this.classes.findControlByElement(this.getFocus())?.closest(classBlock)
+      !this.classes.findControlByElement(this.focus)?.closest(classBlock)
   }
 
   /**
@@ -159,7 +167,7 @@ export class WindowVerification {
   protected isContextmenu (): boolean {
     return Boolean(
       this.props.contextmenu &&
-      this.getTarget().closest(`.${this.classes.getId()}.${this.classes.getClassControl()}`)
+      this.getTarget().closest(this.classes.getSelectorControl())
     )
   }
 

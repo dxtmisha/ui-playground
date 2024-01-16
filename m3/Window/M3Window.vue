@@ -30,11 +30,11 @@ const classesToken = computed<ConstrClasses>(() => ({
     // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'm3-window': true,
-    'm3-window--minWidth--custom': isFilled(props.minWidth) && !inArray(propsValues.minWidth, props.minWidth),
-    [`m3-window--minWidth--${props.minWidth}`]: inArray(propsValues.minWidth, props.minWidth),
-    'm3-window--minHeight--custom': isFilled(props.minHeight) && !inArray(propsValues.minHeight, props.minHeight),
-    [`m3-window--minHeight--${props.minHeight}`]: inArray(propsValues.minHeight, props.minHeight),
-    'm3-window--menu': props.menu
+    'm3-window--width--custom': isFilled(props.width) && !inArray(propsValues.width, props.width),
+    [`m3-window--width--${props.width}`]: inArray(propsValues.width, props.width),
+    'm3-window--height--custom': isFilled(props.height) && !inArray(propsValues.height, props.height),
+    [`m3-window--height--${props.height}`]: inArray(propsValues.height, props.height),
+    [`m3-window--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive)
     // :classes-values [!] System label / Системная метка
   }
   // TODO: User subclasses / Пользовательские подклассы
@@ -42,8 +42,8 @@ const classesToken = computed<ConstrClasses>(() => ({
 const stylesToken = computed<ConstrStyles>(() => ({
   // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
-  'm3-window-sys-minWidth': props.minWidth ?? null,
-  'm3-window-sys-minHeight': props.minHeight ?? null
+  'm3-window-sys-width': props.width ?? null,
+  'm3-window-sys-height': props.height ?? null
   // :styles-values [!] System label / Системная метка
 }))
 

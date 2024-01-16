@@ -18,6 +18,14 @@ export class WindowStatus {
   }
 
   /**
+   * Checks if the current status is open (open/flash).<br>
+   * Проверяет, является ли текущий статус открытым (open/flash).
+   */
+  isOpen (): boolean {
+    return this.status === WindowStatusItem.open || this.status === WindowStatusItem.flash
+  }
+
+  /**
    * Returns the current status.<br>
    * Возвращает текущий статус.
    */

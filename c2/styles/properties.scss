@@ -1126,6 +1126,12 @@ $designsProperties: (
         name: 'd-window',
         type: 'component',
         value: (
+          'menuSizeMultiplier':(
+            index: 'menuSizeMultiplier',
+            name: '--d-window-menuSizeMultiplier',
+            type: 'var',
+            value: 1,
+          ),
           'body':(
             index: 'body',
             name: '&__body',
@@ -1189,11 +1195,91 @@ $designsProperties: (
             ),
             var: true,
           ),
-          'menu':(
-            index: 'menu',
-            name: '&--menu',
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
             type: 'state',
             value: (
+              'menu':(
+                index: 'menu',
+                name: '&--menu',
+                type: 'state',
+                value: (
+                  'menuSizeMultiplier':(
+                    index: 'menuSizeMultiplier',
+                    name: '--d-window-menuSizeMultiplier',
+                    type: 'var',
+                    value: 0.25,
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: '--d-window-backgroundOpacity',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  'transformOrigin':(
+                    index: 'transformOrigin',
+                    name: '--d-window-transformOrigin',
+                    type: 'var',
+                    value: 'var(--d-window-origin-x) var(--d-window-origin-y)',
+                  ),
+                  'top':(
+                    index: 'top',
+                    name: 'top',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-y)',
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: 'right',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'bottom':(
+                    index: 'bottom',
+                    name: 'bottom',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: 'left',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-x)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--MENU--'',
+                  ),
+                  ' .??__body':(
+                    index: ' .??__body',
+                    name: ' .d-window__body',
+                    type: 'scss',
+                    value: (
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
+                        type: 'property',
+                        value: '100dvw',
+                      ),
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
+                        type: 'property',
+                        value: '100dvh',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

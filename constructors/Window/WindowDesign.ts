@@ -85,16 +85,17 @@ export class WindowDesign<
   protected initSetup (): SETUP {
     return {
       id: this.window.getId(),
-      status: this.window.status.value,
+      status: this.window.status,
+      inDom: this.window.inDom,
       slotControl: {
         class: this.window.getClassControl(),
-        onclick: (event: MouseEvent & TouchEvent) => {
-          console.log(event)
+        onclick: async (event: MouseEvent & TouchEvent) => {
+          await this.window.onClick(event)
         },
-        oncontextmenu: (event: MouseEvent & TouchEvent) => {
-          console.log(event)
-        }
+        oncontextmenu: async (event: MouseEvent & TouchEvent) => this.window.onContextmenu(event)
       },
+      onTransition: () => this.window.onTransition(),
+      onPersistent: () => this.window.onPersistent(),
       renderBodyContext: () => this.renderBodyContext()
     } as SETUP
   }
@@ -136,8 +137,7 @@ export class WindowDesign<
    */
   protected initStyles (): ConstrStyles {
     return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
+      ...this.toClassName(this.window.styles.value)
     }
   }
 
@@ -147,22 +147,34 @@ export class WindowDesign<
    */
   protected initRender (): (VNode | any)[] {
     const setup = this.setup()
-    const children: any[] = [this.renderBody()]
+    const main: any[] = []
 
-    return [
-      this.initSlot('control'),
-      h(Teleport, {
-        to: 'body'
-      }, [
-        h('div', {
-          ...this.getAttrs(),
-          ref: this.element,
-          class: setup.classes.value.main,
-          'data-window': setup.id,
-          'data-status': setup.status
-        }, children)
-      ])
-    ]
+    this.initSlot('control', main, setup.slotControl)
+
+    if (setup.inDom.value) {
+      const children: any[] = [this.renderBody()]
+
+      main.push(
+        h(Teleport, {
+          key: 'teleport',
+          to: 'body'
+        }, [
+          h('div', {
+            ...this.getAttrs(),
+            key: 'main',
+            ref: this.element,
+            class: setup.classes.value.main,
+            style: setup.styles.value,
+            'data-window': setup.id,
+            'data-status': setup.status.value,
+            onTransitionend: setup.onTransition,
+            onAnimationend: setup.onPersistent
+          }, children)
+        ])
+      )
+    }
+
+    return main
   }
 
   /**
@@ -178,6 +190,7 @@ export class WindowDesign<
     ]
 
     return h('div', {
+      key: 'body',
       class: setup.classes.value.body
     }, children)
   }
@@ -188,8 +201,9 @@ export class WindowDesign<
    */
   protected renderBodyContext (): VNode {
     const setup = this.setup()
-    const children: any[] = [this.initSlot('default')]
+    const children = () => this.initSlot('default')
     const props = {
+      key: 'bodyContext',
       class: setup.classes.value.bodyContext
     }
 

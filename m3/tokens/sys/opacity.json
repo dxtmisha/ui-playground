@@ -5,5 +5,6 @@
   "016": "{ref.opacity.16}",
   "high": "{ref.opacity.100}",
   "medium": "{ref.opacity.72}",
-  "disabled": "{ref.opacity.38}"
+  "disabled": "{ref.opacity.38}",
+  "scrim": "{ref.opacity.32}"
 }

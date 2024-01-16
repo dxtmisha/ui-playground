@@ -11,7 +11,6 @@ import { WindowPosition } from './WindowPosition.ts'
 import { WindowOrigin } from './WindowOrigin.ts'
 
 import { type WindowProps } from './props.ts'
-import { WindowStatusItem } from './typesBasic.ts'
 
 /**
  * Class for managing the status of an open window.<br>
@@ -52,6 +51,7 @@ export class WindowOpen {
    * Проверяет, надо ли элемент оставить в DOM.
    */
   inDom (): boolean {
+    console.log('this.open', this.open, this.open || (this.first && Boolean(this.props.inDom)))
     return this.open || (this.first && Boolean(this.props.inDom))
   }
 
@@ -86,9 +86,10 @@ export class WindowOpen {
 
       if (toOpen) {
         this.reset()
-        this.status.set(WindowStatusItem.preparation)
+        this.status.toPreparation()
         this.open = toOpen
         this.first = toOpen
+        this.makeCallback()
 
         await this.hook.preparation(this.open)
         await this.watchPosition()
@@ -96,17 +97,19 @@ export class WindowOpen {
         requestAnimationFrame(async () => {
           await this.hook.opening(this.open)
 
-          this.makeCallback()
-          this.status.set(this.flash.isClose() ? WindowStatusItem.flash : WindowStatusItem.open)
-        })
-      } else {
-        this.makeCallback()
+          if (this.flash.isClose()) {
+            this.status.toFlash()
+          } else {
+            this.status.toOpen()
+          }
 
-        if (this.flash.isOpen()) {
-          await this.toClose()
-        } else {
-          this.status.set(WindowStatusItem.hide)
-        }
+          this.makeCallback()
+        })
+      } else if (this.flash.isOpen()) {
+        this.toClose()
+      } else {
+        this.status.toHide()
+        this.makeCallback()
       }
     }
 
@@ -117,12 +120,10 @@ export class WindowOpen {
    * The method closes the window.<br>
    * Метод закрывает окно.
    */
-  async close (): Promise<boolean> {
+  close (): void {
     if (this.status.isHide()) {
-      return await this.toClose()
+      this.toClose()
     }
-
-    return false
   }
 
   /**
@@ -142,8 +143,8 @@ export class WindowOpen {
    */
   async watchPosition (): Promise<void> {
     if (
-      this.element.isMain() &&
-      this.open
+      this.open &&
+      this.element.isMain()
     ) {
       this.position.update()
       this.origin.update()
@@ -164,9 +165,10 @@ export class WindowOpen {
 
         if (
           element &&
-          getComputedStyle(element).content === '"--MENU--"'
-        ) {
+          getComputedStyle(element).content === '"--MENU--"' &&
           this.position.update()
+        ) {
+          this.makeCallback()
         }
       },
       () => this.open && !this.status.isHide()
@@ -191,12 +193,13 @@ export class WindowOpen {
    * Transition to the closing state.<br>
    * Переход в состояние закрытия.
    */
-  protected async toClose (): Promise<boolean> {
+  protected toClose (): void {
     setTimeout(() => {
       this.open = false
+      this.makeCallback()
     }, 50)
 
-    this.status.set(WindowStatusItem.close)
-    return await this.hook.opening(this.open) || false
+    this.status.toClose()
+    this.hook.opening(this.open).then()
   }
 }

@@ -13,9 +13,11 @@ import { WindowOrigin } from './WindowOrigin.ts'
 
 import { WindowOpen } from './WindowOpen.ts'
 import { WindowVerification } from './WindowVerification.ts'
+import { WindowEvent } from './WindowEvent.ts'
 
 import { type WindowProps } from './props.ts'
 import { WindowStatusItem } from './typesBasic.ts'
+import type { ConstrStyles } from '../../types/constructor.ts'
 
 /**
  * The base class for working with the window.<br>
@@ -37,6 +39,7 @@ export class Window {
 
   protected readonly open: WindowOpen
   protected readonly verification: WindowVerification
+  protected readonly event: WindowEvent
 
   /**
    * Constructor
@@ -102,6 +105,8 @@ export class Window {
       this.origin,
       () => {
         callback?.()
+
+        this.event.toggle()
       }
     )
     this.verification = new WindowVerification(
@@ -111,6 +116,23 @@ export class Window {
       this.element,
       this.open
     )
+    this.event = new WindowEvent(
+      props,
+      this.status,
+      this.client,
+      this.persistent,
+      this.flash,
+      this.open,
+      this.verification
+    )
+  }
+
+  /**
+   * Checks whether the element should be kept in the DOM.<br>
+   * Проверяет, надо ли элемент оставить в DOM.
+   */
+  inDom (): boolean {
+    return this.open.inDom()
   }
 
   /**
@@ -130,10 +152,29 @@ export class Window {
   }
 
   /**
+   * Returns the position for displaying the element.<br>
+   * Возвращает позицию для отображения элемента.
+   */
+  getStyles (): ConstrStyles {
+    return {
+      ...this.origin.getStyles(),
+      ...this.position.getStyles()
+    }
+  }
+
+  /**
    * Returns the object for working with elements.<br>
    * Возвращает объект для работы с элементами.
    */
   getElement (): WindowElement {
     return this.element
+  }
+
+  /**
+   * Returns an object for working with the event.<br>
+   * Возвращает объект для работы с событием.
+   */
+  getEvent (): WindowEvent {
+    return this.event
   }
 }

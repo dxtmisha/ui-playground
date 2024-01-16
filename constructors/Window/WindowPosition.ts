@@ -67,7 +67,7 @@ export class WindowPosition {
    * Returns the position for displaying the element.<br>
    * Возвращает позицию для отображения элемента.
    */
-  getStyle (): ConstrStyles {
+  getStyles (): ConstrStyles {
     return {
       '--??-sys-inset-x': this.getStyleX(),
       '--??-sys-inset-y': this.getStyleY()
@@ -78,13 +78,15 @@ export class WindowPosition {
    * Update of the element’s position coordinates.<br>
    * Обновление координаты положения элемента.
    */
-  update (): this {
+  update (): boolean {
     if (this.coordinates.update()) {
       this.setX()
       this.setY()
+
+      return true
     }
 
-    return this
+    return false
   }
 
   /**

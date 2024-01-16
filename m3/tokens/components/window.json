@@ -11,19 +11,18 @@
     "md": "{ref.spacing.px} * 384",
     "lg": "{ref.spacing.px} * 512"
   },
+  "background-color": "{sys.palette.scrim}",
+  "background-opacity": "{sys.opacity.scrim}",
   "body": {
-    "elevation": "{elevation.4}"
+    "elevation": "{elevation.4}",
+    "border-radius": "{sys.rounded.2xl}"
   },
-  "menu": {
-    "width": {
-      "sm": "{ref.spacing.px} * 128",
-      "md": "{ref.spacing.px} * 192",
-      "lg": "{ref.spacing.px} * 256"
-    },
-    "height": {
-      "sm": "{ref.spacing.px} * 64",
-      "md": "{ref.spacing.px} * 192",
-      "lg": "{ref.spacing.px} * 256"
+  "adaptive": {
+    "menu": {
+      "body": {
+        "elevation": "{elevation.2}",
+        "border-radius": "{sys.rounded.sm}"
+      }
     }
   }
 }

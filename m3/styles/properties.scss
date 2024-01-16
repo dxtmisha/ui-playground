@@ -998,6 +998,12 @@ $designsProperties: (
         name: 'd-window',
         type: 'component',
         value: (
+          'menuSizeMultiplier':(
+            index: 'menuSizeMultiplier',
+            name: '--d-window-menuSizeMultiplier',
+            type: 'var',
+            value: 1,
+          ),
           'body':(
             index: 'body',
             name: '&__body',
@@ -1061,11 +1067,91 @@ $designsProperties: (
             ),
             var: true,
           ),
-          'menu':(
-            index: 'menu',
-            name: '&--menu',
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
             type: 'state',
             value: (
+              'menu':(
+                index: 'menu',
+                name: '&--menu',
+                type: 'state',
+                value: (
+                  'menuSizeMultiplier':(
+                    index: 'menuSizeMultiplier',
+                    name: '--d-window-menuSizeMultiplier',
+                    type: 'var',
+                    value: 0.25,
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: '--d-window-backgroundOpacity',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  'transformOrigin':(
+                    index: 'transformOrigin',
+                    name: '--d-window-transformOrigin',
+                    type: 'var',
+                    value: 'var(--d-window-origin-x) var(--d-window-origin-y)',
+                  ),
+                  'top':(
+                    index: 'top',
+                    name: 'top',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-y)',
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: 'right',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'bottom':(
+                    index: 'bottom',
+                    name: 'bottom',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: 'left',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-x)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--MENU--'',
+                  ),
+                  ' .??__body':(
+                    index: ' .??__body',
+                    name: ' .d-window__body',
+                    type: 'scss',
+                    value: (
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
+                        type: 'property',
+                        value: '100dvw',
+                      ),
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
+                        type: 'property',
+                        value: '100dvh',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -2880,6 +2966,12 @@ $designsProperties: (
                 name: '--m3-sys-opacity-disabled',
                 type: 'var',
                 value: 'var(--m3-ref-opacity-38)',
+              ),
+              'scrim':(
+                index: 'scrim',
+                name: '--m3-sys-opacity-scrim',
+                type: 'var',
+                value: 'var(--m3-ref-opacity-32)',
               ),
             ),
           ),
@@ -9156,6 +9248,24 @@ $designsProperties: (
         name: 'm3-window',
         type: 'component',
         value: (
+          'menuSizeMultiplier':(
+            index: 'menuSizeMultiplier',
+            name: '--m3-window-menuSizeMultiplier',
+            type: 'var',
+            value: 1,
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--m3-window-backgroundColor',
+            type: 'var',
+            value: 'var(--m3-sys-palette-scrim)',
+          ),
+          'backgroundOpacity':(
+            index: 'backgroundOpacity',
+            name: '--m3-window-backgroundOpacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-scrim)',
+          ),
           'zIndex':(
             index: 'zIndex',
             name: 'z-index',
@@ -9184,6 +9294,12 @@ $designsProperties: (
                 name: 'background',
                 type: 'property',
                 value: 'var(--m3-ref-background-4)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m3-sys-rounded-2xl)',
               ),
               'boxShadow':(
                 index: 'boxShadow',
@@ -9327,98 +9443,117 @@ $designsProperties: (
             ),
             var: true,
           ),
-          'menu':(
-            index: 'menu',
-            name: '&--menu',
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
             type: 'state',
             value: (
-              'width':(
-                index: 'width',
-                name: '&.m3-window--width',
+              'menu':(
+                index: 'menu',
+                name: '&--menu',
                 type: 'state',
                 value: (
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
+                  'menuSizeMultiplier':(
+                    index: 'menuSizeMultiplier',
+                    name: '--m3-window-menuSizeMultiplier',
+                    type: 'var',
+                    value: 0.25,
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: '--m3-window-backgroundOpacity',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  'transformOrigin':(
+                    index: 'transformOrigin',
+                    name: '--m3-window-transformOrigin',
+                    type: 'var',
+                    value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
+                  ),
+                  'top':(
+                    index: 'top',
+                    name: 'top',
+                    type: 'property',
+                    value: 'var(--m3-window-sys-inset-y)',
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: 'right',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'bottom':(
+                    index: 'bottom',
+                    name: 'bottom',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: 'left',
+                    type: 'property',
+                    value: 'var(--m3-window-sys-inset-x)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--MENU--'',
+                  ),
+                  'body':(
+                    index: 'body',
+                    name: '&--body',
                     type: 'state',
                     value: (
-                      'width':(
-                        index: 'width',
-                        name: 'width',
+                      'zIndex':(
+                        index: 'zIndex',
+                        name: 'z-index',
                         type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 128)',
+                        value: 'var(--m3-ref-index-2)',
+                      ),
+                      'background':(
+                        index: 'background',
+                        name: 'background',
+                        type: 'property',
+                        value: 'var(--m3-ref-background-2)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--m3-sys-rounded-sm)',
+                      ),
+                      'boxShadow':(
+                        index: 'boxShadow',
+                        name: 'box-shadow',
+                        type: 'property',
+                        value: 'var(--m3-ref-shadow-2)',
                       ),
                     ),
                   ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
+                  ' .??__body':(
+                    index: ' .??__body',
+                    name: ' .m3-window__body',
+                    type: 'scss',
                     value: (
-                      'width':(
-                        index: 'width',
-                        name: 'width',
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
                         type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 192)',
+                        value: '100dvw',
                       ),
-                    ),
-                  ),
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                      'width':(
-                        index: 'width',
-                        name: 'width',
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
                         type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 256)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'height':(
-                index: 'height',
-                name: '&.m3-window--height',
-                type: 'state',
-                value: (
-                  'sm':(
-                    index: 'sm',
-                    name: '&--sm',
-                    type: 'state',
-                    value: (
-                      'height':(
-                        index: 'height',
-                        name: 'height',
-                        type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 64)',
-                      ),
-                    ),
-                  ),
-                  'md':(
-                    index: 'md',
-                    name: '&--md',
-                    type: 'state',
-                    value: (
-                      'height':(
-                        index: 'height',
-                        name: 'height',
-                        type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 192)',
-                      ),
-                    ),
-                  ),
-                  'lg':(
-                    index: 'lg',
-                    name: '&--lg',
-                    type: 'state',
-                    value: (
-                      'height':(
-                        index: 'height',
-                        name: 'height',
-                        type: 'property',
-                        value: 'calc(var(--m3-ref-spacing-px) * 256)',
+                        value: '100dvh',
                       ),
                     ),
                   ),

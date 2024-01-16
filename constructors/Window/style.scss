@@ -3,6 +3,7 @@
 @mixin mixinWindow {
   @include initByCustom('opacity', 0);
   @include initByCustom('transform', none);
+  @include initByCustom('transformOrigin', center);
   @include initByCustom('transition', none);
   @include initByCustom('transitionBody', none);
 
@@ -13,6 +14,8 @@
   align-items: center;
   justify-content: center;
 
+  @include backgroundColor(v('??backgroundColor'), 0);
+
   transition: v('??transition');
 
   &__body {
@@ -22,15 +25,15 @@
     flex-flow: column;
     flex-shrink: 1;
 
-    width: v('??width', auto);
-    height: v('??height', auto);
+    width: calc(#{v('??width', auto)} * #{v('??menuSizeMultiplier')});
+    height: calc(#{v('??height', auto)} * #{v('??menuSizeMultiplier')});
     max-width: 100%;
     max-height: 100%;
 
     opacity: v('??opacity');
 
     transform: v('??transform');
-    transform-origin: center;
+    transform-origin: v('??transformOrigin');
     transition: v('??transitionBody');
 
     &__context {
@@ -39,30 +42,59 @@
     }
   }
 
-  &--status {
-    &--preparation {
-      @include initByCustom('transform', scale(.8));
+  &--persistent {
+    animation-duration: v('d.sys.transitionDuration.fade.through');
+    animation-name: n('??persistent');
+    animation-timing-function: v('d.sys.transitionFunction.standard');
+    transform-origin: center;
+  }
 
-      display: flex;
+  &[data-status="preparation"] {
+    @include initByCustom('transform', scale(.8));
+
+    display: flex;
+  }
+
+  &[data-status="flash"] {
+    @include initByCustom('opacity', 1);
+    @include initByCustom('transform', none);
+    @include initByCustom('transition', none);
+    @include initByCustom('transitionBody', none);
+
+    display: flex;
+
+    @include backgroundOpacity(v('??backgroundOpacity'));
+  }
+
+  &[data-status="open"] {
+    @include initByCustom('opacity', 1);
+    @include initByCustom('transform', none);
+    @include initByCustom('transition', background #{v('d.sys.transitionDuration.fade.enter')} linear);
+    @include initByCustom('transitionBody', #{opacity #{v('d.sys.transitionDuration.xs')} linear, transform #{v('d.sys.transitionDuration.fade.enter')} #{v('d.sys.transitionFunction.deceleration')}});
+
+    display: flex;
+
+    @include backgroundOpacity(v('??backgroundOpacity'));
+  }
+
+  &[data-status="hide"] {
+    @include initByCustom('opacity', 0);
+    @include initByCustom('transform', none);
+    @include initByCustom('transition', background #{v('d.sys.transitionDuration.fade.exit')} linear);
+    @include initByCustom('transitionBody', opacity #{v('d.sys.transitionDuration.fade.exit')} linear);
+
+    display: flex;
+  }
+
+  @keyframes #{n('??persistent')} {
+    0% {
+      transform: scale(1)
     }
-
-    &--flash {
-      display: flex;
-
-      transition: none;
+    50% {
+      transform: scale(1.02)
     }
-
-    &--open {
-      @include initByCustom('opacity', 1);
-      @include initByCustom('transform', none);
-      @include initByCustom('transition', background #{v('d.sys.transitionDuration.fade.enter')} linear);
-      @include initByCustom('transitionBody', opacity #{v('d.sys.transitionDuration.xs')} linear, transform #{v('d.sys.transitionDuration.fade.enter')} #{v('d.sys.transitionFunction.deceleration')});
-
-      display: flex;
-    }
-
-    &--hide {
-      display: flex;
+    100% {
+      transform: scale(1)
     }
   }
 }
