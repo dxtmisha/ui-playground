@@ -10,7 +10,7 @@ export const propsValues = {
   // :values [!] System label / Системная метка
   width: ['sm', 'md', 'lg'],
   height: ['sm', 'md', 'lg'],
-  adaptive: ['menu', 'auto'],
+  adaptive: ['menu', 'modal', 'modalDynamic', 'auto'],
   alignment: ['center', 'top', 'right', 'bottom', 'left'],
   origin: ['center', 'top', 'right', 'bottom', 'left']
   // :values [!] System label / Системная метка
@@ -27,12 +27,13 @@ export type PropsToken = {
   // [constructor] axis?: 'x' | 'y' | 'on'
   // [constructor] indent?: number
   // [constructor] persistent?: boolean
+  // [constructor] overElement?: ElementOrString<HTMLElement>
   // [constructor] autoClose?: boolean
   // [constructor] flash?: boolean
   // [constructor] inDom?: boolean
   width?: string | 'sm' | 'md' | 'lg' | 'custom'
   height?: string | 'sm' | 'md' | 'lg' | 'custom'
-  adaptive?: 'menu' | 'auto'
+  adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'auto'
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'

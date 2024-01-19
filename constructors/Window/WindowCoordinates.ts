@@ -1,6 +1,8 @@
 import { WindowClasses } from './WindowClasses.ts'
 import { WindowElement } from './WindowElement.ts'
 
+import { WindowLocation } from './typesBasic.ts'
+
 /**
  * A class for working with coordinates.<br>
  * Класс для работы с координатами.
@@ -15,6 +17,7 @@ export class WindowCoordinates {
   protected innerWidth: number = 0
   protected innerHeight: number = 0
   protected padding: number = 0
+  protected location: WindowLocation = WindowLocation.center
 
   /**
    * Constructor
@@ -102,6 +105,14 @@ export class WindowCoordinates {
   }
 
   /**
+   * Returns the values of the element's position.<br>
+   * Возвращает значения положения элемента.
+   */
+  getLocation (): WindowLocation {
+    return this.location
+  }
+
+  /**
    * Returns the maximum height of the body.<br>
    * Возвращает максимальную высоту у body.
    */
@@ -145,6 +156,7 @@ export class WindowCoordinates {
       this.innerWidth = window.innerWidth
       this.innerHeight = window.innerHeight
       this.padding = (window.innerHeight - this.getMaxHeight()) / 2
+      this.location = this.initLocation(rect.top + (rect.height / 2))
 
       return true
     }
@@ -167,5 +179,25 @@ export class WindowCoordinates {
     this.innerWidth = 0
 
     return this
+  }
+
+  /**
+   * Calculates control position values.<br>
+   * Вычисляет значения положения контроля
+   * @param top position of an element /<br>положение элемента
+   */
+  protected initLocation (
+    top: number
+  ): WindowLocation {
+    const value = Math.floor(top / (window.innerHeight / 3))
+
+    switch (value) {
+      case 0:
+        return WindowLocation.top
+      case 2:
+        return WindowLocation.bottom
+    }
+
+    return WindowLocation.center
   }
 }

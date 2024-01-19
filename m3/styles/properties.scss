@@ -459,9 +459,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-button__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-button__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -604,9 +604,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-chip__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-chip__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -1136,6 +1136,12 @@ $designsProperties: (
                     name: '& .d-window__body',
                     type: 'subclass',
                     value: (
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'auto',
+                      ),
                       'maxWidth':(
                         index: 'maxWidth',
                         name: 'max-width',
@@ -1147,6 +1153,60 @@ $designsProperties: (
                         name: 'max-height',
                         type: 'property',
                         value: 'calc(100dvh - (var(--d-window-padding) * 2))',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'modal':(
+                index: 'modal',
+                name: '&--modal',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'modalDynamic':(
+                index: 'modalDynamic',
+                name: '&--modalDynamic',
+                type: 'state',
+                value: (
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.d-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -6910,9 +6970,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .m3-button__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .m3-button__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -6947,9 +7007,9 @@ $designsProperties: (
                         type: 'var',
                         value: 0,
                       ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .m3-button__label',
+                      '& .??__label':(
+                        index: '& .??__label',
+                        name: '& .m3-button__label',
                         type: 'scss',
                         value: (
                           'display':(
@@ -6986,9 +7046,9 @@ $designsProperties: (
                         type: 'var',
                         value: 0,
                       ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .m3-button__label',
+                      '& .??__label':(
+                        index: '& .??__label',
+                        name: '& .m3-button__label',
                         type: 'scss',
                         value: (
                           'display':(
@@ -7828,9 +7888,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .m3-chip__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .m3-chip__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -7865,9 +7925,9 @@ $designsProperties: (
                         type: 'var',
                         value: 0,
                       ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .m3-chip__label',
+                      '& .??__label':(
+                        index: '& .??__label',
+                        name: '& .m3-chip__label',
                         type: 'scss',
                         value: (
                           'display':(
@@ -7904,9 +7964,9 @@ $designsProperties: (
                         type: 'var',
                         value: 0,
                       ),
-                      ' .??__label':(
-                        index: ' .??__label',
-                        name: ' .m3-chip__label',
+                      '& .??__label':(
+                        index: '& .??__label',
+                        name: '& .m3-chip__label',
                         type: 'scss',
                         value: (
                           'display':(
@@ -9609,6 +9669,12 @@ $designsProperties: (
                         type: 'property',
                         value: 'var(--m3-ref-index-2)',
                       ),
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'auto',
+                      ),
                       'maxWidth':(
                         index: 'maxWidth',
                         name: 'max-width',
@@ -9643,11 +9709,117 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'modal':(
+                index: 'modal',
+                name: '&--modal',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'modalDynamic':(
+                index: 'modalDynamic',
+                name: '&--modalDynamic',
+                type: 'state',
+                value: (
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.m3-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               'auto':(
                 index: 'auto',
                 name: '&--auto',
                 type: 'state',
                 value: (
+                  'paddingTop':(
+                    index: 'paddingTop',
+                    name: 'padding-top',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-12)',
+                  ),
+                  'paddingBottom':(
+                    index: 'paddingBottom',
+                    name: 'padding-bottom',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-12)',
+                  ),
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.m3-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   'mediaSm':(
                     index: 'mediaSm',
                     name: '(min-width: 600px)',
@@ -9717,6 +9889,12 @@ $designsProperties: (
                             name: 'z-index',
                             type: 'property',
                             value: 'var(--m3-ref-index-2)',
+                          ),
+                          'top':(
+                            index: 'top',
+                            name: 'top',
+                            type: 'property',
+                            value: 'auto',
                           ),
                           'maxWidth':(
                             index: 'maxWidth',

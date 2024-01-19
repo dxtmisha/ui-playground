@@ -587,9 +587,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-button__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-button__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -732,9 +732,9 @@ $designsProperties: (
                     type: 'var',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .d-chip__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-chip__label',
                     type: 'scss',
                     value: (
                       'display':(
@@ -1264,6 +1264,12 @@ $designsProperties: (
                     name: '& .d-window__body',
                     type: 'subclass',
                     value: (
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'auto',
+                      ),
                       'maxWidth':(
                         index: 'maxWidth',
                         name: 'max-width',
@@ -1275,6 +1281,60 @@ $designsProperties: (
                         name: 'max-height',
                         type: 'property',
                         value: 'calc(100dvh - (var(--d-window-padding) * 2))',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'modal':(
+                index: 'modal',
+                name: '&--modal',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'modalDynamic':(
+                index: 'modalDynamic',
+                name: '&--modalDynamic',
+                type: 'state',
+                value: (
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.d-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -17250,9 +17310,9 @@ $designsProperties: (
                     type: 'property',
                     value: 0,
                   ),
-                  ' .??__label':(
-                    index: ' .??__label',
-                    name: ' .c2-button__label',
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .c2-button__label',
                     type: 'scss',
                     value: (
                       'display':(

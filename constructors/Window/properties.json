@@ -43,8 +43,21 @@
       "background-opacity": "0",
       "transform-origin": "{??origin.x} {??origin.y}",
       "body": {
+        "top": "auto",
         "max-width": "100dvw - ({??padding} * 2)",
         "max-height": "100dvh - ({??padding} * 2)"
+      }
+    },
+    "~modal": {},
+    "~modalDynamic": {
+      "&.??--location": {
+        "~center": {},
+        "~top": {
+          "align-items": "flex-start"
+        },
+        "~bottom": {
+          "align-items": "flex-end"
+        }
       }
     }
   },

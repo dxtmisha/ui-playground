@@ -31,7 +31,7 @@ export type WindowProps = {
   // :type [!] System label / Системная метка
   width?: string | 'custom'
   height?: string | 'custom'
-  adaptive?: 'menu'
+  adaptive?: 'menu' | 'modal' | 'modalDynamic'
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'

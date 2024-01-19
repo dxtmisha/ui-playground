@@ -79,7 +79,7 @@ export class WindowRef {
    * Возвращает идентификатор текущего окна.
    */
   getId (): string {
-    return this.window.getClasses().getId()
+    return this.window.getClassesItem().getId()
   }
 
   /**
@@ -87,7 +87,7 @@ export class WindowRef {
    * Возвращает название класса для контроля.
    */
   getClassControl (): string {
-    return this.window.getClasses().getClassControlAndId()
+    return this.window.getClassesItem().getClassControlAndId()
   }
 
   /**
@@ -146,7 +146,7 @@ export class WindowRef {
    * Обновляет значения класса.
    */
   updateClasses (): this {
-    this.classes.value = this.window.getClasses().getClasses()
+    this.classes.value = this.window.getClasses()
     this.styles.value = this.window.getStyles()
     return this
   }

@@ -2,6 +2,9 @@
   "mainWindow": "{d.window}",
   "adaptive": {
     "~auto": {
+      "autoBasic": "{??adaptive.modalDynamic}",
+      "paddingTop": "{ref.spacing.12}",
+      "paddingBottom": "{ref.spacing.12}",
       "media|sm": {
         "menuBasic": "{??adaptive.menu}"
       }

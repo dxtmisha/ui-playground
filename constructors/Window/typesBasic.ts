@@ -14,6 +14,12 @@ export enum WindowStatusControlItem {
   controlStatic = 'controlStatic'
 }
 
+export enum WindowLocation {
+  top = 'top',
+  center = 'center',
+  bottom = 'bottom'
+}
+
 export type WindowEmitOptions = {
   id: string
   element: HTMLDivElement

@@ -17,7 +17,7 @@ import { WindowEvent } from './WindowEvent.ts'
 
 import { type WindowProps } from './props.ts'
 import { WindowEmitOptions, WindowStatusItem } from './typesBasic.ts'
-import type { ConstrStyles } from '../../types/constructor.ts'
+import type { ConstrClassObject, ConstrStyles } from '../../types/constructor.ts'
 
 /**
  * The base class for working with the window.<br>
@@ -162,8 +162,19 @@ export class Window {
    * Returns an object for working with classes.<br>
    * Возвращает объект для работы с классами.
    */
-  getClasses (): WindowClasses {
+  getClassesItem (): WindowClasses {
     return this.classes
+  }
+
+  /**
+   * Returns the list of available classes.<br>
+   * Возвращает список доступных классов.
+   */
+  getClasses (): ConstrClassObject {
+    return {
+      ...this.classes.getClasses(),
+      [`??--location--${this.coordinates.getLocation()}`]: true
+    }
   }
 
   /**

@@ -93,7 +93,12 @@ export class PropertiesKeys {
       }
 
       if (
-        PropertiesTypes.isScss(type) ||
+        PropertiesTypes.isScss(type)
+      ) {
+        return `&${this.getName(key, false)}`
+      }
+
+      if (
         PropertiesTypes.isRoot(type)
       ) {
         return this.getName(key, false)
