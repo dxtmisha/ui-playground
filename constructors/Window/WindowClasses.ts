@@ -22,13 +22,15 @@ export class WindowClasses {
    * @param className class name /<br>название класса
    * @param classControl control element class name /<br>название класса элемента управления
    * @param classBody class name for the body /<br>название класса для тела
+   * @param classBodyContext class name for the context body /<br>название класса для тела контекста
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly persistent: WindowPersistent,
     protected readonly className: string = 'is-window',
     protected readonly classControl: string = 'is-control',
-    protected readonly classBody: string = 'is-body'
+    protected readonly classBody: string = 'is-body',
+    protected readonly classBodyContext: string = 'is-body-context'
   ) {
   }
 
@@ -148,5 +150,13 @@ export class WindowClasses {
    */
   findBody (): HTMLDivElement | undefined {
     return document.querySelector<HTMLDivElement>(`.${this.className}.${this.id} .${this.classBody}`) || undefined
+  }
+
+  /**
+   * Search and return of the context body element of the window for the current component.<br>
+   * Поиск и возврат элемента контекста тела окна для текущего компонента.
+   */
+  findBodyContext (): HTMLDivElement | undefined {
+    return document.querySelector<HTMLDivElement>(`.${this.className}.${this.id} .${this.classBodyContext}`) || undefined
   }
 }

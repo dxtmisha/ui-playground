@@ -59,6 +59,14 @@ export class WindowElement {
   }
 
   /**
+   * Returns the window context element.<br>
+   * Возвращает элемент контекста окна.
+   */
+  getBodyContext (): HTMLDivElement | undefined {
+    return this.classes.findBodyContext()
+  }
+
+  /**
    * Returns the dimensions of the window’s body element.<br>
    * Возвращает размеры элемента тела окна.
    */

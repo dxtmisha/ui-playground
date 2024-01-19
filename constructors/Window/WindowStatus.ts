@@ -46,6 +46,15 @@ export class WindowStatus {
 
   /**
    * Translates status to preparation.<br>
+   * Переводит статус в display.
+   */
+  toDisplay (): this {
+    this.set(WindowStatusItem.display)
+    return this
+  }
+
+  /**
+   * Translates status to preparation.<br>
    * Переводит статус в preparation.
    */
   toPreparation (): this {

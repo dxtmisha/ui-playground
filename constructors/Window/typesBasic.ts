@@ -1,4 +1,5 @@
 export enum WindowStatusItem {
+  display = 'display',
   preparation = 'preparation',
   flash = 'flash',
   open = 'open',
@@ -11,4 +12,11 @@ export enum WindowStatusControlItem {
   close = 'close',
   static = 'static',
   controlStatic = 'controlStatic'
+}
+
+export type WindowEmitOptions = {
+  id: string
+  element: HTMLDivElement
+  control: HTMLElement
+  open: boolean
 }

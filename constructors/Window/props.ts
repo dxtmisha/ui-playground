@@ -1,4 +1,5 @@
 import { type PropType } from 'vue'
+import { type ElementOrString } from '../../types/element.ts'
 
 /**
  * Type describing incoming properties.<br>
@@ -6,6 +7,7 @@ import { type PropType } from 'vue'
  */
 export type WindowProps = {
   // Status
+  open?: boolean
   disabled?: boolean
 
   // Event
@@ -16,9 +18,10 @@ export type WindowProps = {
   // Options
   contextmenu?: boolean
 
-  axis?: 'x' | 'y'
+  axis?: 'x' | 'y' | 'on'
   indent?: number
   persistent?: boolean
+  overElement?: ElementOrString<HTMLElement>
 
   autoClose?: boolean
   flash?: boolean
@@ -29,6 +32,9 @@ export type WindowProps = {
   width?: string | 'custom'
   height?: string | 'custom'
   adaptive?: 'menu'
+  fullscreen?: boolean
+  alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
+  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   // :type [!] System label / Системная метка
 }
 
@@ -51,6 +57,7 @@ export const defaultsWindow: WindowProps = {
  */
 export const propsWindow = {
   // Status
+  open: Boolean,
   disabled: Boolean,
 
   // Event
@@ -70,6 +77,7 @@ export const propsWindow = {
     default: defaultsWindow?.indent
   },
   persistent: Boolean,
+  overElement: [String, HTMLElement] as PropType<WindowProps['overElement']>,
 
   autoClose: Boolean,
   flash: Boolean,
@@ -80,7 +88,10 @@ export const propsWindow = {
     // :prop [!] System label / Системная метка
     width: String as PropType<WindowProps['width']>,
     height: String as PropType<WindowProps['height']>,
-    adaptive: String as PropType<WindowProps['adaptive']>
+    adaptive: String as PropType<WindowProps['adaptive']>,
+    fullscreen: Boolean,
+    alignment: String as PropType<WindowProps['alignment']>,
+    origin: String as PropType<WindowProps['origin']>
     // :prop [!] System label / Системная метка
   }
 }

@@ -1,5 +1,8 @@
 {
   "menuSizeMultiplier": "1",
+  "padding": {
+    "_type": "var"
+  },
   "width": {
     "_var": true,
     "_style": true
@@ -21,10 +24,11 @@
     "_type": "var"
   },
   "#body": {
-    "#context": {}
+    "#context": {},
+    "_settingClone": true
   },
   "#control": {},
-  "adaptive": {
+  "~adaptive": {
     "~menu": {
       "menuSizeMultiplier": "0.25",
       "content": "'--MENU--'",
@@ -32,13 +36,31 @@
       "right": "auto",
       "bottom": "auto",
       "left": "{??sys.inset.x}",
-      "padding": "0",
+      "padding": {
+        "value": "0",
+        "_type": "property"
+      },
       "background-opacity": "0",
       "transform-origin": "{??origin.x} {??origin.y}",
-      "& .??__body": {
-        "max-width": "100dvw",
-        "max-height": "100dvh"
+      "body": {
+        "max-width": "100dvw - ({??padding} * 2)",
+        "max-height": "100dvh - ({??padding} * 2)"
       }
     }
+  },
+  "~fullscreen": {},
+  "~alignment": {
+    "~center": {},
+    "~top": {},
+    "~right": {},
+    "~bottom": {},
+    "~left": {}
+  },
+  "~origin": {
+    "~center": {},
+    "~top": {},
+    "~right": {},
+    "~bottom": {},
+    "~left": {}
   }
 }

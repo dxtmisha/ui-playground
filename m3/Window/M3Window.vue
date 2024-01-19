@@ -27,20 +27,20 @@ const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
-    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
     'm3-window': true,
     'm3-window--width--custom': isFilled(props.width) && !inArray(propsValues.width, props.width),
     [`m3-window--width--${props.width}`]: inArray(propsValues.width, props.width),
     'm3-window--height--custom': isFilled(props.height) && !inArray(propsValues.height, props.height),
     [`m3-window--height--${props.height}`]: inArray(propsValues.height, props.height),
-    [`m3-window--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive)
+    [`m3-window--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
+    'm3-window--fullscreen': props.fullscreen,
+    [`m3-window--alignment--${props.alignment}`]: inArray(propsValues.alignment, props.alignment),
+    [`m3-window--origin--${props.origin}`]: inArray(propsValues.origin, props.origin)
     // :classes-values [!] System label / Системная метка
   }
-  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
-  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   'm3-window-sys-width': props.width ?? null,
   'm3-window-sys-height': props.height ?? null

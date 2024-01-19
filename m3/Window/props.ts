@@ -10,18 +10,21 @@ export const propsValues = {
   // :values [!] System label / Системная метка
   width: ['sm', 'md', 'lg'],
   height: ['sm', 'md', 'lg'],
-  adaptive: ['menu']
+  adaptive: ['menu', 'auto'],
+  alignment: ['center', 'top', 'right', 'bottom', 'left'],
+  origin: ['center', 'top', 'right', 'bottom', 'left']
   // :values [!] System label / Системная метка
 }
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] open?: boolean
   // [constructor] disabled?: boolean
   // [constructor] preparation? (open: boolean): Promise<boolean>
   // [constructor] beforeOpening? (open: boolean): Promise<boolean>
   // [constructor] opening? (open: boolean): Promise<boolean>
   // [constructor] contextmenu?: boolean
-  // [constructor] axis?: 'x' | 'y'
+  // [constructor] axis?: 'x' | 'y' | 'on'
   // [constructor] indent?: number
   // [constructor] persistent?: boolean
   // [constructor] autoClose?: boolean
@@ -29,7 +32,10 @@ export type PropsToken = {
   // [constructor] inDom?: boolean
   width?: string | 'sm' | 'md' | 'lg' | 'custom'
   height?: string | 'sm' | 'md' | 'lg' | 'custom'
-  adaptive?: 'menu'
+  adaptive?: 'menu' | 'auto'
+  fullscreen?: boolean
+  alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
+  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   // :type [!] System label / Системная метка
 }
 
@@ -47,6 +53,7 @@ export const defaults: Props = {
   ...defaultsWindow,
   ...{
     // :default [!] System label / Системная метка
+    adaptive: 'auto'
     // :default [!] System label / Системная метка
   }
 }
@@ -59,7 +66,13 @@ export const propsInstruction = {
     // :prop [!] System label / Системная метка
     width: String as PropType<PropsToken['width']>,
     height: String as PropType<PropsToken['height']>,
-    adaptive: String as PropType<PropsToken['adaptive']>
+    adaptive: {
+      type: String as PropType<PropsToken['adaptive']>,
+      default: defaults?.adaptive
+    },
+    fullscreen: Boolean,
+    alignment: String as PropType<PropsToken['alignment']>,
+    origin: String as PropType<PropsToken['origin']>
     // :prop [!] System label / Системная метка
   }
 }

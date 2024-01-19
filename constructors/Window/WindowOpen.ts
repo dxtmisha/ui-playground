@@ -42,7 +42,7 @@ export class WindowOpen {
     protected readonly coordinates: WindowCoordinates,
     protected readonly position: WindowPosition,
     protected readonly origin: WindowOrigin,
-    protected readonly callback?: () => void
+    protected readonly callback?: () => Promise<void>
   ) {
   }
 
@@ -51,7 +51,6 @@ export class WindowOpen {
    * Проверяет, надо ли элемент оставить в DOM.
    */
   inDom (): boolean {
-    console.log('this.open', this.open, this.open || (this.first && Boolean(this.props.inDom)))
     return this.open || (this.first && Boolean(this.props.inDom))
   }
 
@@ -86,30 +85,40 @@ export class WindowOpen {
 
       if (toOpen) {
         this.reset()
-        this.status.toPreparation()
+        this.status.toDisplay()
         this.open = toOpen
         this.first = toOpen
-        this.makeCallback()
 
-        await this.hook.preparation(this.open)
-        await this.watchPosition()
+        await this.makeCallback()
 
         requestAnimationFrame(async () => {
-          await this.hook.opening(this.open)
+          await this.hook.preparation(this.open)
+          await this.watchPosition()
+          await this.makeCallback()
 
-          if (this.flash.isClose()) {
-            this.status.toFlash()
-          } else {
-            this.status.toOpen()
-          }
+          requestAnimationFrame(async () => {
+            this.position.updateScroll()
+            this.status.toPreparation()
+            await this.makeCallback()
 
-          this.makeCallback()
+            requestAnimationFrame(async () => {
+              await this.hook.opening(this.open)
+
+              if (this.flash.isClose()) {
+                this.status.toFlash()
+              } else {
+                this.status.toOpen()
+              }
+
+              await this.makeCallback()
+            })
+          })
         })
       } else if (this.flash.isOpen()) {
         this.toClose()
       } else {
         this.status.toHide()
-        this.makeCallback()
+        await this.makeCallback()
       }
     }
 
@@ -148,6 +157,7 @@ export class WindowOpen {
     ) {
       this.position.update()
       this.origin.update()
+
       this.watchCoordinates()
     } else {
       this.reset()
@@ -168,7 +178,7 @@ export class WindowOpen {
           getComputedStyle(element).content === '"--MENU--"' &&
           this.position.update()
         ) {
-          this.makeCallback()
+          this.makeCallback().then()
         }
       },
       () => this.open && !this.status.isHide()
@@ -181,9 +191,9 @@ export class WindowOpen {
    * Calls the function if the value has been changed.<br>
    * Вызывает функцию, если было изменено значение.
    */
-  protected makeCallback (): this {
+  protected async makeCallback (): Promise<this> {
     if (this.callback) {
-      this.callback()
+      await this.callback()
     }
 
     return this
@@ -196,7 +206,7 @@ export class WindowOpen {
   protected toClose (): void {
     setTimeout(() => {
       this.open = false
-      this.makeCallback()
+      this.makeCallback().then()
     }, 50)
 
     this.status.toClose()

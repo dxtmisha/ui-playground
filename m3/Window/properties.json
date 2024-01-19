@@ -1,3 +1,11 @@
 {
-  "main": "{d.window}"
+  "mainWindow": "{d.window}",
+  "adaptive": {
+    "~auto": {
+      "media|sm": {
+        "menuBasic": "{??adaptive.menu}"
+      }
+    },
+    "_default": "auto"
+  }
 }

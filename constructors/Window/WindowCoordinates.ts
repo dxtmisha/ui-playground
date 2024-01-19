@@ -14,6 +14,7 @@ export class WindowCoordinates {
   protected height: number = 0
   protected innerWidth: number = 0
   protected innerHeight: number = 0
+  protected padding: number = 0
 
   /**
    * Constructor
@@ -93,6 +94,28 @@ export class WindowCoordinates {
   }
 
   /**
+   * Returns the margins of the element.<br>
+   * Возвращает отступы у элемента.
+   */
+  getPadding (): number {
+    return this.padding
+  }
+
+  /**
+   * Returns the maximum height of the body.<br>
+   * Возвращает максимальную высоту у body.
+   */
+  getMaxHeight (): number {
+    const body = this.element.getBody()
+
+    if (body) {
+      return parseInt(getComputedStyle(body).maxHeight.replace(/[^0-9]+/g, ''))
+    }
+
+    return 0
+  }
+
+  /**
    * Data updates.<br>
    * Обновления данных.
    */
@@ -121,6 +144,7 @@ export class WindowCoordinates {
       this.height = element.offsetHeight
       this.innerWidth = window.innerWidth
       this.innerHeight = window.innerHeight
+      this.padding = (window.innerHeight - this.getMaxHeight()) / 2
 
       return true
     }

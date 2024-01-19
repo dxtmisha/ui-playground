@@ -1259,25 +1259,116 @@ $designsProperties: (
                     type: 'property',
                     value: ''--MENU--'',
                   ),
-                  ' .??__body':(
-                    index: ' .??__body',
-                    name: ' .d-window__body',
-                    type: 'scss',
+                  'body':(
+                    index: 'body',
+                    name: '& .d-window__body',
+                    type: 'subclass',
                     value: (
                       'maxWidth':(
                         index: 'maxWidth',
                         name: 'max-width',
                         type: 'property',
-                        value: '100dvw',
+                        value: 'calc(100dvw - (var(--d-window-padding) * 2))',
                       ),
                       'maxHeight':(
                         index: 'maxHeight',
                         name: 'max-height',
                         type: 'property',
-                        value: '100dvh',
+                        value: 'calc(100dvh - (var(--d-window-padding) * 2))',
                       ),
                     ),
                   ),
+                ),
+              ),
+            ),
+          ),
+          'fullscreen':(
+            index: 'fullscreen',
+            name: '&--fullscreen',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'alignment':(
+            index: 'alignment',
+            name: '&--alignment',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'origin':(
+            index: 'origin',
+            name: '&--origin',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
                 ),
               ),
             ),

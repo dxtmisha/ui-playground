@@ -18,6 +18,7 @@ import {
   type WindowSetup,
   type WindowSlots
 } from './types.ts'
+import { WindowEmitOptions } from './typesBasic.ts'
 
 /**
  * WindowDesign
@@ -60,9 +61,11 @@ export class WindowDesign<
     this.window = new WindowRef(
       this.props,
       this.element,
+      (options: WindowEmitOptions) => this.emits?.('window', options),
       this.getName(),
       this.getSubClass('control'),
-      this.getSubClass('body')
+      this.getSubClass('body'),
+      this.getSubClass(['body', 'context'])
     )
 
     this.init()
@@ -86,6 +89,7 @@ export class WindowDesign<
     return {
       id: this.window.getId(),
       status: this.window.status,
+      open: this.window.open,
       inDom: this.window.inDom,
       slotControl: {
         class: this.window.getClassControl(),
@@ -94,6 +98,8 @@ export class WindowDesign<
         },
         oncontextmenu: async (event: MouseEvent & TouchEvent) => this.window.onContextmenu(event)
       },
+      setOpen: this.window.setOpen,
+      toggle: this.window.toggle,
       onTransition: () => this.window.onTransition(),
       onPersistent: () => this.window.onPersistent(),
       renderBodyContext: () => this.renderBodyContext()
@@ -108,7 +114,10 @@ export class WindowDesign<
     const setup = this.setup()
 
     return {
-      id: setup.id
+      id: setup.id,
+      open: setup.open,
+      setOpen: setup.setOpen,
+      toggle: setup.toggle
     } as EXPOSE
   }
 

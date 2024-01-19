@@ -104,6 +104,8 @@ export class PropertiesToLink extends PropertiesToAbstract {
                 data: data.value,
                 properties
               })
+
+              break
             }
           } else if (typeof data.value === 'string') {
             this.addIgnore(data.value)

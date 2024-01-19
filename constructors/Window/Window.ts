@@ -16,7 +16,7 @@ import { WindowVerification } from './WindowVerification.ts'
 import { WindowEvent } from './WindowEvent.ts'
 
 import { type WindowProps } from './props.ts'
-import { WindowStatusItem } from './typesBasic.ts'
+import { WindowEmitOptions, WindowStatusItem } from './typesBasic.ts'
 import type { ConstrStyles } from '../../types/constructor.ts'
 
 /**
@@ -49,14 +49,16 @@ export class Window {
    * @param className class name /<br>название класса
    * @param classControl control element class name /<br>название класса элемента управления
    * @param classBody class name for the body /<br>название класса для тела
+   * @param classBodyContext class name for the context body /<br>название класса для тела контекста
    */
   constructor (
     props: WindowProps,
     element?: HTMLDivElement,
-    callback?: () => void,
+    callback?: () => Promise<void>,
     className: string = 'is-window',
     classControl: string = 'is-control',
-    classBody: string = 'is-body'
+    classBody: string = 'is-body',
+    classBodyContext: string = 'is-body-context'
   ) {
     this.status = new WindowStatus()
     this.client = new WindowClient()
@@ -67,7 +69,8 @@ export class Window {
       this.persistent,
       className,
       classControl,
-      classBody
+      classBody,
+      classBodyContext
     )
     this.element = new WindowElement(
       this.classes,
@@ -103,8 +106,8 @@ export class Window {
       this.coordinates,
       this.position,
       this.origin,
-      () => {
-        callback?.()
+      async () => {
+        await callback?.()
 
         this.event.toggle()
       }
@@ -125,6 +128,10 @@ export class Window {
       this.open,
       this.verification
     )
+
+    if (props.open) {
+      requestAnimationFrame(() => this.open.set(props.open).then())
+    }
   }
 
   /**
@@ -141,6 +148,14 @@ export class Window {
    */
   getStatus (): WindowStatusItem {
     return this.status.get()
+  }
+
+  /**
+   * Returns the current state.<br>
+   * Возвращает текущее состояние.
+   */
+  getOpen (): boolean {
+    return this.open.get()
   }
 
   /**
@@ -176,5 +191,35 @@ export class Window {
    */
   getEvent (): WindowEvent {
     return this.event
+  }
+
+  /**
+   * Returns an object for calling the event handler.<br>
+   * Возвращает объект для вызова обработчика события.
+   */
+  getEmitOptions (): WindowEmitOptions {
+    return {
+      id: this.classes.getId(),
+      element: this.element.getMain() as HTMLDivElement,
+      control: this.element.getControl() as HTMLElement,
+      open: this.open.get()
+    }
+  }
+
+  /**
+   * Changes the current state.<br>
+   * Изменяет текущее состояние.
+   * @param open the value of the current state /<br>значение текущего состояния
+   */
+  async setOpen (open: boolean = true): Promise<void> {
+    await this.open.set(open)
+  }
+
+  /**
+   * Switches the state, that is, opens or closes the window, depending on the value of item.<br>
+   * Переключает состояние, то есть открывает или закрывает окно, в зависимости от значения item.
+   */
+  async toggle (): Promise<void> {
+    await this.open.toggle()
   }
 }

@@ -1,11 +1,11 @@
-import { onUnmounted, ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
+import { nextTick, onUnmounted, ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
 
 import { Window } from './Window.ts'
 
 import { type RefUndefined } from '../../types/ref.ts'
 import type { ConstrClassObject, ConstrStyles } from '../../types/constructor.ts'
 import { type WindowProps } from './props.ts'
-import { WindowStatusItem } from './typesBasic.ts'
+import { type WindowEmitOptions, WindowStatusItem } from './typesBasic.ts'
 
 /**
  * The base class for working with the window (Ref).<br>
@@ -15,6 +15,7 @@ export class WindowRef {
   protected window: Window
 
   readonly status: ShallowRef<WindowStatusItem>
+  readonly open: ShallowRef<boolean>
   readonly inDom: ShallowRef<boolean>
 
   readonly classes = ref<ConstrClassObject>({})
@@ -24,31 +25,37 @@ export class WindowRef {
    * Constructor
    * @param props input data /<br>входные данные
    * @param element window element /<br>элемент окна
+   * @param callbackEmit call function when the opening state changes /<br>
+   * функция вызова при изменении состояния открытия
    * @param className class name /<br>название класса
    * @param classControl control element class name /<br>название класса элемента управления
    * @param classBody class name for the body /<br>название класса для тела
+   * @param classBodyContext class name for the context body /<br>название класса для тела контекста
    */
   constructor (
     props: WindowProps,
     element?: RefUndefined<HTMLDivElement>,
+    callbackEmit?: (options: WindowEmitOptions) => void,
     className: string = 'is-window',
     classControl: string = 'is-control',
-    classBody: string = 'is-body'
+    classBody: string = 'is-body',
+    classBodyContext: string = 'is-body-context'
   ) {
     this.window = new Window(
       props,
       element?.value,
-      () => {
-        console.log('update')
-
+      async () => {
         this.status.value = this.window.getStatus()
+        this.open.value = this.window.getOpen()
         this.inDom.value = this.window.inDom()
 
         this.updateClasses()
+        await nextTick()
       },
       className,
       classControl,
-      classBody
+      classBody,
+      classBodyContext
     )
 
     if (element) {
@@ -56,7 +63,12 @@ export class WindowRef {
     }
 
     this.status = shallowRef(this.window.getStatus())
+    this.open = shallowRef(this.window.getOpen())
     this.inDom = shallowRef(this.window.inDom())
+
+    watch(this.open, () => {
+      requestAnimationFrame(() => callbackEmit?.(this.window.getEmitOptions()))
+    })
 
     watchEffect(() => this.updateClasses())
     onUnmounted(() => this.window.getEvent().stop())
@@ -76,6 +88,23 @@ export class WindowRef {
    */
   getClassControl (): string {
     return this.window.getClasses().getClassControlAndId()
+  }
+
+  /**
+   * Changes the current state.<br>
+   * Изменяет текущее состояние.
+   * @param open the value of the current state /<br>значение текущего состояния
+   */
+  async setOpen (open: boolean = true): Promise<void> {
+    await this.window.setOpen(open)
+  }
+
+  /**
+   * Switches the state, that is, opens or closes the window, depending on the value of item.<br>
+   * Переключает состояние, то есть открывает или закрывает окно, в зависимости от значения item.
+   */
+  async toggle (): Promise<void> {
+    await this.window.toggle()
   }
 
   /**

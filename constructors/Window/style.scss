@@ -11,6 +11,8 @@
   @include inset;
   display: none;
 
+  padding: v('??padding', 0);
+
   align-items: center;
   justify-content: center;
 
@@ -19,6 +21,7 @@
   transition: v('??transition');
 
   &__body {
+    content: v('??padding');
     display: flex;
     overflow-y: auto;
 
@@ -42,11 +45,67 @@
     }
   }
 
+  &--alignment {
+    &--top {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      align-items: flex-end;
+    }
+
+    &--bottom {
+      justify-content: flex-end;
+    }
+
+    &--left {
+      align-items: flex-start;
+    }
+  }
+
+  &--origin {
+    &--center {
+      @include initByCustom('transformOrigin', center);
+    }
+
+    &--top {
+      @include initByCustom('transformOrigin', top center);
+    }
+
+    &--right {
+      @include initByCustom('transformOrigin', center right);
+    }
+
+    &--bottom {
+      @include initByCustom('transformOrigin', bottom center);
+    }
+
+    &--left {
+      @include initByCustom('transformOrigin', center left);
+    }
+  }
+
   &--persistent {
     animation-duration: v('d.sys.transitionDuration.fade.through');
     animation-name: n('??persistent');
     animation-timing-function: v('d.sys.transitionFunction.standard');
     transform-origin: center;
+  }
+
+  &--fullscreen {
+    padding: 0;
+
+    @include subclass('body') {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      border-radius: 0;
+    }
+  }
+
+  &[data-status="display"] {
+    display: flex;
   }
 
   &[data-status="preparation"] {

@@ -1,6 +1,8 @@
 import { ShallowRef, type VNode } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 
+import { type WindowEmitOptions } from './typesBasic.ts'
+
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
@@ -14,7 +16,7 @@ export type WindowComponents = {
  * Тип, описывающий доступные события.
  */
 export type WindowEmits = {
-  // load: [value: string]
+  window: [options: WindowEmitOptions]
 }
 
 /**
@@ -24,12 +26,15 @@ export type WindowEmits = {
 export type WindowSetup = {
   id: string
   status: ShallowRef<string>
+  open: ShallowRef<boolean>
   inDom: ShallowRef<boolean>
   slotControl: {
     class: string
     onclick: (event: MouseEvent & TouchEvent) => Promise<void>
     oncontextmenu: (event: MouseEvent & TouchEvent) => Promise<void>
   },
+  setOpen (): Promise<void>
+  toggle (): Promise<void>
   onTransition (): void
   onPersistent (): void
   renderBodyContext (): VNode | undefined
@@ -41,6 +46,9 @@ export type WindowSetup = {
  */
 export type WindowExpose = {
   id: string
+  open: ShallowRef<boolean>
+  setOpen (): Promise<void>
+  toggle (): Promise<void>
 }
 
 /**

@@ -1131,25 +1131,116 @@ $designsProperties: (
                     type: 'property',
                     value: ''--MENU--'',
                   ),
-                  ' .??__body':(
-                    index: ' .??__body',
-                    name: ' .d-window__body',
-                    type: 'scss',
+                  'body':(
+                    index: 'body',
+                    name: '& .d-window__body',
+                    type: 'subclass',
                     value: (
                       'maxWidth':(
                         index: 'maxWidth',
                         name: 'max-width',
                         type: 'property',
-                        value: '100dvw',
+                        value: 'calc(100dvw - (var(--d-window-padding) * 2))',
                       ),
                       'maxHeight':(
                         index: 'maxHeight',
                         name: 'max-height',
                         type: 'property',
-                        value: '100dvh',
+                        value: 'calc(100dvh - (var(--d-window-padding) * 2))',
                       ),
                     ),
                   ),
+                ),
+              ),
+            ),
+          ),
+          'fullscreen':(
+            index: 'fullscreen',
+            name: '&--fullscreen',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'alignment':(
+            index: 'alignment',
+            name: '&--alignment',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'origin':(
+            index: 'origin',
+            name: '&--origin',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
                 ),
               ),
             ),
@@ -9254,6 +9345,12 @@ $designsProperties: (
             type: 'var',
             value: 1,
           ),
+          'padding':(
+            index: 'padding',
+            name: '--m3-window-padding',
+            type: 'var',
+            value: 'var(--m3-ref-spacing-4)',
+          ),
           'backgroundColor':(
             index: 'backgroundColor',
             name: '--m3-window-backgroundColor',
@@ -9271,12 +9368,6 @@ $designsProperties: (
             name: 'z-index',
             type: 'property',
             value: 'var(--m3-ref-index-4)',
-          ),
-          'padding':(
-            index: 'padding',
-            name: 'padding',
-            type: 'property',
-            value: 'var(--m3-ref-spacing-4)',
           ),
           'body':(
             index: 'body',
@@ -9509,14 +9600,26 @@ $designsProperties: (
                   ),
                   'body':(
                     index: 'body',
-                    name: '&--body',
-                    type: 'state',
+                    name: '& .m3-window__body',
+                    type: 'subclass',
                     value: (
                       'zIndex':(
                         index: 'zIndex',
                         name: 'z-index',
                         type: 'property',
                         value: 'var(--m3-ref-index-2)',
+                      ),
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
+                        type: 'property',
+                        value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
+                      ),
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
+                        type: 'property',
+                        value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
                       ),
                       'background':(
                         index: 'background',
@@ -9538,25 +9641,208 @@ $designsProperties: (
                       ),
                     ),
                   ),
-                  ' .??__body':(
-                    index: ' .??__body',
-                    name: ' .m3-window__body',
-                    type: 'scss',
+                ),
+              ),
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'mediaSm':(
+                    index: 'mediaSm',
+                    name: '(min-width: 600px)',
+                    type: 'media',
                     value: (
-                      'maxWidth':(
-                        index: 'maxWidth',
-                        name: 'max-width',
-                        type: 'property',
-                        value: '100dvw',
+                      'menuSizeMultiplier':(
+                        index: 'menuSizeMultiplier',
+                        name: '--m3-window-menuSizeMultiplier',
+                        type: 'var',
+                        value: 0.25,
                       ),
-                      'maxHeight':(
-                        index: 'maxHeight',
-                        name: 'max-height',
+                      'backgroundOpacity':(
+                        index: 'backgroundOpacity',
+                        name: '--m3-window-backgroundOpacity',
+                        type: 'var',
+                        value: 0,
+                      ),
+                      'transformOrigin':(
+                        index: 'transformOrigin',
+                        name: '--m3-window-transformOrigin',
+                        type: 'var',
+                        value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: 'top',
                         type: 'property',
-                        value: '100dvh',
+                        value: 'var(--m3-window-sys-inset-y)',
+                      ),
+                      'right':(
+                        index: 'right',
+                        name: 'right',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: 'bottom',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'left':(
+                        index: 'left',
+                        name: 'left',
+                        type: 'property',
+                        value: 'var(--m3-window-sys-inset-x)',
+                      ),
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: 0,
+                      ),
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--MENU--'',
+                      ),
+                      'body':(
+                        index: 'body',
+                        name: '& .m3-window__body',
+                        type: 'subclass',
+                        value: (
+                          'zIndex':(
+                            index: 'zIndex',
+                            name: 'z-index',
+                            type: 'property',
+                            value: 'var(--m3-ref-index-2)',
+                          ),
+                          'maxWidth':(
+                            index: 'maxWidth',
+                            name: 'max-width',
+                            type: 'property',
+                            value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
+                          ),
+                          'maxHeight':(
+                            index: 'maxHeight',
+                            name: 'max-height',
+                            type: 'property',
+                            value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
+                          ),
+                          'background':(
+                            index: 'background',
+                            name: 'background',
+                            type: 'property',
+                            value: 'var(--m3-ref-background-2)',
+                          ),
+                          'borderRadius':(
+                            index: 'borderRadius',
+                            name: 'border-radius',
+                            type: 'property',
+                            value: 'var(--m3-sys-rounded-sm)',
+                          ),
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: 'var(--m3-ref-shadow-2)',
+                          ),
+                        ),
                       ),
                     ),
                   ),
+                ),
+              ),
+            ),
+          ),
+          'fullscreen':(
+            index: 'fullscreen',
+            name: '&--fullscreen',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'alignment':(
+            index: 'alignment',
+            name: '&--alignment',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'origin':(
+            index: 'origin',
+            name: '&--origin',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
                 ),
               ),
             ),
