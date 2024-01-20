@@ -1340,6 +1340,19 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'static':(
+                index: 'static',
+                name: '&--static',
+                type: 'state',
+                value: (
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--STATIC--'',
+                  ),
+                ),
+              ),
             ),
           ),
           'fullscreen':(

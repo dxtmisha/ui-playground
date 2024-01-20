@@ -1212,6 +1212,19 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'static':(
+                index: 'static',
+                name: '&--static',
+                type: 'state',
+                value: (
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--STATIC--'',
+                  ),
+                ),
+              ),
             ),
           ),
           'fullscreen':(
@@ -9763,6 +9776,19 @@ $designsProperties: (
                   ),
                 ),
               ),
+              'static':(
+                index: 'static',
+                name: '&--static',
+                type: 'state',
+                value: (
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--STATIC--'',
+                  ),
+                ),
+              ),
               'auto':(
                 index: 'auto',
                 name: '&--auto',
@@ -9927,6 +9953,66 @@ $designsProperties: (
                             value: 'var(--m3-ref-shadow-2)',
                           ),
                         ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticSm':(
+                index: 'staticSm',
+                name: '&--staticSm',
+                type: 'state',
+                value: (
+                  'mediaSm':(
+                    index: 'mediaSm',
+                    name: '(min-width: 600px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticMd':(
+                index: 'staticMd',
+                name: '&--staticMd',
+                type: 'state',
+                value: (
+                  'mediaMd':(
+                    index: 'mediaMd',
+                    name: '(min-width: 905px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticLg':(
+                index: 'staticLg',
+                name: '&--staticLg',
+                type: 'state',
+                value: (
+                  'mediaLg':(
+                    index: 'mediaLg',
+                    name: '(min-width: 1280px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
                       ),
                     ),
                   ),

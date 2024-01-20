@@ -1,4 +1,4 @@
-import { nextTick, onUnmounted, ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
 
 import { Window } from './Window.ts'
 
@@ -17,6 +17,7 @@ export class WindowRef {
   readonly status: ShallowRef<WindowStatusItem>
   readonly open: ShallowRef<boolean>
   readonly inDom: ShallowRef<boolean>
+  readonly staticMode: ShallowRef<boolean>
 
   readonly classes = ref<ConstrClassObject>({})
   readonly styles = ref<ConstrStyles>({})
@@ -48,6 +49,7 @@ export class WindowRef {
         this.status.value = this.window.getStatus()
         this.open.value = this.window.getOpen()
         this.inDom.value = this.window.inDom()
+        this.staticMode.value = this.window.isStaticMode()
 
         this.updateClasses()
         await nextTick()
@@ -65,13 +67,29 @@ export class WindowRef {
     this.status = shallowRef(this.window.getStatus())
     this.open = shallowRef(this.window.getOpen())
     this.inDom = shallowRef(this.window.inDom())
+    this.staticMode = shallowRef(this.window.isStaticMode())
 
     watch(this.open, () => {
       requestAnimationFrame(() => callbackEmit?.(this.window.getEmitOptions()))
     })
 
-    watchEffect(() => this.updateClasses())
-    onUnmounted(() => this.window.getEvent().stop())
+    watchEffect(() => {
+      this.inDom.value = this.window.inDom()
+      this.window.getStatic().make()
+
+      this.updateClasses()
+    })
+
+    onMounted(async () => {
+      console.log('onMounted')
+      await nextTick()
+      this.window.getStatic().make()
+    })
+
+    onUnmounted(() => {
+      this.window.getEvent().stop()
+      this.window.getStatic().stop()
+    })
   }
 
   /**

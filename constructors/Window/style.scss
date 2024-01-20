@@ -45,6 +45,21 @@
     }
   }
 
+  &--staticMode {
+    position: static;
+    display: block;
+
+    padding: 0;
+
+    background-color: transparent;
+
+    @include subclass('body') {
+      opacity: 1;
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
   &--alignment {
     &--top {
       justify-content: flex-start;

@@ -10,6 +10,7 @@ import { WindowFlash } from './WindowFlash.ts'
 import { WindowCoordinates } from './WindowCoordinates.ts'
 import { WindowPosition } from './WindowPosition.ts'
 import { WindowOrigin } from './WindowOrigin.ts'
+import { WindowStatic } from './WindowStatic.ts'
 
 import { WindowOpen } from './WindowOpen.ts'
 import { WindowVerification } from './WindowVerification.ts'
@@ -36,6 +37,7 @@ export class Window {
   protected readonly coordinates: WindowCoordinates
   protected readonly position: WindowPosition
   protected readonly origin: WindowOrigin
+  protected readonly staticMode: WindowStatic
 
   protected readonly open: WindowOpen
   protected readonly verification: WindowVerification
@@ -96,6 +98,11 @@ export class Window {
       this.element,
       this.position
     )
+    this.staticMode = new WindowStatic(
+      props,
+      this.element,
+      callback
+    )
 
     this.open = new WindowOpen(
       props,
@@ -117,6 +124,7 @@ export class Window {
       this.persistent,
       this.classes,
       this.element,
+      this.staticMode,
       this.open
     )
     this.event = new WindowEvent(
@@ -140,6 +148,13 @@ export class Window {
    */
   inDom (): boolean {
     return this.open.inDom()
+  }
+
+  /**
+   * Проверяет, активен ли статичного статус
+   */
+  isStaticMode (): boolean {
+    return this.staticMode.is()
   }
 
   /**
@@ -173,6 +188,7 @@ export class Window {
   getClasses (): ConstrClassObject {
     return {
       ...this.classes.getClasses(),
+      '??--staticMode': this.isStaticMode(),
       [`??--location--${this.coordinates.getLocation()}`]: true
     }
   }
@@ -194,6 +210,14 @@ export class Window {
    */
   getElement (): WindowElement {
     return this.element
+  }
+
+  /**
+   * Returns an object for working with static status.<br>
+   * Возвращает объект для работы со статическим статусом.
+   */
+  getStatic (): WindowStatic {
+    return this.staticMode
   }
 
   /**

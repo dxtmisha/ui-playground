@@ -50,8 +50,7 @@ export class WindowFlash {
   isClose (): boolean {
     return this.is() ||
       Boolean(
-        document.querySelector(`.${this.classes.getClassStatus(WindowStatusItem.hide)}`) ||
-        document.querySelector(`.${this.classes.getClassStatus(WindowStatusItem.close)}`)
+        document.querySelector(`.${this.classes.getClassStatus(WindowStatusItem.hide)}`)
       )
   }
 

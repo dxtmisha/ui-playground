@@ -76,8 +76,6 @@ export class WindowDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -91,6 +89,7 @@ export class WindowDesign<
       status: this.window.status,
       open: this.window.open,
       inDom: this.window.inDom,
+      staticMode: this.window.staticMode,
       slotControl: {
         class: this.window.getClassControl(),
         onclick: async (event: MouseEvent & TouchEvent) => {
@@ -166,6 +165,7 @@ export class WindowDesign<
       main.push(
         h(Teleport, {
           key: 'teleport',
+          disabled: setup.staticMode.value,
           to: 'body'
         }, [
           h('div', {

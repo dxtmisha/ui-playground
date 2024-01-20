@@ -59,6 +59,9 @@
           "align-items": "flex-end"
         }
       }
+    },
+    "~static": {
+      "content": "'--STATIC--'"
     }
   },
   "~fullscreen": {},

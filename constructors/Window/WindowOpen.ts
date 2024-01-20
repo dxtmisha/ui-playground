@@ -51,7 +51,12 @@ export class WindowOpen {
    * Проверяет, надо ли элемент оставить в DOM.
    */
   inDom (): boolean {
-    return this.open || (this.first && Boolean(this.props.inDom))
+    return this.open ||
+      this.props.staticMode ||
+      (
+        this.first &&
+        Boolean(this.props.inDom)
+      )
   }
 
   /**

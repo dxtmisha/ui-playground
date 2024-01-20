@@ -18,6 +18,7 @@ export type WindowProps = {
   // Options
   contextmenu?: boolean
 
+  staticMode?: boolean
   axis?: 'x' | 'y' | 'on'
   indent?: number
   persistent?: boolean
@@ -31,7 +32,7 @@ export type WindowProps = {
   // :type [!] System label / Системная метка
   width?: string | 'custom'
   height?: string | 'custom'
-  adaptive?: 'menu' | 'modal' | 'modalDynamic'
+  adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'static'
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'
@@ -68,6 +69,7 @@ export const propsWindow = {
   // Options
   contextmenu: Boolean,
 
+  staticMode: Boolean,
   axis: {
     type: String as PropType<WindowProps['axis']>,
     default: defaultsWindow?.axis

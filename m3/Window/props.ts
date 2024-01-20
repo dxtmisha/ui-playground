@@ -10,7 +10,7 @@ export const propsValues = {
   // :values [!] System label / Системная метка
   width: ['sm', 'md', 'lg'],
   height: ['sm', 'md', 'lg'],
-  adaptive: ['menu', 'modal', 'modalDynamic', 'auto'],
+  adaptive: ['menu', 'modal', 'modalDynamic', 'static', 'auto', 'staticSm', 'staticMd', 'staticLg'],
   alignment: ['center', 'top', 'right', 'bottom', 'left'],
   origin: ['center', 'top', 'right', 'bottom', 'left']
   // :values [!] System label / Системная метка
@@ -24,6 +24,7 @@ export type PropsToken = {
   // [constructor] beforeOpening? (open: boolean): Promise<boolean>
   // [constructor] opening? (open: boolean): Promise<boolean>
   // [constructor] contextmenu?: boolean
+  // [constructor] staticMode?: boolean
   // [constructor] axis?: 'x' | 'y' | 'on'
   // [constructor] indent?: number
   // [constructor] persistent?: boolean
@@ -33,7 +34,7 @@ export type PropsToken = {
   // [constructor] inDom?: boolean
   width?: string | 'sm' | 'md' | 'lg' | 'custom'
   height?: string | 'sm' | 'md' | 'lg' | 'custom'
-  adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'auto'
+  adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'static' | 'auto' | 'staticSm' | 'staticMd' | 'staticLg'
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
   origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'

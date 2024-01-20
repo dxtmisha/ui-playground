@@ -7,6 +7,7 @@ import { WindowOpen } from './WindowOpen.ts'
 
 import type { WindowProps } from './props.ts'
 import { WindowStatusControlItem } from './typesBasic.ts'
+import { WindowStatic } from './WindowStatic.ts'
 
 /**
  * Class for managing the opening and closing of the window.<br>
@@ -24,6 +25,7 @@ export class WindowVerification {
    * @param classes an object for working with classes and searching for elements /<br>
    * объект для работы с классами и поиском элементов
    * @param element an object of the class for working with elements /<br>объект класса для работы с элементами
+   * @param staticMode class object for working with static status /<br>объект класса для работы со статическим статусом
    * @param open the class object for working with the status of closing or opening the window /<br>
    * объект класса для работы со статусом закрытия или открытия окна
    */
@@ -33,6 +35,7 @@ export class WindowVerification {
     protected readonly persistent: WindowPersistent,
     protected readonly classes: WindowClasses,
     protected readonly element: WindowElement,
+    protected readonly staticMode: WindowStatic,
     protected readonly open: WindowOpen
   ) {
   }
@@ -44,6 +47,10 @@ export class WindowVerification {
   async update (target: HTMLElement): Promise<void> {
     this.target = target
     this.focus = this.getFocus()
+
+    if (this.staticMode.is()) {
+      return
+    }
 
     if (this.open.get()) {
       if (this.isContextmenu()) {

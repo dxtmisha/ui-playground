@@ -28,6 +28,7 @@ export type WindowSetup = {
   status: ShallowRef<string>
   open: ShallowRef<boolean>
   inDom: ShallowRef<boolean>
+  staticMode: ShallowRef<boolean>
   slotControl: {
     class: string
     onclick: (event: MouseEvent & TouchEvent) => Promise<void>
