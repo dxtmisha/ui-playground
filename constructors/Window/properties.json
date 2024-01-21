@@ -4,10 +4,18 @@
     "_type": "var"
   },
   "width": {
+    "value": {
+      "auto": "auto",
+      "max": "100%"
+    },
     "_var": true,
     "_style": true
   },
   "height": {
+    "value": {
+      "auto": "auto",
+      "max": "100%"
+    },
     "_var": true,
     "_style": true
   },
@@ -30,7 +38,7 @@
   "#control": {},
   "~adaptive": {
     "~menu": {
-      "menuSizeMultiplier": "0.25",
+      "menuSizeMultiplier": "0.5",
       "content": "'--MENU--'",
       "top": "{??sys.inset.y}",
       "right": "auto",
@@ -64,6 +72,10 @@
       "content": "'--STATIC--'"
     }
   },
+  "~overscroll": {
+    "_default": true
+  },
+  "~dense": {},
   "~fullscreen": {},
   "~alignment": {
     "~center": {},
@@ -77,6 +89,10 @@
     "~top": {},
     "~right": {},
     "~bottom": {},
-    "~left": {}
+    "~left": {},
+    "~topToBottom": {},
+    "~rightToLeft": {},
+    "~bottomToTop": {},
+    "~leftToRight": {}
   }
 }

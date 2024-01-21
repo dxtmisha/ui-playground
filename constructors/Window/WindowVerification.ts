@@ -56,6 +56,7 @@ export class WindowVerification {
       if (this.isContextmenu()) {
         await this.open.reset()
           .watchPosition()
+        await this.open.makeCallback()
       } else if (this.focus === null) {
         await this.open.toggle()
       } else if (!this.isFocus()) {

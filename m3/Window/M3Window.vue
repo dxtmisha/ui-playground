@@ -34,6 +34,8 @@ const classesToken = computed<ConstrClasses>(() => ({
     'm3-window--height--custom': isFilled(props.height) && !inArray(propsValues.height, props.height),
     [`m3-window--height--${props.height}`]: inArray(propsValues.height, props.height),
     [`m3-window--adaptive--${props.adaptive}`]: inArray(propsValues.adaptive, props.adaptive),
+    'm3-window--overscroll': props.overscroll,
+    'm3-window--dense': props.dense,
     'm3-window--fullscreen': props.fullscreen,
     [`m3-window--alignment--${props.alignment}`]: inArray(propsValues.alignment, props.alignment),
     [`m3-window--origin--${props.origin}`]: inArray(propsValues.origin, props.origin)

@@ -9,6 +9,14 @@ export class WindowClient {
   protected y: number = 0
 
   /**
+   * Checks if the button was pressed.<br>
+   * Проверяет, было ли нажатие на кнопку.
+   */
+  is (): boolean {
+    return this.x !== 0 || this.y !== 0
+  }
+
+  /**
    * Returns the X coordinate.<br>
    * Возвращает координату X.
    */
@@ -49,6 +57,17 @@ export class WindowClient {
   set (x: number, y: number): this {
     this.x = x
     this.y = y
+
+    return this
+  }
+
+  /**
+   * Resets all data to initial values.<br>
+   * Сбрасывает все данные к начальным значениям.
+   */
+  reset (): this {
+    this.x = 0
+    this.y = 0
 
     return this
   }

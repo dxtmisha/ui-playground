@@ -82,6 +82,20 @@ export class WindowStatic {
   }
 
   /**
+   * Performs a check of the adaptation status.<br>
+   * Выполняет проверку статуса адаптации.
+   */
+  makeAdaptive (): void {
+    if (
+      this.props.adaptive &&
+      this.props.staticMode &&
+      this.element.getMain()
+    ) {
+      requestAnimationFrame(() => this.listener())
+    }
+  }
+
+  /**
    * Restores the data to its previous state.<br>
    * Восстанавливает данные в прежнее состояние.
    */

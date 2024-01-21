@@ -11,6 +11,7 @@ import { WindowPosition } from './WindowPosition.ts'
 import { WindowOrigin } from './WindowOrigin.ts'
 
 import { type WindowProps } from './props.ts'
+import { WindowClient } from './WindowClient.ts'
 
 /**
  * Class for managing the status of an open window.<br>
@@ -24,6 +25,7 @@ export class WindowOpen {
    * Constructor
    * @param props input data /<br>входные данные
    * @param status object for working with statuses /<br>объект для работы со статусами
+   * @param client object for working with mouse pointer coordinates /<br>объект для работы с координатами указателя мыши
    * @param hook object for working with hooks /<br>объект для работы с хуками
    * @param element an object of the class for working with elements /<br>объект класса для работы с элементами
    * @param flash class object for working with fast window opening /<br>объект класса для работы с быстрым открытием окна
@@ -36,6 +38,7 @@ export class WindowOpen {
   constructor (
     protected readonly props: WindowProps,
     protected readonly status: WindowStatus,
+    protected readonly client: WindowClient,
     protected readonly hook: WindowHook,
     protected readonly element: WindowElement,
     protected readonly flash: WindowFlash,
@@ -104,6 +107,7 @@ export class WindowOpen {
           requestAnimationFrame(async () => {
             this.position.updateScroll()
             this.status.toPreparation()
+
             await this.makeCallback()
 
             requestAnimationFrame(async () => {
@@ -119,11 +123,15 @@ export class WindowOpen {
             })
           })
         })
-      } else if (this.flash.isOpen()) {
-        this.toClose()
       } else {
-        this.status.toHide()
-        await this.makeCallback()
+        this.client.reset()
+
+        if (this.flash.isOpen()) {
+          this.toClose()
+        } else {
+          this.status.toHide()
+          await this.makeCallback()
+        }
       }
     }
 
@@ -170,6 +178,18 @@ export class WindowOpen {
   }
 
   /**
+   * Calls the function if the value has been changed.<br>
+   * Вызывает функцию, если было изменено значение.
+   */
+  async makeCallback (): Promise<this> {
+    if (this.callback) {
+      await this.callback()
+    }
+
+    return this
+  }
+
+  /**
    * Changing the location of the menu window.<br>
    * Изменение расположения окна меню.
    */
@@ -188,18 +208,6 @@ export class WindowOpen {
       },
       () => this.open && !this.status.isHide()
     )
-
-    return this
-  }
-
-  /**
-   * Calls the function if the value has been changed.<br>
-   * Вызывает функцию, если было изменено значение.
-   */
-  protected async makeCallback (): Promise<this> {
-    if (this.callback) {
-      await this.callback()
-    }
 
     return this
   }

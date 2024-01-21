@@ -66,7 +66,6 @@ export class WindowEvent {
   async onContextmenu (event: MouseEvent & TouchEvent): Promise<void> {
     if (this.props.contextmenu) {
       event.preventDefault()
-
       await this.on(event)
     }
   }

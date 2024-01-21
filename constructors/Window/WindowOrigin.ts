@@ -62,7 +62,10 @@ export class WindowOrigin {
   update (): this {
     const element = this.element.getMain()
 
-    if (
+    if (!this.client.is()) {
+      this.x = 0
+      this.y = 0
+    } else if (
       element &&
       getComputedStyle(element).content !== '"--MENU--"'
     ) {

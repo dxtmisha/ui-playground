@@ -8,11 +8,11 @@ import {
 
 export const propsValues = {
   // :values [!] System label / Системная метка
-  width: ['sm', 'md', 'lg'],
-  height: ['sm', 'md', 'lg'],
+  width: ['auto', 'max', 'sm', 'md', 'lg'],
+  height: ['auto', 'max', 'sm', 'md', 'lg'],
   adaptive: ['menu', 'modal', 'modalDynamic', 'static', 'auto', 'staticSm', 'staticMd', 'staticLg'],
   alignment: ['center', 'top', 'right', 'bottom', 'left'],
-  origin: ['center', 'top', 'right', 'bottom', 'left']
+  origin: ['center', 'top', 'right', 'bottom', 'left', 'topToBottom', 'rightToLeft', 'bottomToTop', 'leftToRight']
   // :values [!] System label / Системная метка
 }
 
@@ -32,12 +32,14 @@ export type PropsToken = {
   // [constructor] autoClose?: boolean
   // [constructor] flash?: boolean
   // [constructor] inDom?: boolean
-  width?: string | 'sm' | 'md' | 'lg' | 'custom'
-  height?: string | 'sm' | 'md' | 'lg' | 'custom'
+  width?: string | 'auto' | 'max' | 'sm' | 'md' | 'lg' | 'custom'
+  height?: string | 'auto' | 'max' | 'sm' | 'md' | 'lg' | 'custom'
   adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'static' | 'auto' | 'staticSm' | 'staticMd' | 'staticLg'
+  overscroll?: boolean
+  dense?: boolean
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
-  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'
+  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left' | 'topToBottom' | 'rightToLeft' | 'bottomToTop' | 'leftToRight'
   // :type [!] System label / Системная метка
 }
 
@@ -55,7 +57,8 @@ export const defaults: Props = {
   ...defaultsWindow,
   ...{
     // :default [!] System label / Системная метка
-    adaptive: 'auto'
+    adaptive: 'auto',
+    overscroll: true
     // :default [!] System label / Системная метка
   }
 }
@@ -72,6 +75,11 @@ export const propsInstruction = {
       type: String as PropType<PropsToken['adaptive']>,
       default: defaults?.adaptive
     },
+    overscroll: {
+      type: Boolean,
+      default: defaults?.overscroll
+    },
+    dense: Boolean,
     fullscreen: Boolean,
     alignment: String as PropType<PropsToken['alignment']>,
     origin: String as PropType<PropsToken['origin']>

@@ -97,8 +97,8 @@ export class WindowDesign<
         },
         oncontextmenu: async (event: MouseEvent & TouchEvent) => this.window.onContextmenu(event)
       },
-      setOpen: this.window.setOpen,
-      toggle: this.window.toggle,
+      setOpen: (open: boolean) => this.window.setOpen(open),
+      toggle: () => this.window.toggle(),
       onTransition: () => this.window.onTransition(),
       onPersistent: () => this.window.onPersistent(),
       renderBodyContext: () => this.renderBodyContext()

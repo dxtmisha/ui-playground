@@ -1030,6 +1030,32 @@ $designsProperties: (
             name: '&--width',
             type: 'state',
             value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
               'custom':(
                 index: 'custom',
                 name: '&--custom',
@@ -1051,6 +1077,32 @@ $designsProperties: (
             name: '&--height',
             type: 'state',
             value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
               'custom':(
                 index: 'custom',
                 name: '&--custom',
@@ -1081,7 +1133,7 @@ $designsProperties: (
                     index: 'menuSizeMultiplier',
                     name: '--d-window-menuSizeMultiplier',
                     type: 'var',
-                    value: 0.25,
+                    value: 0.5,
                   ),
                   'backgroundOpacity':(
                     index: 'backgroundOpacity',
@@ -1227,6 +1279,20 @@ $designsProperties: (
               ),
             ),
           ),
+          'overscroll':(
+            index: 'overscroll',
+            name: '&--overscroll',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
           'fullscreen':(
             index: 'fullscreen',
             name: '&--fullscreen',
@@ -1312,6 +1378,34 @@ $designsProperties: (
               'left':(
                 index: 'left',
                 name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'topToBottom':(
+                index: 'topToBottom',
+                name: '&--topToBottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rightToLeft':(
+                index: 'rightToLeft',
+                name: '&--rightToLeft',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottomToTop':(
+                index: 'bottomToTop',
+                name: '&--bottomToTop',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'leftToRight':(
+                index: 'leftToRight',
+                name: '&--leftToRight',
                 type: 'state',
                 value: (
                 ),
@@ -9492,6 +9586,32 @@ $designsProperties: (
             name: '&--width',
             type: 'state',
             value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
               'sm':(
                 index: 'sm',
                 name: '&--sm',
@@ -9552,6 +9672,32 @@ $designsProperties: (
             name: '&--height',
             type: 'state',
             value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
               'sm':(
                 index: 'sm',
                 name: '&--sm',
@@ -9621,7 +9767,7 @@ $designsProperties: (
                     index: 'menuSizeMultiplier',
                     name: '--m3-window-menuSizeMultiplier',
                     type: 'var',
-                    value: 0.25,
+                    value: 0.5,
                   ),
                   'backgroundOpacity':(
                     index: 'backgroundOpacity',
@@ -9855,7 +10001,7 @@ $designsProperties: (
                         index: 'menuSizeMultiplier',
                         name: '--m3-window-menuSizeMultiplier',
                         type: 'var',
-                        value: 0.25,
+                        value: 0.5,
                       ),
                       'backgroundOpacity':(
                         index: 'backgroundOpacity',
@@ -10020,6 +10166,20 @@ $designsProperties: (
               ),
             ),
           ),
+          'overscroll':(
+            index: 'overscroll',
+            name: '&--overscroll',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
           'fullscreen':(
             index: 'fullscreen',
             name: '&--fullscreen',
@@ -10105,6 +10265,34 @@ $designsProperties: (
               'left':(
                 index: 'left',
                 name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'topToBottom':(
+                index: 'topToBottom',
+                name: '&--topToBottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rightToLeft':(
+                index: 'rightToLeft',
+                name: '&--rightToLeft',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottomToTop':(
+                index: 'bottomToTop',
+                name: '&--bottomToTop',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'leftToRight':(
+                index: 'leftToRight',
+                name: '&--leftToRight',
                 type: 'state',
                 value: (
                 ),

@@ -45,15 +45,7 @@ export class WindowRef {
     this.window = new Window(
       props,
       element?.value,
-      async () => {
-        this.status.value = this.window.getStatus()
-        this.open.value = this.window.getOpen()
-        this.inDom.value = this.window.inDom()
-        this.staticMode.value = this.window.isStaticMode()
-
-        this.updateClasses()
-        await nextTick()
-      },
+      async () => this.update(),
       className,
       classControl,
       classBody,
@@ -61,7 +53,7 @@ export class WindowRef {
     )
 
     if (element) {
-      watch(element, value => this.window.getElement().setMain(value))
+      watch(element, value => this.window.getItemElement().setMain(value))
     }
 
     this.status = shallowRef(this.window.getStatus())
@@ -73,22 +65,23 @@ export class WindowRef {
       requestAnimationFrame(() => callbackEmit?.(this.window.getEmitOptions()))
     })
 
-    watchEffect(() => {
-      this.inDom.value = this.window.inDom()
-      this.window.getStatic().make()
-
-      this.updateClasses()
-    })
-
     onMounted(async () => {
-      console.log('onMounted')
       await nextTick()
-      this.window.getStatic().make()
+
+      watchEffect(() => {
+        this.window.getItemStatic().make()
+        this.update()
+      })
+
+      watchEffect(() => {
+        this.window.getItemStatic().makeAdaptive()
+      })
+      watchEffect(() => this.window.setOpen(props.open))
     })
 
     onUnmounted(() => {
-      this.window.getEvent().stop()
-      this.window.getStatic().stop()
+      this.window.getItemEvent().stop()
+      this.window.getItemStatic().stop()
     })
   }
 
@@ -122,6 +115,7 @@ export class WindowRef {
    * Переключает состояние, то есть открывает или закрывает окно, в зависимости от значения item.
    */
   async toggle (): Promise<void> {
+    console.log('this.window.toggle', this.window)
     await this.window.toggle()
   }
 
@@ -131,7 +125,7 @@ export class WindowRef {
    * @param event event object /<br>объект события
    */
   async onClick (event: MouseEvent & TouchEvent): Promise<void> {
-    return this.window.getEvent().onClick(event)
+    return this.window.getItemEvent().onClick(event)
   }
 
   /**
@@ -140,7 +134,7 @@ export class WindowRef {
    * @param event event object /<br>объект события
    */
   async onContextmenu (event: MouseEvent & TouchEvent): Promise<void> {
-    return this.window.getEvent().onContextmenu(event)
+    return this.window.getItemEvent().onContextmenu(event)
   }
 
   /**
@@ -148,7 +142,7 @@ export class WindowRef {
    * Событие окончания анимации при закрытии окна.
    */
   onTransition (): void {
-    this.window.getEvent().onTransition()
+    this.window.getItemEvent().onTransition()
   }
 
   /**
@@ -156,7 +150,21 @@ export class WindowRef {
    * Событие окончания анимации запрета на закрытие.
    */
   onPersistent (): void {
-    this.window.getEvent().onPersistent()
+    this.window.getItemEvent().onPersistent()
+  }
+
+  /**
+   * Updates all values.<br>
+   * Обновляет все значения.
+   */
+  async update (): Promise<void> {
+    this.status.value = this.window.getStatus()
+    this.open.value = this.window.getOpen()
+    this.inDom.value = this.window.inDom()
+    this.staticMode.value = this.window.isStaticMode()
+
+    this.updateClasses()
+    await nextTick()
   }
 
   /**

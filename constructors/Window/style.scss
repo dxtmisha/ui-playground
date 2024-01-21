@@ -3,6 +3,7 @@
 @mixin mixinWindow {
   @include initByCustom('opacity', 0);
   @include initByCustom('transform', none);
+  @include initByCustom('transformPreparation', scale(.8));
   @include initByCustom('transformOrigin', center);
   @include initByCustom('transition', none);
   @include initByCustom('transitionBody', none);
@@ -29,7 +30,7 @@
     flex-shrink: 1;
 
     width: calc(#{v('??width', auto)} * #{v('??menuSizeMultiplier')});
-    height: calc(#{v('??height', auto)} * #{v('??menuSizeMultiplier')});
+    height: v('??height', auto);
     max-width: 100%;
     max-height: 100%;
 
@@ -57,54 +58,29 @@
       opacity: 1;
       background: transparent;
       box-shadow: none;
+
+      &__context {
+        overscroll-behavior-x: auto;
+        overscroll-behavior-y: auto;
+      }
     }
   }
 
-  &--alignment {
-    &--top {
-      justify-content: flex-start;
-    }
-
-    &--right {
-      align-items: flex-end;
-    }
-
-    &--bottom {
-      justify-content: flex-end;
-    }
-
-    &--left {
-      align-items: flex-start;
+  &--overscroll {
+    @include subclass('body') {
+      &__context {
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: contain;
+      }
     }
   }
 
-  &--origin {
-    &--center {
-      @include initByCustom('transformOrigin', center);
-    }
+  &--dense {
+    padding: 0;
 
-    &--top {
-      @include initByCustom('transformOrigin', top center);
+    @include subclass('body') {
+      border-radius: 0;
     }
-
-    &--right {
-      @include initByCustom('transformOrigin', center right);
-    }
-
-    &--bottom {
-      @include initByCustom('transformOrigin', bottom center);
-    }
-
-    &--left {
-      @include initByCustom('transformOrigin', center left);
-    }
-  }
-
-  &--persistent {
-    animation-duration: v('d.sys.transitionDuration.fade.through');
-    animation-name: n('??persistent');
-    animation-timing-function: v('d.sys.transitionFunction.standard');
-    transform-origin: center;
   }
 
   &--fullscreen {
@@ -119,12 +95,79 @@
     }
   }
 
+  &--alignment {
+    &--top {
+      align-items: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    &--bottom {
+      align-items: flex-end;
+    }
+
+    &--left {
+      justify-content: flex-start;
+    }
+  }
+
+  &--origin {
+    &--center {
+      @include initByCustom('transformOrigin', center);
+    }
+
+    &--top {
+      @include initByCustom('transformOrigin', top center);
+    }
+
+    &--topToBottom {
+      @include initByCustom('transformPreparation', translateY(-64px));
+      @include initByCustom('transformOrigin', top center);
+    }
+
+    &--right {
+      @include initByCustom('transformOrigin', center right);
+    }
+
+    &--rightToLeft {
+      @include initByCustom('transformPreparation', translateX(64px));
+      @include initByCustom('transformOrigin', center right);
+    }
+
+    &--bottom {
+      @include initByCustom('transformOrigin', bottom center);
+    }
+
+    &--bottomToTop {
+      @include initByCustom('transformPreparation', translateY(64px));
+      @include initByCustom('transformOrigin', bottom center);
+    }
+
+    &--left {
+      @include initByCustom('transformOrigin', center left);
+    }
+
+    &--leftToRight {
+      @include initByCustom('transformPreparation', translateX(-64px));
+      @include initByCustom('transformOrigin', center left);
+    }
+  }
+
+  &--persistent {
+    animation-duration: v('d.sys.transitionDuration.fade.through');
+    animation-name: n('??persistent');
+    animation-timing-function: v('d.sys.transitionFunction.standard');
+    transform-origin: center;
+  }
+
   &[data-status="display"] {
     display: flex;
   }
 
   &[data-status="preparation"] {
-    @include initByCustom('transform', scale(.8));
+    @include initByCustom('transform', v('??transformPreparation'));
 
     display: flex;
   }

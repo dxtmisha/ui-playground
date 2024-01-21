@@ -107,6 +107,7 @@ export class Window {
     this.open = new WindowOpen(
       props,
       this.status,
+      this.client,
       this.hook,
       this.element,
       this.flash,
@@ -208,7 +209,7 @@ export class Window {
    * Returns the object for working with elements.<br>
    * Возвращает объект для работы с элементами.
    */
-  getElement (): WindowElement {
+  getItemElement (): WindowElement {
     return this.element
   }
 
@@ -216,7 +217,7 @@ export class Window {
    * Returns an object for working with static status.<br>
    * Возвращает объект для работы со статическим статусом.
    */
-  getStatic (): WindowStatic {
+  getItemStatic (): WindowStatic {
     return this.staticMode
   }
 
@@ -224,7 +225,7 @@ export class Window {
    * Returns an object for working with the event.<br>
    * Возвращает объект для работы с событием.
    */
-  getEvent (): WindowEvent {
+  getItemEvent (): WindowEvent {
     return this.event
   }
 

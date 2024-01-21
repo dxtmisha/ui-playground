@@ -30,12 +30,14 @@ export type WindowProps = {
 
   // Tokens
   // :type [!] System label / Системная метка
-  width?: string | 'custom'
-  height?: string | 'custom'
+  width?: string | 'auto' | 'max' | 'custom'
+  height?: string | 'auto' | 'max' | 'custom'
   adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'static'
+  overscroll?: boolean
+  dense?: boolean
   fullscreen?: boolean
   alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
-  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left'
+  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left' | 'topToBottom' | 'rightToLeft' | 'bottomToTop' | 'leftToRight'
   // :type [!] System label / Системная метка
 }
 
@@ -48,6 +50,7 @@ export const defaultsWindow: WindowProps = {
   indent: 4,
   ...{
     // :default [!] System label / Системная метка
+    overscroll: true
     // :default [!] System label / Системная метка
   }
 }
@@ -91,6 +94,11 @@ export const propsWindow = {
     width: String as PropType<WindowProps['width']>,
     height: String as PropType<WindowProps['height']>,
     adaptive: String as PropType<WindowProps['adaptive']>,
+    overscroll: {
+      type: Boolean,
+      default: defaultsWindow?.overscroll
+    },
+    dense: Boolean,
     fullscreen: Boolean,
     alignment: String as PropType<WindowProps['alignment']>,
     origin: String as PropType<WindowProps['origin']>
