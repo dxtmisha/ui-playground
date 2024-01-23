@@ -1,5 +1,5 @@
 import { executeFunction, isFilled, isObjectNotArray, isString } from '../../functions/data.ts'
-import { toAnyToString } from '../../functions/string.ts'
+import { anyToString } from '../../functions/string.ts'
 import { createElement } from '../../functions/element.ts'
 
 import {
@@ -34,7 +34,7 @@ export function useInputCheck<V> (
     input,
     pattern,
     check<V> (value: V): InputValidationItem<V> {
-      input.value = toAnyToString(value)
+      input.value = anyToString(value)
 
       return {
         group: groupName,

@@ -1,9 +1,38 @@
-import { MaskGroup } from '../Mask/typesBasic.ts'
+import { type MaskGroup } from '../Mask/typesBasic.ts'
+
+export type InputTypeName =
+  'text' |
+  'search' |
+  'number' |
+  'number-format' |
+  'currency' |
+  'email' |
+  'password' |
+  'datetime' |
+  'date' |
+  'year-month' |
+  'time' |
+  'hour-minute' |
+  'tel' |
+  'url'
+
+export type InputElementItem = HTMLElement | Record<string, any> | undefined
+
+export type InputMatchItem = {
+  name?: string | HTMLInputElement
+  validationMessage?: string
+}
+export type InputMatch = string | HTMLInputElement | InputMatchItem
 
 export type InputPatternElement = Partial<HTMLInputElement>
 export type InputPatternItem = string | InputPatternElement
 export type InputPatternItemOrFunction = InputPatternItem | ((item: MaskGroup) => InputPatternItem)
 export type InputPatternList = Record<string, InputPatternItemOrFunction>
+
+export type InputValidityCodeItem = {
+  [K in keyof ValidityState]?: string
+}
+export type InputValidityCode = string | InputValidityCodeItem
 
 export type InputValidationItem<V = string, T extends string = string> = {
   type?: T

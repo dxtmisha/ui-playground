@@ -1,4 +1,4 @@
-import { toAnyToString } from '../../functions/string.ts'
+import { anyToString } from '../../functions/string.ts'
 
 import { MaskType } from './MaskType.ts'
 import { MaskBuffer } from './MaskBuffer.ts'
@@ -214,7 +214,7 @@ export class Mask {
     )
 
     if (props?.value) {
-      this.oldValue = toAnyToString(props?.value)
+      this.oldValue = anyToString(props?.value)
       this.data.reset(this.oldValue)
     }
   }
@@ -297,7 +297,7 @@ export class Mask {
    * @param value new values /<br>новые значения
    */
   reset (value?: string | number): boolean {
-    const newValue = toAnyToString(value)
+    const newValue = anyToString(value)
 
     if (this.oldValue !== newValue) {
       this.data.reset(newValue)

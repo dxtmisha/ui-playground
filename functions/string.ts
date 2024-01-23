@@ -42,7 +42,7 @@ export async function getClipboardData (event?: ClipboardEvent): Promise<string>
  * Преобразование значения в строку.
  * @param value values for conversion /<br>значения для преобразования
  */
-export function toAnyToString<V> (value: V): string {
+export function anyToString<V> (value: V): string {
   if (isString(value)) {
     return value
   }
