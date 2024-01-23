@@ -31,7 +31,22 @@ export class Translate {
     }
 
     await this.add(name)
-    return this.data?.[fullName]
+    return this.data?.[fullName] ?? name
+  }
+
+  /**
+   * Getting the translation text by its code (Sync).<br>
+   * Получение текста перевода по его коду (Sync).
+   * @param name code name /<br>название кода
+   */
+  static getSync (name: string): string {
+    const fullName = this.getName(name)
+
+    if (fullName in this.data) {
+      return this.data[fullName]
+    }
+
+    return name
   }
 
   /**

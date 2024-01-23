@@ -2,7 +2,7 @@ import { toNumber } from '../../functions/number.ts'
 
 import { InputValue } from './InputValue.ts'
 
-import { type InputArrowProps } from './propsBasic.ts'
+import { type InputProps } from './props.ts'
 
 /**
  * Class for working with input arrows.<br>
@@ -16,7 +16,7 @@ export class InputArrow {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputArrowProps,
+    protected readonly props: InputProps,
     protected readonly value: InputValue
   ) {
   }

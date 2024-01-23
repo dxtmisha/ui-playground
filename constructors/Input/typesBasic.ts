@@ -16,6 +16,16 @@ export type InputTypeName =
   'tel' |
   'url'
 
+export type InputMode =
+  'none' |
+  'text' |
+  'decimal' |
+  'numeric' |
+  'tel' |
+  'search' |
+  'email' |
+  'url'
+
 export type InputElementItem = HTMLElement | Record<string, any> | undefined
 
 export type InputMatchItem = {
@@ -44,4 +54,5 @@ export type InputValidationItem<V = string, T extends string = string> = {
   validity?: ValidityState
   pattern?: InputPatternItemOrFunction
   value: V
+  detail?: Record<string, any>
 }

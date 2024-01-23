@@ -1,4 +1,8 @@
-import { InputElementItem } from './typesBasic.ts'
+import { InputType } from './InputType.ts'
+import { InputPattern } from './InputPattern.ts'
+
+import type { InputElementItem } from './typesBasic.ts'
+import type { InputProps } from './props.ts'
 
 /**
  * Class for working with input elements.<br>
@@ -7,11 +11,18 @@ import { InputElementItem } from './typesBasic.ts'
 export class InputElement {
   /**
    * Constructor
+   * @param props input data /<br>входные данные
+   * @param type object for working with input type /<br>объект для работы с типом ввода
+   * @param pattern object for working with checks by regular expressions /<br>
+   * объект для работы с проверкой по регулярным выражениям
    * @param element input element /<br>элемент ввода
    * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    protected readonly props: InputProps,
+    protected readonly type: InputType,
+    protected readonly pattern: InputPattern,
     protected element: InputElementItem,
     protected readonly callback: () => void
   ) {
@@ -39,6 +50,29 @@ export class InputElement {
    */
   getName (): string {
     return this.get()?.name ?? ''
+  }
+
+  /**
+   * Returns data for verification.<br>
+   * Возвращает данные для проверки.
+   */
+  getPattern (): Record<string, any> {
+    return {
+      name: this.props?.name,
+      type: this.type.get(),
+
+      required: this.props?.required,
+      pattern: this.pattern.get(),
+
+      step: this.props?.step,
+      min: this.props?.min,
+      max: this.props?.max,
+
+      minlength: this.props?.minlength,
+      maxlength: this.props?.maxlength,
+
+      ...(this.props?.input ?? {})
+    }
   }
 
   /**

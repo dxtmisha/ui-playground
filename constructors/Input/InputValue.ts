@@ -1,7 +1,8 @@
 import { isArray, isFilled, isObject } from '../../functions/data.ts'
 
-import { type InputValueProps } from './propsBasic.ts'
 import { InputElement } from './InputElement.ts'
+
+import { type InputProps } from './props.ts'
 
 /**
  * Class for working with input values.<br>
@@ -19,7 +20,7 @@ export class InputValue<V = any> {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputValueProps<V>,
+    protected readonly props: InputProps<V>,
     protected readonly element: InputElement,
     protected readonly callback: () => void
   ) {

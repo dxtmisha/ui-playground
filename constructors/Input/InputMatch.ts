@@ -5,7 +5,7 @@ import { InputElement } from './InputElement.ts'
 import { InputValue } from './InputValue.ts'
 
 import { type InputValidationItem } from './typesBasic.ts'
-import { type InputMatchProps } from './propsBasic.ts'
+import { type InputProps } from './props.ts'
 
 /**
  * Class for checking the similarity of input data with other elements.<br>
@@ -20,7 +20,7 @@ export class InputMatch {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputMatchProps,
+    protected readonly props: InputProps,
     protected readonly element: InputElement,
     protected readonly value: InputValue
   ) {
@@ -54,7 +54,7 @@ export class InputMatch {
    * Returns the error text.<br>
    * Возвращает текст для ошибки.
    */
-  async getValidationMessage (): Promise<string> {
+  getValidationMessage (): string {
     if (this.is()) {
       if (
         isObject(this.props.match) &&
@@ -63,7 +63,7 @@ export class InputMatch {
         return this.props.match.validationMessage
       }
 
-      return await Translate.get('Your entries must match.')
+      return Translate.getSync('Your entries must match.')
     }
 
     return ''
@@ -73,7 +73,7 @@ export class InputMatch {
    * Checks if the value matches the external element.<br>
    * Проверяет, совпадает ли значение с внешним элементом.
    */
-  async check (): Promise<InputValidationItem | undefined> {
+  check (): InputValidationItem | undefined {
     const selectors = this.getSelectors()
 
     if (selectors) {
@@ -87,7 +87,7 @@ export class InputMatch {
         return {
           status: false,
           input: this.element.get(),
-          validationMessage: await this.getValidationMessage(),
+          validationMessage: this.getValidationMessage(),
           value: this.value.getString()
         }
       }
