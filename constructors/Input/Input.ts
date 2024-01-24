@@ -1,10 +1,10 @@
+import { InputVisibility } from './InputVisibility.ts'
+import { InputType } from './InputType.ts'
 import { InputPattern } from './InputPattern.ts'
 
 import { InputElement } from './InputElement.ts'
-import { InputVisibility } from './InputVisibility.ts'
 import { InputChange } from './InputChange.ts'
 
-import { InputType } from './InputType.ts'
 import { InputValue } from './InputValue.ts'
 
 import { InputArrow } from './InputArrow.ts'
@@ -12,10 +12,19 @@ import { InputMatch } from './InputMatch.ts'
 
 import { InputCode } from './InputCode.ts'
 import { InputValidation } from './InputValidation.ts'
+import { InputEvent } from './InputEvent.ts'
 
-import { type InputElementItem } from './typesBasic.ts'
+import {
+  type InputElementItem,
+  type InputValidationItem
+} from './typesBasic.ts'
+import { type InputEmits } from './types.ts'
 import { type InputProps } from './props.ts'
 
+/**
+ * Base class for working with an input element.<br>
+ * Базовый класс для работы с элементом ввода.
+ */
 export class Input<V = string> {
   protected readonly visibility: InputVisibility
   protected readonly type: InputType
@@ -31,11 +40,20 @@ export class Input<V = string> {
 
   protected readonly code: InputCode
   protected readonly validation: InputValidation
+  protected readonly event: InputEvent
 
+  /**
+   * Constructor
+   * @param props input data /<br>входные данные
+   * @param element input element /<br>элемент ввода
+   * @param callback callback function /<br>функция обратного вызова
+   * @param callbackEmit the function is called when an event is triggered /<br>функция вызывается, когда срабатывает событие
+   */
   constructor (
     props: InputProps<V>,
     element: HTMLElement | Record<string, any> | undefined,
-    callback: () => void
+    callback: () => void,
+    callbackEmit: (type: string & keyof InputEmits, event?: Event, value?: InputValidationItem) => void
   ) {
     this.visibility = new InputVisibility(callback)
     this.type = new InputType(
@@ -59,6 +77,7 @@ export class Input<V = string> {
     this.value = new InputValue<V>(
       props,
       this.element,
+      this.change,
       callback
     )
 
@@ -77,6 +96,13 @@ export class Input<V = string> {
       this.match,
       this.code
     )
+    this.event = new InputEvent(
+      props,
+      this.change,
+      this.value,
+      this.validation,
+      callbackEmit
+    )
   }
 
   /**
@@ -84,7 +110,7 @@ export class Input<V = string> {
    * Изменяет элемент ввода.
    * @param element element for change /<br>элемент для изменения
    */
-  set (element: InputElementItem): this {
+  setElement (element: InputElementItem): this {
     this.element.set(element)
     return this
   }

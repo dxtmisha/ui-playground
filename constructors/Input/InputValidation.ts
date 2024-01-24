@@ -47,10 +47,13 @@ export class InputValidation<V = any> {
    * Returns error data.<br>
    * Возвращает данные об ошибке.
    */
-  get (): InputValidationItem<V> | undefined {
+  get (): InputValidationItem<V> {
     return this.checkGlobal() ??
       this.checkItem() ??
-      this.match.check() as InputValidationItem<V>
+      this.match.check() as InputValidationItem<V> | undefined ??
+      {
+        value: undefined
+      } as InputValidationItem<V>
   }
 
   /**

@@ -1,4 +1,5 @@
 import { type ConstrClass } from '../../types/constructor.ts'
+import { type InputValidationItem } from './typesBasic.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
@@ -13,7 +14,14 @@ export type InputComponents = {
  * Тип, описывающий доступные события.
  */
 export type InputEmits = {
-  // load: [value: string]
+  input: [
+    event: InputEvent,
+    value: InputValidationItem
+  ],
+  change: [
+    event: InputEvent | Event,
+    value: InputValidationItem
+  ]
 }
 
 /**

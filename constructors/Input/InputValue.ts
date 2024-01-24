@@ -3,6 +3,7 @@ import { isArray, isFilled, isObject } from '../../functions/data.ts'
 import { InputElement } from './InputElement.ts'
 
 import { type InputProps } from './props.ts'
+import { InputChange } from './InputChange.ts'
 
 /**
  * Class for working with input values.<br>
@@ -16,12 +17,14 @@ export class InputValue<V = any> {
    * Constructor
    * @param props input data /<br>входные данные
    * @param element object for working with the input element /<br>объект для работы с элементом ввода
+   * @param change object for working with data change label /<br>объект для работы с меткой об изменении данных
    * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: InputProps<V>,
     protected readonly element: InputElement,
+    protected readonly change: InputChange,
     protected readonly callback: () => void
   ) {
     this.value = this.getOriginal()
@@ -129,6 +132,7 @@ export class InputValue<V = any> {
   set (value: V): this {
     if (this.value !== value) {
       this.value = value
+      this.change.set(this.getOriginal() !== value)
       this.callback()
     }
 
@@ -218,8 +222,9 @@ export class InputValue<V = any> {
    * Очисти все значения до оригинальных.
    */
   clear (): this {
+    this.set('' as V)
     this.element.clear()
-    this.value = undefined
+
     this.valueIs = false
 
     return this
