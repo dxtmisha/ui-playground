@@ -2,7 +2,7 @@ import { InputType } from './InputType.ts'
 import { InputPattern } from './InputPattern.ts'
 
 import type { InputElementItem } from './typesBasic.ts'
-import type { InputProps } from './props.ts'
+import type { InputBasicProps } from './props.ts'
 
 /**
  * Class for working with input elements.<br>
@@ -20,7 +20,7 @@ export class InputElement {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps,
+    protected readonly props: InputBasicProps,
     protected readonly type: InputType,
     protected readonly pattern: InputPattern,
     protected element: InputElementItem,

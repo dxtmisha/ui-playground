@@ -1,7 +1,7 @@
 import { InputVisibility } from './InputVisibility.ts'
 
 import { type InputTypeName } from './typesBasic.ts'
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 
 /**
  * Class for working with the input type.<br>
@@ -16,7 +16,7 @@ export class InputType {
    * @param visibility object for working with visualization /<br>объект для работы с визуализацией
    */
   constructor (
-    protected readonly props: InputProps,
+    protected readonly props: InputBasicProps,
     protected readonly visibility: InputVisibility
   ) {
     this.type = this.getOriginal()

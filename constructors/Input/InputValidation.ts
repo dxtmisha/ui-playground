@@ -6,7 +6,7 @@ import { InputMatch } from './InputMatch.ts'
 import { InputCode } from './InputCode.ts'
 
 import { type InputValidationItem } from './typesBasic.ts'
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 
 /**
  * Class for working with validity.<br>
@@ -26,7 +26,7 @@ export class InputValidation<V = any> {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps<V>,
+    protected readonly props: InputBasicProps<V>,
     protected readonly element: InputElement,
     protected readonly value: InputValue,
     protected readonly match: InputMatch,

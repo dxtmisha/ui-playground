@@ -5,7 +5,7 @@ import { InputElement } from './InputElement.ts'
 import { InputValue } from './InputValue.ts'
 
 import { type InputValidationItem } from './typesBasic.ts'
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 
 /**
  * Class for checking the similarity of input data with other elements.<br>
@@ -20,7 +20,7 @@ export class InputMatch {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps,
+    protected readonly props: InputBasicProps,
     protected readonly element: InputElement,
     protected readonly value: InputValue
   ) {

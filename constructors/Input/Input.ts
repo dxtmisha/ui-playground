@@ -19,7 +19,7 @@ import {
   type InputValidationItem
 } from './typesBasic.ts'
 import { type InputEmits } from './types.ts'
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 
 /**
  * Base class for working with an input element.<br>
@@ -50,10 +50,10 @@ export class Input<V = string> {
    * @param callbackEmit the function is called when an event is triggered /<br>функция вызывается, когда срабатывает событие
    */
   constructor (
-    props: InputProps<V>,
+    props: InputBasicProps<V>,
     element: HTMLElement | Record<string, any> | undefined,
     callback: () => void,
-    callbackEmit: (type: string & keyof InputEmits, event?: Event, value?: InputValidationItem) => void
+    callbackEmit: (type: string & keyof InputEmits, event: Event, value: InputValidationItem) => void
   ) {
     this.visibility = new InputVisibility(callback)
     this.type = new InputType(
@@ -106,12 +106,45 @@ export class Input<V = string> {
   }
 
   /**
+   * Returns the current value.<br>
+   * Возвращает текущее значение.
+   */
+  getValue (): V | undefined {
+    return this.value.get()
+  }
+
+  /**
+   * Returns an object for working with values.<br>
+   * Возвращает объект для работы со значениями.
+   */
+  getValueItem (): InputValue {
+    return this.value
+  }
+
+  /**
+   * Returns an object for working with events.<br>
+   * Возвращает объект для работы с событиями.
+   */
+  getEventItem (): InputEvent {
+    return this.event
+  }
+
+  /**
    * Changes the input element.<br>
    * Изменяет элемент ввода.
    * @param element element for change /<br>элемент для изменения
    */
   setElement (element: InputElementItem): this {
     this.element.set(element)
+    return this
+  }
+
+  /**
+   * Value update.<br>
+   * Обновление значения.
+   */
+  update (): this {
+    this.value.update()
     return this
   }
 }

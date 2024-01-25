@@ -4,7 +4,7 @@ import { InputValidation } from './InputValidation.ts'
 
 import type { InputValidationItem } from './typesBasic.ts'
 import type { InputEmits } from './types.ts'
-import type { InputProps } from './props.ts'
+import type { InputBasicProps } from './props.ts'
 
 /**
  * Class for working with events.<br>
@@ -21,11 +21,11 @@ export class InputEvent {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps,
+    protected readonly props: InputBasicProps,
     protected readonly change: InputChange,
     protected readonly value: InputValue,
     protected readonly validation: InputValidation,
-    protected readonly callbackEmit: (type: string & keyof InputEmits, event?: Event, value?: InputValidationItem) => void
+    protected readonly callbackEmit: (type: string & keyof InputEmits, event: Event, value: InputValidationItem) => void
   ) {
   }
 
@@ -91,13 +91,14 @@ export class InputEvent {
   /**
    * Triggering the event to delete all values.<br>
    * Вызов события для удаления всех значений.
+   * @param event event object /<br>объект события
    */
-  onClear (): void {
+  onClear (event: MouseEvent): void {
     this.value.clear()
 
     this
-      .on()
-      .onChange()
+      .on(event)
+      .onChange(event)
   }
 
   /**
@@ -114,6 +115,13 @@ export class InputEvent {
       ...this.getValidation(type),
       ...this.getData()
     })
+
+    if (type === 'input') {
+      const value = this.value.get()
+
+      this.callbackEmit('update:value', value, { value })
+      this.callbackEmit('update:modelValue', value, { value })
+    }
 
     return this
   }

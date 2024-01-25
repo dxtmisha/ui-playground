@@ -612,6 +612,34 @@ $designsProperties: (
           ),
         ),
       ),
+      'checkbox':(
+        index: 'checkbox',
+        name: 'd-checkbox',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       'chip':(
         index: 'chip',
         name: 'd-chip',

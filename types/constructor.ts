@@ -7,6 +7,9 @@ import {
 } from './ref.ts'
 
 export type ConstrItem = Record<string, any>
+export type ConstrValue<T = any> = {
+  value?: T
+}
 
 export type ConstrComponent = Record<string, any>
 export type ConstrComponentMod<P extends ConstrItem> = {

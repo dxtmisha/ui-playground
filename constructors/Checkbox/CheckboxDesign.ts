@@ -1,42 +1,46 @@
 import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { InputRef } from '../Input/InputRef.ts'
 
 import {
   type ConstrOptions,
   type ConstrStyles
 } from '../../types/constructor.ts'
 import {
-  type InputProps
+  type CheckboxProps
 } from './props.ts'
+import type { InputValidationItem } from '../Input/typesBasic.ts'
 import {
-  type InputClasses,
-  type InputComponents,
-  type InputEmits,
-  type InputExpose,
-  type InputSetup,
-  type InputSlots
+  type CheckboxClasses,
+  type CheckboxComponents,
+  type CheckboxEmits,
+  type CheckboxExpose,
+  type CheckboxSetup,
+  type CheckboxSlots
 } from './types.ts'
 
 /**
- * InputDesign
+ * CheckboxDesign
  */
-export class InputDesign<
-  COMP extends InputComponents,
-  SETUP extends InputSetup,
-  EXPOSE extends InputExpose,
-  CLASSES extends InputClasses,
-  P extends InputProps
+export class CheckboxDesign<
+  COMP extends CheckboxComponents,
+  SETUP extends CheckboxSetup,
+  EXPOSE extends CheckboxExpose,
+  CLASSES extends CheckboxClasses,
+  P extends CheckboxProps
 > extends DesignConstructorAbstract<
-  HTMLDivElement,
+  HTMLLabelElement,
   COMP,
-  InputEmits,
+  CheckboxEmits,
   SETUP,
   EXPOSE,
-  InputSlots,
+  CheckboxSlots,
   CLASSES,
   P
 > {
+  protected input: InputRef<boolean>
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -46,7 +50,7 @@ export class InputDesign<
   constructor (
     name: string,
     props: Readonly<P>,
-    options?: ConstrOptions<COMP, InputEmits, P>
+    options?: ConstrOptions<COMP, CheckboxEmits, P>
   ) {
     super(
       name,
@@ -54,10 +58,54 @@ export class InputDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
+    this.input = new InputRef<boolean>(
+      props,
+      this.element,
+      (type: string & keyof CheckboxEmits, event: Event, value: InputValidationItem) => {
+        this.emits?.(
+          type as 'input',
+          event,
+          value
+        )
+      }
+    )
 
     this.init()
+  }
+
+  renderInput (): VNode {
+    const setup = this.setup()
+
+    return h('input', {
+      class: setup.classes.value.input,
+      name: this.props.name,
+      type: 'checkbox',
+      checked: setup.value.value,
+      on: this.props.on,
+      onInput: setup.onInput
+    })
+  }
+
+  renderInputHidden (): VNode {
+    return h('input', {
+      name: this.props.name,
+      type: 'hidden',
+      value: '0'
+    })
+  }
+
+  renderChecked (): VNode {
+    const setup = this.setup()
+    const children: any[] = []
+
+    this.components.renderAdd(
+      children,
+      'icon'
+    )
+
+    return h('span', {
+      class: setup.classes.value.item
+    })
   }
 
   /**
@@ -76,8 +124,9 @@ export class InputDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      value: this.input.value,
+
+      onInput: (event: InputEvent) => this.input.onChecked(event)
     } as SETUP
   }
 
@@ -103,6 +152,9 @@ export class InputDesign<
       main: {},
       ...{
         // :classes [!] System label / Системная метка
+        input: this.getSubClass('input'),
+        item: this.getSubClass('item'),
+        itemIcon: this.getSubClass('item__icon')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -124,13 +176,18 @@ export class InputDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
-    // const children: any[] = []
+    const setup = this.setup()
+    const children: any[] = [
+      this.renderInputHidden(),
+      this.renderInput(),
+      h('div', {}, setup.value.value),
+      h('div', {}, this.props.value)
+    ]
 
-    return h('div', {
+    return h('label', {
       // ...this.getAttrs(),
       ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: setup.classes.value.input
+    }, children)
   }
 }

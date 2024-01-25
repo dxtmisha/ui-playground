@@ -1,5 +1,7 @@
 import { WindowClasses } from './WindowClasses.ts'
 
+import { type ConstrValue } from '../../types/constructor.ts'
+
 /**
  * A class for working with elements.<br>
  * Класс для работы с элементами.
@@ -14,7 +16,7 @@ export class WindowElement {
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly classes: WindowClasses,
-    protected element?: HTMLDivElement
+    protected readonly element: ConstrValue<HTMLDivElement>
   ) {
   }
 
@@ -23,7 +25,7 @@ export class WindowElement {
    * Проверяет, есть ли главный элемент.
    */
   isMain (): boolean {
-    return Boolean(this.element)
+    return Boolean(this.element.value)
   }
 
   /**
@@ -31,7 +33,7 @@ export class WindowElement {
    * Возвращает главного элемента.
    */
   getMain (): HTMLDivElement | undefined {
-    return this.element
+    return this.element.value
   }
 
   /**
@@ -59,14 +61,6 @@ export class WindowElement {
   }
 
   /**
-   * Returns the window context element.<br>
-   * Возвращает элемент контекста окна.
-   */
-  getBodyContext (): HTMLDivElement | undefined {
-    return this.classes.findBodyContext()
-  }
-
-  /**
    * Returns the dimensions of the window’s body element.<br>
    * Возвращает размеры элемента тела окна.
    */
@@ -75,12 +69,10 @@ export class WindowElement {
   }
 
   /**
-   * Modifies the main element.<br>
-   * Изменяет главный элемент.
-   * @param element the element of the window itself /<br>элемент самого окна
+   * Returns the window context element.<br>
+   * Возвращает элемент контекста окна.
    */
-  setMain (element?: HTMLDivElement): this {
-    this.element = element
-    return this
+  getBodyContext (): HTMLDivElement | undefined {
+    return this.classes.findBodyContext()
   }
 }

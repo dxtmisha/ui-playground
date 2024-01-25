@@ -1,26 +1,34 @@
-import { nextTick, onMounted, onUnmounted, ref, shallowRef, type ShallowRef, watch, watchEffect } from 'vue'
+import {
+  nextTick,
+  onUnmounted,
+  shallowRef,
+  watchEffect
+} from 'vue'
 
 import { Window } from './Window.ts'
 
 import { type RefUndefined } from '../../types/ref.ts'
-import type { ConstrClassObject, ConstrStyles } from '../../types/constructor.ts'
-import { type WindowProps } from './props.ts'
+import {
+  type ConstrClassObject,
+  type ConstrStyles
+} from '../../types/constructor.ts'
 import { type WindowEmitOptions, WindowStatusItem } from './typesBasic.ts'
+import { type WindowProps } from './props.ts'
 
 /**
  * The base class for working with the window (Ref).<br>
  * Базовый класс для работы с окном (Ref).
  */
 export class WindowRef {
-  protected window: Window
+  readonly window: Window
 
-  readonly status: ShallowRef<WindowStatusItem>
-  readonly open: ShallowRef<boolean>
-  readonly inDom: ShallowRef<boolean>
-  readonly staticMode: ShallowRef<boolean>
+  readonly status = shallowRef<WindowStatusItem>()
+  readonly staticMode = shallowRef<boolean>(false)
+  readonly inDom = shallowRef<boolean>(false)
+  readonly open = shallowRef<boolean>(false)
 
-  readonly classes = ref<ConstrClassObject>({})
-  readonly styles = ref<ConstrStyles>({})
+  readonly classes = shallowRef<ConstrClassObject>({})
+  readonly styles = shallowRef<ConstrStyles>({})
 
   /**
    * Constructor
@@ -35,8 +43,8 @@ export class WindowRef {
    */
   constructor (
     props: WindowProps,
-    element?: RefUndefined<HTMLDivElement>,
-    callbackEmit?: (options: WindowEmitOptions) => void,
+    element: RefUndefined<HTMLDivElement>,
+    callbackEmit: (options: WindowEmitOptions) => void,
     className: string = 'is-window',
     classControl: string = 'is-control',
     classBody: string = 'is-body',
@@ -44,45 +52,22 @@ export class WindowRef {
   ) {
     this.window = new Window(
       props,
-      element?.value,
+      element,
       async () => this.update(),
+      callbackEmit,
       className,
       classControl,
       classBody,
       classBodyContext
     )
 
-    if (element) {
-      watch(element, value => this.window.getItemElement().setMain(value))
-    }
-
-    this.status = shallowRef(this.window.getStatus())
-    this.open = shallowRef(this.window.getOpen())
-    this.inDom = shallowRef(this.window.inDom())
-    this.staticMode = shallowRef(this.window.isStaticMode())
-
-    watch(this.open, () => {
-      requestAnimationFrame(() => callbackEmit?.(this.window.getEmitOptions()))
+    watchEffect(async () => await this.window.open.set(props.open))
+    watchEffect(async () => {
+      this.window.update()
+      await this.update()
     })
 
-    onMounted(async () => {
-      await nextTick()
-
-      watchEffect(() => {
-        this.window.getItemStatic().make()
-        this.update()
-      })
-
-      watchEffect(() => {
-        this.window.getItemStatic().makeAdaptive()
-      })
-      watchEffect(() => this.window.setOpen(props.open))
-    })
-
-    onUnmounted(() => {
-      this.window.getItemEvent().stop()
-      this.window.getItemStatic().stop()
-    })
+    onUnmounted(() => this.window.stop())
   }
 
   /**
@@ -90,7 +75,7 @@ export class WindowRef {
    * Возвращает идентификатор текущего окна.
    */
   getId (): string {
-    return this.window.getClassesItem().getId()
+    return this.window.classes.getId()
   }
 
   /**
@@ -98,7 +83,7 @@ export class WindowRef {
    * Возвращает название класса для контроля.
    */
   getClassControl (): string {
-    return this.window.getClassesItem().getClassControlAndId()
+    return this.window.classes.getClassControlAndId()
   }
 
   /**
@@ -107,7 +92,7 @@ export class WindowRef {
    * @param open the value of the current state /<br>значение текущего состояния
    */
   async setOpen (open: boolean = true): Promise<void> {
-    await this.window.setOpen(open)
+    await this.window.open.set(open)
   }
 
   /**
@@ -115,8 +100,7 @@ export class WindowRef {
    * Переключает состояние, то есть открывает или закрывает окно, в зависимости от значения item.
    */
   async toggle (): Promise<void> {
-    console.log('this.window.toggle', this.window)
-    await this.window.toggle()
+    await this.window.open.toggle()
   }
 
   /**
@@ -125,7 +109,7 @@ export class WindowRef {
    * @param event event object /<br>объект события
    */
   async onClick (event: MouseEvent & TouchEvent): Promise<void> {
-    return this.window.getItemEvent().onClick(event)
+    return this.window.event.onClick(event)
   }
 
   /**
@@ -134,7 +118,7 @@ export class WindowRef {
    * @param event event object /<br>объект события
    */
   async onContextmenu (event: MouseEvent & TouchEvent): Promise<void> {
-    return this.window.getItemEvent().onContextmenu(event)
+    return this.window.event.onContextmenu(event)
   }
 
   /**
@@ -142,7 +126,7 @@ export class WindowRef {
    * Событие окончания анимации при закрытии окна.
    */
   onTransition (): void {
-    this.window.getItemEvent().onTransition()
+    return this.window.event.onTransition()
   }
 
   /**
@@ -150,7 +134,7 @@ export class WindowRef {
    * Событие окончания анимации запрета на закрытие.
    */
   onPersistent (): void {
-    this.window.getItemEvent().onPersistent()
+    return this.window.event.onPersistent()
   }
 
   /**
@@ -158,12 +142,14 @@ export class WindowRef {
    * Обновляет все значения.
    */
   async update (): Promise<void> {
-    this.status.value = this.window.getStatus()
-    this.open.value = this.window.getOpen()
-    this.inDom.value = this.window.inDom()
-    this.staticMode.value = this.window.isStaticMode()
+    this.status.value = this.window.status.get()
+    this.staticMode.value = this.window.staticMode.is()
+
+    this.inDom.value = this.window.open.inDom()
+    this.open.value = this.window.open.get()
 
     this.updateClasses()
+
     await nextTick()
   }
 
@@ -174,6 +160,7 @@ export class WindowRef {
   updateClasses (): this {
     this.classes.value = this.window.getClasses()
     this.styles.value = this.window.getStyles()
+
     return this
   }
 }

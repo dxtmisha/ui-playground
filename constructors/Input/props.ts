@@ -11,8 +11,9 @@ import type {
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type InputProps<V = any> = {
+export type InputBasicProps<V = any> = {
   // Status
+  selected?: boolean
   readonly?: boolean
   disabled?: boolean
 
@@ -43,23 +44,33 @@ export type InputProps<V = any> = {
   autofocus?: boolean
   autocomplete?: HTMLInputElement['autocomplete']
 
-  input?: Partial<HTMLInputElement>
+  input?: Record<string, any>
 
   // Messages & Validation
   placeholder?: string
+  helperMessage?: string,
   validationMessage?: string,
   validationCode?: InputValidityCode
 
-  // Tokens
-  // :type [!] System label / Системная метка
-  // :type [!] System label / Системная метка
+  // On
+  on?: Record<string, () => void>
+  ['onUpdate:value']?: (value: V) => void
+  ['onUpdate:modelValue']?: (value: V) => void
 }
+
+export type InputProps =
+  InputBasicProps<string> &
+  {
+    // Tokens
+    // :type [!] System label / Системная метка
+    // :type [!] System label / Системная метка
+  }
 
 /**
  * Default value for property.<br>
  * Значение по умолчанию для свойства.
  */
-export const defaultsInput: InputProps = {
+export const defaultsInput: InputBasicProps = {
   type: 'text',
   autocomplete: 'off',
   ...{
@@ -72,7 +83,7 @@ export const defaultsInput: InputProps = {
  * Constructor for property.<br>
  * Конструктор для свойства.
  */
-export const propsInput = {
+export const propsBasicInput = {
   // Status
   readonly: Boolean,
   disabled: Boolean,
@@ -81,17 +92,20 @@ export const propsInput = {
   name: String,
   value: String,
   modelValue: String,
-  detail: Object as PropType<InputProps['detail']>,
+  detail: Object as PropType<InputBasicProps['detail']>,
 
   // Input
-  type: String as PropType<InputProps['type']>,
-  inputmode: String as PropType<InputProps['inputmode']>,
+  type: {
+    type: String as PropType<InputBasicProps['type']>,
+    default: defaultsInput.type
+  },
+  inputmode: String as PropType<InputBasicProps['inputmode']>,
   spellcheck: Boolean,
 
   required: Boolean,
 
   pattern: String,
-  match: [String, HTMLInputElement, Object] as PropType<InputProps['match']>,
+  match: [String, HTMLInputElement, Object] as PropType<InputBasicProps['match']>,
 
   arrow: Boolean,
   step: [String, Number],
@@ -102,15 +116,27 @@ export const propsInput = {
   maxlength: [String, Number],
 
   autofocus: Boolean,
-  autocomplete: String as PropType<InputProps['autocomplete']>,
+  autocomplete: {
+    type: String as PropType<InputBasicProps['autocomplete']>,
+    default: defaultsInput.autocomplete
+  },
 
-  input: Object as PropType<InputProps['input']>,
+  input: Object as PropType<InputBasicProps['input']>,
 
   // Messages & Validation
   placeholder: String,
+  helperMessage: String,
   validationMessage: String,
-  validationCode: [String, Object] as PropType<InputProps['validationCode']>,
+  validationCode: [String, Object] as PropType<InputBasicProps['validationCode']>,
 
+  // On
+  on: Object,
+  'onUpdate:value': Function as PropType<InputBasicProps['onUpdate:value']>,
+  'onUpdate:modelValue': Function as PropType<InputBasicProps['onUpdate:modelValue']>
+}
+
+export const propsInput = {
+  ...propsBasicInput,
   // Tokens
   ...{
     // :prop [!] System label / Системная метка

@@ -1,5 +1,5 @@
 import { InputType } from './InputType.ts'
-import type { InputProps } from './props.ts'
+import type { InputBasicProps } from './props.ts'
 
 const PATTERNS: Record<string, string> = {
   email: '[\\S]+@[\\S]{2,}\\.[\\w]{2,}',
@@ -18,7 +18,7 @@ export class InputPattern {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps,
+    protected readonly props: InputBasicProps,
     protected readonly type: InputType
   ) {
   }

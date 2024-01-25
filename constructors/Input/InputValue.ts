@@ -2,7 +2,7 @@ import { isArray, isFilled, isObject } from '../../functions/data.ts'
 
 import { InputElement } from './InputElement.ts'
 
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 import { InputChange } from './InputChange.ts'
 
 /**
@@ -22,7 +22,7 @@ export class InputValue<V = any> {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps<V>,
+    protected readonly props: InputBasicProps<V>,
     protected readonly element: InputElement,
     protected readonly change: InputChange,
     protected readonly callback: () => void
@@ -103,7 +103,7 @@ export class InputValue<V = any> {
    * Возвращает оригинальное значение.
    */
   getOriginal (): V | undefined {
-    return this.props?.value ?? this.props?.modelValue
+    return this.props?.value || this.props?.modelValue
   }
 
   /**
@@ -129,7 +129,7 @@ export class InputValue<V = any> {
    * Изменяет значение.
    * @param value changeable value /<br>изменяемое значение
    */
-  set (value: V): this {
+  set (value: V | undefined): this {
     if (this.value !== value) {
       this.value = value
       this.change.set(this.getOriginal() !== value)
@@ -179,8 +179,7 @@ export class InputValue<V = any> {
   setByTarget (target: HTMLInputElement): this {
     const value = (this.isCheckbox(target) ? target.checked : target.value) as V
 
-    this.set(value)
-    return this
+    return this.set(value)
   }
 
   /**
@@ -191,8 +190,7 @@ export class InputValue<V = any> {
   setByChecked (event: Event): this {
     const input = event.target as HTMLInputElement
 
-    this.set(input.checked as V)
-    return this
+    return this.set(input.checked as V)
   }
 
   /**
@@ -204,17 +202,15 @@ export class InputValue<V = any> {
     const input = event.target as HTMLInputElement
     const value: V = (input.checked ? input.value : '') as V
 
-    this.set(value)
-    return this
+    return this.set(value)
   }
 
   /**
    * Changes the values to the original ones.<br>
    * Изменяет значения на оригинальные.
    */
-  toOriginal (): this {
-    this.value = this.getOriginal()
-    return this
+  update (): this {
+    return this.set(this.getOriginal())
   }
 
   /**

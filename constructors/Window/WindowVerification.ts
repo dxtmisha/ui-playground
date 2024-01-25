@@ -28,6 +28,7 @@ export class WindowVerification {
    * @param staticMode class object for working with static status /<br>объект класса для работы со статическим статусом
    * @param open the class object for working with the status of closing or opening the window /<br>
    * объект класса для работы со статусом закрытия или открытия окна
+   * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -36,7 +37,8 @@ export class WindowVerification {
     protected readonly classes: WindowClasses,
     protected readonly element: WindowElement,
     protected readonly staticMode: WindowStatic,
-    protected readonly open: WindowOpen
+    protected readonly open: WindowOpen,
+    protected readonly callback: () => Promise<void>
   ) {
   }
 
@@ -54,9 +56,11 @@ export class WindowVerification {
 
     if (this.open.get()) {
       if (this.isContextmenu()) {
-        await this.open.reset()
+        await this.open
+          .reset()
           .watchPosition()
-        await this.open.makeCallback()
+
+        await this.callback()
       } else if (this.focus === null) {
         await this.open.toggle()
       } else if (!this.isFocus()) {

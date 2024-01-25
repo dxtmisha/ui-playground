@@ -1,6 +1,7 @@
 import { frame } from '../../functions/frame.ts'
 
 import { WindowStatus } from './WindowStatus.ts'
+import { WindowClient } from './WindowClient.ts'
 import { WindowHook } from './WindowHook.ts'
 
 import { WindowElement } from './WindowElement.ts'
@@ -11,7 +12,6 @@ import { WindowPosition } from './WindowPosition.ts'
 import { WindowOrigin } from './WindowOrigin.ts'
 
 import { type WindowProps } from './props.ts'
-import { WindowClient } from './WindowClient.ts'
 
 /**
  * Class for managing the status of an open window.<br>
@@ -33,6 +33,8 @@ export class WindowOpen {
    * @param position object for working with the position of the element /<br>объект для работы с положением элемента
    * @param origin the object for work is in the initial position upon opening <br>объект для работы в начальной позиции при открытии
    * @param callback callback function /<br>функция обратного вызова
+   * @param callbackEmit call function when the opening state changes /<br>
+   * функция вызова при изменении состояния открытия
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
@@ -45,7 +47,8 @@ export class WindowOpen {
     protected readonly coordinates: WindowCoordinates,
     protected readonly position: WindowPosition,
     protected readonly origin: WindowOrigin,
-    protected readonly callback?: () => Promise<void>
+    protected readonly callback: () => Promise<void>,
+    protected readonly callbackEmit: () => void
   ) {
   }
 
@@ -94,21 +97,19 @@ export class WindowOpen {
       if (toOpen) {
         this.reset()
         this.status.toDisplay()
-        this.open = toOpen
-        this.first = toOpen
 
-        await this.makeCallback()
+        await this.setOpenAndEmit(toOpen)
 
         requestAnimationFrame(async () => {
           await this.hook.preparation(this.open)
           await this.watchPosition()
-          await this.makeCallback()
+          await this.callback()
 
           requestAnimationFrame(async () => {
             this.position.updateScroll()
             this.status.toPreparation()
 
-            await this.makeCallback()
+            await this.callback()
 
             requestAnimationFrame(async () => {
               await this.hook.opening(this.open)
@@ -119,7 +120,7 @@ export class WindowOpen {
                 this.status.toOpen()
               }
 
-              await this.makeCallback()
+              await this.callback()
             })
           })
         })
@@ -130,7 +131,7 @@ export class WindowOpen {
           this.toClose()
         } else {
           this.status.toHide()
-          await this.makeCallback()
+          await this.callback()
         }
       }
     }
@@ -178,13 +179,19 @@ export class WindowOpen {
   }
 
   /**
-   * Calls the function if the value has been changed.<br>
-   * Вызывает функцию, если было изменено значение.
+   * Changes values and triggers events.<br>
+   * Изменяет значения и вызывает события.
+   * @param open the value of the current state /<br>значение текущего состояния
    */
-  async makeCallback (): Promise<this> {
-    if (this.callback) {
-      await this.callback()
+  async setOpenAndEmit (open: boolean): Promise<this> {
+    this.open = open
+
+    if (open && !this.first) {
+      this.first = true
     }
+
+    await this.callback()
+    this.callbackEmit()
 
     return this
   }
@@ -203,7 +210,7 @@ export class WindowOpen {
           getComputedStyle(element).content === '"--MENU--"' &&
           this.position.update()
         ) {
-          this.makeCallback().then()
+          this.callback().then()
         }
       },
       () => this.open && !this.status.isHide()
@@ -217,10 +224,7 @@ export class WindowOpen {
    * Переход в состояние закрытия.
    */
   protected toClose (): void {
-    setTimeout(() => {
-      this.open = false
-      this.makeCallback().then()
-    }, 50)
+    setTimeout(() => this.setOpenAndEmit(false).then(), 48)
 
     this.status.toClose()
     this.hook.opening(this.open).then()

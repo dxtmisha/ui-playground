@@ -484,6 +484,34 @@ $designsProperties: (
           ),
         ),
       ),
+      'checkbox':(
+        index: 'checkbox',
+        name: 'd-checkbox',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       'chip':(
         index: 'chip',
         name: 'd-chip',
@@ -7722,6 +7750,34 @@ $designsProperties: (
           ),
         ),
       ),
+      'checkbox':(
+        index: 'checkbox',
+        name: 'm3-checkbox',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       'chip':(
         index: 'chip',
         name: 'm3-chip',
@@ -9114,6 +9170,19 @@ $designsProperties: (
             type: 'state',
             value: (
             ),
+          ),
+        ),
+      ),
+      'input':(
+        index: 'input',
+        name: 'm3-input',
+        type: 'component',
+        value: (
+          'main':(
+            index: 'main',
+            name: '--m3-input-main',
+            type: 'var',
+            value: 'var(--d-input)',
           ),
         ),
       ),

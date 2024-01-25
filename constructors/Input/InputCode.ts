@@ -1,4 +1,4 @@
-import { type InputProps } from './props.ts'
+import { type InputBasicProps } from './props.ts'
 
 /**
  * Class for processing standard error text.<br>
@@ -11,7 +11,7 @@ export class InputCode {
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
-    protected readonly props: InputProps
+    protected readonly props: InputBasicProps
   ) {
   }
 

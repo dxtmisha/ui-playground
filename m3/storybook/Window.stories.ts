@@ -198,7 +198,7 @@ export const WindowStaticMode: Story = {
         v-bind="args"
       >
         <template v-slot:control="binds">
-          <m3-button v-bind="binds">Over: Item 3</m3-button>
+          <m3-button v-bind="binds">Window</m3-button>
         </template>
         <template v-slot:default>
           <div style="padding: 16px;">
@@ -233,7 +233,7 @@ export const WindowManagement: Story = {
     docs: {
       description: {
         story: '<p>You can control the window using the <b>setOpen(boolean)</b>, <b>toggle()</b> methods.<br> ' +
-          '<small>Управление окном можно через методы <b>setOpen(boolean)</b>, <b>toggle()</b>>.</small</p>'
+          '<small>Управление окном можно через методы <b>setOpen(boolean)</b>, <b>toggle()</b>.</small></p>'
       }
     }
   },

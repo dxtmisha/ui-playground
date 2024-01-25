@@ -92,9 +92,7 @@ export class WindowDesign<
       staticMode: this.window.staticMode,
       slotControl: {
         class: this.window.getClassControl(),
-        onclick: async (event: MouseEvent & TouchEvent) => {
-          await this.window.onClick(event)
-        },
+        onclick: async (event: MouseEvent & TouchEvent) => await this.window.onClick(event),
         oncontextmenu: async (event: MouseEvent & TouchEvent) => this.window.onContextmenu(event)
       },
       setOpen: (open: boolean) => this.window.setOpen(open),
