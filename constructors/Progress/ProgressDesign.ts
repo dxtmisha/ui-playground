@@ -81,7 +81,7 @@ export class ProgressDesign<
 
       hide: this.item.hide,
       visible: this.item.visible,
-      onAnimation: this.item.onAnimation
+      onAnimation: (event: AnimationEvent) => this.item.onAnimation(event)
     } as SETUP
   }
 

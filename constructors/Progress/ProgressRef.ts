@@ -1,12 +1,12 @@
-import { computed, type ComputedRef, shallowRef, watchEffect } from 'vue'
+import { computed, shallowRef, watchEffect } from 'vue'
 
 import { Progress } from './Progress.ts'
 
-import { type ProgressProps } from './props.ts'
 import {
   type ConstrClassObject,
   type ConstrStyles
 } from '../../types/constructor.ts'
+import { type ProgressProps } from './props.ts'
 
 /**
  * Base class Progress for working in Vue.<br>
@@ -15,16 +15,14 @@ import {
 export class ProgressRef {
   protected readonly item: Progress
 
-  readonly tag: ComputedRef<string>
-  readonly valueInPercent: ComputedRef<string | null>
+  readonly tag = computed<string>(() => this.item.getTag())
+  readonly valueInPercent = computed<string | null>(() => this.item.getValueInPercent())
 
   readonly hide = shallowRef<boolean>(false)
   readonly visible = shallowRef<boolean>(false)
 
   readonly classes = shallowRef<ConstrClassObject>({})
-  readonly styles: ComputedRef<ConstrStyles>
-
-  readonly onAnimation: (event: AnimationEvent) => void
+  readonly styles = computed<ConstrStyles>(() => this.item.getStyles())
 
   /**
    * Constructor
@@ -45,12 +43,15 @@ export class ProgressRef {
     )
 
     watchEffect(() => this.item.make())
+  }
 
-    this.tag = computed(() => this.item.getTag())
-    this.valueInPercent = computed(() => this.item.getValueInPercent())
-
-    this.styles = computed(() => this.item.getStyles())
-
-    this.onAnimation = (event: AnimationEvent) => this.item.onAnimation(event)
+  /**
+   * Monitors the animation event for hiding the element.<br>
+   * Следит за событием анимации для скрытия элемента.
+   * @param event A string containing the value of the animation-name that generated the animation /<br>
+   * Является DOMString содержащей значения animation-name CSS-свойств связанных с transition
+   */
+  onAnimation (event: AnimationEvent): void {
+    this.item.onAnimation(event)
   }
 }
