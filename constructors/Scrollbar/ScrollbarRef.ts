@@ -21,26 +21,22 @@ export class ScrollbarRef {
    */
   constructor (
     props: ScrollbarProps,
-    element?: Ref<HTMLDivElement | undefined>
+    element: Ref<HTMLDivElement | undefined>
   ) {
     this.scrollbar = new Scrollbar(
       props,
-      element?.value,
+      element,
       () => this.updateClasses().then()
     )
 
     watchEffect(async () => {
-      if (element) {
-        this.scrollbar.getBorder().setElement(element.value)
-        this.scrollbar.getBorder().toggle()
-      }
-
+      this.scrollbar.border.reset()
       await this.updateClasses()
     })
 
     onMounted(async () => {
-      await nextTick().then()
-      requestAnimationFrame(() => this.scrollbar.getBorder().toggle())
+      await nextTick()
+      requestAnimationFrame(() => this.scrollbar.border.toggle())
     })
   }
 

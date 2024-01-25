@@ -1,15 +1,18 @@
 import { ScrollbarWidth } from './ScrollbarWidth.ts'
 import { ScrollbarBorder } from './ScrollbarBorder.ts'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
-import type { ScrollbarProps } from './props.ts'
+import {
+  type ConstrClassObject,
+  type ConstrValue
+} from '../../types/constructor.ts'
+import { type ScrollbarProps } from './props.ts'
 
 /**
  * Class for working with scroll components.<br>
  * Класс для работы с компонентами скролла.
  */
 export class Scrollbar {
-  protected border: ScrollbarBorder
+  readonly border: ScrollbarBorder
 
   /**
    * Constructor
@@ -20,32 +23,14 @@ export class Scrollbar {
   // eslint-disable-next-line no-useless-constructor
   constructor (
     props: ScrollbarProps,
-    element?: HTMLDivElement,
-    callback?: () => void
+    element: ConstrValue<HTMLDivElement>,
+    callback: () => void
   ) {
     this.border = new ScrollbarBorder(
       props,
       element,
       callback
     )
-  }
-
-  /**
-   * Returns information on whether to disable scroll changes.
-   * This is when the scroll has no width.<br>
-   * Возвращает информацию, надо ли выключить изменения скролла.
-   * Это когда скролл не имеет ширины.
-   */
-  async getDisabled (): Promise<boolean> {
-    return await ScrollbarWidth.is()
-  }
-
-  /**
-   * Returns an object for working with the border.<br>
-   * Возвращает объект для работы с бордером.
-   */
-  getBorder (): ScrollbarBorder {
-    return this.border
   }
 
   /**
@@ -57,5 +42,15 @@ export class Scrollbar {
       '??--disabled': await this.getDisabled(),
       ...this.border.getClasses()
     }
+  }
+
+  /**
+   * Returns information on whether to disable scroll changes.
+   * This is when the scroll has no width.<br>
+   * Возвращает информацию, надо ли выключить изменения скролла.
+   * Это когда скролл не имеет ширины.
+   */
+  async getDisabled (): Promise<boolean> {
+    return await ScrollbarWidth.is()
   }
 }

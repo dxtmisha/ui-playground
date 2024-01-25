@@ -1,7 +1,10 @@
 import { EventItem } from '../../classes/EventItem.ts'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
-import type { ScrollbarProps } from './props.ts'
+import {
+  type ConstrClassObject,
+  type ConstrValue
+} from '../../types/constructor.ts'
+import { type ScrollbarProps } from './props.ts'
 
 const SCROLLBAR_SHIFT = 8
 
@@ -24,8 +27,8 @@ export class ScrollbarBorder {
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: ScrollbarProps,
-    protected element?: HTMLDivElement,
-    protected readonly callback?: () => void
+    protected readonly element: ConstrValue<HTMLDivElement>,
+    protected readonly callback: () => void
   ) {
   }
 
@@ -41,20 +44,6 @@ export class ScrollbarBorder {
   }
 
   /**
-   * Modifies the selected element.<br>
-   * Изменяет выбранный элемент.
-   * @param element input element /<br>элемент ввода
-   */
-  setElement (element?: HTMLDivElement): this {
-    if (this.element !== element) {
-      this.element = element
-      this.resetElement()
-    }
-
-    return this
-  }
-
-  /**
    * Start monitoring the scroll.<br>
    * Начать слежение за скроллом.
    */
@@ -62,8 +51,8 @@ export class ScrollbarBorder {
     if (this.event) {
       this.event.start()
     } else {
-      this.event = new EventItem<HTMLDivElement, Event, any>(
-        this.element,
+      this.event = new EventItem<HTMLDivElement, Event>(
+        this.element.value,
         ['scroll-sync'],
         () => this.on()
       )
@@ -102,6 +91,18 @@ export class ScrollbarBorder {
   }
 
   /**
+   * Updating the monitoring element for the event object.<br>
+   * Обновление элемента слежения для объекта события.
+   */
+  reset (): this {
+    if (this.event) {
+      this.event.setElement(this.element.value)
+    }
+
+    return this.toggle()
+  }
+
+  /**
    * Changing the data for class output.<br>
    * Изменение данных для вывода класса.
    * @param top status of the top border display /<br>статус отображения верхнего бордера
@@ -127,23 +128,11 @@ export class ScrollbarBorder {
   }
 
   /**
-   * Updating the monitoring element for the event object.<br>
-   * Обновление элемента слежения для объекта события.
-   */
-  protected resetElement (): this {
-    if (this.event) {
-      this.event.setElement(this.element)
-    }
-
-    return this
-  }
-
-  /**
    * Function for the event of monitoring scroll changes.<br>
    * Функция для события слежения за изменениями скролла.
    */
   protected on (): void {
-    const element = this.element
+    const element = this.element.value
 
     if (element) {
       this.setData(
