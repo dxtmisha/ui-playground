@@ -16,6 +16,7 @@ import { MaskValueBasic } from './MaskValueBasic.ts'
 import { MaskValue } from './MaskValue.ts'
 import { MaskEmit } from './MaskEmit.ts'
 
+import { type ConstrValue } from '../../types/constructor.ts'
 import { type MaskElementInput } from './typesBasic.ts'
 
 /**
@@ -57,18 +58,8 @@ export class MaskData {
     protected readonly valueBasic: MaskValueBasic,
     protected readonly value: MaskValue,
     protected readonly emit: MaskEmit,
-    protected element?: MaskElementInput
+    protected readonly element: ConstrValue<MaskElementInput>
   ) {
-  }
-
-  /**
-   * Changes in an element.<br>
-   * Изменения в элементе.
-   * @param element new element /<br>новый элемент
-   */
-  setElement (element: MaskElementInput): this {
-    this.element = element
-    return this
   }
 
   /**
@@ -170,7 +161,7 @@ export class MaskData {
 
     if (isFilled(value)) {
       const chars = this.type.isDate() ? this.date.getValue(value) : value
-      this.add(0, chars.split(''))
+      this.add(0, this.extra(chars.split('')))
     }
 
     return this
@@ -243,7 +234,7 @@ export class MaskData {
     if (this.focus.is()) {
       requestAnimationFrame(() => {
         if (
-          this.element && (
+          this.element.value && (
             !updateBuffer ||
             !this.goBuffer()
           )
@@ -252,8 +243,8 @@ export class MaskData {
           const shift = this.selection.getShift()
           const newSelection = length < shift ? length : shift
 
-          this.element.selectionEnd = newSelection
-          this.element.selectionStart = newSelection
+          this.element.value.selectionEnd = newSelection
+          this.element.value.selectionStart = newSelection
         }
       })
     }

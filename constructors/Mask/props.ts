@@ -15,6 +15,9 @@ import {
  */
 export type MaskProps = {
   // Values
+  type?: MaskTypeItem
+  name?: string
+  value?: string | number
   mask?: MaskList
   special?: MaskSpecialProp
   match?: MaskMatchItem
@@ -22,11 +25,8 @@ export type MaskProps = {
   check?: InputPatternItemOrFunction
   fraction?: MaskFractionItem
   currency?: string
-  name?: string
-  value?: string | number
 
   // Options
-  type?: MaskTypeItem
   language?: string
   view?: string
 
@@ -59,6 +59,12 @@ export const defaultsMask: MaskProps = {
  */
 export const propsMask = {
   // Values
+  type: {
+    type: String as PropType<MaskProps['type']>,
+    default: defaultsMask?.type
+  },
+  name: String,
+  value: [String, Number],
   mask: [String, Array] as PropType<MaskProps['mask']>,
   special: {
     type: [String, Array, Object] as PropType<MaskProps['special']>,
@@ -72,14 +78,8 @@ export const propsMask = {
   check: Object as PropType<MaskProps['check']>,
   fraction: [String, Boolean, Number],
   currency: String,
-  name: String,
-  value: [String, Number],
 
   // Options
-  type: {
-    type: String as PropType<MaskProps['type']>,
-    default: defaultsMask?.type
-  },
   language: String,
   view: {
     type: String,

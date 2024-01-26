@@ -1,4 +1,4 @@
-import { type Ref, shallowRef, type ShallowRef, toRefs, watch, watchEffect } from 'vue'
+import { type Ref, shallowRef, watchEffect } from 'vue'
 
 import { Mask } from './Mask.ts'
 
@@ -8,8 +8,8 @@ import {
   type MaskEventData,
   type MaskViewList
 } from './typesBasic.ts'
-import type { MaskProps } from './props.ts'
 import type { MaskEmits } from './types.ts'
+import type { MaskProps } from './props.ts'
 
 /**
  * A class for working with a mask.<br>
@@ -18,75 +18,56 @@ import type { MaskEmits } from './types.ts'
 export class MaskRef {
   protected mask: Mask
 
-  readonly valueBasic: ShallowRef<string> = shallowRef('')
-  readonly value: ShallowRef<string> = shallowRef('')
-  readonly view: ShallowRef<MaskViewList> = shallowRef([])
-  readonly classes: ShallowRef<ConstrClassObject> = shallowRef({})
-
-  readonly onFocus: (event: FocusEvent) => void
-  readonly onBlur: (event: FocusEvent) => void
-  readonly onKeydown: (event: KeyboardEvent) => void
-  readonly onKeyup: (event: KeyboardEvent) => void
-  readonly onBeforeinput: (event: InputEvent) => void
-  readonly onInput: (event: InputEvent) => void
-  readonly onChange: (event: Event) => void
-  readonly onPaste: (event: ClipboardEvent) => void
-  readonly onClick: (event: MouseEvent) => void
+  readonly valueBasic = shallowRef<string>('')
+  readonly value = shallowRef<string>('')
+  readonly view = shallowRef<MaskViewList>([])
+  readonly classes = shallowRef<ConstrClassObject>({})
 
   /**
    * Constructor
    * @param props base data /<br>базовые данные
-   * @param elementInput input element /<br>элемент ввода
+   * @param element input element /<br>элемент ввода
    * @param classCharacter define class names for each symbol /<br>определить названия класс для каждого символа
    * @param callbackEvent the function is called when an event is triggered /<br>функция вызывается, когда срабатывает событие
    */
   constructor (
     props: MaskProps,
-    elementInput: Ref<MaskElementInput>,
-    callbackEvent?: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
+    element: Ref<MaskElementInput>,
+    callbackEvent: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
     classCharacter = 'is-character'
   ) {
-    const refs = toRefs(props)
-
     this.mask = new Mask(
       props,
-      elementInput.value,
-      (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => {
+      element,
+      (
+        type: string & keyof MaskEmits,
+        event: Event,
+        value?: MaskEventData
+      ) => {
         if (type === 'input') {
           this.updateValue()
         }
 
-        callbackEvent?.(type, event, value)
+        callbackEvent(type, event, value)
       },
       classCharacter
     )
 
-    if (elementInput) {
-      watch(elementInput, value => this.mask.setElement(value))
-    }
-
-    if ('mask' in refs && refs.mask) {
-      watch(refs.mask, () => this.updateValue())
-    }
-
     watchEffect(() => {
-      if (this.mask.reset(props?.value)) {
-        this.updateValue()
-      }
+      this.mask.reset(props?.value)
+      this.updateValue()
     })
-
-    this.onFocus = (event: FocusEvent) => this.mask.getEvent().onFocus(event)
-    this.onBlur = (event: FocusEvent) => this.mask.getEvent().onBlur(event)
-    this.onKeydown = (event: KeyboardEvent) => this.mask.getEvent().onKeydown(event)
-    this.onKeyup = (event: KeyboardEvent) => this.mask.getEvent().onKeyup(event)
-    this.onBeforeinput = (event: InputEvent) => this.mask.getEvent().onBeforeinput(event)
-    this.onInput = (event: InputEvent) => this.mask.getEvent().onInput(event)
-    this.onChange = (event: Event) => this.mask.getEvent().onChange(event)
-    this.onPaste = (event: ClipboardEvent) => this.mask.getEvent().onPaste(event)
-    this.onClick = (event: MouseEvent) => this.mask.getEvent().onClick(event)
-
-    this.updateValue()
   }
+
+  readonly onFocus = (event: FocusEvent) => this.mask.event.onFocus(event)
+  readonly onBlur = (event: FocusEvent) => this.mask.event.onBlur(event)
+  readonly onKeydown = (event: KeyboardEvent) => this.mask.event.onKeydown(event)
+  readonly onKeyup = (event: KeyboardEvent) => this.mask.event.onKeyup(event)
+  readonly onBeforeinput = (event: InputEvent) => this.mask.event.onBeforeinput(event)
+  readonly onInput = (event: InputEvent) => this.mask.event.onInput(event)
+  readonly onChange = (event: Event) => this.mask.event.onChange(event)
+  readonly onPaste = (event: ClipboardEvent) => this.mask.event.onPaste(event)
+  readonly onClick = (event: MouseEvent) => this.mask.event.onClick(event)
 
   /**
    * Updating the entered data.<br>
@@ -97,8 +78,8 @@ export class MaskRef {
     const isDifferentLength = newValueBasic !== this.valueBasic.value
 
     this.valueBasic.value = newValueBasic
-    this.value.value = this.mask.getValue()
-    this.view.value = this.mask.getView()
+    this.value.value = this.mask.value.get()
+    this.view.value = this.mask.view.get()
 
     if (isDifferentLength) {
       this.mask.goSelection()

@@ -5,6 +5,8 @@
   @include initByCustom('sys.color', v('??color', var(--sys-color, inherit)));
   @include initByCustom('sys.opacity', 1);
 
+  display: inline-block;
+
   box-sizing: border-box;
   position: relative;
 

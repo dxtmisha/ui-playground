@@ -29,48 +29,50 @@ import { MaskEmit } from './MaskEmit.ts'
 import { MaskData } from './MaskData.ts'
 import { MaskEvent } from './MaskEvent.ts'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
+import {
+  type ConstrClassObject,
+  type ConstrValue
+} from '../../types/constructor.ts'
 import {
   type MaskElementInput,
-  type MaskEventData,
-  type MaskViewList
+  type MaskEventData
 } from './typesBasic.ts'
-import type { MaskProps } from './props.ts'
 import type { MaskEmits } from './types.ts'
+import type { MaskProps } from './props.ts'
 
 /**
  * Base class for working with the mask.<br>
  * Базовый класс для работы с маской.
  */
 export class Mask {
-  protected readonly type: MaskType
-  protected readonly buffer: MaskBuffer
-  protected readonly focus: MaskFocus
-  protected readonly rubberItem: MaskRubberItem
-  protected readonly rubberTransition: MaskRubberTransition
-  protected readonly characterLength: MaskCharacterLength
-  protected readonly date: MaskDate
-  protected readonly format: MaskFormat
+  readonly type: MaskType
+  readonly buffer: MaskBuffer
+  readonly focus: MaskFocus
+  readonly rubberItem: MaskRubberItem
+  readonly rubberTransition: MaskRubberTransition
+  readonly characterLength: MaskCharacterLength
+  readonly date: MaskDate
+  readonly format: MaskFormat
 
-  protected readonly special: MaskSpecial
-  protected readonly match: MaskMatch
-  protected readonly pattern: MaskPattern
-  protected readonly right: MaskRight
+  readonly special: MaskSpecial
+  readonly match: MaskMatch
+  readonly pattern: MaskPattern
+  readonly right: MaskRight
 
-  protected readonly rubber: MaskRubber
+  readonly rubber: MaskRubber
 
-  protected readonly item: MaskItem
-  protected readonly selection: MaskSelection
-  protected readonly character: MaskCharacter
-  protected readonly valueBasic: MaskValueBasic
-  protected readonly value: MaskValue
+  readonly item: MaskItem
+  readonly selection: MaskSelection
+  readonly character: MaskCharacter
+  readonly valueBasic: MaskValueBasic
+  readonly value: MaskValue
 
-  protected readonly validation: MaskValidation
-  protected readonly view: MaskView
+  readonly validation: MaskValidation
+  readonly view: MaskView
 
-  protected readonly emit: MaskEmit
-  protected readonly data: MaskData
-  protected readonly event: MaskEvent
+  readonly emit: MaskEmit
+  readonly data: MaskData
+  readonly event: MaskEvent
 
   protected oldValue: string = ''
 
@@ -83,7 +85,7 @@ export class Mask {
    */
   constructor (
     props: MaskProps,
-    element: MaskElementInput,
+    element: ConstrValue<MaskElementInput>,
     callbackEvent: (type: string & keyof MaskEmits, event: Event, value?: MaskEventData) => void,
     classCharacter: string = 'is-character'
   ) {
@@ -238,30 +240,6 @@ export class Mask {
   }
 
   /**
-   * Getting the final value for export.<br>
-   * Получение конечного значения для экспорта.
-   */
-  getValue (): string {
-    return this.value.get()
-  }
-
-  /**
-   * Returns an array with information for displaying on the screen.<br>
-   * Возвращает массив с информацией для вывода на экран.
-   */
-  getView (): MaskViewList {
-    return this.view.get()
-  }
-
-  /**
-   * Returns an object for working with events.<br>
-   * Возвращает объект для работы с событиями.
-   */
-  getEvent (): MaskEvent {
-    return this.event
-  }
-
-  /**
    * Values for the class.<br>
    * Значения для класса.
    */
@@ -282,16 +260,6 @@ export class Mask {
   }
 
   /**
-   * Changes in an element.<br>
-   * Изменения в элементе.
-   * @param element new element /<br>новый элемент
-   */
-  setElement (element: MaskElementInput): this {
-    this.data.setElement(element)
-    return this
-  }
-
-  /**
    * Resets all values or updates to the new one.<br>
    * Сбрасывает все значения или обновляется до нового.
    * @param value new values /<br>новые значения
@@ -300,6 +268,7 @@ export class Mask {
     const newValue = anyToString(value)
 
     if (this.oldValue !== newValue) {
+      this.oldValue = newValue
       this.data.reset(newValue)
       this.emit.set('reset', {} as Event).go()
       return true
