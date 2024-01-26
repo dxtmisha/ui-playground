@@ -6,6 +6,7 @@ import { ImageAdaptiveGroup } from './ImageAdaptiveGroup.ts'
 import { ImageCalculationList } from './ImageCalculationList.ts'
 
 import { type FunctionVoid } from '../../types/basic.ts'
+import { type ConstrValue } from '../../types/constructor.ts'
 import { type ImageProps } from './props.ts'
 import {
   type ImageElement,
@@ -53,7 +54,7 @@ export class ImageAdaptiveItem {
   constructor (
     protected readonly props: ImageProps,
     protected readonly data: ImageData,
-    protected element?: ImageElement,
+    protected readonly element: ConstrValue<ImageElement>,
     protected readonly callback?: FunctionVoid
   ) {
     this.reset()
@@ -67,8 +68,8 @@ export class ImageAdaptiveItem {
     return Boolean(this.props?.adaptive) &&
       this.data.isImage() &&
       Boolean(
-        this.element &&
-        this.element.closest('body') && (
+        this.element.value &&
+        this.element.value.closest('body') && (
           this.getWidth() ||
           this.getHeight()
         )
@@ -113,7 +114,7 @@ export class ImageAdaptiveItem {
    * Возвращает идентификатор элемента.
    */
   getId (): string {
-    return getElementId(this.element)
+    return getElementId(this.element.value)
   }
 
   /**
@@ -121,7 +122,7 @@ export class ImageAdaptiveItem {
    * Возвращает текущий элемент.
    */
   getElement (): ImageElement {
-    return this.element
+    return this.element.value
   }
 
   /**
@@ -168,16 +169,16 @@ export class ImageAdaptiveItem {
    */
   getSize (): number {
     if (
-      this.element &&
+      this.element.value &&
       this.data.isImage()
     ) {
       const data = this.data.getImage() as ImageItem
 
       switch (this.getType()) {
         case ImageAdaptiveItemType.x:
-          return data.height * (this.element.offsetWidth * this.percent.width / data.width)
+          return data.height * (this.element.value.offsetWidth * this.percent.width / data.width)
         case ImageAdaptiveItemType.y:
-          return data.width * (this.element.offsetHeight * this.percent.height / data.height)
+          return data.width * (this.element.value.offsetHeight * this.percent.height / data.height)
       }
     }
 
@@ -189,7 +190,7 @@ export class ImageAdaptiveItem {
    * Множитель для определения уровня масштабирования изображения относительно других элементов.
    */
   getFactor (): number {
-    const element = this.element
+    const element = this.element.value
     const size = this.getSize()
     const type = this.getType()
 
@@ -227,18 +228,6 @@ export class ImageAdaptiveItem {
     }
 
     return null
-  }
-
-  /**
-   * Change the element by which the calculations are made.<br>
-   * Изменить элемент, по которому происходят вычисления.
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
-   */
-  setElement (element: ImageElement): this {
-    this.element = element
-    this.reset()
-
-    return this
   }
 
   /**
@@ -303,7 +292,7 @@ export class ImageAdaptiveItem {
         this.beyond = true
         this.visible = true
       } else {
-        const rect = this.element?.getBoundingClientRect()
+        const rect = this.element.value?.getBoundingClientRect()
 
         if (rect) {
           this.beyond = !(

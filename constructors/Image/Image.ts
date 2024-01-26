@@ -13,7 +13,8 @@ import { ImageBackground } from './ImageBackground.ts'
 
 import {
   type ConstrClassObject,
-  type ConstrStyles
+  type ConstrStyles,
+  type ConstrValue
 } from '../../types/constructor.ts'
 import { type ImageProps } from './props.ts'
 import {
@@ -27,13 +28,13 @@ import {
  * Базовый класс для работы с изображениями и иконками.
  */
 export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
-  protected readonly type: ImageType
-  protected readonly data: ImageData
+  readonly type: ImageType
+  readonly data: ImageData
 
-  protected readonly coordinator: ImageCoordinator
-  protected readonly position: ImagePosition
-  protected readonly adaptiveItem: ImageAdaptiveItem
-  protected readonly background: ImageBackground
+  readonly coordinator: ImageCoordinator
+  readonly position: ImagePosition
+  readonly adaptiveItem: ImageAdaptiveItem
+  readonly background: ImageBackground
 
   /**
    * Constructor
@@ -44,7 +45,7 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
    */
   constructor (
     protected readonly props: ImageProps,
-    element?: ImageElement,
+    element: ConstrValue<ImageElement>,
     protected readonly callback?: (event: ImageEventLoad) => void
   ) {
     super(props, callback)
@@ -164,19 +165,6 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
    */
   getStyles (): ConstrStyles {
     return this.event?.styles || {}
-  }
-
-  /**
-   * To change the focus element. Used for an element with active adapted
-   * scaling relative to the physical size of the object in the image.<br>
-   * Изменить элемент. Используется для элемента с активным адаптированным
-   * масштабированием относительно физического размера объекта на изображении.
-   * @param element image element for scaling /<br>элемент изображения для масштабирования
-   */
-  setElement (element: ImageElement): this {
-    this.adaptiveItem.setElement(element)
-
-    return this
   }
 
   /**
