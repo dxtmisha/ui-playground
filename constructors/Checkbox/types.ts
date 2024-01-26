@@ -1,5 +1,8 @@
+import { ComputedRef, VNode } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
+import { type ImageProps } from '../Image/props.ts'
 import {
+  type InputComponents,
   type InputEmits,
   type InputExpose,
   type InputSetup
@@ -9,9 +12,7 @@ import {
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
-export type CheckboxComponents = {
-  image: object
-}
+export type CheckboxComponents = InputComponents
 
 /**
  * Type describing available events.<br>
@@ -23,7 +24,15 @@ export type CheckboxEmits = InputEmits
  * Interface for describing what property setup returns.<br>
  * Интерфейс для описания, какое свойство возвращает setup.
  */
-export type CheckboxSetup = InputSetup
+export type CheckboxSetup =
+  InputSetup<boolean> &
+  {
+    iconBind: ComputedRef<ImageProps>
+
+    renderInput: () => VNode
+    renderInputHidden: () => VNode
+    renderChecked: () => VNode
+  }
 
 /**
  * Type describing available properties.<br>

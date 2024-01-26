@@ -22,10 +22,12 @@ export class CheckboxIcon {
    * Возвращает данные для иконки.
    */
   get (): ImageProps {
+    const value = this.getIcon()
+
     return getBind(
-      this.props?.icon,
+      this.props?.icon ?? value,
       {
-        value: this.getIcon()
+        value
       }
     )
   }

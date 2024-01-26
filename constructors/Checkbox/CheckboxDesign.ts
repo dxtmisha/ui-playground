@@ -1,7 +1,7 @@
-import { h, VNode } from 'vue'
+import { h, type VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { InputRef } from '../Input/InputRef.ts'
+import { CheckboxRef } from './CheckboxRef.ts'
 
 import {
   type ConstrOptions,
@@ -39,7 +39,7 @@ export class CheckboxDesign<
   CLASSES,
   P
 > {
-  protected input: InputRef<boolean>
+  protected checkbox: CheckboxRef
 
   /**
    * Constructor
@@ -58,7 +58,7 @@ export class CheckboxDesign<
       options
     )
 
-    this.input = new InputRef<boolean>(
+    this.checkbox = new CheckboxRef(
       props,
       this.element,
       (type: string & keyof CheckboxEmits, event: Event, value: InputValidationItem) => {
@@ -71,41 +71,6 @@ export class CheckboxDesign<
     )
 
     this.init()
-  }
-
-  renderInput (): VNode {
-    const setup = this.setup()
-
-    return h('input', {
-      class: setup.classes.value.input,
-      name: this.props.name,
-      type: 'checkbox',
-      checked: setup.value.value,
-      on: this.props.on,
-      onInput: setup.onInput
-    })
-  }
-
-  renderInputHidden (): VNode {
-    return h('input', {
-      name: this.props.name,
-      type: 'hidden',
-      value: '0'
-    })
-  }
-
-  renderChecked (): VNode {
-    const setup = this.setup()
-    const children: any[] = []
-
-    this.components.renderAdd(
-      children,
-      'icon'
-    )
-
-    return h('span', {
-      class: setup.classes.value.item
-    })
   }
 
   /**
@@ -124,9 +89,14 @@ export class CheckboxDesign<
    */
   protected initSetup (): SETUP {
     return {
-      value: this.input.value,
+      value: this.checkbox.value,
+      iconBind: this.checkbox.iconBind,
 
-      onInput: (event: InputEvent) => this.input.onChecked(event)
+      renderInput: () => this.renderInput(),
+      renderInputHidden: () => this.renderInputHidden(),
+      renderChecked: () => this.renderChecked(),
+
+      onInput: this.checkbox.onInput
     } as SETUP
   }
 
@@ -178,16 +148,67 @@ export class CheckboxDesign<
   protected initRender (): VNode {
     const setup = this.setup()
     const children: any[] = [
-      this.renderInputHidden(),
-      this.renderInput(),
-      h('div', {}, setup.value.value),
-      h('div', {}, this.props.value)
+      setup.renderInputHidden(),
+      setup.renderInput(),
+      setup.renderChecked()
     ]
 
     return h('label', {
-      // ...this.getAttrs(),
+      ...this.getAttrs(),
       ref: this.element,
-      class: setup.classes.value.input
+      class: setup.classes.value.main
     }, children)
+  }
+
+  /**
+   * Rendering of the main input.<br>
+   * Рендеринг главного input.
+   */
+  protected renderInput (): VNode {
+    const setup = this.setup()
+
+    return h('input', {
+      class: setup.classes.value.input,
+      name: this.props.name,
+      type: 'checkbox',
+      checked: setup.value.value,
+      on: this.props.on,
+      onInput: setup.onInput
+    })
+  }
+
+  /**
+   * Rendering of the hidden input.<br>
+   * Рендеринг скрытого input.
+   */
+  protected renderInputHidden (): VNode {
+    return h('input', {
+      name: this.props.name,
+      type: 'hidden',
+      value: '0'
+    })
+  }
+
+  /**
+   * Rendering of the checkbox element.<br>
+   * Рендеринг элемента checkbox.
+   */
+  protected renderChecked (): VNode {
+    const setup = this.setup()
+    const children: any[] = []
+
+    this.components.renderAdd(
+      children,
+      'icon',
+      setup.iconBind.value
+    )
+
+    return h('span', {
+      class: setup.classes.value.item
+    }, [
+      h('span', {
+        class: setup.classes.value.itemIcon
+      }, children)
+    ])
   }
 }

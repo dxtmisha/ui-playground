@@ -12,12 +12,10 @@ import { InputMatch } from './InputMatch.ts'
 
 import { InputCode } from './InputCode.ts'
 import { InputValidation } from './InputValidation.ts'
-import { InputEvent } from './InputEvent.ts'
+import { InputEventItem } from './InputEventItem.ts'
 
-import {
-  type InputElementItem,
-  type InputValidationItem
-} from './typesBasic.ts'
+import { type ConstrValue } from '../../types/constructor.ts'
+import { type InputValidationItem } from './typesBasic.ts'
 import { type InputEmits } from './types.ts'
 import { type InputBasicProps } from './props.ts'
 
@@ -26,21 +24,21 @@ import { type InputBasicProps } from './props.ts'
  * Базовый класс для работы с элементом ввода.
  */
 export class Input<V = string> {
-  protected readonly visibility: InputVisibility
-  protected readonly type: InputType
-  protected readonly pattern: InputPattern
+  readonly visibility: InputVisibility
+  readonly type: InputType
+  readonly pattern: InputPattern
 
-  protected readonly element: InputElement
-  protected readonly change: InputChange
+  readonly element: InputElement
+  readonly change: InputChange
 
-  protected readonly value: InputValue<V>
+  readonly value: InputValue<V>
 
-  protected readonly arrow: InputArrow
-  protected readonly match: InputMatch
+  readonly arrow: InputArrow
+  readonly match: InputMatch
 
-  protected readonly code: InputCode
-  protected readonly validation: InputValidation
-  protected readonly event: InputEvent
+  readonly code: InputCode
+  readonly validation: InputValidation
+  readonly event: InputEventItem
 
   /**
    * Constructor
@@ -51,7 +49,7 @@ export class Input<V = string> {
    */
   constructor (
     props: InputBasicProps<V>,
-    element: HTMLElement | Record<string, any> | undefined,
+    element: ConstrValue<HTMLElement | Record<string, any> | undefined>,
     callback: () => void,
     callbackEmit: (type: string & keyof InputEmits, event: Event, value: InputValidationItem) => void
   ) {
@@ -67,10 +65,9 @@ export class Input<V = string> {
 
     this.element = new InputElement(
       props,
-      this.type,
-      this.pattern,
       element,
-      callback
+      this.type,
+      this.pattern
     )
     this.change = new InputChange()
 
@@ -93,10 +90,10 @@ export class Input<V = string> {
       props,
       this.element,
       this.value,
-      this.match,
-      this.code
+      this.code,
+      this.match
     )
-    this.event = new InputEvent(
+    this.event = new InputEventItem(
       props,
       this.change,
       this.value,
@@ -125,18 +122,8 @@ export class Input<V = string> {
    * Returns an object for working with events.<br>
    * Возвращает объект для работы с событиями.
    */
-  getEventItem (): InputEvent {
+  getEventItem (): InputEventItem {
     return this.event
-  }
-
-  /**
-   * Changes the input element.<br>
-   * Изменяет элемент ввода.
-   * @param element element for change /<br>элемент для изменения
-   */
-  setElement (element: InputElementItem): this {
-    this.element.set(element)
-    return this
   }
 
   /**

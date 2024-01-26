@@ -1,9 +1,8 @@
-import { computed, type ComputedRef } from 'vue'
+import { computed } from 'vue'
 
 import { Icon } from './Icon.ts'
 
 import { type IconProps } from './props.ts'
-import { type IconEventLoad } from './typesBasic.ts'
 
 /**
  * Base Icon class for working in Vue.<br>
@@ -12,9 +11,9 @@ import { type IconEventLoad } from './typesBasic.ts'
 export class IconRef {
   protected readonly item: Icon
 
-  readonly active: ComputedRef<IconEventLoad['isActive']>
-  readonly iconBind: ComputedRef<IconEventLoad['iconBind']>
-  readonly iconActiveBind: ComputedRef<IconEventLoad['iconActiveBind']>
+  readonly active = computed(() => this.item.isActive())
+  readonly iconBind = computed(() => this.item.getIconBind())
+  readonly iconActiveBind = computed(() => this.item.getIconActiveBind())
 
   /**
    * Constructor
@@ -32,9 +31,5 @@ export class IconRef {
       classIcon,
       classIconActive
     )
-
-    this.active = computed(() => this.item.isActive())
-    this.iconBind = computed(() => this.item.getIconBind())
-    this.iconActiveBind = computed(() => this.item.getIconActiveBind())
   }
 }

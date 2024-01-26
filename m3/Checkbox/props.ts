@@ -28,8 +28,10 @@ export type Props = PropsToken & Omit<CheckboxProps, keyof PropsToken>
  */
 export const defaults: Props = {
   ...defaultsCheckbox,
+
   iconCheckbox: 'check',
   iconIndeterminate: 'indeterminate',
+
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -40,6 +42,16 @@ export const defaults: Props = {
 // Конструктор для свойства
 export const propsInstruction = {
   ...propsCheckbox,
+
+  iconCheckbox: {
+    type: propsCheckbox.iconCheckbox,
+    default: defaults.iconCheckbox
+  },
+  iconIndeterminate: {
+    type: propsCheckbox.iconIndeterminate,
+    default: defaults.iconIndeterminate
+  },
+
   ...{
     // :prop [!] System label / Системная метка
     // :prop [!] System label / Системная метка

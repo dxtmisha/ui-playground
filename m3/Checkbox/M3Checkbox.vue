@@ -6,6 +6,8 @@ import { computed } from 'vue'
 
 import { CheckboxDesign } from '../../constructors/Checkbox/CheckboxDesign.ts'
 
+import M3Image from '../Image/M3Image.vue'
+
 import {
   type ConstrClasses,
   type ConstrStyles
@@ -40,6 +42,9 @@ const design = new CheckboxDesign(
   props,
   {
     emits,
+    components: {
+      icon: M3Image
+    },
     classes: classesToken,
     styles: stylesToken
   }

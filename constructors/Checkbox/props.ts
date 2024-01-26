@@ -1,4 +1,4 @@
-// import { type PropType } from 'vue'
+import { type PropType } from 'vue'
 
 import type { ImageProps } from '../Image/props.ts'
 
@@ -12,7 +12,21 @@ import {
  * Тип, описывающий входящие свойства.
  */
 export type CheckboxProps =
-  InputBasicProps &
+  Omit<
+    InputBasicProps,
+    'type' |
+    'inputmode' |
+    'spellcheck' |
+    'pattern' |
+    'match' |
+    'arrow' |
+    'step' |
+    'min' |
+    'max' |
+    'minlength' |
+    'maxlength' |
+    'placeholder'
+  > &
   {
     // Values
     icon?: string | ImageProps
@@ -45,8 +59,15 @@ export const defaultsCheckbox: CheckboxProps = {
 export const propsCheckbox = {
   ...propsBasicInput,
 
+  // Values
   value: [String, Boolean],
   modelValue: [String, Boolean],
+  icon: [String, Object] as PropType<CheckboxProps['icon']>,
+  indeterminate: Boolean,
+
+  // Styles
+  iconCheckbox: String,
+  iconIndeterminate: String,
 
   // Tokens
   ...{

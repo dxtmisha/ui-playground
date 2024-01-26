@@ -8,7 +8,7 @@ import {
 } from './argTypes/icon.ts'
 
 const meta = {
-  title: 'M3/Basic/Icon',
+  title: 'M3/Icon',
   component: M3Icon,
   tags: ['autodocs'],
   parameters: {

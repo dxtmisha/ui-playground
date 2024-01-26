@@ -29,8 +29,8 @@ export class InputValidation<V = any> {
     protected readonly props: InputBasicProps<V>,
     protected readonly element: InputElement,
     protected readonly value: InputValue,
-    protected readonly match: InputMatch,
-    protected readonly code: InputCode
+    protected readonly code: InputCode,
+    protected readonly match?: InputMatch
   ) {
     this.item = useInputCheck<V>(this.element.getPattern())
   }
@@ -50,7 +50,7 @@ export class InputValidation<V = any> {
   get (): InputValidationItem<V> {
     return this.checkGlobal() ??
       this.checkItem() ??
-      this.match.check() as InputValidationItem<V> | undefined ??
+      this.match?.check() as InputValidationItem<V> | undefined ??
       {
         value: undefined
       } as InputValidationItem<V>

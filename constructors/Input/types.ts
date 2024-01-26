@@ -1,4 +1,4 @@
-import { type Ref } from 'vue'
+import { type ShallowRef } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 import { type InputValidationItem } from './typesBasic.ts'
 
@@ -32,9 +32,9 @@ export type InputEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type InputSetup<V = string> = {
-  value: Ref<V | undefined>
+  value: ShallowRef<V | undefined>
 
-  onInput (event: InputEvent): void
+  onInput (event: InputEvent | Event): void
 }
 
 /**

@@ -1,14 +1,20 @@
-import { Ref, shallowRef } from 'vue'
+import { type Ref, shallowRef, watchEffect } from 'vue'
 
-import { InputRef } from '../Input/InputRef.ts'
+import { Checkbox } from './Checkbox.ts'
 
-import { type ImageProps } from '../Image/props.ts'
 import { type InputValidationItem } from '../Input/typesBasic.ts'
 import { type InputEmits } from '../Input/types.ts'
 import { type CheckboxProps } from './props.ts'
 
-export class CheckboxRef extends InputRef<boolean> {
-  protected readonly icon = shallowRef<ImageProps>({})
+/**
+ * Class for working with checkbox (Ref).<br>
+ * Класс для работы с checkbox (Ref).
+ */
+export class CheckboxRef {
+  protected checkbox: Checkbox
+
+  readonly value = shallowRef(false)
+  readonly iconBind = shallowRef({})
 
   /**
    * Constructor
@@ -22,10 +28,31 @@ export class CheckboxRef extends InputRef<boolean> {
     element: Ref<HTMLElement | Record<string, any> | undefined>,
     callbackEmit: (type: string & keyof InputEmits, event: Event, value: InputValidationItem) => void
   ) {
-    super(
+    this.checkbox = new Checkbox(
       props,
       element,
+      () => {
+        this.update()
+      },
       callbackEmit
     )
+
+    watchEffect(() => this.checkbox.value.update())
+    watchEffect(() => {
+      this.update()
+    })
+  }
+
+  readonly onInput = (event: Event) => this.checkbox.event.onChecked(event)
+
+  /**
+   * Data update.<br>
+   * Обновление данных.
+   */
+  protected update (): this {
+    this.value.value = this.checkbox.value.getBoolean()
+    this.iconBind.value = this.checkbox.icon.get()
+
+    return this
   }
 }

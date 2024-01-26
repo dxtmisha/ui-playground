@@ -9,7 +9,7 @@ import { type WindowExpose } from '../../constructors/Window/types.ts'
 import { windowArgs, windowValues } from './argTypes/window.ts'
 
 const meta = {
-  title: 'M3/Basic/Window',
+  title: 'M3/Window',
   component: M3Window,
   tags: ['autodocs'],
   parameters: {

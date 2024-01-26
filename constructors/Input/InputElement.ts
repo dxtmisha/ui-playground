@@ -1,6 +1,7 @@
 import { InputType } from './InputType.ts'
 import { InputPattern } from './InputPattern.ts'
 
+import type { ConstrValue } from '../../types/constructor.ts'
 import type { InputElementItem } from './typesBasic.ts'
 import type { InputBasicProps } from './props.ts'
 
@@ -12,19 +13,17 @@ export class InputElement {
   /**
    * Constructor
    * @param props input data /<br>входные данные
+   * @param element input element /<br>элемент ввода
    * @param type object for working with input type /<br>объект для работы с типом ввода
    * @param pattern object for working with checks by regular expressions /<br>
    * объект для работы с проверкой по регулярным выражениям
-   * @param element input element /<br>элемент ввода
-   * @param callback callback function /<br>функция обратного вызова
    */
   // eslint-disable-next-line no-useless-constructor
   constructor (
     protected readonly props: InputBasicProps,
-    protected readonly type: InputType,
-    protected readonly pattern: InputPattern,
-    protected element: InputElementItem,
-    protected readonly callback: () => void
+    protected readonly element: ConstrValue<InputElementItem>,
+    protected readonly type?: InputType,
+    protected readonly pattern?: InputPattern
   ) {
   }
 
@@ -33,12 +32,14 @@ export class InputElement {
    * Возвращает элемент ввода.
    */
   get (): HTMLInputElement | undefined {
-    if (this.element) {
-      if ('input' in this.element) {
-        return this.element.input
+    const element = this.element.value
+
+    if (element) {
+      if ('input' in element) {
+        return element.input
       }
 
-      return this.element as HTMLInputElement
+      return element as HTMLInputElement
     }
 
     return undefined
@@ -59,10 +60,10 @@ export class InputElement {
   getPattern (): Record<string, any> {
     return {
       name: this.props?.name,
-      type: this.type.get(),
+      type: this.type?.get(),
 
       required: this.props?.required,
-      pattern: this.pattern.get(),
+      pattern: this.pattern?.get(),
 
       step: this.props?.step,
       min: this.props?.min,
@@ -105,29 +106,17 @@ export class InputElement {
   }
 
   /**
-   * Changes the input element.<br>
-   * Изменяет элемент ввода.
-   * @param element element for change /<br>элемент для изменения
-   */
-  set (element: InputElementItem): this {
-    if (this.element !== element) {
-      this.element = element
-      this.callback()
-    }
-
-    return this
-  }
-
-  /**
    * Clear all values to the original ones.<br>
    * Очисти все значения до оригинальных.
    */
   clear (): this {
+    const element = this.element.value
+
     if (
-      this.element &&
-      'clear' in this.element
+      element &&
+      'clear' in element
     ) {
-      this.element.clear?.()
+      element.clear?.()
     }
 
     return this

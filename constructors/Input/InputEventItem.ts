@@ -10,7 +10,7 @@ import type { InputBasicProps } from './props.ts'
  * Class for working with events.<br>
  * Класс для работы с событиями.
  */
-export class InputEvent {
+export class InputEventItem {
   /**
    * Constructor
    * @param props input data /<br>входные данные
