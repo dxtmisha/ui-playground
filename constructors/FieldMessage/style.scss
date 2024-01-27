@@ -1,0 +1,18 @@
+@import "../../styles/properties";
+
+@mixin mixinFieldMessage {
+  display: flex;
+  align-items: flex-start;
+
+  padding-right: v('??-padding', 0);
+  padding-left: v('??-padding', 0);
+
+  &__info {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__counter {
+    white-space: nowrap;
+  }
+}

@@ -785,6 +785,34 @@ $designsProperties: (
           ),
         ),
       ),
+      'fieldMessage':(
+        index: 'fieldMessage',
+        name: 'd-fieldMessage',
+        type: 'component',
+        value: (
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'counter':(
+            index: 'counter',
+            name: '&__counter',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'validation':(
+            index: 'validation',
+            name: '&--validation',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'icon':(
         index: 'icon',
         name: 'd-icon',

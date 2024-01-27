@@ -177,7 +177,7 @@ export abstract class DesignConstructorAbstract<
    * The rendering method for the setup method.<br>
    * Метод рендеринга для метода настройки.
    */
-  render (): () => VNode | (VNode | any)[] {
+  render (): () => VNode | (VNode | any)[] | undefined {
     return () => this.initRender()
   }
 
@@ -215,7 +215,7 @@ export abstract class DesignConstructorAbstract<
    * A method for rendering.<br>
    * Метод для рендеринга.
    */
-  protected abstract initRender (): VNode | (VNode | any)[]
+  protected abstract initRender (): VNode | (VNode | any)[] | undefined
 
   /**
    * Initializes the slot.<br>

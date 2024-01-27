@@ -1,0 +1,9 @@
+{
+  "gap": "{ref.spacing.2}",
+  "padding-top": "{ref.spacing.1}",
+  "font": "{font.bodySmall}",
+  "color": "{sys.palette.onSurfaceVariant}",
+  "validation": {
+    "color": "{sys.palette.error}"
+  }
+}

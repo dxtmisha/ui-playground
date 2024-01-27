@@ -657,6 +657,34 @@ $designsProperties: (
           ),
         ),
       ),
+      'fieldMessage':(
+        index: 'fieldMessage',
+        name: 'd-fieldMessage',
+        type: 'component',
+        value: (
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'counter':(
+            index: 'counter',
+            name: '&__counter',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'validation':(
+            index: 'validation',
+            name: '&--validation',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
       'icon':(
         index: 'icon',
         name: 'd-icon',
@@ -8726,6 +8754,88 @@ $designsProperties: (
             name: 'palette',
             type: 'link-class',
             value: '{m3.palette}',
+          ),
+        ),
+      ),
+      'fieldMessage':(
+        index: 'fieldMessage',
+        name: 'm3-fieldMessage',
+        type: 'component',
+        value: (
+          'gap':(
+            index: 'gap',
+            name: 'gap',
+            type: 'property',
+            value: 'var(--m3-ref-spacing-2)',
+          ),
+          'paddingTop':(
+            index: 'paddingTop',
+            name: 'padding-top',
+            type: 'property',
+            value: 'var(--m3-ref-spacing-1)',
+          ),
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--m3-ref-font-family-roboto)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--m3-ref-font-size-12)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--m3-ref-font-weight-400)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--m3-ref-lineHeight-16)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--m3-ref-letterSpacing-40)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--m3-sys-palette-onSurfaceVariant)',
+          ),
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'counter':(
+            index: 'counter',
+            name: '&__counter',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'validation':(
+            index: 'validation',
+            name: '&--validation',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--m3-sys-palette-error)',
+              ),
+            ),
           ),
         ),
       ),
