@@ -3,6 +3,9 @@ import { h, type VNode } from 'vue'
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { CheckboxRef } from './CheckboxRef.ts'
 
+import { useLabel } from '../uses/ref/useLabel.ts'
+import { useFieldMessageRef } from '../FieldMessage/useFieldMessageRef.ts'
+
 import {
   type ConstrOptions,
   type ConstrStyles
@@ -92,11 +95,23 @@ export class CheckboxDesign<
       value: this.checkbox.value,
       iconBind: this.checkbox.iconBind,
 
-      renderInput: () => this.renderInput(),
-      renderInputHidden: () => this.renderInputHidden(),
-      renderChecked: () => this.renderChecked(),
+      renderInput: this.renderInput,
+      renderInputHidden: this.renderInputHidden,
+      renderChecked: this.renderChecked,
+      renderInfo: this.renderInfo,
 
-      onInput: this.checkbox.onInput
+      onInput: this.checkbox.onInput,
+
+      ...useLabel(
+        this.props,
+        this.slots,
+        this.getSubClass(['info', 'label'])
+      ),
+
+      ...useFieldMessageRef(
+        this.props,
+        this.components
+      )
     } as SETUP
   }
 
@@ -124,7 +139,8 @@ export class CheckboxDesign<
         // :classes [!] System label / Системная метка
         input: this.getSubClass('input'),
         item: this.getSubClass('item'),
-        itemIcon: this.getSubClass('item__icon')
+        itemIcon: this.getSubClass('item__icon'),
+        info: this.getSubClass('info')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -153,6 +169,10 @@ export class CheckboxDesign<
       setup.renderChecked()
     ]
 
+    if (setup.isLabel.value) {
+      children.push(setup.renderInfo())
+    }
+
     return h('label', {
       ...this.getAttrs(),
       ref: this.element,
@@ -164,7 +184,7 @@ export class CheckboxDesign<
    * Rendering of the main input.<br>
    * Рендеринг главного input.
    */
-  protected renderInput (): VNode {
+  protected renderInput = (): VNode => {
     const setup = this.setup()
 
     return h('input', {
@@ -181,7 +201,7 @@ export class CheckboxDesign<
    * Rendering of the hidden input.<br>
    * Рендеринг скрытого input.
    */
-  protected renderInputHidden (): VNode {
+  protected renderInputHidden = (): VNode => {
     return h('input', {
       name: this.props.name,
       type: 'hidden',
@@ -193,7 +213,7 @@ export class CheckboxDesign<
    * Rendering of the checkbox element.<br>
    * Рендеринг элемента checkbox.
    */
-  protected renderChecked (): VNode {
+  protected renderChecked = (): VNode => {
     const setup = this.setup()
     const children: any[] = []
 
@@ -210,5 +230,17 @@ export class CheckboxDesign<
         class: setup.classes.value.itemIcon
       }, children)
     ])
+  }
+
+  protected renderInfo = (): VNode => {
+    const setup = this.setup()
+    const children: any[] = [
+      ...setup.renderLabel(),
+      ...setup.renderFieldMessage()
+    ]
+
+    return h('span', {
+      class: setup.classes.value.info
+    }, children)
   }
 }

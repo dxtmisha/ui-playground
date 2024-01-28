@@ -15,7 +15,7 @@
 
     @include backgroundColor(
                     v('??sys.color', var(--sys-color, v('??backgroundColor'))),
-                    v('??backgroundOpacity')
+                    v('??backgroundOpacity', 1)
     )
   }
 
@@ -54,11 +54,11 @@
       clip-path: circle(000% at v('??sys.x') v('??sys.y'));
     }
     50% {
-      @include gradientOpacity(v('??backgroundOpacity'));
+      @include gradientOpacity(v('??backgroundOpacity', 1));
       clip-path: circle(075% at v('??sys.x') v('??sys.y'));
     }
     100% {
-      @include gradientOpacity(v('??backgroundOpacity'));
+      @include gradientOpacity(v('??backgroundOpacity', 1));
       clip-path: circle(150% at v('??sys.x') v('??sys.y'));
     }
   }

@@ -510,6 +510,13 @@ $designsProperties: (
               ),
             ),
           ),
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
         ),
       ),
       'chip':(
@@ -1842,6 +1849,12 @@ $designsProperties: (
                 name: '--m3-ref-opacity-16',
                 type: 'var',
                 value: 0.16,
+              ),
+              '20':(
+                index: '20',
+                name: '--m3-ref-opacity-20',
+                type: 'var',
+                value: 0.2,
               ),
               '24':(
                 index: '24',
@@ -7804,6 +7817,13 @@ $designsProperties: (
               ),
             ),
           ),
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
         ),
       ),
       'chip':(
@@ -9566,6 +9586,32 @@ $designsProperties: (
             index: 'inverse',
             name: '&--inverse',
             type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'ripple':(
+        index: 'ripple',
+        name: 'm3-ripple',
+        type: 'component',
+        value: (
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--m3-ripple-backgroundColor',
+            type: 'var',
+            value: 'var(--m3-sys-palette-onSurface)',
+          ),
+          'backgroundOpacity':(
+            index: 'backgroundOpacity',
+            name: '--m3-ripple-backgroundOpacity',
+            type: 'var',
+            value: 'var(--m3-ref-opacity-20)',
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
             value: (
             ),
           ),

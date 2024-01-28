@@ -2,6 +2,11 @@ import { type ShallowRef } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 import { type InputValidationItem } from './typesBasic.ts'
 
+import {
+  type UseLabelSetup,
+  type UseLabelSlots
+} from '../uses/ref/useLabel.ts'
+
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
@@ -31,27 +36,31 @@ export type InputEmits = {
  * Interface for describing what property setup returns.<br>
  * Интерфейс для описания, какое свойство возвращает setup.
  */
-export type InputSetup<V = string> = {
-  value: ShallowRef<V | undefined>
+export type InputSetup<V = string> =
+  UseLabelSetup &
+  {
+    value: ShallowRef<V | undefined>
 
-  onInput (event: InputEvent | Event): void
-}
+    onInput (event: InputEvent | Event): void
+  }
 
 /**
  * Type describing available properties.<br>
  * Тип, описывающий доступные свойства.
  */
 export type InputExpose = {
-  // TODO
+  value: InputSetup['value']
 }
 
 /**
  * Type describing available slots.<br>
  * Тип, описывающий доступные слоты.
  */
-export type InputSlots = {
-  // default? (props: any): any
-}
+export type InputSlots =
+  UseLabelSlots &
+  {
+    // none
+  }
 
 /**
  * Type describing subclasses.<br>

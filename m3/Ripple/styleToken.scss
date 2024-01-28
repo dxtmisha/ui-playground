@@ -1,0 +1,8 @@
+@import "../../styles/all";
+
+@mixin mixinRippleToken {
+  // :style [!] System label / Системная метка
+  --m3-ripple-backgroundColor: var(--m3-sys-palette-onSurface);
+  --m3-ripple-backgroundOpacity: var(--m3-ref-opacity-20);
+  // :style [!] System label / Системная метка
+}

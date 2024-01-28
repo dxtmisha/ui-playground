@@ -62,5 +62,5 @@ export const fieldMessageValues: StorybookArgsValue = {
   disabled: false,
   counter: 5,
   maxlength: 10,
-  helperMessage: 'Message'
+  helperMessage: 'Supporting text'
 }

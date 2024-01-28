@@ -2,16 +2,7 @@ import { computed, type ComputedRef, type VNode } from 'vue'
 import { render } from '../../../functions/ref.ts'
 
 export type UseLabelSetup = {
-  /**
-   * Checking if the text is available.<br>
-   * Проверка, доступен ли текст.
-   */
   isLabel: ComputedRef<boolean>
-
-  /**
-   * A method for rendering.<br>
-   * Метод для рендеринга.
-   */
   renderLabel (): VNode[]
 }
 

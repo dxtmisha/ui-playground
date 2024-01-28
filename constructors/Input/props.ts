@@ -7,56 +7,63 @@ import type {
   InputValidityCode
 } from './typesBasic.ts'
 
+import {
+  type UseLabelProps,
+  usePropsLabel
+} from '../uses/ref/useLabel.ts'
+
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type InputBasicProps<V = any> = {
-  // Status
-  selected?: boolean
-  readonly?: boolean
-  disabled?: boolean
+export type InputBasicProps<V = any> =
+  UseLabelProps &
+  {
+    // Status
+    selected?: boolean
+    readonly?: boolean
+    disabled?: boolean
 
-  // Values
-  name?: string
-  value?: V
-  modelValue?: V
-  detail?: Record<string, any>
+    // Values
+    name?: string
+    value?: V
+    modelValue?: V
+    detail?: Record<string, any>
 
-  // Input
-  type?: InputTypeName
-  inputmode?: InputMode
-  spellcheck?: boolean
+    // Input
+    type?: InputTypeName
+    inputmode?: InputMode
+    spellcheck?: boolean
 
-  required?: boolean
+    required?: boolean
 
-  pattern?: string
-  match?: InputMatch
+    pattern?: string
+    match?: InputMatch
 
-  arrow?: boolean
-  step?: string | number
-  min?: string | number
-  max?: string | number
+    arrow?: boolean
+    step?: string | number
+    min?: string | number
+    max?: string | number
 
-  minlength?: string | number
-  maxlength?: string | number
+    minlength?: string | number
+    maxlength?: string | number
 
-  autofocus?: boolean
-  autocomplete?: HTMLInputElement['autocomplete']
+    autofocus?: boolean
+    autocomplete?: HTMLInputElement['autocomplete']
 
-  input?: Record<string, any>
+    input?: Record<string, any>
 
-  // Messages & Validation
-  placeholder?: string
-  helperMessage?: string,
-  validationMessage?: string,
-  validationCode?: InputValidityCode
+    // Messages & Validation
+    placeholder?: string
+    helperMessage?: string,
+    validationMessage?: string,
+    validationCode?: InputValidityCode
 
-  // On
-  on?: Record<string, () => void>
-  ['onUpdate:value']?: (value: V) => void
-  ['onUpdate:modelValue']?: (value: V) => void
-}
+    // On
+    on?: Record<string, () => void>
+    ['onUpdate:value']?: (value: V) => void
+    ['onUpdate:modelValue']?: (value: V) => void
+  }
 
 export type InputProps =
   InputBasicProps<string> &
@@ -84,6 +91,8 @@ export const defaultsInput: InputBasicProps = {
  * Конструктор для свойства.
  */
 export const propsBasicInput = {
+  ...usePropsLabel,
+
   // Status
   readonly: Boolean,
   disabled: Boolean,
@@ -137,6 +146,7 @@ export const propsBasicInput = {
 
 export const propsInput = {
   ...propsBasicInput,
+
   // Tokens
   ...{
     // :prop [!] System label / Системная метка

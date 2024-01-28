@@ -1,18 +1,26 @@
-import { ComputedRef, VNode } from 'vue'
+import { type ComputedRef, type VNode } from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
 import { type ImageProps } from '../Image/props.ts'
 import {
   type InputComponents,
   type InputEmits,
   type InputExpose,
-  type InputSetup
+  type InputSetup,
+  type InputSlots
 } from '../Input/types.ts'
+
+import {
+  type UseFieldMessageComponent,
+  type UseFieldMessageSetup
+} from '../FieldMessage/useFieldMessageRef.ts'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
-export type CheckboxComponents = InputComponents
+export type CheckboxComponents =
+  InputComponents &
+  UseFieldMessageComponent
 
 /**
  * Type describing available events.<br>
@@ -26,12 +34,14 @@ export type CheckboxEmits = InputEmits
  */
 export type CheckboxSetup =
   InputSetup<boolean> &
+  UseFieldMessageSetup &
   {
     iconBind: ComputedRef<ImageProps>
 
     renderInput: () => VNode
     renderInputHidden: () => VNode
     renderChecked: () => VNode
+    renderInfo: () => VNode
   }
 
 /**
@@ -44,9 +54,7 @@ export type CheckboxExpose = InputExpose
  * Type describing available slots.<br>
  * Тип, описывающий доступные слоты.
  */
-export type CheckboxSlots = {
-  // default? (props: any): any
-}
+export type CheckboxSlots = InputSlots
 
 /**
  * Type describing subclasses.<br>
@@ -58,5 +66,6 @@ export type CheckboxClasses = {
   input: string
   item: string
   itemIcon: string
+  info: string
   // :classes [!] System label / Системная метка
 }

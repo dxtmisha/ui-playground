@@ -1,10 +1,10 @@
-// import { type PropType } from 'vue'
+import { type PropType } from 'vue'
 
 import {
-  CheckboxProps,
-  defaultsCheckbox,
-  propsCheckbox
-} from '../../constructors/Checkbox/props.ts'
+  RippleProps,
+  defaultsRipple,
+  propsRipple
+} from '../../constructors/Ripple/props.ts'
 
 export const propsValues = {
   // :values [!] System label / Системная метка
@@ -13,6 +13,7 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] disabled?: boolean
   // :type [!] System label / Системная метка
 }
 
@@ -20,18 +21,14 @@ export type PropsToken = {
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
-export type Props = PropsToken & Omit<CheckboxProps, keyof PropsToken>
+export type Props = PropsToken & Omit<RippleProps, keyof PropsToken>
 
 /**
  * Default value for property.<br>
  * Значение по умолчанию для свойства.
  */
 export const defaults: Props = {
-  ...defaultsCheckbox,
-
-  iconCheckbox: 'check',
-  iconIndeterminate: 'indeterminate',
-
+  ...defaultsRipple,
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -41,17 +38,7 @@ export const defaults: Props = {
 // Constructor for property
 // Конструктор для свойства
 export const propsInstruction = {
-  ...propsCheckbox,
-
-  iconCheckbox: {
-    type: propsCheckbox.iconCheckbox,
-    default: defaults.iconCheckbox
-  },
-  iconIndeterminate: {
-    type: propsCheckbox.iconIndeterminate,
-    default: defaults.iconIndeterminate
-  },
-
+  ...propsRipple,
   ...{
     // :prop [!] System label / Системная метка
     // :prop [!] System label / Системная метка

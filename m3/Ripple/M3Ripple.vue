@@ -1,52 +1,48 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+import { isFilled } from '../../functions/data.ts'
+import { inArray } from '../../functions/object.ts'
 
-import { CheckboxDesign } from '../../constructors/Checkbox/CheckboxDesign.ts'
-
-import M3Image from '../Image/M3Image.vue'
-import M3FieldMessage from '../FieldMessage/M3FieldMessage.vue'
+import { RippleDesign } from '../../constructors/Ripple/RippleDesign.ts'
 
 import {
   type ConstrClasses,
   type ConstrStyles
 } from '../../types/constructor.ts'
 import {
-  type CheckboxEmits,
-  type CheckboxSlots
-} from '../../constructors/Checkbox/types.ts'
+  type RippleEmits,
+  type RippleSlots
+} from '../../constructors/Ripple/types.ts'
 
 import {
-  propsInstruction // ,
-  // propsValues
+  propsInstruction,
+  propsValues
 } from './props.ts'
 
-const emits = defineEmits<CheckboxEmits>()
+const emits = defineEmits<RippleEmits>()
 const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
+    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
-    'm3-checkbox': true
+    'm3-ripple': true
     // :classes-values [!] System label / Системная метка
   }
+  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
+  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))
 
-const design = new CheckboxDesign(
-  'm3.checkbox',
+const design = new RippleDesign(
+  'm3.ripple',
   props,
   {
     emits,
-    components: {
-      icon: M3Image,
-      message: M3FieldMessage
-    },
     classes: classesToken,
     styles: stylesToken
   }
@@ -58,7 +54,7 @@ const design = new CheckboxDesign(
 // } = design.setup()
 const render = design.render()
 
-defineSlots<CheckboxSlots>()
+defineSlots<RippleSlots>()
 defineExpose(design.expose())
 </script>
 
@@ -69,17 +65,17 @@ defineExpose(design.expose())
 <style lang="scss">
 @import "../styles/properties";
 @import "../../styles/properties";
-@import "../../constructors/Checkbox/style";
+@import "../../constructors/Ripple/style";
 @import "styleToken";
 
-@include initDesignBasic('m3.checkbox') {
+@include initDesignBasic('m3.ripple') {
   // Basic styles for a component
   // Базовый стили для компонента
-  @include mixinCheckbox;
+  @include mixinRipple;
 
   // Styles from tokens
   // Стили из токенов
-  @include mixinCheckboxToken;
+  @include mixinRippleToken;
 
   // Here are the user styles
   // Здесь пользовательские стили

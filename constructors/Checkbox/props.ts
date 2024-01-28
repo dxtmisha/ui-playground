@@ -7,6 +7,11 @@ import {
   propsBasicInput
 } from '../Input/props.ts'
 
+import {
+  type UseFieldMessageProps,
+  usePropsFieldMessage
+} from '../FieldMessage/useFieldMessageRef.ts'
+
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
@@ -27,6 +32,7 @@ export type CheckboxProps =
     'maxlength' |
     'placeholder'
   > &
+  UseFieldMessageProps &
   {
     // Values
     icon?: string | ImageProps
@@ -58,6 +64,7 @@ export const defaultsCheckbox: CheckboxProps = {
  */
 export const propsCheckbox = {
   ...propsBasicInput,
+  ...usePropsFieldMessage,
 
   // Values
   value: [String, Boolean],

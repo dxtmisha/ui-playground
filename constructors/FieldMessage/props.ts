@@ -26,7 +26,6 @@ export type FieldMessageProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsFieldMessage: FieldMessageProps = {
-  // TODO: Location for a user-defined default value / Место для пользовательского значения по умолчанию
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
