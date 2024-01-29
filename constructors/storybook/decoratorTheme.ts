@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 
 import { GeoRef } from '../../classes/GeoRef.ts'
 
@@ -11,19 +11,33 @@ export const decoratorTheme = (story: any, {
   globals,
   parameters
 }: any) => {
+  if (
+    typeof globals.language === 'object' &&
+    'value' in globals.language
+  ) {
+    GeoRef.set(globals.language.value ?? 'en')
+  } else {
+    GeoRef.set(globals.language ?? 'en')
+  }
+
   design.value = parameters?.design
   theme.value = globals.theme || globalTypes.theme.defaultValue
 
   return {
     components: { story },
     setup () {
+      const isIL = computed(() => GeoRef.getCountry().value === 'IL')
       const classes = computed(() => {
         return {
           [`${design.value}-main`]: design.value,
           [`${design.value}-${theme.value}`]: design.value && theme.value,
-          'dir-rtl': GeoRef.getCountry().value === 'IL',
+          'dir-rtl': isIL.value,
           'sb-preview': true
         }
+      })
+
+      watchEffect(() => {
+        document.documentElement.dir = isIL.value ? 'rtl' : 'ltr'
       })
 
       return {

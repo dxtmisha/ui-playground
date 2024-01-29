@@ -1,8 +1,20 @@
 {
-  "#input": {},
-  "#item": {
-    "#icon": {
+  "comp": {
+    "required": {
+      "color": "red"
     }
   },
-  "#info": {}
+  "#input": {},
+  "#item": {
+    "#icon": {}
+  },
+  "#info": {
+    "#label": {}
+  },
+  "&__input:checked + *": {},
+  "~required": {
+    "#info": {
+      "#label": {}
+    }
+  }
 }

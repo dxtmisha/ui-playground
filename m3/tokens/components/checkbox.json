@@ -1,0 +1,66 @@
+{
+  "comp": {
+    "padding": "{ref.spacing.px} * 11",
+    "palette": "{sys.palette.onSurface}",
+    "paletteColor": "{sys.palette.onSurfaceVariant}",
+    "icon": {
+      "size": "{ref.spacing.px} * 18",
+      "backgroundOpacity": "0"
+    },
+    "required": {
+      "color": "{sys.palette.error}"
+    }
+  },
+  "padding": "{ref.spacing.1}",
+  "item": {
+    "padding": "{??comp.padding}",
+    "color": "{??comp.palette}",
+    "background-color": "{??comp.palette}",
+    "background-opacity": "0",
+    "before": {
+      "position": "absolute",
+      "inset": "0px",
+      "border-radius": "inherit",
+      "border-width": "{ref.spacing.px}",
+      "border-color": "{??comp.palette}",
+      "border-opacity": "0",
+      "border-style": "solid",
+      "transition": "inherit"
+    },
+    "icon": {
+      "circle": "{??comp.icon.size}",
+      "font": "{font.bodySmall}",
+      "color": "{sys.palette.onPrimary}",
+      "background-color": "{??comp.palette}",
+      "background-opacity": "{??comp.icon.backgroundOpacity}",
+      "border-radius": "{ref.spacing.px} * 2",
+      "border-width": "{ref.spacing.px} * 2",
+      "border-color": "{??comp.paletteColor}",
+      "border-style": "solid"
+    },
+    "focus": {
+      "background-opacity": "{sys.opacity.012}"
+    },
+    "hover": {
+      "background-opacity": "{sys.opacity.008}"
+    },
+    "active": {
+      "before": {
+        "border-opacity": "1"
+      }
+    }
+  },
+  "info": {
+    "padding-top": "{??comp.padding} + ({??comp.icon.size} / 2) - (var(--sys-line-height) / 2)",
+    "padding-left": "{ref.spacing.4}"
+  },
+  "checked": {
+    "comp": {
+      "palette": "{sys.palette.primary}",
+      "paletteColor": "{sys.palette.primary}",
+      "icon": {
+        "backgroundOpacity": "1"
+      }
+    }
+  }
+}

@@ -128,12 +128,12 @@
     }
 
     &--right {
-      @include initByCustom('transformOrigin', center right);
+      @include initByCustom('transformOrigin', #{center dirRight()});
     }
 
     &--rightToLeft {
-      @include initByCustom('transformPreparation', translateX(64px));
-      @include initByCustom('transformOrigin', center right);
+      @include initByCustom('transformPreparation', translateX(calc(64px * #{isDir()})));
+      @include initByCustom('transformOrigin', #{center dirRight()});
     }
 
     &--bottom {
@@ -146,12 +146,12 @@
     }
 
     &--left {
-      @include initByCustom('transformOrigin', center left);
+      @include initByCustom('transformOrigin', #{center dirLeft()});
     }
 
     &--leftToRight {
-      @include initByCustom('transformPreparation', translateX(-64px));
-      @include initByCustom('transformOrigin', center left);
+      @include initByCustom('transformPreparation', translateX(calc(-64px * #{isDir()})));
+      @include initByCustom('transformOrigin', #{center dirLeft()});
     }
   }
 

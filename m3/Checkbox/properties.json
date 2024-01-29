@@ -1,3 +1,36 @@
 {
-  "main": "{d.checkbox}"
+  "main": "{d.checkbox}",
+  "comp": {
+    "_type": "var"
+  },
+  "item": {
+    "color": {
+      "_rename": "palette-color"
+    },
+    "background-color": {
+      "_rename": "palette-background"
+    },
+    "before": {
+      "border-color": {
+        "_rename": "palette-border"
+      }
+    },
+    "#icon": {
+      "background-color": {
+        "_rename": "palette-background"
+      },
+      "border-color": {
+        "_rename": "palette-border"
+      }
+    }
+  },
+  "checked": {
+    "comp": {
+      "_type": "var"
+    },
+    "_type": "none"
+  },
+  "&__input:checked ~ *": {
+    "checkedBasic": "{??checked}"
+  }
 }

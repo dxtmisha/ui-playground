@@ -138,6 +138,7 @@ export const cssSizing: string[] = [
   'box-sizing',
 
   'squared',
+  'circle',
 
   'width',
   'min-width',

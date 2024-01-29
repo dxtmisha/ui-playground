@@ -643,6 +643,61 @@ $designsProperties: (
             name: '&__info',
             type: 'subclass',
             value: (
+              'label':(
+                index: 'label',
+                name: '&__label',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'comp':(
+            index: 'comp',
+            name: '&--comp',
+            type: 'state',
+            value: (
+              'required':(
+                index: 'required',
+                name: 'required',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'red',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'required':(
+            index: 'required',
+            name: '&--required',
+            type: 'state',
+            value: (
+              'info':(
+                index: 'info',
+                name: '& .d-checkbox__info',
+                type: 'subclass',
+                value: (
+                  'label':(
+                    index: 'label',
+                    name: '&__label',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          '&__input:checked + *':(
+            index: '&__input:checked + *',
+            name: '&__input:checked + *',
+            type: 'scss',
+            value: (
             ),
           ),
         ),

@@ -4,6 +4,7 @@ import { DesignConstructorAbstract } from '../../classes/design/DesignConstructo
 import { CheckboxRef } from './CheckboxRef.ts'
 
 import { useLabel } from '../uses/ref/useLabel.ts'
+import { useEnabled } from '../uses/ref/useEnabled.ts'
 import { useFieldMessageRef } from '../FieldMessage/useFieldMessageRef.ts'
 
 import {
@@ -81,8 +82,6 @@ export class CheckboxDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -107,6 +106,8 @@ export class CheckboxDesign<
         this.slots,
         this.getSubClass(['info', 'label'])
       ),
+
+      ...useEnabled(this.props),
 
       ...useFieldMessageRef(
         this.props,
@@ -140,7 +141,8 @@ export class CheckboxDesign<
         input: this.getSubClass('input'),
         item: this.getSubClass('item'),
         itemIcon: this.getSubClass('item__icon'),
-        info: this.getSubClass('info')
+        info: this.getSubClass('info'),
+        infoLabel: this.getSubClass('info__label')
         // :classes [!] System label / Системная метка
       }
     } as Partial<CLASSES>
@@ -215,23 +217,34 @@ export class CheckboxDesign<
    */
   protected renderChecked = (): VNode => {
     const setup = this.setup()
-    const children: any[] = []
+    const children: any[] = [
+      h('span', {
+        class: setup.classes.value.itemIcon
+      }, [
+        this.components.renderOne(
+          'icon',
+          setup.iconBind.value
+        )
+      ])
+    ]
 
     this.components.renderAdd(
       children,
-      'icon',
-      setup.iconBind.value
+      'ripple',
+      {
+        disabled: setup.isDisabled.value
+      }
     )
 
     return h('span', {
       class: setup.classes.value.item
-    }, [
-      h('span', {
-        class: setup.classes.value.itemIcon
-      }, children)
-    ])
+    }, children)
   }
 
+  /**
+   * Rendering of the informational text element.<br>
+   * Рендеринг элемента информационного текста.
+   */
   protected renderInfo = (): VNode => {
     const setup = this.setup()
     const children: any[] = [

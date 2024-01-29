@@ -12,17 +12,21 @@ import {
   usePropsLabel
 } from '../uses/ref/useLabel.ts'
 
+import {
+  type UseEnabledProps,
+  usePropsEnabled
+} from '../uses/ref/useEnabled.ts'
+
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
 export type InputBasicProps<V = any> =
   UseLabelProps &
+  UseEnabledProps &
   {
     // Status
     selected?: boolean
-    readonly?: boolean
-    disabled?: boolean
 
     // Values
     name?: string
@@ -92,10 +96,7 @@ export const defaultsInput: InputBasicProps = {
  */
 export const propsBasicInput = {
   ...usePropsLabel,
-
-  // Status
-  readonly: Boolean,
-  disabled: Boolean,
+  ...usePropsEnabled,
 
   // Values
   name: String,

@@ -1,5 +1,64 @@
 @import "../../styles/properties";
 
 @mixin mixinCheckbox {
+  @include initByCustom('clip', #{inset(0 100% 0 0)});
 
+  display: inline-flex;
+  align-items: flex-start;
+
+  transition-timing-function: linear;
+  transition-duration: v('d.sys.transitionDuration.standard');
+  transition-property: background-color, border-color, clip-path;
+
+  &__input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__item {
+    @include flexCenter;
+    position: relative;
+
+    transition: inherit;
+
+    border-radius: 100%;
+
+    &__icon {
+      box-sizing: border-box;
+      @include flexCenter;
+      position: relative;
+
+      transition: inherit;
+
+      > * {
+        clip-path: v('??clip');
+        transition: inherit;
+      }
+    }
+  }
+
+  &__info {
+    &__label {
+      display: block;
+    }
+  }
+
+  @include active() {
+    transition-duration: v('d.sys.transitionDuration.sm');
+  }
+
+  input:checked ~ * {
+    @include initByCustom('clip', #{inset(0 0 0 0)});
+  }
+
+  &--required {
+    @include subclass('info') {
+      &__label {
+        &:after {
+          content: "*";
+          @include color(v('??comp.required.color'));
+        }
+      }
+    }
+  }
 }

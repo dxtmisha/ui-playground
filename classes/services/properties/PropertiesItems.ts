@@ -182,7 +182,13 @@ export class PropertiesItems {
     const names = index.replace(/^\{|}$/ig, '')
       .split('.')
 
-    return forEach(names, name => toCamelCase(name))
+    return forEach(names, name => {
+      if (name.match(/^&/)) {
+        return name
+      }
+
+      return toCamelCase(name)
+    })
   }
 
   /**

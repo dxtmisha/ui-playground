@@ -16,7 +16,7 @@
     @include backgroundColor(
                     v('??sys.color', var(--sys-color, v('??backgroundColor'))),
                     v('??backgroundOpacity', 1)
-    )
+    );
   }
 
   %ripple-end {

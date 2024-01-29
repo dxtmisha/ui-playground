@@ -19,7 +19,8 @@ const USED_TYPE: PropertyType[] = [
   PropertyType.var,
   PropertyType.property,
   PropertyType.selector,
-  PropertyType.virtual
+  PropertyType.virtual,
+  PropertyType.scss
 ]
 
 /**

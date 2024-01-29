@@ -27,6 +27,17 @@ export const checkboxArgs: StorybookArgs = {
       '<small>Значение</small>'
   },
 
+  // Input
+  required: {
+    control: StorybookControl.boolean,
+    table: {
+      category: 'Input',
+      type: { summary: 'boolean' }
+    },
+    description: 'Required for filling out<br>' +
+      '<small>Обязательно для заполнения</small>'
+  },
+
   // Message
   helperMessage: fieldMessageArgs.helperMessage,
   validationMessage: fieldMessageArgs.validationMessage

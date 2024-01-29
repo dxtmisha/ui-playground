@@ -2,10 +2,9 @@
 
 @mixin mixinFieldMessage {
   display: flex;
-  align-items: flex-start;
+  align-items: dirFlexLeft();
 
-  padding-right: v('??-padding', 0);
-  padding-left: v('??-padding', 0);
+  @include paddingX(v('??-padding', 0));
 
   &__info {
     flex-grow: 1;

@@ -20,7 +20,10 @@ import {
  */
 export type CheckboxComponents =
   InputComponents &
-  UseFieldMessageComponent
+  UseFieldMessageComponent &
+  {
+    ripple?: object
+  }
 
 /**
  * Type describing available events.<br>
@@ -67,5 +70,6 @@ export type CheckboxClasses = {
   item: string
   itemIcon: string
   info: string
+  infoLabel: string
   // :classes [!] System label / Системная метка
 }
