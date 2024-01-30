@@ -8,7 +8,6 @@
   
   &__character {
     &__item {
-      
       &--standard {
         @include colorOpacity(#{var(--m3-sys-opacity-medium)});
       }

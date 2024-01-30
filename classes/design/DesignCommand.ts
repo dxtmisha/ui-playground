@@ -4,10 +4,11 @@ import { toKebabCase } from '../../functions/string.ts'
 
 import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
 
-import { FILE_PROPERTY } from '../../types/property.ts'
 import { Styles } from '../services/styles/Styles.ts'
 import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
 import { DesignComponent } from '../services/designs/DesignComponent.ts'
+
+import { FILE_PROPERTY } from '../../types/property.ts'
 
 export type DesignCommandDesignsItem = {
   name: string
@@ -56,6 +57,10 @@ export class DesignCommand {
     return this.names?.[1]
   }
 
+  /**
+   * Initialization of the component.<br>
+   * Инициализация компоненты.
+   */
   init (): void {
     const designs = this.initDesign()
 
@@ -67,12 +72,14 @@ export class DesignCommand {
 
     designs.forEach(design => {
       design.components.forEach(component => {
+        const name = `${design.name}.${component}`
+
+        console.log(`Component update: ${name}`)
+
         new DesignConstructor(`d.${component}`).init()
-        new DesignComponent(`${design}.${component}`).init()
+        new DesignComponent(name).init()
       })
     })
-
-    console.log('designs', designs)
   }
 
   /**

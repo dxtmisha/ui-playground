@@ -44,7 +44,7 @@
     &--icon {
       padding: 0;
       
-       .c2-button__label {
+      & .c2-button__label {
         display: none;
         
         @include paddingX(#{0});

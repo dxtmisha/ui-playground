@@ -2,22 +2,21 @@
 
 @mixin mixinIconToken {
   // :style [!] System label / Системная метка
-  
   &--overlay {
     @include backgroundOpacity(#{var(--m3-sys-opacity-016)});
   }
   
   &--dynamic {
+    @include focus('.m3-icon') {
+      @include gradientOpacity(#{var(--m3-sys-opacity-016)});
+    }
+    
     @include hover('.m3-icon') {
       @include gradientOpacity(#{var(--m3-sys-opacity-008)});
     }
     
     @include active('.m3-icon') {
       @include gradientOpacity(#{var(--m3-sys-opacity-012)});
-    }
-    
-    @include focus('.m3-icon') {
-      @include gradientOpacity(#{var(--m3-sys-opacity-016)});
     }
   }
   

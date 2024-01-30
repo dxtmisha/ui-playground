@@ -14,6 +14,9 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] type?: MaskTypeItem
+  // [constructor] name?: string
+  // [constructor] value?: string | number
   // [constructor] mask?: MaskList
   // [constructor] special?: MaskSpecialProp
   // [constructor] match?: MaskMatchItem
@@ -21,9 +24,6 @@ export type PropsToken = {
   // [constructor] check?: InputPatternItemOrFunction
   // [constructor] fraction?: MaskFractionItem
   // [constructor] currency?: string
-  // [constructor] name?: string
-  // [constructor] value?: string | number
-  // [constructor] type?: MaskTypeItem
   // [constructor] language?: string
   // [constructor] view?: string
   visible?: boolean

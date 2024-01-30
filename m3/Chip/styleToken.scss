@@ -68,7 +68,7 @@
     &--icon {
       --m3-chip-padding: 0;
       
-       .m3-chip__label {
+      & .m3-chip__label {
         display: none;
         
         @include paddingX(#{0});
@@ -79,7 +79,7 @@
       @media screen and (max-width: calc(600px - 1px)) {
         --m3-chip-padding: 0;
         
-         .m3-chip__label {
+        & .m3-chip__label {
           display: none;
           
           @include paddingX(#{0});
@@ -91,7 +91,7 @@
       @media screen and (max-width: calc(905px - 1px)) {
         --m3-chip-padding: 0;
         
-         .m3-chip__label {
+        & .m3-chip__label {
           display: none;
           
           @include paddingX(#{0});

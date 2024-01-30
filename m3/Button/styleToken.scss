@@ -58,7 +58,7 @@
     &--icon {
       --m3-button-padding: 0;
       
-       .m3-button__label {
+      & .m3-button__label {
         display: none;
         
         @include paddingX(#{0});
@@ -69,7 +69,7 @@
       @media screen and (max-width: calc(600px - 1px)) {
         --m3-button-padding: 0;
         
-         .m3-button__label {
+        & .m3-button__label {
           display: none;
           
           @include paddingX(#{0});
@@ -81,7 +81,7 @@
       @media screen and (max-width: calc(905px - 1px)) {
         --m3-button-padding: 0;
         
-         .m3-button__label {
+        & .m3-button__label {
           display: none;
           
           @include paddingX(#{0});
@@ -104,7 +104,7 @@
     }
   }
   
-  &.m3-button--filled {
+  &--filled {
     @include color(#{var(--m3-sys-palette-onPrimary)});
     
     @include paletteBackground(#{var(--m3-sys-palette-primary)});
@@ -134,7 +134,18 @@
     }
   }
   
-  &.m3-button--outlined {
+  &--outlined {
+    &::before {
+      content: ' ';
+      position: absolute;
+      @include inset(#{0px});
+      
+      border-radius: inherit;
+      border-width: var(--m3-ref-spacing-px);
+      border-style: solid;
+      @include paletteBorder(#{var(--m3-sys-palette-outline)});
+    }
+    
     @include focus('.m3-button') {
       &::before {
         content: ' ';
@@ -150,17 +161,6 @@
       }
     }
     
-    &::before {
-      content: ' ';
-      position: absolute;
-      @include inset(#{0px});
-      
-      border-radius: inherit;
-      border-width: var(--m3-ref-spacing-px);
-      border-style: solid;
-      @include paletteBorder(#{var(--m3-sys-palette-outline)});
-    }
-    
     &.m3-button--selected {
       &::before {
         content: ' ';
@@ -169,19 +169,8 @@
     }
   }
   
-  &.m3-button--text {
+  &--text {
     --m3-button-padding: var(--m3-ref-spacing-3);
-    
-    @include hover('.m3-button') {
-      transition-duration: var(--d-sys-transitionDuration-lg-close);
-    }
-    
-    @include active('.m3-button') {
-      &::after {
-        content: ' ';
-        @include borderOpacity(#{var(--m3-sys-opacity-medium)});
-      }
-    }
     
     &::after {
       content: ' ';
@@ -196,9 +185,20 @@
       
       transition: inherit;
     }
+    
+    @include hover('.m3-button') {
+      transition-duration: var(--d-sys-transitionDuration-lg-close);
+    }
+    
+    @include active('.m3-button') {
+      &::after {
+        content: ' ';
+        @include borderOpacity(#{var(--m3-sys-opacity-medium)});
+      }
+    }
   }
   
-  &.m3-button--elevated {
+  &--elevated {
     @include paletteBackground(#{var(--m3-sys-palette-surfaceContainerLow)});
     
     box-shadow: var(--m3-ref-shadow-1);
@@ -223,7 +223,7 @@
     }
   }
   
-  &.m3-button--tonal {
+  &--tonal {
     @include color(#{var(--m3-sys-palette-onSecondaryContainer)});
     
     @include paletteBackground(#{var(--m3-sys-palette-secondaryContainer)});

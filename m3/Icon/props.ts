@@ -16,8 +16,8 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
-  // [constructor] icon?: string | object | ImageProps
-  // [constructor] iconActive?: string | object | ImageProps
+  // [constructor] icon?: string | ImageProps
+  // [constructor] iconActive?: string | ImageProps
   // [constructor] active?: boolean
   turn?: boolean
   disabled?: boolean
