@@ -1,0 +1,20 @@
+{
+  "family": {
+    "rubik": "rubik"
+  },
+  "size": {
+    "12": "{ref.spacing.px}*12",
+    "14": "{ref.spacing.px}*14",
+    "16": "{ref.spacing.px}*16",
+    "18": "{ref.spacing.px}*18",
+    "20": "{ref.spacing.px}*20",
+    "24": "{ref.spacing.px}*24",
+    "32": "{ref.spacing.px}*32",
+    "40": "{ref.spacing.px}*40"
+  },
+  "weight": {
+    "400": "400",
+    "500": "500",
+    "700": "700"
+  }
+}

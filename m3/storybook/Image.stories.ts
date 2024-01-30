@@ -20,9 +20,9 @@ const meta = {
     design: 'm3',
     docs: {
       description: {
-        component: 'Basic component for displaying graphic materials. ' +
+        component: 'Component for displaying graphic materials. ' +
           'The component is used to work with SVG files, graphic files (uploaded via input or by url) and icons.<br>' +
-          '<small>Базовый компонент для отображения графических материалов. ' +
+          '<small>Компонент для отображения графических материалов. ' +
           'Компонент используется для работы с SVG файлами, графическими файлами (загруженными через input или по url) и иконками.</small>'
       }
     }
@@ -42,8 +42,14 @@ export const ImageAdaptive: Story = {
   parameters: {
     docs: {
       description: {
-        story: '<p>[Experiments] If the product image has no borders, then you can display them by adapting the size.<br> ' +
-          '<small>[Эксперименты] Если у картинки продукта нет границ, то можно отображать их, адаптируя размер. Размер картина можеть быть любой. Надо просто указывать физический размер в свойство object-width.</small></p>'
+        story: '<p>For an image with products, you can align the sizes of the elements ' +
+          'with each other so that the products in the image are on the same scale. ' +
+          'For work, you need to specify the size of the product, and the image should not have empty margins. ' +
+          'The size of the image itself can be anything and is not equal to others.<br> ' +
+          '<small>Для изображения с продуктами можно выравнивать размеры элементов между собой, ' +
+          'чтобы продукты на изображении были в одном масштабе. ' +
+          'Для работы необходимо указать размер продукта, и у изображения не должно быть пустых отступов. ' +
+          'Сам размер изображения может быть любым и не равен другим.</small></p>'
       }
     }
   },
@@ -63,16 +69,16 @@ export const ImageAdaptive: Story = {
     template: `
       <div style="display: flex; gap: 16px;">
         <div style="position: relative; width: 192px; height: 192px;">
-          <m3-image :value="galaxyS23p" adaptive object-width="76.2"/>
+          <m3-image v-bind="args" :value="galaxyS23p" adaptive object-width="76.2" />
         </div>
         <div style="position: relative; width: 192px; height: 192px;">
-          <m3-image :value="galaxyZFlip5" adaptive object-width="71.9"/>
+          <m3-image v-bind="args" :value="galaxyZFlip5" adaptive object-width="71.9" />
         </div>
         <div style="position: relative; width: 192px; height: 192px;">
-          <m3-image :value="galaxyZFold5" adaptive object-width="129.9"/>
+          <m3-image v-bind="args" :value="galaxyZFold5" adaptive object-width="129.9" />
         </div>
         <div style="position: relative; width: 192px; height: 192px;">
-          <m3-image :value="pad" adaptive object-width="254.3"/>
+          <m3-image v-bind="args" :value="pad" adaptive object-width="254.3" />
         </div>
       </div>
     `

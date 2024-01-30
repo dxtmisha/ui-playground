@@ -1,0 +1,164 @@
+{
+  "webText": {
+    "50": "#333f48"
+  },
+  "webWhite": {
+    "50": "#ffffff"
+  },
+  "webAccent": {
+    "50": "#fa5f55"
+  },
+  "webAccentWhite": {
+    "50": "#fa5f5508"
+  },
+  "webError": {
+    "50": "#f31808"
+  },
+  "webGray1": {
+    "50": "#333f48bf"
+  },
+  "webGray2": {
+    "50": "#858c91"
+  },
+  "webGray3": {
+    "50": "#dcdcdc"
+  },
+  "webGray4": {
+    "50": "#f8f9f9"
+  },
+  "webGlue1": {
+    "50": "#555afa"
+  },
+  "webGlue2": {
+    "50": "#558cfa"
+  },
+  "webGlue3": {
+    "50": "#778ca2"
+  },
+  "text": {
+    "50": "#333f48"
+  },
+  "white": {
+    "50": "#ffffff"
+  },
+  "accent": {
+    "50": "#ff585d"
+  },
+  "success": {
+    "50": "#34c759"
+  },
+  "error": {
+    "50": "#f31808"
+  },
+  "notification": {
+    "50": "#2e1670cc"
+  },
+  "ripple": {
+    "50": "#ff7a7e"
+  },
+  "background": {
+    "50": "#f8f8f8"
+  },
+  "backgroundImage": {
+    "50": "#f5f5f5"
+  },
+  "backgroundNotificationInfo": {
+    "50": "#dfe6fa"
+  },
+  "backgroundNotificationWarning": {
+    "50": "#faeadf"
+  },
+  "backgroundError": {
+    "50": "#ffe9e9"
+  },
+  "gray1": {
+    "50": "#f2f2f2"
+  },
+  "gray2": {
+    "50": "#e0e0e0"
+  },
+  "gray3": {
+    "50": "#bec1c6"
+  },
+  "gray4": {
+    "50": "#6c7885"
+  },
+  "shading": {
+    "50": "#00000099"
+  },
+  "green1": {
+    "50": "#90bf63"
+  },
+  "green2": {
+    "50": "#7ba354"
+  },
+  "yellow1": {
+    "50": "#ffe9c0"
+  },
+  "yellow2": {
+    "50": "#fed76d"
+  },
+  "yellow3": {
+    "50": "#ffab2b"
+  },
+  "blue1": {
+    "50": "#2f80ed"
+  },
+  "extra1": {
+    "50": "#c72866"
+  },
+  "extra2": {
+    "50": "#e03b31"
+  },
+  "extra3": {
+    "50": "#ed7f2f"
+  },
+  "extra4": {
+    "50": "#bec934"
+  },
+  "extra5": {
+    "50": "#74ce33"
+  },
+  "extra6": {
+    "50": "#239b35"
+  },
+  "extra7": {
+    "50": "#61ccbc"
+  },
+  "extra8": {
+    "50": "#1f97b8"
+  },
+  "extra9": {
+    "50": "#16a5ee"
+  },
+  "extra10": {
+    "50": "#8ebfeb"
+  },
+  "extra11": {
+    "50": "#3a6df6"
+  },
+  "extra12": {
+    "50": "#7b3ef5"
+  },
+  "extra13": {
+    "50": "#a937e2"
+  },
+  "extra14": {
+    "50": "#f291f2"
+  },
+  "extra15": {
+    "50": "#ea4491"
+  },
+  "extra16": {
+    "50": "#ffadad"
+  },
+  "extra17": {
+    "50": "#d4a685"
+  },
+  "extra18": {
+    "50": "#5a7690"
+  },
+  "extra19": {
+    "50": "#36598e"
+  }
+}

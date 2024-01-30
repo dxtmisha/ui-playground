@@ -1,4 +1,4 @@
-import { h, onUnmounted, VNode, watch } from 'vue'
+import { h, onUnmounted, type VNode, watch } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
 import { ImageRef } from './ImageRef.ts'
@@ -64,14 +64,16 @@ export class ImageDesign<
     )
 
     this.init()
+
     onUnmounted(() => this.image.destructor())
 
-    if (this.emits) {
-      watch(this.image.data, value => this.emits?.('load', {
+    watch(
+      this.image.data,
+      value => this.emits?.('load', {
         type: this.image.type.value,
         image: value
-      }))
-    }
+      })
+    )
   }
 
   /**

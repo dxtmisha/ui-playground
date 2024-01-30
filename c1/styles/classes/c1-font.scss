@@ -1,0 +1,107 @@
+@import "styles/all";
+
+.c1-font {
+  &--captionRegular {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-12)});
+    font-weight: var(--c1-ref-font-weight-400);
+    @include lineHeight(#{var(--c1-ref-lineHeight-14)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--captionMedium {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-12)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-14)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--smallRegular {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-14)});
+    font-weight: var(--c1-ref-font-weight-400);
+    @include lineHeight(#{var(--c1-ref-lineHeight-17)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--smallMedium {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-14)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-17)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--body {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-16)});
+    font-weight: var(--c1-ref-font-weight-400);
+    @include lineHeight(#{var(--c1-ref-lineHeight-20)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h6medium {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-16)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-20)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h6bold {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-16)});
+    font-weight: var(--c1-ref-font-weight-700);
+    @include lineHeight(#{var(--c1-ref-lineHeight-20)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h5regular {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-18)});
+    font-weight: var(--c1-ref-font-weight-400);
+    @include lineHeight(#{var(--c1-ref-lineHeight-24)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h5medium {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-18)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-24)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h4 {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-20)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-24)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h3 {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-24)});
+    font-weight: var(--c1-ref-font-weight-500);
+    @include lineHeight(#{var(--c1-ref-lineHeight-32)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h2 {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-32)});
+    font-weight: var(--c1-ref-font-weight-700);
+    @include lineHeight(#{var(--c1-ref-lineHeight-36)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+  
+  &--h1 {
+    font-family: var(--c1-ref-font-family-rubik);
+    @include fontSize(#{var(--c1-ref-font-size-40)});
+    font-weight: var(--c1-ref-font-weight-700);
+    @include lineHeight(#{var(--c1-ref-lineHeight-48)});
+    letter-spacing: var(--c1-ref-letterSpacing-none);
+  }
+}

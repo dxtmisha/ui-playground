@@ -1,0 +1,93 @@
+{
+  "captionRegular": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.400}",
+    "font-size": "{ref.font.size.12}",
+    "line-height": "{ref.lineHeight.14}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "captionMedium": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.12}",
+    "line-height": "{ref.lineHeight.14}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "smallRegular": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.400}",
+    "font-size": "{ref.font.size.14}",
+    "line-height": "{ref.lineHeight.17}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "smallMedium": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.14}",
+    "line-height": "{ref.lineHeight.17}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "body": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.400}",
+    "font-size": "{ref.font.size.16}",
+    "line-height": "{ref.lineHeight.20}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h6Medium": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.16}",
+    "line-height": "{ref.lineHeight.20}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h6Bold": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.700}",
+    "font-size": "{ref.font.size.16}",
+    "line-height": "{ref.lineHeight.20}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h5Regular": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.400}",
+    "font-size": "{ref.font.size.18}",
+    "line-height": "{ref.lineHeight.24}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h5Medium": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.18}",
+    "line-height": "{ref.lineHeight.24}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h4": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.20}",
+    "line-height": "{ref.lineHeight.24}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h3": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.500}",
+    "font-size": "{ref.font.size.24}",
+    "line-height": "{ref.lineHeight.32}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h2": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.700}",
+    "font-size": "{ref.font.size.32}",
+    "line-height": "{ref.lineHeight.36}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  },
+  "h1": {
+    "font-family": "{ref.font.family.rubik}",
+    "font-weight": "{ref.font.weight.700}",
+    "font-size": "{ref.font.size.40}",
+    "line-height": "{ref.lineHeight.48}",
+    "letter-spacing": "{ref.letterSpacing.none}"
+  }
+}

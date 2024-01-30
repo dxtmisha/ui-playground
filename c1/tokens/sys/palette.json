@@ -1,0 +1,4 @@
+{
+  "onSurface": "{ref.palette.webText.50}",
+  "onDisabled": "{ref.palette.webGray3.50}"
+}

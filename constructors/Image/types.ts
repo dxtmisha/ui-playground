@@ -17,7 +17,7 @@ import {
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
 export type ImageComponents = {
-  // componentName: Record<string, any>
+  // none
 }
 
 /**

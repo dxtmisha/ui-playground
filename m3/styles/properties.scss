@@ -1,6 +1,7 @@
 $designsDesigns: (
   'd',
   'm3',
+  'c1',
   'c2',);
 $designsRoot: (
   'd.ref',
@@ -9684,13 +9685,7 @@ $designsProperties: (
                 index: 'color',
                 name: '--m3-image-color',
                 type: 'var',
-                value: 'var(--m3-sys-palette-onSurface)',
-              ),
-              'colorOpacity':(
-                index: 'colorOpacity',
-                name: '--m3-image-colorOpacity',
-                type: 'var',
-                value: 'var(--m3-sys-opacity-disabled)',
+                value: 'var(--m3-sys-palette-onDisabled)',
               ),
             ),
           ),

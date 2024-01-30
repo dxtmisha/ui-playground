@@ -58,8 +58,7 @@ export const imageArgs: StorybookArgs = {
       category: StorybookCategory.value,
       type: { summary: 'string' }
     },
-    description: 'The value can be the name of an icon, a link to an image, or a File object<br>' +
-      '<small>Значение может быть названием иконки, ссылкой на изображение или объектом File</small>'
+    description: 'Значение может быть названием иконки, ссылкой на изображение или объектом File'
   },
 
   // Image
@@ -69,8 +68,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image',
       type: { summary: 'number[]' }
     },
-    description: 'Crop image<br>' +
-      '<small>Кроп изображения</small>'
+    description: 'Кроп изображения'
   },
   size: {
     control: StorybookControl.select,
@@ -85,8 +83,7 @@ export const imageArgs: StorybookArgs = {
       defaultValue: { summary: 'cover' },
       type: { summary: 'auto | contain | cover | percent' }
     },
-    description: 'You can enter the type of scaling or the value in percent<br>' +
-      '<small>Можно ввести тип масштабирования или значение в процентах</small>'
+    description: 'Можно ввести тип масштабирования или значение в процентах'
   },
   x: {
     control: StorybookControl.select,
@@ -95,8 +92,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image',
       type: { summary: 'percent' }
     },
-    description: 'Image shift along the x-plane. Does not work with coordinates/size<br>' +
-      '<small>Сдвиг изображения по x-плоскости. Не работает с coordinates/size</small>'
+    description: 'Сдвиг изображения по x-плоскости. Не работает с coordinates/size'
   },
   y: {
     control: StorybookControl.select,
@@ -105,8 +101,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image',
       type: { summary: 'percent' }
     },
-    description: 'Image shift along the y-plane. Does not work with coordinates/size<br>' +
-      '<small>Сдвиг изображения по y-плоскости. Не работает с coordinates/size</small>'
+    description: 'Сдвиг изображения по y-плоскости. Не работает с coordinates/size'
   },
 
   // Image/ Adaptive
@@ -116,8 +111,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image/ Adaptive',
       type: { summary: 'boolean' }
     },
-    description: 'Enabling the mode of adapting the size of the image<br>' +
-      '<small>Включение режима адаптации размера изображения</small>'
+    description: 'Включение режима адаптации размера изображения'
   },
   adaptiveGroup: {
     control: StorybookControl.text,
@@ -135,8 +129,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image/ Adaptive',
       type: { summary: 'boolean' }
     },
-    description: 'Always adapts the size of the image, even if the element has gone beyond the screen<br>' +
-      '<small>Всегда адаптирует размер изображения, даже если элемент вышел за пределы экрана</small>'
+    description: 'Всегда адаптирует размер изображения, даже если элемент вышел за пределы экрана'
   },
   objectWidth: {
     control: StorybookControl.number,
@@ -144,8 +137,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image/ Adaptive',
       type: { summary: 'number' }
     },
-    description: 'The width of the product in the image<br>' +
-      '<small>Ширина продукта на изображении</small>'
+    description: 'Ширина продукта на изображении'
   },
   objectHeight: {
     control: StorybookControl.number,
@@ -153,8 +145,7 @@ export const imageArgs: StorybookArgs = {
       category: 'Image/ Adaptive',
       type: { summary: 'number' }
     },
-    description: 'The height of the product in the image<br>' +
-      '<small>Высота продукта на изображении</small>'
+    description: 'Высота продукта на изображении'
   }
 }
 

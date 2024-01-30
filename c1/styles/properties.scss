@@ -1,0 +1,4322 @@
+$designsDesigns: (
+  'd',
+  'm3',
+  'c1',
+  'c2',);
+$designsRoot: (
+  'd.ref',
+  'd.sys',
+  'c1.ref',
+  'c1.sys',);
+$designsMedia: (
+  'c1-sm': 640px,
+  'c1-md': 768px,
+  'c1-lg': 1024px,
+  'c1-xl': 1280px,
+  'c1-2xl': 1536px,);
+$designsClasses: (
+  'c1.main',
+  'c1.elevation',
+  'c1.font',
+  'c1.palette',);
+$designsPalette: (
+  '--c1-sys-palette-onSurface': ('--c1-palette-basic-50'),
+  '--c1-sys-palette-onDisabled': ('--c1-palette-basic-50'),);
+$designsShade: (
+  'c1': (50),);
+$designsProperties: (
+  'd':(
+    index: 'd',
+    name: 'd',
+    type: 'design',
+    value: (
+      'ref':(
+        index: 'ref',
+        name: 'ref',
+        type: 'var',
+        value: (
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transitionDuration',
+            type: 'var',
+            value: (
+              '1':(
+                index: '1',
+                name: '--d-ref-transitionDuration-1',
+                type: 'var',
+                value: '45ms',
+              ),
+              '2':(
+                index: '2',
+                name: '--d-ref-transitionDuration-2',
+                type: 'var',
+                value: '75ms',
+              ),
+              '3':(
+                index: '3',
+                name: '--d-ref-transitionDuration-3',
+                type: 'var',
+                value: '100ms',
+              ),
+              '4':(
+                index: '4',
+                name: '--d-ref-transitionDuration-4',
+                type: 'var',
+                value: '150ms',
+              ),
+              '5':(
+                index: '5',
+                name: '--d-ref-transitionDuration-5',
+                type: 'var',
+                value: '200ms',
+              ),
+              '6':(
+                index: '6',
+                name: '--d-ref-transitionDuration-6',
+                type: 'var',
+                value: '250ms',
+              ),
+              '7':(
+                index: '7',
+                name: '--d-ref-transitionDuration-7',
+                type: 'var',
+                value: '280ms',
+              ),
+              '8':(
+                index: '8',
+                name: '--d-ref-transitionDuration-8',
+                type: 'var',
+                value: '300ms',
+              ),
+            ),
+          ),
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: 'transitionFunction',
+            type: 'var',
+            value: (
+              'linear':(
+                index: 'linear',
+                name: '--d-ref-transitionFunction-linear',
+                type: 'var',
+                value: 'linear',
+              ),
+              'e0i80':(
+                index: 'e0i80',
+                name: '--d-ref-transitionFunction-e0i80',
+                type: 'var',
+                value: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+              ),
+              'e40i0':(
+                index: 'e40i0',
+                name: '--d-ref-transitionFunction-e40i0',
+                type: 'var',
+                value: 'cubic-bezier(0.4, 0.0, 1, 1)',
+              ),
+              'e40i80':(
+                index: 'e40i80',
+                name: '--d-ref-transitionFunction-e40i80',
+                type: 'var',
+                value: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+              ),
+              'e40i40':(
+                index: 'e40i40',
+                name: '--d-ref-transitionFunction-e40i40',
+                type: 'var',
+                value: 'cubic-bezier(0.4, 0.0, 0.6, 1)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'sys':(
+        index: 'sys',
+        name: 'sys',
+        type: 'var',
+        value: (
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transitionDuration',
+            type: 'var',
+            value: (
+              'standard':(
+                index: 'standard',
+                name: '--d-sys-transitionDuration-standard',
+                type: 'var',
+                value: 'var(--d-ref-transitionDuration-4)',
+              ),
+              'xs':(
+                index: 'xs',
+                name: '--d-sys-transitionDuration-xs',
+                type: 'var',
+                value: 'var(--d-ref-transitionDuration-1)',
+              ),
+              'sm':(
+                index: 'sm',
+                name: '--d-sys-transitionDuration-sm',
+                type: 'var',
+                value: 'var(--d-ref-transitionDuration-3)',
+              ),
+              'md':(
+                index: 'md',
+                name: 'md',
+                type: 'var',
+                value: (
+                  'open':(
+                    index: 'open',
+                    name: '--d-sys-transitionDuration-md-open',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-6)',
+                  ),
+                  'close':(
+                    index: 'close',
+                    name: '--d-sys-transitionDuration-md-close',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-5)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: 'lg',
+                type: 'var',
+                value: (
+                  'open':(
+                    index: 'open',
+                    name: '--d-sys-transitionDuration-lg-open',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-8)',
+                  ),
+                  'close':(
+                    index: 'close',
+                    name: '--d-sys-transitionDuration-lg-close',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-6)',
+                  ),
+                ),
+              ),
+              'axis':(
+                index: 'axis',
+                name: '--d-sys-transitionDuration-axis',
+                type: 'var',
+                value: 'var(--d-ref-transitionDuration-8)',
+              ),
+              'container':(
+                index: 'container',
+                name: 'container',
+                type: 'var',
+                value: (
+                  'open':(
+                    index: 'open',
+                    name: '--d-sys-transitionDuration-container-open',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-8)',
+                  ),
+                  'close':(
+                    index: 'close',
+                    name: '--d-sys-transitionDuration-container-close',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-6)',
+                  ),
+                ),
+              ),
+              'fade':(
+                index: 'fade',
+                name: 'fade',
+                type: 'var',
+                value: (
+                  'enter':(
+                    index: 'enter',
+                    name: '--d-sys-transitionDuration-fade-enter',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-4)',
+                  ),
+                  'exit':(
+                    index: 'exit',
+                    name: '--d-sys-transitionDuration-fade-exit',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-2)',
+                  ),
+                  'through':(
+                    index: 'through',
+                    name: '--d-sys-transitionDuration-fade-through',
+                    type: 'var',
+                    value: 'var(--d-ref-transitionDuration-8)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: 'transitionFunction',
+            type: 'var',
+            value: (
+              'linear':(
+                index: 'linear',
+                name: '--d-sys-transitionFunction-linear',
+                type: 'var',
+                value: 'linear',
+              ),
+              'standard':(
+                index: 'standard',
+                name: '--d-sys-transitionFunction-standard',
+                type: 'var',
+                value: 'var(--d-ref-transitionFunction-e40i80)',
+              ),
+              'emphasized':(
+                index: 'emphasized',
+                name: '--d-sys-transitionFunction-emphasized',
+                type: 'var',
+                value: 'var(--d-ref-transitionFunction-e40i40)',
+              ),
+              'acceleration':(
+                index: 'acceleration',
+                name: '--d-sys-transitionFunction-acceleration',
+                type: 'var',
+                value: 'var(--d-ref-transitionFunction-e40i0)',
+              ),
+              'deceleration':(
+                index: 'deceleration',
+                name: '--d-sys-transitionFunction-deceleration',
+                type: 'var',
+                value: 'var(--d-ref-transitionFunction-e0i80)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'button':(
+        index: 'button',
+        name: 'd-button',
+        type: 'component',
+        value: (
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: '--d-button-transitionFunction',
+            type: 'var',
+            value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transition-duration',
+            type: 'property',
+            value: 'var(--d-sys-transitionDuration-lg-close)',
+          ),
+          'transitionProperty':(
+            index: 'transitionProperty',
+            name: 'transition-property',
+            type: 'property',
+            value: 'background-color, background-image, border, box-shadow',
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'active':(
+            index: 'active',
+            name: 'active',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'loading':(
+            index: 'loading',
+            name: '&--loading',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: '--d-button-padding',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-button__label',
+                    type: 'scss',
+                    value: (
+                      'display':(
+                        index: 'display',
+                        name: 'display',
+                        type: 'property',
+                        value: 'none',
+                      ),
+                      'paddingX':(
+                        index: 'paddingX',
+                        name: 'padding-x',
+                        type: 'property',
+                        value: 0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      'checkbox':(
+        index: 'checkbox',
+        name: 'd-checkbox',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&__icon',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+              'label':(
+                index: 'label',
+                name: '&__label',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'comp':(
+            index: 'comp',
+            name: '&--comp',
+            type: 'state',
+            value: (
+              'required':(
+                index: 'required',
+                name: 'required',
+                type: 'selector',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'red',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'required':(
+            index: 'required',
+            name: '&--required',
+            type: 'state',
+            value: (
+              'info':(
+                index: 'info',
+                name: '& .d-checkbox__info',
+                type: 'subclass',
+                value: (
+                  'label':(
+                    index: 'label',
+                    name: '&__label',
+                    type: 'subclass',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          '&__input:checked + *':(
+            index: '&__input:checked + *',
+            name: '&__input:checked + *',
+            type: 'scss',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'chip':(
+        index: 'chip',
+        name: 'd-chip',
+        type: 'component',
+        value: (
+          'transitionFunction':(
+            index: 'transitionFunction',
+            name: '--d-chip-transitionFunction',
+            type: 'var',
+            value: 'var(--d-sys-transitionFunction-standard)',
+          ),
+          'transitionDuration':(
+            index: 'transitionDuration',
+            name: 'transition-duration',
+            type: 'property',
+            value: 'var(--d-sys-transitionDuration-lg-close)',
+          ),
+          'transitionProperty':(
+            index: 'transitionProperty',
+            name: 'transition-property',
+            type: 'property',
+            value: 'background-color, background-image, border, box-shadow',
+          ),
+          'label':(
+            index: 'label',
+            name: '&__label',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'icon':(
+            index: 'icon',
+            name: '&__icon',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'trailing':(
+            index: 'trailing',
+            name: '&__trailing',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'active':(
+            index: 'active',
+            name: 'active',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'transitionDuration':(
+                index: 'transitionDuration',
+                name: 'transition-duration',
+                type: 'property',
+                value: 'var(--d-sys-transitionDuration-sm)',
+              ),
+            ),
+          ),
+          'selected':(
+            index: 'selected',
+            name: '&--selected',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'loading':(
+            index: 'loading',
+            name: '&--loading',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'readonly':(
+            index: 'readonly',
+            name: '&--readonly',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: '--d-chip-padding',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  '& .??__label':(
+                    index: '& .??__label',
+                    name: '& .d-chip__label',
+                    type: 'scss',
+                    value: (
+                      'display':(
+                        index: 'display',
+                        name: 'display',
+                        type: 'property',
+                        value: 'none',
+                      ),
+                      'paddingX':(
+                        index: 'paddingX',
+                        name: 'padding-x',
+                        type: 'property',
+                        value: 0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      'fieldMessage':(
+        index: 'fieldMessage',
+        name: 'd-fieldMessage',
+        type: 'component',
+        value: (
+          'info':(
+            index: 'info',
+            name: '&__info',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'counter':(
+            index: 'counter',
+            name: '&__counter',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'validation':(
+            index: 'validation',
+            name: '&--validation',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'icon':(
+        index: 'icon',
+        name: 'd-icon',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'animationType':(
+            index: 'animationType',
+            name: '&--animationType',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'animationShow':(
+            index: 'animationShow',
+            name: '&--animationShow',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'overlay':(
+            index: 'overlay',
+            name: '&--overlay',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dynamic':(
+            index: 'dynamic',
+            name: '&--dynamic',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'start':(
+            index: 'start',
+            name: '&--start',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'end':(
+            index: 'end',
+            name: '&--end',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'high':(
+            index: 'high',
+            name: '&--high',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'image':(
+        index: 'image',
+        name: 'd-image',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'mask':(
+        index: 'mask',
+        name: 'd-mask',
+        type: 'component',
+        value: (
+          'input':(
+            index: 'input',
+            name: '&__input',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'character':(
+            index: 'character',
+            name: '&__character',
+            type: 'subclass',
+            value: (
+              'item':(
+                index: 'item',
+                name: '&__item',
+                type: 'subclass',
+                value: (
+                  'placeholder':(
+                    index: 'placeholder',
+                    name: '&--placeholder',
+                    type: 'state',
+                    value: (
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'right':(
+            index: 'right',
+            name: '&--right',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dir':(
+            index: 'dir',
+            name: '&--dir',
+            type: 'state',
+            value: (
+              'ltr':(
+                index: 'ltr',
+                name: '&--ltr',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rtl':(
+                index: 'rtl',
+                name: '&--rtl',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      'progress':(
+        index: 'progress',
+        name: 'd-progress',
+        type: 'component',
+        value: (
+          'circle':(
+            index: 'circle',
+            name: '&__circle',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'circleSub':(
+            index: 'circleSub',
+            name: '&__circleSub',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'linear':(
+            index: 'linear',
+            name: '&--linear',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'circular':(
+            index: 'circular',
+            name: '&--circular',
+            type: 'state',
+            value: (
+              'inset':(
+                index: 'inset',
+                name: 'inset',
+                type: 'property',
+                value: 0px,
+                var: true,
+              ),
+            ),
+          ),
+          'indeterminate':(
+            index: 'indeterminate',
+            name: '&--indeterminate',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type3':(
+                index: 'type3',
+                name: '&--type3',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'position':(
+            index: 'position',
+            name: '&--position',
+            type: 'state',
+            value: (
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'ripple':(
+        index: 'ripple',
+        name: 'd-ripple',
+        type: 'component',
+        value: (
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'scrollbar':(
+        index: 'scrollbar',
+        name: 'd-scrollbar',
+        type: 'component',
+        value: (
+          'thumb':(
+            index: 'thumb',
+            name: 'thumb',
+            type: 'var',
+            value: (
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'var',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'outline':(
+            index: 'outline',
+            name: 'outline',
+            type: 'var',
+            value: (
+            ),
+          ),
+          'visible':(
+            index: 'visible',
+            name: '&--visible',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'border':(
+            index: 'border',
+            name: '&--border',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'inverse':(
+            index: 'inverse',
+            name: '&--inverse',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+      'window':(
+        index: 'window',
+        name: 'd-window',
+        type: 'component',
+        value: (
+          'menuSizeMultiplier':(
+            index: 'menuSizeMultiplier',
+            name: '--d-window-menuSizeMultiplier',
+            type: 'var',
+            value: 1,
+          ),
+          'body':(
+            index: 'body',
+            name: '&__body',
+            type: 'subclass',
+            value: (
+              'context':(
+                index: 'context',
+                name: '&__context',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'control':(
+            index: 'control',
+            name: '&__control',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'width':(
+            index: 'width',
+            name: '&--width',
+            type: 'state',
+            value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--d-window-width',
+                    type: 'var',
+                    value: 'var(--d-window-sys-width)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--d-window-height',
+                    type: 'var',
+                    value: 'var(--d-window-sys-height)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'menu':(
+                index: 'menu',
+                name: '&--menu',
+                type: 'state',
+                value: (
+                  'menuSizeMultiplier':(
+                    index: 'menuSizeMultiplier',
+                    name: '--d-window-menuSizeMultiplier',
+                    type: 'var',
+                    value: 0.5,
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: '--d-window-backgroundOpacity',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  'transformOrigin':(
+                    index: 'transformOrigin',
+                    name: '--d-window-transformOrigin',
+                    type: 'var',
+                    value: 'var(--d-window-origin-x) var(--d-window-origin-y)',
+                  ),
+                  'top':(
+                    index: 'top',
+                    name: 'top',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-y)',
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: 'right',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'bottom':(
+                    index: 'bottom',
+                    name: 'bottom',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: 'left',
+                    type: 'property',
+                    value: 'var(--d-window-sys-inset-x)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--MENU--'',
+                  ),
+                  'body':(
+                    index: 'body',
+                    name: '& .d-window__body',
+                    type: 'subclass',
+                    value: (
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
+                        type: 'property',
+                        value: 'calc(100dvw - (var(--d-window-padding) * 2))',
+                      ),
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
+                        type: 'property',
+                        value: 'calc(100dvh - (var(--d-window-padding) * 2))',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'modal':(
+                index: 'modal',
+                name: '&--modal',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'modalDynamic':(
+                index: 'modalDynamic',
+                name: '&--modalDynamic',
+                type: 'state',
+                value: (
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.d-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'static':(
+                index: 'static',
+                name: '&--static',
+                type: 'state',
+                value: (
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--STATIC--'',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'overscroll':(
+            index: 'overscroll',
+            name: '&--overscroll',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'fullscreen':(
+            index: 'fullscreen',
+            name: '&--fullscreen',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'alignment':(
+            index: 'alignment',
+            name: '&--alignment',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'origin':(
+            index: 'origin',
+            name: '&--origin',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'topToBottom':(
+                index: 'topToBottom',
+                name: '&--topToBottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rightToLeft':(
+                index: 'rightToLeft',
+                name: '&--rightToLeft',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottomToTop':(
+                index: 'bottomToTop',
+                name: '&--bottomToTop',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'leftToRight':(
+                index: 'leftToRight',
+                name: '&--leftToRight',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'c1':(
+    index: 'c1',
+    name: 'c1',
+    type: 'design',
+    value: (
+      'ref':(
+        index: 'ref',
+        name: 'ref',
+        type: 'var',
+        value: (
+          'background':(
+            index: 'background',
+            name: 'background',
+            type: 'var',
+            value: (
+              '0':(
+                index: '0',
+                name: '--c1-ref-background-0',
+                type: 'var',
+                value: 'rgb(var(--c1-ref-palette-webWhite))',
+              ),
+            ),
+          ),
+          'font':(
+            index: 'font',
+            name: 'font',
+            type: 'var',
+            value: (
+              'family':(
+                index: 'family',
+                name: 'family',
+                type: 'var',
+                value: (
+                  'rubik':(
+                    index: 'rubik',
+                    name: '--c1-ref-font-family-rubik',
+                    type: 'var',
+                    value: 'rubik',
+                  ),
+                ),
+              ),
+              'size':(
+                index: 'size',
+                name: 'size',
+                type: 'var',
+                value: (
+                  '12':(
+                    index: '12',
+                    name: '--c1-ref-font-size-12',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*12)',
+                  ),
+                  '14':(
+                    index: '14',
+                    name: '--c1-ref-font-size-14',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*14)',
+                  ),
+                  '16':(
+                    index: '16',
+                    name: '--c1-ref-font-size-16',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*16)',
+                  ),
+                  '18':(
+                    index: '18',
+                    name: '--c1-ref-font-size-18',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*18)',
+                  ),
+                  '20':(
+                    index: '20',
+                    name: '--c1-ref-font-size-20',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*20)',
+                  ),
+                  '24':(
+                    index: '24',
+                    name: '--c1-ref-font-size-24',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*24)',
+                  ),
+                  '32':(
+                    index: '32',
+                    name: '--c1-ref-font-size-32',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*32)',
+                  ),
+                  '40':(
+                    index: '40',
+                    name: '--c1-ref-font-size-40',
+                    type: 'var',
+                    value: 'calc(var(--c1-ref-spacing-px)*40)',
+                  ),
+                ),
+              ),
+              'weight':(
+                index: 'weight',
+                name: 'weight',
+                type: 'var',
+                value: (
+                  '400':(
+                    index: '400',
+                    name: '--c1-ref-font-weight-400',
+                    type: 'var',
+                    value: 400,
+                  ),
+                  '500':(
+                    index: '500',
+                    name: '--c1-ref-font-weight-500',
+                    type: 'var',
+                    value: 500,
+                  ),
+                  '700':(
+                    index: '700',
+                    name: '--c1-ref-font-weight-700',
+                    type: 'var',
+                    value: 700,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letterSpacing',
+            type: 'var',
+            value: (
+              'none':(
+                index: 'none',
+                name: '--c1-ref-letterSpacing-none',
+                type: 'var',
+                value: 0,
+              ),
+            ),
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'lineHeight',
+            type: 'var',
+            value: (
+              '14':(
+                index: '14',
+                name: '--c1-ref-lineHeight-14',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*14)',
+              ),
+              '17':(
+                index: '17',
+                name: '--c1-ref-lineHeight-17',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*17)',
+              ),
+              '20':(
+                index: '20',
+                name: '--c1-ref-lineHeight-20',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*20)',
+              ),
+              '24':(
+                index: '24',
+                name: '--c1-ref-lineHeight-24',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*24)',
+              ),
+              '32':(
+                index: '32',
+                name: '--c1-ref-lineHeight-32',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*32)',
+              ),
+              '36':(
+                index: '36',
+                name: '--c1-ref-lineHeight-36',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*36)',
+              ),
+              '48':(
+                index: '48',
+                name: '--c1-ref-lineHeight-48',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-px)*48)',
+              ),
+            ),
+          ),
+          'palette':(
+            index: 'palette',
+            name: 'palette',
+            type: 'var',
+            value: (
+              'webText':(
+                index: 'webText',
+                name: 'webText',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webText-50',
+                    type: 'var',
+                    value: #333f48,
+                  ),
+                ),
+              ),
+              'webWhite':(
+                index: 'webWhite',
+                name: 'webWhite',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webWhite-50',
+                    type: 'var',
+                    value: #ffffff,
+                  ),
+                ),
+              ),
+              'webAccent':(
+                index: 'webAccent',
+                name: 'webAccent',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webAccent-50',
+                    type: 'var',
+                    value: #fa5f55,
+                  ),
+                ),
+              ),
+              'webAccentWhite':(
+                index: 'webAccentWhite',
+                name: 'webAccentWhite',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webAccentWhite-50',
+                    type: 'var',
+                    value: #fa5f5508,
+                  ),
+                ),
+              ),
+              'webError':(
+                index: 'webError',
+                name: 'webError',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webError-50',
+                    type: 'var',
+                    value: #f31808,
+                  ),
+                ),
+              ),
+              'webGray1':(
+                index: 'webGray1',
+                name: 'webGray1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGray1-50',
+                    type: 'var',
+                    value: #333f48bf,
+                  ),
+                ),
+              ),
+              'webGray2':(
+                index: 'webGray2',
+                name: 'webGray2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGray2-50',
+                    type: 'var',
+                    value: #858c91,
+                  ),
+                ),
+              ),
+              'webGray3':(
+                index: 'webGray3',
+                name: 'webGray3',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGray3-50',
+                    type: 'var',
+                    value: #dcdcdc,
+                  ),
+                ),
+              ),
+              'webGray4':(
+                index: 'webGray4',
+                name: 'webGray4',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGray4-50',
+                    type: 'var',
+                    value: #f8f9f9,
+                  ),
+                ),
+              ),
+              'webGlue1':(
+                index: 'webGlue1',
+                name: 'webGlue1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGlue1-50',
+                    type: 'var',
+                    value: #555afa,
+                  ),
+                ),
+              ),
+              'webGlue2':(
+                index: 'webGlue2',
+                name: 'webGlue2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGlue2-50',
+                    type: 'var',
+                    value: #558cfa,
+                  ),
+                ),
+              ),
+              'webGlue3':(
+                index: 'webGlue3',
+                name: 'webGlue3',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-webGlue3-50',
+                    type: 'var',
+                    value: #778ca2,
+                  ),
+                ),
+              ),
+              'text':(
+                index: 'text',
+                name: 'text',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-text-50',
+                    type: 'var',
+                    value: #333f48,
+                  ),
+                ),
+              ),
+              'white':(
+                index: 'white',
+                name: 'white',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-white-50',
+                    type: 'var',
+                    value: #ffffff,
+                  ),
+                ),
+              ),
+              'accent':(
+                index: 'accent',
+                name: 'accent',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-accent-50',
+                    type: 'var',
+                    value: #ff585d,
+                  ),
+                ),
+              ),
+              'success':(
+                index: 'success',
+                name: 'success',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-success-50',
+                    type: 'var',
+                    value: #34c759,
+                  ),
+                ),
+              ),
+              'error':(
+                index: 'error',
+                name: 'error',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-error-50',
+                    type: 'var',
+                    value: #f31808,
+                  ),
+                ),
+              ),
+              'notification':(
+                index: 'notification',
+                name: 'notification',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-notification-50',
+                    type: 'var',
+                    value: #2e1670cc,
+                  ),
+                ),
+              ),
+              'ripple':(
+                index: 'ripple',
+                name: 'ripple',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-ripple-50',
+                    type: 'var',
+                    value: #ff7a7e,
+                  ),
+                ),
+              ),
+              'background':(
+                index: 'background',
+                name: 'background',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-background-50',
+                    type: 'var',
+                    value: #f8f8f8,
+                  ),
+                ),
+              ),
+              'backgroundImage':(
+                index: 'backgroundImage',
+                name: 'backgroundImage',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-backgroundImage-50',
+                    type: 'var',
+                    value: #f5f5f5,
+                  ),
+                ),
+              ),
+              'backgroundNotificationInfo':(
+                index: 'backgroundNotificationInfo',
+                name: 'backgroundNotificationInfo',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-backgroundNotificationInfo-50',
+                    type: 'var',
+                    value: #dfe6fa,
+                  ),
+                ),
+              ),
+              'backgroundNotificationWarning':(
+                index: 'backgroundNotificationWarning',
+                name: 'backgroundNotificationWarning',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-backgroundNotificationWarning-50',
+                    type: 'var',
+                    value: #faeadf,
+                  ),
+                ),
+              ),
+              'backgroundError':(
+                index: 'backgroundError',
+                name: 'backgroundError',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-backgroundError-50',
+                    type: 'var',
+                    value: #ffe9e9,
+                  ),
+                ),
+              ),
+              'gray1':(
+                index: 'gray1',
+                name: 'gray1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-gray1-50',
+                    type: 'var',
+                    value: #f2f2f2,
+                  ),
+                ),
+              ),
+              'gray2':(
+                index: 'gray2',
+                name: 'gray2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-gray2-50',
+                    type: 'var',
+                    value: #e0e0e0,
+                  ),
+                ),
+              ),
+              'gray3':(
+                index: 'gray3',
+                name: 'gray3',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-gray3-50',
+                    type: 'var',
+                    value: #bec1c6,
+                  ),
+                ),
+              ),
+              'gray4':(
+                index: 'gray4',
+                name: 'gray4',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-gray4-50',
+                    type: 'var',
+                    value: #6c7885,
+                  ),
+                ),
+              ),
+              'shading':(
+                index: 'shading',
+                name: 'shading',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-shading-50',
+                    type: 'var',
+                    value: #00000099,
+                  ),
+                ),
+              ),
+              'green1':(
+                index: 'green1',
+                name: 'green1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-green1-50',
+                    type: 'var',
+                    value: #90bf63,
+                  ),
+                ),
+              ),
+              'green2':(
+                index: 'green2',
+                name: 'green2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-green2-50',
+                    type: 'var',
+                    value: #7ba354,
+                  ),
+                ),
+              ),
+              'yellow1':(
+                index: 'yellow1',
+                name: 'yellow1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-yellow1-50',
+                    type: 'var',
+                    value: #ffe9c0,
+                  ),
+                ),
+              ),
+              'yellow2':(
+                index: 'yellow2',
+                name: 'yellow2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-yellow2-50',
+                    type: 'var',
+                    value: #fed76d,
+                  ),
+                ),
+              ),
+              'yellow3':(
+                index: 'yellow3',
+                name: 'yellow3',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-yellow3-50',
+                    type: 'var',
+                    value: #ffab2b,
+                  ),
+                ),
+              ),
+              'blue1':(
+                index: 'blue1',
+                name: 'blue1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-blue1-50',
+                    type: 'var',
+                    value: #2f80ed,
+                  ),
+                ),
+              ),
+              'extra1':(
+                index: 'extra1',
+                name: 'extra1',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra1-50',
+                    type: 'var',
+                    value: #c72866,
+                  ),
+                ),
+              ),
+              'extra2':(
+                index: 'extra2',
+                name: 'extra2',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra2-50',
+                    type: 'var',
+                    value: #e03b31,
+                  ),
+                ),
+              ),
+              'extra3':(
+                index: 'extra3',
+                name: 'extra3',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra3-50',
+                    type: 'var',
+                    value: #ed7f2f,
+                  ),
+                ),
+              ),
+              'extra4':(
+                index: 'extra4',
+                name: 'extra4',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra4-50',
+                    type: 'var',
+                    value: #bec934,
+                  ),
+                ),
+              ),
+              'extra5':(
+                index: 'extra5',
+                name: 'extra5',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra5-50',
+                    type: 'var',
+                    value: #74ce33,
+                  ),
+                ),
+              ),
+              'extra6':(
+                index: 'extra6',
+                name: 'extra6',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra6-50',
+                    type: 'var',
+                    value: #239b35,
+                  ),
+                ),
+              ),
+              'extra7':(
+                index: 'extra7',
+                name: 'extra7',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra7-50',
+                    type: 'var',
+                    value: #61ccbc,
+                  ),
+                ),
+              ),
+              'extra8':(
+                index: 'extra8',
+                name: 'extra8',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra8-50',
+                    type: 'var',
+                    value: #1f97b8,
+                  ),
+                ),
+              ),
+              'extra9':(
+                index: 'extra9',
+                name: 'extra9',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra9-50',
+                    type: 'var',
+                    value: #16a5ee,
+                  ),
+                ),
+              ),
+              'extra10':(
+                index: 'extra10',
+                name: 'extra10',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra10-50',
+                    type: 'var',
+                    value: #8ebfeb,
+                  ),
+                ),
+              ),
+              'extra11':(
+                index: 'extra11',
+                name: 'extra11',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra11-50',
+                    type: 'var',
+                    value: #3a6df6,
+                  ),
+                ),
+              ),
+              'extra12':(
+                index: 'extra12',
+                name: 'extra12',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra12-50',
+                    type: 'var',
+                    value: #7b3ef5,
+                  ),
+                ),
+              ),
+              'extra13':(
+                index: 'extra13',
+                name: 'extra13',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra13-50',
+                    type: 'var',
+                    value: #a937e2,
+                  ),
+                ),
+              ),
+              'extra14':(
+                index: 'extra14',
+                name: 'extra14',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra14-50',
+                    type: 'var',
+                    value: #f291f2,
+                  ),
+                ),
+              ),
+              'extra15':(
+                index: 'extra15',
+                name: 'extra15',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra15-50',
+                    type: 'var',
+                    value: #ea4491,
+                  ),
+                ),
+              ),
+              'extra16':(
+                index: 'extra16',
+                name: 'extra16',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra16-50',
+                    type: 'var',
+                    value: #ffadad,
+                  ),
+                ),
+              ),
+              'extra17':(
+                index: 'extra17',
+                name: 'extra17',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra17-50',
+                    type: 'var',
+                    value: #d4a685,
+                  ),
+                ),
+              ),
+              'extra18':(
+                index: 'extra18',
+                name: 'extra18',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra18-50',
+                    type: 'var',
+                    value: #5a7690,
+                  ),
+                ),
+              ),
+              'extra19':(
+                index: 'extra19',
+                name: 'extra19',
+                type: 'var',
+                value: (
+                  '50':(
+                    index: '50',
+                    name: '--c1-ref-palette-extra19-50',
+                    type: 'var',
+                    value: #36598e,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'screen':(
+            index: 'screen',
+            name: 'screen',
+            type: 'var',
+            value: (
+              'sm':(
+                index: 'sm',
+                name: '--c1-ref-screen-sm',
+                type: 'var',
+                value: 640px,
+              ),
+              'md':(
+                index: 'md',
+                name: '--c1-ref-screen-md',
+                type: 'var',
+                value: 768px,
+              ),
+              'lg':(
+                index: 'lg',
+                name: '--c1-ref-screen-lg',
+                type: 'var',
+                value: 1024px,
+              ),
+              'xl':(
+                index: 'xl',
+                name: '--c1-ref-screen-xl',
+                type: 'var',
+                value: 1280px,
+              ),
+              '2xl':(
+                index: '2xl',
+                name: '--c1-ref-screen-2xl',
+                type: 'var',
+                value: 1536px,
+              ),
+            ),
+          ),
+          'shade':(
+            index: 'shade',
+            name: 'shade',
+            type: 'var',
+            value: (
+              '50':(
+                index: '50',
+                name: '--c1-ref-shade-50',
+                type: 'var',
+                value: 50,
+              ),
+            ),
+          ),
+          'spacing':(
+            index: 'spacing',
+            name: 'spacing',
+            type: 'var',
+            value: (
+              '1':(
+                index: '1',
+                name: '--c1-ref-spacing-1',
+                type: 'var',
+                value: '.25rem',
+              ),
+              '2':(
+                index: '2',
+                name: '--c1-ref-spacing-2',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*2)',
+              ),
+              '3':(
+                index: '3',
+                name: '--c1-ref-spacing-3',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*3)',
+              ),
+              '4':(
+                index: '4',
+                name: '--c1-ref-spacing-4',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*4)',
+              ),
+              '5':(
+                index: '5',
+                name: '--c1-ref-spacing-5',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*5)',
+              ),
+              '6':(
+                index: '6',
+                name: '--c1-ref-spacing-6',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*6)',
+              ),
+              '7':(
+                index: '7',
+                name: '--c1-ref-spacing-7',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*7)',
+              ),
+              '8':(
+                index: '8',
+                name: '--c1-ref-spacing-8',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*8)',
+              ),
+              '9':(
+                index: '9',
+                name: '--c1-ref-spacing-9',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*9)',
+              ),
+              '10':(
+                index: '10',
+                name: '--c1-ref-spacing-10',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*10)',
+              ),
+              '11':(
+                index: '11',
+                name: '--c1-ref-spacing-11',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*11)',
+              ),
+              '12':(
+                index: '12',
+                name: '--c1-ref-spacing-12',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*12)',
+              ),
+              '13':(
+                index: '13',
+                name: '--c1-ref-spacing-13',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*13)',
+              ),
+              '14':(
+                index: '14',
+                name: '--c1-ref-spacing-14',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*14)',
+              ),
+              '15':(
+                index: '15',
+                name: '--c1-ref-spacing-15',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*15)',
+              ),
+              '16':(
+                index: '16',
+                name: '--c1-ref-spacing-16',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*16)',
+              ),
+              '17':(
+                index: '17',
+                name: '--c1-ref-spacing-17',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*17)',
+              ),
+              '18':(
+                index: '18',
+                name: '--c1-ref-spacing-18',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*18)',
+              ),
+              '19':(
+                index: '19',
+                name: '--c1-ref-spacing-19',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*19)',
+              ),
+              '20':(
+                index: '20',
+                name: '--c1-ref-spacing-20',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*20)',
+              ),
+              '21':(
+                index: '21',
+                name: '--c1-ref-spacing-21',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*21)',
+              ),
+              '22':(
+                index: '22',
+                name: '--c1-ref-spacing-22',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*22)',
+              ),
+              '23':(
+                index: '23',
+                name: '--c1-ref-spacing-23',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*23)',
+              ),
+              '24':(
+                index: '24',
+                name: '--c1-ref-spacing-24',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*24)',
+              ),
+              '25':(
+                index: '25',
+                name: '--c1-ref-spacing-25',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*25)',
+              ),
+              '26':(
+                index: '26',
+                name: '--c1-ref-spacing-26',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*26)',
+              ),
+              '27':(
+                index: '27',
+                name: '--c1-ref-spacing-27',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*27)',
+              ),
+              '28':(
+                index: '28',
+                name: '--c1-ref-spacing-28',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*28)',
+              ),
+              '32':(
+                index: '32',
+                name: '--c1-ref-spacing-32',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*32)',
+              ),
+              '36':(
+                index: '36',
+                name: '--c1-ref-spacing-36',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*36)',
+              ),
+              '40':(
+                index: '40',
+                name: '--c1-ref-spacing-40',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*40)',
+              ),
+              '48':(
+                index: '48',
+                name: '--c1-ref-spacing-48',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*48)',
+              ),
+              '56':(
+                index: '56',
+                name: '--c1-ref-spacing-56',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*56)',
+              ),
+              '64':(
+                index: '64',
+                name: '--c1-ref-spacing-64',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*64)',
+              ),
+              '72':(
+                index: '72',
+                name: '--c1-ref-spacing-72',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*72)',
+              ),
+              '80':(
+                index: '80',
+                name: '--c1-ref-spacing-80',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*80)',
+              ),
+              '128':(
+                index: '128',
+                name: '--c1-ref-spacing-128',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*128)',
+              ),
+              '256':(
+                index: '256',
+                name: '--c1-ref-spacing-256',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*256)',
+              ),
+              '512':(
+                index: '512',
+                name: '--c1-ref-spacing-512',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)*512)',
+              ),
+              'px':(
+                index: 'px',
+                name: '--c1-ref-spacing-px',
+                type: 'var',
+                value: 'calc(var(--c1-ref-spacing-1)/4)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'sys':(
+        index: 'sys',
+        name: 'sys',
+        type: 'var',
+        value: (
+          'palette':(
+            index: 'palette',
+            name: 'palette',
+            type: 'var',
+            value: (
+              'onSurface':(
+                index: 'onSurface',
+                name: '--c1-sys-palette-onSurface',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webText-50)',
+              ),
+              'onDisabled':(
+                index: 'onDisabled',
+                name: '--c1-sys-palette-onDisabled',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray3-50)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'main':(
+        index: 'main',
+        name: 'c1-main',
+        type: 'component',
+        value: (
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--c1-ref-font-family-rubik)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--c1-ref-font-size-16)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--c1-ref-font-weight-400)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--c1-ref-lineHeight-20)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--c1-ref-letterSpacing-none)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--c1-sys-palette-onSurface)',
+          ),
+          'background':(
+            index: 'background',
+            name: 'background',
+            type: 'property',
+            value: 'var(--c1-ref-background-0)',
+          ),
+        ),
+      ),
+      'elevation':(
+        index: 'elevation',
+        name: 'c1-elevation',
+        type: 'component',
+        value: (
+        ),
+      ),
+      'font':(
+        index: 'font',
+        name: 'c1-font',
+        type: 'component',
+        value: (
+          'captionRegular':(
+            index: 'captionRegular',
+            name: '&--captionRegular',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-12)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-400)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-14)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'captionMedium':(
+            index: 'captionMedium',
+            name: '&--captionMedium',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-12)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-14)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'smallRegular':(
+            index: 'smallRegular',
+            name: '&--smallRegular',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-14)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-400)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-17)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'smallMedium':(
+            index: 'smallMedium',
+            name: '&--smallMedium',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-14)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-17)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'body':(
+            index: 'body',
+            name: '&--body',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-16)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-400)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-20)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h6Medium':(
+            index: 'h6Medium',
+            name: '&--h6medium',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-16)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-20)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h6Bold':(
+            index: 'h6Bold',
+            name: '&--h6bold',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-16)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-700)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-20)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h5Regular':(
+            index: 'h5Regular',
+            name: '&--h5regular',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-18)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-400)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-24)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h5Medium':(
+            index: 'h5Medium',
+            name: '&--h5medium',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-18)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-24)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h4':(
+            index: 'h4',
+            name: '&--h4',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-20)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-24)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h3':(
+            index: 'h3',
+            name: '&--h3',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-24)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-500)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-32)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h2':(
+            index: 'h2',
+            name: '&--h2',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-32)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-700)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-36)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+          'h1':(
+            index: 'h1',
+            name: '&--h1',
+            type: 'state',
+            value: (
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c1-ref-font-family-rubik)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c1-ref-font-size-40)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c1-ref-font-weight-700)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c1-ref-lineHeight-48)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c1-ref-letterSpacing-none)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'palette':(
+        index: 'palette',
+        name: 'c1-palette',
+        type: 'component',
+        value: (
+          'webText':(
+            index: 'webText',
+            name: '&--webText',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webText-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webText-50)',
+              ),
+            ),
+          ),
+          'webWhite':(
+            index: 'webWhite',
+            name: '&--webWhite',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webWhite-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webWhite-50)',
+              ),
+            ),
+          ),
+          'webAccent':(
+            index: 'webAccent',
+            name: '&--webAccent',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webAccent-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webAccent-50)',
+              ),
+            ),
+          ),
+          'webAccentWhite':(
+            index: 'webAccentWhite',
+            name: '&--webAccentWhite',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webAccentWhite-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webAccentWhite-50)',
+              ),
+            ),
+          ),
+          'webError':(
+            index: 'webError',
+            name: '&--webError',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webError-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webError-50)',
+              ),
+            ),
+          ),
+          'webGray1':(
+            index: 'webGray1',
+            name: '&--webGray1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray1-50)',
+              ),
+            ),
+          ),
+          'webGray2':(
+            index: 'webGray2',
+            name: '&--webGray2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray2-50)',
+              ),
+            ),
+          ),
+          'webGray3':(
+            index: 'webGray3',
+            name: '&--webGray3',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray3-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray3-50)',
+              ),
+            ),
+          ),
+          'webGray4':(
+            index: 'webGray4',
+            name: '&--webGray4',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray4-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGray4-50)',
+              ),
+            ),
+          ),
+          'webGlue1':(
+            index: 'webGlue1',
+            name: '&--webGlue1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue1-50)',
+              ),
+            ),
+          ),
+          'webGlue2':(
+            index: 'webGlue2',
+            name: '&--webGlue2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue2-50)',
+              ),
+            ),
+          ),
+          'webGlue3':(
+            index: 'webGlue3',
+            name: '&--webGlue3',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue3-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-webGlue3-50)',
+              ),
+            ),
+          ),
+          'text':(
+            index: 'text',
+            name: '&--text',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-text-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-text-50)',
+              ),
+            ),
+          ),
+          'white':(
+            index: 'white',
+            name: '&--white',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-white-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-white-50)',
+              ),
+            ),
+          ),
+          'accent':(
+            index: 'accent',
+            name: '&--accent',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-accent-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-accent-50)',
+              ),
+            ),
+          ),
+          'success':(
+            index: 'success',
+            name: '&--success',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-success-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-success-50)',
+              ),
+            ),
+          ),
+          'error':(
+            index: 'error',
+            name: '&--error',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-error-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-error-50)',
+              ),
+            ),
+          ),
+          'notification':(
+            index: 'notification',
+            name: '&--notification',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-notification-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-notification-50)',
+              ),
+            ),
+          ),
+          'ripple':(
+            index: 'ripple',
+            name: '&--ripple',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-ripple-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-ripple-50)',
+              ),
+            ),
+          ),
+          'background':(
+            index: 'background',
+            name: '&--background',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-background-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-background-50)',
+              ),
+            ),
+          ),
+          'backgroundImage':(
+            index: 'backgroundImage',
+            name: '&--backgroundImage',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundImage-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundImage-50)',
+              ),
+            ),
+          ),
+          'backgroundNotificationInfo':(
+            index: 'backgroundNotificationInfo',
+            name: '&--backgroundNotificationInfo',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundNotificationInfo-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundNotificationInfo-50)',
+              ),
+            ),
+          ),
+          'backgroundNotificationWarning':(
+            index: 'backgroundNotificationWarning',
+            name: '&--backgroundNotificationWarning',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundNotificationWarning-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundNotificationWarning-50)',
+              ),
+            ),
+          ),
+          'backgroundError':(
+            index: 'backgroundError',
+            name: '&--backgroundError',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundError-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-backgroundError-50)',
+              ),
+            ),
+          ),
+          'gray1':(
+            index: 'gray1',
+            name: '&--gray1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray1-50)',
+              ),
+            ),
+          ),
+          'gray2':(
+            index: 'gray2',
+            name: '&--gray2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray2-50)',
+              ),
+            ),
+          ),
+          'gray3':(
+            index: 'gray3',
+            name: '&--gray3',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray3-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray3-50)',
+              ),
+            ),
+          ),
+          'gray4':(
+            index: 'gray4',
+            name: '&--gray4',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray4-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-gray4-50)',
+              ),
+            ),
+          ),
+          'shading':(
+            index: 'shading',
+            name: '&--shading',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-shading-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-shading-50)',
+              ),
+            ),
+          ),
+          'green1':(
+            index: 'green1',
+            name: '&--green1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-green1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-green1-50)',
+              ),
+            ),
+          ),
+          'green2':(
+            index: 'green2',
+            name: '&--green2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-green2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-green2-50)',
+              ),
+            ),
+          ),
+          'yellow1':(
+            index: 'yellow1',
+            name: '&--yellow1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow1-50)',
+              ),
+            ),
+          ),
+          'yellow2':(
+            index: 'yellow2',
+            name: '&--yellow2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow2-50)',
+              ),
+            ),
+          ),
+          'yellow3':(
+            index: 'yellow3',
+            name: '&--yellow3',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow3-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-yellow3-50)',
+              ),
+            ),
+          ),
+          'blue1':(
+            index: 'blue1',
+            name: '&--blue1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-blue1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-blue1-50)',
+              ),
+            ),
+          ),
+          'extra1':(
+            index: 'extra1',
+            name: '&--extra1',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra1-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra1-50)',
+              ),
+            ),
+          ),
+          'extra2':(
+            index: 'extra2',
+            name: '&--extra2',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra2-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra2-50)',
+              ),
+            ),
+          ),
+          'extra3':(
+            index: 'extra3',
+            name: '&--extra3',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra3-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra3-50)',
+              ),
+            ),
+          ),
+          'extra4':(
+            index: 'extra4',
+            name: '&--extra4',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra4-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra4-50)',
+              ),
+            ),
+          ),
+          'extra5':(
+            index: 'extra5',
+            name: '&--extra5',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra5-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra5-50)',
+              ),
+            ),
+          ),
+          'extra6':(
+            index: 'extra6',
+            name: '&--extra6',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra6-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra6-50)',
+              ),
+            ),
+          ),
+          'extra7':(
+            index: 'extra7',
+            name: '&--extra7',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra7-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra7-50)',
+              ),
+            ),
+          ),
+          'extra8':(
+            index: 'extra8',
+            name: '&--extra8',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra8-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra8-50)',
+              ),
+            ),
+          ),
+          'extra9':(
+            index: 'extra9',
+            name: '&--extra9',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra9-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra9-50)',
+              ),
+            ),
+          ),
+          'extra10':(
+            index: 'extra10',
+            name: '&--extra10',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra10-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra10-50)',
+              ),
+            ),
+          ),
+          'extra11':(
+            index: 'extra11',
+            name: '&--extra11',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra11-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra11-50)',
+              ),
+            ),
+          ),
+          'extra12':(
+            index: 'extra12',
+            name: '&--extra12',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra12-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra12-50)',
+              ),
+            ),
+          ),
+          'extra13':(
+            index: 'extra13',
+            name: '&--extra13',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra13-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra13-50)',
+              ),
+            ),
+          ),
+          'extra14':(
+            index: 'extra14',
+            name: '&--extra14',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra14-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra14-50)',
+              ),
+            ),
+          ),
+          'extra15':(
+            index: 'extra15',
+            name: '&--extra15',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra15-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra15-50)',
+              ),
+            ),
+          ),
+          'extra16':(
+            index: 'extra16',
+            name: '&--extra16',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra16-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra16-50)',
+              ),
+            ),
+          ),
+          'extra17':(
+            index: 'extra17',
+            name: '&--extra17',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra17-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra17-50)',
+              ),
+            ),
+          ),
+          'extra18':(
+            index: 'extra18',
+            name: '&--extra18',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra18-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra18-50)',
+              ),
+            ),
+          ),
+          'extra19':(
+            index: 'extra19',
+            name: '&--extra19',
+            type: 'state',
+            value: (
+              'basic-50':(
+                index: 'basic-50',
+                name: '--c1-palette-basic-50',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra19-50)',
+              ),
+              'sys-palette':(
+                index: 'sys-palette',
+                name: '--sys-palette',
+                type: 'var',
+                value: 'var(--c1-ref-palette-extra19-50)',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'image':(
+        index: 'image',
+        name: 'c1-image',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+              'color':(
+                index: 'color',
+                name: '--c1-image-color',
+                type: 'var',
+                value: 'var(--c1-sys-palette-onDisabled)',
+              ),
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),);

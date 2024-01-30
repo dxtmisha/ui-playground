@@ -1,6 +1,7 @@
 $designsDesigns: (
   'd',
   'm3',
+  'c1',
   'c2',);
 $designsRoot: (
   'd.ref',
@@ -22453,6 +22454,2947 @@ $designsProperties: (
                     ),
                   ),
                 ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      'test':(
+        index: 'test',
+        name: 'c2-test',
+        type: 'component',
+        value: (
+          'gap':(
+            index: 'gap',
+            name: 'gap',
+            type: 'property',
+            value: 'unset',
+          ),
+          'padding':(
+            index: 'padding',
+            name: 'padding',
+            type: 'property',
+            value: 'var(--c2-st-global-distance-space-inset-xl)',
+          ),
+          'width':(
+            index: 'width',
+            name: 'width',
+            type: 'property',
+            value: 'auto',
+          ),
+          'focus':(
+            index: 'focus',
+            name: 'focus',
+            type: 'selector',
+            value: (
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'borderWidth':(
+                                index: 'borderWidth',
+                                name: 'border-width',
+                                type: 'property',
+                                value: 2px,
+                              ),
+                              'borderStyle':(
+                                index: 'borderStyle',
+                                name: 'border-style',
+                                type: 'property',
+                                value: 'solid',
+                              ),
+                              'borderColor':(
+                                index: 'borderColor',
+                                name: 'border-color',
+                                type: 'property',
+                                value: 'var(--c2-st-interaction-border-color-neutral-normal)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'yes':(
+                    index: 'yes',
+                    name: '&--yes',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'mixed':(
+                    index: 'mixed',
+                    name: '&--mixed',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&.c2-test--left',
+                type: 'state',
+                value: (
+                  'inputControls':(
+                    index: 'inputControls',
+                    name: '&--inputControls',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--c2-st-interaction-bg-color-ghost-focus)',
+                      ),
+                      'boxShadow':(
+                        index: 'boxShadow',
+                        name: 'box-shadow',
+                        type: 'property',
+                        value: 'var(--c2-st-elevation-onLight-focus-md)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'hover':(
+            index: 'hover',
+            name: 'hover',
+            type: 'selector',
+            value: (
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'borderWidth':(
+                                index: 'borderWidth',
+                                name: 'border-width',
+                                type: 'property',
+                                value: 2px,
+                              ),
+                              'borderStyle':(
+                                index: 'borderStyle',
+                                name: 'border-style',
+                                type: 'property',
+                                value: 'solid',
+                              ),
+                              'borderColor':(
+                                index: 'borderColor',
+                                name: 'border-color',
+                                type: 'property',
+                                value: 'var(--c2-st-interaction-border-color-neutral-hover)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'yes':(
+                    index: 'yes',
+                    name: '&--yes',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-hover)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'mixed':(
+                    index: 'mixed',
+                    name: '&--mixed',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-hover)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&.c2-test--left',
+                type: 'state',
+                value: (
+                  'inputControls':(
+                    index: 'inputControls',
+                    name: '&--inputControls',
+                    type: 'state',
+                    value: (
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'var(--c2-st-interaction-bg-color-ghost-hover)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: 'disabled',
+            type: 'selector',
+            value: (
+              'opacity':(
+                index: 'opacity',
+                name: 'opacity',
+                type: 'property',
+                value: 0.5,
+              ),
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'borderWidth':(
+                                index: 'borderWidth',
+                                name: 'border-width',
+                                type: 'property',
+                                value: 2px,
+                              ),
+                              'borderStyle':(
+                                index: 'borderStyle',
+                                name: 'border-style',
+                                type: 'property',
+                                value: 'solid',
+                              ),
+                              'borderColor':(
+                                index: 'borderColor',
+                                name: 'border-color',
+                                type: 'property',
+                                value: 'var(--c2-st-content-border-color-neutral-disable)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'yes':(
+                    index: 'yes',
+                    name: '&--yes',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'mixed':(
+                    index: 'mixed',
+                    name: '&--mixed',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'backgroundColor':(
+                                index: 'backgroundColor',
+                                name: 'background-color',
+                                type: 'property',
+                                value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                              ),
+                              'icon':(
+                                index: 'icon',
+                                name: '&--icon',
+                                type: 'state',
+                                value: (
+                                  'iconContainer':(
+                                    index: 'iconContainer',
+                                    name: '&--iconContainer',
+                                    type: 'state',
+                                    value: (
+                                      'iconColor':(
+                                        index: 'iconColor',
+                                        name: '&--iconColor',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'titleAndSubtitle':(
+                index: 'titleAndSubtitle',
+                name: '&.c2-test--titleAndSubtitle',
+                type: 'state',
+                value: (
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'var(--c2-st-content-fg-color-neutral-disable)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'focus':(
+                    index: 'focus',
+                    name: 'focus',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'hover':(
+                    index: 'hover',
+                    name: 'hover',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'disabled':(
+                    index: 'disabled',
+                    name: 'disabled',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'normal':(
+                    index: 'normal',
+                    name: '&.c2-test--normal',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'alert':(
+                    index: 'alert',
+                    name: '&.c2-test--alert',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'skeleton':(
+                    index: 'skeleton',
+                    name: '&.c2-test--skeleton',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'selectorContainer':(
+                                    index: 'selectorContainer',
+                                    name: '&--selectorContainer',
+                                    type: 'state',
+                                    value: (
+                                      'checkbox':(
+                                        index: 'checkbox',
+                                        name: '&--checkbox',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                      'radio':(
+                                        index: 'radio',
+                                        name: '&--radio',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'textContainer':(
+                                index: 'textContainer',
+                                name: '&--textContainer',
+                                type: 'state',
+                                value: (
+                                  'padding':(
+                                    index: 'padding',
+                                    name: 'padding',
+                                    type: 'property',
+                                    value: 'var(--c2-st-global-distance-space-inset-xl)0',
+                                  ),
+                                  'color':(
+                                    index: 'color',
+                                    name: 'color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-comp-color-disabled-normal)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-lg)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inset-lg)',
+                  ),
+                  'checked':(
+                    index: 'checked',
+                    name: 'checked',
+                    type: 'selector',
+                    value: (
+                      'yes':(
+                        index: 'yes',
+                        name: '&--yes',
+                        type: 'state',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&.c2-test--left',
+                            type: 'state',
+                            value: (
+                              'inputControls':(
+                                index: 'inputControls',
+                                name: '&--inputControls',
+                                type: 'state',
+                                value: (
+                                  'icon':(
+                                    index: 'icon',
+                                    name: '&--icon',
+                                    type: 'state',
+                                    value: (
+                                      'iconContainer':(
+                                        index: 'iconContainer',
+                                        name: '&--iconContainer',
+                                        type: 'state',
+                                        value: (
+                                          'iconColor':(
+                                            index: 'iconColor',
+                                            name: '&--iconColor',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-md)',
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-md)',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'mixed':(
+                        index: 'mixed',
+                        name: '&--mixed',
+                        type: 'state',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&.c2-test--left',
+                            type: 'state',
+                            value: (
+                              'inputControls':(
+                                index: 'inputControls',
+                                name: '&--inputControls',
+                                type: 'state',
+                                value: (
+                                  'icon':(
+                                    index: 'icon',
+                                    name: '&--icon',
+                                    type: 'state',
+                                    value: (
+                                      'iconContainer':(
+                                        index: 'iconContainer',
+                                        name: '&--iconContainer',
+                                        type: 'state',
+                                        value: (
+                                          'iconColor':(
+                                            index: 'iconColor',
+                                            name: '&--iconColor',
+                                            type: 'state',
+                                            value: (
+                                              'width':(
+                                                index: 'width',
+                                                name: 'width',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-md)',
+                                              ),
+                                              'height':(
+                                                index: 'height',
+                                                name: 'height',
+                                                type: 'property',
+                                                value: 'var(--c2-ct-selectable-icon-size-md)',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'focus':(
+                    index: 'focus',
+                    name: 'focus',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'yes':(
+                            index: 'yes',
+                            name: '&--yes',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'mixed':(
+                            index: 'mixed',
+                            name: '&--mixed',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'hover':(
+                    index: 'hover',
+                    name: 'hover',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'yes':(
+                            index: 'yes',
+                            name: '&--yes',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'mixed':(
+                            index: 'mixed',
+                            name: '&--mixed',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'disabled':(
+                    index: 'disabled',
+                    name: 'disabled',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'yes':(
+                            index: 'yes',
+                            name: '&--yes',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'mixed':(
+                            index: 'mixed',
+                            name: '&--mixed',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'icon':(
+                                        index: 'icon',
+                                        name: '&--icon',
+                                        type: 'state',
+                                        value: (
+                                          'iconContainer':(
+                                            index: 'iconContainer',
+                                            name: '&--iconContainer',
+                                            type: 'state',
+                                            value: (
+                                              'iconColor':(
+                                                index: 'iconColor',
+                                                name: '&--iconColor',
+                                                type: 'state',
+                                                value: (
+                                                  'width':(
+                                                    index: 'width',
+                                                    name: 'width',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                  'height':(
+                                                    index: 'height',
+                                                    name: 'height',
+                                                    type: 'property',
+                                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'normal':(
+                    index: 'normal',
+                    name: '&.c2-test--normal',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'alert':(
+                    index: 'alert',
+                    name: '&.c2-test--alert',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'titleAndSubtitle':(
+                    index: 'titleAndSubtitle',
+                    name: '&.c2-test--titleAndSubtitle',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: '10 0',
+                      ),
+                    ),
+                  ),
+                  'skeleton':(
+                    index: 'skeleton',
+                    name: '&.c2-test--skeleton',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'selectorContainer':(
+                                    index: 'selectorContainer',
+                                    name: '&--selectorContainer',
+                                    type: 'state',
+                                    value: (
+                                      'checkbox':(
+                                        index: 'checkbox',
+                                        name: '&--checkbox',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                      'radio':(
+                                        index: 'radio',
+                                        name: '&--radio',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'textContainer':(
+                                index: 'textContainer',
+                                name: '&--textContainer',
+                                type: 'state',
+                                value: (
+                                  'padding':(
+                                    index: 'padding',
+                                    name: 'padding',
+                                    type: 'property',
+                                    value: '10 0',
+                                  ),
+                                  'color':(
+                                    index: 'color',
+                                    name: 'color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-comp-color-disabled-normal)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inline-md)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 'var(--c2-st-global-distance-space-inset-lg)',
+                  ),
+                  'focus':(
+                    index: 'focus',
+                    name: 'focus',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'hover':(
+                    index: 'hover',
+                    name: 'hover',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'disabled':(
+                    index: 'disabled',
+                    name: 'disabled',
+                    type: 'selector',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'normal':(
+                    index: 'normal',
+                    name: '&.c2-test--normal',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'alert':(
+                    index: 'alert',
+                    name: '&.c2-test--alert',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'inputControls':(
+                                    index: 'inputControls',
+                                    name: '&--inputControls',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: '&.c2-test--left',
+                    type: 'state',
+                    value: (
+                      'inputControls':(
+                        index: 'inputControls',
+                        name: '&--inputControls',
+                        type: 'state',
+                        value: (
+                          'borderRadius':(
+                            index: 'borderRadius',
+                            name: 'border-radius',
+                            type: 'property',
+                            value: 'var(--c2-st-selectable-borderRadius-size-xs)',
+                          ),
+                          'icon':(
+                            index: 'icon',
+                            name: '&--icon',
+                            type: 'state',
+                            value: (
+                              'iconContainer':(
+                                index: 'iconContainer',
+                                name: '&--iconContainer',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: 'width',
+                                    type: 'property',
+                                    value: 16px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 16px,
+                                  ),
+                                  'iconColor':(
+                                    index: 'iconColor',
+                                    name: '&--iconColor',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 16px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 16px,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'titleAndSubtitle':(
+                    index: 'titleAndSubtitle',
+                    name: '&.c2-test--titleAndSubtitle',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: 'var(--c2-st-global-distance-space-inset-lg)0',
+                      ),
+                    ),
+                  ),
+                  'skeleton':(
+                    index: 'skeleton',
+                    name: '&.c2-test--skeleton',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'left':(
+                                index: 'left',
+                                name: '&.c2-test--left',
+                                type: 'state',
+                                value: (
+                                  'selectorContainer':(
+                                    index: 'selectorContainer',
+                                    name: '&--selectorContainer',
+                                    type: 'state',
+                                    value: (
+                                      'checkbox':(
+                                        index: 'checkbox',
+                                        name: '&--checkbox',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                      'radio':(
+                                        index: 'radio',
+                                        name: '&--radio',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: 'width',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              'textContainer':(
+                                index: 'textContainer',
+                                name: '&--textContainer',
+                                type: 'state',
+                                value: (
+                                  'padding':(
+                                    index: 'padding',
+                                    name: 'padding',
+                                    type: 'property',
+                                    value: 'var(--c2-st-global-distance-space-inset-lg)0',
+                                  ),
+                                  'color':(
+                                    index: 'color',
+                                    name: 'color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-comp-color-disabled-subtle-normal)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'title':(
+            index: 'title',
+            name: '&--title',
+            type: 'state',
+            value: (
+              'gap':(
+                index: 'gap',
+                name: 'gap',
+                type: 'property',
+                value: 'var(--c2-st-global-distance-space-inline-xl)',
+              ),
+              'padding':(
+                index: 'padding',
+                name: 'padding',
+                type: 'property',
+                value: '0 var(--c2-st-global-distance-space-inset-2xl)',
+              ),
+              'width':(
+                index: 'width',
+                name: 'width',
+                type: 'property',
+                value: 320,
+              ),
+              'skeleton':(
+                index: 'skeleton',
+                name: '&.c2-test--skeleton',
+                type: 'state',
+                value: (
+                  'checked':(
+                    index: 'checked',
+                    name: 'checked',
+                    type: 'selector',
+                    value: (
+                      'no':(
+                        index: 'no',
+                        name: '&--no',
+                        type: 'state',
+                        value: (
+                          'left':(
+                            index: 'left',
+                            name: '&.c2-test--left',
+                            type: 'state',
+                            value: (
+                              'padding':(
+                                index: 'padding',
+                                name: 'padding',
+                                type: 'property',
+                                value: 'var(--c2-st-global-distance-space-inset-none)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'subtitle':(
+                index: 'subtitle',
+                name: '&.c2-test--subtitle',
+                type: 'state',
+                value: (
+                  'skeleton':(
+                    index: 'skeleton',
+                    name: '&.c2-test--skeleton',
+                    type: 'state',
+                    value: (
+                      'checked':(
+                        index: 'checked',
+                        name: 'checked',
+                        type: 'selector',
+                        value: (
+                          'no':(
+                            index: 'no',
+                            name: '&--no',
+                            type: 'state',
+                            value: (
+                              'textContainer':(
+                                index: 'textContainer',
+                                name: '&--textContainer',
+                                type: 'state',
+                                value: (
+                                  'color':(
+                                    index: 'color',
+                                    name: 'color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-content-fg-color-neutral-disable)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'subtitle':(
+            index: 'subtitle',
+            name: '&--subtitle',
+            type: 'state',
+            value: (
+              'gap':(
+                index: 'gap',
+                name: 'gap',
+                type: 'property',
+                value: 'var(--c2-st-global-distance-space-inline-xl)',
+              ),
+              'padding':(
+                index: 'padding',
+                name: 'padding',
+                type: 'property',
+                value: '0 var(--c2-st-global-distance-space-inset-2xl)',
+              ),
+              'width':(
+                index: 'width',
+                name: 'width',
+                type: 'property',
+                value: 320,
+              ),
+            ),
+          ),
+          'normal':(
+            index: 'normal',
+            name: '&--normal',
+            type: 'state',
+            value: (
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'borderWidth':(
+                                index: 'borderWidth',
+                                name: 'border-width',
+                                type: 'property',
+                                value: 2px,
+                              ),
+                              'borderStyle':(
+                                index: 'borderStyle',
+                                name: 'border-style',
+                                type: 'property',
+                                value: 'solid',
+                              ),
+                              'borderColor':(
+                                index: 'borderColor',
+                                name: 'border-color',
+                                type: 'property',
+                                value: 'var(--c2-st-interaction-border-color-neutral-normal)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'alert':(
+            index: 'alert',
+            name: '&--alert',
+            type: 'state',
+            value: (
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'inputControls':(
+                            index: 'inputControls',
+                            name: '&--inputControls',
+                            type: 'state',
+                            value: (
+                              'borderWidth':(
+                                index: 'borderWidth',
+                                name: 'border-width',
+                                type: 'property',
+                                value: 2px,
+                              ),
+                              'borderStyle':(
+                                index: 'borderStyle',
+                                name: 'border-style',
+                                type: 'property',
+                                value: 'solid',
+                              ),
+                              'borderColor':(
+                                index: 'borderColor',
+                                name: 'border-color',
+                                type: 'property',
+                                value: 'var(--c2-st-interaction-border-color-negative-normal)',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'skeleton':(
+            index: 'skeleton',
+            name: '&--skeleton',
+            type: 'state',
+            value: (
+              'checked':(
+                index: 'checked',
+                name: 'checked',
+                type: 'selector',
+                value: (
+                  'no':(
+                    index: 'no',
+                    name: '&--no',
+                    type: 'state',
+                    value: (
+                      'opacity':(
+                        index: 'opacity',
+                        name: 'opacity',
+                        type: 'property',
+                        value: 0.5,
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--c2-comp-selectable-border-radius-xs)',
+                      ),
+                      'left':(
+                        index: 'left',
+                        name: '&.c2-test--left',
+                        type: 'state',
+                        value: (
+                          'selectorContainer':(
+                            index: 'selectorContainer',
+                            name: '&--selectorContainer',
+                            type: 'state',
+                            value: (
+                              'checkbox':(
+                                index: 'checkbox',
+                                name: '&--checkbox',
+                                type: 'state',
+                                value: (
+                                  'padding':(
+                                    index: 'padding',
+                                    name: 'padding',
+                                    type: 'property',
+                                    value: 'var(--c2-st-global-distance-space-inset-x)',
+                                  ),
+                                  'backgroundColor':(
+                                    index: 'backgroundColor',
+                                    name: 'background-color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-content-fg-color-neutral-disable)',
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-sm)',
+                                  ),
+                                ),
+                              ),
+                              'radio':(
+                                index: 'radio',
+                                name: '&--radio',
+                                type: 'state',
+                                value: (
+                                  'padding':(
+                                    index: 'padding',
+                                    name: 'padding',
+                                    type: 'property',
+                                    value: 'var(--c2-st-global-distance-space-inset-sm)',
+                                  ),
+                                  'backgroundColor':(
+                                    index: 'backgroundColor',
+                                    name: 'background-color',
+                                    type: 'property',
+                                    value: 'var(--c2-st-comp-color-disabled-normal)',
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'textContainer':(
+                        index: 'textContainer',
+                        name: '&--textContainer',
+                        type: 'state',
+                        value: (
+                          'font':(
+                            index: 'font',
+                            name: 'font',
+                            type: 'property',
+                            value: 'var(--c2-st-web-text-extras-skeleton-c2)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&.c2-test--left',
+                type: 'state',
+                value: (
+                  'inputControls':(
+                    index: 'inputControls',
+                    name: '&--inputControls',
+                    type: 'state',
+                    value: (
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: 0,
+                      ),
+                      'backgroundColor':(
+                        index: 'backgroundColor',
+                        name: 'background-color',
+                        type: 'property',
+                        value: 'transparent',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'unset',
+                      ),
+                      'icon':(
+                        index: 'icon',
+                        name: '&--icon',
+                        type: 'state',
+                        value: (
+                          'gap':(
+                            index: 'gap',
+                            name: 'gap',
+                            type: 'property',
+                            value: 'unset',
+                          ),
+                          'padding':(
+                            index: 'padding',
+                            name: 'padding',
+                            type: 'property',
+                            value: 0,
+                          ),
+                          'iconContainer':(
+                            index: 'iconContainer',
+                            name: '&--iconContainer',
+                            type: 'state',
+                            value: (
+                              'width':(
+                                index: 'width',
+                                name: 'width',
+                                type: 'property',
+                                value: 'auto',
+                              ),
+                              'height':(
+                                index: 'height',
+                                name: 'height',
+                                type: 'property',
+                                value: 'auto',
+                              ),
+                              'iconColor':(
+                                index: 'iconColor',
+                                name: '&--iconColor',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: 'width',
+                                    type: 'property',
+                                    value: 'auto',
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 'auto',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'titleAndSubtitle':(
+                index: 'titleAndSubtitle',
+                name: '&.c2-test--titleAndSubtitle',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'font':(
+                    index: 'font',
+                    name: 'font',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                  'color':(
+                    index: 'color',
+                    name: 'color',
+                    type: 'property',
+                    value: 'inherit',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'checked':(
+            index: 'checked',
+            name: '&--checked',
+            type: 'state',
+            value: (
+              'yes':(
+                index: 'yes',
+                name: '&--yes',
+                type: 'state',
+                value: (
+                  'left':(
+                    index: 'left',
+                    name: '&.c2-test--left',
+                    type: 'state',
+                    value: (
+                      'inputControls':(
+                        index: 'inputControls',
+                        name: '&--inputControls',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                          ),
+                          'icon':(
+                            index: 'icon',
+                            name: '&--icon',
+                            type: 'state',
+                            value: (
+                              'iconContainer':(
+                                index: 'iconContainer',
+                                name: '&--iconContainer',
+                                type: 'state',
+                                value: (
+                                  'iconColor':(
+                                    index: 'iconColor',
+                                    name: '&--iconColor',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 'var(--c2-ct-selectable-icon-size-md)',
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 'var(--c2-ct-selectable-icon-size-md)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'no':(
+                index: 'no',
+                name: '&--no',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'mixed':(
+                index: 'mixed',
+                name: '&--mixed',
+                type: 'state',
+                value: (
+                  'left':(
+                    index: 'left',
+                    name: '&.c2-test--left',
+                    type: 'state',
+                    value: (
+                      'inputControls':(
+                        index: 'inputControls',
+                        name: '&--inputControls',
+                        type: 'state',
+                        value: (
+                          'backgroundColor':(
+                            index: 'backgroundColor',
+                            name: 'background-color',
+                            type: 'property',
+                            value: 'var(--c2-st-action-bg-color-primary-solid-normal)',
+                          ),
+                          'icon':(
+                            index: 'icon',
+                            name: '&--icon',
+                            type: 'state',
+                            value: (
+                              'iconContainer':(
+                                index: 'iconContainer',
+                                name: '&--iconContainer',
+                                type: 'state',
+                                value: (
+                                  'iconColor':(
+                                    index: 'iconColor',
+                                    name: '&--iconColor',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: 'width',
+                                        type: 'property',
+                                        value: 'var(--c2-ct-selectable-icon-size-md)',
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 'var(--c2-ct-selectable-icon-size-md)',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'left':(
+            index: 'left',
+            name: '&--left',
+            type: 'state',
+            value: (
+              'inputControls':(
+                index: 'inputControls',
+                name: '&--inputControls',
+                type: 'state',
+                value: (
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 2px,
+                  ),
+                  'backgroundColor':(
+                    index: 'backgroundColor',
+                    name: 'background-color',
+                    type: 'property',
+                    value: 'var(--c2-st-interaction-bg-color-ghost-normal)',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--c2-st-selectable-borderRadius-size-sm)',
+                  ),
+                  'icon':(
+                    index: 'icon',
+                    name: '&--icon',
+                    type: 'state',
+                    value: (
+                      'gap':(
+                        index: 'gap',
+                        name: 'gap',
+                        type: 'property',
+                        value: 'var(--c2-base-space-selectable-input-inline-none)',
+                      ),
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: 'var(--c2-base-space-selectable-input-inset-none)',
+                      ),
+                      'width':(
+                        index: 'width',
+                        name: 'width',
+                        type: 'property',
+                        value: 20,
+                      ),
+                      'height':(
+                        index: 'height',
+                        name: 'height',
+                        type: 'property',
+                        value: 20,
+                      ),
+                      'iconContainer':(
+                        index: 'iconContainer',
+                        name: '&--iconContainer',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: 'width',
+                            type: 'property',
+                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                          ),
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                          ),
+                          'iconColor':(
+                            index: 'iconColor',
+                            name: '&--iconColor',
+                            type: 'state',
+                            value: (
+                              'width':(
+                                index: 'width',
+                                name: 'width',
+                                type: 'property',
+                                value: 20,
+                              ),
+                              'height':(
+                                index: 'height',
+                                name: 'height',
+                                type: 'property',
+                                value: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'titleAndSubtitle':(
+            index: 'titleAndSubtitle',
+            name: '&--titleAndSubtitle',
+            type: 'state',
+            value: (
+              'padding':(
+                index: 'padding',
+                name: 'padding',
+                type: 'property',
+                value: 'var(--c2-st-global-distance-space-inset-xl)0',
+              ),
+              'height':(
+                index: 'height',
+                name: 'height',
+                type: 'property',
+                value: 16px,
+              ),
+              'fontFamily':(
+                index: 'fontFamily',
+                name: 'font-family',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontFamily-base)',
+              ),
+              'fontSize':(
+                index: 'fontSize',
+                name: 'font-size',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontSize-size-enum-13)',
+              ),
+              'fontWeight':(
+                index: 'fontWeight',
+                name: 'font-weight',
+                type: 'property',
+                value: 'var(--c2-ot-typography-fontWeight-400)',
+              ),
+              'lineHeight':(
+                index: 'lineHeight',
+                name: 'line-height',
+                type: 'property',
+                value: 'var(--c2-ot-typography-lineHeight-100)',
+              ),
+              'letterSpacing':(
+                index: 'letterSpacing',
+                name: 'letter-spacing',
+                type: 'property',
+                value: 'var(--c2-ot-typography-tracking-sm)',
+              ),
+              'textCase':(
+                index: 'textCase',
+                name: 'text-case',
+                type: 'property',
+                value: 'var(--c2-ot-typography-textCase-none)',
+              ),
+              'textDecoration':(
+                index: 'textDecoration',
+                name: 'text-decoration',
+                type: 'property',
+                value: 'var(--c2-ot-typography-textDecoration-none)',
+              ),
+              'paragraphSpacing':(
+                index: 'paragraphSpacing',
+                name: 'paragraph-spacing',
+                type: 'property',
+                value: 'var(--c2-ot-typography-paragraphSpacing-size-scale-50)',
+              ),
+              'color':(
+                index: 'color',
+                name: 'color',
+                type: 'property',
+                value: 'var(--c2-st-content-fg-color-neutral-secondary)',
               ),
             ),
           ),

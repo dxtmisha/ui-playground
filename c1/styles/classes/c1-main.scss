@@ -1,0 +1,13 @@
+@import "styles/all";
+
+.c1-main {
+  font-family: var(--c1-ref-font-family-rubik);
+  @include fontSize(#{var(--c1-ref-font-size-16)});
+  font-weight: var(--c1-ref-font-weight-400);
+  @include lineHeight(#{var(--c1-ref-lineHeight-20)});
+  letter-spacing: var(--c1-ref-letterSpacing-none);
+  
+  @include color(#{var(--c1-sys-palette-onSurface)});
+  
+  background: var(--c1-ref-background-0);
+}

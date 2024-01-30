@@ -1,0 +1,9 @@
+{
+  "14": "{ref.spacing.px}*14",
+  "17": "{ref.spacing.px}*17",
+  "20": "{ref.spacing.px}*20",
+  "24": "{ref.spacing.px}*24",
+  "32": "{ref.spacing.px}*32",
+  "36": "{ref.spacing.px}*36",
+  "48": "{ref.spacing.px}*48"
+}
