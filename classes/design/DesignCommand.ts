@@ -7,6 +7,7 @@ import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
 import { Styles } from '../services/styles/Styles.ts'
 import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
 import { DesignComponent } from '../services/designs/DesignComponent.ts'
+import { DesignIcons } from './DesignIcons.ts'
 
 import { FILE_PROPERTY } from '../../types/property.ts'
 
@@ -71,6 +72,8 @@ export class DesignCommand {
     })
 
     designs.forEach(design => {
+      new DesignIcons(design.name).init()
+
       design.components.forEach(component => {
         const name = `${design.name}.${component}`
 

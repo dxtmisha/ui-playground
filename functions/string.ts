@@ -66,7 +66,7 @@ export function toCamelCase (value: string): string {
     .replace(/[^\w- ]+/g, '')
     .replace(/ +/g, '-')
     .replace(/(?<=[A-Z])([A-Z])/g, char => `${char.toLowerCase()}`)
-    .replace(/-([a-zA-Z])/g, (...char: string[]) => `${char[1].toUpperCase()}`)
+    .replace(/-+([a-zA-Z0-9])/g, (...char: string[]) => `${char[1].toUpperCase()}`)
     .replace(/^([A-Z])/, char => `${char.toLowerCase()}`)
 }
 

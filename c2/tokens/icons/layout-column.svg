@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="layout-column">
+<g id="icon">
+<path d="M5 20C3.89543 20 3 19.2041 3 18.2222L3 5.77778C3 4.79594 3.89543 4 5 4L8 4C9.10457 4 10 4.79594 10 5.77778L10 18.2222C10 19.2041 9.10457 20 8 20L5 20Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path d="M16 20C14.8954 20 14 19.2041 14 18.2222L14 5.77778C14 4.79594 14.8954 4 16 4L19 4C20.1046 4 21 4.79594 21 5.77778L21 18.2222C21 19.2041 20.1046 20 19 20L16 20Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
