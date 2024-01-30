@@ -1,0 +1,10 @@
+@import "../../styles/all";
+
+@mixin mixinImageToken {
+  // :style [!] System label / Системная метка
+  &--disabled {
+    --m2-image-color: var(--m2-sys-palette-onSurface);
+    --m2-image-colorOpacity: var(--m2-sys-opacity-surface-disabled);
+  }
+  // :style [!] System label / Системная метка
+}

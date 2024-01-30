@@ -1,0 +1,57 @@
+{
+  "ref": {
+    "value": {
+      "file|main": "tokens/ref.json",
+      "screen": {
+        "_category": "media"
+      },
+      "shade": {
+        "_category": "shade"
+      },
+      "palette": {
+        "_category": "palette",
+        "_default": "500"
+      }
+    },
+    "_type": "var",
+    "_category": "root"
+  },
+  "sys": {
+    "value": {
+      "file|main": "tokens/sys.json"
+    },
+    "_type": "var",
+    "_category": "root"
+  },
+  "dark": {
+    "value": {
+      "file|dark": "tokens/dark.json"
+    },
+    "_category": "theme"
+  },
+  "elevation": {
+    "value": {
+      "file|main": "tokens/elevation.json"
+    },
+    "_category": "class"
+  },
+  "grid": {
+    "value": {
+      "file|main": "tokens/grid.json"
+    },
+    "_category": "class"
+  },
+  "font": {
+    "value": {
+      "file|main": "tokens/font.json"
+    },
+    "_category": "class"
+  },
+  "main": {
+    "font": "{font.body1}",
+    "color": "{sys.palette.onSurface}",
+    "color-opacity": "{sys.opacity.surface.high}",
+    "background": "{ref.background.0}",
+    "_category": "class"
+  }
+}

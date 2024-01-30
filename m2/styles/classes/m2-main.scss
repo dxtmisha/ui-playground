@@ -1,0 +1,15 @@
+@import "styles/all";
+
+.m2-main {
+  font-family: var(--m2-ref-font-family-roboto);
+  @include fontSize(#{var(--m2-ref-font-size-lg)});
+  font-weight: var(--m2-ref-font-weight-normal);
+  @include lineHeight(#{var(--m2-ref-lineHeight-lg)});
+  letter-spacing: var(--m2-ref-letterSpacing-xl);
+  text-transform: none;
+  
+  @include color(#{var(--m2-sys-palette-onSurface)});
+  @include colorOpacity(#{var(--m2-sys-opacity-surface-high)});
+  
+  background: var(--m2-ref-background-0);
+}

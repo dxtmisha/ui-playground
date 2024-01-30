@@ -17,7 +17,7 @@ const meta = {
   component: C1Image,
   tags: ['autodocs'],
   parameters: {
-    design: 'm3',
+    design: 'c1',
     docs: {
       description: {
         component: 'Компонент для отображения графических материалов. ' +

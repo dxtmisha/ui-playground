@@ -1,5 +1,6 @@
 $designsDesigns: (
   'd',
+  'm2',
   'm3',
   'c1',
   'c2',);
@@ -9685,7 +9686,13 @@ $designsProperties: (
                 index: 'color',
                 name: '--m3-image-color',
                 type: 'var',
-                value: 'var(--m3-sys-palette-onDisabled)',
+                value: 'var(--m3-sys-palette-onSurface)',
+              ),
+              'colorOpacity':(
+                index: 'colorOpacity',
+                name: '--m3-image-colorOpacity',
+                type: 'var',
+                value: 'var(--m3-sys-opacity-disabled)',
               ),
             ),
           ),
