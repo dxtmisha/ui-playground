@@ -31,6 +31,16 @@ export class Icons {
   }
 
   /**
+   * Returns a list of names of all registered icons.<br>
+   * Возвращает список названий всех зарегистрированных иконок.
+   */
+  static getNameList (): string[] {
+    return forEach(this.icons, (_, name) => {
+      return name.replace(/^@/, '')
+    })
+  }
+
+  /**
    * Adding custom icons.<br>
    * Добавление пользовательских иконок.
    * @param index icon name /<br>название иконки

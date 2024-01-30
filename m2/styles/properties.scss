@@ -20,6 +20,7 @@ $designsClasses: (
   'm2.elevation',
   'm2.grid',
   'm2.font',
+  'm2.rounded',
   'm2.main',
   'm2.palette',);
 $designsPalette: (
@@ -7045,6 +7046,104 @@ $designsProperties: (
           ),
         ),
       ),
+      'rounded':(
+        index: 'rounded',
+        name: 'm2-rounded',
+        type: 'component',
+        value: (
+          'none':(
+            index: 'none',
+            name: '&--none',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-none)',
+              ),
+            ),
+          ),
+          'standard':(
+            index: 'standard',
+            name: '&--standard',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-standard)',
+              ),
+            ),
+          ),
+          'sm':(
+            index: 'sm',
+            name: '&--sm',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-sm)',
+              ),
+            ),
+          ),
+          'md':(
+            index: 'md',
+            name: '&--md',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-md)',
+              ),
+            ),
+          ),
+          'lg':(
+            index: 'lg',
+            name: '&--lg',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-lg)',
+              ),
+            ),
+          ),
+          'xl':(
+            index: 'xl',
+            name: '&--xl',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-xl)',
+              ),
+            ),
+          ),
+          'full':(
+            index: 'full',
+            name: '&--full',
+            type: 'state',
+            value: (
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m2-sys-rounded-full)',
+              ),
+            ),
+          ),
+        ),
+      ),
       'main':(
         index: 'main',
         name: 'm2-main',
@@ -8517,6 +8616,408 @@ $designsProperties: (
             name: '&--blackLight',
             type: 'state',
             value: (
+            ),
+          ),
+        ),
+      ),
+      'icon':(
+        index: 'icon',
+        name: 'm2-icon',
+        type: 'component',
+        value: (
+          'turn':(
+            index: 'turn',
+            name: '&--turn',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'disabled':(
+            index: 'disabled',
+            name: '&--disabled',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'hide':(
+            index: 'hide',
+            name: '&--hide',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'animationType':(
+            index: 'animationType',
+            name: '&--animationType',
+            type: 'state',
+            value: (
+              'type1':(
+                index: 'type1',
+                name: '&--type1',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'type2':(
+                index: 'type2',
+                name: '&--type2',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'animationShow':(
+            index: 'animationShow',
+            name: '&--animationShow',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'overlay':(
+            index: 'overlay',
+            name: '&--overlay',
+            type: 'state',
+            value: (
+              'backgroundOpacity':(
+                index: 'backgroundOpacity',
+                name: 'background-opacity',
+                type: 'property',
+                value: 'var(--m2-sys-opacity-overlay)',
+              ),
+            ),
+          ),
+          'dynamic':(
+            index: 'dynamic',
+            name: '&--dynamic',
+            type: 'state',
+            value: (
+              'focus':(
+                index: 'focus',
+                name: 'focus',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--m2-sys-opacity-focus)',
+                  ),
+                ),
+              ),
+              'hover':(
+                index: 'hover',
+                name: 'hover',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--m2-sys-opacity-hover)',
+                  ),
+                ),
+              ),
+              'active':(
+                index: 'active',
+                name: 'active',
+                type: 'selector',
+                value: (
+                  'gradientOpacity':(
+                    index: 'gradientOpacity',
+                    name: 'gradient-opacity',
+                    type: 'property',
+                    value: 'var(--m2-sys-opacity-pressed)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'start':(
+            index: 'start',
+            name: '&--start',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'end':(
+            index: 'end',
+            name: '&--end',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'high':(
+            index: 'high',
+            name: '&--high',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'rounded':(
+            index: 'rounded',
+            name: '&--rounded',
+            type: 'state',
+            value: (
+              'none':(
+                index: 'none',
+                name: '&--none',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-none)',
+                  ),
+                ),
+              ),
+              'standard':(
+                index: 'standard',
+                name: '&--standard',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-standard)',
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-sm)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-md)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-lg)',
+                  ),
+                ),
+              ),
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-xl)',
+                  ),
+                ),
+              ),
+              'full':(
+                index: 'full',
+                name: '&--full',
+                type: 'state',
+                value: (
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-full)',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              'xs':(
+                index: 'xs',
+                name: '&--xs',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m2-icon-width',
+                    type: 'var',
+                    value: 'var(--m2-ref-spacing-6)',
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m2-icon-width',
+                    type: 'var',
+                    value: 'var(--m2-ref-spacing-8)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m2-icon-width',
+                    type: 'var',
+                    value: 'var(--m2-ref-spacing-10)',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-full)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m2-icon-width',
+                    type: 'var',
+                    value: 'var(--m2-ref-spacing-14)',
+                  ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-family-roboto)',
+                  ),
+                  'fontSize':(
+                    index: 'fontSize',
+                    name: 'font-size',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-size-headline-6)',
+                  ),
+                  'fontWeight':(
+                    index: 'fontWeight',
+                    name: 'font-weight',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-weight-bold)',
+                  ),
+                  'lineHeight':(
+                    index: 'lineHeight',
+                    name: 'line-height',
+                    type: 'property',
+                    value: 'var(--m2-ref-lineHeight-headline-6)',
+                  ),
+                  'letterSpacing':(
+                    index: 'letterSpacing',
+                    name: 'letter-spacing',
+                    type: 'property',
+                    value: 'var(--m2-ref-letterSpacing-headline-6)',
+                  ),
+                  'textTransform':(
+                    index: 'textTransform',
+                    name: 'text-transform',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-sm)',
+                  ),
+                ),
+              ),
+              'xl':(
+                index: 'xl',
+                name: '&--xl',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m2-icon-width',
+                    type: 'var',
+                    value: 'calc(var(--m2-ref-spacing-px)*100)',
+                  ),
+                  'aspectRatioWidth':(
+                    index: 'aspectRatioWidth',
+                    name: 'aspect-ratio-width',
+                    type: 'property',
+                    value: '100/56',
+                  ),
+                  'fontFamily':(
+                    index: 'fontFamily',
+                    name: 'font-family',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-family-roboto)',
+                  ),
+                  'fontSize':(
+                    index: 'fontSize',
+                    name: 'font-size',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-size-headline-5)',
+                  ),
+                  'fontWeight':(
+                    index: 'fontWeight',
+                    name: 'font-weight',
+                    type: 'property',
+                    value: 'var(--m2-ref-font-weight-bold)',
+                  ),
+                  'lineHeight':(
+                    index: 'lineHeight',
+                    name: 'line-height',
+                    type: 'property',
+                    value: 'var(--m2-ref-lineHeight-headline-5)',
+                  ),
+                  'letterSpacing':(
+                    index: 'letterSpacing',
+                    name: 'letter-spacing',
+                    type: 'property',
+                    value: 'var(--m2-ref-letterSpacing-headline-5)',
+                  ),
+                  'textTransform':(
+                    index: 'textTransform',
+                    name: 'text-transform',
+                    type: 'property',
+                    value: 'none',
+                  ),
+                  'borderRadius':(
+                    index: 'borderRadius',
+                    name: 'border-radius',
+                    type: 'property',
+                    value: 'var(--m2-sys-rounded-none)',
+                  ),
+                ),
+              ),
             ),
           ),
         ),

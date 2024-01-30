@@ -1,3 +1,6 @@
 {
-  "main": "{d.image}"
+  "main": "{d.image}",
+  "disabled": {
+    "color": "{st.content.fg.color.neutral.disable}"
+  }
 }

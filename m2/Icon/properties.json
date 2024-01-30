@@ -11,32 +11,33 @@
       "width": "{ref.spacing.8}"
     },
     "md": {
-      "width": "{ref.spacing.10}"
+      "width": "{ref.spacing.10}",
+      "border-radius": "{rounded.full}"
     },
     "lg": {
       "width": "{ref.spacing.14}",
-      "font": "{font.titleLarge}",
-      "border-radius": "{rounded.none}"
+      "font": "{font.headline6}",
+      "border-radius": "{rounded.sm}"
     },
     "xl": {
-      "width": "{ref.spacing.28}",
-      "aspect-ratio-width": "28/16",
-      "font": "{font.headlineLarge}",
+      "width": "{ref.spacing.px}*100",
+      "aspect-ratio-width": "100/56",
+      "font": "{font.headline5}",
       "border-radius": "{rounded.none}"
     }
   },
   "overlay": {
-    "background-opacity": "{sys.opacity.016}"
+    "background-opacity": "{sys.opacity.overlay}"
   },
   "dynamic": {
     "hover": {
-      "gradient-opacity": "{sys.opacity.008}"
+      "gradient-opacity": "{sys.opacity.hover}"
     },
     "focus": {
-      "gradient-opacity": "{sys.opacity.016}"
+      "gradient-opacity": "{sys.opacity.focus}"
     },
     "active": {
-      "gradient-opacity": "{sys.opacity.012}"
+      "gradient-opacity": "{sys.opacity.pressed}"
     }
   }
 }

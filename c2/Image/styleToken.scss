@@ -3,7 +3,7 @@
 @mixin mixinImageToken {
   // :style [!] System label / Системная метка
   &--disabled {
-    --c2-image-colorOpacity: var(--c2-ot-opacity-50);
+    --c2-image-color: var(--c2-st-content-fg-color-neutral-disable);
   }
   // :style [!] System label / Системная метка
 }

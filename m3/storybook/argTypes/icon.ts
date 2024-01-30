@@ -14,26 +14,21 @@ export const iconArgs: StorybookArgs = {
     control: StorybookControl.boolean,
     table: {
       category: StorybookCategory.status,
-      defaultValue: { summary: 'false' },
       type: { summary: 'boolean' }
-    },
-    description: 'Animated transition to the active icon<br>' +
-      '<small>Анимированный переход на активную иконку</small>'
+    }
   },
   turn: imageArgs.turn,
   disabled: imageArgs.disabled,
   hide: imageArgs.hide,
   icon: {
     ...imageArgs.value,
-    description: 'The value of the icon or an object with all properties for the icon<br>' +
-      '<small>Значение иконки или объект со всеми свойствами для иконки</small>'
+    description: 'Icon for normal mode<br>' +
+      '<small>Иконка обычного режима</small>'
   },
   iconActive: {
     ...imageArgs.value,
-    description: 'The value of the active icon or an object with all properties for the active icon. ' +
-      'This icon is used when the \'active\' property is enabled<br>' +
-      '<small>Значение активной иконки или объект со всеми свойствами для активной иконки. ' +
-      'Эта иконка используется при включении свойства \'active\'.</small>'
+    description: 'Icon for active mode<br>' +
+      '<small>Иконка активного режима.</small>'
   },
 
   // Style
@@ -110,9 +105,7 @@ export const iconArgs: StorybookArgs = {
     table: {
       category: StorybookCategory.token,
       type: { summary: propsValues.size.join(' | ') }
-    },
-    description: 'Sets the size of the element<br>' +
-      '<small>Задает размер элемента</small>'
+    }
   },
   rounded: {
     control: StorybookControl.select,
@@ -120,14 +113,15 @@ export const iconArgs: StorybookArgs = {
     table: {
       category: StorybookCategory.token,
       type: { summary: propsValues.rounded.join(' | ') }
-    },
-    description: 'Sets the roundness of the element’s corners<br>' +
-      '<small>Задает закругленность углов элемента</small>'
+    }
   }
 }
 
 export const iconValues: StorybookArgsValue = {
   active: false,
-  icon: 'search',
-  iconActive: 'home'
+  turn: false,
+  disabled: false,
+  hide: false,
+  icon: 'visibility',
+  iconActive: 'visibility_off'
 }

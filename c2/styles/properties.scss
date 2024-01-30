@@ -20794,11 +20794,11 @@ $designsProperties: (
             name: '&--disabled',
             type: 'state',
             value: (
-              'colorOpacity':(
-                index: 'colorOpacity',
-                name: '--c2-image-colorOpacity',
+              'color':(
+                index: 'color',
+                name: '--c2-image-color',
                 type: 'var',
-                value: 'var(--c2-ot-opacity-50)',
+                value: 'var(--c2-st-content-fg-color-neutral-disable)',
               ),
             ),
           ),

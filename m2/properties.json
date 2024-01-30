@@ -47,6 +47,12 @@
     },
     "_category": "class"
   },
+  "rounded": {
+    "value": {
+      "file|rounded": "tokens/rounded.json"
+    },
+    "_category": "class"
+  },
   "main": {
     "font": "{font.body1}",
     "color": "{sys.palette.onSurface}",
