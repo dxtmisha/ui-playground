@@ -1,0 +1,318 @@
+{
+  "variation": {
+    "icon": {
+      "_type": "state",
+      "shape": {
+        "box": {
+          "size": {
+            "12": {
+              "color": {
+                "width": "12px",
+                "height": "12px"
+              }
+            },
+            "16": {
+              "color": {
+                "width": "16px",
+                "height": "16px"
+              }
+            },
+            "20": {
+              "color": {
+                "width": "{ct.selectable.icon.size.md}",
+                "height": "{ct.selectable.icon.size.md}"
+              }
+            },
+            "24": {
+              "color": {
+                "width": "{base.size.icons.lg}",
+                "height": "{base.size.icons.lg}"
+              }
+            },
+            "32": {
+              "color": {
+                "width": "32px",
+                "height": "32px"
+              }
+            }
+          }
+        }
+      }
+    },
+    "payment": {
+      "_type": "state",
+      "shape": {
+        "rect": {
+          "width": "36px",
+          "size": {
+            "16": {
+              "payment-mastercard": {
+                "width": "24px",
+                "height": "16px",
+                "padding": "3.533px 4.986px",
+                "border-radius": "4px",
+                "border-width": "1px",
+                "border-style": "solid",
+                "border-color": "{border.neutrals.muted}",
+                "background-color": "{white}",
+                "mastercard": {
+                  "width": "14.029px",
+                  "height": "8.933px",
+                  "left": {
+                    "width": "14.029px",
+                    "height": "8.933px"
+                  },
+                  "right": {
+                    "width": "7.014px",
+                    "height": "8.933px"
+                  },
+                  "middle": {
+                    "width": "2.99px",
+                    "height": "6.799px"
+                  }
+                }
+              }
+            },
+            "20": {
+              "width": "30",
+              "payment-mastercard": {
+                "width": "30",
+                "height": "20",
+                "padding": "4.417px 6.232px",
+                "border-radius": "4px",
+                "border-width": "1px",
+                "border-style": "solid",
+                "border-color": "{border.neutrals.muted}",
+                "background-color": "{white}",
+                "mastercard": {
+                  "width": "17.536px",
+                  "height": "11.167px",
+                  "left": {
+                    "width": "17.536px",
+                    "height": "11.167px"
+                  },
+                  "right": {
+                    "width": "8.768px",
+                    "height": "11.167px"
+                  },
+                  "middle": {
+                    "width": "3.737px",
+                    "height": "8.499px"
+                  }
+                }
+              }
+            },
+            "24": {
+              "payment-mastercard": {
+                "width": "36px",
+                "height": "24px",
+                "padding": "5.3px 7.478px 5.3px 7.479px",
+                "border-radius": "4px",
+                "border-width": "1px",
+                "border-style": "solid",
+                "border-color": "{border.neutrals.muted}",
+                "background-color": "{white}",
+                "mastercard": {
+                  "width": "21.043px",
+                  "height": "13.4px",
+                  "left": {
+                    "width": "21.043px",
+                    "height": "13.4px"
+                  },
+                  "right": {
+                    "width": "10.521px",
+                    "height": "13.4px"
+                  },
+                  "middle": {
+                    "width": "4.484px",
+                    "height": "10.199px"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "avatar": {
+      "_type": "state",
+      "shape": {
+        "circle": {
+          "size": {
+            "16": {
+              "width": "16px",
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            },
+            "20": {
+              "width": "{ct.selectable.icon.size.md}",
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            },
+            "24": {
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            }
+          }
+        }
+      }
+    },
+    "country": {
+      "_type": "state",
+      "shape": {
+        "circle": {
+          "padding": "0",
+          "gap": "unset",
+          "size": {
+            "16": {
+              "width": "16px",
+              "belarus-375-by-blr": {
+                "width": "24px",
+                "height": "16px",
+                "frame-312": {
+                  "width": "3.333px",
+                  "height": "16px"
+                }
+              },
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            },
+            "20": {
+              "width": "auto",
+              "belarus-375-by-blr": {
+                "width": "30",
+                "height": "20",
+                "frame-312": {
+                  "width": "4.167px",
+                  "height": "{ct.selectable.icon.size.md}"
+                }
+              },
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            },
+            "24": {
+              "belarus-375-by-blr": {
+                "width": "36px",
+                "height": "24px",
+                "frame-312": {
+                  "width": "5px",
+                  "height": "{base.size.icons.lg}"
+                }
+              },
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            },
+            "32": {
+              "width": "32px",
+              "height": "32px",
+              "belarus-375-by-blr": {
+                "width": "48px",
+                "height": "32px",
+                "frame-312": {
+                  "width": "6.667px",
+                  "height": "32px"
+                }
+              },
+              "border-radius": "{st.selectable.borderRadius.size.pill}"
+            }
+          }
+        },
+        "rect": {
+          "width": "36px",
+          "size": {
+            "16": {
+              "belarus-375-by-blr": {
+                "width": "24px",
+                "height": "16px",
+                "frame-312": {
+                  "width": "3.333px",
+                  "height": "16px"
+                }
+              }
+            },
+            "20": {
+              "width": "30",
+              "belarus-375-by-blr": {
+                "width": "30",
+                "height": "20",
+                "frame-312": {
+                  "width": "4.167px",
+                  "height": "{ct.selectable.icon.size.md}"
+                }
+              }
+            },
+            "24": {
+              "belarus-375-by-blr": {
+                "width": "36px",
+                "height": "24px",
+                "frame-312": {
+                  "width": "5px",
+                  "height": "{base.size.icons.lg}"
+                }
+              }
+            },
+            "32": {
+              "width": "48px",
+              "height": "32px",
+              "belarus-375-by-blr": {
+                "width": "48px",
+                "height": "32px",
+                "frame-312": {
+                  "width": "6.667px",
+                  "height": "32px"
+                }
+              }
+            }
+          }
+        }
+      },
+      "size": {
+        "32": {
+          "height": "32px"
+        }
+      }
+    },
+    "_type": "state",
+    "_default": "icon"
+  },
+  "shape": {
+    "rect": {
+      "_type": "state"
+    },
+    "circle": {
+      "_type": "state"
+    },
+    "box": {
+      "_type": "state"
+    },
+    "_type": "state",
+    "_default": "box"
+  },
+  "size": {
+    "12": {
+      "_type": "state",
+      "width": "12px",
+      "height": "12px"
+    },
+    "16": {
+      "_type": "state",
+      "width": "16px",
+      "height": "16px"
+    },
+    "20": {
+      "_type": "state",
+      "width": "{ct.selectable.icon.size.md}",
+      "height": "{ct.selectable.icon.size.md}"
+    },
+    "24": {
+      "_type": "state"
+    },
+    "32": {
+      "_type": "state",
+      "padding": "0",
+      "gap": "unset",
+      "width": "32px",
+      "height": "32px"
+    },
+    "_type": "state",
+    "_default": "24"
+  },
+  "padding": "{base.space.selectable.input.inset.none}",
+  "gap": "{base.space.selectable.input.inline.none}",
+  "width": "{base.size.icons.lg}",
+  "height": "{base.size.icons.lg}"
+}

@@ -1,0 +1,61 @@
+@import "../../styles/all";
+
+@mixin mixinIconToken {
+  // :style [!] System label / Системная метка
+  &--overlay {
+    @include backgroundColor(#{var(--c1-sys-palette-overlay)});
+  }
+  
+  &--rounded {
+    &--none {
+      border-radius: var(--c1-ref-rounded-0);
+    }
+    
+    &--standard {
+      border-radius: var(--c1-ref-rounded-1);
+    }
+    
+    &--sm {
+      border-radius: var(--c1-ref-rounded-1);
+    }
+    
+    &--md {
+      border-radius: var(--c1-ref-rounded-2);
+    }
+    
+    &--lg {
+      border-radius: var(--c1-sys-rounded-4);
+    }
+    
+    &--full {
+      border-radius: var(--c1-ref-rounded-full);
+    }
+  }
+  
+  &--size {
+    &--xs {
+      --c1-icon-width: var(--c1-ref-spacing-6);
+    }
+    
+    &--sm {
+      --c1-icon-width: var(--c1-ref-spacing-8);
+    }
+    
+    &--md {
+      --c1-icon-width: var(--c1-ref-spacing-10);
+    }
+    
+    &--lg {
+      --c1-icon-width: var(--c1-ref-spacing-16);
+      
+      font-family: var(--c1-ref-font-family-rubik);
+      @include fontSize(#{var(--c1-ref-font-size-20)});
+      font-weight: var(--c1-ref-font-weight-500);
+      @include lineHeight(#{var(--c1-ref-lineHeight-24)});
+      letter-spacing: var(--c1-ref-letterSpacing-none);
+      
+      border-radius: var(--c1-ref-rounded-full);
+    }
+  }
+  // :style [!] System label / Системная метка
+}

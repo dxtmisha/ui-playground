@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
+import { isFilled } from '../../functions/data.ts'
 import { inArray } from '../../functions/object.ts'
 
 import { IconDesign } from '../../constructors/Icon/IconDesign.ts'
 
-import C2Image from '../Image/C2Image.vue'
+import C1Image from '../Image/C1Image.vue'
 
 import {
   type ConstrClasses,
@@ -27,37 +27,39 @@ const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
+    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
-    'c2-icon': true,
-    'c2-icon--turn': props.turn,
-    'c2-icon--disabled': props.disabled,
-    'c2-icon--hide': props.hide,
-    [`c2-icon--animationType--${props.animationType}`]: inArray(propsValues.animationType, props.animationType),
-    'c2-icon--animationShow': props.animationShow,
-    'c2-icon--overlay': props.overlay,
-    'c2-icon--dynamic': props.dynamic,
-    'c2-icon--start': props.start,
-    'c2-icon--end': props.end,
-    'c2-icon--high': props.high,
-    [`c2-icon--variation--${props.variation}`]: inArray(propsValues.variation, props.variation),
-    [`c2-icon--shape--${props.shape}`]: inArray(propsValues.shape, props.shape),
-    [`c2-icon--size--${props.size}`]: inArray(propsValues.size, props.size)
+    'c1-icon': true,
+    'c1-icon--turn': props.turn,
+    'c1-icon--disabled': props.disabled,
+    'c1-icon--hide': props.hide,
+    [`c1-icon--animationType--${props.animationType}`]: inArray(propsValues.animationType, props.animationType),
+    'c1-icon--animationShow': props.animationShow,
+    'c1-icon--overlay': props.overlay,
+    'c1-icon--dynamic': props.dynamic,
+    'c1-icon--start': props.start,
+    'c1-icon--end': props.end,
+    'c1-icon--high': props.high,
+    [`c1-icon--rounded--${props.rounded}`]: inArray(propsValues.rounded, props.rounded),
+    [`c1-icon--size--${props.size}`]: inArray(propsValues.size, props.size)
     // :classes-values [!] System label / Системная метка
   }
+  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
+  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))
 
 const design = new IconDesign(
-  'c2.icon',
+  'c1.icon',
   props,
   {
-    components: {
-      image: C2Image
-    },
     emits,
+    components: {
+      image: C1Image
+    },
     classes: classesToken,
     styles: stylesToken
   }
@@ -74,9 +76,7 @@ defineExpose(design.expose())
 </script>
 
 <template>
-  <render>
-    <slot />
-  </render>
+  <render />
 </template>
 
 <style lang="scss">
@@ -85,7 +85,7 @@ defineExpose(design.expose())
 @import "../../constructors/Icon/style";
 @import "styleToken";
 
-@include initDesignBasic('c2.icon') {
+@include initDesignBasic('c1.icon') {
   // Basic styles for a component
   // Базовый стили для компонента
   @include mixinIcon;

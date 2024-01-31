@@ -22,13 +22,11 @@ export const iconArgs: StorybookArgs = {
   hide: imageArgs.hide,
   icon: {
     ...imageArgs.value,
-    description: 'Icon for normal mode<br>' +
-      '<small>Иконка обычного режима</small>'
+    description: 'Иконка обычного режима'
   },
   iconActive: {
     ...imageArgs.value,
-    description: 'Icon for active mode<br>' +
-      '<small>Иконка активного режима</small>'
+    description: 'Иконка активного режима'
   },
 
   // Style
@@ -40,8 +38,7 @@ export const iconArgs: StorybookArgs = {
       defaultValue: { summary: defaults.animationType },
       type: { summary: propsValues.animationType.join(' | ') }
     },
-    description: 'Type of animation when hiding an element<br>' +
-      '<small>Тип анимации при скрытии элемента</small>'
+    description: 'Тип анимации при скрытии элемента'
   },
   animationShow: {
     control: StorybookControl.boolean,
@@ -49,8 +46,7 @@ export const iconArgs: StorybookArgs = {
       category: StorybookCategory.style,
       type: { summary: 'boolean' }
     },
-    description: 'Animation of appearance after element loading<br>' +
-      '<small>Анимация появления после загрузки элемента</small>'
+    description: 'Анимация появления после загрузки элемента'
   },
   overlay: {
     control: StorybookControl.boolean,
@@ -58,17 +54,7 @@ export const iconArgs: StorybookArgs = {
       category: StorybookCategory.style,
       type: { summary: 'boolean' }
     },
-    description: 'Adding a background to the element<br>' +
-      '<small>Добавление фона к элементу</small>'
-  },
-  dynamic: {
-    control: StorybookControl.boolean,
-    table: {
-      category: StorybookCategory.style,
-      type: { summary: 'boolean' }
-    },
-    description: 'Adding a reaction to hover/active/focus events<br>' +
-      '<small>Добавление реакции на события hover/active/focus</small>'
+    description: 'Добавление фона к элементу'
   },
   start: {
     control: StorybookControl.boolean,
@@ -76,8 +62,7 @@ export const iconArgs: StorybookArgs = {
       category: StorybookCategory.style,
       type: { summary: 'boolean' }
     },
-    description: 'Adding sorting of the element at the beginning of the DOM node (order: 1)<br>' +
-      '<small>Добавление сортировки элемента в начале узла DOM (order: 1)</small>'
+    description: 'Добавление сортировки элемента в начале узла DOM (order: 1)'
   },
   end: {
     control: StorybookControl.boolean,
@@ -85,8 +70,7 @@ export const iconArgs: StorybookArgs = {
       category: StorybookCategory.style,
       type: { summary: 'boolean' }
     },
-    description: 'Adding sorting of the element at the end of the DOM node (order: 9999)<br>' +
-      '<small>Добавление сортировки элемента в конец узла DOM (order: 9999)</small>'
+    description: 'Добавление сортировки элемента в конец узла DOM (order: 9999)'
   },
   high: {
     control: StorybookControl.boolean,
@@ -94,8 +78,7 @@ export const iconArgs: StorybookArgs = {
       category: StorybookCategory.style,
       type: { summary: 'boolean' }
     },
-    description: 'Adding a highly positioned element (order: 16)<br>' +
-      '<small>Добавление высоко позиционированного элемента (z-index: 16)</small>'
+    description: 'Добавление высоко позиционированного элемента (z-index: 16)'
   },
 
   // Tokens
@@ -104,6 +87,7 @@ export const iconArgs: StorybookArgs = {
     options: propsValues.size,
     table: {
       category: StorybookCategory.token,
+      defaultValue: { summary: defaults?.size },
       type: { summary: propsValues.size.join(' | ') }
     }
   },
@@ -112,6 +96,7 @@ export const iconArgs: StorybookArgs = {
     options: propsValues.rounded,
     table: {
       category: StorybookCategory.token,
+      defaultValue: { summary: defaults?.rounded },
       type: { summary: propsValues.rounded.join(' | ') }
     }
   }

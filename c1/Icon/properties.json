@@ -1,0 +1,27 @@
+{
+  "main": "{d.icon}",
+  "rounded": {
+    "border-radius": "{rounded}",
+    "_default": "md"
+  },
+  "size": {
+    "xs": {
+      "width": "{ref.spacing.6}"
+    },
+    "sm": {
+      "width": "{ref.spacing.8}"
+    },
+    "md": {
+      "width": "{ref.spacing.10}"
+    },
+    "lg": {
+      "width": "{ref.spacing.16}",
+      "font": "{font.h4}",
+      "border-radius": "{rounded.full}"
+    },
+    "_default": "xs"
+  },
+  "overlay": {
+    "background-color": "{sys.palette.overlay}"
+  }
+}

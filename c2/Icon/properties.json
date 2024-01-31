@@ -1,3 +1,20 @@
 {
-  "main": "{d.icon}"
+  "main": "{d.icon}",
+  "aspect-ratio": "auto",
+  "variation": {
+    "icon": {
+      "shape": {
+        "box": {
+          "color": {
+            "_drag": "..",
+            "_settingClone": true
+          }
+        }
+      }
+    }
+  },
+  "payment-mastercard": {
+    "_remove": true,
+    "_settingClone": true
+  }
 }

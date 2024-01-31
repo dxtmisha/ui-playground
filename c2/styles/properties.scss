@@ -20691,6 +20691,36 @@ $designsProperties: (
         name: 'c2-icon',
         type: 'component',
         value: (
+          'width':(
+            index: 'width',
+            name: '--c2-icon-width',
+            type: 'var',
+            value: 'var(--c2-base-size-icons-lg)',
+          ),
+          'aspectRatio':(
+            index: 'aspectRatio',
+            name: 'aspect-ratio',
+            type: 'property',
+            value: 'auto',
+          ),
+          'gap':(
+            index: 'gap',
+            name: 'gap',
+            type: 'property',
+            value: 'var(--c2-base-space-selectable-input-inline-none)',
+          ),
+          'padding':(
+            index: 'padding',
+            name: 'padding',
+            type: 'property',
+            value: 'var(--c2-base-space-selectable-input-inset-none)',
+          ),
+          'height':(
+            index: 'height',
+            name: 'height',
+            type: 'property',
+            value: 'var(--c2-base-size-icons-lg)',
+          ),
           'turn':(
             index: 'turn',
             name: '&--turn',
@@ -20773,6 +20803,912 @@ $designsProperties: (
             name: '&--high',
             type: 'state',
             value: (
+            ),
+          ),
+          'variation':(
+            index: 'variation',
+            name: '&--variation',
+            type: 'state',
+            value: (
+              'icon':(
+                index: 'icon',
+                name: '&--icon',
+                type: 'state',
+                value: (
+                  'shape':(
+                    index: 'shape',
+                    name: '&.c2-icon--shape',
+                    type: 'state',
+                    value: (
+                      'box':(
+                        index: 'box',
+                        name: '&--box',
+                        type: 'state',
+                        value: (
+                          'size':(
+                            index: 'size',
+                            name: '&.c2-icon--size',
+                            type: 'state',
+                            value: (
+                              '12':(
+                                index: '12',
+                                name: '&--12',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 12px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 12px,
+                                  ),
+                                ),
+                              ),
+                              '16':(
+                                index: '16',
+                                name: '&--16',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 16px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 16px,
+                                  ),
+                                ),
+                              ),
+                              '20':(
+                                index: '20',
+                                name: '&--20',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                  ),
+                                ),
+                              ),
+                              '24':(
+                                index: '24',
+                                name: '&--24',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 'var(--c2-base-size-icons-lg)',
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 'var(--c2-base-size-icons-lg)',
+                                  ),
+                                ),
+                              ),
+                              '32':(
+                                index: '32',
+                                name: '&--32',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 32px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 32px,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'payment':(
+                index: 'payment',
+                name: '&--payment',
+                type: 'state',
+                value: (
+                  'shape':(
+                    index: 'shape',
+                    name: '&.c2-icon--shape',
+                    type: 'state',
+                    value: (
+                      'rect':(
+                        index: 'rect',
+                        name: '&--rect',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: '--c2-icon-width',
+                            type: 'var',
+                            value: 36px,
+                          ),
+                          'size':(
+                            index: 'size',
+                            name: '&.c2-icon--size',
+                            type: 'state',
+                            value: (
+                              '16':(
+                                index: '16',
+                                name: '&--16',
+                                type: 'state',
+                                value: (
+                                ),
+                              ),
+                              '20':(
+                                index: '20',
+                                name: '&--20',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 30,
+                                  ),
+                                ),
+                              ),
+                              '24':(
+                                index: '24',
+                                name: '&--24',
+                                type: 'state',
+                                value: (
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'avatar':(
+                index: 'avatar',
+                name: '&--avatar',
+                type: 'state',
+                value: (
+                  'shape':(
+                    index: 'shape',
+                    name: '&.c2-icon--shape',
+                    type: 'state',
+                    value: (
+                      'circle':(
+                        index: 'circle',
+                        name: '&--circle',
+                        type: 'state',
+                        value: (
+                          'size':(
+                            index: 'size',
+                            name: '&.c2-icon--size',
+                            type: 'state',
+                            value: (
+                              '16':(
+                                index: '16',
+                                name: '&--16',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 16px,
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                ),
+                              ),
+                              '20':(
+                                index: '20',
+                                name: '&--20',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                ),
+                              ),
+                              '24':(
+                                index: '24',
+                                name: '&--24',
+                                type: 'state',
+                                value: (
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'country':(
+                index: 'country',
+                name: '&--country',
+                type: 'state',
+                value: (
+                  'shape':(
+                    index: 'shape',
+                    name: '&.c2-icon--shape',
+                    type: 'state',
+                    value: (
+                      'circle':(
+                        index: 'circle',
+                        name: '&--circle',
+                        type: 'state',
+                        value: (
+                          'gap':(
+                            index: 'gap',
+                            name: 'gap',
+                            type: 'property',
+                            value: 'unset',
+                          ),
+                          'padding':(
+                            index: 'padding',
+                            name: 'padding',
+                            type: 'property',
+                            value: 0,
+                          ),
+                          'size':(
+                            index: 'size',
+                            name: '&.c2-icon--size',
+                            type: 'state',
+                            value: (
+                              '16':(
+                                index: '16',
+                                name: '&--16',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 16px,
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 16px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 3.333px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 16px,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '20':(
+                                index: '20',
+                                name: '&--20',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 'auto',
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 30,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 4.167px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '24':(
+                                index: '24',
+                                name: '&--24',
+                                type: 'state',
+                                value: (
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 36px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 5px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '32':(
+                                index: '32',
+                                name: '&--32',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 32px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 32px,
+                                  ),
+                                  'borderRadius':(
+                                    index: 'borderRadius',
+                                    name: 'border-radius',
+                                    type: 'property',
+                                    value: 'var(--c2-st-selectable-borderRadius-size-pill)',
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 48px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 32px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 6.667px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 32px,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      'rect':(
+                        index: 'rect',
+                        name: '&--rect',
+                        type: 'state',
+                        value: (
+                          'width':(
+                            index: 'width',
+                            name: '--c2-icon-width',
+                            type: 'var',
+                            value: 36px,
+                          ),
+                          'size':(
+                            index: 'size',
+                            name: '&.c2-icon--size',
+                            type: 'state',
+                            value: (
+                              '16':(
+                                index: '16',
+                                name: '&--16',
+                                type: 'state',
+                                value: (
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 24px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 16px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 3.333px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 16px,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '20':(
+                                index: '20',
+                                name: '&--20',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 30,
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 30,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 20,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 4.167px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-ct-selectable-icon-size-md)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '24':(
+                                index: '24',
+                                name: '&--24',
+                                type: 'state',
+                                value: (
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 36px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 24px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 5px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 'var(--c2-base-size-icons-lg)',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              '32':(
+                                index: '32',
+                                name: '&--32',
+                                type: 'state',
+                                value: (
+                                  'width':(
+                                    index: 'width',
+                                    name: '--c2-icon-width',
+                                    type: 'var',
+                                    value: 48px,
+                                  ),
+                                  'height':(
+                                    index: 'height',
+                                    name: 'height',
+                                    type: 'property',
+                                    value: 32px,
+                                  ),
+                                  'belarus375ByBlr':(
+                                    index: 'belarus375ByBlr',
+                                    name: '&--belarus375byBlr',
+                                    type: 'state',
+                                    value: (
+                                      'width':(
+                                        index: 'width',
+                                        name: '--c2-icon-width',
+                                        type: 'var',
+                                        value: 48px,
+                                      ),
+                                      'height':(
+                                        index: 'height',
+                                        name: 'height',
+                                        type: 'property',
+                                        value: 32px,
+                                      ),
+                                      'frame312':(
+                                        index: 'frame312',
+                                        name: '&--frame312',
+                                        type: 'state',
+                                        value: (
+                                          'width':(
+                                            index: 'width',
+                                            name: '--c2-icon-width',
+                                            type: 'var',
+                                            value: 6.667px,
+                                          ),
+                                          'height':(
+                                            index: 'height',
+                                            name: 'height',
+                                            type: 'property',
+                                            value: 32px,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'size':(
+                    index: 'size',
+                    name: '&.c2-icon--size',
+                    type: 'state',
+                    value: (
+                      '32':(
+                        index: '32',
+                        name: '&--32',
+                        type: 'state',
+                        value: (
+                          'height':(
+                            index: 'height',
+                            name: 'height',
+                            type: 'property',
+                            value: 32px,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'shape':(
+            index: 'shape',
+            name: '&--shape',
+            type: 'state',
+            value: (
+              'rect':(
+                index: 'rect',
+                name: '&--rect',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'circle':(
+                index: 'circle',
+                name: '&--circle',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'box':(
+                index: 'box',
+                name: '&--box',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'size':(
+            index: 'size',
+            name: '&--size',
+            type: 'state',
+            value: (
+              '12':(
+                index: '12',
+                name: '&--12',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--c2-icon-width',
+                    type: 'var',
+                    value: 12px,
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 12px,
+                  ),
+                ),
+              ),
+              '16':(
+                index: '16',
+                name: '&--16',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--c2-icon-width',
+                    type: 'var',
+                    value: 16px,
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 16px,
+                  ),
+                ),
+              ),
+              '20':(
+                index: '20',
+                name: '&--20',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--c2-icon-width',
+                    type: 'var',
+                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 'var(--c2-ct-selectable-icon-size-md)',
+                  ),
+                ),
+              ),
+              '24':(
+                index: '24',
+                name: '&--24',
+                type: 'state',
+                value: (
+                ),
+              ),
+              '32':(
+                index: '32',
+                name: '&--32',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--c2-icon-width',
+                    type: 'var',
+                    value: 32px,
+                  ),
+                  'gap':(
+                    index: 'gap',
+                    name: 'gap',
+                    type: 'property',
+                    value: 'unset',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'height':(
+                    index: 'height',
+                    name: 'height',
+                    type: 'property',
+                    value: 32px,
+                  ),
+                ),
+              ),
             ),
           ),
         ),

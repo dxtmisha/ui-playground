@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import M3Icon from '../Icon/M3Icon.vue'
+import C1Icon from '../Icon/C1Icon.vue'
 
 import {
   iconArgs,
@@ -8,22 +8,21 @@ import {
 } from './argTypes/icon.ts'
 
 const meta = {
-  title: 'M3/Icon',
-  component: M3Icon,
+  title: 'C1/Icon',
+  component: C1Icon,
   tags: ['autodocs'],
   parameters: {
-    design: 'm3',
+    design: 'c1',
     docs: {
       description: {
         component:
-          'Component for working with icons and avatars.<br>' +
-          '<small>Компонент для работы с иконками и аватарами.</small>'
+          'Компонент для работы с иконками и аватарами.'
       }
     }
   },
   argTypes: iconArgs,
   args: iconValues
-} satisfies Meta<typeof M3Icon>
+} satisfies Meta<typeof C1Icon>
 
 export default meta
 

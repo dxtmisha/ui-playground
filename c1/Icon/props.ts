@@ -1,4 +1,4 @@
-import { type PropType } from 'vue'
+// import { type PropType } from 'vue'
 
 import {
   IconProps,
@@ -9,9 +9,8 @@ import {
 export const propsValues = {
   // :values [!] System label / Системная метка
   animationType: ['type1', 'type2'],
-  variation: ['icon', 'payment', 'avatar', 'country'],
-  shape: ['rect', 'circle', 'box'],
-  size: ['12', '16', '20', '24', '32']
+  rounded: ['none', 'standard', 'sm', 'md', 'lg', 'full'],
+  size: ['xs', 'sm', 'md', 'lg']
   // :values [!] System label / Системная метка
 }
 
@@ -30,9 +29,8 @@ export type PropsToken = {
   start?: boolean
   end?: boolean
   high?: boolean
-  variation?: 'icon' | 'payment' | 'avatar' | 'country'
-  shape?: 'rect' | 'circle' | 'box'
-  size?: '12' | '16' | '20' | '24' | '32'
+  rounded?: 'none' | 'standard' | 'sm' | 'md' | 'lg' | 'full'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
   // :type [!] System label / Системная метка
 }
 
@@ -51,9 +49,8 @@ export const defaults: Props = {
   ...{
     // :default [!] System label / Системная метка
     animationType: 'type1',
-    variation: 'icon',
-    shape: 'box',
-    size: '24'
+    rounded: 'md',
+    size: 'xs'
     // :default [!] System label / Системная метка
   }
 }
@@ -77,13 +74,9 @@ export const propsInstruction = {
     start: Boolean,
     end: Boolean,
     high: Boolean,
-    variation: {
-      type: String as PropType<PropsToken['variation']>,
-      default: defaults?.variation
-    },
-    shape: {
-      type: String as PropType<PropsToken['shape']>,
-      default: defaults?.shape
+    rounded: {
+      type: String as PropType<PropsToken['rounded']>,
+      default: defaults?.rounded
     },
     size: {
       type: String as PropType<PropsToken['size']>,

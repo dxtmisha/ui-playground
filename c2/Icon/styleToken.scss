@@ -2,5 +2,280 @@
 
 @mixin mixinIconToken {
   // :style [!] System label / Системная метка
+  --c2-icon-width: var(--c2-base-size-icons-lg);
+  
+  @include aspectRatio(#{auto});
+  
+  gap: var(--c2-base-space-selectable-input-inline-none);
+  
+  padding: var(--c2-base-space-selectable-input-inset-none);
+  
+  @include height(#{var(--c2-base-size-icons-lg)});
+  
+  &--variation {
+    &--icon {
+      &.c2-icon--shape {
+        &--box {
+          &.c2-icon--size {
+            &--12 {
+              --c2-icon-width: 12px;
+              
+              @include height(#{12px});
+            }
+            
+            &--16 {
+              --c2-icon-width: 16px;
+              
+              @include height(#{16px});
+            }
+            
+            &--20 {
+              --c2-icon-width: var(--c2-ct-selectable-icon-size-md);
+              
+              @include height(#{var(--c2-ct-selectable-icon-size-md)});
+            }
+            
+            &--24 {
+              --c2-icon-width: var(--c2-base-size-icons-lg);
+              
+              @include height(#{var(--c2-base-size-icons-lg)});
+            }
+            
+            &--32 {
+              --c2-icon-width: 32px;
+              
+              @include height(#{32px});
+            }
+          }
+        }
+      }
+    }
+    
+    &--payment {
+      &.c2-icon--shape {
+        &--rect {
+          --c2-icon-width: 36px;
+          
+          &.c2-icon--size {
+            &--20 {
+              --c2-icon-width: 30;
+            }
+          }
+        }
+      }
+    }
+    
+    &--avatar {
+      &.c2-icon--shape {
+        &--circle {
+          &.c2-icon--size {
+            &--16 {
+              --c2-icon-width: 16px;
+              
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+            }
+            
+            &--20 {
+              --c2-icon-width: var(--c2-ct-selectable-icon-size-md);
+              
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+            }
+            
+            &--24 {
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+            }
+          }
+        }
+      }
+    }
+    
+    &--country {
+      &.c2-icon--shape {
+        &--circle {
+          gap: unset;
+          
+          padding: 0;
+          
+          &.c2-icon--size {
+            &--16 {
+              --c2-icon-width: 16px;
+              
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 24px;
+                
+                @include height(#{16px});
+                
+                &--frame312 {
+                  --c2-icon-width: 3.333px;
+                  
+                  @include height(#{16px});
+                }
+              }
+            }
+            
+            &--20 {
+              --c2-icon-width: auto;
+              
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 30;
+                
+                @include height(#{20});
+                
+                &--frame312 {
+                  --c2-icon-width: 4.167px;
+                  
+                  @include height(#{var(--c2-ct-selectable-icon-size-md)});
+                }
+              }
+            }
+            
+            &--24 {
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 36px;
+                
+                @include height(#{24px});
+                
+                &--frame312 {
+                  --c2-icon-width: 5px;
+                  
+                  @include height(#{var(--c2-base-size-icons-lg)});
+                }
+              }
+            }
+            
+            &--32 {
+              --c2-icon-width: 32px;
+              
+              @include height(#{32px});
+              
+              border-radius: var(--c2-st-selectable-borderRadius-size-pill);
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 48px;
+                
+                @include height(#{32px});
+                
+                &--frame312 {
+                  --c2-icon-width: 6.667px;
+                  
+                  @include height(#{32px});
+                }
+              }
+            }
+          }
+        }
+        
+        &--rect {
+          --c2-icon-width: 36px;
+          
+          &.c2-icon--size {
+            &--16 {
+              &--belarus375byBlr {
+                --c2-icon-width: 24px;
+                
+                @include height(#{16px});
+                
+                &--frame312 {
+                  --c2-icon-width: 3.333px;
+                  
+                  @include height(#{16px});
+                }
+              }
+            }
+            
+            &--20 {
+              --c2-icon-width: 30;
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 30;
+                
+                @include height(#{20});
+                
+                &--frame312 {
+                  --c2-icon-width: 4.167px;
+                  
+                  @include height(#{var(--c2-ct-selectable-icon-size-md)});
+                }
+              }
+            }
+            
+            &--24 {
+              &--belarus375byBlr {
+                --c2-icon-width: 36px;
+                
+                @include height(#{24px});
+                
+                &--frame312 {
+                  --c2-icon-width: 5px;
+                  
+                  @include height(#{var(--c2-base-size-icons-lg)});
+                }
+              }
+            }
+            
+            &--32 {
+              --c2-icon-width: 48px;
+              
+              @include height(#{32px});
+              
+              &--belarus375byBlr {
+                --c2-icon-width: 48px;
+                
+                @include height(#{32px});
+                
+                &--frame312 {
+                  --c2-icon-width: 6.667px;
+                  
+                  @include height(#{32px});
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      &.c2-icon--size {
+        &--32 {
+          @include height(#{32px});
+        }
+      }
+    }
+  }
+  
+  &--size {
+    &--12 {
+      --c2-icon-width: 12px;
+      
+      @include height(#{12px});
+    }
+    
+    &--16 {
+      --c2-icon-width: 16px;
+      
+      @include height(#{16px});
+    }
+    
+    &--20 {
+      --c2-icon-width: var(--c2-ct-selectable-icon-size-md);
+      
+      @include height(#{var(--c2-ct-selectable-icon-size-md)});
+    }
+    
+    &--32 {
+      --c2-icon-width: 32px;
+      
+      gap: unset;
+      
+      padding: 0;
+      
+      @include height(#{32px});
+    }
+  }
   // :style [!] System label / Системная метка
 }

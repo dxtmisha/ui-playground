@@ -111,6 +111,15 @@
   --c1-ref-palette-extra17-50: #{toColorRbg(#d4a685)};
   --c1-ref-palette-extra18-50: #{toColorRbg(#5a7690)};
   --c1-ref-palette-extra19-50: #{toColorRbg(#36598e)};
+  --c1-ref-rounded-0: 0;
+  --c1-ref-rounded-1: var(--c1-ref-spacing-1);
+  --c1-ref-rounded-2: var(--c1-ref-spacing-2);
+  --c1-ref-rounded-4: var(--c1-ref-spacing-4);
+  --c1-ref-rounded-6: var(--c1-ref-spacing-6);
+  --c1-ref-rounded-8: var(--c1-ref-spacing-8);
+  --c1-ref-rounded-12: var(--c1-ref-spacing-12);
+  --c1-ref-rounded-16: var(--c1-ref-spacing-16);
+  --c1-ref-rounded-full: var(--c1-ref-spacing-128);
   --c1-ref-screen-sm: 640px;
   --c1-ref-screen-md: 768px;
   --c1-ref-screen-lg: 1024px;
@@ -159,4 +168,5 @@
   --c1-ref-spacing-px: calc(var(--c1-ref-spacing-1)/4);
   --c1-sys-palette-onSurface: var(--c1-ref-palette-webText-50);
   --c1-sys-palette-onDisabled: var(--c1-ref-palette-webGray3-50);
+  --c1-sys-palette-overlay: var(--c1-ref-palette-backgroundImage-50);
 }

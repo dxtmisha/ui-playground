@@ -16,10 +16,8 @@ const meta = {
     docs: {
       description: {
         component:
-          'A basic component that extends the Image component, ' +
-          'adding the ability to work with two icons and transition between them.<br>' +
-          '<small>Базовый компонент, который расширяет компонент Image, ' +
-          'добавляя ему возможность работы с двумя иконками и переходом между ними.</small>'
+          'Component for working with icons and avatars.<br>' +
+          '<small>Компонент для работы с иконками и аватарами.</small>'
       }
     }
   },

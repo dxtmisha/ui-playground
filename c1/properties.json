@@ -42,5 +42,11 @@
       "file|font": "tokens/font.json"
     },
     "_category": "class"
+  },
+  "rounded": {
+    "value": {
+      "file|rounded": "tokens/rounded.json"
+    },
+    "_category": "class"
   }
 }
