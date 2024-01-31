@@ -16,5 +16,5 @@ export type StorybookArgsItem = {
   },
   description?: string
 }
-export type StorybookArgs = Record<string, StorybookArgsItem>
+export type StorybookArgs = Record<string, StorybookArgsItem | undefined>
 export type StorybookArgsValue = Record<string, any>

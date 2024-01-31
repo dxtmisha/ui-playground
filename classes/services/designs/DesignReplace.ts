@@ -187,7 +187,11 @@ export class DesignReplace {
         !this.initMarkAddValue(mark, name, types) &&
         !this.isNoMark(mark, name)
       ) {
-        templates.push(`${name}?: ${types}`)
+        const typesString = !constructor && !types.match(/string|boolean/) && types.match(/'/)
+          ? `string | ${types}`
+          : types
+
+        templates.push(`${name}?: ${typesString}`)
       }
     })
 

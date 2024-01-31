@@ -8,14 +8,7 @@
   
   padding: var(--c2-st-global-distance-space-inset-2xl);
   
-  font-family: var(--c2-ot-typography-fontFamily-base);
-  @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
-  font-weight: var(--c2-ot-typography-fontWeight-500);
-  @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-  letter-spacing: var(--c2-ot-typography-tracking-lg);
-  @include textCase(#{var(--c2-ot-typography-textCase-none)});
-  text-decoration: var(--c2-ot-typography-textDecoration-none);
-  @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+  font: var(--c2-st-web-text-body-b1medium);
   
   @include paletteColor(#{var(--c2-st-action-fg-color-primary-normal)});
   
@@ -58,14 +51,7 @@
       
       padding: var(--c2-st-global-distance-space-inset-xl);
       
-      font-family: var(--c2-ot-typography-fontFamily-base);
-      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
-      font-weight: var(--c2-ot-typography-fontWeight-500);
-      @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-      letter-spacing: var(--c2-ot-typography-tracking-base);
-      @include textCase(#{var(--c2-ot-typography-textCase-none)});
-      text-decoration: var(--c2-ot-typography-textDecoration-none);
-      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+      font: var(--c2-st-web-text-body-b2medium);
       
       border-radius: var(--c2-st-selectable-borderRadius-size-lg);
     }
@@ -75,14 +61,7 @@
       
       padding: var(--c2-st-global-distance-space-inset-lg);
       
-      font-family: var(--c2-ot-typography-fontFamily-base);
-      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
-      font-weight: var(--c2-ot-typography-fontWeight-500);
-      @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-      letter-spacing: var(--c2-ot-typography-tracking-base);
-      @include textCase(#{var(--c2-ot-typography-textCase-none)});
-      text-decoration: var(--c2-ot-typography-textDecoration-none);
-      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+      font: var(--c2-st-web-text-body-b2medium);
       
       border-radius: var(--c2-st-selectable-borderRadius-size-md);
     }
@@ -92,14 +71,7 @@
       
       padding: var(--c2-st-global-distance-space-inset-lg);
       
-      font-family: var(--c2-ot-typography-fontFamily-base);
-      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-      font-weight: var(--c2-ot-typography-fontWeight-500);
-      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-      letter-spacing: var(--c2-ot-typography-tracking-md);
-      @include textCase(#{var(--c2-ot-typography-textCase-none)});
-      text-decoration: var(--c2-ot-typography-textDecoration-none);
-      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+      font: var(--c2-st-web-text-caption-c1medium);
       
       border-radius: var(--c2-st-selectable-borderRadius-size-sm);
     }
@@ -109,14 +81,7 @@
       
       padding: var(--c2-st-global-distance-space-inset-md);
       
-      font-family: var(--c2-ot-typography-fontFamily-base);
-      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-      font-weight: var(--c2-ot-typography-fontWeight-500);
-      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-      letter-spacing: var(--c2-ot-typography-tracking-md);
-      @include textCase(#{var(--c2-ot-typography-textCase-none)});
-      text-decoration: var(--c2-ot-typography-textDecoration-none);
-      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+      font: var(--c2-st-web-text-caption-c1medium);
       
       border-radius: var(--c2-st-selectable-borderRadius-size-sm);
     }
@@ -126,14 +91,7 @@
       
       padding: var(--c2-st-global-distance-space-inset-sm);
       
-      font-family: var(--c2-ot-typography-fontFamily-base);
-      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-      font-weight: var(--c2-ot-typography-fontWeight-500);
-      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-      letter-spacing: var(--c2-ot-typography-tracking-md);
-      @include textCase(#{var(--c2-ot-typography-textCase-none)});
-      text-decoration: var(--c2-ot-typography-textDecoration-none);
-      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+      font: var(--c2-st-web-text-caption-c1medium);
       
       border-radius: var(--c2-st-selectable-borderRadius-size-xs);
     }
@@ -301,14 +259,7 @@
   &--link {
     padding: 0;
     
-    font-family: var(--c2-ot-typography-fontFamily-base);
-    @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
-    font-weight: var(--c2-ot-typography-fontWeight-500);
-    @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-    letter-spacing: var(--c2-ot-typography-tracking-lg);
-    @include textCase(#{var(--c2-ot-typography-textCase-none)});
-    text-decoration: var(--c2-ot-typography-textDecoration-none);
-    @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    font: var(--c2-st-web-text-body-b1medium);
     
     @include paletteColor(#{var(--c2-st-action-fg-color-primary-normal)});
     
@@ -408,58 +359,23 @@
     
     &.c2-button--size {
       &--lg {
-        font-family: var(--c2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
-        font-weight: var(--c2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-        letter-spacing: var(--c2-ot-typography-tracking-base);
-        @include textCase(#{var(--c2-ot-typography-textCase-none)});
-        text-decoration: var(--c2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+        font: var(--c2-st-web-text-body-b2medium);
       }
       
       &--md {
-        font-family: var(--c2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
-        font-weight: var(--c2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
-        letter-spacing: var(--c2-ot-typography-tracking-base);
-        @include textCase(#{var(--c2-ot-typography-textCase-none)});
-        text-decoration: var(--c2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+        font: var(--c2-st-web-text-body-b2medium);
       }
       
       &--sm {
-        font-family: var(--c2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--c2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--c2-ot-typography-tracking-md);
-        @include textCase(#{var(--c2-ot-typography-textCase-none)});
-        text-decoration: var(--c2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+        font: var(--c2-st-web-text-caption-c1medium);
       }
       
       &--xs {
-        font-family: var(--c2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--c2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--c2-ot-typography-tracking-md);
-        @include textCase(#{var(--c2-ot-typography-textCase-none)});
-        text-decoration: var(--c2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+        font: var(--c2-st-web-text-caption-c1medium);
       }
       
       &--x {
-        font-family: var(--c2-ot-typography-fontFamily-base);
-        @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
-        font-weight: var(--c2-ot-typography-fontWeight-500);
-        @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
-        letter-spacing: var(--c2-ot-typography-tracking-md);
-        @include textCase(#{var(--c2-ot-typography-textCase-none)});
-        text-decoration: var(--c2-ot-typography-textDecoration-none);
-        @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+        font: var(--c2-st-web-text-caption-c1medium);
       }
     }
   }

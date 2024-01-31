@@ -35,7 +35,7 @@ export type IconProps = {
   turn?: boolean
   disabled?: boolean
   hide?: boolean
-  animationType?: 'type1' | 'type2'
+  animationType?: string | 'type1' | 'type2'
   animationShow?: boolean
   overlay?: boolean
   dynamic?: boolean

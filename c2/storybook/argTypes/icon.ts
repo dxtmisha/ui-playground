@@ -1,87 +1,61 @@
-import {
-  type StorybookArgs,
-  type StorybookArgsValue,
-  StorybookControl
-} from '../../../types/storybook.ts'
+import { Icons } from '../../../classes/Icons.ts'
+
+import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook.ts'
+
+import { iconArgs as iconArgsC1, iconValues as iconValuesC1 } from '../../../c1/storybook/argTypes/icon.ts'
+
+import '../../icons.ts'
+import { defaults, propsValues } from '../../Icon/props.ts'
 import { StorybookCategory } from '../types.ts'
 
-import { imageArgs } from './image.ts'
+const icons = Icons.getNameList()
 
 export const iconArgs: StorybookArgs = {
-  active: {
-    control: StorybookControl.boolean,
-    table: {
-      category: StorybookCategory.status,
-      defaultValue: { summary: 'false' },
-      type: { summary: 'boolean' }
-    },
-    description: 'Анимированный переход на активную иконку'
-  },
-  turn: imageArgs.turn,
-  disabled: imageArgs.disabled,
-  hide: imageArgs.hide,
+  ...iconArgsC1,
   icon: {
-    ...imageArgs.value,
-    description: 'Значение иконки или объект со всеми свойствами для иконки'
+    ...iconArgsC1.icon,
+    options: icons
   },
   iconActive: {
-    ...imageArgs.value,
-    description: 'Значение активной иконки или объект со всеми свойствами для активной иконки. ' +
-      'Эта иконка используется при включении свойства \'active\''
+    ...iconArgsC1.iconActive,
+    options: icons
   },
-  animationType: {
+
+  // Tokens
+  variation: {
     control: StorybookControl.select,
-    options: [
-      'type1',
-      'type2'
-    ],
+    options: propsValues.variation,
     table: {
-      category: StorybookCategory.style,
-      defaultValue: { summary: 'type1' },
-      type: { summary: 'type1 | type2' }
-    },
-    description: 'Тип анимации при скрытии элемента'
+      category: StorybookCategory.token,
+      defaultValue: { summary: defaults.variation },
+      type: { summary: propsValues.variation.join(' | ') }
+    }
   },
-  animationShow: {
-    control: StorybookControl.boolean,
+  shape: {
+    control: StorybookControl.select,
+    options: propsValues.shape,
     table: {
-      category: StorybookCategory.style,
-      defaultValue: { summary: 'false' },
-      type: { summary: 'boolean' }
-    },
-    description: 'Анимация появления после загрузки элемента'
+      category: StorybookCategory.token,
+      defaultValue: { summary: defaults.shape },
+      type: { summary: propsValues.shape.join(' | ') }
+    }
   },
-  start: {
-    control: StorybookControl.boolean,
+  size: {
+    control: StorybookControl.select,
+    options: propsValues.size,
     table: {
-      category: StorybookCategory.style,
-      defaultValue: { summary: 'false' },
-      type: { summary: 'boolean' }
-    },
-    description: 'Добавление сортировки элемента в начале узла DOM (order: 1)'
-  },
-  end: {
-    control: StorybookControl.boolean,
-    table: {
-      category: StorybookCategory.style,
-      defaultValue: { summary: 'false' },
-      type: { summary: 'boolean' }
-    },
-    description: 'Добавление сортировки элемента в конец узла DOM (order: 9999)'
-  },
-  high: {
-    control: StorybookControl.boolean,
-    table: {
-      category: StorybookCategory.style,
-      defaultValue: { summary: 'false' },
-      type: { summary: 'boolean' }
-    },
-    description: 'Добавление высоко позиционированного элемента (z-index: 16)'
+      category: StorybookCategory.token,
+      defaultValue: { summary: defaults.size },
+      type: { summary: propsValues.size.join(' | ') }
+    }
   }
 }
 
+delete iconArgs.overlay
+delete iconArgs.rounded
+
 export const iconValues: StorybookArgsValue = {
-  active: false,
-  icon: 'search',
-  iconActive: 'home'
+  ...iconValuesC1,
+  icon: 'notification',
+  iconActive: 'notification-off'
 }

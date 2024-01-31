@@ -34,7 +34,7 @@ export type MaskProps = {
   // :type [!] System label / Системная метка
   visible?: boolean
   right?: boolean
-  dir?: 'ltr' | 'rtl'
+  dir?: string | 'ltr' | 'rtl'
   // :type [!] System label / Системная метка
 }
 

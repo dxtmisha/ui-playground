@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import M3Checkbox from '../m3/Checkbox/M3Checkbox.vue'
+import '../c2/icons.ts'
+import C2Icon from '../c2/Icon/C2Icon.vue'
 </script>
 
 <template>
   <div>
-    <m3-checkbox />
+    icon
+    <c2-icon icon="settings-01"/>
   </div>
 </template>
 

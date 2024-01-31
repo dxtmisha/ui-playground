@@ -32,7 +32,7 @@
             "type": "borderRadius"
           },
           "2xl": {
-            "value": "{st.global.distance.space.inset.2xl}",
+            "value": "{st.global.distance.space.inset.3xl}",
             "type": "borderRadius"
           },
           "pill": {
@@ -75,34 +75,38 @@
               "type": "spacing"
             },
             "2xl": {
-              "value": "{ot.dimension.100}",
+              "value": "{ot.dimension.88}",
               "type": "spacing"
             },
             "3xl": {
-              "value": "{ot.dimension.125}",
+              "value": "{ot.dimension.100}",
               "type": "spacing"
             },
             "4xl": {
-              "value": "{ot.dimension.150}",
+              "value": "{ot.dimension.125}",
               "type": "spacing"
             },
             "5xl": {
-              "value": "{ot.dimension.175}",
+              "value": "{ot.dimension.150}",
               "type": "spacing"
             },
             "6xl": {
-              "value": "{ot.dimension.200}",
+              "value": "{ot.dimension.175}",
               "type": "spacing"
             },
             "7xl": {
-              "value": "{ot.dimension.225}",
+              "value": "{ot.dimension.200}",
               "type": "spacing"
             },
             "8xl": {
-              "value": "{ot.dimension.250}",
+              "value": "{ot.dimension.225}",
               "type": "spacing"
             },
             "9xl": {
+              "value": "{ot.dimension.250}",
+              "type": "spacing"
+            },
+            "10xl": {
               "value": "{ot.dimension.300}",
               "type": "spacing"
             }
@@ -137,35 +141,35 @@
               "type": "spacing"
             },
             "2xl": {
-              "value": "{st.global.distance.space.inset.2xl}",
-              "type": "spacing"
-            },
-            "3xl": {
               "value": "{st.global.distance.space.inset.3xl}",
               "type": "spacing"
             },
-            "4xl": {
+            "3xl": {
               "value": "{st.global.distance.space.inset.4xl}",
               "type": "spacing"
             },
-            "5xl": {
+            "4xl": {
               "value": "{st.global.distance.space.inset.5xl}",
               "type": "spacing"
             },
-            "6xl": {
+            "5xl": {
               "value": "{st.global.distance.space.inset.6xl}",
               "type": "spacing"
             },
-            "7xl": {
+            "6xl": {
               "value": "{st.global.distance.space.inset.7xl}",
               "type": "spacing"
             },
-            "8xl": {
+            "7xl": {
               "value": "{st.global.distance.space.inset.8xl}",
               "type": "spacing"
             },
-            "9xl": {
+            "8xl": {
               "value": "{st.global.distance.space.inset.9xl}",
+              "type": "spacing"
+            },
+            "9xl": {
+              "value": "{st.global.distance.space.inset.10xl}",
               "type": "spacing"
             }
           },
@@ -199,35 +203,35 @@
               "type": "spacing"
             },
             "2xl": {
-              "value": "{st.global.distance.space.inset.2xl}",
-              "type": "spacing"
-            },
-            "3xl": {
               "value": "{st.global.distance.space.inset.3xl}",
               "type": "spacing"
             },
-            "4xl": {
+            "3xl": {
               "value": "{st.global.distance.space.inset.4xl}",
               "type": "spacing"
             },
-            "5xl": {
+            "4xl": {
               "value": "{st.global.distance.space.inset.5xl}",
               "type": "spacing"
             },
-            "6xl": {
+            "5xl": {
               "value": "{st.global.distance.space.inset.6xl}",
               "type": "spacing"
             },
-            "7xl": {
+            "6xl": {
               "value": "{st.global.distance.space.inset.7xl}",
               "type": "spacing"
             },
-            "8xl": {
+            "7xl": {
               "value": "{st.global.distance.space.inset.8xl}",
               "type": "spacing"
             },
-            "9xl": {
+            "8xl": {
               "value": "{st.global.distance.space.inset.9xl}",
+              "type": "spacing"
+            },
+            "9xl": {
+              "value": "{st.global.distance.space.inset.10xl}",
               "type": "spacing"
             }
           }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data.ts'
+// import { inArray } from '../../functions/object.ts'
 
 import { InputDesign } from '../../constructors/Input/InputDesign.ts'
 
@@ -16,8 +16,8 @@ import {
 } from '../../constructors/Input/types.ts'
 
 import {
-  propsInstruction,
-  propsValues
+  propsInstruction // ,
+  // propsValues
 } from './props.ts'
 
 const emits = defineEmits<InputEmits>()

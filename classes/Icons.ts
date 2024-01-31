@@ -16,7 +16,7 @@ export class Icons {
    * @param index icon name /<br>название иконки
    */
   static is (index: string): boolean {
-    return index in this.icons
+    return index in this.icons || this.getName(index) in this.icons
   }
 
   /**
@@ -27,7 +27,9 @@ export class Icons {
    * путь к месту хранения иконки, если иконка не существует
    */
   static get (index: string, url = ''): string {
-    return this.icons?.[index] ?? `${index.replace(/^@/, url ?? this.url)}.svg`
+    return this.icons?.[this.getName(index)] ??
+      this.icons?.[index] ??
+      `${index.replace(/^@/, url ?? this.url)}.svg`
   }
 
   /**
@@ -47,7 +49,7 @@ export class Icons {
    * @param file path to the file /<br>путь к файлу
    */
   static add (index: string, file: string): void {
-    this.icons[`@${index}`] = file
+    this.icons[this.getName(index)] = file
   }
 
   /**
@@ -57,5 +59,14 @@ export class Icons {
    */
   static addByList (list: Record<string, string>): void {
     forEach(list, (file, index) => this.add(index, file))
+  }
+
+  /**
+   * Returns the icon name.<br>
+   * Возвращает название иконки.
+   * @param index icon name /<br>название иконки
+   */
+  protected static getName (index: string): string {
+    return `@${index}`
   }
 }

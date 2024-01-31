@@ -27,7 +27,7 @@ export type Props = PropsToken/* :component.once  & Omit<ComponentProps, keyof P
  * Значение по умолчанию для свойства.
  */
 export const defaults: Props = {
-  /* :component.once ...defaultsComponent, */
+  /* :component.once ...defaultsComponent as Props, */
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка

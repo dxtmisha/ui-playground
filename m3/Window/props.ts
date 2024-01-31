@@ -54,7 +54,7 @@ export type Props = PropsToken & Omit<WindowProps, keyof PropsToken>
  * Значение по умолчанию для свойства.
  */
 export const defaults: Props = {
-  ...defaultsWindow,
+  ...defaultsWindow as Props,
   ...{
     // :default [!] System label / Системная метка
     adaptive: 'auto',

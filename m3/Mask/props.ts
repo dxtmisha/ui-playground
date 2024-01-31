@@ -43,7 +43,7 @@ export type Props = PropsToken & Omit<MaskProps, keyof PropsToken>
  * Значение по умолчанию для свойства.
  */
 export const defaults: Props = {
-  ...defaultsMask,
+  ...defaultsMask as Props,
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка

@@ -32,12 +32,12 @@ export type WindowProps = {
   // :type [!] System label / Системная метка
   width?: string | 'auto' | 'max' | 'custom'
   height?: string | 'auto' | 'max' | 'custom'
-  adaptive?: 'menu' | 'modal' | 'modalDynamic' | 'static'
+  adaptive?: string | 'menu' | 'modal' | 'modalDynamic' | 'static'
   overscroll?: boolean
   dense?: boolean
   fullscreen?: boolean
-  alignment?: 'center' | 'top' | 'right' | 'bottom' | 'left'
-  origin?: 'center' | 'top' | 'right' | 'bottom' | 'left' | 'topToBottom' | 'rightToLeft' | 'bottomToTop' | 'leftToRight'
+  alignment?: string | 'center' | 'top' | 'right' | 'bottom' | 'left'
+  origin?: string | 'center' | 'top' | 'right' | 'bottom' | 'left' | 'topToBottom' | 'rightToLeft' | 'bottomToTop' | 'leftToRight'
   // :type [!] System label / Системная метка
 }
 

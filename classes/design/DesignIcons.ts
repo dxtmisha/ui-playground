@@ -35,7 +35,7 @@ export class DesignIcons {
       list.forEach(icon => {
         const name = toCamelCase(icon.name)
 
-        imports.push(`import ${name} from '${icon.path}'`)
+        imports.push(`import ${name} from './${icon.path}'`)
         icons.push(`Icons.add('${icon.name}', ${name})`)
       })
 

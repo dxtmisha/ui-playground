@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 // import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { inArray } from '../../functions/object.ts'
 
 import { CheckboxDesign } from '../../constructors/Checkbox/CheckboxDesign.ts'
 
@@ -20,8 +20,8 @@ import {
 } from '../../constructors/Checkbox/types.ts'
 
 import {
-  propsInstruction,
-  propsValues
+  propsInstruction // ,
+  // propsValues
 } from './props.ts'
 
 const emits = defineEmits<CheckboxEmits>()

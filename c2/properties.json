@@ -94,6 +94,13 @@
     "_type": "var",
     "_category": "root"
   },
+  "base": {
+    "value": {
+      "file|import-base": "tokens/base.json#base"
+    },
+    "_type": "var",
+    "_category": "root"
+  },
   "main": {
     "font": "{st.web.text.body.b2Regular}",
     "color": "{st.content.fg.color.neutral.primary}",
@@ -113,7 +120,7 @@
   },
   "font": {
     "value": {
-      "basic": "{st.web.text}",
+      "basic": "{typography.text}",
       "extras": {
         "caption": {
           "_state": true
