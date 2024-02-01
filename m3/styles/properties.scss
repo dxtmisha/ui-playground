@@ -9871,6 +9871,32 @@ $designsProperties: (
           ),
         ),
       ),
+      'mutation':(
+        index: 'mutation',
+        name: 'm3-mutation',
+        type: 'component',
+        value: (
+          'main':(
+            index: 'main',
+            name: '--m3-mutation-main',
+            type: 'var',
+            value: 'var(--d-mutation)',
+          ),
+        ),
+      ),
+      'mutationItem':(
+        index: 'mutationItem',
+        name: 'm3-mutationItem',
+        type: 'component',
+        value: (
+          'main':(
+            index: 'main',
+            name: '--m3-mutationItem-main',
+            type: 'var',
+            value: 'var(--d-mutationItem)',
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'm3-progress',

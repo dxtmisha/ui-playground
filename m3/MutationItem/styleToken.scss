@@ -2,5 +2,6 @@
 
 @mixin mixinMutationItemToken {
   // :style [!] System label / Системная метка
+  --m3-mutationItem-main: var(--d-mutationItem);
   // :style [!] System label / Системная метка
 }

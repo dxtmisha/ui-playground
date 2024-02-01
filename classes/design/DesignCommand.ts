@@ -1,6 +1,6 @@
 import { config } from 'dotenv'
 import { isFilled } from '../../functions/data.ts'
-import { toKebabCase } from '../../functions/string.ts'
+import { toCamelCase, toCamelCaseFirst, toKebabCase } from '../../functions/string.ts'
 
 import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
 
@@ -9,7 +9,11 @@ import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
 import { DesignComponent } from '../services/designs/DesignComponent.ts'
 import { DesignIcons } from './DesignIcons.ts'
 
-import { FILE_PROPERTY, FILE_STYLE } from '../../types/property.ts'
+import {
+  FILE_COMPONENTS,
+  FILE_PROPERTY,
+  FILE_DESIGN_STYLE, FILE_DESIGN_COMPONENTS
+} from '../../types/property.ts'
 
 export type DesignCommandDesignsItem = {
   name: string
@@ -81,10 +85,13 @@ export class DesignCommand {
 
         new DesignConstructor(`d.${component}`).init()
         new DesignComponent(name).init()
+
+        this.makeComponentsDesign(design.name)
       })
     })
 
     this.makeStyle()
+      .makeComponents()
   }
 
   /**
@@ -103,40 +110,19 @@ export class DesignCommand {
     return isFilled(this.component)
   }
 
-  protected makeStyle (): this {
-    const design = process.env.DESIGNS_MAIN
-    const designs = process.env.DESIGNS?.split(',')
-
-    if (design && designs) {
-      const file: string[] = []
-
-      designs.forEach(item => {
-        file.push(`@import "./${item}/${item === design ? 'main' : 'init'}";`)
-      })
-
-      PropertiesFile.write(
-        [],
-        FILE_STYLE,
-        file.join('\r\n'),
-        'scss'
-      )
-    }
-
-    return this
+  /**
+   * Returns the name of the main design.<br>
+   * Возвращает название главного дизайна.
+   */
+  protected getDesignMain (): string {
+    return process.env.DESIGNS_MAIN ?? 'design'
   }
 
   /**
-   * Creates an array with all connected designs.<br>
-   * Создает массив со всеми подключенными дизайнами.
+   * Returns a list of design names.<br>
+   * Возвращает список названий дизайнов.
    */
-  protected initDesign (): DesignCommandDesigns {
-    if (this.isDesign()) {
-      return [{
-        name: this.design,
-        components: []
-      }]
-    }
-
+  protected getDesignList (): DesignCommandDesigns {
     const list: DesignCommandDesigns = []
 
     process.env.DESIGNS
@@ -152,15 +138,11 @@ export class DesignCommand {
   }
 
   /**
-   * Gets the list of components from the current design.<br>
-   * Получает список компонентов у текущего дизайна.
+   * Returns a list of components.<br>
+   * Возвращает список компонентов.
    * @param design design names /<br>названия дизайна
    */
-  protected initComponent (design: string): string[] {
-    if (this.isComponent()) {
-      return [this.component]
-    }
-
+  protected getComponentList (design: string): string[] {
     const list: string[] = []
     const dirs = PropertiesFile.readDir(design)
 
@@ -171,5 +153,133 @@ export class DesignCommand {
     })
 
     return list
+  }
+
+  /**
+   * Creates a common style file.<br>
+   * Создает общий файл стилей.
+   */
+  protected makeStyle (): this {
+    const design = this.getDesignMain()
+    const designs = process.env.DESIGNS?.split(',')
+
+    if (design && designs) {
+      const file: string[] = []
+
+      designs.forEach(item => {
+        file.push(`@import "./${item}/${item === design ? 'main' : 'init'}";`)
+      })
+
+      PropertiesFile.write(
+        [],
+        FILE_DESIGN_STYLE,
+        file.join('\r\n'),
+        'scss'
+      )
+    }
+
+    return this
+  }
+
+  protected makeComponents (): this {
+    const designs = this.getDesignList()
+
+    const imports: string[] = []
+    const data: string[] = []
+
+    designs.forEach(design => {
+      const name = toCamelCase(design.name)
+
+      imports.push(`import ${name} from './${name}/${FILE_COMPONENTS}.vue'`)
+      data.push(`MutationGlobal.addComponentList(${name})`)
+    })
+
+    PropertiesFile.write(
+      [],
+      FILE_DESIGN_COMPONENTS,
+      [
+        ...imports,
+        '',
+        ...data,
+        ''
+      ].join('\r\n'),
+      'ts'
+    )
+
+    return this
+  }
+
+  /**
+   * Creates a file with a list of components for the selected design.<br>
+   * Создает файл со списком компонентов для выбранного дизайна.
+   * @param design design names /<br>названия дизайна
+   */
+  protected makeComponentsDesign (design: string): this {
+    const designMain = this.getDesignMain()
+    const components = this.getComponentList(design)
+
+    const imports: string[] = []
+    const data: string[] = []
+    const main: string[] = []
+
+    components.forEach(component => {
+      const name = toCamelCaseFirst(`${design}-${component}`)
+
+      imports.push(`import ${name} from './${toCamelCaseFirst(component)}/${name}.vue'`)
+      data.push(`  ${name}`)
+
+      if (design === designMain) {
+        main.push(`  ${toCamelCaseFirst(component)}: ${name}`)
+      }
+    })
+
+    data.push(...main)
+    PropertiesFile.write(
+      [design],
+      FILE_COMPONENTS,
+      [
+        ...imports,
+        '',
+        'export default {',
+        data.join(',\r\n'),
+        '}',
+        ''
+      ].join('\r\n'),
+      'ts'
+    )
+
+    return this
+  }
+
+  protected makeGlobal (): this {
+    return this
+  }
+
+  /**
+   * Creates an array with all connected designs.<br>
+   * Создает массив со всеми подключенными дизайнами.
+   */
+  protected initDesign (): DesignCommandDesigns {
+    if (this.isDesign()) {
+      return [{
+        name: this.design,
+        components: []
+      }]
+    }
+
+    return this.getDesignList()
+  }
+
+  /**
+   * Gets the list of components from the current design.<br>
+   * Получает список компонентов у текущего дизайна.
+   * @param design design names /<br>названия дизайна
+   */
+  protected initComponent (design: string): string[] {
+    if (this.isComponent()) {
+      return [this.component]
+    }
+
+    return this.getComponentList(design)
   }
 }
