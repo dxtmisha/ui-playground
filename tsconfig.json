@@ -24,35 +24,68 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    // design
+    "design-component.ts",
+    // C1
     "c1/**/*.ts",
     "c1/**/*.d.ts",
     "c1/**/*.tsx",
     "c1/**/*.vue",
+    // C2
     "c2/**/*.ts",
     "c2/**/*.d.ts",
     "c2/**/*.tsx",
     "c2/**/*.vue",
-    "classes/**/*.ts",
-    "classes/**/*.tsx",
-    "commands/**/*.ts",
-    "composables/**/*.ts",
-    "constructors/**/*.ts",
-    "constructors/**/*.tsx",
-    "functions/**/*.ts",
+    // M2
     "m2/**/*.ts",
     "m2/**/*.d.ts",
     "m2/**/*.tsx",
     "m2/**/*.vue",
+    // M3
     "m3/**/*.ts",
     "m3/**/*.d.ts",
     "m3/**/*.tsx",
     "m3/**/*.vue",
+    // classes
+    "classes/**/*.ts",
+    "classes/**/*.d.ts",
+    "classes/**/*.tsx",
+    "classes/**/*.vue",
+    // commands
+    "commands/**/*.ts",
+    "commands/**/*.d.ts",
+    "commands/**/*.tsx",
+    "commands/**/*.vue",
+    // composables
+    "composables/**/*.ts",
+    "composables/**/*.d.ts",
+    "composables/**/*.tsx",
+    "composables/**/*.vue",
+    // constructors
+    "constructors/**/*.ts",
+    "constructors/**/*.d.ts",
+    "constructors/**/*.tsx",
+    "constructors/**/*.vue",
+    // functions
+    "functions/**/*.ts",
+    "functions/**/*.d.ts",
+    "functions/**/*.tsx",
+    "functions/**/*.vue",
+    // media/templates
     "media/templates/**/*.ts",
+    "media/templates/**/*.d.ts",
+    "media/templates/**/*.tsx",
+    "media/templates/**/*.vue",
+    // src
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "types/**/*.ts"
+    // types
+    "types/**/*.ts",
+    "types/**/*.d.ts",
+    "types/**/*.tsx",
+    "types/**/*.vue"
   ],
   "references": [
     {

@@ -12,7 +12,8 @@ import { DesignIcons } from './DesignIcons.ts'
 import {
   FILE_COMPONENTS,
   FILE_PROPERTY,
-  FILE_DESIGN_STYLE, FILE_DESIGN_COMPONENTS
+  FILE_DESIGN_STYLE,
+  FILE_DESIGN_COMPONENTS
 } from '../../types/property.ts'
 
 export type DesignCommandDesignsItem = {
@@ -181,6 +182,10 @@ export class DesignCommand {
     return this
   }
 
+  /**
+   * Creates a common component file.<br>
+   * Создает общий файл компоненты.
+   */
   protected makeComponents (): this {
     const designs = this.getDesignList()
 
@@ -190,7 +195,7 @@ export class DesignCommand {
     designs.forEach(design => {
       const name = toCamelCase(design.name)
 
-      imports.push(`import ${name} from './${name}/${FILE_COMPONENTS}.vue'`)
+      imports.push(`import ${name} from './${name}/${FILE_COMPONENTS}.ts'`)
       data.push(`MutationGlobal.addComponentList(${name})`)
     })
 
@@ -198,8 +203,15 @@ export class DesignCommand {
       [],
       FILE_DESIGN_COMPONENTS,
       [
+        'import { MutationGlobal } from \'./classes/mutation/MutationGlobal\'',
+        '',
+        'import functions from \'./functions/all.ts\'',
+        'import classes from \'./classes/all.ts\'',
+        '',
         ...imports,
         '',
+        'MutationGlobal.addFunctionList(functions)',
+        'MutationGlobal.addClassList(classes)',
         ...data,
         ''
       ].join('\r\n'),
