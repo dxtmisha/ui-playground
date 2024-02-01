@@ -1,10 +1,6 @@
-import { createApp } from 'vue'
-import './style.scss'
 import App from './App.vue'
-import { Icons } from '../classes/Icons.ts'
 
-import iconVue from './assets/vue.svg'
+import { initComponents } from '../design-component.ts'
+import './style.scss'
 
-Icons.add('vue', iconVue)
-
-createApp(App).mount('#app')
+initComponents(App).mount('#app')

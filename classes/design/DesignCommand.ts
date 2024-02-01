@@ -112,6 +112,14 @@ export class DesignCommand {
   }
 
   /**
+   * Returns the name of the global property.<br>
+   * Возвращает название глобального свойства.
+   */
+  protected getGlobalName (): string {
+    return process.env.DESIGNS_GLOBAL ?? 'UI'
+  }
+
+  /**
    * Returns the name of the main design.<br>
    * Возвращает название главного дизайна.
    */
@@ -157,6 +165,51 @@ export class DesignCommand {
   }
 
   /**
+   * Returns the full name of the component.<br>
+   * Возвращает полное название компонента.
+   * @param design design names /<br>названия дизайна
+   * @param component component name /<br>название компонента
+   */
+  protected getNameComponent (
+    design: string,
+    component: string
+  ): string {
+    return toCamelCaseFirst(`${design}-${component}`)
+  }
+
+  /**
+   * Returns the import code of the component.<br>
+   * Возвращает код импорта компонента.
+   * @param design design names /<br>названия дизайна
+   * @param component component name /<br>название компонента
+   * @param dir directory name for the component /<br>название директории для компонента
+   */
+  protected getCodeComponentImport (
+    design: string,
+    component: string,
+    dir: boolean = false
+  ): string {
+    const name = this.getNameComponent(design, component)
+    const dirName = dir ? `${toCamelCase(design)}/` : ''
+
+    return `import ${name} from './${dirName}${toCamelCaseFirst(component)}/${name}.vue'`
+  }
+
+  /**
+   * Returns the code to connect the component.<br>
+   * Возвращает код для подключения компонента.
+   * @param design design names /<br>названия дизайна
+   * @param component component name /<br>название компонента
+   */
+  protected getCodeVueApp (
+    design: string,
+    component: string
+  ): string {
+    const name = this.getNameComponent(design, component)
+    return `  app.component('${name}', ${name})`
+  }
+
+  /**
    * Creates a common style file.<br>
    * Создает общий файл стилей.
    */
@@ -190,19 +243,28 @@ export class DesignCommand {
     const designs = this.getDesignList()
 
     const imports: string[] = []
+    const importsComponent: string[] = []
     const data: string[] = []
+    const components: string[] = []
 
     designs.forEach(design => {
       const name = toCamelCase(design.name)
 
       imports.push(`import ${name} from './${name}/${FILE_COMPONENTS}.ts'`)
       data.push(`MutationGlobal.addComponentList(${name})`)
+
+      this.getComponentList(design.name).forEach(component => {
+        importsComponent.push(this.getCodeComponentImport(design.name, component, true))
+        components.push(this.getCodeVueApp(design.name, component))
+      })
     })
 
     PropertiesFile.write(
       [],
       FILE_DESIGN_COMPONENTS,
       [
+        'import { type App, createApp } from \'vue\'',
+        '',
         'import { MutationGlobal } from \'./classes/mutation/MutationGlobal\'',
         '',
         'import functions from \'./functions/all.ts\'',
@@ -210,9 +272,21 @@ export class DesignCommand {
         '',
         ...imports,
         '',
+        ...importsComponent,
+        '',
         'MutationGlobal.addFunctionList(functions)',
         'MutationGlobal.addClassList(classes)',
         ...data,
+        '',
+        `;(window as any).${this.getGlobalName()} = MutationGlobal`,
+        '',
+        'export function initComponents (App: any): App<Element> {',
+        '  const app = createApp(App)',
+        '',
+        ...components,
+        '',
+        '  return app',
+        '}',
         ''
       ].join('\r\n'),
       'ts'
@@ -227,25 +301,18 @@ export class DesignCommand {
    * @param design design names /<br>названия дизайна
    */
   protected makeComponentsDesign (design: string): this {
-    const designMain = this.getDesignMain()
     const components = this.getComponentList(design)
 
     const imports: string[] = []
     const data: string[] = []
-    const main: string[] = []
 
     components.forEach(component => {
       const name = toCamelCaseFirst(`${design}-${component}`)
 
-      imports.push(`import ${name} from './${toCamelCaseFirst(component)}/${name}.vue'`)
+      imports.push(this.getCodeComponentImport(design, component))
       data.push(`  ${name}`)
-
-      if (design === designMain) {
-        main.push(`  ${toCamelCaseFirst(component)}: ${name}`)
-      }
     })
 
-    data.push(...main)
     PropertiesFile.write(
       [design],
       FILE_COMPONENTS,
@@ -260,10 +327,6 @@ export class DesignCommand {
       'ts'
     )
 
-    return this
-  }
-
-  protected makeGlobal (): this {
     return this
   }
 

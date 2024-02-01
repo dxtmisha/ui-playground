@@ -27,19 +27,5 @@ export default {
   M3Progress,
   M3Ripple,
   M3Scrollbar,
-  M3Window,
-  Button: M3Button,
-  Checkbox: M3Checkbox,
-  Chip: M3Chip,
-  FieldMessage: M3FieldMessage,
-  Icon: M3Icon,
-  Image: M3Image,
-  Input: M3Input,
-  Mask: M3Mask,
-  Mutation: M3Mutation,
-  MutationItem: M3MutationItem,
-  Progress: M3Progress,
-  Ripple: M3Ripple,
-  Scrollbar: M3Scrollbar,
-  Window: M3Window
+  M3Window
 }

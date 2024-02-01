@@ -37,6 +37,14 @@ export class MutationGlobal {
   }
 
   /**
+   * Returns a list of connected components.<br>
+   * Возвращает список подключенных компонентов.
+   */
+  static getComponentList (): Record<string, any> {
+    return this.components
+  }
+
+  /**
    * Adds a new function.<br>
    * Добавляет новую функцию.
    * @param name function name /<br>название функции
