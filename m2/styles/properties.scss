@@ -9069,5 +9069,31 @@ $designsProperties: (
           ),
         ),
       ),
+      'ripple':(
+        index: 'ripple',
+        name: 'm2-ripple',
+        type: 'component',
+        value: (
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--m2-ripple-backgroundColor',
+            type: 'var',
+            value: 'var(--m2-sys-palette-overlay)',
+          ),
+          'backgroundOpacity':(
+            index: 'backgroundOpacity',
+            name: '--m2-ripple-backgroundOpacity',
+            type: 'var',
+            value: 'var(--m2-sys-opacity-pressed)',
+          ),
+          'item':(
+            index: 'item',
+            name: '&__item',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+        ),
+      ),
     ),
   ),);

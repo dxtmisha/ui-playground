@@ -1,62 +1,48 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
+import { isFilled } from '../../functions/data.ts'
 import { inArray } from '../../functions/object.ts'
 
-import { IconDesign } from '../../constructors/Icon/IconDesign'
-
-import M3Image from '../Image/M3Image.vue'
+import { MutationItemDesign } from '../../constructors/MutationItem/MutationItemDesign.ts'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor'
+} from '../../types/constructor.ts'
 import {
-  type IconEmits,
-  type IconSlots
-} from '../../constructors/Icon/types'
+  type MutationItemEmits,
+  type MutationItemSlots
+} from '../../constructors/MutationItem/types.ts'
 
 import {
   propsInstruction,
   propsValues
-} from './props'
+} from './props.ts'
 
-const emits = defineEmits<IconEmits>()
+const emits = defineEmits<MutationItemEmits>()
 const props = defineProps({ ...propsInstruction })
 
 const classesToken = computed<ConstrClasses>(() => ({
   main: {
+    // TODO: User state classes / Пользовательские классы состояния
     // :classes-values [!] System label / Системная метка
-    'm3-icon': true,
-    'm3-icon--turn': props.turn,
-    'm3-icon--disabled': props.disabled,
-    'm3-icon--hide': props.hide,
-    [`m3-icon--animationType--${props.animationType}`]: inArray(propsValues.animationType, props.animationType),
-    'm3-icon--animationShow': props.animationShow,
-    'm3-icon--overlay': props.overlay,
-    'm3-icon--dynamic': props.dynamic,
-    'm3-icon--start': props.start,
-    'm3-icon--end': props.end,
-    'm3-icon--high': props.high,
-    [`m3-icon--rounded--${props.rounded}`]: inArray(propsValues.rounded, props.rounded),
-    [`m3-icon--size--${props.size}`]: inArray(propsValues.size, props.size)
+    'm3-mutationItem': true
     // :classes-values [!] System label / Системная метка
   }
+  // TODO: User subclasses / Пользовательские подклассы
 }))
 const stylesToken = computed<ConstrStyles>(() => ({
+  // TODO: User styles / Пользовательские стили
   // :styles-values [!] System label / Системная метка
   // :styles-values [!] System label / Системная метка
 }))
 
-const design = new IconDesign(
-  'm3.icon',
+const design = new MutationItemDesign(
+  'm3.mutationItem',
   props,
   {
     emits,
-    components: {
-      image: M3Image
-    },
     classes: classesToken,
     styles: stylesToken
   }
@@ -68,7 +54,7 @@ const design = new IconDesign(
 // } = design.setup()
 const render = design.render()
 
-defineSlots<IconSlots>()
+defineSlots<MutationItemSlots>()
 defineExpose(design.expose())
 </script>
 
@@ -79,17 +65,17 @@ defineExpose(design.expose())
 <style lang="scss">
 @import "../styles/properties";
 @import "../../styles/properties";
-@import "../../constructors/Icon/style";
+@import "../../constructors/MutationItem/style";
 @import "styleToken";
 
-@include initDesignBasic('m3.icon') {
+@include initDesignBasic('m3.mutationItem') {
   // Basic styles for a component
   // Базовый стили для компонента
-  @include mixinIcon;
+  @include mixinMutationItem;
 
   // Styles from tokens
   // Стили из токенов
-  @include mixinIconToken;
+  @include mixinMutationItemToken;
 
   // Here are the user styles
   // Здесь пользовательские стили

@@ -1,0 +1,8 @@
+@import "../../styles/all";
+
+@mixin mixinRippleToken {
+  // :style [!] System label / Системная метка
+  --m2-ripple-backgroundColor: var(--m2-sys-palette-overlay);
+  --m2-ripple-backgroundOpacity: var(--m2-sys-opacity-pressed);
+  // :style [!] System label / Системная метка
+}

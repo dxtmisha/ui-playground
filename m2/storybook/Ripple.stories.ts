@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import M3Ripple from '../Ripple/M3Ripple.vue'
+import M2Ripple from '../Ripple/M2Ripple.vue'
 
 import {
   rippleArgs,
   rippleValues
-} from './argTypes/ripple.ts'
+} from '../../m3/storybook/argTypes/ripple.ts'
 
 const meta = {
-  title: 'M3/Ripple',
-  component: M3Ripple,
+  title: 'M2/Ripple',
+  component: M2Ripple,
   tags: ['autodocs'],
   parameters: {
-    design: 'm3',
+    design: 'm2',
     docs: {
       description: {
         component: 'Component for displaying the wave effect.<br>' +
@@ -22,7 +22,7 @@ const meta = {
   },
   argTypes: rippleArgs,
   args: rippleValues
-} satisfies Meta<typeof M3Ripple>
+} satisfies Meta<typeof M2Ripple>
 
 export default meta
 
@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>
 
 export const Ripple: Story = {
   render: (args: any) => ({
-    components: { M3Ripple },
+    components: { M2Ripple },
     setup () {
       return {
         args
@@ -38,7 +38,7 @@ export const Ripple: Story = {
     },
     template: `
       <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 256px;">
-        <m3-ripple v-bind="args" />
+        <m2-ripple v-bind="args" />
         <span>Click</span>
       </div>
     `

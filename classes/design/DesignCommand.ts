@@ -9,7 +9,7 @@ import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
 import { DesignComponent } from '../services/designs/DesignComponent.ts'
 import { DesignIcons } from './DesignIcons.ts'
 
-import { FILE_PROPERTY } from '../../types/property.ts'
+import { FILE_PROPERTY, FILE_STYLE } from '../../types/property.ts'
 
 export type DesignCommandDesignsItem = {
   name: string
@@ -83,6 +83,8 @@ export class DesignCommand {
         new DesignComponent(name).init()
       })
     })
+
+    this.makeStyle()
   }
 
   /**
@@ -99,6 +101,28 @@ export class DesignCommand {
    */
   protected isComponent (): boolean {
     return isFilled(this.component)
+  }
+
+  protected makeStyle (): this {
+    const design = process.env.DESIGNS_MAIN
+    const designs = process.env.DESIGNS?.split(',')
+
+    if (design && designs) {
+      const file: string[] = []
+
+      designs.forEach(item => {
+        file.push(`@import "./${item}/${item === design ? 'main' : 'init'}";`)
+      })
+
+      PropertiesFile.write(
+        [],
+        FILE_STYLE,
+        file.join('\r\n'),
+        'scss'
+      )
+    }
+
+    return this
   }
 
   /**

@@ -1,3 +1,5 @@
 {
-  "main": "{d.ripple}"
+  "main": "{d.ripple}",
+  "background-color": "{sys.palette.onSurface}",
+  "background-opacity": "{ref.opacity.20}"
 }
