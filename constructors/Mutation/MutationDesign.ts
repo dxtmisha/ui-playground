@@ -1,6 +1,7 @@
 import { h, VNode } from 'vue'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { MutationRef } from './MutationRef.ts'
 
 import {
   type ConstrOptions,
@@ -37,6 +38,8 @@ export class MutationDesign<
   CLASSES,
   P
 > {
+  protected mutation: MutationRef
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -54,9 +57,7 @@ export class MutationDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
-
+    this.mutation = new MutationRef()
     this.init()
   }
 
@@ -65,8 +66,6 @@ export class MutationDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -76,8 +75,7 @@ export class MutationDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      items: this.mutation.items
     } as SETUP
   }
 
@@ -86,11 +84,10 @@ export class MutationDesign<
    * Инициализация всех необходимых свойств для работы.
    */
   protected initExpose (): EXPOSE {
-    // const setup = this.setup()
+    const setup = this.setup()
 
     return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
+      items: setup.items
     } as EXPOSE
   }
 
@@ -113,10 +110,7 @@ export class MutationDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
-    }
+    return {}
   }
 
   /**
@@ -124,13 +118,25 @@ export class MutationDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
-    // const children: any[] = []
+    const setup = this.setup()
+    const children: any[] = []
+
+    if (this.components.is('item')) {
+      setup.items.value.forEach(item => {
+        this.components.renderAdd(
+          children,
+          'item',
+          { item },
+          undefined,
+          item.getId()
+        )
+      })
+    }
 
     return h('div', {
-      // ...this.getAttrs(),
+      ...this.getAttrs(),
       ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: setup.classes.value.main
+    }, children)
   }
 }

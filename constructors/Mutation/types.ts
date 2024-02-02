@@ -1,11 +1,13 @@
 import { type ConstrClass } from '../../types/constructor.ts'
+import { type MutationDataItem } from '../../classes/mutation/MutationDataItem.ts'
+import { ShallowRef } from 'vue'
 
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
 export type MutationComponents = {
-  // componentName: object
+  item: object
 }
 
 /**
@@ -13,7 +15,7 @@ export type MutationComponents = {
  * Тип, описывающий доступные события.
  */
 export type MutationEmits = {
-  // load: [value: string]
+  load: []
 }
 
 /**
@@ -21,7 +23,7 @@ export type MutationEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MutationSetup = {
-  // TODO
+  items: ShallowRef<MutationDataItem[]>
 }
 
 /**
@@ -29,7 +31,7 @@ export type MutationSetup = {
  * Тип, описывающий доступные свойства.
  */
 export type MutationExpose = {
-  // TODO
+  items: ShallowRef<MutationDataItem[]>
 }
 
 /**
@@ -37,7 +39,7 @@ export type MutationExpose = {
  * Тип, описывающий доступные слоты.
  */
 export type MutationSlots = {
-  // default? (props: any): any
+  // none
 }
 
 /**

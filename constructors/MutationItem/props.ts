@@ -1,11 +1,13 @@
 import { type PropType } from 'vue'
 
+import { MutationDataItem } from '../../classes/mutation/MutationDataItem.ts'
+
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
  */
 export type MutationItemProps = {
-  // TODO: Location for a custom property / Место для пользовательского свойства
+  item?: MutationDataItem
   // Tokens
   // :type [!] System label / Системная метка
   // :type [!] System label / Системная метка
@@ -16,7 +18,6 @@ export type MutationItemProps = {
  * Значение по умолчанию для свойства.
  */
 export const defaultsMutationItem: MutationItemProps = {
-  // TODO: Location for a user-defined default value / Место для пользовательского значения по умолчанию
   ...{
     // :default [!] System label / Системная метка
     // :default [!] System label / Системная метка
@@ -28,7 +29,8 @@ export const defaultsMutationItem: MutationItemProps = {
  * Конструктор для свойства.
  */
 export const propsMutationItem = {
-  // TODO: Location for a custom property / Место для пользовательского свойства
+  item: MutationDataItem as PropType<MutationItemProps['item']>,
+
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
