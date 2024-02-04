@@ -2,6 +2,6 @@
 
 @mixin mixinMutationToken {
   // :style [!] System label / Системная метка
-  --m3-mutation-main: var(--d-mutation);
+  display: none;
   // :style [!] System label / Системная метка
 }

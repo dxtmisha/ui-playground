@@ -13,6 +13,7 @@ export const propsValues = {
 
 export type PropsToken = {
   // :type [!] System label / Системная метка
+  // [constructor] item?: MutationDataItem
   // :type [!] System label / Системная метка
 }
 

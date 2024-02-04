@@ -90,7 +90,8 @@ export class MutationCollect {
    */
   static closestInit (element: HTMLElement): boolean {
     return Boolean(
-      element?.closest?.(this.getSelectorInit())
+      element?.closest?.(this.getSelectorInit()) ||
+      !element?.closest?.('body')
     )
   }
 

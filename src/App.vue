@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { createElement } from '../functions/element.ts'
 
+import { MutationGlobal } from '../classes/mutation/MutationGlobal.ts'
+
 let num = 1
 
 const onClick = () => {
@@ -15,6 +17,13 @@ const onClick = () => {
       }
     }
   )
+
+  MutationGlobal.comp('test', {
+    label: `number: ${num}`,
+    slots: {
+      default: ['update']
+    }
+  })
 }
 
 const onRemove = (event: MouseEvent) => {
@@ -24,6 +33,12 @@ const onRemove = (event: MouseEvent) => {
     button.remove()
   }
 }
+
+MutationGlobal.comp('test', {
+  onClick: (event: Event, data: any) => {
+    console.log('event', event, data)
+  }
+})
 </script>
 
 <template>
@@ -32,10 +47,15 @@ const onRemove = (event: MouseEvent) => {
     <m3-mutation />
     <div id="ui-test" @click="onRemove">
       <span
-        data-ui="m3-button"
+        id="test"
+        data-ui="button"
         data-icon="home"
         data-label="Label"
-      />
+      >
+        <span>Label</span>
+        <span>/</span>
+        <span>Span</span>
+      </span>
     </div>
   </div>
 </template>

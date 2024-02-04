@@ -1,5 +1,12 @@
 import { forEach } from '../../functions/data.ts'
 
+import {
+  type MutationComponent,
+  type MutationComponentCache,
+  type MutationComponentCallback,
+  type MutationComponentProps
+} from '../../types/mutation.ts'
+
 /**
  * Class for working with global variables.<br>
  * Класс для работы с глобальными переменными.
@@ -8,6 +15,9 @@ export class MutationGlobal {
   static readonly functions: Record<string, any> = {}
   static readonly classes: Record<string, any> = {}
   static readonly components: Record<string, any> = {}
+
+  protected static readonly compItems: MutationComponent = {}
+  protected static readonly compCaching: MutationComponentCache = {}
 
   /**
    * Checks if a function is in the list by its name.<br>
@@ -42,6 +52,31 @@ export class MutationGlobal {
    */
   static getComponentList (): Record<string, any> {
     return this.components
+  }
+
+  /**
+   * Returns a list of connected components.<br>
+   * Возвращает список подключенных компонентов.
+   */
+  static getComponentVue (name: string): any | undefined {
+    if (name in this.components) {
+      return this.components[name]
+    }
+
+    return undefined
+  }
+
+  /**
+   * Returns an instance of the element.<br>
+   * Возвращает экземпляр элемента.
+   * @param name component identifier /<br>идентификатор компонента
+   */
+  static getComponentItem (name: string): any | undefined {
+    if (name in this.compItems) {
+      return this.compItems[name].item
+    }
+
+    return undefined
   }
 
   /**
@@ -111,5 +146,57 @@ export class MutationGlobal {
     forEach(components, (component, name) => {
       this.addComponent(name, component)
     })
+  }
+
+  /**
+   * Registers a component to track parameter changes.<br>
+   * Регистрирует компонент для слежения за изменением параметра.
+   * @param name component identifier /<br>идентификатор компонента
+   * @param item element instance /<br>экземпляр элемента
+   * @param callback function called upon change /<br>вызываемая функция при изменении
+   */
+  static registrationComponent (
+    name: string,
+    item: any,
+    callback: MutationComponentCallback
+  ): MutationComponentProps | undefined {
+    this.compItems[name] = {
+      item,
+      callback
+    }
+
+    if (name in this.compCaching) {
+      const prop = this.compCaching[name]
+      delete this.compCaching[name]
+
+      return prop
+    }
+
+    return undefined
+  }
+
+  /**
+   * Calls data update.<br>
+   * Вызывает обновление данных.
+   * @param name component identifier /<br>идентификатор компонента
+   * @param props component property /<br>свойство компонента
+   */
+  static comp (name: string, props: MutationComponentProps): void {
+    if (name in this.compItems) {
+      this.compItems[name].callback(props)
+    } else {
+      this.compCaching[name] = props
+    }
+  }
+
+  /**
+   * Removal of the component from the list.<br>
+   * Удаление компонента из списка.
+   * @param name component identifier /<br>идентификатор компонента
+   */
+  static removeComponent (name: string): void {
+    if (name in this.compItems) {
+      delete this.compItems[name]
+    }
   }
 }

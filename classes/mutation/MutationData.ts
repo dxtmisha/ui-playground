@@ -69,6 +69,7 @@ export class MutationData {
     const key = this.find(element)
 
     if (key >= 0) {
+      this.items[key].disconnect()
       this.items.splice(key, 1)
     }
 

@@ -59,8 +59,6 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
       }
     })
 
-    console.log('this.type', this.type.get())
-
     this.coordinator = new ImageCoordinator(props)
     this.position = new ImagePosition(props, this.coordinator)
 

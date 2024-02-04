@@ -28,17 +28,21 @@ export class MutationObserverItems {
       this.end()
     }
 
-    this.mutation = new MutationObserver(record => this.callback(record))
+    const items = this.items.get()
 
-    for (const item of this.items.get()) {
-      this.mutation.observe(item.getElement(), {
-        attributes: true,
-        attributeOldValue: false,
-        characterData: false,
-        characterDataOldValue: false,
-        childList: false,
-        subtree: false
-      })
+    if (items.length > 0) {
+      this.mutation = new MutationObserver(record => this.callback(record))
+
+      for (const item of items) {
+        this.mutation.observe(item.getElement(), {
+          attributes: true,
+          attributeOldValue: false,
+          characterData: false,
+          characterDataOldValue: false,
+          childList: false,
+          subtree: false
+        })
+      }
     }
 
     return this

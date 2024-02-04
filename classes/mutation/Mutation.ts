@@ -1,6 +1,7 @@
 import { MutationCollect } from './MutationCollect.ts'
 import { MutationData } from './MutationData.ts'
 import { MutationObserverGlobal } from './MutationObserverGlobal.ts'
+import { MutationObserverItems } from './MutationObserverItems.ts'
 
 import { MutationStatus } from '../../types/mutation.ts'
 
@@ -10,6 +11,7 @@ import { MutationStatus } from '../../types/mutation.ts'
  */
 export class Mutation {
   private mutationGlobal: MutationObserverGlobal
+  private mutationItems: MutationObserverItems
 
   readonly items = new MutationData()
 
@@ -23,6 +25,11 @@ export class Mutation {
       (node: HTMLElement) => this.add(node),
       (node: HTMLElement) => this.remove(node)
     )
+
+    this.mutationItems = new MutationObserverItems(
+      this.items,
+      (element: HTMLElement) => this.items.getItem(element)?.update()
+    )
   }
 
   /**
@@ -31,8 +38,8 @@ export class Mutation {
    */
   start (): this {
     this.addList()
-
-    requestAnimationFrame(() => this.mutationGlobal.start())
+    this.mutationGlobal.start()
+    this.mutationItems.start()
 
     return this
   }
@@ -55,6 +62,8 @@ export class Mutation {
     this.items.add(element)
     this.addList(element)
     this.callback()
+
+    this.mutationItems.start()
   }
 
   /**
@@ -75,6 +84,8 @@ export class Mutation {
     this.items.remove(element)
     this.removeList(element)
     this.callback()
+
+    this.mutationItems.start()
   }
 
   /**

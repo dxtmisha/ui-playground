@@ -1,6 +1,8 @@
-import { h, VNode } from 'vue'
+import { computed, h, resolveComponent, Teleport, type VNode } from 'vue'
+import { forEach } from '../../functions/data.ts'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { MutationItemRef } from './MutationItemRef.ts'
 
 import {
   type ConstrOptions,
@@ -15,7 +17,9 @@ import {
   type MutationItemEmits,
   type MutationItemExpose,
   type MutationItemSetup,
-  type MutationItemSlots
+  type MutationItemSlots,
+  type MutationSlotsRef,
+  type MutationSlotsRefItem
 } from './types.ts'
 
 /**
@@ -37,6 +41,8 @@ export class MutationItemDesign<
   CLASSES,
   P
 > {
+  protected mutation: MutationItemRef
+
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -54,9 +60,7 @@ export class MutationItemDesign<
       options
     )
 
-    // TODO: Method for initializing base objects
-    // TODO: Метод для инициализации базовых объектов
-
+    this.mutation = new MutationItemRef(props, this.element)
     this.init()
   }
 
@@ -65,8 +69,6 @@ export class MutationItemDesign<
    * Инициализация базовых опций.
    */
   protected makeOptions (): this {
-    // TODO: User code
-    // TODO: Код пользователя
     return this
   }
 
@@ -76,8 +78,12 @@ export class MutationItemDesign<
    */
   protected initSetup (): SETUP {
     return {
-      // TODO: List of parameters for setup
-      // TODO: список параметры для setup
+      mainElement: this.mutation.mainElement,
+      componentName: this.mutation.componentName,
+      binds: this.mutation.binds,
+      slots: this.mutation.slots,
+
+      renderSlots: computed(() => this.renderSlots())
     } as SETUP
   }
 
@@ -88,10 +94,7 @@ export class MutationItemDesign<
   protected initExpose (): EXPOSE {
     // const setup = this.setup()
 
-    return {
-      // TODO: list of properties for export
-      // TODO: список свойств для экспорта
-    } as EXPOSE
+    return {} as EXPOSE
   }
 
   /**
@@ -113,10 +116,7 @@ export class MutationItemDesign<
    * Доработка полученного списка стилей.
    */
   protected initStyles (): ConstrStyles {
-    return {
-      // TODO: list of user styles
-      // TODO: список пользовательских стилей
-    }
+    return {}
   }
 
   /**
@@ -124,13 +124,49 @@ export class MutationItemDesign<
    * Метод для рендеринга.
    */
   protected initRender (): VNode {
-    // const setup = this.setup()
-    // const children: any[] = []
+    const setup = this.setup()
 
-    return h('div', {
-      // ...this.getAttrs(),
+    return h(Teleport, {
       ref: this.element,
-      class: this.classes?.value.main
-    })
+      class: this.classes?.value.main,
+      to: setup.mainElement
+    }, [
+      h(
+        resolveComponent(setup.componentName),
+        setup.binds.value,
+        setup.renderSlots.value
+      )
+    ])
+  }
+
+  /**
+   * Rendering data for the slot.<br>
+   * Рендеринг данных для слота.
+   */
+  private renderSlots (): MutationSlotsRef {
+    const setup = this.setup()
+    const slots: MutationSlotsRef = {}
+    const data = setup.slots.value
+
+    if (data) {
+      forEach(data, (children, name) => {
+        const slot: MutationSlotsRefItem[] = []
+
+        children.forEach(item => {
+          if (typeof item === 'string') {
+            slot.push(item)
+          } else {
+            slot.push(h(
+              item.tag,
+              { ...item.attributes }
+            ))
+          }
+        })
+
+        slots[name] = () => slot
+      })
+    }
+
+    return slots
   }
 }

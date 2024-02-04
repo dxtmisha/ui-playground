@@ -893,6 +893,19 @@ $designsProperties: (
           ),
         ),
       ),
+      'mutation':(
+        index: 'mutation',
+        name: 'd-mutation',
+        type: 'component',
+        value: (
+          'display':(
+            index: 'display',
+            name: 'display',
+            type: 'property',
+            value: 'none',
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'd-progress',

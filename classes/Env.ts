@@ -52,6 +52,7 @@ export class Env {
   get<T> (defaultValue?: T): T {
     return transformation(
       import.meta.env?.[this.getName()] ??
+      import.meta.env?.[`VITE_${this.getName()}`] ??
       defaultValue ??
       this.getValue()
     )

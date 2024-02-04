@@ -1,7 +1,9 @@
+import { toKebabCase } from '../functions/string.ts'
 import { useEnv } from '../composables/useEnv.ts'
 
 export const CLASS_NAME = 'd-mutation'
-export const KEY_UI = useEnv('DESIGNS_GLOBAL', 'ui')
+export const KEY_NAME = toKebabCase(useEnv('DESIGNS_MAIN', 'design'))
+export const KEY_UI = toKebabCase(useEnv('DESIGNS_GLOBAL', 'ui'))
 export const KEY_INIT = 'init'
 export const KEY_END = 'end'
 
@@ -10,3 +12,19 @@ export enum MutationStatus {
   init = KEY_INIT,
   end = KEY_END
 }
+
+export type MutationComponentProps = Record<string, any>
+export type MutationComponentCallback = (props: MutationComponentProps) => void
+export type MutationComponentCache = Record<string, MutationComponentProps>
+export type MutationComponentItem = {
+  item: any
+  callback: MutationComponentCallback
+}
+export type MutationComponent = Record<string, MutationComponentItem>
+
+export type MutationSlotsItem = {
+  tag: string
+  attributes: Record<string, any>
+}
+export type MutationSlotsItemOrString = MutationSlotsItem | string
+export type MutationSlots = Record<string, MutationSlotsItemOrString[]>

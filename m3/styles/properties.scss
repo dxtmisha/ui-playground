@@ -945,6 +945,19 @@ $designsProperties: (
           ),
         ),
       ),
+      'mutation':(
+        index: 'mutation',
+        name: 'd-mutation',
+        type: 'component',
+        value: (
+          'display':(
+            index: 'display',
+            name: 'display',
+            type: 'property',
+            value: 'none',
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'd-progress',
@@ -9876,11 +9889,11 @@ $designsProperties: (
         name: 'm3-mutation',
         type: 'component',
         value: (
-          'main':(
-            index: 'main',
-            name: '--m3-mutation-main',
-            type: 'var',
-            value: 'var(--d-mutation)',
+          'display':(
+            index: 'display',
+            name: 'display',
+            type: 'property',
+            value: 'none',
           ),
         ),
       ),

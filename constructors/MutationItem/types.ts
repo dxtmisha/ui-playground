@@ -1,11 +1,23 @@
+import {
+  type ComputedRef,
+  type ShallowRef,
+  type VNode
+} from 'vue'
 import { type ConstrClass } from '../../types/constructor.ts'
+import {
+  type MutationComponentProps,
+  type MutationSlots
+} from '../../types/mutation.ts'
+
+export type MutationSlotsRefItem = (VNode | string)
+export type MutationSlotsRef = Record<string, () => MutationSlotsRefItem[]>
 
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.
  */
 export type MutationItemComponents = {
-  // componentName: object
+  // none
 }
 
 /**
@@ -13,7 +25,7 @@ export type MutationItemComponents = {
  * Тип, описывающий доступные события.
  */
 export type MutationItemEmits = {
-  // load: [value: string]
+  load: []
 }
 
 /**
@@ -21,7 +33,12 @@ export type MutationItemEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MutationItemSetup = {
-  // TODO
+  componentName: string
+  binds: ShallowRef<MutationComponentProps | undefined>
+  slots: ShallowRef<MutationSlots | undefined>
+  mainElement: HTMLElement
+
+  renderSlots: ComputedRef<MutationSlotsRef>
 }
 
 /**
@@ -29,7 +46,7 @@ export type MutationItemSetup = {
  * Тип, описывающий доступные свойства.
  */
 export type MutationItemExpose = {
-  // TODO
+  // none
 }
 
 /**
@@ -37,7 +54,7 @@ export type MutationItemExpose = {
  * Тип, описывающий доступные слоты.
  */
 export type MutationItemSlots = {
-  // default? (props: any): any
+  // none
 }
 
 /**
