@@ -72,8 +72,8 @@ export class DesignProject {
     ]
     const length = paths.length - 1
 
-    if (paths[length] === 'gitignore.txt') {
-      paths[length] = '.gitignore'
+    if (paths[length].match('gitignore.txt')) {
+      paths[length] = paths[length].replace('gitignore.txt', '.gitignore')
     }
 
     return paths
