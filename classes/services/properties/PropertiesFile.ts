@@ -217,6 +217,19 @@ export class PropertiesFile {
   }
 
   /**
+   * Returns the content of the file, without converting the value.<br>
+   * Возвращает содержимое файла, без преобразования значения.
+   * @param path filename /<br>имя файла
+   */
+  static readFileOnly (path: PropertiesFilePath): string | undefined {
+    if (this.is(path)) {
+      return requireFs.readFileSync(this.joinPath(path)).toString()
+    }
+
+    return undefined
+  }
+
+  /**
    * Synchronously creates a directory.<br>
    * Синхронно создает директорию.
    * @param path path to the directory /<br>путь к директории

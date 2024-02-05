@@ -78,7 +78,7 @@ export class DesignProject {
    * @param path name of the element being checked /<br>название проверяемого элемента
    */
   private read (path: PropertiesFilePath): string | undefined {
-    return PropertiesFile.readFile([
+    return PropertiesFile.readFileOnly([
       ...this.getTemplatePath(),
       ...toArray(path)
     ])
