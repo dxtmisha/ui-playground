@@ -66,10 +66,17 @@ export class DesignProject {
   private getProjectPath (
     path: PropertiesFilePath
   ): string[] {
-    return [
+    const paths = [
       ...DIR_PROJECT,
       ...toArray(path)
     ]
+    const length = paths.length - 1
+
+    if (paths[length] === 'gitignore.txt') {
+      paths[length] = '.gitignore'
+    }
+
+    return paths
   }
 
   /**
