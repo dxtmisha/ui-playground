@@ -33,6 +33,7 @@ export class DesignProject {
         const data = this.read(path)
 
         if (data) {
+          console.log('path', PropertiesFile.readDir(path))
           PropertiesFile.writeByPath(path, data)
         }
       })
