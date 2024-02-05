@@ -13,7 +13,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
+    "sass": "^1.70.0",
     "typescript": "^5.2.2",
+    "ui": "git+https://github.com/dxtmisha/ui-playground.git",
     "vite": "^5.0.8",
     "vue-tsc": "^1.8.25"
   }
