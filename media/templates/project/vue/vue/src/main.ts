@@ -1,5 +1,17 @@
-import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import './style.css'
+
+const windowIndex = '__UI_PROJECT'
+const windowItem = window as any
+const windowPath = 'path'
+
+if (windowIndex in windowItem) {
+    windowItem[windowIndex][windowPath] = {}
+} else {
+    windowItem[windowIndex] = {
+        [windowPath]: {
+            item: App
+        }
+    }
+}
