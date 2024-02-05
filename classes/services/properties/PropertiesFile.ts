@@ -36,7 +36,11 @@ export class PropertiesFile {
    * @param path name of the element being checked /<br>название проверяемого элемента
    */
   static isDir (path: PropertiesFilePath): boolean {
-    return !this.joinPath(path).match(/\.\w+$/)
+    if (this.is(path)) {
+      return requireFs.statSync(this.joinPath(path))?.isDirectory() ?? false
+    }
+
+    return false
   }
 
   /**
@@ -182,9 +186,11 @@ export class PropertiesFile {
     const data: string[] = []
 
     dirs.forEach(dir => {
-      if (this.isDir(dir)) {
+      const paths = [...path, dir]
+
+      if (this.isDir(paths)) {
         data.push(...this.readDirRecursive(
-          [...path, dir],
+          paths,
           [...fullPath, dir]
         ))
       } else {
