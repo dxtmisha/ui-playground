@@ -1,4 +1,4 @@
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 import { makeStopPropagation } from '../../../functions/event.ts'
 
 import { type ConstrEmit } from '../../../types/constructor.ts'
@@ -69,10 +69,10 @@ export const useEventClick = function (
    * Изменение ссылки через router.
    */
   const router = () => {
-    if (props?.to) {
-      useRouter().push(props.to).then()
-      return true
-    }
+    // if (props?.to) {
+    //   useRouter().push(props.to).then()
+    //   return true
+    // }
 
     return false
   }
