@@ -3,7 +3,7 @@ import { toArray } from '../../functions/object.ts'
 import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile.ts'
 
 export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
-export const DIR_PROJECT = ['t']
+export const DIR_PROJECT = ['..']
 
 /**
  * Class for working with template projects.<br>
@@ -33,8 +33,7 @@ export class DesignProject {
         const data = this.read(path)
 
         if (data) {
-          console.log('path', PropertiesFile.readDir(path))
-          PropertiesFile.writeByPath(path, data)
+          PropertiesFile.writeByPath(this.getProjectPath(path), data)
         }
       })
     }
