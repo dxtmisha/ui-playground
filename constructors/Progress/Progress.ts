@@ -14,8 +14,8 @@ import {
  * Базовый класс для работы с загрузчиком.
  */
 export class Progress extends DesignAsyncAbstract<ProgressProps, ProgressEventLoad> {
-  protected timeout?: NodeJS.Timeout
-  protected timeoutReject?: NodeJS.Timeout
+  protected timeout?: any
+  protected timeoutReject?: any
 
   /**
    * Constructor

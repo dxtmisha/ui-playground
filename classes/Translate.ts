@@ -16,7 +16,7 @@ export class Translate {
 
   protected static cache: string[] = []
   protected static resolveList: (() => void)[] = []
-  protected static timeout?: NodeJS.Timeout
+  protected static timeout?: any
 
   /**
    * Getting the translation text by its code.<br>
