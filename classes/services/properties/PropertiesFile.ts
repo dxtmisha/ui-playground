@@ -169,6 +169,33 @@ export class PropertiesFile {
   }
 
   /**
+   * Reads the contents of the directory recursively.<br>
+   * Читает содержимое директории рекурсивно.
+   * @param path path to the directory /<br>путь к директории
+   * @param fullPath recursive directory /<br>рекурсивная директория
+   */
+  static readDirRecursive (
+    path: PropertiesFilePath,
+    fullPath: PropertiesFilePath = []
+  ): string[] {
+    const dirs = this.readDir(path)
+    const data: string[] = []
+
+    dirs.forEach(dir => {
+      if (this.isDir(dir)) {
+        data.push(...this.readDirRecursive(
+          [...path, dir],
+          [...fullPath, dir]
+        ))
+      } else {
+        data.push(this.joinPath([...fullPath, dir]))
+      }
+    })
+
+    return data
+  }
+
+  /**
    * Returns the contents of the path.<br>
    * Возвращает содержимое пути.
    * @param path filename /<br>имя файла
@@ -213,10 +240,26 @@ export class PropertiesFile {
     value: T,
     extension = 'json'
   ): void {
+    this.writeByPath(
+      this.joinPathByName(path, name, extension),
+      value
+    )
+  }
+
+  /**
+   * Writes to the selected path.<br>
+   * Записывает по выбранному пути.
+   * @param path path to the file /<br>путь к файлу
+   * @param value values for storage /<br>значения для хранения
+   */
+  static writeByPath<T extends PropertiesFileValue> (
+    path: PropertiesFilePath,
+    value: T
+  ): void {
     this.createDir(path)
 
     requireFs.writeFileSync(
-      this.joinPathByName(path, name, extension),
+      this.joinPath(path),
       typeof value === 'object' ? JSON.stringify(value) : value
     )
   }
