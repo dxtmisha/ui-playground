@@ -4,6 +4,7 @@ import { PropertiesFile, type PropertiesFilePath } from '../services/properties/
 
 export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
 export const DIR_PROJECT = ['..']
+export const DIR_TEMP = 'temp'
 
 /**
  * Class for working with template projects.<br>
@@ -36,6 +37,8 @@ export class DesignProject {
           PropertiesFile.writeByPath(this.getProjectPath(path), data)
         }
       })
+
+      this.removeTempDir()
     }
   }
 
@@ -96,5 +99,19 @@ export class DesignProject {
    */
   private initTemplatePaths (): string[] {
     return PropertiesFile.readDirRecursive(this.getTemplatePath())
+  }
+
+  /**
+   * Deleting temporary files, if they exist.<br>
+   * Удаление временных файлов, если они есть.
+   */
+  private removeTempDir (): this {
+    const path = this.getProjectPath([DIR_TEMP])
+
+    if (PropertiesFile.is(path)) {
+      PropertiesFile.removeDir(path)
+    }
+
+    return this
   }
 }
