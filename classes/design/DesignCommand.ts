@@ -3,6 +3,7 @@ import { isFilled } from '../../functions/data.ts'
 import { toCamelCase, toCamelCaseFirst, toKebabCase } from '../../functions/string.ts'
 
 import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
+import { PropertiesCache } from '../services/properties/PropertiesCache.ts'
 
 import { Styles } from '../services/styles/Styles.ts'
 import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
@@ -68,6 +69,8 @@ export class DesignCommand {
    * Инициализация компоненты.
    */
   init (): void {
+    PropertiesCache.clear()
+
     const designs = this.initDesign()
 
     new Styles().init()

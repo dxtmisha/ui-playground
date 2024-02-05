@@ -222,10 +222,25 @@ export class PropertiesFile {
   }
 
   /**
+   * List of slots for update.<br>
+   * Список слотов для обновления.
+   * @param path path to the directory /<br>путь к директории
+   */
+  static removeDir (
+    path: PropertiesFilePath
+  ): void {
+    if (this.isDir(path)) {
+      requireFs.rmSync(this.joinPath(path), {
+        recursive: true,
+        force: true
+      })
+    }
+  }
+
+  /**
    * Removing root from the path.<br>
    * Удаление root из пути.
    * @param path path to the directory /<br>путь к директории
-   * @private
    */
   private static removeRootInPath (path: PropertiesFilePath): string {
     return this.joinPath(path)

@@ -94,6 +94,14 @@ export class PropertiesCache {
   }
 
   /**
+   * Clear cached data.<br>
+   * Очистить кешированные данные.
+   */
+  static clear (): void {
+    PropertiesFile.removeDir(this.getPath([]))
+  }
+
+  /**
    * Checks if there are files to read.<br>
    * Проверяет наличие файлов для чтения.
    * @param path path to the file /<br>путь к файлу
