@@ -2,7 +2,7 @@ import { toArray } from '../../functions/object.ts'
 
 import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile.ts'
 
-export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates']
+export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
 export const DIR_PROJECT = ['..']
 
 /**
@@ -44,7 +44,7 @@ export class DesignProject {
    * Возвращает название шаблонной директории.
    */
   private getTemplateDir (): string {
-    return `project-${this.template}`
+    return this.template
   }
 
   /**
