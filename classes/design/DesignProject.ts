@@ -3,7 +3,7 @@ import { toArray } from '../../functions/object.ts'
 import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile.ts'
 
 export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates']
-export const DIR_PROJECT = []
+export const DIR_PROJECT = ['..']
 
 /**
  * Class for working with template projects.<br>
