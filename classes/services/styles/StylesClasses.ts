@@ -52,7 +52,7 @@ export class StylesClasses {
         data.push(StylesTool.addImport(`./classes/${name}.scss`))
 
         classes[name] = [
-          StylesTool.addImportProperties(),
+          StylesTool.addImportProperties('../../..'),
           '',
           `.${name} {`,
           ...(new StylesProperties(space, property)).make(),

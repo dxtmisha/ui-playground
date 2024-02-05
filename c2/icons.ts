@@ -149,10 +149,7 @@ import settings02 from './tokens/icons/settings-02.svg'
 import settings03 from './tokens/icons/settings-03.svg'
 import share01 from './tokens/icons/share-01.svg'
 import share02 from './tokens/icons/share-02.svg'
-import solidBookmark from './tokens/icons/solid/bookmark.svg'
-import solidCloud from './tokens/icons/solid/cloud.svg'
-import solidHeart from './tokens/icons/solid/heart.svg'
-import solidLocationPointer from './tokens/icons/solid/location-pointer.svg'
+import solid from './tokens/icons/solid'
 import square from './tokens/icons/square.svg'
 import statusDot from './tokens/icons/status-dot.svg'
 import tag from './tokens/icons/tag.svg'
@@ -328,10 +325,7 @@ Icons.add('settings-02', settings02)
 Icons.add('settings-03', settings03)
 Icons.add('share-01', share01)
 Icons.add('share-02', share02)
-Icons.add('solid-bookmark', solidBookmark)
-Icons.add('solid-cloud', solidCloud)
-Icons.add('solid-heart', solidHeart)
-Icons.add('solid-location-pointer', solidLocationPointer)
+Icons.add('solid', solid)
 Icons.add('square', square)
 Icons.add('status-dot', statusDot)
 Icons.add('tag', tag)

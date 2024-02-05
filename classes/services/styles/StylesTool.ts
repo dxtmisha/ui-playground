@@ -48,9 +48,10 @@ export class StylesTool {
   /**
    * Getting a reference to a base function.<br>
    * Получение ссылки на базовую функцию.
+   * @param path path to the file /<br>путь к файлу
    */
-  static addImportProperties (): string {
-    return this.addImport('styles/all')
+  static addImportProperties (path: string = '..'): string {
+    return this.addImport(`${path}/styles/all`)
   }
 
   /**

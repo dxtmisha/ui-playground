@@ -1,4 +1,4 @@
-@import "styles/all";
+@import "../../../styles/all";
 
 .m2-grid {
   grid-template-columns: repeat(var(--m2-sys-grid-xs), minmax(0, 1fr));

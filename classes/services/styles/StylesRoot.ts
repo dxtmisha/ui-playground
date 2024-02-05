@@ -27,7 +27,7 @@ export class StylesRoot {
   init (): string[] {
     const space = StylesTool.addSpace(1)
     const data: string[] = [
-      StylesTool.addImportProperties(),
+      StylesTool.addImportProperties('../..'),
       '',
       ':root {'
     ]
