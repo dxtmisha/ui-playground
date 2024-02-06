@@ -96,9 +96,9 @@ export class DesignProject {
    * Читает выбранные файлы в проекте.
    * @param path name of the element being checked /<br>название проверяемого элемента
    */
-  private readProject (path: PropertiesFilePath): string | undefined {
-    return PropertiesFile.readFile(this.getProjectPath(path))
-  }
+  // private readProject (path: PropertiesFilePath): string | undefined {
+  //   return PropertiesFile.readFile(this.getProjectPath(path))
+  // }
 
   /**
    * We get a list of links to files.<br>

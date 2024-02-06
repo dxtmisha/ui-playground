@@ -1,9 +1,9 @@
-import {initComponents} from 'ui/design-component.ts'
+// # import { initComponents } from 'ui/design-component.ts'
 
-import App from './App.vue'
+// # import App from './App.vue'
 
-import 'ui/design-style.scss'
-import './style.css'
+// # import 'ui/design-style.scss'
+// # import './style.css'
 
-initComponents(App)
-    .mount('#app')
+// # initComponents(App)
+// #   .mount('#app')

@@ -40,7 +40,7 @@ export class PropertiesFile {
       return requireFs.statSync(this.joinPath(path))?.isDirectory() ?? false
     }
 
-    return false
+    return !this.joinPath(path).match(/\.\w+$/)
   }
 
   /**
