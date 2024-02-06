@@ -6,6 +6,7 @@ export const KEY_NAME = toKebabCase(useEnv('DESIGNS_MAIN', 'design'))
 export const KEY_UI = toKebabCase(useEnv('DESIGNS_GLOBAL', 'ui'))
 export const KEY_INIT = 'init'
 export const KEY_END = 'end'
+export const KEY_GLOBAL_PROJECT = '__UI_PROJECT'
 
 export enum MutationStatus {
   new = 'new',
@@ -28,3 +29,10 @@ export type MutationSlotsItem = {
 }
 export type MutationSlotsItemOrString = MutationSlotsItem | string
 export type MutationSlots = Record<string, MutationSlotsItemOrString[]>
+
+export type MutationProjectItem = {
+  item: any
+  router?: Record<string, any>
+  store?: Record<string, any>
+}
+export type MutationProject = Record<string, MutationProjectItem>

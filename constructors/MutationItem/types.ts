@@ -33,10 +33,13 @@ export type MutationItemEmits = {
  * Интерфейс для описания, какое свойство возвращает setup.
  */
 export type MutationItemSetup = {
+  mainElement: HTMLElement
+
   componentName: string
+  componentItem: any
+
   binds: ShallowRef<MutationComponentProps | undefined>
   slots: ShallowRef<MutationSlots | undefined>
-  mainElement: HTMLElement
 
   renderSlots: ComputedRef<MutationSlotsRef>
 }

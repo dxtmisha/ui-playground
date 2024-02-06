@@ -1,6 +1,7 @@
 import { type App, createApp } from 'vue'
 
 import { MutationGlobal } from './classes/mutation/MutationGlobal'
+import { MutationGlobalRef } from './classes/mutation/MutationGlobalRef.ts'
 
 import functions from './functions/all.ts'
 import classes from './classes/all.ts'
@@ -42,6 +43,7 @@ MutationGlobal.addComponentList(c1)
 MutationGlobal.addComponentList(c2)
 
 ;(window as any).UI = MutationGlobal
+;(window as any).UI_VUE = MutationGlobalRef
 
 export function initComponents (App: any): App<Element> {
   const app = createApp(App)

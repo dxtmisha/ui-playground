@@ -1,4 +1,4 @@
-import { computed, h, resolveComponent, Teleport, type VNode } from 'vue'
+import { computed, h, Teleport, type VNode } from 'vue'
 import { forEach } from '../../functions/data.ts'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
@@ -79,7 +79,10 @@ export class MutationItemDesign<
   protected initSetup (): SETUP {
     return {
       mainElement: this.mutation.mainElement,
+
       componentName: this.mutation.componentName,
+      componentItem: this.mutation.componentItem,
+
       binds: this.mutation.binds,
       slots: this.mutation.slots,
 
@@ -123,20 +126,24 @@ export class MutationItemDesign<
    * A method for rendering.<br>
    * Метод для рендеринга.
    */
-  protected initRender (): VNode {
+  protected initRender (): VNode | undefined {
     const setup = this.setup()
 
-    return h(Teleport, {
-      ref: this.element,
-      class: this.classes?.value.main,
-      to: setup.mainElement
-    }, [
-      h(
-        resolveComponent(setup.componentName),
-        setup.binds.value,
-        setup.renderSlots.value
-      )
-    ])
+    if (setup.componentItem) {
+      return h(Teleport, {
+        ref: this.element,
+        class: this.classes?.value.main,
+        to: setup.mainElement
+      }, [
+        h(
+          setup.componentItem,
+          setup.binds.value,
+          setup.renderSlots.value
+        )
+      ])
+    }
+
+    return undefined
   }
 
   /**

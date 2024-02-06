@@ -1,10 +1,13 @@
 import { forEach } from '../../functions/data.ts'
 
 import {
+  KEY_GLOBAL_PROJECT,
   type MutationComponent,
   type MutationComponentCache,
   type MutationComponentCallback,
-  type MutationComponentProps
+  type MutationComponentProps,
+  type MutationProject,
+  type MutationProjectItem
 } from '../../types/mutation.ts'
 
 /**
@@ -55,8 +58,34 @@ export class MutationGlobal {
   }
 
   /**
-   * Returns a list of connected components.<br>
-   * Возвращает список подключенных компонентов.
+   * Returns a list of global projects.<br>
+   * Возвращает список глобальных проектов.
+   */
+  static getComponentGlobal (): MutationProject {
+    if (KEY_GLOBAL_PROJECT in window) {
+      return window[KEY_GLOBAL_PROJECT] as MutationProject
+    }
+
+    return {}
+  }
+
+  /**
+   * Returns the global project by its name.<br>
+   * Возвращает глобальный проект по его названию.
+   * @param name component identifier /<br>идентификатор компонента
+   */
+  static getComponentGlobalItem (name: string): MutationProjectItem | undefined {
+    if (KEY_GLOBAL_PROJECT in window) {
+      return (window[KEY_GLOBAL_PROJECT] as MutationProject)?.[name] ?? undefined
+    }
+
+    return undefined
+  }
+
+  /**
+   * Returns connected Vue components by their name.<br>
+   * Возвращает подключенные компоненты Vue по их имени.
+   * @param name component identifier /<br>идентификатор компонента
    */
   static getComponentVue (name: string): any | undefined {
     if (name in this.components) {

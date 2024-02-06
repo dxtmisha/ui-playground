@@ -1,4 +1,6 @@
-import { shallowRef } from 'vue'
+import { resolveComponent, shallowRef } from 'vue'
+
+import { MutationGlobal } from '../../classes/mutation/MutationGlobal.ts'
 
 import { type RefUndefined } from '../../types/ref.ts'
 import {
@@ -15,6 +17,7 @@ import { type MutationItemProps } from './props.ts'
 export class MutationItemRef {
   readonly mainElement: HTMLElement = document.body
   readonly componentName: string = 'div'
+  readonly componentItem: any
   readonly binds = shallowRef<MutationComponentProps | undefined>({})
   readonly slots = shallowRef<MutationSlots | undefined>({})
 
@@ -30,6 +33,7 @@ export class MutationItemRef {
     if (props.item) {
       this.mainElement = props.item.getElement()
       this.componentName = props.item.getComponentName()
+      this.componentItem = this.initComponentItem()
       props.item.registration(element, () => this.update())
     }
 
@@ -48,5 +52,14 @@ export class MutationItemRef {
     this.slots.value = slots ? { ...slots } : undefined
 
     return this
+  }
+
+  /**
+   * Initializes data for the component.<br>
+   * Инициализирует данные для компонента.
+   */
+  private initComponentItem (): any {
+    return MutationGlobal.getComponentGlobalItem(this.componentName)?.item ??
+      resolveComponent(this.componentName)
   }
 }
