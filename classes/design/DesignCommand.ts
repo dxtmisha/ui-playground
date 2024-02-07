@@ -227,7 +227,7 @@ export class DesignCommand {
     component: string
   ): string {
     const name = this.getNameComponent(design, component)
-    return `  app.component('${name}', ${name})`
+    return `    app.component('${name}', ${name})`
   }
 
   /**
@@ -334,7 +334,7 @@ export class DesignCommand {
       [],
       FILE_DESIGN_COMPONENTS,
       [
-        'import { type App, createApp } from \'vue\'',
+        'import { type App } from \'vue\'',
         '',
         'import { MutationGlobal } from \'./classes/mutation/MutationGlobal\'',
         'import { MutationGlobalRef } from \'./classes/mutation/MutationGlobalRef.ts\'',
@@ -353,12 +353,10 @@ export class DesignCommand {
         `;(window as any).${this.getGlobalName()} = MutationGlobal`,
         `;(window as any).${this.getGlobalName()}_VUE = MutationGlobalRef`,
         '',
-        'export function initComponents (App: any): App<Element> {',
-        '  const app = createApp(App)',
-        '',
+        'export const uiMakeComponents = {',
+        '  install: (app: App<Element>): void => {',
         ...components,
-        '',
-        '  return app',
+        '  }',
         '}',
         ''
       ].join('\r\n'),

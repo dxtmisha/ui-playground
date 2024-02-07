@@ -1,4 +1,4 @@
-import { type App, createApp } from 'vue'
+import { type App } from 'vue'
 
 import { MutationGlobal } from './classes/mutation/MutationGlobal'
 import { MutationGlobalRef } from './classes/mutation/MutationGlobalRef.ts'
@@ -45,32 +45,30 @@ MutationGlobal.addComponentList(c2)
 ;(window as any).UI = MutationGlobal
 ;(window as any).UI_VUE = MutationGlobalRef
 
-export function initComponents (App: any): App<Element> {
-  const app = createApp(App)
-
-  app.component('M2Icon', M2Icon)
-  app.component('M2Image', M2Image)
-  app.component('M2Ripple', M2Ripple)
-  app.component('M3Button', M3Button)
-  app.component('M3Checkbox', M3Checkbox)
-  app.component('M3Chip', M3Chip)
-  app.component('M3FieldMessage', M3FieldMessage)
-  app.component('M3Icon', M3Icon)
-  app.component('M3Image', M3Image)
-  app.component('M3Input', M3Input)
-  app.component('M3Mask', M3Mask)
-  app.component('M3Mutation', M3Mutation)
-  app.component('M3MutationItem', M3MutationItem)
-  app.component('M3Progress', M3Progress)
-  app.component('M3Ripple', M3Ripple)
-  app.component('M3Scrollbar', M3Scrollbar)
-  app.component('M3Window', M3Window)
-  app.component('C1Icon', C1Icon)
-  app.component('C1Image', C1Image)
-  app.component('C2Button', C2Button)
-  app.component('C2Icon', C2Icon)
-  app.component('C2Image', C2Image)
-  app.component('C2Progress', C2Progress)
-
-  return app
+export const uiMakeComponents = {
+  install: (app: App<Element>): void => {
+    app.component('M2Icon', M2Icon)
+    app.component('M2Image', M2Image)
+    app.component('M2Ripple', M2Ripple)
+    app.component('M3Button', M3Button)
+    app.component('M3Checkbox', M3Checkbox)
+    app.component('M3Chip', M3Chip)
+    app.component('M3FieldMessage', M3FieldMessage)
+    app.component('M3Icon', M3Icon)
+    app.component('M3Image', M3Image)
+    app.component('M3Input', M3Input)
+    app.component('M3Mask', M3Mask)
+    app.component('M3Mutation', M3Mutation)
+    app.component('M3MutationItem', M3MutationItem)
+    app.component('M3Progress', M3Progress)
+    app.component('M3Ripple', M3Ripple)
+    app.component('M3Scrollbar', M3Scrollbar)
+    app.component('M3Window', M3Window)
+    app.component('C1Icon', C1Icon)
+    app.component('C1Image', C1Image)
+    app.component('C2Button', C2Button)
+    app.component('C2Icon', C2Icon)
+    app.component('C2Image', C2Image)
+    app.component('C2Progress', C2Progress)
+  }
 }
