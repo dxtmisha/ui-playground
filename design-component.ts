@@ -3,8 +3,8 @@ import { type App } from 'vue'
 import { MutationGlobal } from './classes/mutation/MutationGlobal'
 import { MutationGlobalRef } from './classes/mutation/MutationGlobalRef.ts'
 
-import functions from './functions/all.ts'
-import classes from './classes/all.ts'
+import * as functions from './functions/all.ts'
+import * as classes from './classes/all.ts'
 
 import m2 from './m2/components.ts'
 import m3 from './m3/components.ts'
