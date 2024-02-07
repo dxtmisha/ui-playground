@@ -10,11 +10,14 @@ import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
 import { DesignComponent } from '../services/designs/DesignComponent.ts'
 import { DesignIcons } from './DesignIcons.ts'
 
+import classes from './../allList.ts'
+import functions from './../../functions/allList.ts'
+
 import {
   FILE_COMPONENTS,
   FILE_PROPERTY,
   FILE_DESIGN_STYLE,
-  FILE_DESIGN_COMPONENTS
+  FILE_DESIGN_COMPONENTS, FILE_DESIGN_MAIN
 } from '../../types/property.ts'
 
 export type DesignCommandDesignsItem = {
@@ -94,7 +97,8 @@ export class DesignCommand {
       })
     })
 
-    this.makeStyle()
+    this.makeMain()
+      .makeStyle()
       .makeComponents()
   }
 
@@ -199,6 +203,20 @@ export class DesignCommand {
   }
 
   /**
+   * Returns the code to export the component.<br>
+   * Возвращает код для экспорта компонента.
+   * @param design design names /<br>названия дизайна
+   * @param component component name /<br>название компонента
+   */
+  protected getCodeExportComponent (
+    design: string,
+    component: string
+  ): string {
+    const name = this.getNameComponent(design, component)
+    return `  ${name}`
+  }
+
+  /**
    * Returns the code to connect the component.<br>
    * Возвращает код для подключения компонента.
    * @param design design names /<br>названия дизайна
@@ -234,6 +252,56 @@ export class DesignCommand {
         'scss'
       )
     }
+
+    return this
+  }
+
+  /**
+   * Export data for the main file.<br>
+   * Экспортировать данные для главного файла.
+   */
+  protected makeMain (): this {
+    const designs = this.getDesignList()
+
+    const imports: string[] = []
+    const dataConst: string[] = []
+    const data: string[] = []
+
+    classes.forEach(name => {
+      dataConst.push(`const ${name} = classes.${name}`)
+      data.push(`  ${name}`)
+    })
+
+    functions.forEach(name => {
+      dataConst.push(`const ${name} = functions.${name}`)
+      data.push(`  ${name}`)
+    })
+
+    designs.forEach(design => {
+      this.getComponentList(design.name).forEach(component => {
+        imports.push(this.getCodeComponentImport(design.name, component, true))
+        data.push(this.getCodeExportComponent(design.name, component))
+      })
+    })
+
+    PropertiesFile.write(
+      [],
+      FILE_DESIGN_MAIN,
+      [
+        'import * as classes from \'./classes/all.ts\'',
+        'import * as functions from \'./functions/all.ts\'',
+        '',
+        ...imports,
+        '',
+        ...dataConst,
+        '',
+        'export {',
+        data.join(',\r\n'),
+        '}',
+        ''
+      ].join('\r\n'),
+      'ts'
+    )
 
     return this
   }

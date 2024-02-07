@@ -50,9 +50,20 @@ export class Env {
    * @param defaultValue default property value /<br>значение свойства по умолчанию
    */
   get<T> (defaultValue?: T): T {
+    try {
+      if (import.meta) {
+        const value =
+          import.meta.env?.[this.getName()] ??
+          import.meta.env?.[`VITE_${this.getName()}`]
+
+        if (value) {
+          return value
+        }
+      }
+    } catch (_) {
+    }
+
     return transformation(
-      import.meta.env?.[this.getName()] ??
-      import.meta.env?.[`VITE_${this.getName()}`] ??
       defaultValue ??
       this.getValue()
     )

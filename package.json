@@ -3,6 +3,25 @@
   "private": false,
   "version": "0.0.0-dev.2",
   "type": "commonjs",
+  "main": "design-main.ts",
+  "files": [
+    "c1",
+    "c2",
+    "classes",
+    "commands",
+    "composables",
+    "constructors",
+    "functions",
+    "m2",
+    "m3",
+    "media",
+    "styles",
+    "types",
+    "design-component.ts",
+    "design-main.ts",
+    "design-style.scss",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -10,6 +29,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "ui-component": "ts-node commands/ui.ts component"
+  },
+  "dependencies": {
+    "sass": "^1.70.0",
+    "typescript": "^5.3.3",
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.12",
@@ -35,12 +59,9 @@
     "eslint-plugin-vue": "^9.21.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.70.0",
     "storybook": "^7.6.12",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
+    "ts-node": "^11.0.0-beta.1",
     "vite": "^5.0.12",
-    "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.27",
     "vuex": "^4.0.2"
