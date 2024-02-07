@@ -163,7 +163,11 @@ export class DesignCommand {
     const dirs = PropertiesFile.readDir(design)
 
     dirs.forEach(dir => {
-      if (PropertiesFile.is([design, dir, FILE_PROPERTY])) {
+      if (
+        PropertiesFile.is([design, dir, FILE_PROPERTY]) &&
+        dir !== 'Mutation' &&
+        dir !== 'MutationItem'
+      ) {
         list.push(toKebabCase(dir))
       }
     })
@@ -381,15 +385,10 @@ export class DesignCommand {
     const data: string[] = []
 
     components.forEach(component => {
-      if (
-        component !== 'mutation' &&
-        component !== 'mutation-item'
-      ) {
-        const name = toCamelCaseFirst(`${design}-${component}`)
+      const name = toCamelCaseFirst(`${design}-${component}`)
 
-        imports.push(this.getCodeComponentImport(design, component))
-        data.push(`  ${name}`)
-      }
+      imports.push(this.getCodeComponentImport(design, component))
+      data.push(`  ${name}`)
     })
 
     PropertiesFile.write(

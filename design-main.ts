@@ -14,8 +14,6 @@ import M3Icon from './m3/Icon/M3Icon.vue'
 import M3Image from './m3/Image/M3Image.vue'
 import M3Input from './m3/Input/M3Input.vue'
 import M3Mask from './m3/Mask/M3Mask.vue'
-import M3Mutation from './m3/Mutation/M3Mutation.vue'
-import M3MutationItem from './m3/MutationItem/M3MutationItem.vue'
 import M3Progress from './m3/Progress/M3Progress.vue'
 import M3Ripple from './m3/Ripple/M3Ripple.vue'
 import M3Scrollbar from './m3/Scrollbar/M3Scrollbar.vue'
@@ -199,8 +197,6 @@ export {
   M3Image,
   M3Input,
   M3Mask,
-  M3Mutation,
-  M3MutationItem,
   M3Progress,
   M3Ripple,
   M3Scrollbar,
