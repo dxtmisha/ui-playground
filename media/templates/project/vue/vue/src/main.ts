@@ -1,17 +1,11 @@
-import App from './App.vue'
+import { initComponents } from 'ui/design-component.ts'
 
-import './style.css'
+import App from '../src/App.vue'
 
-const windowIndex = '__UI_PROJECT'
-const windowItem = window as any
-const windowPath = 'path'
+import 'ui/design-style.scss'
 
-if (windowIndex in windowItem) {
-    windowItem[windowIndex][windowPath] = {}
-} else {
-    windowItem[windowIndex] = {
-        [windowPath]: {
-            item: App
-        }
-    }
-}
+import '../src/tailwind.css'
+import '../src/style.scss'
+
+initComponents(App)
+  .mount('#app')
