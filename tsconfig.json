@@ -26,6 +26,7 @@
   "include": [
     // design
     "design-component.ts",
+    "design-main.ts",
     // C1
     "c1/**/*.ts",
     "c1/**/*.d.ts",

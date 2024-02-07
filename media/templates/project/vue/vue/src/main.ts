@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { uiMakeComponents } from 'ui/design-component.ts'
+import { uiMakeComponents } from 'ui'
 
 import App from '../src/App.vue'
 

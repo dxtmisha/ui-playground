@@ -86,7 +86,7 @@ import {
   toKebabCase
 } from './string.ts'
 
-export default {
+export {
   // data
   executeFunction,
   forEach,

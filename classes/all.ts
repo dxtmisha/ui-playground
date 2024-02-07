@@ -20,7 +20,7 @@ import { Hash } from './Hash.ts'
 import { Icons } from './Icons.ts'
 import { Translate } from './Translate.ts'
 
-export default {
+export {
   Api,
   Cache,
   CacheItem,

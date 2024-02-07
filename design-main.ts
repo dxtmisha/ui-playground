@@ -1,6 +1,8 @@
 import * as classes from './classes/all.ts'
 import * as functions from './functions/all.ts'
 
+import { uiMakeComponents } from './design-component.ts'
+
 import M2Icon from './m2/Icon/M2Icon.vue'
 import M2Image from './m2/Image/M2Image.vue'
 import M2Ripple from './m2/Ripple/M2Ripple.vue'
@@ -106,6 +108,7 @@ const toCamelCaseFirst = functions.toCamelCaseFirst
 const toKebabCase = functions.toKebabCase
 
 export {
+  uiMakeComponents,
   Api,
   Cache,
   CacheItem,
