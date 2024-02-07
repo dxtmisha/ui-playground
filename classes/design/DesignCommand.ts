@@ -381,10 +381,15 @@ export class DesignCommand {
     const data: string[] = []
 
     components.forEach(component => {
-      const name = toCamelCaseFirst(`${design}-${component}`)
+      if (
+        component !== 'mutation' &&
+        component !== 'mutation-item'
+      ) {
+        const name = toCamelCaseFirst(`${design}-${component}`)
 
-      imports.push(this.getCodeComponentImport(design, component))
-      data.push(`  ${name}`)
+        imports.push(this.getCodeComponentImport(design, component))
+        data.push(`  ${name}`)
+      }
     })
 
     PropertiesFile.write(
