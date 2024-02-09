@@ -53,7 +53,7 @@ export class DesignCommand {
    * Возвращает название дизайна по имени компонента.
    */
   protected get design (): string {
-    return toKebabCase(this.names?.[0]).trim()
+    return toKebabCase(this.names?.[0] ?? '').trim()
   }
 
   /**
@@ -61,7 +61,7 @@ export class DesignCommand {
    * Возвращает название компонента по имени.
    */
   protected get component (): string {
-    return toKebabCase(this.names?.[1]).trim()
+    return toKebabCase(this.names?.[1] ?? '').trim()
   }
 
   /**
