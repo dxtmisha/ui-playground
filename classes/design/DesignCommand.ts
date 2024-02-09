@@ -75,9 +75,9 @@ export class DesignCommand {
 
     this.makeConstructorComponent()
 
-    // this.componentsList.make()
-    // this.componentsMain.make()
-    // this.componentsStyle.make()
+    this.componentsList.make()
+    this.componentsMain.make()
+    this.componentsStyle.make()
   }
 
   /**
