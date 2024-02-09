@@ -3,7 +3,6 @@
   "private": false,
   "version": "0.0.0-dev.2",
   "type": "commonjs",
-  "main": "design-main.ts",
   "files": [
     "c1",
     "c2",
@@ -12,6 +11,7 @@
     "composables",
     "constructors",
     "functions",
+    "lib",
     "m2",
     "m3",
     "media",

@@ -1,4 +1,5 @@
 import type { App } from 'vue'
+import { forEach } from '../functions/data.ts'
 
 import * as components from './components.ts'
 
@@ -8,8 +9,8 @@ import * as components from './components.ts'
  */
 export const registrationUiComponents = {
   install: (app: App<Element>): void => {
-    for (const component in components) {
-      app.component(component, components[component])
-    }
+    forEach(components, (component, name) => {
+      app.component(name, component)
+    })
   }
 }
