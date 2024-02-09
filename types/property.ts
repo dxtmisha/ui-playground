@@ -1,3 +1,16 @@
+export const SEPARATOR = '/'
+
+export const SYMBOL_SEPARATOR = process.env.TOKEN_SEPARATOR ?? SEPARATOR
+export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
+
+export const NAME_CONSTRUCTOR = 'd'
+export const DIR_CONSTRUCTOR = 'constructors'
+export const DIR_ICONS = 'tokens/icons'
+export const FILE_PROPERTY = 'properties.json'
+
+export const FILE_ICONS = 'icons'
+export const EXTENSION_STYLE_FILE = 'scss'
+
 export enum PropertyKey {
   value = 'value',
   category = '_category',
@@ -131,19 +144,3 @@ export type PropertyItemInput = Record<string, any> & (PropertyItemPartial | {
 
 export type PropertyList = Record<string, PropertyItem>
 export type PropertyListOrData = Record<string, PropertyItemInput>
-
-export const SEPARATOR = '/'
-
-export const SYMBOL_SEPARATOR = process.env.TOKEN_SEPARATOR ?? SEPARATOR
-export const SYMBOL_AVAILABLE = `[\\w-&?{}()., ${SYMBOL_SEPARATOR}]+`
-
-export const NAME_CONSTRUCTOR = 'd'
-export const DIR_CONSTRUCTOR = 'constructors'
-export const DIR_ICONS = 'tokens/icons'
-export const FILE_PROPERTY = 'properties.json'
-export const FILE_COMPONENTS = 'components'
-export const FILE_ICONS = 'icons'
-export const FILE_DESIGN_MAIN = 'design-main'
-export const FILE_DESIGN_STYLE = 'design-style'
-export const FILE_DESIGN_COMPONENTS = 'design-component'
-export const EXTENSION_STYLE_FILE = 'scss'

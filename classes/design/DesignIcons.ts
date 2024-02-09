@@ -25,7 +25,7 @@ export class DesignIcons {
    * File initialization.<br>
    * Инициализация файла.
    */
-  init () {
+  make (): this {
     const list = this.getList()
 
     if (list) {
@@ -48,6 +48,8 @@ export class DesignIcons {
         ''
       ])
     }
+
+    return this
   }
 
   /**

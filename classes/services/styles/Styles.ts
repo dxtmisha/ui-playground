@@ -36,7 +36,7 @@ export class Styles {
    * Generating all basic data.<br>
    * Генерация всех базовых данных.
    */
-  init () {
+  make (): this {
     this.getByDesigns((
       design,
       items
@@ -45,6 +45,8 @@ export class Styles {
       this.initClasses(design, items)
       this.initProperties(design, items)
     })
+
+    return this
   }
 
   /**

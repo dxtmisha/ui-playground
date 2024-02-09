@@ -32,7 +32,7 @@ export abstract class DesignCommand {
    * Entry point for the command.<br>
    * Точка входа для команды.
    */
-  init (): void {
+  make (): void {
     if (this.command) {
       console.info(`-- ${this.command}:`)
 
