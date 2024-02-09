@@ -75,9 +75,9 @@ export class DesignCommand {
 
     this.makeConstructorComponent()
 
-    this.componentsList.make()
-    this.componentsMain.make()
-    this.componentsStyle.make()
+    // this.componentsList.make()
+    // this.componentsMain.make()
+    // this.componentsStyle.make()
   }
 
   /**
@@ -115,12 +115,10 @@ export class DesignCommand {
 
         design.components.forEach(component => {
           if (this.isComponent(component.name)) {
-            const name = `${design.name}.${component.alias}`
+            console.log(`Component update: ${component.alias}`)
 
-            console.log(`Component update: ${name}`)
-
-            new DesignConstructor(`d.${component.alias}`).make()
-            new DesignComponent(name).make()
+            new DesignConstructor(`d.${component.name}`).make()
+            new DesignComponent(component.alias).make()
           }
         })
       }
