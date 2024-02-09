@@ -12,6 +12,7 @@ import { DesignIcons } from './DesignIcons.ts'
 import { ComponentsItems } from '../services/сomponents/ComponentsItems.ts'
 import { ComponentsList } from '../services/сomponents/ComponentsList.ts'
 import { ComponentsMain } from '../services/сomponents/ComponentsMain.ts'
+import { ComponentsTypes } from '../services/сomponents/ComponentsTypes.ts'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle.ts'
 
 config()
@@ -24,6 +25,7 @@ export class DesignCommand {
   protected readonly components: ComponentsItems
   protected readonly componentsList: ComponentsList
   protected readonly componentsMain: ComponentsMain
+  protected readonly componentsTypes: ComponentsTypes
   protected readonly componentsStyle: ComponentsStyle
 
   /**
@@ -37,6 +39,7 @@ export class DesignCommand {
     this.components = new ComponentsItems()
     this.componentsList = new ComponentsList(this.components)
     this.componentsMain = new ComponentsMain(this.components)
+    this.componentsTypes = new ComponentsTypes(this.components)
     this.componentsStyle = new ComponentsStyle(this.components)
   }
 
@@ -77,6 +80,7 @@ export class DesignCommand {
 
     this.componentsList.make()
     this.componentsMain.make()
+    this.componentsTypes.make()
     this.componentsStyle.make()
   }
 
