@@ -1,6 +1,6 @@
-import DesignComponent from './DesignComponent.vue'
+import C2Button from './C2Button.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
-export default DesignComponent
+export default C2Button

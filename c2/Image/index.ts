@@ -1,6 +1,6 @@
-import DesignComponent from './DesignComponent.vue'
+import C2Image from './C2Image.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
-export default DesignComponent
+export default C2Image

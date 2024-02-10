@@ -1,6 +1,6 @@
-import DesignComponent from './DesignComponent.vue'
+import M3Window from './M3Window.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
-export default DesignComponent
+export default M3Window

@@ -1,6 +1,6 @@
-import DesignComponent from './DesignComponent.vue'
+import C2Progress from './C2Progress.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
-export default DesignComponent
+export default C2Progress
