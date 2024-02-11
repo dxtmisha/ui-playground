@@ -1,16 +1,16 @@
 import { type App, type Plugin } from 'vue'
 
-import DesignComponent from './DesignComponent.vue'
+import M2Icon from './M2Icon.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
 export default {
   install (app: App) {
-    app.component('DesignComponent', DesignComponent)
+    app.component('M2Icon', M2Icon)
   }
 } as Plugin
 
 export {
-  DesignComponent
+  M2Icon
 }

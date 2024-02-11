@@ -1,16 +1,16 @@
 import { type App, type Plugin } from 'vue'
 
-import DesignComponent from './DesignComponent.vue'
+import M3Window from './M3Window.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
 export default {
   install (app: App) {
-    app.component('DesignComponent', DesignComponent)
+    app.component('M3Window', M3Window)
   }
 } as Plugin
 
 export {
-  DesignComponent
+  M3Window
 }

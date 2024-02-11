@@ -46,7 +46,7 @@ export class ComponentsList {
       codeFull,
       dir
     }) => {
-      imports.push(`import ${codeFull} from './../${design}/${dir}/${codeFull}.vue'`)
+      imports.push(`import ${codeFull} from './../${design}/${dir}'`)
       list.push(`  ${codeFull}`)
     })
 

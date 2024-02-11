@@ -1,16 +1,16 @@
 import { type App, type Plugin } from 'vue'
 
-import DesignComponent from './DesignComponent.vue'
+import M3Scrollbar from './M3Scrollbar.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
 export default {
   install (app: App) {
-    app.component('DesignComponent', DesignComponent)
+    app.component('M3Scrollbar', M3Scrollbar)
   }
 } as Plugin
 
 export {
-  DesignComponent
+  M3Scrollbar
 }

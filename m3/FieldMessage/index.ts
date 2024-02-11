@@ -1,16 +1,16 @@
 import { type App, type Plugin } from 'vue'
 
-import DesignComponent from './DesignComponent.vue'
+import M3FieldMessage from './M3FieldMessage.vue'
 
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
 export default {
   install (app: App) {
-    app.component('DesignComponent', DesignComponent)
+    app.component('M3FieldMessage', M3FieldMessage)
   }
 } as Plugin
 
 export {
-  DesignComponent
+  M3FieldMessage
 }

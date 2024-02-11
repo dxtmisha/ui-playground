@@ -11,6 +11,18 @@
     "build-storybook": "storybook build",
     "ui-component": "ts-node commands/ui.ts component"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/ui.umd.js",
+  "module": "./dist/ui.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/ui.js",
+      "require": "./dist/ui.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "dependencies": {
     "sass": "^1.70.0",
     "typescript": "^5.3.3",
