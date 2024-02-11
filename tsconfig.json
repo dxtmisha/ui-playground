@@ -14,7 +14,6 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
     "jsxImportSource": "react",
     /* Linting */
@@ -22,6 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "outDir": "dist",
     "declaration": true
   },
   "include": [
