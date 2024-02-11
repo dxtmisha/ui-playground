@@ -1,8 +1,8 @@
 {
-  "name": "@dxtmisha/ui-playground",
+  "name": "ui",
   "private": false,
   "version": "0.0.0-dev.2",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -12,10 +12,22 @@
     "ui-component": "ts-node commands/ui.ts component"
   },
   "files": [
-    "dist"
+    "c1",
+    "c2",
+    "classes",
+    "composables",
+    "constructors",
+    "dist",
+    "functions",
+    "lib",
+    "m2",
+    "m3",
+    "media",
+    "styles",
+    "types"
   ],
-  "main": "./dist/ui.umd.js",
-  "module": "./dist/ui.mjs",
+  "main": "./dist/ui.umd.cjs",
+  "module": "./dist/ui.js",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
