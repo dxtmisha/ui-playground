@@ -1,5 +1,4 @@
-import { createApp } from 'vue'
-import { registrationUiComponents } from 'ui/lib/main.ts'
+import { createUiComponents } from 'ui/lib/create.ts'
 
 import App from '../src/App.vue'
 
@@ -8,6 +7,5 @@ import 'ui/design-style.scss'
 import '../src/tailwind.css'
 import '../src/style.scss'
 
-createApp(App)
-  .use(registrationUiComponents)
+createUiComponents(App)
   .mount('#app')
