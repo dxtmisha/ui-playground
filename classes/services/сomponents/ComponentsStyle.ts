@@ -36,7 +36,7 @@ export class ComponentsStyle {
         ''
       ]
 
-      designs.forEach(item => data.push(`@import "./${item}/${item === main ? 'main' : 'init'}";`))
+      designs.forEach(item => data.push(`@import "./../${item}/${item === main ? 'main' : 'init'}";`))
 
       PropertiesFile.write(
         [COMPONENTS_DIR],

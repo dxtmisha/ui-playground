@@ -14,6 +14,7 @@ import { ComponentsList } from '../services/сomponents/ComponentsList.ts'
 import { ComponentsMain } from '../services/сomponents/ComponentsMain.ts'
 import { ComponentsTypes } from '../services/сomponents/ComponentsTypes.ts'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle.ts'
+import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration.ts'
 
 config()
 
@@ -27,6 +28,7 @@ export class DesignCommand {
   protected readonly componentsMain: ComponentsMain
   protected readonly componentsTypes: ComponentsTypes
   protected readonly componentsStyle: ComponentsStyle
+  protected readonly componentsRegistration: ComponentsRegistration
 
   /**
    * Constructor
@@ -41,6 +43,7 @@ export class DesignCommand {
     this.componentsMain = new ComponentsMain(this.components)
     this.componentsTypes = new ComponentsTypes(this.components)
     this.componentsStyle = new ComponentsStyle(this.components)
+    this.componentsRegistration = new ComponentsRegistration(this.components)
   }
 
   /**
@@ -79,9 +82,10 @@ export class DesignCommand {
     this.makeConstructorComponent()
 
     this.componentsList.make()
-    this.componentsMain.make()
-    this.componentsTypes.make()
+    // this.componentsMain.make()
+    // this.componentsTypes.make()
     this.componentsStyle.make()
+    this.componentsRegistration.make()
   }
 
   /**

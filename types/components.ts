@@ -6,9 +6,10 @@ export const COMPONENTS_EXCEPTIONS: string[] = [
 export const COMPONENTS_DIR = 'lib'
 export const COMPONENTS_FILE = 'components'
 export const COMPONENTS_MAIN = 'main'
-export const COMPONENTS_TYPES = 'types'
+export const COMPONENTS_TYPES = 'index'
 export const COMPONENTS_STYLE = 'style'
-export const COMPONENTS_REGISTRATION = 'registrationUiComponents'
+export const COMPONENTS_REGISTRATION = 'create'
+export const COMPONENTS_REGISTRATION_FUNCTION = 'createUiComponents'
 
 export type ComponentsData = {
   design: string

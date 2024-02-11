@@ -12,4 +12,4 @@ MutationGlobal.addComponentList(components)
 ;(window as any).UI = MutationGlobal
 ;(window as any).UI_VUE = MutationGlobalRef
 
-export { registrationUiComponents } from './registrationUiComponents.ts'
+export { createUiComponents } from './create.ts'
