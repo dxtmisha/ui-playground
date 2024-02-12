@@ -31,7 +31,7 @@
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./dist/types/lib/index.d.ts",
+  "types": "./lib/testIndex.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
