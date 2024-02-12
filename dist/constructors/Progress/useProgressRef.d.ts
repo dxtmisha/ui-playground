@@ -1,0 +1,37 @@
+import { type ComputedRef, type PropType, type VNode } from 'vue';
+import { DesignComponents } from '../../classes/design/DesignComponents.ts';
+import { type ProgressProps } from './props.ts';
+export type UseProgressComponent = {
+    progress?: object;
+};
+export type UseProgressSetup = {
+    /**
+     * Property for the loader.<br>
+     * Свойство для загрузчика.
+     */
+    progressBind: ComputedRef<ProgressProps>;
+    /**
+     * A method for rendering.<br>
+     * Метод для рендеринга.
+     */
+    renderProgress(): VNode[];
+};
+export type UseProgressProp = {
+    /**
+     * Enable or disable the loader, or an object with properties for the loader.<br>
+     * Включить или отключить загрузчик, или объект со свойствами для загрузчика.
+     */
+    loading?: boolean | ProgressProps;
+};
+export declare const usePropsProgress: {
+    progress: PropType<boolean | ProgressProps | undefined>;
+};
+/**
+ * The function returns data for working with the Progress component.<br>
+ * Функция возвращает данные для работы с компонентом Progress.
+ * @param props input parameter /<br>входной параметр
+ * @param components object for working with components /<br>объект для работы с компонентами
+ * @param classesName class name for the component /<br>название класса для компонента
+ * @param extra additional parameter or property name /<br>дополнительный параметр или имя свойства
+ */
+export declare const useProgressRef: <COMP extends UseProgressComponent, P extends UseProgressProp>(props: P, components?: DesignComponents<COMP, P> | undefined, classesName?: string, extra?: ProgressProps) => UseProgressSetup;
