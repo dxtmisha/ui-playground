@@ -10,7 +10,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/testIndex.ts'),
+      entry: resolve(__dirname, 'lib/index.ts'),
       name: 'UI',
       fileName: 'ui'
     },

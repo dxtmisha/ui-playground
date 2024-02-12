@@ -31,11 +31,12 @@
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./dist/lib/testIndex.d.ts",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
-      "require": "./dist/ui.umd.cjs"
+      "require": "./dist/ui.umd.cjs",
+      "types": "./lib/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
