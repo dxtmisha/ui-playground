@@ -5,12 +5,13 @@ import DesignComponent from './DesignComponent.vue'
 // :wiki [!] System label / Системная метка
 // :wiki [!] System label / Системная метка
 
-export default {
+const DesignComponentPlugin: Plugin = {
   install (app: App) {
     app.component('DesignComponent', DesignComponent)
   }
-} as Plugin
+}
 
 export {
-  DesignComponent
+  DesignComponent,
+  DesignComponentPlugin
 }
