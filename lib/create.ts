@@ -5,7 +5,7 @@ import { type Component, createApp } from 'vue'
 import { forEach } from '../functions/data.ts'
 
 import { components } from './components.ts'
-import './types.d.mts'
+import './types.d.ts'
 
 export function createUiComponents<A extends Component> (App: A) {
   const app = createApp(App)
