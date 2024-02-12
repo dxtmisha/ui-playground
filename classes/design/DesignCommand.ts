@@ -40,10 +40,10 @@ export class DesignCommand {
   ) {
     this.components = new ComponentsItems()
     this.componentsList = new ComponentsList(this.components)
+    this.componentsRegistration = new ComponentsRegistration(this.components)
     this.componentsMain = new ComponentsMain(this.components)
     this.componentsTypes = new ComponentsTypes(this.components)
     this.componentsStyle = new ComponentsStyle(this.components)
-    this.componentsRegistration = new ComponentsRegistration(this.components)
   }
 
   /**
@@ -82,10 +82,10 @@ export class DesignCommand {
     this.makeConstructorComponent()
 
     this.componentsList.make()
-    // this.componentsMain.make()
-    // this.componentsTypes.make()
-    this.componentsStyle.make()
     this.componentsRegistration.make()
+    this.componentsMain.make()
+    this.componentsTypes.make()
+    this.componentsStyle.make()
   }
 
   /**

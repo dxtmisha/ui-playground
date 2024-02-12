@@ -46,7 +46,7 @@ export class ComponentsList {
       codeFull,
       dir
     }) => {
-      imports.push(`import ${codeFull} from './../${design}/${dir}'`)
+      imports.push(`import { ${codeFull} } from './../${design}/${dir}'`)
       list.push(`  ${codeFull}`)
     })
 
@@ -59,7 +59,7 @@ export class ComponentsList {
         '',
         ...imports,
         '',
-        'export {',
+        'export const components = {',
         list.join(',\r\n'),
         '}',
         ''

@@ -18,8 +18,6 @@ export default defineConfig({
       external: ['vue'],
       output: {
         exports: 'named',
-        entryFileNames: '[name].mjs',
-        chunkFileNames: '[name]-[hash].mjs',
         globals: {
           vue: 'Vue'
         }

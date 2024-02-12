@@ -1,11 +1,12 @@
+import { toCamelCaseFirst } from '../../../functions/string.ts'
+
 import { PropertiesFile } from '../properties/PropertiesFile.ts'
 
 import { ComponentsItems } from './ComponentsItems.ts'
 
 import {
   COMPONENTS_DIR,
-  COMPONENTS_REGISTRATION,
-  COMPONENTS_REGISTRATION_FUNCTION
+  COMPONENTS_REGISTRATION
 } from '../../../types/components.ts'
 
 /**
@@ -28,20 +29,6 @@ export class ComponentsRegistration {
    * Создание файла для подключения компонентов.
    */
   make (): this {
-    const components = this.items.getComponentList()
-
-    const imports: string[] = []
-    const list: string[] = []
-
-    components.forEach(({
-      design,
-      codeFull,
-      dir
-    }) => {
-      imports.push(`import ${codeFull} from './../${design}/${dir}/${codeFull}.vue'`)
-      list.push(`  app.component('${codeFull}', ${codeFull})`)
-    })
-
     PropertiesFile.write(
       [COMPONENTS_DIR],
       COMPONENTS_REGISTRATION,
@@ -50,13 +37,17 @@ export class ComponentsRegistration {
         '// Этот файл генерируется скриптом, не редактировать.',
         '',
         'import { type Component, createApp } from \'vue\'',
+        'import { forEach } from \'../functions/data.ts\'',
         '',
-        ...imports,
+        'import { components } from \'./components.ts\'',
+        'import \'./types.d.mts\'',
         '',
-        `export function ${COMPONENTS_REGISTRATION_FUNCTION}<A extends Component> (App: A) {`,
+        `export function create${toCamelCaseFirst(this.items.getGlobalName())}Components<A extends Component> (App: A) {`,
         '  const app = createApp(App)',
         '',
-        ...list,
+        '  forEach(components, (component, name) => {',
+        '    app.component(name, component)',
+        '  })',
         '',
         '  return app',
         '}',

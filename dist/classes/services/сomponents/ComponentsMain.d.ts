@@ -15,19 +15,4 @@ export declare class ComponentsMain {
      * Экспортировать данные для главного файла.
      */
     make(): this;
-    /**
-     * Initializes the list of available classes.<br>
-     * Инициализирует список доступных классов.
-     */
-    protected initClasses(): string[];
-    /**
-     * Initializes the list of available functions.<br>
-     * Инициализирует список доступных функций.
-     */
-    protected initFunctions(): string[];
-    /**
-     * Initializes the list of available components.<br>
-     * Инициализирует список доступных компонентов.
-     */
-    protected initComponents(): string[];
 }

@@ -91,8 +91,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     autofocus: boolean;
     readonly: boolean;
     autocomplete: AutoFill | undefined;
-    required: boolean;
     arrow: boolean;
+    required: boolean;
 }, {}>, Readonly<import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots> & import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {

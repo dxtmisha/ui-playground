@@ -18,8 +18,8 @@ declare const meta: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -53,8 +53,8 @@ declare const meta: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -82,7 +82,7 @@ declare const meta: {
             start: boolean;
             end: boolean;
             high: boolean;
-            variation: "icon" | "payment" | "avatar" | "country" | undefined;
+            variation: "icon" | "country" | "avatar" | "payment" | undefined;
             shape: "circle" | "rect" | "box" | undefined;
         }, true, {}, {}, {
             P: {};
@@ -106,8 +106,8 @@ declare const meta: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -137,7 +137,7 @@ declare const meta: {
             start: boolean;
             end: boolean;
             high: boolean;
-            variation: "icon" | "payment" | "avatar" | "country" | undefined;
+            variation: "icon" | "country" | "avatar" | "payment" | undefined;
             shape: "circle" | "rect" | "box" | undefined;
         }>;
         __isFragment?: undefined;
@@ -158,8 +158,8 @@ declare const meta: {
         end: BooleanConstructor;
         high: BooleanConstructor;
         variation: {
-            type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-            default: "icon" | "payment" | "avatar" | "country" | undefined;
+            type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+            default: "icon" | "country" | "avatar" | "payment" | undefined;
         };
         shape: {
             type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -191,7 +191,7 @@ declare const meta: {
         start: boolean;
         end: boolean;
         high: boolean;
-        variation: "icon" | "payment" | "avatar" | "country" | undefined;
+        variation: "icon" | "country" | "avatar" | "payment" | undefined;
         shape: "circle" | "rect" | "box" | undefined;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../../constructors/Icon/types.ts").IconSlots> & import("../../constructors/Icon/types.ts").IconSlots;
