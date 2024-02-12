@@ -35,7 +35,7 @@ export class ComponentsTypes {
         '}',
         ''
       ].join('\r\n'),
-      'd.mts'
+      'd.ts'
     )
 
     return this
