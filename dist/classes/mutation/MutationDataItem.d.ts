@@ -1,4 +1,4 @@
-import { type MutationComponentCallback, type MutationComponentProps, type MutationSlots, MutationStatus } from '../../types/mutation.ts';
+import { type MutationComponentCallback, type MutationComponentProps, type MutationSlots, MutationStatus } from '../../types/mutation';
 /**
  * Class for managing the element.<br>
  * Класс для управления элементом.

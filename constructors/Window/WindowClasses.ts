@@ -1,9 +1,9 @@
-import { getElementId } from '../../functions/element.ts'
+import { getElementId } from '../../functions/element'
 
-import { WindowPersistent } from './WindowPersistent.ts'
+import { WindowPersistent } from './WindowPersistent'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
-import { WindowStatusControlItem, WindowStatusItem } from './typesBasic.ts'
+import { type ConstrClassObject } from '../../types/constructor'
+import { WindowStatusControlItem, WindowStatusItem } from './typesBasic'
 
 /**
  * Class for working with class names.<br>

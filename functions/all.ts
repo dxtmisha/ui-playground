@@ -11,11 +11,11 @@ import {
   isSelectedByList,
   isString,
   transformation
-} from './data.ts'
+} from './data'
 
 import {
   toDate
-} from './date.ts'
+} from './date'
 
 import {
   createElement,
@@ -27,7 +27,7 @@ import {
   getElementItem,
   getElementOrWindow,
   setElementItem
-} from './element.ts'
+} from './element'
 
 import {
   getClient,
@@ -35,17 +35,17 @@ import {
   getClientY,
   getKey,
   makeStopPropagation
-} from './event.ts'
+} from './event'
 
 import {
   frame
-} from './frame.ts'
+} from './frame'
 
 import {
   isIntegerBetween,
   random,
   toNumber
-} from './number.ts'
+} from './number'
 
 import {
   arrFill,
@@ -60,20 +60,20 @@ import {
   splice,
   toArray,
   uniqueArray
-} from './object.ts'
+} from './object'
 
 import {
   getBindRef,
   getRef,
   render,
   toRefItem
-} from './ref.ts'
+} from './ref'
 
 import {
   getBind,
   getClassName,
   getIndex
-} from './render.ts'
+} from './render'
 
 import {
   anyToString,
@@ -84,7 +84,7 @@ import {
   toCamelCase,
   toCamelCaseFirst,
   toKebabCase
-} from './string.ts'
+} from './string'
 
 export {
   // data

@@ -1,4 +1,4 @@
-import { type ImageSize } from './typesBasic.ts'
+import { type ImageSize } from './typesBasic'
 
 /**
  * A class for storing data for adaptive computation of image scaling for a specific group.<br>

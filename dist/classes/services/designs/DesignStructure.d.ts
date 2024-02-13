@@ -1,4 +1,4 @@
-import { DesignStructureClassesList, type DesignStructureList } from '../../../types/design.ts';
+import { DesignStructureClassesList, type DesignStructureList } from '../../../types/design';
 /**
  * Class for processing structured components.<br>
  * Класс для обработки структурированных компонентов.

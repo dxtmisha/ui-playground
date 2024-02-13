@@ -1,4 +1,4 @@
-import { WindowStatusItem } from './typesBasic.ts'
+import { WindowStatusItem } from './typesBasic'
 
 /**
  * A class that changes the status of the current component. This is needed for

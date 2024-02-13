@@ -1,6 +1,6 @@
-import { toNumber } from '../../functions/number.ts'
+import { toNumber } from '../../functions/number'
 
-import { type FieldMessageProps } from './props.ts'
+import { type FieldMessageProps } from './props'
 
 /**
  * Class for working with the number of input numbers.<br>

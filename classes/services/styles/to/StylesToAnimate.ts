@@ -1,4 +1,4 @@
-import { StylesToAbstract } from './StylesToAbstract.ts'
+import { StylesToAbstract } from './StylesToAbstract'
 
 /**
  * Class for creating animation.<br>

@@ -1,11 +1,11 @@
-import { MaskItem } from './MaskItem.ts'
-import { MaskSpecial } from './MaskSpecial.ts'
-import { MaskRubber } from './MaskRubber.ts'
-import { MaskSelection } from './MaskSelection.ts'
-import { MaskCharacterLength } from './MaskCharacterLength.ts'
+import { MaskItem } from './MaskItem'
+import { MaskSpecial } from './MaskSpecial'
+import { MaskRubber } from './MaskRubber'
+import { MaskSelection } from './MaskSelection'
+import { MaskCharacterLength } from './MaskCharacterLength'
 
-import { CHAR_DELETE } from './typesBasic.ts'
-import { MaskRubberItem } from './MaskRubberItem.ts'
+import { CHAR_DELETE } from './typesBasic'
+import { MaskRubberItem } from './MaskRubberItem'
 
 /**
  * Class for working with and storing input characters.<br>

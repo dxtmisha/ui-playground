@@ -5,7 +5,7 @@ import C1Image from '../Image/C1Image.vue'
 import {
   imageArgs,
   imageValues
-} from './argTypes/image.ts'
+} from './argTypes/image'
 
 const meta = {
   title: 'C1/Image',

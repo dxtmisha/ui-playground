@@ -1,7 +1,7 @@
-import { forEach, isFilled, isObject, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isFilled, isObject, isObjectNotArray } from '../../../../functions/data'
 
-import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   PropertyCategory,
@@ -9,7 +9,7 @@ import {
   PropertyKey,
   type PropertyList,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 const THEME_BASIC = 'basic'
 const KEY_CLASS_NAME = 'palette'

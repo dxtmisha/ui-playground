@@ -1,15 +1,15 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { RippleRef } from './RippleRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { RippleRef } from './RippleRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type RippleProps
-} from './props.ts'
+} from './props'
 import {
   type RippleClasses,
   type RippleComponents,
@@ -17,7 +17,7 @@ import {
   type RippleExpose,
   type RippleSetup,
   type RippleSlots
-} from './types.ts'
+} from './types'
 
 /**
  * Constructor class for the wave component.<br>

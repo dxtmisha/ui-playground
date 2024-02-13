@@ -1,9 +1,9 @@
 import { nextTick, onMounted, type Ref, ref, watchEffect } from 'vue'
 
-import { Scrollbar } from './Scrollbar.ts'
+import { Scrollbar } from './Scrollbar'
 
-import type { ConstrClassObject } from '../../types/constructor.ts'
-import type { ScrollbarProps } from './props.ts'
+import type { ConstrClassObject } from '../../types/constructor'
+import type { ScrollbarProps } from './props'
 
 /**
  * Reactive class for working with the scroll component.<br>

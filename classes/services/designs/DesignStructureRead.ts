@@ -1,20 +1,20 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
-import { uniqueArray } from '../../../functions/object.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data'
+import { uniqueArray } from '../../../functions/object'
 
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts'
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 import {
   type DesignStructureItem,
   type DesignStructureItemSub,
   type DesignStructureList,
   type DesignStructureStateList
-} from '../../../types/design.ts'
-import { toCamelCase } from '../../../functions/string.ts'
+} from '../../../types/design'
+import { toCamelCase } from '../../../functions/string'
 
 /**
  * List available for addition to props.<br>

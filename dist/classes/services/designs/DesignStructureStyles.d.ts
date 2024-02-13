@@ -1,4 +1,4 @@
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts';
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract';
 /**
  * Class for processing styles from tokens for the component.<br>
  * Класс для обработки стилей из токенов для компонента.

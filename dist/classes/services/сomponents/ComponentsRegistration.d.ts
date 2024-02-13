@@ -1,4 +1,4 @@
-import { ComponentsItems } from './ComponentsItems.ts';
+import { ComponentsItems } from './ComponentsItems';
 /**
  * A class for creating a connection file for all components.<br>
  * Класс для создания файла подключения всех компонентов.

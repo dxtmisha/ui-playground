@@ -2,11 +2,11 @@ import {
   type StorybookArgs,
   type StorybookArgsValue,
   StorybookControl
-} from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
+} from '../../../types/storybook'
+import { StorybookCategory } from '../types'
 
-import { imageArgs } from './image.ts'
-import { defaults, propsValues } from '../../Icon/props.ts'
+import { imageArgs } from './image'
+import { defaults, propsValues } from '../../Icon/props'
 
 export const iconArgs: StorybookArgs = {
   // Status

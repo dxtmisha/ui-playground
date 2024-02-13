@@ -1,4 +1,4 @@
-import { MutationDataItem } from './MutationDataItem.ts';
+import { MutationDataItem } from './MutationDataItem';
 /**
  * Class for storing a list of active elements.<br>
  * Класс для хранения списка активных элементов.

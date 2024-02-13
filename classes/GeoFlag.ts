@@ -1,12 +1,12 @@
-import { forEach } from '../functions/data.ts'
+import { forEach } from '../functions/data'
 
-import { Geo } from './Geo.ts'
-import { GeoIntl } from './GeoIntl.ts'
+import { Geo } from './Geo'
+import { GeoIntl } from './GeoIntl'
 import {
   type GeoFlagItem,
   type GeoFlagNational,
   type GeoItemFull
-} from '../types/geo.ts'
+} from '../types/geo'
 
 import ADImage from '../media/flags/AD.svg'
 import AEImage from '../media/flags/AE.svg'

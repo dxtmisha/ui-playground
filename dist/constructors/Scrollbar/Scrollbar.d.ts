@@ -1,6 +1,6 @@
-import { ScrollbarBorder } from './ScrollbarBorder.ts';
-import { type ConstrClassObject, type ConstrValue } from '../../types/constructor.ts';
-import { type ScrollbarProps } from './props.ts';
+import { ScrollbarBorder } from './ScrollbarBorder';
+import { type ConstrClassObject, type ConstrValue } from '../../types/constructor';
+import { type ScrollbarProps } from './props';
 /**
  * Class for working with scroll components.<br>
  * Класс для работы с компонентами скролла.

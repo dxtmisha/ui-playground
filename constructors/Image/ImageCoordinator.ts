@@ -1,11 +1,11 @@
-import { isArray } from '../../functions/data.ts'
+import { isArray } from '../../functions/data'
 
-import { type Undefined } from '../../types/basic.ts'
-import { type ImageProps } from './props.ts'
+import { type Undefined } from '../../types/basic'
+import { type ImageProps } from './props'
 import {
   type ImageCoordinatorItem,
   type ImageSize
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * A class for calculating the central part of the image by its coordinates.<br>

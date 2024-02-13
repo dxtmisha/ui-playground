@@ -1,15 +1,15 @@
-import { toDate } from '../functions/date.ts'
+import { toDate } from '../functions/date'
 
-import { Geo } from './Geo.ts'
-import { GeoIntl } from './GeoIntl.ts'
+import { Geo } from './Geo'
+import { GeoIntl } from './GeoIntl'
 import {
   type GeoDate,
   type GeoFirstDay,
   type GeoHours,
   type GeoTimeZoneStyle
-} from '../types/geo.ts'
+} from '../types/geo'
 
-import { type NumberOrStringOrDate } from '../types/basic.ts'
+import { type NumberOrStringOrDate } from '../types/basic'
 
 /**
  * A class for working with dates.<br>

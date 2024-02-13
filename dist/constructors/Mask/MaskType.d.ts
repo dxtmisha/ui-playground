@@ -1,5 +1,5 @@
-import { type GeoDate } from '../../types/geo.ts';
-import { type MaskProps } from './props.ts';
+import { type GeoDate } from '../../types/geo';
+import { type MaskProps } from './props';
 /**
  * Class for defining the mask type.<br>
  * Класс для определения типа маски.

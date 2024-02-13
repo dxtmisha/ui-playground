@@ -4,7 +4,7 @@ import {
   CheckboxProps,
   defaultsCheckbox,
   propsCheckbox
-} from '../../constructors/Checkbox/props.ts'
+} from '../../constructors/Checkbox/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

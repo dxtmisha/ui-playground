@@ -1,17 +1,17 @@
-import { CheckboxElement } from './CheckboxElement.ts'
-import { InputChange } from '../Input/InputChange.ts'
+import { CheckboxElement } from './CheckboxElement'
+import { InputChange } from '../Input/InputChange'
 
-import { InputValue } from '../Input/InputValue.ts'
-import { CheckboxIcon } from './CheckboxIcon.ts'
+import { InputValue } from '../Input/InputValue'
+import { CheckboxIcon } from './CheckboxIcon'
 
-import { InputCode } from '../Input/InputCode.ts'
-import { InputValidation } from '../Input/InputValidation.ts'
-import { InputEventItem } from '../Input/InputEventItem.ts'
+import { InputCode } from '../Input/InputCode'
+import { InputValidation } from '../Input/InputValidation'
+import { InputEventItem } from '../Input/InputEventItem'
 
-import { type ConstrValue } from '../../types/constructor.ts'
-import { type InputValidationItem } from '../Input/typesBasic.ts'
-import { type CheckboxEmits } from './types.ts'
-import { type CheckboxProps } from './props.ts'
+import { type ConstrValue } from '../../types/constructor'
+import { type InputValidationItem } from '../Input/typesBasic'
+import { type CheckboxEmits } from './types'
+import { type CheckboxProps } from './props'
 
 /**
  * Class for working with checkbox.<br>

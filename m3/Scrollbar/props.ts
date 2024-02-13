@@ -4,7 +4,7 @@ import {
   ScrollbarProps,
   defaultsScrollbar,
   propsScrollbar
-} from '../../constructors/Scrollbar/props.ts'
+} from '../../constructors/Scrollbar/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

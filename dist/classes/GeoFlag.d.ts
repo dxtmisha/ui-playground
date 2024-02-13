@@ -1,5 +1,5 @@
-import { GeoIntl } from './GeoIntl.ts';
-import { type GeoFlagItem, type GeoFlagNational, type GeoItemFull } from '../types/geo.ts';
+import { GeoIntl } from './GeoIntl';
+import { type GeoFlagItem, type GeoFlagNational, type GeoItemFull } from '../types/geo';
 /**
  * Class for working with Flags.<br>
  * Класс для работы с Флагами.

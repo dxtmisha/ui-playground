@@ -1,9 +1,9 @@
-import { CacheItem } from '../../classes/CacheItem.ts';
-import { MaskType } from './MaskType.ts';
-import { MaskFormat } from './MaskFormat.ts';
-import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts';
-import { type MaskProps } from './props.ts';
-import { type MaskMatchItem, type MaskSpecialList, type MaskSpecialProp, type MaskSpecialItem } from './typesBasic.ts';
+import { CacheItem } from '../../classes/CacheItem';
+import { MaskType } from './MaskType';
+import { MaskFormat } from './MaskFormat';
+import { type InputPatternItemOrFunction } from '../Input/typesBasic';
+import { type MaskProps } from './props';
+import { type MaskMatchItem, type MaskSpecialList, type MaskSpecialProp, type MaskSpecialItem } from './typesBasic';
 /**
  * A class for working with groups according to their special symbols.<br>
  * Класс для работы с группами по их специальным символам.

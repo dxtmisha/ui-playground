@@ -1,4 +1,4 @@
-import { type MaskGroup } from '../Mask/typesBasic.ts';
+import { type MaskGroup } from '../Mask/typesBasic';
 export type InputTypeName = 'text' | 'search' | 'number' | 'number-format' | 'currency' | 'email' | 'password' | 'datetime' | 'date' | 'year-month' | 'time' | 'hour-minute' | 'tel' | 'url';
 export type InputMode = 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
 export type InputElementItem = HTMLElement | Record<string, any> | undefined;

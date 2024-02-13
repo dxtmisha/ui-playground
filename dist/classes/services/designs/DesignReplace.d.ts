@@ -1,5 +1,5 @@
-import { DesignStructure } from './DesignStructure.ts';
-import { type DesignStructureClasses, type DesignStructureItem, type DesignStructureItemSub, type DesignStructureList } from '../../../types/design.ts';
+import { DesignStructure } from './DesignStructure';
+import { type DesignStructureClasses, type DesignStructureItem, type DesignStructureItemSub, type DesignStructureList } from '../../../types/design';
 /**
  * Class with basic replacement for templates.<br>
  * Класс с базовой заменой для шаблонов.

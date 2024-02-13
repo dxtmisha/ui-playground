@@ -1,7 +1,7 @@
 import { computed, ComputedRef, Ref, shallowRef } from 'vue'
 
-import { Geo } from './Geo.ts'
-import { type GeoItemFull } from '../types/geo.ts'
+import { Geo } from './Geo'
+import { type GeoItemFull } from '../types/geo'
 
 /**
  * Reactive class for working with geographic data.<br>

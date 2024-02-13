@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../properties/PropertiesItems.ts';
+import { PropertiesItems } from '../properties/PropertiesItems';
 export type StylesClassesItem = {
     data: string[];
     classes: Record<string, string[]>;

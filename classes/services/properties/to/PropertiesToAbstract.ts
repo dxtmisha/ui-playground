@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../PropertiesItems.ts'
+import { PropertiesItems } from '../PropertiesItems'
 
 /**
  * Abstract class for conversion.<br>

@@ -4,7 +4,7 @@ import {
   ImageProps,
   defaultsImage,
   propsImage
-} from '../../constructors/Image/props.ts'
+} from '../../constructors/Image/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

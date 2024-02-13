@@ -5,12 +5,12 @@ import {
 
 import {
   type ConstrClass
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ImageEventData,
   type ImageEventItem,
   type ImageTypeItem
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

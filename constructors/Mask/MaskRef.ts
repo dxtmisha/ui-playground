@@ -1,15 +1,15 @@
 import { type Ref, shallowRef, watchEffect } from 'vue'
 
-import { Mask } from './Mask.ts'
+import { Mask } from './Mask'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
+import { type ConstrClassObject } from '../../types/constructor'
 import {
   type MaskElementInput,
   type MaskEventData,
   type MaskViewList
-} from './typesBasic.ts'
-import type { MaskEmits } from './types.ts'
-import type { MaskProps } from './props.ts'
+} from './typesBasic'
+import type { MaskEmits } from './types'
+import type { MaskProps } from './props'
 
 /**
  * A class for working with a mask.<br>

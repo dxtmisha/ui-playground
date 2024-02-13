@@ -1,6 +1,6 @@
 import {
   type ConstrClassObject
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 
 export type ProgressEventLoad = {
   hide: boolean

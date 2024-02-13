@@ -1,4 +1,4 @@
-import { type RippleProps } from './props.ts';
+import { type RippleProps } from './props';
 /**
  * Base class for working with the wave element.<br>
  * Базовый класс для работы с элементом волны.

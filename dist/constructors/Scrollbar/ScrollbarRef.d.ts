@@ -1,7 +1,7 @@
 import { type Ref } from 'vue';
-import { Scrollbar } from './Scrollbar.ts';
-import type { ConstrClassObject } from '../../types/constructor.ts';
-import type { ScrollbarProps } from './props.ts';
+import { Scrollbar } from './Scrollbar';
+import type { ConstrClassObject } from '../../types/constructor';
+import type { ScrollbarProps } from './props';
 /**
  * Reactive class for working with the scroll component.<br>
  * Реактивный класс для работы с компонентом скролла.

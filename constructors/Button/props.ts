@@ -1,10 +1,10 @@
 import { type PropType } from 'vue'
 
-import { type UseLabelProps, usePropsLabel } from '../uses/ref/useLabel.ts'
-import { type UseIconTrailingProps, usePropsIconTrailing } from '../Icon/useIconRef.ts'
-import { type UseProgressProp, usePropsProgress } from '../Progress/useProgressRef.ts'
-import { type UseEnabledProps, usePropsEnabled } from '../uses/ref/useEnabled.ts'
-import { type UseEventClickProps, usePropsEventClick } from '../uses/ref/useEventClick.ts'
+import { type UseLabelProps, usePropsLabel } from '../uses/ref/useLabel'
+import { type UseIconTrailingProps, usePropsIconTrailing } from '../Icon/useIconRef'
+import { type UseProgressProp, usePropsProgress } from '../Progress/useProgressRef'
+import { type UseEnabledProps, usePropsEnabled } from '../uses/ref/useEnabled'
+import { type UseEventClickProps, usePropsEventClick } from '../uses/ref/useEventClick'
 
 /**
  * Type describing incoming properties.<br>

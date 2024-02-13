@@ -1,10 +1,10 @@
 import { type PropType } from 'vue';
-import { type UseLabelProps } from '../uses/ref/useLabel.ts';
-import { type UseIconTrailingProps } from '../Icon/useIconRef.ts';
-import { type UseProgressProp } from '../Progress/useProgressRef.ts';
-import { type UseEnabledProps } from '../uses/ref/useEnabled.ts';
-import { type UseEventClickProps } from '../uses/ref/useEventClick.ts';
-import { type ButtonProps } from '../Button/props.ts';
+import { type UseLabelProps } from '../uses/ref/useLabel';
+import { type UseIconTrailingProps } from '../Icon/useIconRef';
+import { type UseProgressProp } from '../Progress/useProgressRef';
+import { type UseEnabledProps } from '../uses/ref/useEnabled';
+import { type UseEventClickProps } from '../uses/ref/useEventClick';
+import { type ButtonProps } from '../Button/props';
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
@@ -37,9 +37,9 @@ export declare const propsChip: {
     to: StringConstructor;
     value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
     detail: ObjectConstructor[];
-    progress: PropType<boolean | import("../Progress/props.ts").ProgressProps | undefined>;
-    iconTrailing: PropType<string | import("../Icon/props.ts").IconProps | undefined>;
-    icon: PropType<string | import("../Icon/props.ts").IconProps | undefined>;
+    progress: PropType<boolean | import("../Progress/props").ProgressProps | undefined>;
+    iconTrailing: PropType<string | import("../Icon/props").IconProps | undefined>;
+    icon: PropType<string | import("../Icon/props").IconProps | undefined>;
     iconTurn: BooleanConstructor;
     iconHide: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];

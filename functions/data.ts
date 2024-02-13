@@ -2,7 +2,7 @@ import {
   type EmptyValue,
   type FunctionArgs,
   type Undefined
-} from '../types/basic.ts'
+} from '../types/basic'
 
 /**
  * Is the variable equal to null or undefined.<br>

@@ -1,13 +1,13 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data'
 
-import { PropertiesItems } from './PropertiesItems.ts'
-import { PropertiesPalette } from './PropertiesPalette.ts'
+import { PropertiesItems } from './PropertiesItems'
+import { PropertiesPalette } from './PropertiesPalette'
 
 import {
   PropertyCategory,
   type PropertyItem,
   PropertyKey
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 const NAME_DESIGNS = '$designsDesigns'
 const NAME_ROOT = '$designsRoot'

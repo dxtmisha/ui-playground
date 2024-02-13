@@ -5,7 +5,7 @@ import M3Icon from '../Icon/M3Icon.vue'
 import {
   iconArgs,
   iconValues
-} from './argTypes/icon.ts'
+} from './argTypes/icon'
 
 const meta = {
   title: 'M3/Icon',

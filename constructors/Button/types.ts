@@ -1,21 +1,21 @@
-import { type ConstrClass } from '../../types/constructor.ts'
+import { type ConstrClass } from '../../types/constructor'
 import {
   type UseLabelSetup,
   type UseLabelSlots
-} from '../uses/ref/useLabel.ts'
+} from '../uses/ref/useLabel'
 import {
   type UseIconComponent,
   type UseIconSetup
-} from '../Icon/useIconRef.ts'
+} from '../Icon/useIconRef'
 import {
   type UseProgressComponent,
   type UseProgressSetup
-} from '../Progress/useProgressRef.ts'
-import { type UseEnabledSetup } from '../uses/ref/useEnabled.ts'
+} from '../Progress/useProgressRef'
+import { type UseEnabledSetup } from '../uses/ref/useEnabled'
 import {
   type UseEventClickEmits,
   type UseEventClickSetup
-} from '../uses/ref/useEventClick.ts'
+} from '../uses/ref/useEventClick'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

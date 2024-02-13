@@ -1,14 +1,14 @@
 import { type VNode } from 'vue'
 
-import { forEach, isObjectNotArray } from '../../functions/data.ts'
-import { getRef, render } from '../../functions/ref.ts'
+import { forEach, isObjectNotArray } from '../../functions/data'
+import { getRef, render } from '../../functions/ref'
 
-import { type RawChildren, type RawSlots } from '../../types/ref.ts'
+import { type RawChildren, type RawSlots } from '../../types/ref'
 import {
   type ConstrComponent,
   type ConstrComponentMod,
   type ConstrItem
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 
 /**
  * Class for working with connected components.<br>

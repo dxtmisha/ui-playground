@@ -1,5 +1,5 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
-import { type PropertyItem } from '../../../../types/property.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
+import { type PropertyItem } from '../../../../types/property';
 /**
  * Class for duplicating configuration parameters to child elements.<br>
  * Класс для дублирования параметров настройки к дочерним элементам.

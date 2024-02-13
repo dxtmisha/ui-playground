@@ -1,10 +1,10 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
-// import { toKebabCase } from '../../../functions/string.ts'
-import { replaceRecursive } from '../../../functions/object.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data'
+// import { toKebabCase } from '../../../functions/string'
+import { replaceRecursive } from '../../../functions/object'
 
-import { PropertiesKeys } from './PropertiesKeys.ts'
-import { PropertiesTypes } from './PropertiesTypes.ts'
-import { PropertiesValues } from './PropertiesValues.ts'
+import { PropertiesKeys } from './PropertiesKeys'
+import { PropertiesTypes } from './PropertiesTypes'
+import { PropertiesValues } from './PropertiesValues'
 
 import {
   type PropertyItem,
@@ -13,7 +13,7 @@ import {
   PropertyKey,
   type PropertyList,
   type PropertyListOrData
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 /**
  * A class for transforming a property into a basic structure for work.<br>

@@ -1,16 +1,16 @@
-import { toCamelCase, toCamelCaseFirst, toKebabCase } from '../../../functions/string.ts'
+import { toCamelCase, toCamelCaseFirst, toKebabCase } from '../../../functions/string'
 
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
-import { PropertiesCache } from '../properties/PropertiesCache.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
+import { PropertiesCache } from '../properties/PropertiesCache'
 
-import { DesignStructureRead } from './DesignStructureRead.ts'
-import { DesignStructureClasses } from './DesignStructureClasses.ts'
-import { DesignStructureStyles } from './DesignStructureStyles.ts'
+import { DesignStructureRead } from './DesignStructureRead'
+import { DesignStructureClasses } from './DesignStructureClasses'
+import { DesignStructureStyles } from './DesignStructureStyles'
 
 import {
   DesignStructureClassesList,
   type DesignStructureList
-} from '../../../types/design.ts'
+} from '../../../types/design'
 
 const DIR_NAME = 'structure'
 const FILE_CLASSES = 'classes'

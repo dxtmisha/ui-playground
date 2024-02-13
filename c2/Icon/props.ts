@@ -4,7 +4,7 @@ import {
   IconProps,
   defaultsIcon,
   propsIcon
-} from '../../constructors/Icon/props.ts'
+} from '../../constructors/Icon/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

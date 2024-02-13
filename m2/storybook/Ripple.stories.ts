@@ -5,7 +5,7 @@ import M2Ripple from '../Ripple/M2Ripple.vue'
 import {
   rippleArgs,
   rippleValues
-} from '../../m3/storybook/argTypes/ripple.ts'
+} from '../../m3/storybook/argTypes/ripple'
 
 const meta = {
   title: 'M2/Ripple',

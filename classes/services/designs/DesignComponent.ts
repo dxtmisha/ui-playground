@@ -1,7 +1,7 @@
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
-import { DesignCommand } from './DesignCommand.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
+import { DesignCommand } from './DesignCommand'
 
-import { DIR_CONSTRUCTOR } from '../../../types/property.ts'
+import { DIR_CONSTRUCTOR } from '../../../types/property'
 
 const FILE_PROPERTIES = 'properties.json'
 const FILE_PROPS = 'props.ts'

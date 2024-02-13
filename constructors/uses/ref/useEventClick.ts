@@ -1,8 +1,8 @@
 // import { useRouter } from 'vue-router'
-import { makeStopPropagation } from '../../../functions/event.ts'
+import { makeStopPropagation } from '../../../functions/event'
 
-import { type ConstrEmit } from '../../../types/constructor.ts'
-import { type UseEnabledSetup } from './useEnabled.ts'
+import { type ConstrEmit } from '../../../types/constructor'
+import { type UseEnabledSetup } from './useEnabled'
 
 type UseEventClickValue = {
   type: string

@@ -1,9 +1,9 @@
-import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
-import { getColumn } from '../../../../functions/object.ts'
+import { isFilled, isObjectNotArray } from '../../../../functions/data'
+import { getColumn } from '../../../../functions/object'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { PropertyType } from '../../../../types/property.ts'
+import { PropertyType } from '../../../../types/property'
 
 const TYPES = [
   PropertyType.var,

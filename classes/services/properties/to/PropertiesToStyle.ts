@@ -1,8 +1,8 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
+import { isObjectNotArray } from '../../../../functions/data'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { PropertyKey, PropertyType } from '../../../../types/property.ts'
+import { PropertyKey, PropertyType } from '../../../../types/property'
 
 export const KEY_CUSTOM = 'custom'
 

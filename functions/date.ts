@@ -1,4 +1,4 @@
-import { isNull } from './data.ts'
+import { isNull } from './data'
 
 /**
  * Conversion to Date object.<br>

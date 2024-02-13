@@ -1,10 +1,10 @@
-import { InputChange } from './InputChange.ts'
-import { InputValue } from './InputValue.ts'
-import { InputValidation } from './InputValidation.ts'
+import { InputChange } from './InputChange'
+import { InputValue } from './InputValue'
+import { InputValidation } from './InputValidation'
 
-import type { InputValidationItem } from './typesBasic.ts'
-import type { InputEmits } from './types.ts'
-import type { InputBasicProps } from './props.ts'
+import type { InputValidationItem } from './typesBasic'
+import type { InputEmits } from './types'
+import type { InputBasicProps } from './props'
 
 /**
  * Class for working with events.<br>

@@ -1,8 +1,8 @@
-import { Datetime } from '../../classes/Datetime.ts';
-import { MaskType } from './MaskType.ts';
-import { type InputPatternList } from '../Input/typesBasic.ts';
-import { type MaskGroup } from './typesBasic.ts';
-import { type MaskProps } from './props.ts';
+import { Datetime } from '../../classes/Datetime';
+import { MaskType } from './MaskType';
+import { type InputPatternList } from '../Input/typesBasic';
+import { type MaskGroup } from './typesBasic';
+import { type MaskProps } from './props';
 /**
  * Class for working with a date type mask.<br>
  * Класс для работы с маской типа даты.

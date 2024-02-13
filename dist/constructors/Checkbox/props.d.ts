@@ -1,7 +1,7 @@
 import { type PropType } from 'vue';
-import type { ImageProps } from '../Image/props.ts';
-import { type InputBasicProps } from '../Input/props.ts';
-import { type UseFieldMessageProps } from '../FieldMessage/useFieldMessageRef.ts';
+import type { ImageProps } from '../Image/props';
+import { type InputBasicProps } from '../Input/props';
+import { type UseFieldMessageProps } from '../FieldMessage/useFieldMessageRef';
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.
@@ -38,13 +38,13 @@ export declare const propsCheckbox: {
     name: StringConstructor;
     detail: PropType<Record<string, any> | undefined>;
     type: {
-        type: PropType<import("../Input/typesBasic.ts").InputTypeName | undefined>;
-        default: import("../Input/typesBasic.ts").InputTypeName | undefined;
+        type: PropType<import("../Input/typesBasic").InputTypeName | undefined>;
+        default: import("../Input/typesBasic").InputTypeName | undefined;
     };
-    inputmode: PropType<import("../Input/typesBasic.ts").InputMode | undefined>;
+    inputmode: PropType<import("../Input/typesBasic").InputMode | undefined>;
     spellcheck: BooleanConstructor;
     pattern: StringConstructor;
-    match: PropType<import("../Input/typesBasic.ts").InputMatch | undefined>;
+    match: PropType<import("../Input/typesBasic").InputMatch | undefined>;
     arrow: BooleanConstructor;
     step: (StringConstructor | NumberConstructor)[];
     min: (StringConstructor | NumberConstructor)[];
@@ -58,11 +58,11 @@ export declare const propsCheckbox: {
     };
     input: PropType<Record<string, any> | undefined>;
     placeholder: StringConstructor;
-    validationCode: PropType<import("../Input/typesBasic.ts").InputValidityCode | undefined>;
+    validationCode: PropType<import("../Input/typesBasic").InputValidityCode | undefined>;
     on: ObjectConstructor;
     'onUpdate:value': PropType<((value: any) => void) | undefined>;
     'onUpdate:modelValue': PropType<((value: any) => void) | undefined>;
-    progress: PropType<boolean | import("../Progress/props.ts").ProgressProps | undefined>;
+    progress: PropType<boolean | import("../Progress/props").ProgressProps | undefined>;
     readonly: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
 };

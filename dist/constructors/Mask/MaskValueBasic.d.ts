@@ -1,8 +1,8 @@
-import { CacheItem } from '../../classes/CacheItem.ts';
-import { MaskRubberTransition } from './MaskRubberTransition.ts';
-import { MaskItem } from './MaskItem.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskCharacter } from './MaskCharacter.ts';
+import { CacheItem } from '../../classes/CacheItem';
+import { MaskRubberTransition } from './MaskRubberTransition';
+import { MaskItem } from './MaskItem';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskCharacter } from './MaskCharacter';
 /**
  * Class for getting basic input values.<br>
  * Класс для получения базовых вводимых значений.

@@ -1,7 +1,7 @@
 import {
   language,
   theme
-} from '../../constructors/storybook/globalTypesList.ts'
+} from '../../constructors/storybook/globalTypesList'
 
 export const globalTypes = {
   theme: theme('Тема'),

@@ -1,22 +1,22 @@
-import { forEach, isObjectNotArray } from '../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../functions/data'
 
-import { CacheItem } from '../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem'
 
 import {
   type InputCheckItem,
   type InputCheckList,
   useInputCheck
-} from '../Input/useInputCheck.ts'
+} from '../Input/useInputCheck'
 
-import { MaskType } from './MaskType.ts'
-import { MaskSpecial } from './MaskSpecial.ts'
-import { MaskDate } from './MaskDate.ts'
+import { MaskType } from './MaskType'
+import { MaskSpecial } from './MaskSpecial'
+import { MaskDate } from './MaskDate'
 
 import {
   type InputPatternItemOrFunction,
   type InputPatternList
-} from '../Input/typesBasic.ts'
-import { type MaskProps } from './props.ts'
+} from '../Input/typesBasic'
+import { type MaskProps } from './props'
 
 /**
  * A class for obtaining data to verify input data by its group.<br>

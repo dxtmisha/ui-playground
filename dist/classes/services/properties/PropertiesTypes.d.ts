@@ -1,4 +1,4 @@
-import { type PropertyItem, PropertyType } from '../../../types/property.ts';
+import { type PropertyItem, PropertyType } from '../../../types/property';
 /**
  * Class with a list of available types.<br>
  * Класс со списком доступных типов.

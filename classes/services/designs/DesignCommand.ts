@@ -1,8 +1,8 @@
-import { toArray } from '../../../functions/object.ts'
+import { toArray } from '../../../functions/object'
 
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
-import { DesignStructure } from './DesignStructure.ts'
-import { DesignReplace } from './DesignReplace.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
+import { DesignStructure } from './DesignStructure'
+import { DesignReplace } from './DesignReplace'
 
 const DIR_SAMPLE = [__dirname, '..', '..', '..', 'media', 'templates']
 

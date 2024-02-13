@@ -4,7 +4,7 @@ import {
   ProgressProps,
   defaultsProgress,
   propsProgress
-} from '../../constructors/Progress/props.ts'
+} from '../../constructors/Progress/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

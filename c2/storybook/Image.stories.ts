@@ -5,7 +5,7 @@ import C2Image from '../Image/C2Image.vue'
 import {
   imageArgs,
   imageValues
-} from '../../c1/storybook/argTypes/image.ts'
+} from '../../c1/storybook/argTypes/image'
 
 import galaxyZFold5 from '../../c1/storybook/images/Galaxy_Z_Fold5.png'
 import galaxyZFlip5 from '../../c1/storybook/images/Galaxy_Z_Flip5.png'

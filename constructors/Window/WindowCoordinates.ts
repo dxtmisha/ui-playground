@@ -1,7 +1,7 @@
-import { WindowClasses } from './WindowClasses.ts'
-import { WindowElement } from './WindowElement.ts'
+import { WindowClasses } from './WindowClasses'
+import { WindowElement } from './WindowElement'
 
-import { WindowLocation } from './typesBasic.ts'
+import { WindowLocation } from './typesBasic'
 
 /**
  * A class for working with coordinates.<br>

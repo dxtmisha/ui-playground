@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 export declare const KEY_CUSTOM = "custom";
 /**
  * A class for working with properties that support additional values.<br>

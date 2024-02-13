@@ -1,4 +1,4 @@
-import { CheckboxProps } from '../../constructors/Checkbox/props.ts';
+import { CheckboxProps } from '../../constructors/Checkbox/props';
 export declare const propsValues: {};
 export type PropsToken = {
     required?: boolean;
@@ -26,7 +26,7 @@ export declare const propsInstruction: {
     comp: BooleanConstructor;
     value: (BooleanConstructor | StringConstructor)[];
     modelValue: (BooleanConstructor | StringConstructor)[];
-    icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+    icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     indeterminate: BooleanConstructor;
     disabled: BooleanConstructor;
     helperMessage: StringConstructor;
@@ -34,13 +34,13 @@ export declare const propsInstruction: {
     name: StringConstructor;
     detail: import("vue").PropType<Record<string, any> | undefined>;
     type: {
-        type: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined>;
-        default: import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined;
+        type: import("vue").PropType<import("../../constructors/Input/typesBasic").InputTypeName | undefined>;
+        default: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     };
-    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMode | undefined>;
+    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMode | undefined>;
     spellcheck: BooleanConstructor;
     pattern: StringConstructor;
-    match: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMatch | undefined>;
+    match: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMatch | undefined>;
     arrow: BooleanConstructor;
     step: (StringConstructor | NumberConstructor)[];
     min: (StringConstructor | NumberConstructor)[];
@@ -54,11 +54,11 @@ export declare const propsInstruction: {
     };
     input: import("vue").PropType<Record<string, any> | undefined>;
     placeholder: StringConstructor;
-    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputValidityCode | undefined>;
+    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputValidityCode | undefined>;
     on: ObjectConstructor;
     'onUpdate:value': import("vue").PropType<((value: any) => void) | undefined>;
     'onUpdate:modelValue': import("vue").PropType<((value: any) => void) | undefined>;
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
     readonly: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
 };

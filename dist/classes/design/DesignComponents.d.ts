@@ -1,6 +1,6 @@
 import { type VNode } from 'vue';
-import { type RawChildren, type RawSlots } from '../../types/ref.ts';
-import { type ConstrComponent, type ConstrComponentMod, type ConstrItem } from '../../types/constructor.ts';
+import { type RawChildren, type RawSlots } from '../../types/ref';
+import { type ConstrComponent, type ConstrComponentMod, type ConstrItem } from '../../types/constructor';
 /**
  * Class for working with connected components.<br>
  * Класс для работы с подключенными компонентами.

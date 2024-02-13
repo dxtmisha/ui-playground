@@ -1,4 +1,4 @@
-import { MutationStatus } from '../../types/mutation.ts';
+import { MutationStatus } from '../../types/mutation';
 /**
  * Class for working with the search of elements for processing.<br>
  * Класс для работы с поиском элементов для обработки.

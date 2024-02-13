@@ -1,13 +1,13 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
+import { isObjectNotArray } from '../../../../functions/data'
 
-import { type PropertiesItemsParent } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsParent } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 const TYPE = [
   PropertyType.var,

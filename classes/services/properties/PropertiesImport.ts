@@ -1,19 +1,19 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
-import { replaceRecursive } from '../../../functions/object.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data'
+import { replaceRecursive } from '../../../functions/object'
 
-import { PropertiesFile, type PropertiesFilePath } from './PropertiesFile.ts'
-import { PropertiesCache } from './PropertiesCache.ts'
-import { PropertiesTypes } from './PropertiesTypes.ts'
+import { PropertiesFile, type PropertiesFilePath } from './PropertiesFile'
+import { PropertiesCache } from './PropertiesCache'
+import { PropertiesTypes } from './PropertiesTypes'
 
-import { PropertiesConvector } from './PropertiesConvector.ts'
-import { PropertiesStandard } from './PropertiesStandard.ts'
+import { PropertiesConvector } from './PropertiesConvector'
+import { PropertiesStandard } from './PropertiesStandard'
 
 import {
   PropertyKey,
   type PropertyList,
   type PropertyListOrData,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 /**
  * Class for working with external files, which adds them to the current list of properties.<br>

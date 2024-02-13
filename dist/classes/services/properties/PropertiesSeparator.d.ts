@@ -1,4 +1,4 @@
-import { type PropertyList } from '../../../types/property.ts';
+import { type PropertyList } from '../../../types/property';
 /**
  * Class for working with property splitting into multiple sub-properties.<br>
  * Класс для работы с разделением свойства на множество под-свойств.

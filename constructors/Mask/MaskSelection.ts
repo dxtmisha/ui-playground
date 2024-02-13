@@ -1,5 +1,5 @@
-import { MaskSpecial } from './MaskSpecial.ts'
-import { MaskItem } from './MaskItem.ts'
+import { MaskSpecial } from './MaskSpecial'
+import { MaskItem } from './MaskItem'
 
 /**
  * Class for working with the character input location.<br>

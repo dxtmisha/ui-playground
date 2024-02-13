@@ -1,14 +1,14 @@
-import { ButtonDesign } from '../Button/ButtonDesign.ts'
+import { ButtonDesign } from '../Button/ButtonDesign'
 
 import {
   type ChipProps
-} from './props.ts'
+} from './props'
 import {
   type ChipClasses,
   type ChipComponents,
   type ChipExpose,
   type ChipSetup
-} from './types.ts'
+} from './types'
 
 /**
  * Class constructor for the chips component.<br>

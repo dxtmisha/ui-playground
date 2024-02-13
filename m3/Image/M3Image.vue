@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
 import { ImageDesign } from '../../constructors/Image/ImageDesign'
 

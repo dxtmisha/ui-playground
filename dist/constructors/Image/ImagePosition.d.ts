@@ -1,5 +1,5 @@
-import { ImageCoordinator } from './ImageCoordinator.ts';
-import { type ImageProps } from './props.ts';
+import { ImageCoordinator } from './ImageCoordinator';
+import { type ImageProps } from './props';
 /**
  * A class for obtaining data for the background-position property.<br>
  * Класс для получения данных для свойства background-position.

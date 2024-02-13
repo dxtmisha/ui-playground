@@ -24,12 +24,12 @@ declare const meta: {
             objectHeight: (StringConstructor | NumberConstructor)[];
             url: StringConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
-            type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageTypeItem>;
-            data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageEventItem>;
+            type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageTypeItem>;
+            data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageEventItem>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-            load: (image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => void;
+            load: (image: import("../../constructors/Image/typesBasic").ImageEventData) => void;
         }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
             turn: BooleanConstructor;
             disabled: BooleanConstructor;
@@ -52,7 +52,7 @@ declare const meta: {
             objectHeight: (StringConstructor | NumberConstructor)[];
             url: StringConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
             turn: boolean;
             disabled: boolean;
@@ -89,10 +89,10 @@ declare const meta: {
             objectHeight: (StringConstructor | NumberConstructor)[];
             url: StringConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
-            type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageTypeItem>;
-            data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageEventItem>;
+            type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageTypeItem>;
+            data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageEventItem>;
         }, {}, {}, {}, {
             turn: boolean;
             disabled: boolean;
@@ -126,12 +126,12 @@ declare const meta: {
         objectHeight: (StringConstructor | NumberConstructor)[];
         url: StringConstructor;
     }>> & {
-        onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+        onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
     }, {
-        type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageTypeItem>;
-        data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic.ts").ImageEventItem>;
+        type: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageTypeItem>;
+        data: import("vue").ComputedRef<import("../../constructors/Image/typesBasic").ImageEventItem>;
     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-        load: (image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => void;
+        load: (image: import("../../constructors/Image/typesBasic").ImageEventData) => void;
     }, string, {
         turn: boolean;
         disabled: boolean;
@@ -140,7 +140,7 @@ declare const meta: {
         adaptiveAlways: boolean;
         adaptive: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/Image/types.ts").ImageSlots>;
+        $slots: Readonly<import("../../constructors/Image/types").ImageSlots>;
     });
     tags: string[];
     parameters: {
@@ -151,8 +151,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

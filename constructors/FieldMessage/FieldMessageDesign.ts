@@ -1,14 +1,14 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type FieldMessageProps
-} from './props.ts'
+} from './props'
 import {
   type FieldMessageClasses,
   type FieldMessageComponents,
@@ -16,8 +16,8 @@ import {
   type FieldMessageExpose,
   type FieldMessageSetup,
   type FieldMessageSlots
-} from './types.ts'
-import { FieldMessageRef } from './FieldMessageRef.ts'
+} from './types'
+import { FieldMessageRef } from './FieldMessageRef'
 
 /**
  * FieldMessageDesign

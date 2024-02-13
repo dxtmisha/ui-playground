@@ -1,12 +1,12 @@
-import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
-import { getColumn } from '../../../../functions/object.ts'
-import { toCamelCase } from '../../../../functions/string.ts'
+import { forEach, isObjectNotArray } from '../../../../functions/data'
+import { getColumn } from '../../../../functions/object'
+import { toCamelCase } from '../../../../functions/string'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
 
-import { PropertyKey, SEPARATOR } from '../../../../types/property.ts'
+import { PropertyKey, SEPARATOR } from '../../../../types/property'
 
 type PropertiesDuplicateListItem = {
   value: string

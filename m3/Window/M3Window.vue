@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+import { isFilled } from '../../functions/data'
+import { inArray } from '../../functions/object'
 
-import { WindowDesign } from '../../constructors/Window/WindowDesign.ts'
+import { WindowDesign } from '../../constructors/Window/WindowDesign'
 
 import M3Scrollbar from '../Scrollbar/M3Scrollbar.vue'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type WindowEmits,
   type WindowSlots
-} from '../../constructors/Window/types.ts'
+} from '../../constructors/Window/types'
 
 import {
   propsInstruction,
   propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<WindowEmits>()
 const props = defineProps({ ...propsInstruction })

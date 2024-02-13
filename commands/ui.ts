@@ -2,7 +2,7 @@
 
 import { program } from 'commander'
 
-import { DesignCommand } from '../classes/design/DesignCommand.ts'
+import { DesignCommand } from '../classes/design/DesignCommand'
 
 program
   .command('component')

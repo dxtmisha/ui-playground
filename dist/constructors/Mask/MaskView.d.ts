@@ -1,13 +1,13 @@
-import { MaskType } from './MaskType.ts';
-import { MaskDate } from './MaskDate.ts';
-import { MaskFormat } from './MaskFormat.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskRubber } from './MaskRubber.ts';
-import { MaskItem } from './MaskItem.ts';
-import { MaskValueBasic } from './MaskValueBasic.ts';
-import { MaskValidation } from './MaskValidation.ts';
-import { type MaskProps } from './props.ts';
-import { type MaskViewList } from './typesBasic.ts';
+import { MaskType } from './MaskType';
+import { MaskDate } from './MaskDate';
+import { MaskFormat } from './MaskFormat';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskRubber } from './MaskRubber';
+import { MaskItem } from './MaskItem';
+import { MaskValueBasic } from './MaskValueBasic';
+import { MaskValidation } from './MaskValidation';
+import { type MaskProps } from './props';
+import { type MaskViewList } from './typesBasic';
 /**
  * Class for working with data to output to the screen.<br>
  * Класс для работы с данными для вывода на экран.

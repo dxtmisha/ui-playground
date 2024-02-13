@@ -1,6 +1,6 @@
-import { isFilled } from '../../functions/data.ts'
+import { isFilled } from '../../functions/data'
 
-import { type FieldMessageProps } from './props.ts'
+import { type FieldMessageProps } from './props'
 
 /**
  * Class for working with text.<br>

@@ -1,15 +1,15 @@
-import { strFill } from '../../functions/string.ts'
+import { strFill } from '../../functions/string'
 
-import { GeoIntl } from '../../classes/GeoIntl.ts'
+import { GeoIntl } from '../../classes/GeoIntl'
 
-import { MaskType } from './MaskType.ts'
-import { MaskRubberItem } from './MaskRubberItem.ts'
+import { MaskType } from './MaskType'
+import { MaskRubberItem } from './MaskRubberItem'
 
-import { type MaskProps } from './props.ts'
+import { type MaskProps } from './props'
 import {
   type MaskGroup,
   type MaskSpecialList, MaskSpecialProp
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * A class for working with a formatted number mask.<br>

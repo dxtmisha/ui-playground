@@ -25,9 +25,9 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     to: StringConstructor;
     value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
     detail: ObjectConstructor[];
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-    iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-    icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+    iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+    icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
     iconTurn: BooleanConstructor;
     iconHide: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
@@ -64,9 +64,9 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     to: StringConstructor;
     value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
     detail: ObjectConstructor[];
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-    iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-    icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+    iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+    icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
     iconTurn: BooleanConstructor;
     iconHide: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
@@ -91,7 +91,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     tonal: boolean;
     iconTurn: boolean;
     iconHide: boolean;
-}, {}>, Readonly<import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots> & import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots>;
+}, {}>, Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {

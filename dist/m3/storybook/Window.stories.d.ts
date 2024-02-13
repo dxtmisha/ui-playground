@@ -33,19 +33,19 @@ declare const meta: {
                 default: number | undefined;
             };
             persistent: BooleanConstructor;
-            overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+            overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
             autoClose: BooleanConstructor;
             flash: BooleanConstructor;
             inDom: BooleanConstructor;
         }>> & {
-            onWindow?: ((options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => any) | undefined;
+            onWindow?: ((options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => any) | undefined;
         }, {
             id: string;
             open: import("vue").ShallowRef<boolean>;
             setOpen(): Promise<void>;
             toggle(): Promise<void>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-            window: (options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => void;
+            window: (options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => void;
         }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
@@ -77,12 +77,12 @@ declare const meta: {
                 default: number | undefined;
             };
             persistent: BooleanConstructor;
-            overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+            overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
             autoClose: BooleanConstructor;
             flash: BooleanConstructor;
             inDom: BooleanConstructor;
         }>> & {
-            onWindow?: ((options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => any) | undefined;
+            onWindow?: ((options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => any) | undefined;
         }, {
             contextmenu: boolean;
             disabled: boolean;
@@ -136,12 +136,12 @@ declare const meta: {
                 default: number | undefined;
             };
             persistent: BooleanConstructor;
-            overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+            overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
             autoClose: BooleanConstructor;
             flash: BooleanConstructor;
             inDom: BooleanConstructor;
         }>> & {
-            onWindow?: ((options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => any) | undefined;
+            onWindow?: ((options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => any) | undefined;
         }, {
             id: string;
             open: import("vue").ShallowRef<boolean>;
@@ -197,19 +197,19 @@ declare const meta: {
             default: number | undefined;
         };
         persistent: BooleanConstructor;
-        overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+        overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
         autoClose: BooleanConstructor;
         flash: BooleanConstructor;
         inDom: BooleanConstructor;
     }>> & {
-        onWindow?: ((options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => any) | undefined;
+        onWindow?: ((options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => any) | undefined;
     }, {
         id: string;
         open: import("vue").ShallowRef<boolean>;
         setOpen(): Promise<void>;
         toggle(): Promise<void>;
     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-        window: (options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => void;
+        window: (options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => void;
     }, string, {
         contextmenu: boolean;
         disabled: boolean;
@@ -226,7 +226,7 @@ declare const meta: {
         flash: boolean;
         inDom: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/Window/types.ts").WindowSlots> & import("../../constructors/Window/types.ts").WindowSlots;
+        $slots: Readonly<import("../../constructors/Window/types").WindowSlots> & import("../../constructors/Window/types").WindowSlots;
     });
     tags: string[];
     parameters: {
@@ -237,8 +237,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

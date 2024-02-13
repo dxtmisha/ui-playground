@@ -1,5 +1,5 @@
-import { MutationCollect } from './MutationCollect.ts'
-import { MutationDataItem } from './MutationDataItem.ts'
+import { MutationCollect } from './MutationCollect'
+import { MutationDataItem } from './MutationDataItem'
 
 /**
  * Class for storing a list of active elements.<br>

@@ -1,4 +1,4 @@
-import { type PropertyList, type PropertyListOrData } from '../../../types/property.ts';
+import { type PropertyList, type PropertyListOrData } from '../../../types/property';
 /**
  * A class for transforming a property into a basic structure for work.<br>
  * Класс для преобразования свойства в базовую структуру для работы.

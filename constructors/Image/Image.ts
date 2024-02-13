@@ -1,27 +1,27 @@
-import { isString } from '../../functions/data.ts'
+import { isString } from '../../functions/data'
 
-import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts'
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract'
 
-import { ImageType } from './ImageType.ts'
-import { ImageData } from './ImageData.ts'
-import { ImageCoordinator } from './ImageCoordinator.ts'
-import { ImagePosition } from './ImagePosition.ts'
+import { ImageType } from './ImageType'
+import { ImageData } from './ImageData'
+import { ImageCoordinator } from './ImageCoordinator'
+import { ImagePosition } from './ImagePosition'
 
-import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
+import { ImageAdaptiveItem } from './ImageAdaptiveItem'
 
-import { ImageBackground } from './ImageBackground.ts'
+import { ImageBackground } from './ImageBackground'
 
 import {
   type ConstrClassObject,
   type ConstrStyles,
   type ConstrValue
-} from '../../types/constructor.ts'
-import { type ImageProps } from './props.ts'
+} from '../../types/constructor'
+import { type ImageProps } from './props'
 import {
   type ImageElement,
   type ImageEventLoad,
   type ImageTypeItem
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * Base class for working with images and icons.<br>

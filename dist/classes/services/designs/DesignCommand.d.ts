@@ -1,5 +1,5 @@
-import { DesignStructure } from './DesignStructure.ts';
-import { DesignReplace } from './DesignReplace.ts';
+import { DesignStructure } from './DesignStructure';
+import { DesignReplace } from './DesignReplace';
 /**
  * Base abstract class for generating script files.<br>
  * Базовый абстрактный класс для генерации файлов скриптов.

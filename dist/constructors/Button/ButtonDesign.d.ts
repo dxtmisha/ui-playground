@@ -1,9 +1,9 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { type UseIconSetup } from '../Icon/useIconRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type ButtonProps } from './props.ts';
-import { type ButtonClasses, type ButtonComponents, type ButtonEmits, type ButtonExpose, type ButtonSetup, type ButtonSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { type UseIconSetup } from '../Icon/useIconRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type ButtonProps } from './props';
+import { type ButtonClasses, type ButtonComponents, type ButtonEmits, type ButtonExpose, type ButtonSetup, type ButtonSlots } from './types';
 /**
  * Class constructor for the button component.<br>
  * Класс-конструктор для компонента кнопки.

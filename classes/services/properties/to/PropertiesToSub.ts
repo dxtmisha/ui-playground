@@ -1,10 +1,10 @@
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 const REG_SUB = /(?<={[^}]*?){([^{}]+)}/g
 

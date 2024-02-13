@@ -1,19 +1,19 @@
-import { MaskType } from './MaskType.ts';
-import { MaskBuffer } from './MaskBuffer.ts';
-import { MaskFocus } from './MaskFocus.ts';
-import { MaskRubberTransition } from './MaskRubberTransition.ts';
-import { MaskDate } from './MaskDate.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskMatch } from './MaskMatch.ts';
-import { MaskRubber } from './MaskRubber.ts';
-import { MaskItem } from './MaskItem.ts';
-import { MaskSelection } from './MaskSelection.ts';
-import { MaskCharacter } from './MaskCharacter.ts';
-import { MaskValueBasic } from './MaskValueBasic.ts';
-import { MaskValue } from './MaskValue.ts';
-import { MaskEmit } from './MaskEmit.ts';
-import { type ConstrValue } from '../../types/constructor.ts';
-import { type MaskElementInput } from './typesBasic.ts';
+import { MaskType } from './MaskType';
+import { MaskBuffer } from './MaskBuffer';
+import { MaskFocus } from './MaskFocus';
+import { MaskRubberTransition } from './MaskRubberTransition';
+import { MaskDate } from './MaskDate';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskMatch } from './MaskMatch';
+import { MaskRubber } from './MaskRubber';
+import { MaskItem } from './MaskItem';
+import { MaskSelection } from './MaskSelection';
+import { MaskCharacter } from './MaskCharacter';
+import { MaskValueBasic } from './MaskValueBasic';
+import { MaskValue } from './MaskValue';
+import { MaskEmit } from './MaskEmit';
+import { type ConstrValue } from '../../types/constructor';
+import { type MaskElementInput } from './typesBasic';
 /**
  * Class for working with behavior when entering data.<br>
  * Класс для работы с поведением при вводе данных.

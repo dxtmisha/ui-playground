@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { IconProps } from '../../constructors/Icon/props.ts';
+import { IconProps } from '../../constructors/Icon/props';
 export declare const propsValues: {
     animationType: string[];
     rounded: string[];
@@ -51,7 +51,7 @@ export declare const propsInstruction: {
         type: PropType<"sm" | "md" | "lg" | "xs" | undefined>;
         default: "sm" | "md" | "lg" | "xs" | undefined;
     };
-    icon: PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-    iconActive: PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+    icon: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+    iconActive: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     active: BooleanConstructor;
 };

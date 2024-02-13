@@ -1,9 +1,9 @@
-import { WindowPersistent } from './WindowPersistent.ts';
-import { WindowClasses } from './WindowClasses.ts';
-import { WindowElement } from './WindowElement.ts';
-import { WindowOpen } from './WindowOpen.ts';
-import type { WindowProps } from './props.ts';
-import { WindowStatic } from './WindowStatic.ts';
+import { WindowPersistent } from './WindowPersistent';
+import { WindowClasses } from './WindowClasses';
+import { WindowElement } from './WindowElement';
+import { WindowOpen } from './WindowOpen';
+import type { WindowProps } from './props';
+import { WindowStatic } from './WindowStatic';
 /**
  * Class for managing the opening and closing of the window.<br>
  * Класс для управления открытием и закрытием окна.

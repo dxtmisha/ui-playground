@@ -1,9 +1,9 @@
-import { toArray } from '../functions/object.ts'
+import { toArray } from '../functions/object'
 
-import { Geo } from './Geo.ts'
-import { Api } from './Api.ts'
+import { Geo } from './Geo'
+import { Api } from './Api'
 
-import { useEnv } from '../composables/useEnv.ts'
+import { useEnv } from '../composables/useEnv'
 
 /**
  * Class for getting the translated text.

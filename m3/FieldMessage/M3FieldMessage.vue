@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { FieldMessageDesign } from '../../constructors/FieldMessage/FieldMessageDesign.ts'
+import { FieldMessageDesign } from '../../constructors/FieldMessage/FieldMessageDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type FieldMessageEmits,
   type FieldMessageSlots
-} from '../../constructors/FieldMessage/types.ts'
+} from '../../constructors/FieldMessage/types'
 
 import {
   propsInstruction // ,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<FieldMessageEmits>()
 const props = defineProps({ ...propsInstruction })

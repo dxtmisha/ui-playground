@@ -1,14 +1,14 @@
 import { resolveComponent, shallowRef } from 'vue'
 
-import { MutationGlobal } from '../../classes/mutation/MutationGlobal.ts'
+import { MutationGlobal } from '../../classes/mutation/MutationGlobal'
 
-import { type RefUndefined } from '../../types/ref.ts'
+import { type RefUndefined } from '../../types/ref'
 import {
   type MutationComponentProps,
   type MutationSlots,
   MutationStatus
-} from '../../types/mutation.ts'
-import { type MutationItemProps } from './props.ts'
+} from '../../types/mutation'
+import { type MutationItemProps } from './props'
 
 /**
  * Class for working with the component element.<br>

@@ -1,7 +1,7 @@
-import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts';
-import { type ProgressProps } from './props.ts';
-import { type ProgressEventLoad } from './typesBasic.ts';
-import { type ConstrClassObject, type ConstrStyles } from '../../types/constructor.ts';
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract';
+import { type ProgressProps } from './props';
+import { type ProgressEventLoad } from './typesBasic';
+import { type ConstrClassObject, type ConstrStyles } from '../../types/constructor';
 /**
  * Base class for working with the loader.<br>
  * Базовый класс для работы с загрузчиком.

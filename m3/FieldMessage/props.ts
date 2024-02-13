@@ -4,7 +4,7 @@ import {
   FieldMessageProps,
   defaultsFieldMessage,
   propsFieldMessage
-} from '../../constructors/FieldMessage/props.ts'
+} from '../../constructors/FieldMessage/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

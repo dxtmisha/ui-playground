@@ -1,20 +1,20 @@
 import { config } from 'dotenv'
-import { isFilled } from '../../functions/data.ts'
-import { toKebabCase } from '../../functions/string.ts'
+import { isFilled } from '../../functions/data'
+import { toKebabCase } from '../../functions/string'
 
-import { PropertiesCache } from '../services/properties/PropertiesCache.ts'
+import { PropertiesCache } from '../services/properties/PropertiesCache'
 
-import { Styles } from '../services/styles/Styles.ts'
-import { DesignConstructor } from '../services/designs/DesignConstructor.ts'
-import { DesignComponent } from '../services/designs/DesignComponent.ts'
-import { DesignIcons } from './DesignIcons.ts'
+import { Styles } from '../services/styles/Styles'
+import { DesignConstructor } from '../services/designs/DesignConstructor'
+import { DesignComponent } from '../services/designs/DesignComponent'
+import { DesignIcons } from './DesignIcons'
 
-import { ComponentsItems } from '../services/сomponents/ComponentsItems.ts'
-import { ComponentsList } from '../services/сomponents/ComponentsList.ts'
-import { ComponentsMain } from '../services/сomponents/ComponentsMain.ts'
-import { ComponentsTypes } from '../services/сomponents/ComponentsTypes.ts'
-import { ComponentsStyle } from '../services/сomponents/ComponentsStyle.ts'
-import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration.ts'
+import { ComponentsItems } from '../services/сomponents/ComponentsItems'
+import { ComponentsList } from '../services/сomponents/ComponentsList'
+import { ComponentsMain } from '../services/сomponents/ComponentsMain'
+import { ComponentsTypes } from '../services/сomponents/ComponentsTypes'
+import { ComponentsStyle } from '../services/сomponents/ComponentsStyle'
+import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration'
 
 config()
 

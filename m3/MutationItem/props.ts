@@ -4,7 +4,7 @@ import {
   MutationItemProps,
   defaultsMutationItem,
   propsMutationItem
-} from '../../constructors/MutationItem/props.ts'
+} from '../../constructors/MutationItem/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

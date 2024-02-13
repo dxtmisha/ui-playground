@@ -1,15 +1,15 @@
 import { watch } from 'vue'
-import { toRefItem } from '../functions/ref.ts'
+import { toRefItem } from '../functions/ref'
 
-import { EventItem } from './EventItem.ts'
+import { EventItem } from './EventItem'
 
-import { type RefOrNormal } from '../types/ref.ts'
+import { type RefOrNormal } from '../types/ref'
 import {
   type ElementOrString,
   type ElementOrWindow,
   type EventListenerDetail,
   type EventOptions
-} from '../types/element.ts'
+} from '../types/element'
 
 export class EventRef<
   E extends ElementOrWindow,

@@ -1,6 +1,6 @@
-import { ButtonDesign } from '../Button/ButtonDesign.ts';
-import { type ChipProps } from './props.ts';
-import { type ChipClasses, type ChipComponents, type ChipExpose, type ChipSetup } from './types.ts';
+import { ButtonDesign } from '../Button/ButtonDesign';
+import { type ChipProps } from './props';
+import { type ChipClasses, type ChipComponents, type ChipExpose, type ChipSetup } from './types';
 /**
  * Class constructor for the chips component.<br>
  * Класс-конструктор для компонента чипсов.

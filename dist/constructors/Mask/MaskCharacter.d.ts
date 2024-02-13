@@ -1,9 +1,9 @@
-import { MaskItem } from './MaskItem.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskRubber } from './MaskRubber.ts';
-import { MaskSelection } from './MaskSelection.ts';
-import { MaskCharacterLength } from './MaskCharacterLength.ts';
-import { MaskRubberItem } from './MaskRubberItem.ts';
+import { MaskItem } from './MaskItem';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskRubber } from './MaskRubber';
+import { MaskSelection } from './MaskSelection';
+import { MaskCharacterLength } from './MaskCharacterLength';
+import { MaskRubberItem } from './MaskRubberItem';
 /**
  * Class for working with and storing input characters.<br>
  * Класс для работы и хранения вводимых символов.

@@ -4,7 +4,7 @@ import {
   WindowProps,
   defaultsWindow,
   propsWindow
-} from '../../constructors/Window/props.ts'
+} from '../../constructors/Window/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

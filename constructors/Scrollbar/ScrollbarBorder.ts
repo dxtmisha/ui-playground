@@ -1,10 +1,10 @@
-import { EventItem } from '../../classes/EventItem.ts'
+import { EventItem } from '../../classes/EventItem'
 
 import {
   type ConstrClassObject,
   type ConstrValue
-} from '../../types/constructor.ts'
-import { type ScrollbarProps } from './props.ts'
+} from '../../types/constructor'
+import { type ScrollbarProps } from './props'
 
 const SCROLLBAR_SHIFT = 8
 

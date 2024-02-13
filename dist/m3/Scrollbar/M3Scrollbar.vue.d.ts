@@ -1,4 +1,4 @@
-import { type ScrollbarSlots } from '../../constructors/Scrollbar/types.ts';
+import { type ScrollbarSlots } from '../../constructors/Scrollbar/types';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     visible: BooleanConstructor;
     border: BooleanConstructor;

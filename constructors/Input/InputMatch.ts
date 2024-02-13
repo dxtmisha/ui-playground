@@ -1,11 +1,11 @@
-import { isObject } from '../../functions/data.ts'
-import { Translate } from '../../classes/Translate.ts'
+import { isObject } from '../../functions/data'
+import { Translate } from '../../classes/Translate'
 
-import { InputElement } from './InputElement.ts'
-import { InputValue } from './InputValue.ts'
+import { InputElement } from './InputElement'
+import { InputValue } from './InputValue'
 
-import { type InputValidationItem } from './typesBasic.ts'
-import { type InputBasicProps } from './props.ts'
+import { type InputValidationItem } from './typesBasic'
+import { type InputBasicProps } from './props'
 
 /**
  * Class for checking the similarity of input data with other elements.<br>

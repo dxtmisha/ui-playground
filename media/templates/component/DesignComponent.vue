@@ -1,24 +1,24 @@
 <script setup lang="ts">
 // :component.once import { computed } from 'vue'
 
-// :component.once import { isFilled } from '../../functions/data.ts'
-// :component.once import { inArray } from '../../functions/object.ts'
+// :component.once import { isFilled } from '../../functions/data'
+// :component.once import { inArray } from '../../functions/object'
 
-// :component.once import { ComponentDesign } from '../../constructors/Component/ComponentDesign.ts'
+// :component.once import { ComponentDesign } from '../../constructors/Component/ComponentDesign'
 
 // :component.once import {
 // :component.once   type ConstrClasses,
 // :component.once   type ConstrStyles
-// :component.once } from '../../../types/constructor.ts'
+// :component.once } from '../../../types/constructor'
 // :component.once import {
 // :component.once   type ComponentEmits,
 // :component.once   type ComponentSlots
-// :component.once } from '../../constructors/Component/types.ts'
+// :component.once } from '../../constructors/Component/types'
 
 // :component.once import {
 // :component.once   propsInstruction,
 // :component.once   propsValues
-// :component.once } from './props.ts'
+// :component.once } from './props'
 
 // :component.once const emits = defineEmits<ComponentEmits>()
 // :component.once const props = defineProps({ ...propsInstruction })

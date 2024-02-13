@@ -1,12 +1,12 @@
-import { Icons } from '../../../classes/Icons.ts'
+import { Icons } from '../../../classes/Icons'
 
-import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook.ts'
+import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook'
 
-import { iconArgs as iconArgsC1, iconValues as iconValuesC1 } from '../../../c1/storybook/argTypes/icon.ts'
+import { iconArgs as iconArgsC1, iconValues as iconValuesC1 } from '../../../c1/storybook/argTypes/icon'
 
-import '../../icons.ts'
-import { defaults, propsValues } from '../../Icon/props.ts'
-import { StorybookCategory } from '../types.ts'
+import '../../icons'
+import { defaults, propsValues } from '../../Icon/props'
+import { StorybookCategory } from '../types'
 
 const icons = Icons.getNameList()
 

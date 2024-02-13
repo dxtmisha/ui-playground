@@ -1,10 +1,10 @@
-import { toArray } from '../../../functions/object.ts'
+import { toArray } from '../../../functions/object'
 
 import {
   PropertiesFile,
   type PropertiesFilePath,
   type PropertiesFileValue
-} from './PropertiesFile.ts'
+} from './PropertiesFile'
 
 const DIR_CACHE = ['cache']
 const DIR_STEP = ['step']

@@ -1,9 +1,9 @@
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type UseLabelSetup, type UseLabelSlots } from '../uses/ref/useLabel.ts';
-import { type UseIconComponent, type UseIconSetup } from '../Icon/useIconRef.ts';
-import { type UseProgressComponent, type UseProgressSetup } from '../Progress/useProgressRef.ts';
-import { type UseEnabledSetup } from '../uses/ref/useEnabled.ts';
-import { type UseEventClickEmits, type UseEventClickSetup } from '../uses/ref/useEventClick.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type UseLabelSetup, type UseLabelSlots } from '../uses/ref/useLabel';
+import { type UseIconComponent, type UseIconSetup } from '../Icon/useIconRef';
+import { type UseProgressComponent, type UseProgressSetup } from '../Progress/useProgressRef';
+import { type UseEnabledSetup } from '../uses/ref/useEnabled';
+import { type UseEventClickEmits, type UseEventClickSetup } from '../uses/ref/useEventClick';
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.

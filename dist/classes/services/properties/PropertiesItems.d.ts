@@ -1,4 +1,4 @@
-import { type PropertyItem, type PropertyList } from '../../../types/property.ts';
+import { type PropertyItem, type PropertyList } from '../../../types/property';
 export type PropertiesItemsParent = {
     name: string;
     item: PropertyItem;

@@ -1,5 +1,5 @@
-import { toKebabCase } from '../functions/string.ts'
-import { useEnv } from '../composables/useEnv.ts'
+import { toKebabCase } from '../functions/string'
+import { useEnv } from '../composables/useEnv'
 
 export const CLASS_NAME = 'd-mutation'
 export const KEY_NAME = toKebabCase(useEnv('DESIGNS_MAIN', 'design'))

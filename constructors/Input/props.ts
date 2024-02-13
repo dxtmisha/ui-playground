@@ -5,17 +5,17 @@ import type {
   InputMode,
   InputTypeName,
   InputValidityCode
-} from './typesBasic.ts'
+} from './typesBasic'
 
 import {
   type UseLabelProps,
   usePropsLabel
-} from '../uses/ref/useLabel.ts'
+} from '../uses/ref/useLabel'
 
 import {
   type UseEnabledProps,
   usePropsEnabled
-} from '../uses/ref/useEnabled.ts'
+} from '../uses/ref/useEnabled'
 
 /**
  * Type describing incoming properties.<br>

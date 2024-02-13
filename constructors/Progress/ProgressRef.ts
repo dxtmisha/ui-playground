@@ -1,12 +1,12 @@
 import { computed, shallowRef, watchEffect } from 'vue'
 
-import { Progress } from './Progress.ts'
+import { Progress } from './Progress'
 
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../types/constructor.ts'
-import { type ProgressProps } from './props.ts'
+} from '../../types/constructor'
+import { type ProgressProps } from './props'
 
 /**
  * Base class Progress for working in Vue.<br>

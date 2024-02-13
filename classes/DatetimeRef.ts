@@ -1,13 +1,13 @@
 import { computed, ComputedRef, ref, Ref, triggerRef, watch } from 'vue'
-import { toDate } from '../functions/date.ts'
-import { toRefItem } from '../functions/ref.ts'
+import { toDate } from '../functions/date'
+import { toRefItem } from '../functions/ref'
 
-import { Datetime } from './Datetime.ts'
-import { Geo } from './Geo.ts'
-import { type GeoDate, GeoFirstDay, GeoHours } from '../types/geo.ts'
+import { Datetime } from './Datetime'
+import { Geo } from './Geo'
+import { type GeoDate, GeoFirstDay, GeoHours } from '../types/geo'
 
-import { type NumberOrStringOrDate } from '../types/basic.ts'
-import { type RefOrNormal } from '../types/ref.ts'
+import { type NumberOrStringOrDate } from '../types/basic'
+import { type RefOrNormal } from '../types/ref'
 
 /**
  * A class for working with dates.<br>

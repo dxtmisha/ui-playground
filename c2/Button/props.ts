@@ -4,7 +4,7 @@ import {
   ButtonProps,
   defaultsButton,
   propsButton
-} from '../../constructors/Button/props.ts'
+} from '../../constructors/Button/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

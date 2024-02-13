@@ -1,12 +1,12 @@
-import { MaskType } from './MaskType.ts';
-import { MaskRubberItem } from './MaskRubberItem.ts';
-import { MaskRubberTransition } from './MaskRubberTransition.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskMatch } from './MaskMatch.ts';
-import { MaskFormat } from './MaskFormat.ts';
-import { type MaskProps } from './props.ts';
-import { type MaskGroup, type MaskSpecialItem, type MaskSpecialList } from './typesBasic.ts';
-import { CacheItem } from '../../classes/CacheItem.ts';
+import { MaskType } from './MaskType';
+import { MaskRubberItem } from './MaskRubberItem';
+import { MaskRubberTransition } from './MaskRubberTransition';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskMatch } from './MaskMatch';
+import { MaskFormat } from './MaskFormat';
+import { type MaskProps } from './props';
+import { type MaskGroup, type MaskSpecialItem, type MaskSpecialList } from './typesBasic';
+import { CacheItem } from '../../classes/CacheItem';
 /**
  * Class for working with the rubber type.<br>
  * Класс для работы с резиновым типом.

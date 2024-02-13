@@ -1,6 +1,6 @@
-import { createElement } from '../../functions/element.ts'
+import { createElement } from '../../functions/element'
 
-import { type RippleProps } from './props.ts'
+import { type RippleProps } from './props'
 
 /**
  * Base class for working with the wave element.<br>

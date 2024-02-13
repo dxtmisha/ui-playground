@@ -1,13 +1,13 @@
-import { toNumber } from '../../functions/number.ts'
+import { toNumber } from '../../functions/number'
 
-import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts'
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract'
 
-import { type ProgressProps } from './props.ts'
-import { type ProgressEventLoad } from './typesBasic.ts'
+import { type ProgressProps } from './props'
+import { type ProgressEventLoad } from './typesBasic'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 
 /**
  * Base class for working with the loader.<br>

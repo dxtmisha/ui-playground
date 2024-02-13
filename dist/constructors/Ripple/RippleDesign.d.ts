@@ -1,9 +1,9 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { RippleRef } from './RippleRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type RippleProps } from './props.ts';
-import { type RippleClasses, type RippleComponents, type RippleEmits, type RippleExpose, type RippleSetup, type RippleSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { RippleRef } from './RippleRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type RippleProps } from './props';
+import { type RippleClasses, type RippleComponents, type RippleEmits, type RippleExpose, type RippleSetup, type RippleSlots } from './types';
 /**
  * Constructor class for the wave component.<br>
  * Класс-конструктор для компонента волна.

@@ -1,9 +1,9 @@
-import { GeoDate } from '../../types/geo.ts'
+import { GeoDate } from '../../types/geo'
 
 import {
   type InputPatternItemOrFunction,
   type InputValidationItem
-} from '../Input/typesBasic.ts'
+} from '../Input/typesBasic'
 
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency'
 export type MaskElementInput = HTMLInputElement | undefined

@@ -1,4 +1,4 @@
-import { FieldMessageProps } from '../../constructors/FieldMessage/props.ts';
+import { FieldMessageProps } from '../../constructors/FieldMessage/props';
 export declare const propsValues: {};
 export type PropsToken = {};
 /**
@@ -12,10 +12,6 @@ export type Props = PropsToken & Omit<FieldMessageProps, keyof PropsToken>;
  */
 export declare const defaults: Props;
 export declare const propsInstruction: {
-    /**
-     * Default value for property.<br>
-     * Значение по умолчанию для свойства.
-     */
     disabled: BooleanConstructor;
     counter: (StringConstructor | NumberConstructor)[];
     maxlength: (StringConstructor | NumberConstructor)[];

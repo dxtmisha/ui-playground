@@ -1,4 +1,4 @@
-import { executeFunction, forEach, transformation } from '../functions/data.ts'
+import { executeFunction, forEach, transformation } from '../functions/data'
 
 /**
  * Working with data stored in hash.<br>

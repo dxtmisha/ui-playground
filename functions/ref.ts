@@ -1,12 +1,12 @@
 import { computed, type ComputedRef, h, isRef, type Ref, ref, type VNode } from 'vue'
-import { getBind, getIndex } from './render.ts'
+import { getBind, getIndex } from './render'
 
 import {
   type RawChildren,
   type RawSlots,
   type RefOrNormal
-} from '../types/ref.ts'
-import { type ConstrItem } from '../types/constructor.ts'
+} from '../types/ref'
+import { type ConstrItem } from '../types/constructor'
 
 /**
  * You return the values of the ref variable or the variable itself if it is not reactive.<br>

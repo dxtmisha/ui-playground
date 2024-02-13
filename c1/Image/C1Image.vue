@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { ImageDesign } from '../../constructors/Image/ImageDesign.ts'
+import { ImageDesign } from '../../constructors/Image/ImageDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ImageEmits,
   type ImageSlots
-} from '../../constructors/Image/types.ts'
+} from '../../constructors/Image/types'
 
 import {
   propsInstruction // ,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<ImageEmits>()
 const props = defineProps({ ...propsInstruction })

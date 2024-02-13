@@ -1,4 +1,4 @@
-import { isArray } from '../../functions/data.ts'
+import { isArray } from '../../functions/data'
 
 /**
  * The class checks the values that have been edited.<br>

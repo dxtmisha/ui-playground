@@ -1,4 +1,4 @@
-import { StylesToAbstract } from './StylesToAbstract.ts'
+import { StylesToAbstract } from './StylesToAbstract'
 
 export class StylesToRoot extends StylesToAbstract {
   protected treatment (): string[] {

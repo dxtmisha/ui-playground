@@ -1,21 +1,21 @@
-import { isString } from '../../functions/data.ts'
+import { isString } from '../../functions/data'
 
-import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts'
-import { Icons } from '../../classes/Icons.ts'
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract'
+import { Icons } from '../../classes/Icons'
 
-import { ImageType } from './ImageType.ts'
-import { ImageFile } from './ImageFile.ts'
+import { ImageType } from './ImageType'
+import { ImageFile } from './ImageFile'
 
 import {
   type Undefined
-} from '../../types/basic.ts'
-import { type ImageProps } from './props.ts'
+} from '../../types/basic'
+import { type ImageProps } from './props'
 import {
   type ImageEventData,
   type ImageEventItem,
   type ImageItem,
   ImageTypeValue
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * A class for obtaining image or icon data.<br>

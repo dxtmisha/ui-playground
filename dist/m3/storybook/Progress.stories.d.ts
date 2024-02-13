@@ -148,7 +148,7 @@ declare const meta: {
         visible: boolean;
         delay: string | number;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/Progress/types.ts").ProgressSlots>;
+        $slots: Readonly<import("../../constructors/Progress/types").ProgressSlots>;
     });
     tags: string[];
     parameters: {
@@ -159,8 +159,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

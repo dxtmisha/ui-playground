@@ -1,7 +1,7 @@
-import { WindowProps } from './props.ts'
-import { WindowClasses } from './WindowClasses.ts'
+import { WindowProps } from './props'
+import { WindowClasses } from './WindowClasses'
 
-import { WindowStatusItem } from './typesBasic.ts'
+import { WindowStatusItem } from './typesBasic'
 
 /**
  * The class for working with the flash parameter. The flash property is

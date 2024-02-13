@@ -1,8 +1,8 @@
-import { InputElement } from '../Input/InputElement.ts'
+import { InputElement } from '../Input/InputElement'
 
-import { type ConstrValue } from '../../types/constructor.ts'
-import { type InputElementItem } from '../Input/typesBasic.ts'
-import { type CheckboxProps } from './props.ts'
+import { type ConstrValue } from '../../types/constructor'
+import { type InputElementItem } from '../Input/typesBasic'
+import { type CheckboxProps } from './props'
 
 /**
  * Class for working with input elements.<br>

@@ -1,5 +1,5 @@
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type MutationDataItem } from '../../classes/mutation/MutationDataItem.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type MutationDataItem } from '../../classes/mutation/MutationDataItem';
 import { ShallowRef } from 'vue';
 /**
  * Interface for describing which components need to be connected for work.<br>

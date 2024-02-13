@@ -1,9 +1,9 @@
 import requireFs from 'fs'
 import requirePath from 'path'
 
-import { isFilled, transformation } from '../../../functions/data.ts'
-import { toKebabCase } from '../../../functions/string.ts'
-import { toArray } from '../../../functions/object.ts'
+import { isFilled, transformation } from '../../../functions/data'
+import { toKebabCase } from '../../../functions/string'
+import { toArray } from '../../../functions/object'
 
 export type PropertiesFilePath = string | string[]
 export type PropertiesFileValue<T = any> = string | Record<string, T>

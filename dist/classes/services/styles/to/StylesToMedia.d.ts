@@ -1,4 +1,4 @@
-import { StylesToAbstract } from './StylesToAbstract.ts';
+import { StylesToAbstract } from './StylesToAbstract';
 /**
  * Class for processing media queries.<br>
  * Класс для обработки медиа-запросов.

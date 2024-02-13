@@ -1,15 +1,15 @@
 import { h, Teleport, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { WindowRef } from './WindowRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { WindowRef } from './WindowRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type WindowProps
-} from './props.ts'
+} from './props'
 import {
   type WindowClasses,
   type WindowComponents,
@@ -17,8 +17,8 @@ import {
   type WindowExpose,
   type WindowSetup,
   type WindowSlots
-} from './types.ts'
-import { WindowEmitOptions } from './typesBasic.ts'
+} from './types'
+import { WindowEmitOptions } from './typesBasic'
 
 /**
  * WindowDesign

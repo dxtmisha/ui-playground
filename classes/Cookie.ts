@@ -1,7 +1,7 @@
-import { executeFunction, isFilled, transformation } from '../functions/data.ts'
-import { useEnv } from '../composables/useEnv.ts'
+import { executeFunction, isFilled, transformation } from '../functions/data'
+import { useEnv } from '../composables/useEnv'
 
-import { CookieBlock } from './CookieBlock.ts'
+import { CookieBlock } from './CookieBlock'
 
 type CookieSameSite = 'strict' | 'lax'
 

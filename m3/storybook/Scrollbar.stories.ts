@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import M3Scrollbar from '../Scrollbar/M3Scrollbar.vue'
 
-import { scrollbarArgs, scrollbarValues } from './argTypes/scrollbar.ts'
+import { scrollbarArgs, scrollbarValues } from './argTypes/scrollbar'
 
 const meta = {
   title: 'M3/Scrollbar',

@@ -1,10 +1,10 @@
-import { type InputCheckItem } from './useInputCheck.ts';
-import { InputElement } from './InputElement.ts';
-import { InputValue } from './InputValue.ts';
-import { InputMatch } from './InputMatch.ts';
-import { InputCode } from './InputCode.ts';
-import { type InputValidationItem } from './typesBasic.ts';
-import { type InputBasicProps } from './props.ts';
+import { type InputCheckItem } from './useInputCheck';
+import { InputElement } from './InputElement';
+import { InputValue } from './InputValue';
+import { InputMatch } from './InputMatch';
+import { InputCode } from './InputCode';
+import { type InputValidationItem } from './typesBasic';
+import { type InputBasicProps } from './props';
 /**
  * Class for working with validity.<br>
  * Класс для работы с валидностью.

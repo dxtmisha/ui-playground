@@ -4,7 +4,7 @@ import {
   MaskProps,
   defaultsMask,
   propsMask
-} from '../../constructors/Mask/props.ts'
+} from '../../constructors/Mask/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

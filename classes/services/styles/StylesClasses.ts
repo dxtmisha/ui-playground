@@ -1,14 +1,14 @@
-import { isFilled, isObjectNotArray } from '../../../functions/data.ts'
+import { isFilled, isObjectNotArray } from '../../../functions/data'
 
-import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems'
 
-import { StylesTool } from './StylesTool.ts'
-import { StylesProperties } from './StylesProperties.ts'
+import { StylesTool } from './StylesTool'
+import { StylesProperties } from './StylesProperties'
 
 import {
   PropertyCategory,
   PropertyKey
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export type StylesClassesItem = {
   data: string[]

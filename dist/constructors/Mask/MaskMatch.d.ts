@@ -1,6 +1,6 @@
-import { MaskSpecial } from './MaskSpecial.ts';
-import { type MaskMatchItem } from './typesBasic.ts';
-import { type MaskProps } from './props.ts';
+import { MaskSpecial } from './MaskSpecial';
+import { type MaskMatchItem } from './typesBasic';
+import { type MaskProps } from './props';
 /**
  * Class for checking the incoming character.<br>
  * Класс для проверки входящего символа.

@@ -1,4 +1,4 @@
-import { type PropertyItem } from '../../../types/property.ts';
+import { type PropertyItem } from '../../../types/property';
 /**
  * Key with all special keys for token processing.<br>
  * Ключ со всеми специальными ключами для обработки токенов.

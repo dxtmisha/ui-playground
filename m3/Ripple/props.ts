@@ -4,7 +4,7 @@ import {
   RippleProps,
   defaultsRipple,
   propsRipple
-} from '../../constructors/Ripple/props.ts'
+} from '../../constructors/Ripple/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

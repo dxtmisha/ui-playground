@@ -1,4 +1,4 @@
-import type { PropertyItemInput } from '../../../../types/property.ts';
+import type { PropertyItemInput } from '../../../../types/property';
 export type ConvectorShadowItem = {
     type: string;
     color: string;

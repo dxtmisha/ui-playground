@@ -1,9 +1,9 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { ImageRef } from './ImageRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageClasses, type ImageComponents, type ImageEmits, type ImageExpose, type ImageSetup, type ImageSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { ImageRef } from './ImageRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type ImageProps } from './props';
+import { type ImageClasses, type ImageComponents, type ImageEmits, type ImageExpose, type ImageSetup, type ImageSlots } from './types';
 /**
  * Constructor class for the image component.<br>
  * Класс-конструктор для компонента изображения.

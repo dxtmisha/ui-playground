@@ -1,9 +1,9 @@
 import { VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { WindowRef } from './WindowRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type WindowProps } from './props.ts';
-import { type WindowClasses, type WindowComponents, type WindowEmits, type WindowExpose, type WindowSetup, type WindowSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { WindowRef } from './WindowRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type WindowProps } from './props';
+import { type WindowClasses, type WindowComponents, type WindowEmits, type WindowExpose, type WindowSetup, type WindowSlots } from './types';
 /**
  * WindowDesign
  */

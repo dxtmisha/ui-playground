@@ -1,6 +1,6 @@
-import { type Undefined } from '../../types/basic.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageCoordinatorItem, type ImageSize } from './typesBasic.ts';
+import { type Undefined } from '../../types/basic';
+import { type ImageProps } from './props';
+import { type ImageCoordinatorItem, type ImageSize } from './typesBasic';
 /**
  * A class for calculating the central part of the image by its coordinates.<br>
  * Класс для вычисления центральной части изображения по его координатам.

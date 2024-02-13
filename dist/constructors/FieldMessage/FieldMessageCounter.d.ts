@@ -1,4 +1,4 @@
-import { type FieldMessageProps } from './props.ts';
+import { type FieldMessageProps } from './props';
 /**
  * Class for working with the number of input numbers.<br>
  * Класс для работы с количеством вводимых чисел.

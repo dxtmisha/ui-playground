@@ -1,16 +1,16 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
 
-import { ScrollbarRef } from './ScrollbarRef.ts'
+import { ScrollbarRef } from './ScrollbarRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ScrollbarProps
-} from './props.ts'
+} from './props'
 import {
   type ScrollbarClasses,
   type ScrollbarComponents,
@@ -18,7 +18,7 @@ import {
   type ScrollbarExpose,
   type ScrollbarSetup,
   type ScrollbarSlots
-} from './types.ts'
+} from './types'
 
 /**
  * ScrollbarDesign

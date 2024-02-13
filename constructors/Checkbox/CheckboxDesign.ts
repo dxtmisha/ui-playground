@@ -1,20 +1,20 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { CheckboxRef } from './CheckboxRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { CheckboxRef } from './CheckboxRef'
 
-import { useLabel } from '../uses/ref/useLabel.ts'
-import { useEnabled } from '../uses/ref/useEnabled.ts'
-import { useFieldMessageRef } from '../FieldMessage/useFieldMessageRef.ts'
+import { useLabel } from '../uses/ref/useLabel'
+import { useEnabled } from '../uses/ref/useEnabled'
+import { useFieldMessageRef } from '../FieldMessage/useFieldMessageRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type CheckboxProps
-} from './props.ts'
-import type { InputValidationItem } from '../Input/typesBasic.ts'
+} from './props'
+import type { InputValidationItem } from '../Input/typesBasic'
 import {
   type CheckboxClasses,
   type CheckboxComponents,
@@ -22,7 +22,7 @@ import {
   type CheckboxExpose,
   type CheckboxSetup,
   type CheckboxSlots
-} from './types.ts'
+} from './types'
 
 /**
  * CheckboxDesign

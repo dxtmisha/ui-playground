@@ -1,17 +1,17 @@
-import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../../functions/data'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { type Item } from '../../../../types/object.ts'
+import { type Item } from '../../../../types/object'
 import {
   PropertyItem,
   PropertyKey,
   type PropertyList,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
-import { sortList } from '../../../../media/propertiesListSort.ts'
+import { sortList } from '../../../../media/propertiesListSort'
 
 type PropertiesSortItem = {
   name: string

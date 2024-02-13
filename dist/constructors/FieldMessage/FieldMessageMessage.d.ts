@@ -1,4 +1,4 @@
-import { type FieldMessageProps } from './props.ts';
+import { type FieldMessageProps } from './props';
 /**
  * Class for working with text.<br>
  * Класс для работы с текстом.

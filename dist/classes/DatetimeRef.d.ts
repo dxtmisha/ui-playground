@@ -1,8 +1,8 @@
 import { ComputedRef, Ref } from 'vue';
-import { Datetime } from './Datetime.ts';
-import { type GeoDate, GeoFirstDay, GeoHours } from '../types/geo.ts';
-import { type NumberOrStringOrDate } from '../types/basic.ts';
-import { type RefOrNormal } from '../types/ref.ts';
+import { Datetime } from './Datetime';
+import { type GeoDate, GeoFirstDay, GeoHours } from '../types/geo';
+import { type NumberOrStringOrDate } from '../types/basic';
+import { type RefOrNormal } from '../types/ref';
 /**
  * A class for working with dates.<br>
  * Класс для работы с датами.

@@ -1,9 +1,9 @@
-import { ComponentsItems } from './ComponentsItems.ts'
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { ComponentsItems } from './ComponentsItems'
+import { PropertiesFile } from '../properties/PropertiesFile'
 import {
   COMPONENTS_DIR,
   COMPONENTS_TYPES
-} from '../../../types/components.ts'
+} from '../../../types/components'
 
 export class ComponentsTypes {
   /**

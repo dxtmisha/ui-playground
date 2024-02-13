@@ -1,6 +1,6 @@
 import { type PropType } from 'vue'
 
-import { MutationDataItem } from '../../classes/mutation/MutationDataItem.ts'
+import { MutationDataItem } from '../../classes/mutation/MutationDataItem'
 
 /**
  * Type describing incoming properties.<br>

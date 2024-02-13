@@ -1,17 +1,17 @@
-import { isFilled } from '../../../functions/data.ts'
-import { toKebabCase } from '../../../functions/string.ts'
-import { replaceRecursive } from '../../../functions/object.ts'
+import { isFilled } from '../../../functions/data'
+import { toKebabCase } from '../../../functions/string'
+import { replaceRecursive } from '../../../functions/object'
 
-import { PropertiesFile } from './PropertiesFile.ts'
-import { PropertiesCache } from './PropertiesCache.ts'
-import { PropertiesPath } from './PropertiesPath.ts'
+import { PropertiesFile } from './PropertiesFile'
+import { PropertiesCache } from './PropertiesCache'
+import { PropertiesPath } from './PropertiesPath'
 
-import { PropertiesStandard } from './PropertiesStandard.ts'
+import { PropertiesStandard } from './PropertiesStandard'
 
 import {
   FILE_PROPERTY,
   type PropertyList
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 const DIR_NAME = 'settings'
 

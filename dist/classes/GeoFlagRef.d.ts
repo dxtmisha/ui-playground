@@ -1,7 +1,7 @@
 import { ComputedRef, Ref } from 'vue';
-import { GeoFlag } from './GeoFlag.ts';
-import { type GeoFlagItem, type GeoFlagNational } from '../types/geo.ts';
-import { type RefOrNormal } from '../types/ref.ts';
+import { GeoFlag } from './GeoFlag';
+import { type GeoFlagItem, type GeoFlagNational } from '../types/geo';
+import { type RefOrNormal } from '../types/ref';
 /**
  * Class for working with Flags.<br>
  * Класс для работы с Флагами.

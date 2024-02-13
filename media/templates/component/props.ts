@@ -4,7 +4,7 @@
 // :component.once   ComponentProps,
 // :component.once   defaultsComponent,
 // :component.once   propsComponent
-// :component.once } from '../../constructors/Component/props.ts'
+// :component.once } from '../../constructors/Component/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

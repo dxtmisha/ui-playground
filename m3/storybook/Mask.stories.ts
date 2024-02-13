@@ -5,7 +5,7 @@ import M3Mask from '../Mask/M3Mask.vue'
 import {
   maskArgs,
   maskValues
-} from './argTypes/mask.ts'
+} from './argTypes/mask'
 
 const meta = {
   title: 'M3/Mask',

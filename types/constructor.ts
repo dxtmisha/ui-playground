@@ -1,10 +1,10 @@
 import { type Ref } from 'vue'
 
-import { type Undefined } from './basic.ts'
+import { type Undefined } from './basic'
 import {
   type RefOrNormal,
   type RefType
-} from './ref.ts'
+} from './ref'
 
 export type ConstrItem = Record<string, any>
 export type ConstrValue<T = any> = {

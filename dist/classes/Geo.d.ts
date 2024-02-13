@@ -1,4 +1,4 @@
-import { type GeoItem, type GeoItemFull } from '../types/geo.ts';
+import { type GeoItem, type GeoItemFull } from '../types/geo';
 /**
  * Base class for working with geographic data.<br>
  * Базовый класс для работы с географическими данными.

@@ -1,9 +1,9 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { MutationItemRef } from './MutationItemRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type MutationItemProps } from './props.ts';
-import { type MutationItemClasses, type MutationItemComponents, type MutationItemEmits, type MutationItemExpose, type MutationItemSetup, type MutationItemSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { MutationItemRef } from './MutationItemRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type MutationItemProps } from './props';
+import { type MutationItemClasses, type MutationItemComponents, type MutationItemEmits, type MutationItemExpose, type MutationItemSetup, type MutationItemSlots } from './types';
 /**
  * MutationItemDesign
  */

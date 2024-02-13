@@ -1,8 +1,8 @@
 import { VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../../classes/design/DesignConstructorAbstract.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../../types/constructor.ts';
-import { type ConstructorsProps } from './props.ts';
-import { type ConstructorsClasses, type ConstructorsComponents, type ConstructorsEmits, type ConstructorsExpose, type ConstructorsSetup, type ConstructorsSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../../classes/design/DesignConstructorAbstract';
+import { type ConstrOptions, type ConstrStyles } from '../../../types/constructor';
+import { type ConstructorsProps } from './props';
+import { type ConstructorsClasses, type ConstructorsComponents, type ConstructorsEmits, type ConstructorsExpose, type ConstructorsSetup, type ConstructorsSlots } from './types';
 /**
  * ConstructorsDesign
  */

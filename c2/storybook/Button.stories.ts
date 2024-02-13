@@ -5,8 +5,8 @@ import C2Button from '../Button/C2Button.vue'
 import {
   buttonArgs,
   buttonValues
-} from './argTypes/button.ts'
-import { propsValues } from '../Button/props.ts'
+} from './argTypes/button'
+import { propsValues } from '../Button/props'
 
 const meta = {
   title: 'C2/Button',

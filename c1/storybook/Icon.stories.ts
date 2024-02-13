@@ -5,7 +5,7 @@ import C1Icon from '../Icon/C1Icon.vue'
 import {
   iconArgs,
   iconValues
-} from './argTypes/icon.ts'
+} from './argTypes/icon'
 
 const meta = {
   title: 'C1/Icon',

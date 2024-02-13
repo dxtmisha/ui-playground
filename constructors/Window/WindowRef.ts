@@ -5,15 +5,15 @@ import {
   watchEffect
 } from 'vue'
 
-import { Window } from './Window.ts'
+import { Window } from './Window'
 
-import { type RefUndefined } from '../../types/ref.ts'
+import { type RefUndefined } from '../../types/ref'
 import {
   type ConstrClassObject,
   type ConstrStyles
-} from '../../types/constructor.ts'
-import { type WindowEmitOptions, WindowStatusItem } from './typesBasic.ts'
-import { type WindowProps } from './props.ts'
+} from '../../types/constructor'
+import { type WindowEmitOptions, WindowStatusItem } from './typesBasic'
+import { type WindowProps } from './props'
 
 /**
  * The base class for working with the window (Ref).<br>

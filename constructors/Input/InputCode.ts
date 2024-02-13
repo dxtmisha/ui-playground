@@ -1,4 +1,4 @@
-import { type InputBasicProps } from './props.ts'
+import { type InputBasicProps } from './props'
 
 /**
  * Class for processing standard error text.<br>

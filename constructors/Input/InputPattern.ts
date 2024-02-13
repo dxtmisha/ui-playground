@@ -1,5 +1,5 @@
-import { InputType } from './InputType.ts'
-import type { InputBasicProps } from './props.ts'
+import { InputType } from './InputType'
+import type { InputBasicProps } from './props'
 
 const PATTERNS: Record<string, string> = {
   email: '[\\S]+@[\\S]{2,}\\.[\\w]{2,}',

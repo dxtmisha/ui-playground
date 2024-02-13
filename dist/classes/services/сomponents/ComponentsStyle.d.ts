@@ -1,4 +1,4 @@
-import { ComponentsItems } from './ComponentsItems.ts';
+import { ComponentsItems } from './ComponentsItems';
 /**
  * Class for creating a connection file for the split.<br>
  * Класс для создания файла подключения спила.

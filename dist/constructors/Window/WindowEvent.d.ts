@@ -1,11 +1,11 @@
-import { EventItem } from '../../classes/EventItem.ts';
-import { WindowStatus } from './WindowStatus.ts';
-import { WindowClient } from './WindowClient.ts';
-import { WindowFlash } from './WindowFlash.ts';
-import { WindowOpen } from './WindowOpen.ts';
-import { WindowVerification } from './WindowVerification.ts';
-import type { WindowProps } from './props.ts';
-import { WindowPersistent } from './WindowPersistent.ts';
+import { EventItem } from '../../classes/EventItem';
+import { WindowStatus } from './WindowStatus';
+import { WindowClient } from './WindowClient';
+import { WindowFlash } from './WindowFlash';
+import { WindowOpen } from './WindowOpen';
+import { WindowVerification } from './WindowVerification';
+import type { WindowProps } from './props';
+import { WindowPersistent } from './WindowPersistent';
 /**
  * A class for working with events.<br>
  * Класс для работы с событиями.

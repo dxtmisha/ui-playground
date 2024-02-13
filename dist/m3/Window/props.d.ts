@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { WindowProps } from '../../constructors/Window/props.ts';
+import { WindowProps } from '../../constructors/Window/props';
 export declare const propsValues: {
     width: string[];
     height: string[];
@@ -58,7 +58,7 @@ export declare const propsInstruction: {
         default: number | undefined;
     };
     persistent: BooleanConstructor;
-    overElement: PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+    overElement: PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
     autoClose: BooleanConstructor;
     flash: BooleanConstructor;
     inDom: BooleanConstructor;

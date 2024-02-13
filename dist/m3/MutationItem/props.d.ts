@@ -1,4 +1,4 @@
-import { MutationItemProps } from '../../constructors/MutationItem/props.ts';
+import { MutationItemProps } from '../../constructors/MutationItem/props';
 export declare const propsValues: {};
 export type PropsToken = {};
 /**
@@ -12,5 +12,5 @@ export type Props = PropsToken & Omit<MutationItemProps, keyof PropsToken>;
  */
 export declare const defaults: Props;
 export declare const propsInstruction: {
-    item: import("vue").PropType<import("../../classes/mutation/MutationDataItem.ts").MutationDataItem | undefined>;
+    item: import("vue").PropType<import("../../classes/mutation/MutationDataItem").MutationDataItem | undefined>;
 };

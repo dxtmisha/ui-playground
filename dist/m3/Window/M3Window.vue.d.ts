@@ -1,4 +1,4 @@
-import { type WindowSlots } from '../../constructors/Window/types.ts';
+import { type WindowSlots } from '../../constructors/Window/types';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     width: import("vue").PropType<string | undefined>;
     height: import("vue").PropType<string | undefined>;
@@ -30,7 +30,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: number | undefined;
     };
     persistent: BooleanConstructor;
-    overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+    overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
     autoClose: BooleanConstructor;
     flash: BooleanConstructor;
     inDom: BooleanConstructor;
@@ -40,7 +40,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     setOpen(): Promise<void>;
     toggle(): Promise<void>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    window: (options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => void;
+    window: (options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => void;
 }, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     width: import("vue").PropType<string | undefined>;
     height: import("vue").PropType<string | undefined>;
@@ -72,12 +72,12 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: number | undefined;
     };
     persistent: BooleanConstructor;
-    overElement: import("vue").PropType<import("../../types/element.ts").ElementOrString<HTMLElement> | undefined>;
+    overElement: import("vue").PropType<import("../../types/element").ElementOrString<HTMLElement> | undefined>;
     autoClose: BooleanConstructor;
     flash: BooleanConstructor;
     inDom: BooleanConstructor;
 }>> & {
-    onWindow?: ((options: import("../../constructors/Window/typesBasic.ts").WindowEmitOptions) => any) | undefined;
+    onWindow?: ((options: import("../../constructors/Window/typesBasic").WindowEmitOptions) => any) | undefined;
 }, {
     contextmenu: boolean;
     disabled: boolean;

@@ -1,4 +1,4 @@
-import { PropertyItem } from './property.ts'
+import { PropertyItem } from './property'
 
 export type DesignStructureState = {
   index: string

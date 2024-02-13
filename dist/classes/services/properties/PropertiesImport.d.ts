@@ -1,4 +1,4 @@
-import { type PropertyList } from '../../../types/property.ts';
+import { type PropertyList } from '../../../types/property';
 /**
  * Class for working with external files, which adds them to the current list of properties.<br>
  * Класс для работы с внешними файлами, который подключает их к текущему списку свойств.

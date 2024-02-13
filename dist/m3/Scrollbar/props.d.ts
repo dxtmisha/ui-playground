@@ -1,4 +1,4 @@
-import { ScrollbarProps } from '../../constructors/Scrollbar/props.ts';
+import { ScrollbarProps } from '../../constructors/Scrollbar/props';
 export declare const propsValues: {};
 export type PropsToken = {
     visible?: boolean;

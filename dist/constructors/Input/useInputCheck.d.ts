@@ -1,4 +1,4 @@
-import { type InputPatternItemOrFunction, type InputValidationItem } from './typesBasic.ts';
+import { type InputPatternItemOrFunction, type InputValidationItem } from './typesBasic';
 export type InputCheckItem<V = string> = {
     group: string;
     input: HTMLInputElement;

@@ -1,9 +1,9 @@
-import { isArray, isFilled, isObject } from '../../functions/data.ts'
+import { isArray, isFilled, isObject } from '../../functions/data'
 
-import { InputElement } from './InputElement.ts'
+import { InputElement } from './InputElement'
 
-import { type InputBasicProps } from './props.ts'
-import { InputChange } from './InputChange.ts'
+import { type InputBasicProps } from './props'
+import { InputChange } from './InputChange'
 
 /**
  * Class for working with input values.<br>

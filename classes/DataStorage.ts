@@ -1,5 +1,5 @@
-import { executeFunction, isNull } from '../functions/data.ts'
-import { useEnv } from '../composables/useEnv.ts'
+import { executeFunction, isNull } from '../functions/data'
+import { useEnv } from '../composables/useEnv'
 
 type DataStorageValue<T> = {
   value: T

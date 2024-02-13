@@ -1,14 +1,14 @@
-import { forEach } from '../../../../functions/data.ts'
-import { toCamelCase } from '../../../../functions/string.ts'
+import { forEach } from '../../../../functions/data'
+import { toCamelCase } from '../../../../functions/string'
 
-import { PropertiesItems, type PropertiesItemsMedia } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesItems, type PropertiesItemsMedia } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 /**
  * A class for transforming class.<br>

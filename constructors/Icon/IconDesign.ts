@@ -1,14 +1,14 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { IconRef } from './IconRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { IconRef } from './IconRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
-import { type ImageEventData } from '../Image/typesBasic.ts'
-import { type IconProps } from './props.ts'
+} from '../../types/constructor'
+import { type ImageEventData } from '../Image/typesBasic'
+import { type IconProps } from './props'
 import {
   type IconClasses,
   type IconComponents,
@@ -16,7 +16,7 @@ import {
   type IconExpose,
   type IconSetup,
   type IconSlots
-} from './types.ts'
+} from './types'
 
 /**
  * Constructor class for the icon component.<br>

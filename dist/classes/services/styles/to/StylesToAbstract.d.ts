@@ -1,5 +1,5 @@
-import { type PropertiesItemsItem } from '../../properties/PropertiesItems.ts';
-import { type PropertyItem } from '../../../../types/property.ts';
+import { type PropertiesItemsItem } from '../../properties/PropertiesItems';
+import { type PropertyItem } from '../../../../types/property';
 /**
  * Base class for conversion.<br>
  * Базовый класс для преобразования.

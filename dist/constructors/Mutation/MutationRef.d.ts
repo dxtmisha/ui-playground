@@ -1,5 +1,5 @@
-import { Mutation } from '../../classes/mutation/Mutation.ts';
-import { type MutationDataItem } from '../../classes/mutation/MutationDataItem.ts';
+import { Mutation } from '../../classes/mutation/Mutation';
+import { type MutationDataItem } from '../../classes/mutation/MutationDataItem';
 /**
  * A class for global monitoring of changes and searching for new elements to transform into components (Ref).<br>
  * Класс для глобального слежения за изменениями и поиска новых элементов для преобразования в компоненты (Ref).

@@ -1,8 +1,8 @@
-import { FieldMessageMessage } from './FieldMessageMessage.ts'
-import { FieldMessageCounter } from './FieldMessageCounter.ts'
+import { FieldMessageMessage } from './FieldMessageMessage'
+import { FieldMessageCounter } from './FieldMessageCounter'
 
-import { type ConstrClassObject } from '../../types/constructor.ts'
-import { type FieldMessageProps } from './props.ts'
+import { type ConstrClassObject } from '../../types/constructor'
+import { type FieldMessageProps } from './props'
 
 /**
  * Class for the component of outputting a message for the input element.<br>

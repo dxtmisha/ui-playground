@@ -1,4 +1,4 @@
-import { RippleProps } from '../../constructors/Ripple/props.ts';
+import { RippleProps } from '../../constructors/Ripple/props';
 export declare const propsValues: {};
 export type PropsToken = {};
 /**

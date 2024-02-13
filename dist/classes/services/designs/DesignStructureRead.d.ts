@@ -1,6 +1,6 @@
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts';
-import { type PropertyItem } from '../../../types/property.ts';
-import { type DesignStructureItem, type DesignStructureList, type DesignStructureStateList } from '../../../types/design.ts';
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract';
+import { type PropertyItem } from '../../../types/property';
+import { type DesignStructureItem, type DesignStructureList, type DesignStructureStateList } from '../../../types/design';
 /**
  * Class for processing dependency properties of the component.<br>
  * Класс для обработки зависимости свойств у компонента.
@@ -64,7 +64,7 @@ export declare class DesignStructureRead extends DesignStructureItemAbstract<Des
      * Получает всех возможных значения.
      * @param state basic values /<br>базовые значения
      */
-    protected makeValueAll(state?: import("../../../types/design.ts").DesignStructureState[]): this;
+    protected makeValueAll(state?: import("../../../types/design").DesignStructureState[]): this;
     /**
      * Updates values by removing duplicates and updating the style property value.<br>
      * Обновляет значения, удаляя все повторы и обновляя значения свойства style.
@@ -76,7 +76,7 @@ export declare class DesignStructureRead extends DesignStructureItemAbstract<Des
      * @param states basic values /<br>базовые значения
      * @param parent
      */
-    protected makeValueState(states?: import("../../../types/design.ts").DesignStructureState[], parent?: DesignStructureItem['state']): this;
+    protected makeValueState(states?: import("../../../types/design").DesignStructureState[], parent?: DesignStructureItem['state']): this;
     /**
      * Returns a formatted string with the property name.<br>
      * Возвращает отформатированную строку с названием свойства.

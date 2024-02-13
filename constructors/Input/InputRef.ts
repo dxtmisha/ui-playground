@@ -1,10 +1,10 @@
 import { ref, Ref, watchEffect } from 'vue'
 
-import { Input } from './Input.ts'
+import { Input } from './Input'
 
-import type { InputValidationItem } from './typesBasic.ts'
-import type { InputEmits } from './types.ts'
-import type { InputBasicProps } from './props.ts'
+import type { InputValidationItem } from './typesBasic'
+import type { InputEmits } from './types'
+import type { InputBasicProps } from './props'
 
 /**
  * Class for working with reactive input data.<br>

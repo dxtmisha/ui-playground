@@ -1,4 +1,4 @@
-// import { createUiComponents } from 'ui/lib/create.ts'
+// import { createUiComponents } from 'ui/lib/create'
 
 // import App from '../src/App.vue'
 

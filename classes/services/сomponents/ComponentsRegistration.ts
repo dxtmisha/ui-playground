@@ -1,13 +1,13 @@
-import { toCamelCaseFirst } from '../../../functions/string.ts'
+import { toCamelCaseFirst } from '../../../functions/string'
 
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
 
-import { ComponentsItems } from './ComponentsItems.ts'
+import { ComponentsItems } from './ComponentsItems'
 
 import {
   COMPONENTS_DIR,
   COMPONENTS_REGISTRATION
-} from '../../../types/components.ts'
+} from '../../../types/components'
 
 /**
  * A class for creating a connection file for all components.<br>

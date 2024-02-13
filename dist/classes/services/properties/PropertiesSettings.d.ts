@@ -1,5 +1,5 @@
-import { PropertiesPath } from './PropertiesPath.ts';
-import { type PropertyList } from '../../../types/property.ts';
+import { PropertiesPath } from './PropertiesPath';
+import { type PropertyList } from '../../../types/property';
 /**
  * Class for searching all components.<br>
  * Класс для поиск всех компоненты.

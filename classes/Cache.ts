@@ -1,4 +1,4 @@
-import { CacheItem } from './CacheItem.ts'
+import { CacheItem } from './CacheItem'
 
 /**
  * Simple class for caching.<br>

@@ -1,8 +1,8 @@
-import { forEach, isNull, isObjectNotArray, isSelected } from '../../../functions/data.ts'
-import { toCamelCase } from '../../../functions/string.ts'
-import { getColumn } from '../../../functions/object.ts'
+import { forEach, isNull, isObjectNotArray, isSelected } from '../../../functions/data'
+import { toCamelCase } from '../../../functions/string'
+import { getColumn } from '../../../functions/object'
 
-import { PropertiesCache } from './PropertiesCache.ts'
+import { PropertiesCache } from './PropertiesCache'
 
 import {
   NAME_CONSTRUCTOR,
@@ -11,7 +11,7 @@ import {
   PropertyKey,
   type PropertyList,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export type PropertiesItemsParent = {
   name: string,

@@ -1,6 +1,6 @@
 import { type ComputedRef, type PropType, type VNode } from 'vue';
-import { DesignComponents } from '../../classes/design/DesignComponents.ts';
-import { type IconProps } from './props.ts';
+import { DesignComponents } from '../../classes/design/DesignComponents';
+import { type IconProps } from './props';
 export type UseIconComponent = {
     icon?: object;
 };

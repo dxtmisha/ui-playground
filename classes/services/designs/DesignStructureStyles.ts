@@ -1,6 +1,6 @@
-import { StylesProperties } from '../styles/StylesProperties.ts'
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts'
-import { forEach } from '../../../functions/data.ts'
+import { StylesProperties } from '../styles/StylesProperties'
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract'
+import { forEach } from '../../../functions/data'
 
 /**
  * Class for processing styles from tokens for the component.<br>

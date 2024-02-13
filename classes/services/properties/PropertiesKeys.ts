@@ -1,12 +1,12 @@
-import { toCamelCase } from '../../../functions/string.ts'
+import { toCamelCase } from '../../../functions/string'
 
-import { PropertiesTypes } from './PropertiesTypes.ts'
+import { PropertiesTypes } from './PropertiesTypes'
 
 import {
   type PropertyItem,
   SEPARATOR,
   SYMBOL_SEPARATOR
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 /**
  * Key with all special keys for token processing.<br>

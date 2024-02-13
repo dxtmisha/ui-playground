@@ -1,6 +1,6 @@
-import { GeoIntl } from './GeoIntl.ts';
-import { type GeoDate, type GeoFirstDay, type GeoHours, type GeoTimeZoneStyle } from '../types/geo.ts';
-import { type NumberOrStringOrDate } from '../types/basic.ts';
+import { GeoIntl } from './GeoIntl';
+import { type GeoDate, type GeoFirstDay, type GeoHours, type GeoTimeZoneStyle } from '../types/geo';
+import { type NumberOrStringOrDate } from '../types/basic';
 /**
  * A class for working with dates.<br>
  * Класс для работы с датами.

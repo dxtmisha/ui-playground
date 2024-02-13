@@ -1,4 +1,4 @@
-import { type GeoPhoneValue, type GeoPhoneMap, type GeoPhoneMapInfo } from '../types/geo.ts';
+import { type GeoPhoneValue, type GeoPhoneMap, type GeoPhoneMapInfo } from '../types/geo';
 /**
  * A class for storing and processing phone number masks.<br>
  * Класс для хранения и обработка маски телефона.

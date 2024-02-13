@@ -1,8 +1,8 @@
 import { computed } from 'vue'
 
-import { Icon } from './Icon.ts'
+import { Icon } from './Icon'
 
-import { type IconProps } from './props.ts'
+import { type IconProps } from './props'
 
 /**
  * Base Icon class for working in Vue.<br>

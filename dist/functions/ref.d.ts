@@ -1,6 +1,6 @@
 import { type ComputedRef, type Ref, type VNode } from 'vue';
-import { type RawChildren, type RawSlots, type RefOrNormal } from '../types/ref.ts';
-import { type ConstrItem } from '../types/constructor.ts';
+import { type RawChildren, type RawSlots, type RefOrNormal } from '../types/ref';
+import { type ConstrItem } from '../types/constructor';
 /**
  * You return the values of the ref variable or the variable itself if it is not reactive.<br>
  * Возвращаешь значения ref переменной или саму переменную, если она не реактивная.

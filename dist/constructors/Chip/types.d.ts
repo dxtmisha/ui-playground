@@ -1,5 +1,5 @@
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type ButtonComponents, type ButtonEmits, type ButtonExpose, type ButtonSetup, type ButtonSlots } from '../Button/types.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type ButtonComponents, type ButtonEmits, type ButtonExpose, type ButtonSetup, type ButtonSlots } from '../Button/types';
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.

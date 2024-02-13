@@ -1,7 +1,7 @@
-import { InputVisibility } from './InputVisibility.ts'
+import { InputVisibility } from './InputVisibility'
 
-import { type InputTypeName } from './typesBasic.ts'
-import { type InputBasicProps } from './props.ts'
+import { type InputTypeName } from './typesBasic'
+import { type InputBasicProps } from './props'
 
 /**
  * Class for working with the input type.<br>

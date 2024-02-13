@@ -1,9 +1,9 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data'
 
 import {
   PropertyKey,
   type PropertyList
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export type PropertiesWrapItem = {
   values: Record<string, PropertyList[]>

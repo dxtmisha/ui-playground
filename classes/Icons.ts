@@ -1,6 +1,6 @@
-import { forEach } from '../functions/data.ts'
+import { forEach } from '../functions/data'
 
-import { useEnv } from '../composables/useEnv.ts'
+import { useEnv } from '../composables/useEnv'
 
 /**
  * Class for managing icons.<br>

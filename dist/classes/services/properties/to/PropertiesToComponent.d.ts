@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * A class for transforming components.<br>
  * Класс для преобразования компонент.

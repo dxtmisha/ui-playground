@@ -1,4 +1,4 @@
-import { ConstrItem } from '../../types/constructor.ts';
+import { ConstrItem } from '../../types/constructor';
 export type IconEventLoad = {
     isActive: boolean;
     iconBind: ConstrItem | undefined;

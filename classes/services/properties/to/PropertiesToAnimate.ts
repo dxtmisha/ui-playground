@@ -1,13 +1,13 @@
-import { forEach, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../../functions/data'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 /**
  * A class for transforming animate.<br>

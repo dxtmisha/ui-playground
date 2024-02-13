@@ -1,5 +1,5 @@
 import { ComputedRef, Ref } from 'vue';
-import { type GeoItemFull } from '../types/geo.ts';
+import { type GeoItemFull } from '../types/geo';
 /**
  * Reactive class for working with geographic data.<br>
  * Реактивный класс для работы с географическими данными.

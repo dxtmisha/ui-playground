@@ -1,5 +1,5 @@
-import { Icon } from './Icon.ts';
-import { type IconProps } from './props.ts';
+import { Icon } from './Icon';
+import { type IconProps } from './props';
 /**
  * Base Icon class for working in Vue.<br>
  * Базовый класс Icon для работы во Vue.
@@ -7,8 +7,8 @@ import { type IconProps } from './props.ts';
 export declare class IconRef {
     protected readonly item: Icon;
     readonly active: import("vue").ComputedRef<boolean>;
-    readonly iconBind: import("vue").ComputedRef<import("../../types/constructor.ts").ConstrItem | undefined>;
-    readonly iconActiveBind: import("vue").ComputedRef<import("../../types/constructor.ts").ConstrItem | undefined>;
+    readonly iconBind: import("vue").ComputedRef<import("../../types/constructor").ConstrItem | undefined>;
+    readonly iconActiveBind: import("vue").ComputedRef<import("../../types/constructor").ConstrItem | undefined>;
     /**
      * Constructor
      * @param props input data /<br>входные данные

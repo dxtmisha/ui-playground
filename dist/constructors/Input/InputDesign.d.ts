@@ -1,8 +1,8 @@
 import { VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type InputProps } from './props.ts';
-import { type InputClasses, type InputComponents, type InputEmits, type InputExpose, type InputSetup, type InputSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type InputProps } from './props';
+import { type InputClasses, type InputComponents, type InputEmits, type InputExpose, type InputSetup, type InputSlots } from './types';
 /**
  * InputDesign
  */

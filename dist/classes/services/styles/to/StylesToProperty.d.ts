@@ -1,4 +1,4 @@
-import { StylesToAbstract } from './StylesToAbstract.ts';
+import { StylesToAbstract } from './StylesToAbstract';
 export declare const TYPES: string[];
 /**
  * CSS class for converting to CSS property.<br>

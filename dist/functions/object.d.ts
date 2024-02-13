@@ -1,4 +1,4 @@
-import { type ObjectItem, type ObjectOrArray } from '../types/basic.ts';
+import { type ObjectItem, type ObjectOrArray } from '../types/basic';
 /**
  * Checks if the values of two objects are different.<br>
  * Проверяет, различаются ли значения двух объектов.

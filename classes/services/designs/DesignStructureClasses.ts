@@ -1,16 +1,16 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
-import { toCamelCase } from '../../../functions/string.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data'
+import { toCamelCase } from '../../../functions/string'
 
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts'
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 import {
   type DesignStructureClassesList
-} from '../../../types/design.ts'
+} from '../../../types/design'
 
 /**
  * A class for getting a list of classes of components.<br>

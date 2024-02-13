@@ -1,16 +1,16 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertiesItemsItem,
   type PropertiesItemsParent
-} from '../PropertiesItems.ts'
+} from '../PropertiesItems'
 import {
   type PropertyItem,
   PropertyKey,
   SEPARATOR
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 /**
  * Class for managing the translation of a property from one branch to another.<br>

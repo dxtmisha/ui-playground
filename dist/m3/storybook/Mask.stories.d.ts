@@ -7,22 +7,22 @@ declare const meta: {
             right: BooleanConstructor;
             dir: import("vue").PropType<"ltr" | "rtl" | undefined>;
             type: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
             };
             name: StringConstructor;
             value: (StringConstructor | NumberConstructor)[];
-            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskList | undefined>;
+            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskList | undefined>;
             special: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
             };
             match: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
             };
-            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
-            check: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
+            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
+            check: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
             fraction: (BooleanConstructor | StringConstructor | NumberConstructor)[];
             currency: StringConstructor;
             language: StringConstructor;
@@ -33,9 +33,9 @@ declare const meta: {
         }>> & {
             onBeforeinput?: ((event: InputEvent) => any) | undefined;
             onBlur?: ((event: FocusEvent) => any) | undefined;
-            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onFocus?: ((event: FocusEvent) => any) | undefined;
-            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onKeydown?: ((event: KeyboardEvent) => any) | undefined;
             onKeyup?: ((event: KeyboardEvent) => any) | undefined;
             onPaste?: ((event: ClipboardEvent) => any) | undefined;
@@ -43,9 +43,9 @@ declare const meta: {
         }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
             beforeinput: (event: InputEvent) => void;
             blur: (event: FocusEvent) => void;
-            change: (event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => void;
+            change: (event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => void;
             focus: (event: FocusEvent) => void;
-            input: (event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => void;
+            input: (event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => void;
             keydown: (event: KeyboardEvent) => void;
             keyup: (event: KeyboardEvent) => void;
             paste: (event: ClipboardEvent) => void;
@@ -55,22 +55,22 @@ declare const meta: {
             right: BooleanConstructor;
             dir: import("vue").PropType<"ltr" | "rtl" | undefined>;
             type: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
             };
             name: StringConstructor;
             value: (StringConstructor | NumberConstructor)[];
-            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskList | undefined>;
+            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskList | undefined>;
             special: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
             };
             match: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
             };
-            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
-            check: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
+            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
+            check: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
             fraction: (BooleanConstructor | StringConstructor | NumberConstructor)[];
             currency: StringConstructor;
             language: StringConstructor;
@@ -81,19 +81,19 @@ declare const meta: {
         }>> & {
             onBeforeinput?: ((event: InputEvent) => any) | undefined;
             onBlur?: ((event: FocusEvent) => any) | undefined;
-            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onFocus?: ((event: FocusEvent) => any) | undefined;
-            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onKeydown?: ((event: KeyboardEvent) => any) | undefined;
             onKeyup?: ((event: KeyboardEvent) => any) | undefined;
             onPaste?: ((event: ClipboardEvent) => any) | undefined;
             onReset?: ((event: Event) => any) | undefined;
         }, {
-            match: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
-            type: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+            match: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
+            type: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
             view: string;
             visible: boolean;
-            special: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+            special: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
             right: boolean;
         }, true, {}, {}, {
             P: {};
@@ -107,22 +107,22 @@ declare const meta: {
             right: BooleanConstructor;
             dir: import("vue").PropType<"ltr" | "rtl" | undefined>;
             type: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
             };
             name: StringConstructor;
             value: (StringConstructor | NumberConstructor)[];
-            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskList | undefined>;
+            mask: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskList | undefined>;
             special: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
             };
             match: {
-                type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined>;
-                default: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
+                type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined>;
+                default: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
             };
-            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
-            check: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
+            pattern: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
+            check: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
             fraction: (BooleanConstructor | StringConstructor | NumberConstructor)[];
             currency: StringConstructor;
             language: StringConstructor;
@@ -133,19 +133,19 @@ declare const meta: {
         }>> & {
             onBeforeinput?: ((event: InputEvent) => any) | undefined;
             onBlur?: ((event: FocusEvent) => any) | undefined;
-            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onFocus?: ((event: FocusEvent) => any) | undefined;
-            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+            onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
             onKeydown?: ((event: KeyboardEvent) => any) | undefined;
             onKeyup?: ((event: KeyboardEvent) => any) | undefined;
             onPaste?: ((event: ClipboardEvent) => any) | undefined;
             onReset?: ((event: Event) => any) | undefined;
         }, {}, {}, {}, {}, {
-            match: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
-            type: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+            match: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
+            type: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
             view: string;
             visible: boolean;
-            special: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+            special: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
             right: boolean;
         }>;
         __isFragment?: undefined;
@@ -156,22 +156,22 @@ declare const meta: {
         right: BooleanConstructor;
         dir: import("vue").PropType<"ltr" | "rtl" | undefined>;
         type: {
-            type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined>;
-            default: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+            type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined>;
+            default: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
         };
         name: StringConstructor;
         value: (StringConstructor | NumberConstructor)[];
-        mask: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskList | undefined>;
+        mask: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskList | undefined>;
         special: {
-            type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined>;
-            default: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+            type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined>;
+            default: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
         };
         match: {
-            type: import("vue").PropType<import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined>;
-            default: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
+            type: import("vue").PropType<import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined>;
+            default: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
         };
-        pattern: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
-        check: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputPatternItemOrFunction | undefined>;
+        pattern: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
+        check: import("vue").PropType<import("../../constructors/Input/typesBasic").InputPatternItemOrFunction | undefined>;
         fraction: (BooleanConstructor | StringConstructor | NumberConstructor)[];
         currency: StringConstructor;
         language: StringConstructor;
@@ -182,9 +182,9 @@ declare const meta: {
     }>> & {
         onBeforeinput?: ((event: InputEvent) => any) | undefined;
         onBlur?: ((event: FocusEvent) => any) | undefined;
-        onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+        onChange?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
         onFocus?: ((event: FocusEvent) => any) | undefined;
-        onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => any) | undefined;
+        onInput?: ((event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => any) | undefined;
         onKeydown?: ((event: KeyboardEvent) => any) | undefined;
         onKeyup?: ((event: KeyboardEvent) => any) | undefined;
         onPaste?: ((event: ClipboardEvent) => any) | undefined;
@@ -192,22 +192,22 @@ declare const meta: {
     }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
         beforeinput: (event: InputEvent) => void;
         blur: (event: FocusEvent) => void;
-        change: (event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => void;
+        change: (event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => void;
         focus: (event: FocusEvent) => void;
-        input: (event: InputEvent, value: import("../../constructors/Mask/typesBasic.ts").MaskEventData) => void;
+        input: (event: InputEvent, value: import("../../constructors/Mask/typesBasic").MaskEventData) => void;
         keydown: (event: KeyboardEvent) => void;
         keyup: (event: KeyboardEvent) => void;
         paste: (event: ClipboardEvent) => void;
         reset: (event: Event) => void;
     }, string, {
-        match: import("../../constructors/Mask/typesBasic.ts").MaskMatchItem | undefined;
-        type: import("../../constructors/Mask/typesBasic.ts").MaskTypeItem | undefined;
+        match: import("../../constructors/Mask/typesBasic").MaskMatchItem | undefined;
+        type: import("../../constructors/Mask/typesBasic").MaskTypeItem | undefined;
         view: string;
         visible: boolean;
-        special: import("../../constructors/Mask/typesBasic.ts").MaskSpecialProp | undefined;
+        special: import("../../constructors/Mask/typesBasic").MaskSpecialProp | undefined;
         right: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/Mask/types.ts").MaskSlots>;
+        $slots: Readonly<import("../../constructors/Mask/types").MaskSlots>;
     });
     tags: string[];
     parameters: {
@@ -218,8 +218,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

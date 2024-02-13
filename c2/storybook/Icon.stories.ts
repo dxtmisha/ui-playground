@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import C2Icon from '../Icon/C2Icon.vue'
 
-import '../icons.ts'
+import '../icons'
 
 import {
   iconArgs,
   iconValues
-} from './argTypes/icon.ts'
-import { Icons } from '../../classes/Icons.ts'
+} from './argTypes/icon'
+import { Icons } from '../../classes/Icons'
 
 const meta = {
   title: 'C2/Icon',

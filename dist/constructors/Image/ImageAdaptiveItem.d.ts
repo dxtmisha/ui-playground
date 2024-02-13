@@ -1,8 +1,8 @@
-import { ImageData } from './ImageData.ts';
-import { type FunctionVoid } from '../../types/basic.ts';
-import { type ConstrValue } from '../../types/constructor.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageElement, type ImageSize } from './typesBasic.ts';
+import { ImageData } from './ImageData';
+import { type FunctionVoid } from '../../types/basic';
+import { type ConstrValue } from '../../types/constructor';
+import { type ImageProps } from './props';
+import { type ImageElement, type ImageSize } from './typesBasic';
 declare enum ImageAdaptiveItemType {
     x = "x",
     y = "y"

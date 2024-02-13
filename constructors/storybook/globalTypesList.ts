@@ -1,4 +1,4 @@
-import { GeoRef } from '../../classes/GeoRef.ts'
+import { GeoRef } from '../../classes/GeoRef'
 
 /**
  * We get the settings object for the theme.<br>

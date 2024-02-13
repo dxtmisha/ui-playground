@@ -1,7 +1,7 @@
 import { type ComputedRef, type ToRefs, type VNode } from 'vue';
-import { DesignComponents } from './DesignComponents.ts';
-import { type RefType } from '../../types/ref.ts';
-import { type ConstrClasses, type ConstrComponent, type ConstrEmit, type ConstrItem, type ConstrOptions, type ConstrSetup, type ConstrStyles } from '../../types/constructor.ts';
+import { DesignComponents } from './DesignComponents';
+import { type RefType } from '../../types/ref';
+import { type ConstrClasses, type ConstrComponent, type ConstrEmit, type ConstrItem, type ConstrOptions, type ConstrSetup, type ConstrStyles } from '../../types/constructor';
 /**
  * Class for collecting all functional components.<br>
  * Класс для сбора всех функциональных компонентов.

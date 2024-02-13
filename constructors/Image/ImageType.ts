@@ -1,11 +1,11 @@
-import { CacheItem } from '../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem'
 
-import { type ImageProps } from './props.ts'
+import { type ImageProps } from './props'
 import {
   type ImageTypeItem,
   ImageTypeValue
-} from './typesBasic.ts'
-import { Icons } from '../../classes/Icons.ts'
+} from './typesBasic'
+import { Icons } from '../../classes/Icons'
 
 /**
  * Class for working with the image type.<br>

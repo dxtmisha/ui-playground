@@ -1,4 +1,4 @@
-import { type EmptyValue, type FunctionArgs, type Undefined } from '../types/basic.ts';
+import { type EmptyValue, type FunctionArgs, type Undefined } from '../types/basic';
 /**
  * Is the variable equal to null or undefined.<br>
  * Является ли переменная равной null или undefined.

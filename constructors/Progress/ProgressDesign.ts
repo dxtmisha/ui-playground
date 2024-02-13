@@ -1,15 +1,15 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { ProgressRef } from './ProgressRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { ProgressRef } from './ProgressRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ProgressProps
-} from './props.ts'
+} from './props'
 import {
   type ProgressClasses,
   type ProgressComponents,
@@ -17,7 +17,7 @@ import {
   type ProgressExpose,
   type ProgressSetup,
   type ProgressSlots
-} from './types.ts'
+} from './types'
 
 /**
  * Class constructor for the loader component.<br>

@@ -1,15 +1,15 @@
-import { toCamelCase } from '../../../../functions/string.ts'
+import { toCamelCase } from '../../../../functions/string'
 
-import { type PropertiesItemsItem, type PropertiesItemsParent } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem, type PropertiesItemsParent } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../../types/property.ts'
-import { PropertiesValues } from '../PropertiesValues.ts'
-import { isString } from '../../../../functions/data.ts'
+} from '../../../../types/property'
+import { PropertiesValues } from '../PropertiesValues'
+import { isString } from '../../../../functions/data'
 
 const REG_VAR = /\{([^{}]+)}/ig
 

@@ -1,16 +1,16 @@
 import { computed, ComputedRef, Ref } from 'vue'
-import { getRef, toRefItem } from '../functions/ref.ts'
+import { getRef, toRefItem } from '../functions/ref'
 
-import { GeoRef } from './GeoRef.ts'
-import { GeoIntl } from './GeoIntl.ts'
-import { type GeoDate } from '../types/geo.ts'
+import { GeoRef } from './GeoRef'
+import { GeoIntl } from './GeoIntl'
+import { type GeoDate } from '../types/geo'
 
 import {
   type NumberOrString,
   type NumberOrStringOrDate
-} from '../types/basic.ts'
-import { type ItemValue } from '../types/object.ts'
-import { type RefOrNormal } from '../types/ref.ts'
+} from '../types/basic'
+import { type ItemValue } from '../types/object'
+import { type RefOrNormal } from '../types/ref'
 
 /**
  * Reactive class for managing the formatting of numbers and dates.<br>

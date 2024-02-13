@@ -1,6 +1,6 @@
-import { toArray } from '../../functions/object.ts'
+import { toArray } from '../../functions/object'
 
-import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile.ts'
+import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile'
 
 export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
 export const DIR_PROJECT = ['..']

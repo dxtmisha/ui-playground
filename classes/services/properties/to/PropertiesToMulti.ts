@@ -1,14 +1,14 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../../functions/data'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
 import {
   PropertyItem,
   PropertyKey,
   type PropertyList,
   PropertyType
-} from '../../../../types/property.ts'
+} from '../../../../types/property'
 
 const TYPE = [
   PropertyType.var,

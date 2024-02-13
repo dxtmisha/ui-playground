@@ -5,7 +5,7 @@ import M3Image from '../Image/M3Image.vue'
 import {
   imageArgs,
   imageValues
-} from './argTypes/image.ts'
+} from './argTypes/image'
 
 import galaxyZFold5 from './images/Galaxy_Z_Fold5.png'
 import galaxyZFlip5 from './images/Galaxy_Z_Flip5.png'

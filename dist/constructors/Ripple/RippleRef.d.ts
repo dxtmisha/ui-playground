@@ -1,6 +1,6 @@
 import { type Ref } from 'vue';
-import { Ripple } from './Ripple.ts';
-import { type RippleProps } from './props.ts';
+import { Ripple } from './Ripple';
+import { type RippleProps } from './props';
 /**
  * Base Ripple class for working in Vue.<br>
  * Базовый класс Ripple для работы во Vue.

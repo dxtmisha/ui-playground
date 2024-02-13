@@ -1,4 +1,4 @@
-import { MutationData } from './MutationData.ts';
+import { MutationData } from './MutationData';
 /**
  * A class for global monitoring of changes and searching for new elements to transform into components.<br>
  * Класс для глобального слежения за изменениями и поиска новых элементов для преобразования в компоненты.

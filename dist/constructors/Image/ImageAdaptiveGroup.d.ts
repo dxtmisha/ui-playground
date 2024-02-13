@@ -1,5 +1,5 @@
-import { EventItem } from '../../classes/EventItem.ts';
-import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts';
+import { EventItem } from '../../classes/EventItem';
+import { ImageAdaptiveItem } from './ImageAdaptiveItem';
 /**
  * Class for working with image scaling according to the physical size of the object in the image.<br>
  * Класс для работы с масштабированием изображения по физическому размеру объекта на изображении.

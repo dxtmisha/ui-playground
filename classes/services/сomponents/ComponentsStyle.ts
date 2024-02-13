@@ -1,10 +1,10 @@
-import { ComponentsItems } from './ComponentsItems.ts'
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { ComponentsItems } from './ComponentsItems'
+import { PropertiesFile } from '../properties/PropertiesFile'
 
 import {
   COMPONENTS_DIR,
   COMPONENTS_STYLE
-} from '../../../types/components.ts'
+} from '../../../types/components'
 
 /**
  * Class for creating a connection file for the split.<br>

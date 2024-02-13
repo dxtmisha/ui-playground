@@ -5,7 +5,7 @@ import M3FieldMessage from '../FieldMessage/M3FieldMessage.vue'
 import {
   fieldMessageArgs,
   fieldMessageValues
-} from './argTypes/fieldMessage.ts'
+} from './argTypes/fieldMessage'
 
 const meta = {
   title: 'M3/FieldMessage',

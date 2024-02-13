@@ -1,5 +1,5 @@
-import { type PropertiesItemsItem } from '../properties/PropertiesItems.ts';
-import { type PropertyItem } from '../../../types/property.ts';
+import { type PropertiesItemsItem } from '../properties/PropertiesItems';
+import { type PropertyItem } from '../../../types/property';
 /**
  * A class for converting all property types in SCSS.<br>
  * Класс для преобразования всех тип свойство в виде scss.

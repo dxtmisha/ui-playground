@@ -1,6 +1,6 @@
-import { type GeoDate } from '../types/geo.ts';
-import { type NumberOrStringOrDate, type NumberOrString } from '../types/basic.ts';
-import { type ItemValue } from '../types/object.ts';
+import { type GeoDate } from '../types/geo';
+import { type NumberOrStringOrDate, type NumberOrString } from '../types/basic';
+import { type ItemValue } from '../types/object';
 /**
  * The Intl namespace object contains several constructors as well as functionality common
  * to the internationalization constructors and other language sensitive functions. Collectively,

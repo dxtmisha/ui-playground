@@ -1,5 +1,5 @@
-import { type IconProps } from './props.ts';
-import { type IconEventLoad } from './typesBasic.ts';
+import { type IconProps } from './props';
+import { type IconEventLoad } from './typesBasic';
 /**
  * Base class for working with icons.<br>
  * Базовый класс для работы с иконками.

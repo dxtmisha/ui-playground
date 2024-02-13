@@ -1,6 +1,6 @@
 import { type PropType } from 'vue';
-import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts';
-import { type MaskFractionItem, type MaskList, type MaskMatchItem, type MaskSpecialProp, type MaskTypeItem } from './typesBasic.ts';
+import { type InputPatternItemOrFunction } from '../Input/typesBasic';
+import { type MaskFractionItem, type MaskList, type MaskMatchItem, type MaskSpecialProp, type MaskTypeItem } from './typesBasic';
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.

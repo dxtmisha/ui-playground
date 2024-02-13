@@ -1,14 +1,14 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../../classes/design/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../../classes/design/DesignConstructorAbstract'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../../types/constructor.ts'
+} from '../../../types/constructor'
 import {
   type ConstructorsProps
-} from './props.ts'
+} from './props'
 import {
   type ConstructorsClasses,
   type ConstructorsComponents,
@@ -16,7 +16,7 @@ import {
   type ConstructorsExpose,
   type ConstructorsSetup,
   type ConstructorsSlots
-} from './types.ts'
+} from './types'
 
 /**
  * ConstructorsDesign

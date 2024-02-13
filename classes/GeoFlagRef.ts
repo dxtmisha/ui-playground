@@ -1,14 +1,14 @@
 import { computed, ComputedRef, Ref, watch } from 'vue'
-import { toRefItem } from '../functions/ref.ts'
+import { toRefItem } from '../functions/ref'
 
-import { Geo } from './Geo.ts'
-import { GeoFlag } from './GeoFlag.ts'
+import { Geo } from './Geo'
+import { GeoFlag } from './GeoFlag'
 import {
   type GeoFlagItem,
   type GeoFlagNational
-} from '../types/geo.ts'
+} from '../types/geo'
 
-import { type RefOrNormal } from '../types/ref.ts'
+import { type RefOrNormal } from '../types/ref'
 
 /**
  * Class for working with Flags.<br>

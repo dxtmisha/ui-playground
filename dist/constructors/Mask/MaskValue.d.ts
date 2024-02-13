@@ -1,11 +1,11 @@
-import { CacheItem } from '../../classes/CacheItem.ts';
-import { MaskType } from './MaskType.ts';
-import { MaskDate } from './MaskDate.ts';
-import { MaskFormat } from './MaskFormat.ts';
-import { MaskItem } from './MaskItem.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskValueBasic } from './MaskValueBasic.ts';
-import { type MaskGroup, type MaskGroupItem } from './typesBasic.ts';
+import { CacheItem } from '../../classes/CacheItem';
+import { MaskType } from './MaskType';
+import { MaskDate } from './MaskDate';
+import { MaskFormat } from './MaskFormat';
+import { MaskItem } from './MaskItem';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskValueBasic } from './MaskValueBasic';
+import { type MaskGroup, type MaskGroupItem } from './typesBasic';
 /**
  * Class for transforming the entered data into the final result.<br>
  * Класс для преобразования введенных данных в конечный результат.

@@ -9,13 +9,13 @@ import {
   type VNode
 } from 'vue'
 
-import { forEach, isObject, isObjectNotArray } from '../../functions/data.ts'
-import { toCamelCase } from '../../functions/string.ts'
-import { toArray } from '../../functions/object.ts'
+import { forEach, isObject, isObjectNotArray } from '../../functions/data'
+import { toCamelCase } from '../../functions/string'
+import { toArray } from '../../functions/object'
 
-import { DesignComponents } from './DesignComponents.ts'
+import { DesignComponents } from './DesignComponents'
 
-import { type RefType } from '../../types/ref.ts'
+import { type RefType } from '../../types/ref'
 import {
   type ConstrClass,
   type ConstrClasses,
@@ -26,7 +26,7 @@ import {
   type ConstrOptions,
   type ConstrSetup,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 
 /**
  * Class for collecting all functional components.<br>

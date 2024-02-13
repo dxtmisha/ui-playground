@@ -1,14 +1,14 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
-import { replaceRecursive } from '../../../functions/object.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data'
+import { replaceRecursive } from '../../../functions/object'
 
-import { PropertiesKeys } from './PropertiesKeys.ts'
+import { PropertiesKeys } from './PropertiesKeys'
 
 import {
   type PropertyItem,
   PropertyKey,
   type PropertyList,
   SEPARATOR
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 const BASIC = process.env.TOKEN_SEPARATOR_BASIC || 'basic'
 const LIMIT = parseInt(process.env.TOKEN_SEPARATOR_LIMIT ?? '6') || 6

@@ -1,16 +1,16 @@
 import { computed, h, Teleport, type VNode } from 'vue'
-import { forEach } from '../../functions/data.ts'
+import { forEach } from '../../functions/data'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { MutationItemRef } from './MutationItemRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { MutationItemRef } from './MutationItemRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type MutationItemProps
-} from './props.ts'
+} from './props'
 import {
   type MutationItemClasses,
   type MutationItemComponents,
@@ -20,7 +20,7 @@ import {
   type MutationItemSlots,
   type MutationSlotsRef,
   type MutationSlotsRefItem
-} from './types.ts'
+} from './types'
 
 /**
  * MutationItemDesign

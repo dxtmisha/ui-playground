@@ -1,5 +1,5 @@
-import { PropertiesPath } from './PropertiesPath.ts';
-import { PropertyItem, type PropertyList } from '../../../types/property.ts';
+import { PropertiesPath } from './PropertiesPath';
+import { PropertyItem, type PropertyList } from '../../../types/property';
 /**
  * A class for transforming global tokens.<br>
  * Класс для преобразования глобальных токенов.

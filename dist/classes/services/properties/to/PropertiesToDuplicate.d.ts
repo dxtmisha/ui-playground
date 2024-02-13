@@ -1,5 +1,5 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
-import { type PropertiesItemsItem } from '../PropertiesItems.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
+import { type PropertiesItemsItem } from '../PropertiesItems';
 type PropertiesDuplicateListItem = {
     value: string;
     property: PropertiesItemsItem;

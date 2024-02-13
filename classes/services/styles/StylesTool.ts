@@ -1,6 +1,6 @@
-import { strFill } from '../../../functions/string.ts'
+import { strFill } from '../../../functions/string'
 
-import { PropertiesTool } from '../properties/PropertiesTool.ts'
+import { PropertiesTool } from '../properties/PropertiesTool'
 
 const SPACE = '  '
 const DIR_STYLE = 'styles'

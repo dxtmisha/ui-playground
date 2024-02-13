@@ -1,5 +1,5 @@
-import { PropertiesItems } from '../PropertiesItems.ts';
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesItems } from '../PropertiesItems';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * A class for transforming class.<br>
  * Класс для преобразования class.

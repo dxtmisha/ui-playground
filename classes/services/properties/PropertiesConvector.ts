@@ -1,11 +1,11 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data'
 
-import { convectorColor } from './convector/convectorColor.ts'
-import { convectorShadow } from './convector/convectorShadow.ts'
-import { convectorFontFamilies } from './convector/convectorFontFamilies.ts'
-import { convectorTypography } from './convector/convectorTypography.ts'
+import { convectorColor } from './convector/convectorColor'
+import { convectorShadow } from './convector/convectorShadow'
+import { convectorFontFamilies } from './convector/convectorFontFamilies'
+import { convectorTypography } from './convector/convectorTypography'
 
-import type { PropertyItemInput, PropertyListOrData } from '../../../types/property.ts'
+import type { PropertyItemInput, PropertyListOrData } from '../../../types/property'
 
 const LIST: Record<string, (item: PropertyItemInput) => void> = {
   boxShadow: convectorShadow,

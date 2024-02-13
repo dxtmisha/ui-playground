@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * A class for searching for related properties at a higher level to adopt their properties.<br>
  * Класс для поиска родственных свойств на уровне выше для принятия их свойств.

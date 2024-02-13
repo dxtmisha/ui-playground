@@ -1,4 +1,4 @@
-import { ComponentsItems } from './ComponentsItems.ts';
+import { ComponentsItems } from './ComponentsItems';
 /**
  * Class for working with the main files.<br>
  * Класс для работы с главными файлами.

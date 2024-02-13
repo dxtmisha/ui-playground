@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * Class for performing data type conversions.<br>
  * Класс для выполнения преобразования типов данных.

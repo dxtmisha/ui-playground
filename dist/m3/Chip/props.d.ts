@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { ChipProps } from '../../constructors/Chip/props.ts';
+import { ChipProps } from '../../constructors/Chip/props';
 export declare const propsValues: {
     adaptive: string[];
     height: string[];
@@ -66,9 +66,9 @@ export declare const propsInstruction: {
     to: StringConstructor;
     value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
     detail: ObjectConstructor[];
-    progress: PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-    iconTrailing: PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-    icon: PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+    progress: PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+    iconTrailing: PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+    icon: PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
     iconTurn: BooleanConstructor;
     iconHide: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];

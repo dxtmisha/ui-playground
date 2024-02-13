@@ -1,4 +1,4 @@
-import { type ElementOrString, type ElementOrWindow, type EventActivityItem, type EventListenerDetail, type EventOptions } from '../types/element.ts';
+import { type ElementOrString, type ElementOrWindow, type EventActivityItem, type EventListenerDetail, type EventOptions } from '../types/element';
 /**
  * Class for working with events.<br>
  * Класс для работа с события.

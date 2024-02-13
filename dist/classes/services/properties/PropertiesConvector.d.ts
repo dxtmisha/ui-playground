@@ -1,4 +1,4 @@
-import type { PropertyListOrData } from '../../../types/property.ts';
+import type { PropertyListOrData } from '../../../types/property';
 /**
  * Class for data type conversion.<br>
  * Класс для преобразования типов данных.

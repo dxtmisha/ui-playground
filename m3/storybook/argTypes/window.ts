@@ -1,7 +1,7 @@
-import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook.ts'
-import { StorybookControl } from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
-import { propsValues } from '../../Window/props.ts'
+import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook'
+import { StorybookControl } from '../../../types/storybook'
+import { StorybookCategory } from '../types'
+import { propsValues } from '../../Window/props'
 
 export const windowArgs: StorybookArgs = {
   // Status

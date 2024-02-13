@@ -1,4 +1,4 @@
-import { StylesToAbstract } from './StylesToAbstract.ts';
+import { StylesToAbstract } from './StylesToAbstract';
 /**
  * CSS variable converter class.<br>
  * Класс для преобразования в переменные CSS.

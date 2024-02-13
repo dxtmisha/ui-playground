@@ -11,7 +11,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     comp: BooleanConstructor;
     value: (BooleanConstructor | StringConstructor)[];
     modelValue: (BooleanConstructor | StringConstructor)[];
-    icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+    icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     indeterminate: BooleanConstructor;
     disabled: BooleanConstructor;
     helperMessage: StringConstructor;
@@ -19,13 +19,13 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     name: StringConstructor;
     detail: import("vue").PropType<Record<string, any> | undefined>;
     type: {
-        type: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined>;
-        default: import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined;
+        type: import("vue").PropType<import("../../constructors/Input/typesBasic").InputTypeName | undefined>;
+        default: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     };
-    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMode | undefined>;
+    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMode | undefined>;
     spellcheck: BooleanConstructor;
     pattern: StringConstructor;
-    match: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMatch | undefined>;
+    match: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMatch | undefined>;
     arrow: BooleanConstructor;
     step: (StringConstructor | NumberConstructor)[];
     min: (StringConstructor | NumberConstructor)[];
@@ -39,18 +39,18 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     };
     input: import("vue").PropType<Record<string, any> | undefined>;
     placeholder: StringConstructor;
-    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputValidityCode | undefined>;
+    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputValidityCode | undefined>;
     on: ObjectConstructor;
     'onUpdate:value': import("vue").PropType<((value: any) => void) | undefined>;
     'onUpdate:modelValue': import("vue").PropType<((value: any) => void) | undefined>;
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
     readonly: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
 }, {
     value: import("vue").ShallowRef<string | undefined>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    change: (event: Event | InputEvent, value: import("../../constructors/Input/typesBasic.ts").InputValidationItem) => void;
-    input: (event: Event | InputEvent, value: import("../../constructors/Input/typesBasic.ts").InputValidationItem) => void;
+    change: (event: Event | InputEvent, value: import("../../constructors/Input/typesBasic").InputValidationItem) => void;
+    input: (event: Event | InputEvent, value: import("../../constructors/Input/typesBasic").InputValidationItem) => void;
     "update:value": (value: any) => void;
     "update:modelValue": (value: any) => void;
 }, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
@@ -66,7 +66,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     comp: BooleanConstructor;
     value: (BooleanConstructor | StringConstructor)[];
     modelValue: (BooleanConstructor | StringConstructor)[];
-    icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+    icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     indeterminate: BooleanConstructor;
     disabled: BooleanConstructor;
     helperMessage: StringConstructor;
@@ -74,13 +74,13 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     name: StringConstructor;
     detail: import("vue").PropType<Record<string, any> | undefined>;
     type: {
-        type: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined>;
-        default: import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined;
+        type: import("vue").PropType<import("../../constructors/Input/typesBasic").InputTypeName | undefined>;
+        default: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     };
-    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMode | undefined>;
+    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMode | undefined>;
     spellcheck: BooleanConstructor;
     pattern: StringConstructor;
-    match: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMatch | undefined>;
+    match: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMatch | undefined>;
     arrow: BooleanConstructor;
     step: (StringConstructor | NumberConstructor)[];
     min: (StringConstructor | NumberConstructor)[];
@@ -94,21 +94,21 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     };
     input: import("vue").PropType<Record<string, any> | undefined>;
     placeholder: StringConstructor;
-    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputValidityCode | undefined>;
+    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputValidityCode | undefined>;
     on: ObjectConstructor;
     'onUpdate:value': import("vue").PropType<((value: any) => void) | undefined>;
     'onUpdate:modelValue': import("vue").PropType<((value: any) => void) | undefined>;
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
     readonly: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];
 }>> & {
-    onChange?: ((event: Event | InputEvent, value: import("../../constructors/Input/typesBasic.ts").InputValidationItem) => any) | undefined;
-    onInput?: ((event: Event | InputEvent, value: import("../../constructors/Input/typesBasic.ts").InputValidationItem) => any) | undefined;
+    onChange?: ((event: Event | InputEvent, value: import("../../constructors/Input/typesBasic").InputValidationItem) => any) | undefined;
+    onInput?: ((event: Event | InputEvent, value: import("../../constructors/Input/typesBasic").InputValidationItem) => any) | undefined;
     "onUpdate:value"?: ((value: any) => any) | undefined;
     "onUpdate:modelValue"?: ((value: any) => any) | undefined;
 }, {
     disabled: boolean;
-    type: import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined;
+    type: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     spellcheck: boolean;
     autofocus: boolean;
     readonly: boolean;
@@ -119,7 +119,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     iconCheckbox: string;
     iconIndeterminate: string;
     comp: boolean;
-}, {}>, Readonly<import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots> & import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots>;
+}, {}>, Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {

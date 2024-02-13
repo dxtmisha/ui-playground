@@ -1,6 +1,6 @@
-import { WindowPersistent } from './WindowPersistent.ts';
-import { type ConstrClassObject } from '../../types/constructor.ts';
-import { WindowStatusControlItem, WindowStatusItem } from './typesBasic.ts';
+import { WindowPersistent } from './WindowPersistent';
+import { type ConstrClassObject } from '../../types/constructor';
+import { WindowStatusControlItem, WindowStatusItem } from './typesBasic';
 /**
  * Class for working with class names.<br>
  * Класс для работы с названиями классов.

@@ -1,4 +1,4 @@
-import { DesignCommand } from './DesignCommand.ts';
+import { DesignCommand } from './DesignCommand';
 /**
  * Class for generating files based on a constructor.<br>
  * Класс для генерации файлов по конструктору.

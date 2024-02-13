@@ -1,9 +1,9 @@
-import { defaults, propsValues } from '../../Button/props.ts'
+import { defaults, propsValues } from '../../Button/props'
 
-import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
+import { type StorybookArgs, type StorybookArgsValue, StorybookControl } from '../../../types/storybook'
+import { StorybookCategory } from '../types'
 
-import { iconArgs } from './icon.ts'
+import { iconArgs } from './icon'
 
 export const buttonArgs: StorybookArgs = {
   selected: {

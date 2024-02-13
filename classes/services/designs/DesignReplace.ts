@@ -1,16 +1,16 @@
-import { forEach } from '../../../functions/data.ts'
-import { toCamelCase, toCamelCaseFirst } from '../../../functions/string.ts'
-import { getColumn } from '../../../functions/object.ts'
+import { forEach } from '../../../functions/data'
+import { toCamelCase, toCamelCaseFirst } from '../../../functions/string'
+import { getColumn } from '../../../functions/object'
 
-import { DesignStructure } from './DesignStructure.ts'
+import { DesignStructure } from './DesignStructure'
 
 import {
   type DesignStructureClasses,
   type DesignStructureItem,
   type DesignStructureItemSub,
   type DesignStructureList
-} from '../../../types/design.ts'
-import { KEY_CUSTOM } from '../properties/to/PropertiesToStyle.ts'
+} from '../../../types/design'
+import { KEY_CUSTOM } from '../properties/to/PropertiesToStyle'
 
 /**
  * Class with basic replacement for templates.<br>

@@ -1,9 +1,9 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { CheckboxRef } from './CheckboxRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type CheckboxProps } from './props.ts';
-import { type CheckboxClasses, type CheckboxComponents, type CheckboxEmits, type CheckboxExpose, type CheckboxSetup, type CheckboxSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { CheckboxRef } from './CheckboxRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type CheckboxProps } from './props';
+import { type CheckboxClasses, type CheckboxComponents, type CheckboxEmits, type CheckboxExpose, type CheckboxSetup, type CheckboxSlots } from './types';
 /**
  * CheckboxDesign
  */

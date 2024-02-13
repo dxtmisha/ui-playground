@@ -1,9 +1,9 @@
-import { MutationCollect } from './MutationCollect.ts'
-import { MutationData } from './MutationData.ts'
-import { MutationObserverGlobal } from './MutationObserverGlobal.ts'
-import { MutationObserverItems } from './MutationObserverItems.ts'
+import { MutationCollect } from './MutationCollect'
+import { MutationData } from './MutationData'
+import { MutationObserverGlobal } from './MutationObserverGlobal'
+import { MutationObserverItems } from './MutationObserverItems'
 
-import { MutationStatus } from '../../types/mutation.ts'
+import { MutationStatus } from '../../types/mutation'
 
 /**
  * A class for global monitoring of changes and searching for new elements to transform into components.<br>

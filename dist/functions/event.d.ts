@@ -1,4 +1,4 @@
-import { type ImageCoordinator } from '../types/image.ts';
+import { type ImageCoordinator } from '../types/image';
 /**
  * Returns the pressed key.<br>
  * Возвращает нажатую клавишу.

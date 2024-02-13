@@ -1,4 +1,4 @@
-import { type MutationComponent, type MutationComponentCache, type MutationComponentCallback, type MutationComponentProps, type MutationProject, type MutationProjectItem } from '../../types/mutation.ts';
+import { type MutationComponent, type MutationComponentCache, type MutationComponentCallback, type MutationComponentProps, type MutationProject, type MutationProjectItem } from '../../types/mutation';
 /**
  * Class for working with global variables.<br>
  * Класс для работы с глобальными переменными.

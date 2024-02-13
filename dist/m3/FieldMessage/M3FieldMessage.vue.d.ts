@@ -1,4 +1,4 @@
-import { type FieldMessageSlots } from '../../constructors/FieldMessage/types.ts';
+import { type FieldMessageSlots } from '../../constructors/FieldMessage/types';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     disabled: BooleanConstructor;
     counter: (StringConstructor | NumberConstructor)[];

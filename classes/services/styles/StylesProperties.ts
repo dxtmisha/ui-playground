@@ -1,22 +1,22 @@
-import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems'
 
-import { StylesTool } from './StylesTool.ts'
+import { StylesTool } from './StylesTool'
 
-import { StylesToClass } from './to/StylesToClass.ts'
-import { StylesToClassFull } from './to/StylesToClassFull.ts'
-import { StylesToVar } from './to/StylesToVar.ts'
-import { StylesToProperty } from './to/StylesToProperty.ts'
-import { StylesToSelector } from './to/StylesToSelector.ts'
-import { StylesToVirtual } from './to/StylesToVirtual.ts'
-import { StylesToMedia } from './to/StylesToMedia.ts'
-import { StylesToAnimate } from './to/StylesToAnimate.ts'
-import { StylesToRoot } from './to/StylesToRoot.ts'
+import { StylesToClass } from './to/StylesToClass'
+import { StylesToClassFull } from './to/StylesToClassFull'
+import { StylesToVar } from './to/StylesToVar'
+import { StylesToProperty } from './to/StylesToProperty'
+import { StylesToSelector } from './to/StylesToSelector'
+import { StylesToVirtual } from './to/StylesToVirtual'
+import { StylesToMedia } from './to/StylesToMedia'
+import { StylesToAnimate } from './to/StylesToAnimate'
+import { StylesToRoot } from './to/StylesToRoot'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 const TYPE_AUXILIARY = [
   'selector',

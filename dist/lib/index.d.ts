@@ -1,1 +1,1 @@
-export { createUiComponents } from './create.ts';
+export { createUiComponents } from './create';

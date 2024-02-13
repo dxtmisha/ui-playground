@@ -1,4 +1,4 @@
-import { DesignChanged } from './DesignChanged.ts';
+import { DesignChanged } from './DesignChanged';
 /**
  * Base class for working with the constructor.<br>
  * Базовый класс для работы с конструктором.

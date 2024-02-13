@@ -4,9 +4,9 @@ import { ref } from 'vue'
 import M3Button from '../Button/M3Button.vue'
 import M3Window from '../Window/M3Window.vue'
 
-import { type WindowExpose } from '../../constructors/Window/types.ts'
+import { type WindowExpose } from '../../constructors/Window/types'
 
-import { windowArgs, windowValues } from './argTypes/window.ts'
+import { windowArgs, windowValues } from './argTypes/window'
 
 const meta = {
   title: 'M3/Window',

@@ -1,4 +1,4 @@
-import { type FunctionReturn } from '../types/basic.ts';
+import { type FunctionReturn } from '../types/basic';
 /**
  * The object is used for matching text with a pattern.<br>
  * Конструктор создаёт объект регулярного выражения для сопоставления текста с шаблоном.

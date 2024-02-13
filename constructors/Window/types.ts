@@ -1,7 +1,7 @@
 import { ShallowRef, type VNode } from 'vue'
-import { type ConstrClass } from '../../types/constructor.ts'
+import { type ConstrClass } from '../../types/constructor'
 
-import { type WindowEmitOptions } from './typesBasic.ts'
+import { type WindowEmitOptions } from './typesBasic'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

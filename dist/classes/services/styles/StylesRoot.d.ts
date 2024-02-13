@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../properties/PropertiesItems.ts';
+import { PropertiesItems } from '../properties/PropertiesItems';
 /**
  * Class for generating base properties from tokens.<br>
  * Класс для генерации базовых свойств из токенов.

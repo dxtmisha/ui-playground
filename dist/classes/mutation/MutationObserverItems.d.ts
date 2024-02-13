@@ -1,4 +1,4 @@
-import { MutationData } from './MutationData.ts';
+import { MutationData } from './MutationData';
 /**
  * Class for working with the tracking object of the most active elements.<br>
  * Класс для работы с объектом слежения самых активных элементов.

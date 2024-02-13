@@ -1,12 +1,12 @@
-import { WindowStatus } from './WindowStatus.ts';
-import { WindowClient } from './WindowClient.ts';
-import { WindowHook } from './WindowHook.ts';
-import { WindowElement } from './WindowElement.ts';
-import { WindowFlash } from './WindowFlash.ts';
-import { WindowCoordinates } from './WindowCoordinates.ts';
-import { WindowPosition } from './WindowPosition.ts';
-import { WindowOrigin } from './WindowOrigin.ts';
-import { type WindowProps } from './props.ts';
+import { WindowStatus } from './WindowStatus';
+import { WindowClient } from './WindowClient';
+import { WindowHook } from './WindowHook';
+import { WindowElement } from './WindowElement';
+import { WindowFlash } from './WindowFlash';
+import { WindowCoordinates } from './WindowCoordinates';
+import { WindowPosition } from './WindowPosition';
+import { WindowOrigin } from './WindowOrigin';
+import { type WindowProps } from './props';
 /**
  * Class for managing the status of an open window.<br>
  * Класс для управления статусом открытого окна.

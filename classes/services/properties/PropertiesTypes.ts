@@ -1,10 +1,10 @@
-import { isFilled, isSelected } from '../../../functions/data.ts'
-import { toKebabCase } from '../../../functions/string.ts'
+import { isFilled, isSelected } from '../../../functions/data'
+import { toKebabCase } from '../../../functions/string'
 
 import {
   type PropertyItem,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 /**
  * Class with a list of available types.<br>

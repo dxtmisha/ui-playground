@@ -1,4 +1,4 @@
-import { type ConstrClass } from '../../types/constructor.ts'
+import { type ConstrClass } from '../../types/constructor'
 
 import {
   type ButtonComponents,
@@ -6,7 +6,7 @@ import {
   type ButtonExpose,
   type ButtonSetup,
   type ButtonSlots
-} from '../Button/types.ts'
+} from '../Button/types'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

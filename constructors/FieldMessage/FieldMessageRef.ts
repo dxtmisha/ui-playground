@@ -1,8 +1,8 @@
 import { computed } from 'vue'
 
-import { FieldMessage } from './FieldMessage.ts'
+import { FieldMessage } from './FieldMessage'
 
-import type { FieldMessageProps } from './props.ts'
+import type { FieldMessageProps } from './props'
 
 /**
  * Class for the component of outputting a message for the input element (Ref).<br>

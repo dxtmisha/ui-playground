@@ -1,4 +1,4 @@
-import { DataStorage } from './DataStorage.ts'
+import { DataStorage } from './DataStorage'
 
 const STORAGE_NAME_BLOCK = 'cookie-block'
 

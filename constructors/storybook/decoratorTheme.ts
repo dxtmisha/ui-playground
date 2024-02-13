@@ -1,8 +1,8 @@
 import { computed, ref, watchEffect } from 'vue'
 
-import { GeoRef } from '../../classes/GeoRef.ts'
+import { GeoRef } from '../../classes/GeoRef'
 
-import { globalTypes } from '../../c2/storybook/globalTypes.ts'
+import { globalTypes } from '../../c2/storybook/globalTypes'
 
 const design = ref<string>('')
 const theme = ref<string>(globalTypes.theme.defaultValue)

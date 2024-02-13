@@ -1,5 +1,5 @@
-import { MaskType } from './MaskType.ts';
-import { type MaskProps } from './props.ts';
+import { MaskType } from './MaskType';
+import { type MaskProps } from './props';
 export declare class MaskRight {
     protected readonly props: MaskProps;
     protected readonly type: MaskType;

@@ -1,13 +1,13 @@
-import { toKebabCase } from '../../../functions/string.ts'
-import { replaceRecursive } from '../../../functions/object.ts'
+import { toKebabCase } from '../../../functions/string'
+import { replaceRecursive } from '../../../functions/object'
 
-import { PropertiesTool } from './PropertiesTool.ts'
-import { PropertiesFile } from './PropertiesFile.ts'
-import { PropertiesCache } from './PropertiesCache.ts'
+import { PropertiesTool } from './PropertiesTool'
+import { PropertiesFile } from './PropertiesFile'
+import { PropertiesCache } from './PropertiesCache'
 
 import {
   type PropertyListOrData
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export type PropertiesPathItem = {
   design: string

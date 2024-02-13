@@ -1,4 +1,4 @@
-import { type PropertyList } from '../../../types/property.ts';
+import { type PropertyList } from '../../../types/property';
 export type PropertiesWrapItem = {
     values: Record<string, PropertyList[]>;
     quantity: number;

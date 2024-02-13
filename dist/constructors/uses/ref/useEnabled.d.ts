@@ -1,5 +1,5 @@
 import { type ComputedRef, type PropType } from 'vue';
-import { type ProgressProps } from '../../Progress/props.ts';
+import { type ProgressProps } from '../../Progress/props';
 export type UseEnabledSetup = {
     /**
      * Property to determine that the item is disabled.<br>

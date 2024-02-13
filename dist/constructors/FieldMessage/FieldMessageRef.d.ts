@@ -1,5 +1,5 @@
-import { FieldMessage } from './FieldMessage.ts';
-import type { FieldMessageProps } from './props.ts';
+import { FieldMessage } from './FieldMessage';
+import type { FieldMessageProps } from './props';
 /**
  * Class for the component of outputting a message for the input element (Ref).<br>
  * Класс для компонента вывода сообщения для элемента ввода (Ref).
@@ -13,7 +13,7 @@ export declare class FieldMessageRef {
     readonly isMax: import("vue").ComputedRef<boolean>;
     readonly message: import("vue").ComputedRef<string | undefined>;
     readonly counter: import("vue").ComputedRef<string>;
-    readonly classes: import("vue").ComputedRef<import("../../types/constructor.ts").ConstrClassObject>;
+    readonly classes: import("vue").ComputedRef<import("../../types/constructor").ConstrClassObject>;
     /**
      * Constructor
      * @param props input data /<br>входные данные

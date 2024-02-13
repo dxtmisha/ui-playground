@@ -1,4 +1,4 @@
-import { WindowProps } from './props.ts'
+import { WindowProps } from './props'
 
 /**
  * A class for working with hooks when opening and closing a window.<br>

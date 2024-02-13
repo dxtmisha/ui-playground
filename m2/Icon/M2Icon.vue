@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+import { inArray } from '../../functions/object'
 
-import { IconDesign } from '../../constructors/Icon/IconDesign.ts'
+import { IconDesign } from '../../constructors/Icon/IconDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type IconEmits,
   type IconSlots
-} from '../../constructors/Icon/types.ts'
+} from '../../constructors/Icon/types'
 
 import {
   propsInstruction,
   propsValues
-} from './props.ts'
+} from './props'
 import M2Image from '../Image/M2Image.vue'
 
 const emits = defineEmits<IconEmits>()

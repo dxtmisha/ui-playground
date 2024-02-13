@@ -1,23 +1,23 @@
-import { InputVisibility } from './InputVisibility.ts'
-import { InputType } from './InputType.ts'
-import { InputPattern } from './InputPattern.ts'
+import { InputVisibility } from './InputVisibility'
+import { InputType } from './InputType'
+import { InputPattern } from './InputPattern'
 
-import { InputElement } from './InputElement.ts'
-import { InputChange } from './InputChange.ts'
+import { InputElement } from './InputElement'
+import { InputChange } from './InputChange'
 
-import { InputValue } from './InputValue.ts'
+import { InputValue } from './InputValue'
 
-import { InputArrow } from './InputArrow.ts'
-import { InputMatch } from './InputMatch.ts'
+import { InputArrow } from './InputArrow'
+import { InputMatch } from './InputMatch'
 
-import { InputCode } from './InputCode.ts'
-import { InputValidation } from './InputValidation.ts'
-import { InputEventItem } from './InputEventItem.ts'
+import { InputCode } from './InputCode'
+import { InputValidation } from './InputValidation'
+import { InputEventItem } from './InputEventItem'
 
-import { type ConstrValue } from '../../types/constructor.ts'
-import { type InputValidationItem } from './typesBasic.ts'
-import { type InputEmits } from './types.ts'
-import { type InputBasicProps } from './props.ts'
+import { type ConstrValue } from '../../types/constructor'
+import { type InputValidationItem } from './typesBasic'
+import { type InputEmits } from './types'
+import { type InputBasicProps } from './props'
 
 /**
  * Base class for working with an input element.<br>

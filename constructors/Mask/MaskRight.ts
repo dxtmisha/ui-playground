@@ -1,6 +1,6 @@
-import { MaskType } from './MaskType.ts'
+import { MaskType } from './MaskType'
 
-import { type MaskProps } from './props.ts'
+import { type MaskProps } from './props'
 
 export class MaskRight {
   /**

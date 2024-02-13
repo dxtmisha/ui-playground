@@ -1,13 +1,13 @@
-import { Datetime } from '../../classes/Datetime.ts'
+import { Datetime } from '../../classes/Datetime'
 
-import { MaskType } from './MaskType.ts'
+import { MaskType } from './MaskType'
 
 import {
   type InputPatternElement,
   type InputPatternList
-} from '../Input/typesBasic.ts'
-import { type MaskGroup } from './typesBasic.ts'
-import { type MaskProps } from './props.ts'
+} from '../Input/typesBasic'
+import { type MaskGroup } from './typesBasic'
+import { type MaskProps } from './props'
 
 const patternForDate: InputPatternList = {
   Y: '[0-9]{4}',

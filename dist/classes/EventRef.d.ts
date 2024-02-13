@@ -1,6 +1,6 @@
-import { EventItem } from './EventItem.ts';
-import { type RefOrNormal } from '../types/ref.ts';
-import { type ElementOrString, type ElementOrWindow, type EventListenerDetail, type EventOptions } from '../types/element.ts';
+import { EventItem } from './EventItem';
+import { type RefOrNormal } from '../types/ref';
+import { type ElementOrString, type ElementOrWindow, type EventListenerDetail, type EventOptions } from '../types/element';
 export declare class EventRef<E extends ElementOrWindow, O extends Event, D extends Record<string, any>> extends EventItem<E, O, D> {
     /**
      * Classes Constructor

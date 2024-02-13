@@ -1,7 +1,7 @@
 import { type ComputedRef } from 'vue';
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type ImageEmits } from '../Image/types.ts';
-import { type IconEventLoad } from './typesBasic.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type ImageEmits } from '../Image/types';
+import { type IconEventLoad } from './typesBasic';
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.

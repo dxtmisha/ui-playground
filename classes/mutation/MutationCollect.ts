@@ -4,7 +4,7 @@ import {
   KEY_INIT,
   KEY_UI,
   MutationStatus
-} from '../../types/mutation.ts'
+} from '../../types/mutation'
 
 /**
  * Class for working with the search of elements for processing.<br>

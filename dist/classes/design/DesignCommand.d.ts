@@ -1,9 +1,9 @@
-import { ComponentsItems } from '../services/сomponents/ComponentsItems.ts';
-import { ComponentsList } from '../services/сomponents/ComponentsList.ts';
-import { ComponentsMain } from '../services/сomponents/ComponentsMain.ts';
-import { ComponentsTypes } from '../services/сomponents/ComponentsTypes.ts';
-import { ComponentsStyle } from '../services/сomponents/ComponentsStyle.ts';
-import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration.ts';
+import { ComponentsItems } from '../services/сomponents/ComponentsItems';
+import { ComponentsList } from '../services/сomponents/ComponentsList';
+import { ComponentsMain } from '../services/сomponents/ComponentsMain';
+import { ComponentsTypes } from '../services/сomponents/ComponentsTypes';
+import { ComponentsStyle } from '../services/сomponents/ComponentsStyle';
+import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration';
 /**
  * A class for updating styles and tokens.<br>
  * Класс для обновления стилей и токенов.

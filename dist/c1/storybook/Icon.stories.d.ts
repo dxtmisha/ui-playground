@@ -24,15 +24,15 @@ declare const meta: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
                 default: "sm" | "md" | "lg" | "xs" | undefined;
             };
-            icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-            iconActive: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+            iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
             isActive: import("vue").ComputedRef<boolean>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-            load: (image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => void;
+            load: (image: import("../../constructors/Image/typesBasic").ImageEventData) => void;
         }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
             turn: BooleanConstructor;
             disabled: BooleanConstructor;
@@ -55,11 +55,11 @@ declare const meta: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
                 default: "sm" | "md" | "lg" | "xs" | undefined;
             };
-            icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-            iconActive: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+            iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
             size: "sm" | "md" | "lg" | "xs" | undefined;
             animationType: "type1" | "type2" | undefined;
@@ -103,11 +103,11 @@ declare const meta: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
                 default: "sm" | "md" | "lg" | "xs" | undefined;
             };
-            icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-            iconActive: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+            iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
         }>> & {
-            onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+            onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
         }, {
             isActive: import("vue").ComputedRef<boolean>;
         }, {}, {}, {}, {
@@ -150,15 +150,15 @@ declare const meta: {
             type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
             default: "sm" | "md" | "lg" | "xs" | undefined;
         };
-        icon: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-        iconActive: import("vue").PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+        icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+        iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
         active: BooleanConstructor;
     }>> & {
-        onLoad?: ((image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => any) | undefined;
+        onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
     }, {
         isActive: import("vue").ComputedRef<boolean>;
     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-        load: (image: import("../../constructors/Image/typesBasic.ts").ImageEventData) => void;
+        load: (image: import("../../constructors/Image/typesBasic").ImageEventData) => void;
     }, string, {
         size: "sm" | "md" | "lg" | "xs" | undefined;
         animationType: "type1" | "type2" | undefined;
@@ -174,7 +174,7 @@ declare const meta: {
         high: boolean;
         rounded: "none" | "standard" | "sm" | "md" | "lg" | "full" | undefined;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/Icon/types.ts").IconSlots> & import("../../constructors/Icon/types.ts").IconSlots;
+        $slots: Readonly<import("../../constructors/Icon/types").IconSlots> & import("../../constructors/Icon/types").IconSlots;
     });
     tags: string[];
     parameters: {
@@ -185,8 +185,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

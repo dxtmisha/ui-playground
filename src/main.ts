@@ -1,5 +1,6 @@
-// import App from './App.vue'
+import App from './App.vue'
 
 import './style.scss'
+import { createApp } from 'vue'
 
-// initComponents(App).mount('#app')
+createApp(App).mount('#app')

@@ -1,7 +1,7 @@
-import { InputElement } from './InputElement.ts';
-import { InputValue } from './InputValue.ts';
-import { type InputValidationItem } from './typesBasic.ts';
-import { type InputBasicProps } from './props.ts';
+import { InputElement } from './InputElement';
+import { InputValue } from './InputValue';
+import { type InputValidationItem } from './typesBasic';
+import { type InputBasicProps } from './props';
 /**
  * Class for checking the similarity of input data with other elements.<br>
  * Класс для проверки сходства вводимых данных с другими элементами.

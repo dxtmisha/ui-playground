@@ -1,7 +1,7 @@
-import { MaskPattern } from './MaskPattern.ts'
-import { MaskValue } from './MaskValue.ts'
+import { MaskPattern } from './MaskPattern'
+import { MaskValue } from './MaskValue'
 
-import { type InputValidationItem } from '../Input/typesBasic.ts'
+import { type InputValidationItem } from '../Input/typesBasic'
 
 /**
  * Class for working with the validity of entered data.<br>

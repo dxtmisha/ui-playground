@@ -1,14 +1,14 @@
-import { forEach, isObjectNotArray } from '../../../functions/data.ts'
-import { getColumn } from '../../../functions/object.ts'
+import { forEach, isObjectNotArray } from '../../../functions/data'
+import { getColumn } from '../../../functions/object'
 
-import { PropertiesItems } from './PropertiesItems.ts'
+import { PropertiesItems } from './PropertiesItems'
 
 import {
   PropertyCategory,
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export type PropertiesPaletteItem = {
   design: string

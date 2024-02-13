@@ -33,9 +33,9 @@ declare const meta: {
             to: StringConstructor;
             value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
             detail: ObjectConstructor[];
-            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-            icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
             iconTurn: BooleanConstructor;
             iconHide: BooleanConstructor;
             label: (StringConstructor | NumberConstructor)[];
@@ -82,9 +82,9 @@ declare const meta: {
             to: StringConstructor;
             value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
             detail: ObjectConstructor[];
-            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-            icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
             iconTurn: BooleanConstructor;
             iconHide: BooleanConstructor;
             label: (StringConstructor | NumberConstructor)[];
@@ -148,9 +148,9 @@ declare const meta: {
             to: StringConstructor;
             value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
             detail: ObjectConstructor[];
-            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-            icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+            progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+            iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+            icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
             iconTurn: BooleanConstructor;
             iconHide: BooleanConstructor;
             label: (StringConstructor | NumberConstructor)[];
@@ -211,9 +211,9 @@ declare const meta: {
         to: StringConstructor;
         value: (ObjectConstructor | StringConstructor | NumberConstructor)[];
         detail: ObjectConstructor[];
-        progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
-        iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
-        icon: import("vue").PropType<string | import("../../constructors/Icon/props.ts").IconProps | undefined>;
+        progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
+        iconTrailing: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
+        icon: import("vue").PropType<string | import("../../constructors/Icon/props").IconProps | undefined>;
         iconTurn: BooleanConstructor;
         iconHide: BooleanConstructor;
         label: (StringConstructor | NumberConstructor)[];
@@ -246,7 +246,7 @@ declare const meta: {
         intent: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
         ghost: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
-        $slots: Readonly<import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots> & import("../../constructors/uses/ref/useLabel.ts").UseLabelSlots;
+        $slots: Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots;
     });
     tags: string[];
     parameters: {
@@ -257,8 +257,8 @@ declare const meta: {
             };
         };
     };
-    argTypes: import("../../types/storybook.ts").StorybookArgs;
-    args: import("../../types/storybook.ts").StorybookArgsValue;
+    argTypes: import("../../types/storybook").StorybookArgs;
+    args: import("../../types/storybook").StorybookArgsValue;
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

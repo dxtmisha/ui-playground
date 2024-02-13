@@ -1,6 +1,6 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-import { DataStorage } from '../classes/DataStorage.ts'
+import { DataStorage } from '../classes/DataStorage'
 
 /**
  * Creates a reactive variable to manage session storage.<br>

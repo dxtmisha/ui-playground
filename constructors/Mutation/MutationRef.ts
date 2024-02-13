@@ -1,8 +1,8 @@
 import { nextTick, onBeforeMount, onUnmounted, shallowRef } from 'vue'
 
-import { Mutation } from '../../classes/mutation/Mutation.ts'
+import { Mutation } from '../../classes/mutation/Mutation'
 
-import { type MutationDataItem } from '../../classes/mutation/MutationDataItem.ts'
+import { type MutationDataItem } from '../../classes/mutation/MutationDataItem'
 
 /**
  * A class for global monitoring of changes and searching for new elements to transform into components (Ref).<br>

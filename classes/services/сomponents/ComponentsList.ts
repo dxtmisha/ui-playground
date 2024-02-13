@@ -1,11 +1,11 @@
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
 
-import { ComponentsItems } from './ComponentsItems.ts'
+import { ComponentsItems } from './ComponentsItems'
 
 import {
   COMPONENTS_DIR,
   COMPONENTS_FILE
-} from '../../../types/components.ts'
+} from '../../../types/components'
 
 /**
  * Class for creating a file with a list of components.<br>

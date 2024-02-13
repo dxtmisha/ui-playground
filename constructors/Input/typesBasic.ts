@@ -1,4 +1,4 @@
-import { type MaskGroup } from '../Mask/typesBasic.ts'
+import { type MaskGroup } from '../Mask/typesBasic'
 
 export type InputTypeName =
   'text' |

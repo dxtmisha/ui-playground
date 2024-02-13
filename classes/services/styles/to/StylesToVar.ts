@@ -1,16 +1,16 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
+import { isObjectNotArray } from '../../../../functions/data'
 
-import { PropertiesItems } from '../../properties/PropertiesItems.ts'
-import { PropertiesValues } from '../../properties/PropertiesValues.ts'
+import { PropertiesItems } from '../../properties/PropertiesItems'
+import { PropertiesValues } from '../../properties/PropertiesValues'
 
-import { StylesToAbstract } from './StylesToAbstract.ts'
+import { StylesToAbstract } from './StylesToAbstract'
 
 import {
   type PropertyItem,
   PropertyKey,
   PropertyType
-} from '../../../../types/property.ts'
-import { StylesTool } from '../StylesTool.ts'
+} from '../../../../types/property'
+import { StylesTool } from '../StylesTool'
 
 /**
  * CSS variable converter class.<br>

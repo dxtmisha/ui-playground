@@ -1,7 +1,7 @@
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
+import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property'
 
 /**
  * A class for transforming subclass.<br>

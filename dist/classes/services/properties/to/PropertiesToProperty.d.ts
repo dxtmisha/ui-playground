@@ -1,6 +1,6 @@
-import { PropertiesItemsItem } from '../PropertiesItems.ts';
-import { PropertiesToVar } from './PropertiesToVar.ts';
-import { PropertyType } from '../../../../types/property.ts';
+import { PropertiesItemsItem } from '../PropertiesItems';
+import { PropertiesToVar } from './PropertiesToVar';
+import { PropertyType } from '../../../../types/property';
 /**
  * Class for working with custom styles in CSS.<br>
  * Класс для работы с пользовательскими стилями в CSS.

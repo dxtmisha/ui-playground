@@ -1,8 +1,8 @@
-import { InputType } from './InputType.ts';
-import { InputPattern } from './InputPattern.ts';
-import type { ConstrValue } from '../../types/constructor.ts';
-import type { InputElementItem } from './typesBasic.ts';
-import type { InputBasicProps } from './props.ts';
+import { InputType } from './InputType';
+import { InputPattern } from './InputPattern';
+import type { ConstrValue } from '../../types/constructor';
+import type { InputElementItem } from './typesBasic';
+import type { InputBasicProps } from './props';
 /**
  * Class for working with input elements.<br>
  * Класс для работы с элементами ввода.

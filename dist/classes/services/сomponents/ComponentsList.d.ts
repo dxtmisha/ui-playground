@@ -1,4 +1,4 @@
-import { ComponentsItems } from './ComponentsItems.ts';
+import { ComponentsItems } from './ComponentsItems';
 /**
  * Class for creating a file with a list of components.<br>
  * Класс для создания файла со списком компонентов.

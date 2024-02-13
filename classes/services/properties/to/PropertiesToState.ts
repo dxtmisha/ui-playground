@@ -1,9 +1,9 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
+import { isObjectNotArray } from '../../../../functions/data'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { type PropertiesItemsItem } from '../PropertiesItems.ts'
-import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
+import { type PropertiesItemsItem } from '../PropertiesItems'
+import { type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property'
 
 /**
  * A class for transforming components.<br>

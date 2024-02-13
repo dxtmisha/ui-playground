@@ -1,6 +1,6 @@
-import { isObjectNotArray } from './data.ts'
+import { isObjectNotArray } from './data'
 
-import { type ConstrItem } from '../types/constructor.ts'
+import { type ConstrItem } from '../types/constructor'
 
 /**
  * Returns the name of the class from the property.<br>

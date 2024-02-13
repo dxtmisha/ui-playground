@@ -1,6 +1,6 @@
-import { EventItem } from '../../classes/EventItem.ts';
-import { WindowElement } from './WindowElement.ts';
-import type { WindowProps } from './props.ts';
+import { EventItem } from '../../classes/EventItem';
+import { WindowElement } from './WindowElement';
+import type { WindowProps } from './props';
 /**
  * Class for working with a static window.<br>
  * Класс для работы со статичным окном.

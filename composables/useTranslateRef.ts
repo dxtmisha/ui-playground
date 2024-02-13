@@ -1,8 +1,8 @@
 import { type Ref, ref, watchEffect } from 'vue'
-import { isArray } from '../functions/data.ts'
+import { isArray } from '../functions/data'
 
-import { GeoRef } from '../classes/GeoRef.ts'
-import { Translate } from '../classes/Translate.ts'
+import { GeoRef } from '../classes/GeoRef'
+import { Translate } from '../classes/Translate'
 
 /**
  * Getting the translated text by an array of keys or a string with a key.<br>

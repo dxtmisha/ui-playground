@@ -1,13 +1,13 @@
-import { MaskBuffer } from './MaskBuffer.ts';
-import { MaskFocus } from './MaskFocus.ts';
-import { MaskCharacterLength } from './MaskCharacterLength.ts';
-import { MaskRight } from './MaskRight.ts';
-import { MaskSelection } from './MaskSelection.ts';
-import { MaskValueBasic } from './MaskValueBasic.ts';
-import { MaskValidation } from './MaskValidation.ts';
-import { MaskEmit } from './MaskEmit.ts';
-import { MaskData } from './MaskData.ts';
-import { type MaskEventSelection } from './typesBasic.ts';
+import { MaskBuffer } from './MaskBuffer';
+import { MaskFocus } from './MaskFocus';
+import { MaskCharacterLength } from './MaskCharacterLength';
+import { MaskRight } from './MaskRight';
+import { MaskSelection } from './MaskSelection';
+import { MaskValueBasic } from './MaskValueBasic';
+import { MaskValidation } from './MaskValidation';
+import { MaskEmit } from './MaskEmit';
+import { MaskData } from './MaskData';
+import { type MaskEventSelection } from './typesBasic';
 /**
  * Class for working with events.<br>
  * Класс для работы с событиями.

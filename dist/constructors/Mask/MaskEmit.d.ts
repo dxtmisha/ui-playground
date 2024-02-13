@@ -1,6 +1,6 @@
-import { MaskValidation } from './MaskValidation.ts';
-import { type MaskEventData } from './typesBasic.ts';
-import { type MaskEmits } from './types.ts';
+import { MaskValidation } from './MaskValidation';
+import { type MaskEventData } from './typesBasic';
+import { type MaskEmits } from './types';
 /**
  * Class for event invocation.<br>
  * Класс для вызова события.

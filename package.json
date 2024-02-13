@@ -2,7 +2,6 @@
   "name": "ui",
   "private": false,
   "version": "0.0.0-dev.2",
-  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",

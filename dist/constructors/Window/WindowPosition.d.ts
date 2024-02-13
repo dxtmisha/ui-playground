@@ -1,8 +1,8 @@
-import { WindowClient } from './WindowClient.ts';
-import { WindowElement } from './WindowElement.ts';
-import { WindowCoordinates } from './WindowCoordinates.ts';
-import { type ConstrStyles } from '../../types/constructor.ts';
-import { type WindowProps } from './props.ts';
+import { WindowClient } from './WindowClient';
+import { WindowElement } from './WindowElement';
+import { WindowCoordinates } from './WindowCoordinates';
+import { type ConstrStyles } from '../../types/constructor';
+import { type WindowProps } from './props';
 /**
  * A class for working with position.<br>
  * Класс для работы с позицией.

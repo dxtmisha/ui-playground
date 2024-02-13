@@ -1,13 +1,13 @@
-import { toCamelCaseFirst } from '../../../functions/string.ts'
+import { toCamelCaseFirst } from '../../../functions/string'
 
-import { ComponentsItems } from './ComponentsItems.ts'
+import { ComponentsItems } from './ComponentsItems'
 
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
 
 import {
   COMPONENTS_DIR,
   COMPONENTS_MAIN
-} from '../../../types/components.ts'
+} from '../../../types/components'
 
 /**
  * Class for working with the main files.<br>
@@ -52,7 +52,7 @@ export class ComponentsMain {
         `;(window as any).${name} = MutationGlobal`,
         `;(window as any).${name}_VUE = MutationGlobalRef`,
         '',
-        `export { create${toCamelCaseFirst(name)}Components } from './create.ts'`,
+        `export { create${toCamelCaseFirst(name)}Components } from './create'`,
         ''
       ].join('\r\n'),
       'ts'

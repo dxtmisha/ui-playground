@@ -1,6 +1,6 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
-import { type PropertiesItemsItem, type PropertiesItemsParent } from '../PropertiesItems.ts';
-import { type PropertyItem } from '../../../../types/property.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
+import { type PropertiesItemsItem, type PropertiesItemsParent } from '../PropertiesItems';
+import { type PropertyItem } from '../../../../types/property';
 /**
  * Class for managing the translation of a property from one branch to another.<br>
  * Класс для управления переводом свойства из одной ветки в другую.

@@ -1,9 +1,9 @@
-import { toCamelCase } from '../../../functions/string.ts'
+import { toCamelCase } from '../../../functions/string'
 
 import {
   DIR_CONSTRUCTOR,
   NAME_CONSTRUCTOR
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 export class PropertiesTool {
   /**

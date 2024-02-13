@@ -2,8 +2,8 @@ import {
   type StorybookArgs,
   type StorybookArgsValue,
   StorybookControl
-} from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
+} from '../../../types/storybook'
+import { StorybookCategory } from '../types'
 
 export const rippleArgs: StorybookArgs = {
   // Status

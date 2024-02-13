@@ -1,8 +1,8 @@
-import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract.ts';
-import { ImageType } from './ImageType.ts';
-import { type Undefined } from '../../types/basic.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageEventData, type ImageEventItem, type ImageItem } from './typesBasic.ts';
+import { DesignAsyncAbstract } from '../../classes/design/DesignAsyncAbstract';
+import { ImageType } from './ImageType';
+import { type Undefined } from '../../types/basic';
+import { type ImageProps } from './props';
+import { type ImageEventData, type ImageEventItem, type ImageItem } from './typesBasic';
 /**
  * A class for obtaining image or icon data.<br>
  * Класс для получения данных изображения или иконки.

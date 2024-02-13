@@ -1,9 +1,9 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
-import { getColumn } from '../../../../functions/object.ts'
+import { isObjectNotArray } from '../../../../functions/data'
+import { getColumn } from '../../../../functions/object'
 
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { PropertyKey } from '../../../../types/property.ts'
+import { PropertyKey } from '../../../../types/property'
 
 /**
  * Class for removing a property.<br>

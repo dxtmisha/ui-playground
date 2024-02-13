@@ -1,4 +1,4 @@
-import { ImageProps } from '../../constructors/Image/props.ts';
+import { ImageProps } from '../../constructors/Image/props';
 export declare const propsValues: {};
 export type PropsToken = {
     turn?: boolean;

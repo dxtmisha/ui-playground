@@ -1,6 +1,6 @@
-import { Progress } from './Progress.ts';
-import { type ConstrClassObject, type ConstrStyles } from '../../types/constructor.ts';
-import { type ProgressProps } from './props.ts';
+import { Progress } from './Progress';
+import { type ConstrClassObject, type ConstrStyles } from '../../types/constructor';
+import { type ProgressProps } from './props';
 /**
  * Base class Progress for working in Vue.<br>
  * Базовый класс Progress для работы в Vue.

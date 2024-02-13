@@ -1,7 +1,7 @@
-import { EventItem } from '../../classes/EventItem.ts'
+import { EventItem } from '../../classes/EventItem'
 
-import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
-import { ImageCalculationList } from './ImageCalculationList.ts'
+import { ImageAdaptiveItem } from './ImageAdaptiveItem'
+import { ImageCalculationList } from './ImageCalculationList'
 
 /**
  * Class for working with image scaling according to the physical size of the object in the image.<br>

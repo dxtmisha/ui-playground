@@ -1,4 +1,4 @@
-import { forEach } from '../../functions/data.ts'
+import { forEach } from '../../functions/data'
 
 import {
   KEY_GLOBAL_PROJECT,
@@ -8,7 +8,7 @@ import {
   type MutationComponentProps,
   type MutationProject,
   type MutationProjectItem
-} from '../../types/mutation.ts'
+} from '../../types/mutation'
 
 /**
  * Class for working with global variables.<br>

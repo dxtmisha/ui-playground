@@ -1,10 +1,10 @@
 import { type VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { IconRef } from './IconRef.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type ImageEventData } from '../Image/typesBasic.ts';
-import { type IconProps } from './props.ts';
-import { type IconClasses, type IconComponents, type IconEmits, type IconExpose, type IconSetup, type IconSlots } from './types.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { IconRef } from './IconRef';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type ImageEventData } from '../Image/typesBasic';
+import { type IconProps } from './props';
+import { type IconClasses, type IconComponents, type IconEmits, type IconExpose, type IconSetup, type IconSlots } from './types';
 /**
  * Constructor class for the icon component.<br>
  * Класс-конструктор для компонента иконки.

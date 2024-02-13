@@ -1,9 +1,9 @@
-import { getBind } from '../../functions/render.ts'
+import { getBind } from '../../functions/render'
 
-import { InputValue } from '../Input/InputValue.ts'
+import { InputValue } from '../Input/InputValue'
 
-import { type ImageProps } from '../Image/props.ts'
-import { type CheckboxProps } from './props.ts'
+import { type ImageProps } from '../Image/props'
+import { type CheckboxProps } from './props'
 
 /**
  * Class for working with icons for checkbox.<br>

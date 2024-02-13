@@ -1,4 +1,4 @@
-import { InputProps } from '../../constructors/Input/props.ts';
+import { InputProps } from '../../constructors/Input/props';
 export declare const propsValues: {};
 export type PropsToken = {};
 /**
@@ -17,14 +17,14 @@ export declare const propsInstruction: {
     modelValue: StringConstructor;
     detail: import("vue").PropType<Record<string, any> | undefined>;
     type: {
-        type: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined>;
-        default: import("../../constructors/Input/typesBasic.ts").InputTypeName | undefined;
+        type: import("vue").PropType<import("../../constructors/Input/typesBasic").InputTypeName | undefined>;
+        default: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     };
-    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMode | undefined>;
+    inputmode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMode | undefined>;
     spellcheck: BooleanConstructor;
     required: BooleanConstructor;
     pattern: StringConstructor;
-    match: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputMatch | undefined>;
+    match: import("vue").PropType<import("../../constructors/Input/typesBasic").InputMatch | undefined>;
     arrow: BooleanConstructor;
     step: (StringConstructor | NumberConstructor)[];
     min: (StringConstructor | NumberConstructor)[];
@@ -40,11 +40,11 @@ export declare const propsInstruction: {
     placeholder: StringConstructor;
     helperMessage: StringConstructor;
     validationMessage: StringConstructor;
-    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic.ts").InputValidityCode | undefined>;
+    validationCode: import("vue").PropType<import("../../constructors/Input/typesBasic").InputValidityCode | undefined>;
     on: ObjectConstructor;
     'onUpdate:value': import("vue").PropType<((value: any) => void) | undefined>;
     'onUpdate:modelValue': import("vue").PropType<((value: any) => void) | undefined>;
-    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props.ts").ProgressProps | undefined>;
+    progress: import("vue").PropType<boolean | import("../../constructors/Progress/props").ProgressProps | undefined>;
     readonly: BooleanConstructor;
     disabled: BooleanConstructor;
     label: (StringConstructor | NumberConstructor)[];

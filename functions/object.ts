@@ -1,9 +1,9 @@
-import { forEach, isObject } from './data.ts'
+import { forEach, isObject } from './data'
 
 import {
   type ObjectItem,
   type ObjectOrArray
-} from '../types/basic.ts'
+} from '../types/basic'
 
 /**
  * Checks if the values of two objects are different.<br>

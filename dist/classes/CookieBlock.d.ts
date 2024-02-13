@@ -1,4 +1,4 @@
-import { DataStorage } from './DataStorage.ts';
+import { DataStorage } from './DataStorage';
 /**
  * Class for changing cookie access status.<br>
  * Класс для изменения статуса доступа к куки.

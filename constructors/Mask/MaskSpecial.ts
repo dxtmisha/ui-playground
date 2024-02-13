@@ -4,21 +4,21 @@ import {
   isObject,
   isObjectNotArray,
   isSelected
-} from '../../functions/data.ts'
+} from '../../functions/data'
 
-import { CacheItem } from '../../classes/CacheItem.ts'
+import { CacheItem } from '../../classes/CacheItem'
 
-import { MaskType } from './MaskType.ts'
-import { MaskFormat } from './MaskFormat.ts'
+import { MaskType } from './MaskType'
+import { MaskFormat } from './MaskFormat'
 
-import { type InputPatternItemOrFunction } from '../Input/typesBasic.ts'
-import { type MaskProps } from './props.ts'
+import { type InputPatternItemOrFunction } from '../Input/typesBasic'
+import { type MaskProps } from './props'
 import {
   type MaskMatchItem,
   type MaskSpecialList,
   type MaskSpecialProp,
   type MaskSpecialItem
-} from './typesBasic.ts'
+} from './typesBasic'
 
 /**
  * A class for working with groups according to their special symbols.<br>

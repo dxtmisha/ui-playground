@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { CheckboxDesign } from '../../constructors/Checkbox/CheckboxDesign.ts'
+import { CheckboxDesign } from '../../constructors/Checkbox/CheckboxDesign'
 
 import M3Image from '../Image/M3Image.vue'
 import M3FieldMessage from '../FieldMessage/M3FieldMessage.vue'
@@ -13,16 +13,16 @@ import M3Ripple from '../Ripple/M3Ripple.vue'
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type CheckboxEmits,
   type CheckboxSlots
-} from '../../constructors/Checkbox/types.ts'
+} from '../../constructors/Checkbox/types'
 
 import {
   propsInstruction // ,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<CheckboxEmits>()
 const props = defineProps({ ...propsInstruction })

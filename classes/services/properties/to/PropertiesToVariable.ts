@@ -1,14 +1,14 @@
-import { isFilled, isObjectNotArray } from '../../../../functions/data.ts'
-import { toKebabCase } from '../../../../functions/string.ts'
+import { isFilled, isObjectNotArray } from '../../../../functions/data'
+import { toKebabCase } from '../../../../functions/string'
 
-import { PropertiesTypes } from '../PropertiesTypes.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesTypes } from '../PropertiesTypes'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { PropertyCategory, type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property.ts'
+import { PropertyCategory, type PropertyItem, PropertyKey, PropertyType } from '../../../../types/property'
 
-import { css } from '../../../../media/propertiesListCss.ts'
-import { cssSelector } from '../../../../media/propertiesListCssSelector.ts'
-import { cssVirtual } from '../../../../media/propertiesListCssVirtual.ts'
+import { css } from '../../../../media/propertiesListCss'
+import { cssSelector } from '../../../../media/propertiesListCssSelector'
+import { cssVirtual } from '../../../../media/propertiesListCssVirtual'
 
 /**
  * Class for performing data type conversions.<br>

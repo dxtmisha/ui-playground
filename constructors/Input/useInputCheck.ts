@@ -1,12 +1,12 @@
-import { executeFunction, isFilled, isObjectNotArray, isString } from '../../functions/data.ts'
-import { anyToString } from '../../functions/string.ts'
-import { createElement } from '../../functions/element.ts'
+import { executeFunction, isFilled, isObjectNotArray, isString } from '../../functions/data'
+import { anyToString } from '../../functions/string'
+import { createElement } from '../../functions/element'
 
 import {
   type InputPatternElement,
   type InputPatternItemOrFunction,
   type InputValidationItem
-} from './typesBasic.ts'
+} from './typesBasic'
 
 export type InputCheckItem<V = string> = {
   group: string

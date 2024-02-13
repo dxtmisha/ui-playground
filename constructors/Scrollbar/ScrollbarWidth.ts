@@ -1,6 +1,6 @@
-import { createElement } from '../../functions/element.ts'
+import { createElement } from '../../functions/element'
 
-import { DataStorage } from '../../classes/DataStorage.ts'
+import { DataStorage } from '../../classes/DataStorage'
 
 /**
  * Class for getting the scroll width.<br>

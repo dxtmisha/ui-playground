@@ -1,4 +1,4 @@
-import { DesignAbstract } from './DesignAbstract.ts';
+import { DesignAbstract } from './DesignAbstract';
 /**
  * Base class for working with the constructor.<br>
  * Базовый класс для работы с конструктором.

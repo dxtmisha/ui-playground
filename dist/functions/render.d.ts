@@ -1,4 +1,4 @@
-import { type ConstrItem } from '../types/constructor.ts';
+import { type ConstrItem } from '../types/constructor';
 /**
  * Returns the name of the class from the property.<br>
  * Возвращает название класса из свойства.

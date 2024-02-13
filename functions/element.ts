@@ -1,10 +1,10 @@
-import { executeFunction, forEach, isFilled, isObject, isObjectNotArray } from './data.ts'
-import { random } from './number.ts'
+import { executeFunction, forEach, isFilled, isObject, isObjectNotArray } from './data'
+import { random } from './number'
 
 import {
   type ElementOrString,
   type ElementOrWindow
-} from '../types/element.ts'
+} from '../types/element'
 
 /**
  * Checks if object is Window.<br>

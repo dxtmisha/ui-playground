@@ -1,4 +1,4 @@
-import { type ConstrClassObject } from '../../types/constructor.ts';
+import { type ConstrClassObject } from '../../types/constructor';
 export type ProgressEventLoad = {
     hide: boolean;
     visible: boolean;

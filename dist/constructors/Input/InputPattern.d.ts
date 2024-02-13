@@ -1,5 +1,5 @@
-import { InputType } from './InputType.ts';
-import type { InputBasicProps } from './props.ts';
+import { InputType } from './InputType';
+import type { InputBasicProps } from './props';
 /**
  * Class for working with checks by regular expressions.<br>
  * Класс для работы с проверкой по регулярным выражениям.

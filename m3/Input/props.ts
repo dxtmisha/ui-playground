@@ -4,7 +4,7 @@ import {
   InputProps,
   defaultsInput,
   propsInput
-} from '../../constructors/Input/props.ts'
+} from '../../constructors/Input/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

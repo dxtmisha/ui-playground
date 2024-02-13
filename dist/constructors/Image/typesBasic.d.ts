@@ -1,5 +1,5 @@
-import { type NumberOrString, type Undefined } from '../../types/basic.ts';
-import { type ConstrStyles } from '../../types/constructor.ts';
+import { type NumberOrString, type Undefined } from '../../types/basic';
+import { type ConstrStyles } from '../../types/constructor';
 export declare enum ImageTypeValue {
     file = "file",
     image = "image",

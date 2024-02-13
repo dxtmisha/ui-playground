@@ -1,5 +1,5 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
-import { type PropertyReplace } from '../../../../types/property.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
+import { type PropertyReplace } from '../../../../types/property';
 export type PropertiesReplaceValue = string | Partial<PropertyReplace>;
 /**
  * A class for transforming an expression through regular expressions.<br>

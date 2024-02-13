@@ -1,6 +1,6 @@
-import { CacheItem } from '../../classes/CacheItem.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageTypeItem } from './typesBasic.ts';
+import { CacheItem } from '../../classes/CacheItem';
+import { type ImageProps } from './props';
+import { type ImageTypeItem } from './typesBasic';
 /**
  * Class for working with the image type.<br>
  * Класс для работы с типом изображения.

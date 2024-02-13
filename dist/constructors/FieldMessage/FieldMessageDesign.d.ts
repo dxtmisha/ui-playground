@@ -1,9 +1,9 @@
 import { VNode } from 'vue';
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts';
-import { type ConstrOptions, type ConstrStyles } from '../../types/constructor.ts';
-import { type FieldMessageProps } from './props.ts';
-import { type FieldMessageClasses, type FieldMessageComponents, type FieldMessageEmits, type FieldMessageExpose, type FieldMessageSetup, type FieldMessageSlots } from './types.ts';
-import { FieldMessageRef } from './FieldMessageRef.ts';
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract';
+import { type ConstrOptions, type ConstrStyles } from '../../types/constructor';
+import { type FieldMessageProps } from './props';
+import { type FieldMessageClasses, type FieldMessageComponents, type FieldMessageEmits, type FieldMessageExpose, type FieldMessageSetup, type FieldMessageSlots } from './types';
+import { FieldMessageRef } from './FieldMessageRef';
 /**
  * FieldMessageDesign
  */

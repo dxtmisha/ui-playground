@@ -1,15 +1,15 @@
 import { h, onUnmounted, type VNode, watch } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { ImageRef } from './ImageRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { ImageRef } from './ImageRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ImageProps
-} from './props.ts'
+} from './props'
 import {
   type ImageClasses,
   type ImageComponents,
@@ -17,7 +17,7 @@ import {
   type ImageExpose,
   type ImageSetup,
   type ImageSlots
-} from './types.ts'
+} from './types'
 
 /**
  * Constructor class for the image component.<br>

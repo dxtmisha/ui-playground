@@ -1,10 +1,10 @@
 import {
   type NumberOrString,
   type Undefined
-} from '../../types/basic.ts'
+} from '../../types/basic'
 import {
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 
 export enum ImageTypeValue {
   file = 'file',

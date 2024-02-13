@@ -1,4 +1,4 @@
-import { ComponentsItems } from './ComponentsItems.ts';
+import { ComponentsItems } from './ComponentsItems';
 export declare class ComponentsTypes {
     protected readonly items: ComponentsItems;
     /**

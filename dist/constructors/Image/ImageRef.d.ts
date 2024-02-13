@@ -1,18 +1,18 @@
-import { Image } from './Image.ts';
-import { type RefUndefined } from '../../types/ref.ts';
-import { type ConstrStyles } from '../../types/constructor.ts';
-import { type ImageProps } from './props.ts';
-import { type ImageElement, type ImageEventItem } from './typesBasic.ts';
+import { Image } from './Image';
+import { type RefUndefined } from '../../types/ref';
+import { type ConstrStyles } from '../../types/constructor';
+import { type ImageProps } from './props';
+import { type ImageElement, type ImageEventItem } from './typesBasic';
 /**
  * Base Image class for working in Vue.<br>
  * Базовый класс Image для работы во Vue.
  */
 export declare class ImageRef {
     protected readonly item: Image;
-    readonly type: import("vue").ComputedRef<import("./typesBasic.ts").ImageTypeItem>;
+    readonly type: import("vue").ComputedRef<import("./typesBasic").ImageTypeItem>;
     readonly data: import("vue").ShallowRef<ImageEventItem>;
     readonly text: import("vue").ComputedRef<string | undefined>;
-    readonly classes: import("vue").ComputedRef<import("../../types/constructor.ts").ConstrClassObject>;
+    readonly classes: import("vue").ComputedRef<import("../../types/constructor").ConstrClassObject>;
     readonly styles: import("vue").ShallowRef<ConstrStyles | undefined>;
     /**
      * Constructor

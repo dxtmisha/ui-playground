@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { RippleDesign } from '../../constructors/Ripple/RippleDesign.ts'
+import { RippleDesign } from '../../constructors/Ripple/RippleDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type RippleEmits,
   type RippleSlots
-} from '../../constructors/Ripple/types.ts'
+} from '../../constructors/Ripple/types'
 
 import {
   propsInstruction //,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<RippleEmits>()
 const props = defineProps({ ...propsInstruction })

@@ -1,6 +1,6 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-import { Hash } from '../classes/Hash.ts'
+import { Hash } from '../classes/Hash'
 
 /**
  * Creates a reactive variable to manage the hash.<br>

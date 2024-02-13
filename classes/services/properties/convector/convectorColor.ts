@@ -1,5 +1,5 @@
-import { PropertyKey } from '../../../../types/property.ts'
-import type { PropertyItemInput } from '../../../../types/property.ts'
+import { PropertyKey } from '../../../../types/property'
+import type { PropertyItemInput } from '../../../../types/property'
 
 /**
  * Data conversion into colors.<br>

@@ -1,6 +1,6 @@
 import { type ComputedRef, type ShallowRef, type VNode } from 'vue';
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type MutationComponentProps, type MutationSlots } from '../../types/mutation.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type MutationComponentProps, type MutationSlots } from '../../types/mutation';
 export type MutationSlotsRefItem = (VNode | string);
 export type MutationSlotsRef = Record<string, () => MutationSlotsRefItem[]>;
 /**

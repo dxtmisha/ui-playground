@@ -1,6 +1,6 @@
-import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook.ts'
-import { StorybookControl } from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
+import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook'
+import { StorybookControl } from '../../../types/storybook'
+import { StorybookCategory } from '../types'
 
 export const scrollbarArgs: StorybookArgs = {
   // Options

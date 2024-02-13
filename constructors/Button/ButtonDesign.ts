@@ -1,20 +1,20 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
 
-import { useLabel } from '../uses/ref/useLabel.ts'
-import { useIconRef, type UseIconSetup } from '../Icon/useIconRef.ts'
-import { useProgressRef } from '../Progress/useProgressRef.ts'
-import { useEnabled } from '../uses/ref/useEnabled.ts'
-import { useEventClick } from '../uses/ref/useEventClick.ts'
+import { useLabel } from '../uses/ref/useLabel'
+import { useIconRef, type UseIconSetup } from '../Icon/useIconRef'
+import { useProgressRef } from '../Progress/useProgressRef'
+import { useEnabled } from '../uses/ref/useEnabled'
+import { useEventClick } from '../uses/ref/useEventClick'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ButtonProps
-} from './props.ts'
+} from './props'
 import {
   type ButtonClasses,
   type ButtonComponents,
@@ -22,7 +22,7 @@ import {
   type ButtonExpose,
   type ButtonSetup,
   type ButtonSlots
-} from './types.ts'
+} from './types'
 
 /**
  * Class constructor for the button component.<br>

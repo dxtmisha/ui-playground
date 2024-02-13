@@ -1,8 +1,8 @@
-import { type ConstrClass } from '../../types/constructor.ts'
+import { type ConstrClass } from '../../types/constructor'
 import {
   type MaskEventData,
   type MaskViewList
-} from './typesBasic.ts'
+} from './typesBasic'
 import { ComputedRef } from 'vue'
 
 /**

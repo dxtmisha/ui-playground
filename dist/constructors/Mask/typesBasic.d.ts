@@ -1,5 +1,5 @@
-import { GeoDate } from '../../types/geo.ts';
-import { type InputPatternItemOrFunction, type InputValidationItem } from '../Input/typesBasic.ts';
+import { GeoDate } from '../../types/geo';
+import { type InputPatternItemOrFunction, type InputValidationItem } from '../Input/typesBasic';
 export type MaskTypeItem = GeoDate | 'text' | 'number' | 'currency';
 export type MaskElementInput = HTMLInputElement | undefined;
 export type MaskGroupItem = {

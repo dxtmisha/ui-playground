@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * Class for converting properties with multiple values.<br>
  * Класс для преобразования свойств с множеством значений.

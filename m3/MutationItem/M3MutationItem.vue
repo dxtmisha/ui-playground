@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { MutationItemDesign } from '../../constructors/MutationItem/MutationItemDesign.ts'
+import { MutationItemDesign } from '../../constructors/MutationItem/MutationItemDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type MutationItemEmits,
   type MutationItemSlots
-} from '../../constructors/MutationItem/types.ts'
+} from '../../constructors/MutationItem/types'
 
 import {
   propsInstruction // ,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<MutationItemEmits>()
 const props = defineProps({ ...propsInstruction })

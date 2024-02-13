@@ -1,5 +1,5 @@
-import { WindowClasses } from './WindowClasses.ts';
-import { type ConstrValue } from '../../types/constructor.ts';
+import { WindowClasses } from './WindowClasses';
+import { type ConstrValue } from '../../types/constructor';
 /**
  * A class for working with elements.<br>
  * Класс для работы с элементами.

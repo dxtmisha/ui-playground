@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { ProgressProps } from '../../constructors/Progress/props.ts';
+import { ProgressProps } from '../../constructors/Progress/props';
 export declare const propsValues: {
     indeterminate: string[];
     position: string[];

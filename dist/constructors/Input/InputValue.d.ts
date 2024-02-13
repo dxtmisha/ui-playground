@@ -1,6 +1,6 @@
-import { InputElement } from './InputElement.ts';
-import { type InputBasicProps } from './props.ts';
-import { InputChange } from './InputChange.ts';
+import { InputElement } from './InputElement';
+import { type InputBasicProps } from './props';
+import { InputChange } from './InputChange';
 /**
  * Class for working with input values.<br>
  * Класс для работы со значениями инпута.

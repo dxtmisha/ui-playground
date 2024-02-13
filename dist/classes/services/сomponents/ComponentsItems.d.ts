@@ -1,4 +1,4 @@
-import { type ComponentsData, type ComponentsList } from '../../../types/components.ts';
+import { type ComponentsData, type ComponentsList } from '../../../types/components';
 /**
  * Class for working with the list of components.<br>
  * Класс для работы со списком компонентов.

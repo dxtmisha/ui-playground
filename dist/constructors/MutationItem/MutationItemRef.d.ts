@@ -1,6 +1,6 @@
-import { type RefUndefined } from '../../types/ref.ts';
-import { type MutationComponentProps, type MutationSlots } from '../../types/mutation.ts';
-import { type MutationItemProps } from './props.ts';
+import { type RefUndefined } from '../../types/ref';
+import { type MutationComponentProps, type MutationSlots } from '../../types/mutation';
+import { type MutationItemProps } from './props';
 /**
  * Class for working with the component element.<br>
  * Класс для работы с элементом компонента.

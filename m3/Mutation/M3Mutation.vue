@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-// import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+// import { inArray } from '../../functions/object'
 
-import { MutationDesign } from '../../constructors/Mutation/MutationDesign.ts'
+import { MutationDesign } from '../../constructors/Mutation/MutationDesign'
 
 import M3MutationItem from '../MutationItem/M3MutationItem.vue'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type MutationEmits,
   type MutationSlots
-} from '../../constructors/Mutation/types.ts'
+} from '../../constructors/Mutation/types'
 
 import {
   propsInstruction // ,
   // propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<MutationEmits>()
 const props = defineProps({ ...propsInstruction })

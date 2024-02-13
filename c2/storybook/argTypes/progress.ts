@@ -1,8 +1,8 @@
-import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook.ts'
+import type { StorybookArgs, StorybookArgsValue } from '../../../types/storybook'
 
-import { StorybookControl } from '../../../types/storybook.ts'
-import { StorybookCategory } from '../types.ts'
-import { defaults, propsValues } from '../../Progress/props.ts'
+import { StorybookControl } from '../../../types/storybook'
+import { StorybookCategory } from '../types'
+import { defaults, propsValues } from '../../Progress/props'
 
 export const progressArgs: StorybookArgs = {
   value: {

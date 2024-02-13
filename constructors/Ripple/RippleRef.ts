@@ -1,8 +1,8 @@
 import { type Ref, watch } from 'vue'
 
-import { Ripple } from './Ripple.ts'
+import { Ripple } from './Ripple'
 
-import { type RippleProps } from './props.ts'
+import { type RippleProps } from './props'
 
 /**
  * Base Ripple class for working in Vue.<br>

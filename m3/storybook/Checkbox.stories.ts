@@ -7,7 +7,7 @@ import M3Checkbox from '../Checkbox/M3Checkbox.vue'
 import {
   checkboxArgs,
   checkboxArgsValues
-} from './argTypes/checkbox.ts'
+} from './argTypes/checkbox'
 
 const meta = {
   title: 'M3/Checkbox',

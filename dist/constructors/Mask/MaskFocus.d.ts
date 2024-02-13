@@ -1,4 +1,4 @@
-import { MaskBuffer } from './MaskBuffer.ts';
+import { MaskBuffer } from './MaskBuffer';
 /**
  * Class for storing information about the focus of an element.<br>
  * Класс для хранения информации о фокусировке элемента.

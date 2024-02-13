@@ -1,17 +1,17 @@
-import { StorybookCategory } from '../types.ts'
+import { StorybookCategory } from '../types'
 import {
   type StorybookArgs,
   type StorybookArgsValue,
   StorybookControl
-} from '../../../types/storybook.ts'
+} from '../../../types/storybook'
 
 import {
   buttonArgs,
   buttonValues
-} from './button.ts'
+} from './button'
 import {
   fieldMessageArgs, fieldMessageValues
-} from './fieldMessage.ts'
+} from './fieldMessage'
 
 export const checkboxArgs: StorybookArgs = {
   // Values

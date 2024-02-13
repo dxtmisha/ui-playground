@@ -1,5 +1,5 @@
 import { ComputedRef, VNode } from 'vue'
-import { type ConstrClass } from '../../types/constructor.ts'
+import { type ConstrClass } from '../../types/constructor'
 
 /**
  * Interface for describing which components need to be connected for work.<br>

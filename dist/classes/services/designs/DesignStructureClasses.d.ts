@@ -1,6 +1,6 @@
-import { DesignStructureItemAbstract } from './DesignStructureItemAbstract.ts';
-import { type PropertyItem } from '../../../types/property.ts';
-import { type DesignStructureClassesList } from '../../../types/design.ts';
+import { DesignStructureItemAbstract } from './DesignStructureItemAbstract';
+import { type PropertyItem } from '../../../types/property';
+import { type DesignStructureClassesList } from '../../../types/design';
 /**
  * A class for getting a list of classes of components.<br>
  * Класс для получения списка классов компонентов.

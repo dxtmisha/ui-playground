@@ -1,5 +1,5 @@
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type MaskEventData, type MaskViewList } from './typesBasic.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type MaskEventData, type MaskViewList } from './typesBasic';
 import { ComputedRef } from 'vue';
 /**
  * Interface for describing which components need to be connected for work.<br>

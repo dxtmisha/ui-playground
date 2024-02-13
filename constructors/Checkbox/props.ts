@@ -1,16 +1,16 @@
 import { type PropType } from 'vue'
 
-import type { ImageProps } from '../Image/props.ts'
+import type { ImageProps } from '../Image/props'
 
 import {
   type InputBasicProps,
   propsBasicInput
-} from '../Input/props.ts'
+} from '../Input/props'
 
 import {
   type UseFieldMessageProps,
   usePropsFieldMessage
-} from '../FieldMessage/useFieldMessageRef.ts'
+} from '../FieldMessage/useFieldMessageRef'
 
 /**
  * Type describing incoming properties.<br>

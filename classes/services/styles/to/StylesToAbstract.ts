@@ -1,8 +1,8 @@
-import { forEach } from '../../../../functions/data.ts'
+import { forEach } from '../../../../functions/data'
 
-import { type PropertiesItemsItem } from '../../properties/PropertiesItems.ts'
+import { type PropertiesItemsItem } from '../../properties/PropertiesItems'
 
-import { type PropertyItem, PropertyKey } from '../../../../types/property.ts'
+import { type PropertyItem, PropertyKey } from '../../../../types/property'
 
 /**
  * Base class for conversion.<br>

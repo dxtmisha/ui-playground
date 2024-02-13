@@ -1,4 +1,4 @@
-import { type PropertiesFilePath, type PropertiesFileValue } from './PropertiesFile.ts';
+import { type PropertiesFilePath, type PropertiesFileValue } from './PropertiesFile';
 /**
  * Processing for storing temporary files.<br>
  * Обработка для хранения временных файлов.

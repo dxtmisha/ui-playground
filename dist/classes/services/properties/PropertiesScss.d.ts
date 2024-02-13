@@ -1,4 +1,4 @@
-import { PropertiesItems } from './PropertiesItems.ts';
+import { PropertiesItems } from './PropertiesItems';
 /**
  * Class for working with SCSS.<br>
  * Класс для работы с SCSS.

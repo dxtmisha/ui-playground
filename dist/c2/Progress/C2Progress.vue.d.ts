@@ -1,4 +1,4 @@
-import { type ProgressSlots } from '../../constructors/Progress/types.ts';
+import { type ProgressSlots } from '../../constructors/Progress/types';
 declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     linear: {
         type: BooleanConstructor;

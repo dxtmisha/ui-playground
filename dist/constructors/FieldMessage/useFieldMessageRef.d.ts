@@ -1,6 +1,6 @@
 import { type ComputedRef, type VNode } from 'vue';
-import { DesignComponents } from '../../classes/design/DesignComponents.ts';
-import { type FieldMessageProps } from './props.ts';
+import { DesignComponents } from '../../classes/design/DesignComponents';
+import { type FieldMessageProps } from './props';
 export type UseFieldMessageComponent = {
     message?: object;
 };

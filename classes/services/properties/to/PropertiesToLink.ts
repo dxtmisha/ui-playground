@@ -1,10 +1,10 @@
-import { isObjectNotArray } from '../../../../functions/data.ts'
-import { splice } from '../../../../functions/object.ts'
+import { isObjectNotArray } from '../../../../functions/data'
+import { splice } from '../../../../functions/object'
 
-import { PropertiesTypes } from '../PropertiesTypes.ts'
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesTypes } from '../PropertiesTypes'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { type PropertyItem, PropertyKey, type PropertyList, PropertyType } from '../../../../types/property.ts'
+import { type PropertyItem, PropertyKey, type PropertyList, PropertyType } from '../../../../types/property'
 
 type PropertiesLinkItem = {
   name: string,

@@ -1,10 +1,10 @@
-import { toCamelCase } from '../../../../functions/string.ts'
+import { toCamelCase } from '../../../../functions/string'
 
-import { PropertiesTool } from '../../properties/PropertiesTool.ts'
-import { StylesToAbstract } from './StylesToAbstract.ts'
+import { PropertiesTool } from '../../properties/PropertiesTool'
+import { StylesToAbstract } from './StylesToAbstract'
 
-import { PropertyKey } from '../../../../types/property.ts'
-import { StylesTool } from '../StylesTool.ts'
+import { PropertyKey } from '../../../../types/property'
+import { StylesTool } from '../StylesTool'
 
 export const TYPES: string[] = [
   /* Flex */

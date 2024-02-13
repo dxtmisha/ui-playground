@@ -4,7 +4,7 @@ import {
   ChipProps,
   defaultsChip,
   propsChip
-} from '../../constructors/Chip/props.ts'
+} from '../../constructors/Chip/props'
 
 export const propsValues = {
   // :values [!] System label / Системная метка

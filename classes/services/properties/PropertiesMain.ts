@@ -1,18 +1,18 @@
-import { forEach, isFilled, isObjectNotArray } from '../../../functions/data.ts'
+import { forEach, isFilled, isObjectNotArray } from '../../../functions/data'
 
-import { PropertiesCache } from './PropertiesCache.ts'
-import { PropertiesPath } from './PropertiesPath.ts'
+import { PropertiesCache } from './PropertiesCache'
+import { PropertiesPath } from './PropertiesPath'
 
-import { PropertiesConvector } from './PropertiesConvector.ts'
-import { PropertiesStandard } from './PropertiesStandard.ts'
-import { PropertiesImport } from './PropertiesImport.ts'
-import { PropertiesSeparator } from './PropertiesSeparator.ts'
-import { PropertiesWrap } from './PropertiesWrap.ts'
+import { PropertiesConvector } from './PropertiesConvector'
+import { PropertiesStandard } from './PropertiesStandard'
+import { PropertiesImport } from './PropertiesImport'
+import { PropertiesSeparator } from './PropertiesSeparator'
+import { PropertiesWrap } from './PropertiesWrap'
 
 import {
   FILE_PROPERTY, PropertyItem,
   type PropertyList
-} from '../../../types/property.ts'
+} from '../../../types/property'
 
 const DIR_NAME = 'main'
 

@@ -1,4 +1,4 @@
-import { MutationProps } from '../../constructors/Mutation/props.ts';
+import { MutationProps } from '../../constructors/Mutation/props';
 export declare const propsValues: {};
 export type PropsToken = {};
 /**

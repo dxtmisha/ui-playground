@@ -1,4 +1,4 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
 /**
  * Class for converting all properties with sub-values.<br>
  * Класс для преобразования всех свойств с под-значениями.

@@ -5,7 +5,7 @@ import M3Progress from '../Progress/M3Progress.vue'
 import {
   progressArgs,
   progressValues
-} from './argTypes/progress.ts'
+} from './argTypes/progress'
 
 const meta = {
   title: 'M3/Progress',

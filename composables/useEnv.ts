@@ -1,4 +1,4 @@
-import { Env, EnvIndex } from '../classes/Env.ts'
+import { Env, EnvIndex } from '../classes/Env'
 
 /**
  * Returns the values from the env environment.<br>

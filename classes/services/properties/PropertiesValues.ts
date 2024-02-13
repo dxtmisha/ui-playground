@@ -1,4 +1,4 @@
-import { type PropertyItemPartial } from '../../../types/property.ts'
+import { type PropertyItemPartial } from '../../../types/property'
 
 /**
  * Class for working with the values.

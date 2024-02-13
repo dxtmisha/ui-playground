@@ -1,12 +1,12 @@
-import { CacheItem } from '../../classes/CacheItem.ts';
-import { MaskType } from './MaskType.ts';
-import { MaskRubberItem } from './MaskRubberItem.ts';
-import { MaskDate } from './MaskDate.ts';
-import { MaskCharacterLength } from './MaskCharacterLength.ts';
-import { MaskSpecial } from './MaskSpecial.ts';
-import { MaskFormat } from './MaskFormat.ts';
-import { type MaskProps } from './props.ts';
-import { type MaskList, type MaskSpecialInfo } from './typesBasic.ts';
+import { CacheItem } from '../../classes/CacheItem';
+import { MaskType } from './MaskType';
+import { MaskRubberItem } from './MaskRubberItem';
+import { MaskDate } from './MaskDate';
+import { MaskCharacterLength } from './MaskCharacterLength';
+import { MaskSpecial } from './MaskSpecial';
+import { MaskFormat } from './MaskFormat';
+import { type MaskProps } from './props';
+import { type MaskList, type MaskSpecialInfo } from './typesBasic';
 /**
  * Class for working with a mask.<br>
  * Класс для работы с маской.

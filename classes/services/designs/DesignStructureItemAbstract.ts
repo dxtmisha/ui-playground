@@ -1,5 +1,5 @@
-import { Properties } from '../properties/Properties.ts'
-import { PropertiesItemsItem } from '../properties/PropertiesItems.ts'
+import { Properties } from '../properties/Properties'
+import { PropertiesItemsItem } from '../properties/PropertiesItems'
 
 export abstract class DesignStructureItemAbstract<D> {
   protected properties: Properties

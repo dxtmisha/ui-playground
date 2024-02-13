@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { type ImageProps } from '../Image/props.ts';
+import { type ImageProps } from '../Image/props';
 /**
  * Type describing incoming properties.<br>
  * Тип, описывающий входящие свойства.

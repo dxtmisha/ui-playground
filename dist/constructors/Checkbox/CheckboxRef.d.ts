@@ -1,8 +1,8 @@
 import { type Ref } from 'vue';
-import { Checkbox } from './Checkbox.ts';
-import { type InputValidationItem } from '../Input/typesBasic.ts';
-import { type InputEmits } from '../Input/types.ts';
-import { type CheckboxProps } from './props.ts';
+import { Checkbox } from './Checkbox';
+import { type InputValidationItem } from '../Input/typesBasic';
+import { type InputEmits } from '../Input/types';
+import { type CheckboxProps } from './props';
 /**
  * Class for working with checkbox (Ref).<br>
  * Класс для работы с checkbox (Ref).

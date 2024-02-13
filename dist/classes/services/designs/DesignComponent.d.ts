@@ -1,4 +1,4 @@
-import { DesignCommand } from './DesignCommand.ts';
+import { DesignCommand } from './DesignCommand';
 /**
  * Class for creating a component or updating data.<br>
  * Класс для создания компонента или обновления данных.

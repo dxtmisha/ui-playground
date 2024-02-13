@@ -1,5 +1,5 @@
-import { PropertiesItems } from './PropertiesItems.ts';
-import { type PropertyList } from '../../../types/property.ts';
+import { PropertiesItems } from './PropertiesItems';
+import { type PropertyList } from '../../../types/property';
 /**
  * The main class for working with tokens.<br>
  * Главный класс для работы с токенами.

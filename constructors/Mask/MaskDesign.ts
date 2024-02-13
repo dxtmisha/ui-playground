@@ -1,18 +1,18 @@
 import { h, type VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
-import { MaskRef } from './MaskRef.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
+import { MaskRef } from './MaskRef'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type MaskEventData
-} from './typesBasic.ts'
+} from './typesBasic'
 import {
   type MaskProps
-} from './props.ts'
+} from './props'
 import {
   type MaskClasses,
   type MaskComponents,
@@ -20,7 +20,7 @@ import {
   type MaskExpose,
   type MaskSetup,
   type MaskSlots
-} from './types.ts'
+} from './types'
 
 /**
  * MaskDesign

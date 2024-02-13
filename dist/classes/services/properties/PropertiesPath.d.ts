@@ -1,4 +1,4 @@
-import { type PropertyListOrData } from '../../../types/property.ts';
+import { type PropertyListOrData } from '../../../types/property';
 export type PropertiesPathItem = {
     design: string;
     paths: string[][];

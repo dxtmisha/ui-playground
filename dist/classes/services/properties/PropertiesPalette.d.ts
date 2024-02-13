@@ -1,5 +1,5 @@
-import { PropertiesItems } from './PropertiesItems.ts';
-import { type PropertyItem } from '../../../types/property.ts';
+import { PropertiesItems } from './PropertiesItems';
+import { type PropertyItem } from '../../../types/property';
 export type PropertiesPaletteItem = {
     design: string;
     value: PropertyItem['value'][];

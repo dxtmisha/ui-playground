@@ -1,14 +1,14 @@
 import { h, VNode } from 'vue'
 
-import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract.ts'
+import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
 
 import {
   type ConstrOptions,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type InputProps
-} from './props.ts'
+} from './props'
 import {
   type InputClasses,
   type InputComponents,
@@ -16,7 +16,7 @@ import {
   type InputExpose,
   type InputSetup,
   type InputSlots
-} from './types.ts'
+} from './types'
 
 /**
  * InputDesign

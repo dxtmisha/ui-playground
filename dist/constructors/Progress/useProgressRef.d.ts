@@ -1,6 +1,6 @@
 import { type ComputedRef, type PropType, type VNode } from 'vue';
-import { DesignComponents } from '../../classes/design/DesignComponents.ts';
-import { type ProgressProps } from './props.ts';
+import { DesignComponents } from '../../classes/design/DesignComponents';
+import { type ProgressProps } from './props';
 export type UseProgressComponent = {
     progress?: object;
 };

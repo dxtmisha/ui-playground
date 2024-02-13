@@ -1,20 +1,20 @@
-import { WindowStatus } from './WindowStatus.ts';
-import { WindowClient } from './WindowClient.ts';
-import { WindowPersistent } from './WindowPersistent.ts';
-import { WindowHook } from './WindowHook.ts';
-import { WindowClasses } from './WindowClasses.ts';
-import { WindowElement } from './WindowElement.ts';
-import { WindowFlash } from './WindowFlash.ts';
-import { WindowCoordinates } from './WindowCoordinates.ts';
-import { WindowPosition } from './WindowPosition.ts';
-import { WindowOrigin } from './WindowOrigin.ts';
-import { WindowStatic } from './WindowStatic.ts';
-import { WindowOpen } from './WindowOpen.ts';
-import { WindowVerification } from './WindowVerification.ts';
-import { WindowEvent } from './WindowEvent.ts';
-import { WindowEmitOptions } from './typesBasic.ts';
-import { type ConstrClassObject, type ConstrStyles, type ConstrValue } from '../../types/constructor.ts';
-import { type WindowProps } from './props.ts';
+import { WindowStatus } from './WindowStatus';
+import { WindowClient } from './WindowClient';
+import { WindowPersistent } from './WindowPersistent';
+import { WindowHook } from './WindowHook';
+import { WindowClasses } from './WindowClasses';
+import { WindowElement } from './WindowElement';
+import { WindowFlash } from './WindowFlash';
+import { WindowCoordinates } from './WindowCoordinates';
+import { WindowPosition } from './WindowPosition';
+import { WindowOrigin } from './WindowOrigin';
+import { WindowStatic } from './WindowStatic';
+import { WindowOpen } from './WindowOpen';
+import { WindowVerification } from './WindowVerification';
+import { WindowEvent } from './WindowEvent';
+import { WindowEmitOptions } from './typesBasic';
+import { type ConstrClassObject, type ConstrStyles, type ConstrValue } from '../../types/constructor';
+import { type WindowProps } from './props';
 /**
  * The base class for working with the window.<br>
  * Базовый класс для работы с окном.

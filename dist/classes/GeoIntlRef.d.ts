@@ -1,8 +1,8 @@
 import { ComputedRef } from 'vue';
-import { type GeoDate } from '../types/geo.ts';
-import { type NumberOrString, type NumberOrStringOrDate } from '../types/basic.ts';
-import { type ItemValue } from '../types/object.ts';
-import { type RefOrNormal } from '../types/ref.ts';
+import { type GeoDate } from '../types/geo';
+import { type NumberOrString, type NumberOrStringOrDate } from '../types/basic';
+import { type ItemValue } from '../types/object';
+import { type RefOrNormal } from '../types/ref';
 /**
  * Reactive class for managing the formatting of numbers and dates.<br>
  * Реактивный класс для управления форматированием чисел и дат.

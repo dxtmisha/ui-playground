@@ -1,7 +1,7 @@
-import { WindowClient } from './WindowClient.ts';
-import { WindowElement } from './WindowElement.ts';
-import { WindowPosition } from './WindowPosition.ts';
-import type { ConstrStyles } from '../../types/constructor.ts';
+import { WindowClient } from './WindowClient';
+import { WindowElement } from './WindowElement';
+import { WindowPosition } from './WindowPosition';
+import type { ConstrStyles } from '../../types/constructor';
 /**
  * Class for defining the initial position for the animation.<br>
  * Класс для определения начального положения для анимации.

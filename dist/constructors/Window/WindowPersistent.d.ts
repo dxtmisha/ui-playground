@@ -1,4 +1,4 @@
-import type { WindowProps } from './props.ts';
+import type { WindowProps } from './props';
 /**
  * Class for managing the animation output before closing the window.<br>
  * Класс управления выводом анимации перед закрытием окна.

@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// import { isFilled } from '../../functions/data.ts'
-import { inArray } from '../../functions/object.ts'
+// import { isFilled } from '../../functions/data'
+import { inArray } from '../../functions/object'
 
-import { ProgressDesign } from '../../constructors/Progress/ProgressDesign.ts'
+import { ProgressDesign } from '../../constructors/Progress/ProgressDesign'
 
 import {
   type ConstrClasses,
   type ConstrStyles
-} from '../../types/constructor.ts'
+} from '../../types/constructor'
 import {
   type ProgressEmits,
   type ProgressSlots
-} from '../../constructors/Progress/types.ts'
+} from '../../constructors/Progress/types'
 
 import {
   propsInstruction,
   propsValues
-} from './props.ts'
+} from './props'
 
 const emits = defineEmits<ProgressEmits>()
 const props = defineProps({ ...propsInstruction })

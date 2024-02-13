@@ -1,6 +1,6 @@
-import { InputValue } from '../Input/InputValue.ts';
-import { type ImageProps } from '../Image/props.ts';
-import { type CheckboxProps } from './props.ts';
+import { InputValue } from '../Input/InputValue';
+import { type ImageProps } from '../Image/props';
+import { type CheckboxProps } from './props';
 /**
  * Class for working with icons for checkbox.<br>
  * Класс для работы с иконками для checkbox.

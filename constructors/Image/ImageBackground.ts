@@ -1,11 +1,11 @@
-import { isFilled } from '../../functions/data.ts'
+import { isFilled } from '../../functions/data'
 
-import { ImageData } from './ImageData.ts'
-import { ImageCoordinator } from './ImageCoordinator.ts'
-import { ImageAdaptiveItem } from './ImageAdaptiveItem.ts'
+import { ImageData } from './ImageData'
+import { ImageCoordinator } from './ImageCoordinator'
+import { ImageAdaptiveItem } from './ImageAdaptiveItem'
 
-import { type NumberOrString } from '../../types/basic.ts'
-import { type ImageProps } from './props.ts'
+import { type NumberOrString } from '../../types/basic'
+import { type ImageProps } from './props'
 
 /**
  * A class for getting the value of background.<br>

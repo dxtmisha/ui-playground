@@ -1,6 +1,6 @@
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts'
+import { PropertiesToAbstract } from './PropertiesToAbstract'
 
-import { PropertyKey } from '../../../../types/property.ts'
+import { PropertyKey } from '../../../../types/property'
 
 /**
  * A class for transforming components.<br>

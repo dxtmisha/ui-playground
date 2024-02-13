@@ -1,9 +1,9 @@
-import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems.ts'
+import { PropertiesItems, type PropertiesItemsItem } from '../properties/PropertiesItems'
 
-import { StylesTool } from './StylesTool.ts'
-import { StylesToVar } from './to/StylesToVar.ts'
+import { StylesTool } from './StylesTool'
+import { StylesToVar } from './to/StylesToVar'
 
-import { PropertyCategory } from '../../../types/property.ts'
+import { PropertyCategory } from '../../../types/property'
 
 /**
  * Class for generating base properties from tokens.<br>

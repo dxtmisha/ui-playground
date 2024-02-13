@@ -5,7 +5,7 @@ import M3Button from '../Button/M3Button.vue'
 import {
   buttonArgs,
   buttonValues
-} from './argTypes/button.ts'
+} from './argTypes/button'
 
 const meta = {
   title: 'M3/Button',

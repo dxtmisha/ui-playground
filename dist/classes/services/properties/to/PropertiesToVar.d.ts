@@ -1,6 +1,6 @@
-import { type PropertiesItemsItem } from '../PropertiesItems.ts';
-import { PropertiesToAbstract } from './PropertiesToAbstract.ts';
-import { type PropertyItem, PropertyType } from '../../../../types/property.ts';
+import { type PropertiesItemsItem } from '../PropertiesItems';
+import { PropertiesToAbstract } from './PropertiesToAbstract';
+import { type PropertyItem, PropertyType } from '../../../../types/property';
 /**
  * A class for working with custom properties in CSS.<br>
  * Класс для работы с пользовательским свойством в CSS.

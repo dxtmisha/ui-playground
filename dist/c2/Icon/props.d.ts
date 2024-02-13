@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-import { IconProps } from '../../constructors/Icon/props.ts';
+import { IconProps } from '../../constructors/Icon/props';
 export declare const propsValues: {
     animationType: string[];
     variation: string[];
@@ -57,7 +57,7 @@ export declare const propsInstruction: {
         type: PropType<"12" | "16" | "20" | "24" | "32" | undefined>;
         default: "12" | "16" | "20" | "24" | "32" | undefined;
     };
-    icon: PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
-    iconActive: PropType<string | import("../../constructors/Image/props.ts").ImageProps | undefined>;
+    icon: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
+    iconActive: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     active: BooleanConstructor;
 };

@@ -1,4 +1,4 @@
-import { type ElementOrString, type ElementOrWindow } from '../types/element.ts';
+import { type ElementOrString, type ElementOrWindow } from '../types/element';
 /**
  * Checks if object is Window.<br>
  * Проверяет, является ли объект Window.

@@ -1,8 +1,8 @@
 import { type ShallowRef } from 'vue';
-import { type ConstrClass } from '../../types/constructor.ts';
-import { type InputValidationItem } from './typesBasic.ts';
-import { type UseLabelSetup, type UseLabelSlots } from '../uses/ref/useLabel.ts';
-import { type UseEnabledSetup } from '../uses/ref/useEnabled.ts';
+import { type ConstrClass } from '../../types/constructor';
+import { type InputValidationItem } from './typesBasic';
+import { type UseLabelSetup, type UseLabelSlots } from '../uses/ref/useLabel';
+import { type UseEnabledSetup } from '../uses/ref/useEnabled';
 /**
  * Interface for describing which components need to be connected for work.<br>
  * Интерфейс для описания, какие компоненты надо подключить для работы.

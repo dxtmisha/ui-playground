@@ -1,13 +1,13 @@
-import { isSelected } from '../functions/data.ts'
-import { copyObject } from '../functions/object.ts'
-import { useEnv } from '../composables/useEnv.ts'
+import { isSelected } from '../functions/data'
+import { copyObject } from '../functions/object'
+import { useEnv } from '../composables/useEnv'
 
-import { DataStorage } from './DataStorage.ts'
+import { DataStorage } from './DataStorage'
 
 import {
   type GeoItem,
   type GeoItemFull
-} from '../types/geo.ts'
+} from '../types/geo'
 
 import geo from '../media/geo.json'
 

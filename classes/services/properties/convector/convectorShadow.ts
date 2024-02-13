@@ -1,7 +1,7 @@
-import { isObject } from '../../../../functions/data.ts'
-import { toArray } from '../../../../functions/object.ts'
+import { isObject } from '../../../../functions/data'
+import { toArray } from '../../../../functions/object'
 
-import type { PropertyItemInput } from '../../../../types/property.ts'
+import type { PropertyItemInput } from '../../../../types/property'
 
 export type ConvectorShadowItem = {
   type: string

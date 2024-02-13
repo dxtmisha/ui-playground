@@ -1,9 +1,9 @@
-import { toKebabCase } from '../../../../functions/string.ts'
+import { toKebabCase } from '../../../../functions/string'
 
-import { PropertiesItemsItem } from '../PropertiesItems.ts'
-import { PropertiesToVar } from './PropertiesToVar.ts'
+import { PropertiesItemsItem } from '../PropertiesItems'
+import { PropertiesToVar } from './PropertiesToVar'
 
-import { PropertyType } from '../../../../types/property.ts'
+import { PropertyType } from '../../../../types/property'
 
 /**
  * Class for working with custom styles in CSS.<br>

@@ -1,4 +1,4 @@
-import { PropertiesItems } from '../properties/PropertiesItems.ts';
+import { PropertiesItems } from '../properties/PropertiesItems';
 /**
  * Base class for generating basic properties.<br>
  * Базовый класс для генерации базовых свойств.

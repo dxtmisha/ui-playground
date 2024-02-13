@@ -5,7 +5,7 @@ import C2Progress from '../Progress/C2Progress.vue'
 import {
   progressArgs,
   progressValues
-} from './argTypes/progress.ts'
+} from './argTypes/progress'
 
 const meta = {
   title: 'C2/Progress',

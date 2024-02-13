@@ -1,5 +1,5 @@
-import { StylesTool } from '../StylesTool.ts'
-import { StylesToAbstract } from './StylesToAbstract.ts'
+import { StylesTool } from '../StylesTool'
+import { StylesToAbstract } from './StylesToAbstract'
 
 /**
  * Class for processing data by property.<br>

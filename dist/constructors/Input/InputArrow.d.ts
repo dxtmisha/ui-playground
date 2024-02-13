@@ -1,5 +1,5 @@
-import { InputValue } from './InputValue.ts';
-import { type InputBasicProps } from './props.ts';
+import { InputValue } from './InputValue';
+import { type InputBasicProps } from './props';
 /**
  * Class for working with input arrows.<br>
  * Класс для работы со стрелками ввода.

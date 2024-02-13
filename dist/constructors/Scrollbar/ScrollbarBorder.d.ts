@@ -1,5 +1,5 @@
-import { type ConstrClassObject, type ConstrValue } from '../../types/constructor.ts';
-import { type ScrollbarProps } from './props.ts';
+import { type ConstrClassObject, type ConstrValue } from '../../types/constructor';
+import { type ScrollbarProps } from './props';
 /**
  * Class for updating the scroll position and displaying the border.<br>
  * Класс для обновления положения скролла и вывода бордера.

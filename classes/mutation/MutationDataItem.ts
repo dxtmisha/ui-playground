@@ -1,10 +1,10 @@
-import { forEach, isFilled, isString, transformation } from '../../functions/data.ts'
-import { toCamelCaseFirst } from '../../functions/string.ts'
-import { toArray } from '../../functions/object.ts'
-import { getAttributes, getElementId } from '../../functions/element.ts'
+import { forEach, isFilled, isString, transformation } from '../../functions/data'
+import { toCamelCaseFirst } from '../../functions/string'
+import { toArray } from '../../functions/object'
+import { getAttributes, getElementId } from '../../functions/element'
 
-import { MutationCollect } from './MutationCollect.ts'
-import { MutationGlobal } from './MutationGlobal.ts'
+import { MutationCollect } from './MutationCollect'
+import { MutationGlobal } from './MutationGlobal'
 
 import {
   KEY_NAME,
@@ -13,7 +13,7 @@ import {
   type MutationSlots,
   type MutationSlotsItemOrString,
   MutationStatus
-} from '../../types/mutation.ts'
+} from '../../types/mutation'
 
 /**
  * Class for managing the element.<br>
