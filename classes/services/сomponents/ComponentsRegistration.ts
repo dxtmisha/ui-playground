@@ -57,6 +57,9 @@ export class ComponentsRegistration {
         '',
         '  return app',
         '}',
+        '',
+        'export * from \'./../functions/all.ts\'',
+        'export * from \'./../classes/all.ts\'',
         ''
       ].join('\r\n'),
       'ts'

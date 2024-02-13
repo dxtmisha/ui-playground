@@ -52,8 +52,6 @@ export class ComponentsMain {
         `;(window as any).${name} = MutationGlobal`,
         `;(window as any).${name}_VUE = MutationGlobalRef`,
         '',
-        'export * from \'./../functions/all.ts\'',
-        'export * from \'./../classes/all.ts\'',
         `export { create${toCamelCaseFirst(name)}Components } from './create.ts'`,
         ''
       ].join('\r\n'),

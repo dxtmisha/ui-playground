@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ui-component": "ts-node commands/ui.ts component && tsc lib/create.ts --declaration",
+    "ui-component": "ts-node commands/ui.ts component",
     "build-ui-component": "ts-node commands/ui.ts component && vue-tsc && vite build"
   },
   "workspaces": [
@@ -24,6 +24,7 @@
     "dist",
     "functions",
     "lib/components.ts",
+    "lib/create.ts",
     "lib/types.d.ts",
     "m2",
     "m3",
@@ -36,12 +37,12 @@
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./lib/types.d.ts",
+  "types": "./lib/create.ts",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
       "require": "./dist/ui.umd.cjs",
-      "types": "./lib/types.d.ts"
+      "types": "./lib/create.ts"
     },
     "./c1/*": {
       "import": "./c1/*/index.ts",

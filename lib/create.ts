@@ -20,3 +20,6 @@ export function createUiComponents<A extends Component> (App: A) {
 
   return app
 }
+
+export * from './../functions/all.ts'
+export * from './../classes/all.ts'
