@@ -2,7 +2,7 @@
   "name": "ui",
   "private": false,
   "version": "0.0.0-dev.2",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -34,12 +34,12 @@
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./lib/types.d.ts",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
       "require": "./dist/ui.umd.cjs",
-      "types": "./lib/types.d.ts"
+      "types": "./lib/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
