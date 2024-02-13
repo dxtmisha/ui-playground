@@ -28,10 +28,7 @@
     "media",
     "packages",
     "styles",
-    "types",
-    ".env",
-    "tsconfig.json",
-    "tsconfig.node.json"
+    "types"
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",

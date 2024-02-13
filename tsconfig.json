@@ -20,16 +20,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "rootDirs": [
-      "c1",
-      "c2",
-      "m2",
-      "m3"
-    ],
-    "declaration": true,
-    "outDir": "dist",
-    "emitDeclarationOnly": true
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     // design
