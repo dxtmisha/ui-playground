@@ -5,12 +5,12 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "ui-component": "ts-node commands/ui.ts component",
-    "build-ui-component": "ts-node commands/ui.ts component && vite build && vue-tsc --emitDeclarationOnly"
+    "build-ui-component": "ts-node commands/ui.ts component && vue-tsc && vite build"
   },
   "workspaces": [
     "packages/*"
