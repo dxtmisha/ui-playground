@@ -36,12 +36,12 @@
   ],
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./lib/index.d.ts",
+  "types": "./lib/types.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ui.js",
       "require": "./dist/ui.umd.cjs",
-      "types": "./lib/index.d.ts"
+      "types": "./lib/types.d.ts"
     },
     "./c1/*": {
       "import": "./c1/*/index.ts",
