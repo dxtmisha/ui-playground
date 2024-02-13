@@ -43,6 +43,11 @@ export declare class DesignComponent extends DesignCommand {
      */
     protected makeIndex(): this;
     /**
+     * This code generates the index.d.ts.<br>
+     * Генерация файла index.d.ts.
+     */
+    protected makeIndexD(): this;
+    /**
      * Getting the contents of a file from a constructor.<br>
      * Получение содержимого файла из конструктора.
      * @param file file name /<br>имя файла
