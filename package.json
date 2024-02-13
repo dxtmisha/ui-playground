@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ui-component": "ts-node commands/ui.ts component",
+    "ui-component": "ts-node commands/ui.ts component && tsc lib/create.ts --declaration",
     "build-ui-component": "ts-node commands/ui.ts component && vue-tsc && vite build"
   },
   "workspaces": [
