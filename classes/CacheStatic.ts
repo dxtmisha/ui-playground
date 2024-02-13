@@ -1,4 +1,4 @@
-import { Cache } from './Cache.ts'
+import { Cache } from './Cache'
 
 /**
  * Class for working with fast cache during code execution.<br>

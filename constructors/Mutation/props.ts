@@ -5,6 +5,8 @@
  * Тип, описывающий входящие свойства.
  */
 export type MutationProps = {
+  disabled?: boolean
+
   // Tokens
   // :type [!] System label / Системная метка
   // :type [!] System label / Системная метка
@@ -26,6 +28,8 @@ export const defaultsMutation: MutationProps = {
  * Конструктор для свойства.
  */
 export const propsMutation = {
+  disabled: Boolean,
+
   // Tokens
   ...{
     // :prop [!] System label / Системная метка
