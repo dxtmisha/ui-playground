@@ -17,7 +17,7 @@
   "files": [
     "c1",
     "c2",
-    "classes",
+    "classes/*",
     "composables",
     "constructors",
     "dist",
@@ -25,7 +25,9 @@
     "lib/types.d.ts",
     "m2",
     "m3",
-    "media",
+    "media/*",
+    "media/flags",
+    "media/templates/project",
     "packages",
     "styles",
     "types"
