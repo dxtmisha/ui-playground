@@ -8,6 +8,7 @@ const FILE_PROPS = 'props.ts'
 const FILE_STYLE = 'styleToken.scss'
 const FILE_CLASS = 'DesignComponent.vue'
 const FILE_INDEX = 'index.ts'
+const FILE_INDEX_D = 'index.d.ts'
 
 /**
  * Class for creating a component or updating data.<br>
@@ -48,6 +49,7 @@ export class DesignComponent extends DesignCommand {
       .makeStyle()
       .makeMain()
       .makeIndex()
+      .makeIndexD()
   }
 
   /**
@@ -119,6 +121,18 @@ export class DesignComponent extends DesignCommand {
    */
   protected makeIndex (): this {
     const file = FILE_INDEX
+    const sample = this.readDefinable(file)
+
+    this.write(file, sample.get())
+    return this
+  }
+
+  /**
+   * This code generates the index.d.ts.<br>
+   * Генерация файла index.d.ts.
+   */
+  protected makeIndexD (): this {
+    const file = FILE_INDEX_D
     const sample = this.readDefinable(file)
 
     this.write(file, sample.get())
