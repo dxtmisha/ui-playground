@@ -20,7 +20,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    /* --- */
+    "outDir": "dist",
+    "declaration": true,
+    "types": [
+      "node",
+      "vite/client"
+    ]
   },
   "include": [
     // design
