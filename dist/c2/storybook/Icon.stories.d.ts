@@ -1,4 +1,5 @@
 import type { StoryObj } from '@storybook/vue3';
+import '../icons';
 declare const meta: {
     title: string;
     component: {

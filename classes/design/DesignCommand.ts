@@ -7,7 +7,7 @@ import { PropertiesCache } from '../services/properties/PropertiesCache'
 import { Styles } from '../services/styles/Styles'
 import { DesignConstructor } from '../services/designs/DesignConstructor'
 import { DesignComponent } from '../services/designs/DesignComponent'
-import { DesignIcons } from './DesignIcons'
+import { DesignIcons } from '../services/designs/DesignIcons.ts'
 
 import { ComponentsItems } from '../services/сomponents/ComponentsItems'
 import { ComponentsList } from '../services/сomponents/ComponentsList'
@@ -15,6 +15,7 @@ import { ComponentsMain } from '../services/сomponents/ComponentsMain'
 import { ComponentsTypes } from '../services/сomponents/ComponentsTypes'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle'
 import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration'
+import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
 
 config()
 
@@ -86,6 +87,8 @@ export class DesignCommand {
     this.componentsMain.make()
     this.componentsTypes.make()
     this.componentsStyle.make()
+
+    this.makePackageJson()
   }
 
   /**
@@ -133,5 +136,28 @@ export class DesignCommand {
     })
 
     return this
+  }
+
+  protected makePackageJson (): void {
+    const components = this.components.getComponentList()
+    const packageJson = PropertiesFile.readFile('package.json')
+    const exports: Record<string, any> = {
+      '.': {
+        import: './dist/index.js',
+        require: './dist/index.umd.cjs',
+        types: './dist/lib/index.d.ts'
+      },
+      './style.css': './dist/style.css'
+    }
+
+    components.forEach(component => {
+      exports[`./${component.codeFull}`] = {
+        import: `./dist/${component.codeFull}.js`,
+        require: `./dist/${component.codeFull}.umd.cjs`,
+        types: `./dist/${component.dir}/index.d.ts`
+      }
+    })
+
+    console.log('package', packageJson, components)
   }
 }

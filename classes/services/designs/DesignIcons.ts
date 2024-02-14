@@ -1,8 +1,8 @@
-import { toCamelCase } from '../../functions/string'
+import { toCamelCase } from '../../../functions/string.ts'
 
-import { PropertiesFile } from '../services/properties/PropertiesFile'
+import { PropertiesFile } from '../properties/PropertiesFile.ts'
 
-import { DIR_ICONS, FILE_ICONS } from '../../types/property'
+import { DIR_ICONS, FILE_ICONS } from '../../../types/property.ts'
 
 export type DesignIconsItem = {
   name: string
