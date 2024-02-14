@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     root,
-    base: '/',
+    base: '/test/',
     publicDir: `${root}/public`,
     plugins: [
       legacy({

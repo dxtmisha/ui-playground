@@ -156,14 +156,20 @@ export class Api {
     type = 'application/json;charset=UTF-8',
     init = {}
   }: ApiFetch): Promise<T> {
-    const dataHeaders = this.getHeaders(headers, type)
-    const dataMethod = dataHeaders && method === ApiMethodItem.get ? ApiMethodItem.post : method
+    try {
+      const dataHeaders = this.getHeaders(headers, type)
+      const dataMethod = dataHeaders && method === ApiMethodItem.get ? ApiMethodItem.post : method
 
-    return await (await fetch(this.getUrl(path), {
-      ...init,
-      method: dataMethod,
-      headers: dataHeaders,
-      body: this.getBody(request)
-    })).json()
+      return await (await fetch(this.getUrl(path), {
+        ...init,
+        method: dataMethod,
+        headers: dataHeaders,
+        body: this.getBody(request)
+      })).json()
+    } catch (e) {
+      console.error(e)
+    }
+
+    return {} as T
   }
 }
