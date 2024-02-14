@@ -148,7 +148,8 @@ export class DesignCommand {
         types: './dist/lib/index.d.ts'
       },
       './style': './lib/style.scss',
-      './style.css': './dist/style.css'
+      './style.css': './dist/style.css',
+      './dist/*': './dist/*'
     }
 
     components.forEach(component => {

@@ -64,7 +64,7 @@ export class ComponentsItems {
    * Returns a list of design names.<br>
    * Возвращает список названий дизайнов.
    */
-  protected getDesigns (): string[] {
+  getDesigns (): string[] {
     const list: string[] = []
 
     process.env.DESIGNS

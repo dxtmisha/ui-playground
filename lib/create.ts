@@ -7,6 +7,8 @@ import { forEach } from '../functions/data'
 import { components } from './components'
 import './types.d.ts'
 
+import './../c2/icons.ts'
+
 export function registrationUiComponents (app: App): void {
   forEach(components, (component, name) => {
     app.component(name, component)
