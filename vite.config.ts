@@ -12,6 +12,9 @@ export default defineConfig({
     vue(),
     dtsPlugin({
       include: [
+        'lib/**/*.ts',
+        'classes/**/*.ts',
+        'functions/**/*.ts',
         'c1/**/*.vue'
       ]
     })
