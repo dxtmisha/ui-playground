@@ -152,7 +152,7 @@ export class DesignCommand {
 
     components.forEach(component => {
       exports[`./${component.codeFull}`] = {
-        import: `./dist/${component.codeFull}.js`,
+        import: `./${component.design}/${component.dir}/index.ts`,
         require: `./dist/${component.codeFull}.umd.cjs`,
         types: `./dist/${component.design}/${component.dir}/index.d.ts`
       }
