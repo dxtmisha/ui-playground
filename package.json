@@ -10,55 +10,17 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "ui-component": "vite-node commands/ui.ts component",
-    "build-ui-component": "ts-node commands/ui.ts component && vue-tsc && vite build"
+    "build-ui-component": "vite-node commands/ui.ts component && vue-tsc && vite build"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "files": [
-    "c1",
-    "c2",
-    "classes",
-    "composables",
-    "constructors",
-    "dist",
-    "functions",
-    "lib/components.ts",
-    "lib/create.ts",
-    "lib/types.d.ts",
-    "m2",
-    "m3",
-    "media/flags",
-    "media/templates/project",
-    "media/geo.json",
-    "packages",
-    "styles",
-    "types"
+    "dist"
   ],
-  "main": "./dist/ui.umd.cjs",
-  "module": "./dist/ui.js",
-  "types": "./lib/create.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/ui.js",
-      "require": "./dist/ui.umd.cjs",
-      "types": "./lib/create.ts"
-    },
-    "./c1/*": {
-      "import": "./c1/*/index.ts",
-      "types": "./c1/*/index.d.ts"
-    },
-    "./c2/*": {
-      "import": "./c2/*/index.ts",
-      "types": "./c2/*/index.d.ts"
-    },
-    "./m2/*": {
-      "import": "./m2/*/index.ts",
-      "types": "./m2/*/index.d.ts"
-    },
-    "./m3/*": {
-      "import": "./m3/*/index.ts",
-      "types": "./m3/*/index.d.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./style.css": "./dist/style.css"
   },
