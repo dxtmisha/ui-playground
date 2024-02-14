@@ -1,4 +1,4 @@
-import { _ as f } from "./M2Image.vue_vue_type_style_index_0_lang-BVVW_a4F.js";
+import { _ as m } from "./M2Image.vue_vue_type_style_index_0_lang-DAfGvHDT.js";
 export {
-  f as default
+  m as M2Image
 };
