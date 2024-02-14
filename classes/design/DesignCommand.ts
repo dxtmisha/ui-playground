@@ -2,12 +2,13 @@ import { config } from 'dotenv'
 import { isFilled } from '../../functions/data'
 import { toKebabCase } from '../../functions/string'
 
+import { PropertiesFile } from '../services/properties/PropertiesFile'
 import { PropertiesCache } from '../services/properties/PropertiesCache'
 
 import { Styles } from '../services/styles/Styles'
 import { DesignConstructor } from '../services/designs/DesignConstructor'
 import { DesignComponent } from '../services/designs/DesignComponent'
-import { DesignIcons } from '../services/designs/DesignIcons.ts'
+import { DesignIcons } from '../services/designs/DesignIcons'
 
 import { ComponentsItems } from '../services/сomponents/ComponentsItems'
 import { ComponentsList } from '../services/сomponents/ComponentsList'
@@ -15,7 +16,6 @@ import { ComponentsMain } from '../services/сomponents/ComponentsMain'
 import { ComponentsTypes } from '../services/сomponents/ComponentsTypes'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle'
 import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration'
-import { PropertiesFile } from '../services/properties/PropertiesFile.ts'
 
 config()
 

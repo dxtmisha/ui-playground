@@ -1,8 +1,8 @@
-import { toCamelCase } from '../../../functions/string.ts'
+import { toCamelCase } from '../../../functions/string'
 
-import { PropertiesFile } from '../properties/PropertiesFile.ts'
+import { PropertiesFile } from '../properties/PropertiesFile'
 
-import { DIR_ICONS, FILE_ICONS } from '../../../types/property.ts'
+import { DIR_ICONS, FILE_ICONS } from '../../../types/property'
 
 export type DesignIconsItem = {
   name: string
@@ -40,7 +40,7 @@ export class DesignIcons {
       })
 
       this.write([
-        'import { Icons } from \'../classes/Icons.ts\'',
+        'import { Icons } from \'../classes/Icons\'',
         '',
         ...imports,
         '',
