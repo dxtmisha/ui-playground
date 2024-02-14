@@ -20,6 +20,7 @@ export type ApiFetch = {
  */
 export declare class Api {
     protected static readonly url: string;
+    protected static readonly urlLocalhost: string;
     protected static urlCommand: string;
     /**
      * Is the server local.<br>

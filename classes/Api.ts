@@ -28,6 +28,7 @@ export type ApiFetch = {
  */
 export class Api {
   protected static readonly url = useEnv<string>('api', '/')
+  protected static readonly urlLocalhost = `${useEnv<string>('BASE_URL', '/')}public/`
   protected static urlCommand: string = 'ui'
 
   /**
@@ -67,7 +68,9 @@ export class Api {
    * @param path path to the script /<br>путь к скрипту
    */
   static getUrl (path: string): string {
-    return `${this.url}${path}`
+    const url = this.isLocalhost() ? this.urlLocalhost : this.url
+
+    return `${url}${path}`
       .replace('{locale}', Geo.getLocation())
       .replace('{country}', Geo.getCountry())
       .replace('{language}', Geo.getLanguage())

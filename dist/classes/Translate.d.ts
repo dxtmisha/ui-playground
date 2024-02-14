@@ -4,7 +4,7 @@
  */
 export declare class Translate {
     protected static readonly url: string;
-    protected static readonly urlLocalhost = "public/translate.json";
+    protected static readonly urlLocalhost = "translate.json";
     protected static readonly data: Record<string, string>;
     protected static cache: string[];
     protected static resolveList: (() => void)[];
