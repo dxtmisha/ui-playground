@@ -1,4 +1,4 @@
-import { Icons } from '../classes/Icons.ts'
+import { Icons } from '../classes/Icons'
 
 import alertCircle from './tokens/icons/alert-circle.svg'
 import arrowBottomLeftLg from './tokens/icons/arrow-bottom-left-lg.svg'
