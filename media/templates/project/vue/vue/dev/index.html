@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="./public/logo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>coralclub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cc-body {
+            color: rgb(54, 65, 77);
+        }
+
+        .cc-body__header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+
+            height: 128px;
+
+            border-bottom: 1px solid rgb(240, 240, 240);
+        }
+
+        .cc-body__header__logo {
+            width: 184px;
+        }
+
+        .cc-body__header__logo img {
+            width: 100%;
+        }
+
+        .cc-body__main {
+            margin: 0 auto;
+
+            max-width: 1900px;
+            min-height: 1024px;
+        }
+
+        .cc-body__footer {
+            min-height: 256px;
+
+            background-color: rgb(54, 66, 76);
+        }
+
+        @media (min-width: 1400px) and (max-width: 1919px) {
+            .cc-body__main {
+                padding: 0 calc(32px + (164 - 32) * (100vw - 1024px) / (1920 - 1024));
+            }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1399px) {
+            .cc-body__main {
+                padding: 0 calc(32px + (164 - 32) * (100vw - 1024px) / (1920 - 1024));
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 1023px) {
+            .cc-body__main {
+                padding: 0 32px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .cc-body__main {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cc-body">
+    <header class="cc-body__header">
+        <div class="cc-body__header__logo">
+            <img src="./public/coralclub.svg" alt="coralclub">
+        </div>
+    </header>
+    <main class="cc-body__main">
+        <div id="app"></div>
+        <script type="module" src="./main.ts"></script>
+    </main>
+    <footer class="cc-body__footer"></footer>
+</div>
+</body>
+</html>

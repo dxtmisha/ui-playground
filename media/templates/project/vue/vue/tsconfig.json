@@ -27,6 +27,11 @@
     "dev/**/*.ts",
     "dev/**/*.tsx",
     "dev/**/*.vue",
+    "dev/**/*.html",
+    "production/**/*.ts",
+    "production/**/*.tsx",
+    "production/**/*.vue",
+    "production/**/*.html",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue"

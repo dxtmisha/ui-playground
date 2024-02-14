@@ -1,3 +1,4 @@
+import { App } from 'vue';
 export declare const CLASS_NAME = "d-mutation";
 export declare const KEY_NAME: string;
 export declare const KEY_UI: string;
@@ -27,5 +28,7 @@ export type MutationProjectItem = {
     item: any;
     router?: Record<string, any>;
     store?: Record<string, any>;
+    init?: (app: App) => void;
+    translate?: string[];
 };
 export type MutationProject = Record<string, MutationProjectItem>;

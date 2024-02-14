@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 import vue from '@vitejs/plugin-vue'
+// import legacy from '@vitejs/plugin-legacy'
 import dtsPlugin from 'vite-plugin-dts'
 
 import components from './lib/components.json'
@@ -11,6 +12,9 @@ export default defineConfig(() => {
   return {
     plugins: [
       vue(),
+      // legacy({
+      //   targets: ['defaults', 'not IE 11']
+      // }),
       dtsPlugin({
         clearPureImport: false,
         copyDtsFiles: true,

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-
+console.log(import.meta)
 </script>
 
 <template>
   <div class="c2-main">
     <div class="flex items-center justify-center h-24">
-      кодируем здесь...
+      Кодируем здесь...
     </div>
   </div>
 </template>

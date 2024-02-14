@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite'
 
-import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue'
+import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const root = mode === 'development' ? './dev' : './production'
+
   return {
-    root: mode === 'development' ? undefined : 'production',
-    base: '/test/',
+    root,
+    base: '/',
+    publicDir: `${root}/public`,
     plugins: [
       legacy({
         targets: ['defaults', 'not IE 11']

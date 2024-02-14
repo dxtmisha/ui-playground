@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import { createRouter, type Router, type RouterOptions } from 'vue-router'
 import { createStore, Store, StoreOptions } from 'vuex'
-import { forEach } from '../../functions/data'
+import { forEach, isFilled } from '../../functions/data'
 import { toCamelCaseFirst } from '../../functions/string'
 
+import { Translate } from '../Translate'
 import { MutationGlobal } from './MutationGlobal'
 
 import { KEY_GLOBAL_PROJECT, type MutationProjectItem } from '../../types/mutation'
@@ -20,12 +21,16 @@ export class MutationGlobalRef {
    * @param app project object /<br>объект проекта
    * @param router data for Router /<br>данные для Router
    * @param store data for Store /<br>данные для Store
+   * @param init function for additional object management /<br>функция для дополнительного управления объектом
+   * @param translate list of text translation keys /<br>список ключей текстовых переводов
    */
   static addComponent (
     name: string,
     app: any,
     router?: RouterOptions,
-    store?: StoreOptions<any>
+    store?: StoreOptions<any>,
+    init?: MutationProjectItem['init'],
+    translate?: MutationProjectItem['translate']
   ): void {
     const global = window as any
     const item: MutationProjectItem = { item: app }
@@ -36,6 +41,14 @@ export class MutationGlobalRef {
 
     if (store) {
       item.store = store
+    }
+
+    if (init) {
+      item.init = init
+    }
+
+    if (translate) {
+      item.translate = translate
     }
 
     if (KEY_GLOBAL_PROJECT in global) {
@@ -72,22 +85,41 @@ export class MutationGlobalRef {
     const item = MutationGlobal.getComponentGlobalItem(name)
 
     if (item) {
-      const app = createApp(item.item)
-
-      if (item?.router) {
-        app.use(this.createRouter(item.router as RouterOptions))
+      if (isFilled(item?.translate)) {
+        Translate.add(item.translate).then(() => this.createAppItem(name, item))
+      } else {
+        this.createAppItem(name, item)
       }
-
-      if (item?.store) {
-        app.use(this.createStore(item.store as StoreOptions<any>))
-      }
-
-      forEach(MutationGlobal.getComponentList(), (component, name) => {
-        app.component(name, component)
-      })
-
-      app.mount(`*[data-app="${name}"]`)
     }
+  }
+
+  /**
+   * Creates a vue object.<br>
+   * Создает объект vue.
+   * @param name project name /<br>название проекта
+   * @param item global project /<br>глобальный проект
+   */
+  private static createAppItem (
+    name: string,
+    item: MutationProjectItem
+  ): void {
+    const app = createApp(item.item)
+
+    if (item?.router) {
+      app.use(this.createRouter(item.router as RouterOptions))
+    }
+
+    if (item?.store) {
+      app.use(this.createStore(item.store as StoreOptions<any>))
+    }
+
+    if (item?.init) {
+      item.init(app)
+    }
+
+    forEach(MutationGlobal.getComponentList(), (component, name) => app.component(name, component))
+
+    app.mount(`*[data-app="${name}"]`)
   }
 
   /**

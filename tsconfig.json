@@ -84,6 +84,7 @@
     "media/templates/**/*.d.ts",
     "media/templates/**/*.tsx",
     "media/templates/**/*.vue",
+    "media/templates/**/*.html",
     // src
     "src/**/*.ts",
     "src/**/*.d.ts",
@@ -94,6 +95,14 @@
     "types/**/*.d.ts",
     "types/**/*.tsx",
     "types/**/*.vue"
+  ],
+  "exclude": [
+    // media/templates/project
+    "media/templates/project/**/*.ts",
+    "media/templates/project/**/*.d.ts",
+    "media/templates/project/**/*.tsx",
+    "media/templates/project/**/*.vue",
+    "media/templates/project/**/*.html"
   ],
   "references": [
     {

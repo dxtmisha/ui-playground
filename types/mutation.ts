@@ -1,3 +1,5 @@
+import { App } from 'vue'
+
 import { toKebabCase } from '../functions/string'
 import { useEnv } from '../composables/useEnv'
 
@@ -34,5 +36,7 @@ export type MutationProjectItem = {
   item: any
   router?: Record<string, any>
   store?: Record<string, any>
+  init?: (app: App) => void
+  translate?: string[]
 }
 export type MutationProject = Record<string, MutationProjectItem>
