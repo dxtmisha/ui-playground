@@ -24,12 +24,112 @@
       "require": "./dist/index.umd.cjs",
       "types": "./dist/lib/index.d.ts"
     },
+    "./style.css": "./dist/style.css",
+    "./M2Icon": {
+      "import": "./dist/M2Icon.js",
+      "require": "./dist/M2Icon.umd.cjs",
+      "types": "./dist/Icon/index.d.ts"
+    },
+    "./M2Image": {
+      "import": "./dist/M2Image.js",
+      "require": "./dist/M2Image.umd.cjs",
+      "types": "./dist/Image/index.d.ts"
+    },
+    "./M2Ripple": {
+      "import": "./dist/M2Ripple.js",
+      "require": "./dist/M2Ripple.umd.cjs",
+      "types": "./dist/Ripple/index.d.ts"
+    },
+    "./M3Button": {
+      "import": "./dist/M3Button.js",
+      "require": "./dist/M3Button.umd.cjs",
+      "types": "./dist/Button/index.d.ts"
+    },
+    "./M3Checkbox": {
+      "import": "./dist/M3Checkbox.js",
+      "require": "./dist/M3Checkbox.umd.cjs",
+      "types": "./dist/Checkbox/index.d.ts"
+    },
+    "./M3Chip": {
+      "import": "./dist/M3Chip.js",
+      "require": "./dist/M3Chip.umd.cjs",
+      "types": "./dist/Chip/index.d.ts"
+    },
+    "./M3FieldMessage": {
+      "import": "./dist/M3FieldMessage.js",
+      "require": "./dist/M3FieldMessage.umd.cjs",
+      "types": "./dist/FieldMessage/index.d.ts"
+    },
+    "./M3Icon": {
+      "import": "./dist/M3Icon.js",
+      "require": "./dist/M3Icon.umd.cjs",
+      "types": "./dist/Icon/index.d.ts"
+    },
+    "./M3Image": {
+      "import": "./dist/M3Image.js",
+      "require": "./dist/M3Image.umd.cjs",
+      "types": "./dist/Image/index.d.ts"
+    },
+    "./M3Input": {
+      "import": "./dist/M3Input.js",
+      "require": "./dist/M3Input.umd.cjs",
+      "types": "./dist/Input/index.d.ts"
+    },
+    "./M3Mask": {
+      "import": "./dist/M3Mask.js",
+      "require": "./dist/M3Mask.umd.cjs",
+      "types": "./dist/Mask/index.d.ts"
+    },
+    "./M3Progress": {
+      "import": "./dist/M3Progress.js",
+      "require": "./dist/M3Progress.umd.cjs",
+      "types": "./dist/Progress/index.d.ts"
+    },
+    "./M3Ripple": {
+      "import": "./dist/M3Ripple.js",
+      "require": "./dist/M3Ripple.umd.cjs",
+      "types": "./dist/Ripple/index.d.ts"
+    },
+    "./M3Scrollbar": {
+      "import": "./dist/M3Scrollbar.js",
+      "require": "./dist/M3Scrollbar.umd.cjs",
+      "types": "./dist/Scrollbar/index.d.ts"
+    },
+    "./M3Window": {
+      "import": "./dist/M3Window.js",
+      "require": "./dist/M3Window.umd.cjs",
+      "types": "./dist/Window/index.d.ts"
+    },
     "./C1Icon": {
       "import": "./dist/C1Icon.js",
-      "require": "./dist/C1Icon.cjs",
-      "types": "./dist/c1/Icon/index.d.ts"
+      "require": "./dist/C1Icon.umd.cjs",
+      "types": "./dist/Icon/index.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./C1Image": {
+      "import": "./dist/C1Image.js",
+      "require": "./dist/C1Image.umd.cjs",
+      "types": "./dist/Image/index.d.ts"
+    },
+    "./C2Button": {
+      "import": "./dist/C2Button.js",
+      "require": "./dist/C2Button.umd.cjs",
+      "types": "./dist/Button/index.d.ts"
+    },
+    "./C2Icon": {
+      "import": "./dist/C2Icon.js",
+      "require": "./dist/C2Icon.umd.cjs",
+      "types": "./dist/Icon/index.d.ts"
+    },
+    "./C2Image": {
+      "import": "./dist/C2Image.js",
+      "require": "./dist/C2Image.umd.cjs",
+      "types": "./dist/Image/index.d.ts"
+    },
+    "./C2Progress": {
+      "import": "./dist/C2Progress.js",
+      "require": "./dist/C2Progress.umd.cjs",
+      "types": "./dist/Progress/index.d.ts"
+    }
   },
   "dependencies": {
     "sass": "^1.70.0",
