@@ -1,5 +1,3 @@
-import { toCamelCaseFirst } from '../../../functions/string'
-
 import { ComponentsItems } from './ComponentsItems'
 
 import { PropertiesFile } from '../properties/PropertiesFile'
@@ -52,7 +50,7 @@ export class ComponentsMain {
         `;(window as any).${name} = MutationGlobal`,
         `;(window as any).${name}_VUE = MutationGlobalRef`,
         '',
-        `export { create${toCamelCaseFirst(name)}Components } from './create'`,
+        'export * from \'./create\'',
         ''
       ].join('\r\n'),
       'ts'

@@ -1,4 +1,4 @@
-import { _ as r } from "./M3Button.vue_vue_type_style_index_0_lang-VjGlAH6G.js";
+import { _ as f } from "./M3Button.vue_vue_type_style_index_0_lang-emjb_Np6.js";
 export {
-  r as M3Button
+  f as default
 };

@@ -40,8 +40,8 @@ export declare const propsInstruction: {
     readonly: BooleanConstructor;
     adaptive: PropType<"icon" | undefined>;
     size: {
-        type: PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: PropType<"sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined>;
+        default: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;

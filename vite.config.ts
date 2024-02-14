@@ -41,7 +41,7 @@ export default defineConfig(() => {
             const data: Record<string, any> = {}
 
             components.forEach(item => {
-              data[item.name] = resolve(__dirname, `${item.path}/index.ts`)
+              data[item.name] = resolve(__dirname, `${item.path}/${item.name}.vue`)
             })
 
             return data

@@ -1,4 +1,4 @@
-import { _ as a } from "./C2Icon.vue_vue_type_style_index_0_lang-FaqKTfgA.js";
+import { _ as f } from "./C2Icon.vue_vue_type_style_index_0_lang-CjnTROij.js";
 export {
-  a as C2Icon
+  f as default
 };

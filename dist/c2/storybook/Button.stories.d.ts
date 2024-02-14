@@ -10,8 +10,8 @@ declare const meta: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+                type: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined>;
+                default: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
@@ -59,8 +59,8 @@ declare const meta: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+                type: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined>;
+                default: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
@@ -95,7 +95,7 @@ declare const meta: {
                 detail: Record<string, any> | undefined;
             }) => any) | undefined;
         }, {
-            size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+            size: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
             link: boolean;
             focus: boolean;
             disabled: boolean;
@@ -125,8 +125,8 @@ declare const meta: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+                type: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined>;
+                default: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
@@ -161,7 +161,7 @@ declare const meta: {
                 detail: Record<string, any> | undefined;
             }) => any) | undefined;
         }, {}, {}, {}, {}, {
-            size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+            size: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
             link: boolean;
             focus: boolean;
             disabled: boolean;
@@ -188,8 +188,8 @@ declare const meta: {
         readonly: BooleanConstructor;
         adaptive: import("vue").PropType<"icon" | undefined>;
         size: {
-            type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-            default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+            type: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined>;
+            default: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
         };
         outline: BooleanConstructor;
         link: BooleanConstructor;
@@ -230,7 +230,7 @@ declare const meta: {
             detail: Record<string, any> | undefined;
         }) => void;
     }, string, {
-        size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        size: "sm" | "md" | "lg" | "xl" | "xs" | "x" | undefined;
         link: boolean;
         focus: boolean;
         disabled: boolean;

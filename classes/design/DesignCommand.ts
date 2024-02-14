@@ -154,7 +154,7 @@ export class DesignCommand {
       exports[`./${component.codeFull}`] = {
         import: `./dist/${component.codeFull}.js`,
         require: `./dist/${component.codeFull}.umd.cjs`,
-        types: `./dist/${component.dir}/index.d.ts`
+        types: `./dist/${component.design}/${component.dir}/${component.codeFull}.vue.d.ts`
       }
     })
 
