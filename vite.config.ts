@@ -16,7 +16,14 @@ export default defineConfig({
         'classes/**/*.ts',
         'functions/**/*.ts',
         'c1/**/*.vue'
-      ]
+      ],
+      beforeWriteFile: async (filePath: string, content: string) => {
+        console.log('filePath', filePath, resolve(__dirname, 'dist/index.d.ts'))
+        return {
+          filePath: resolve(__dirname, 'dist/index.d.ts'),
+          content
+        }
+      }
     })
   ],
   build: {
