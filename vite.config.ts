@@ -14,16 +14,16 @@ export default defineConfig({
       include: [
         'lib/**/*.ts',
         'classes/**/*.ts',
+        'composables/**/*.ts',
+        'constructors/**/*.ts',
         'functions/**/*.ts',
-        'c1/**/*.vue'
-      ],
-      beforeWriteFile: async (filePath: string, content: string) => {
-        console.log('filePath', filePath, resolve(__dirname, 'dist/index.d.ts'))
-        return {
-          filePath: resolve(__dirname, 'dist/index.d.ts'),
-          content
-        }
-      }
+        'lib/**/*.ts',
+        'types/**/*.ts',
+        'c1/**/*.(ts|vue)',
+        'c2/**/*.(ts|vue)',
+        'm2/**/*.(ts|vue)',
+        'm3/**/*.(ts|vue)'
+      ]
     })
   ],
   build: {
@@ -34,7 +34,7 @@ export default defineConfig({
           const data: Record<string, any> = {}
 
           components.forEach(item => {
-            data[item.name] = resolve(__dirname, `${item.path}/${item.name}.vue`)
+            data[item.name] = resolve(__dirname, `${item.path}/index.ts`)
           })
 
           return data
@@ -46,7 +46,7 @@ export default defineConfig({
           return `${entryName}.js`
         }
 
-        return `${entryName}.${format}`
+        return `${entryName}.umd.${format}`
       }
     },
     rollupOptions: {

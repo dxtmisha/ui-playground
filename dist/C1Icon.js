@@ -1,4 +1,4 @@
-import { _ as f } from "./C1Icon.vue_vue_type_style_index_0_lang-OnlV-Ggh.js";
+import { _ as a } from "./C1Icon.vue_vue_type_style_index_0_lang-BgaIkfjC.js";
 export {
-  f as default
+  a as C1Icon
 };

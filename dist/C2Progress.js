@@ -1,4 +1,4 @@
-import { _ as f } from "./C2Progress.vue_vue_type_style_index_0_lang-mAPumD9A.js";
+import { _ as s } from "./C2Progress.vue_vue_type_style_index_0_lang-rvuwXOId.js";
 export {
-  f as default
+  s as C2Progress
 };

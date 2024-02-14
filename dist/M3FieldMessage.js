@@ -1,4 +1,4 @@
-import { _ as f } from "./M3FieldMessage.vue_vue_type_style_index_0_lang-CC8mJxro.js";
+import { _ as a } from "./M3FieldMessage.vue_vue_type_style_index_0_lang-BCllNmzJ.js";
 export {
-  f as default
+  a as M3FieldMessage
 };

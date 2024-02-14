@@ -1,4 +1,4 @@
-import { _ as f } from "./M3Icon.vue_vue_type_style_index_0_lang-BsUXSiQE.js";
+import { _ as a } from "./M3Icon.vue_vue_type_style_index_0_lang-D5eYB9OL.js";
 export {
-  f as default
+  a as M3Icon
 };

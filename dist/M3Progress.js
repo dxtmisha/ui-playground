@@ -1,4 +1,4 @@
-import { _ as f } from "./M3Progress.vue_vue_type_style_index_0_lang-Cz1qbxgE.js";
+import { _ as s } from "./M3Progress.vue_vue_type_style_index_0_lang-Bs8N7AaD.js";
 export {
-  f as default
+  s as M3Progress
 };
