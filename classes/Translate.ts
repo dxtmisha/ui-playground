@@ -11,7 +11,7 @@ import { useEnv } from '../composables/useEnv'
  */
 export class Translate {
   protected static readonly url = useEnv<string>('apiTranslate')
-  protected static readonly urlLocalhost = '/public/translate.json'
+  protected static readonly urlLocalhost = 'public/translate.json'
   protected static readonly data: Record<string, string> = {}
 
   protected static cache: string[] = []
