@@ -158,6 +158,16 @@ export class DesignCommand {
       }
     })
 
-    console.log('package', packageJson, components)
+    if (packageJson) {
+      PropertiesFile.write(
+        [],
+        'package',
+        {
+          ...packageJson,
+          exports
+        },
+        'json'
+      )
+    }
   }
 }

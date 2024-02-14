@@ -49,7 +49,7 @@ export class DesignComponent extends DesignCommand {
       .makeStyle()
       .makeMain()
       .makeIndex()
-      .makeIndexD()
+      // .makeIndexD()
   }
 
   /**
