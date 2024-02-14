@@ -2,9 +2,9 @@
 // Этот файл генерируется скриптом, не редактировать.
 
 import { type App, type Component, createApp } from 'vue'
-import { forEach } from '../functions/data.ts'
+import { forEach } from '../functions/data'
 
-import { components } from './components.ts'
+import { components } from './components'
 import './types.d.ts'
 
 export function registrationUiComponents (app: App): void {

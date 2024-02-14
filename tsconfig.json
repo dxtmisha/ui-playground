@@ -29,9 +29,6 @@
     ]
   },
   "include": [
-    // design
-    "design-component.ts",
-    "design-main.ts",
     // Library
     "lib/**/*.ts",
     "lib/**/*.d.ts",

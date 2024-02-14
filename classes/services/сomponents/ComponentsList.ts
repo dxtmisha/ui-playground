@@ -40,6 +40,7 @@ export class ComponentsList {
 
     const imports: string[] = []
     const list: string[] = []
+    const json: string[] = []
 
     components.forEach(({
       design,
@@ -48,6 +49,7 @@ export class ComponentsList {
     }) => {
       imports.push(`import { ${codeFull} } from './../${design}/${dir}'`)
       list.push(`  ${codeFull}`)
+      json.push(codeFull)
     })
 
     PropertiesFile.write(
@@ -65,6 +67,13 @@ export class ComponentsList {
         ''
       ].join('\r\n'),
       'ts'
+    )
+
+    PropertiesFile.write(
+      [COMPONENTS_DIR],
+      COMPONENTS_FILE,
+      json,
+      'json'
     )
 
     return this

@@ -8,16 +8,19 @@ import dtsPlugin from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [
     vue(),
-    dtsPlugin()
+    dtsPlugin({
+      include: [
+        'c1/**/*.vue'
+      ]
+    })
   ],
   build: {
     lib: {
       entry: {
-        c: resolve(__dirname, 'lib/create.ts'),
-        i: resolve(__dirname, 'lib/index.ts')
+        i: resolve(__dirname, 'lib')
       },
       name: 'UI',
-      fileName: 'lib/ui'
+      fileName: 'ui'
     },
     rollupOptions: {
       external: ['vue'],

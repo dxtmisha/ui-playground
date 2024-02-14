@@ -3,7 +3,7 @@
 
 import '@vue/runtime-core'
 
-import { components } from './components.ts'
+import { components } from './components'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
