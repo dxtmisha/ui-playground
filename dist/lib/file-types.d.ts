@@ -2,9 +2,7 @@
 // Этот файл генерируется скриптом, не редактировать.
 
 declare module 'ui/M2Icon' {
-  import item from 'ui/dist/m2/Icon/M2Icon.vue.d.ts'
-  export type M2Icon = InstanceType<typeof item>
-  export const M2Icon = item
+  export { M2Icon } from 'ui/dist/m2/Icon/index.d.ts'
 }
 declare module 'ui/M2Image' {
   export { M2Image } from 'ui/dist/m2/Image/index.d.ts'

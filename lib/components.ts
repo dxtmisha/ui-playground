@@ -15,6 +15,7 @@ import { M3Mask } from './../m3/Mask'
 import { M3Progress } from './../m3/Progress'
 import { M3Ripple } from './../m3/Ripple'
 import { M3Scrollbar } from './../m3/Scrollbar'
+import { M3Test } from './../m3/Test'
 import { M3Window } from './../m3/Window'
 import { C1Icon } from './../c1/Icon'
 import { C1Image } from './../c1/Image'
@@ -38,6 +39,7 @@ export const components = {
   M3Progress,
   M3Ripple,
   M3Scrollbar,
+  M3Test,
   M3Window,
   C1Icon,
   C1Image,

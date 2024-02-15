@@ -123,21 +123,27 @@ export class DesignCommand {
    */
   protected makeConstructorComponent (): this {
     const designs = this.components.get()
+    const componentDef = this.component
 
-    designs.forEach(design => {
-      if (this.isDesign(design.name)) {
-        new DesignIcons(design.name).make()
+    if (componentDef !== '') {
+      new DesignConstructor(`d.${componentDef}`).make()
+      new DesignComponent(`${this.design}.${componentDef}`).make()
+    } else {
+      designs.forEach(design => {
+        if (this.isDesign(design.name)) {
+          new DesignIcons(design.name).make()
 
-        design.components.forEach(component => {
-          if (this.isComponent(component.name)) {
-            console.log(`Component update: ${component.alias}`)
+          design.components.forEach(component => {
+            if (this.isComponent(component.name)) {
+              console.log(`Component update: ${component.alias}`)
 
-            new DesignConstructor(`d.${component.name}`).make()
-            new DesignComponent(component.alias).make()
-          }
-        })
-      }
-    })
+              new DesignConstructor(`d.${component.name}`).make()
+              new DesignComponent(component.alias).make()
+            }
+          })
+        }
+      })
+    }
 
     return this
   }

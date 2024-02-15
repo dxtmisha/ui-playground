@@ -1,4 +1,4 @@
-import { _ as r } from "./M3Mask.vue_vue_type_style_index_0_lang-DCYfE5E5.js";
+import { _ as r } from "./M3Mask.vue_vue_type_style_index_0_lang-C9ePovlU.js";
 export {
   r as M3Mask
 };
