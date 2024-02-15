@@ -147,7 +147,7 @@ export class DesignCommand {
         require: './dist/index.umd.cjs',
         types: './dist/lib/index.d.ts'
       },
-      './types': {
+      './componentTypes': {
         types: './dist/lib/types.d.ts'
       },
       './create': {

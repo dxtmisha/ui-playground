@@ -2,6 +2,7 @@ import { createApp, type Plugin } from 'vue'
 import { isFilled, Translate } from 'ui'
 import { registrationUiComponents } from 'ui/create'
 
+import 'ui/types'
 import 'ui/dist/style.css'
 import '../src/style.scss'
 
