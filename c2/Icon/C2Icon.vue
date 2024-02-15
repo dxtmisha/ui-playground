@@ -22,6 +22,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'C2Icon'
+})
+
 const emits = defineEmits<IconEmits>()
 const props = defineProps({ ...propsInstruction })
 

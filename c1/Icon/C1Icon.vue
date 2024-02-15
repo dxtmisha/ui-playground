@@ -22,6 +22,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'C1Icon'
+})
+
 const emits = defineEmits<IconEmits>()
 const props = defineProps({ ...propsInstruction })
 
@@ -73,7 +77,7 @@ defineExpose(design.expose())
 </script>
 
 <template>
-  <render />
+  <render/>
 </template>
 
 <style lang="scss">

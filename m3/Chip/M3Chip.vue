@@ -23,6 +23,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Chip'
+})
+
 const emits = defineEmits<ChipEmits>()
 const props = defineProps({ ...propsInstruction })
 

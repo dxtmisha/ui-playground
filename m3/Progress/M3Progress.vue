@@ -20,6 +20,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Progress'
+})
+
 const emits = defineEmits<ProgressEmits>()
 const props = defineProps({ ...propsInstruction })
 

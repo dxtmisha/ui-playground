@@ -20,6 +20,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Scrollbar'
+})
+
 const emits = defineEmits<ScrollbarEmits>()
 const props = defineProps({ ...propsInstruction })
 

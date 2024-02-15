@@ -24,6 +24,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Checkbox'
+})
+
 const emits = defineEmits<CheckboxEmits>()
 const props = defineProps({ ...propsInstruction })
 

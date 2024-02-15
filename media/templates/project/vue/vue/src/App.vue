@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTranslateRef } from 'ui'
 
+
 const translate = useTranslateRef([
   'about',
   'shop'
@@ -18,7 +19,7 @@ const translate = useTranslateRef([
       <router-link to="/shop">{{ translate.shop }}</router-link>
     </div>
     <div class="pt-12">
-      <router-view/><c1-icon/>
+      <router-view/>
     </div>
   </div>
 </template>

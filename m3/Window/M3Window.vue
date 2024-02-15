@@ -22,6 +22,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Window'
+})
+
 const emits = defineEmits<WindowEmits>()
 const props = defineProps({ ...propsInstruction })
 

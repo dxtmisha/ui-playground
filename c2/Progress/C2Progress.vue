@@ -20,6 +20,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'C2Progress'
+})
+
 const emits = defineEmits<ProgressEmits>()
 const props = defineProps({ ...propsInstruction })
 

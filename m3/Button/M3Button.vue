@@ -22,6 +22,10 @@ import {
 import M3Icon from '../Icon/M3Icon.vue'
 import M3Progress from '../Progress/M3Progress.vue'
 
+defineOptions({
+  name: 'M3Button'
+})
+
 const emits = defineEmits<ButtonEmits>()
 const props = defineProps({ ...propsInstruction })
 

@@ -20,6 +20,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Ripple'
+})
+
 const emits = defineEmits<RippleEmits>()
 const props = defineProps({ ...propsInstruction })
 

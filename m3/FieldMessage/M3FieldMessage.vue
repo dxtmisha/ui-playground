@@ -20,6 +20,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3FieldMessage'
+})
+
 const emits = defineEmits<FieldMessageEmits>()
 const props = defineProps({ ...propsInstruction })
 

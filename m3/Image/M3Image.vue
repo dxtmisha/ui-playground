@@ -20,6 +20,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Image'
+})
+
 const emits = defineEmits<ImageEmits>()
 const props = defineProps({ ...propsInstruction })
 

@@ -23,6 +23,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'C2Button'
+})
+
 const emits = defineEmits<ButtonEmits>()
 const props = defineProps({ ...propsInstruction })
 

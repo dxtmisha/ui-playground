@@ -20,6 +20,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Mask'
+})
+
 const emits = defineEmits<MaskEmits>()
 const props = defineProps({ ...propsInstruction })
 

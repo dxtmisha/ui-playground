@@ -20,6 +20,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'C1Image'
+})
+
 const emits = defineEmits<ImageEmits>()
 const props = defineProps({ ...propsInstruction })
 

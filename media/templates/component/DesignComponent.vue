@@ -20,6 +20,10 @@
 // :component.once   propsValues
 // :component.once } from './props'
 
+// :component.once defineOptions({
+// :component.once   name: 'DesignComponent'
+// :component.once })
+
 // :component.once const emits = defineEmits<ComponentEmits>()
 // :component.once const props = defineProps({ ...propsInstruction })
 
@@ -58,7 +62,7 @@
 </script>
 
 <template>
-  <render />
+  <render/>
 </template>
 
 <style lang="scss">

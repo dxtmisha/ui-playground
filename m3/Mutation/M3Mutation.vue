@@ -22,6 +22,10 @@ import {
   // propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Mutation'
+})
+
 const emits = defineEmits<MutationEmits>()
 const props = defineProps({ ...propsInstruction })
 

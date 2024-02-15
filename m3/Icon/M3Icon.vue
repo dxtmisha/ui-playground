@@ -22,6 +22,10 @@ import {
   propsValues
 } from './props'
 
+defineOptions({
+  name: 'M3Icon'
+})
+
 const emits = defineEmits<IconEmits>()
 const props = defineProps({ ...propsInstruction })
 
