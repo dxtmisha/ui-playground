@@ -25,7 +25,8 @@
     /* --- */
     "types": [
       "node",
-      "vite/client"
+      "vite/client",
+      "ui/lib/types"
     ]
   },
   "include": [

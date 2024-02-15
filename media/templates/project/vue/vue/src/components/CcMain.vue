@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <h1 class="c2-font"></h1>
+    <h1 class="c2-font--heading--sm">{{ translate.main }}</h1>
   </div>
 </template>
 
