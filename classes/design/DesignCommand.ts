@@ -16,6 +16,7 @@ import { ComponentsMain } from '../services/сomponents/ComponentsMain'
 import { ComponentsTypes } from '../services/сomponents/ComponentsTypes'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle'
 import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration'
+import { ComponentsFileTypes } from '../services/сomponents/ComponentsFileTypes.ts'
 
 config()
 
@@ -28,6 +29,7 @@ export class DesignCommand {
   protected readonly componentsList: ComponentsList
   protected readonly componentsMain: ComponentsMain
   protected readonly componentsTypes: ComponentsTypes
+  protected readonly componentsFileTypes: ComponentsFileTypes
   protected readonly componentsStyle: ComponentsStyle
   protected readonly componentsRegistration: ComponentsRegistration
 
@@ -44,6 +46,7 @@ export class DesignCommand {
     this.componentsRegistration = new ComponentsRegistration(this.components)
     this.componentsMain = new ComponentsMain(this.components)
     this.componentsTypes = new ComponentsTypes(this.components)
+    this.componentsFileTypes = new ComponentsFileTypes(this.components)
     this.componentsStyle = new ComponentsStyle(this.components)
   }
 
@@ -86,6 +89,7 @@ export class DesignCommand {
     this.componentsRegistration.make()
     this.componentsMain.make()
     this.componentsTypes.make()
+    this.componentsFileTypes.make()
     this.componentsStyle.make()
 
     this.makePackageJson()
