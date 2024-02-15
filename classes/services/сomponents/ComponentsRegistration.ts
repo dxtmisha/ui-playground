@@ -60,9 +60,6 @@ export class ComponentsRegistration {
         '',
         '  return app',
         '}',
-        '',
-        'export * from \'./../functions/all\'',
-        'export * from \'./../classes/all\'',
         ''
       ].join('\r\n'),
       'ts'

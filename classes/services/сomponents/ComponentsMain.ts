@@ -51,6 +51,7 @@ export class ComponentsMain {
         `;(window as any).${name}_VUE = MutationGlobalRef`,
         '',
         'export * from \'./create\'',
+        'export * from \'./index\'',
         ''
       ].join('\r\n'),
       'ts'

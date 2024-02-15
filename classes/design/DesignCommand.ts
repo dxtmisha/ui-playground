@@ -147,6 +147,16 @@ export class DesignCommand {
         require: './dist/index.umd.cjs',
         types: './dist/lib/index.d.ts'
       },
+      './create': {
+        import: './dist/create.js',
+        require: './dist/create.umd.cjs',
+        types: './dist/lib/create.d.ts'
+      },
+      './main': {
+        import: './dist/main.js',
+        require: './dist/main.umd.cjs',
+        types: './dist/lib/main.d.ts'
+      },
       './style': './lib/style.scss',
       './style.css': './dist/style.css',
       './dist/*': './dist/*'

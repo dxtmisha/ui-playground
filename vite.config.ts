@@ -41,6 +41,8 @@ export default defineConfig(() => {
       lib: {
         entry: {
           index: resolve(__dirname, 'lib/index.ts'),
+          create: resolve(__dirname, 'lib/create.ts'),
+          main: resolve(__dirname, 'lib/main.ts'),
           ...(() => {
             const data: Record<string, any> = {}
 

@@ -3,5 +3,3 @@ import './types.d.ts';
 import './../c2/icons.ts';
 export declare function registrationUiComponents(app: App): void;
 export declare function createUiComponents<A extends Component>(App: A): App<Element>;
-export * from './../functions/all';
-export * from './../classes/all';
