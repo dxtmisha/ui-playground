@@ -58,13 +58,20 @@ export class Translate {
    * @param names list of codes to get translations /<br>список кодов для получения переводов
    */
   static async getList<T extends string[]> (names: T): Promise<TranslateList<T>> {
-    const list: Record<string, string> = {}
+    return new Promise(resolve => {
+      const list: Record<string, string> = {}
+      let end = 0
 
-    for (const name of names) {
-      list[name] = await this.get(name)
-    }
+      for (const name of names) {
+        this.get(name).then(text => {
+          list[name] = text
 
-    return list as TranslateList<T>
+          if (++end >= names.length) {
+            resolve(list as TranslateList<T>)
+          }
+        })
+      }
+    })
   }
 
   /**
@@ -87,7 +94,7 @@ export class Translate {
           this.resolveList.forEach(resolve => resolve())
           this.resolveList = []
         })
-      }, 240)
+      }, 1000)
     })
   }
 

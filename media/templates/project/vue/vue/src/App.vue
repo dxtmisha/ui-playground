@@ -3,6 +3,7 @@ import { useTranslateRef } from 'ui'
 
 const translate = useTranslateRef([
   'about',
+  'return',
   'shop'
 ] as const)
 </script>
@@ -21,7 +22,7 @@ const translate = useTranslateRef([
       <router-view/>
     </div>
     <div>
-      
+      <c2-button :label="translate.return"/>
     </div>
   </div>
 </template>
