@@ -1,11 +1,307 @@
 @import "../../../styles/all";
 
 .c2-font {
-  --c2-font-basic: var(--c2-typography-text);
+  &--label {
+    &--xxs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-75)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--xs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-enum-13)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--sm {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--md {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--lg {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+  }
+  
+  &--body {
+    &--xs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-enum-13)});
+      font-weight: var(--c2-ot-typography-fontWeight-400);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--sm {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--c2-ot-typography-fontWeight-400);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--md {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
+      font-weight: var(--c2-ot-typography-fontWeight-400);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--lg {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--c2-ot-typography-fontWeight-400);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-175)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+  }
+  
+  &--heading {
+    &--xxs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-125)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-175)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-62)});
+    }
+    
+    &--xs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-150)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-200)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--sm {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-175)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-225)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-87)});
+    }
+    
+    &--md {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-200)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-250)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-100)});
+    }
+    
+    &--lg {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-225)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-275)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-112)});
+    }
+    
+    &--xl {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-250)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-300)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-125)});
+    }
+  }
+  
+  &--display {
+    &--xxs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-250)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-300)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-125)});
+    }
+    
+    &--xs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-300)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-400)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-175)});
+    }
+    
+    &--sm {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-400)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-450)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-200)});
+    }
+    
+    &--xl {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-550)});
+      font-weight: var(--c2-ot-typography-fontWeight-600);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-550)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-none);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-275)});
+    }
+  }
+  
+  &--strikethrough {
+    &--xxs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-75)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-through);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--xs {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-enum-13)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-through);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--sm {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-87)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-100)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-through);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--md {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-100)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-125)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-through);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+    
+    &--lg {
+      font-family: var(--c2-ot-typography-fontFamily-base);
+      @include fontSize(#{var(--c2-ot-typography-fontSize-size-scale-112)});
+      font-weight: var(--c2-ot-typography-fontWeight-500);
+      @include lineHeight(#{var(--c2-ot-typography-lineHeight-150)});
+      letter-spacing: var(--c2-ot-typography-tracking-lg);
+      @include textCase(#{var(--c2-ot-typography-textCase-none)});
+      text-decoration: var(--c2-ot-typography-textDecoration-through);
+      @include paragraphSpacing(#{var(--c2-ot-typography-paragraphSpacing-size-scale-75)});
+    }
+  }
   
   &--fontFamily {
-    &--basic {
-      font-family: var(--c2-ot-typography-fontFamily);
+    &--global {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    &--geo {
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    
+    &--isr {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+    
+    &--tha {
+      font-family: 'Noto Sans Thai', sans-serif;
+    }
+    
+    &--kor {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    
+    &--arm {
+      font-family: 'Noto Sans Armenian', sans-serif;
+    }
+    
+    &--base {
+      font-family: var(--c2-ot-typography-fontFamily-global);
     }
   }
 }

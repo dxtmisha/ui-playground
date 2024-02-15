@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <h1 class="c2-font"></h1>
+  </div>
 </template>
 
 <style scoped lang="scss">

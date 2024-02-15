@@ -86,13 +86,17 @@
     "value": {
       "file|import-st": "tokens/_init/st.json#st",
       "file|import-light": "tokens/_init/theme/light.json#st",
-      "file|import-web": "tokens/platform/web.json#st",
       "web": {
         "_type": "none"
       }
     },
     "_type": "var",
     "_category": "root"
+  },
+  "typography": {
+    "value": {
+      "file|import-web": "tokens/typography.json#typography"
+    }
   },
   "base": {
     "value": {
