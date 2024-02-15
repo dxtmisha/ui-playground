@@ -3,8 +3,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     width: import("vue").PropType<string | undefined>;
     height: import("vue").PropType<string | undefined>;
     adaptive: {
-        type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-        default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
+        type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+        default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
     };
     overscroll: {
         type: BooleanConstructor;
@@ -45,8 +45,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     width: import("vue").PropType<string | undefined>;
     height: import("vue").PropType<string | undefined>;
     adaptive: {
-        type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-        default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
+        type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+        default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
     };
     overscroll: {
         type: BooleanConstructor;
@@ -81,18 +81,18 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
 }, {
     contextmenu: boolean;
     disabled: boolean;
-    adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
+    adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
     open: boolean;
     dense: boolean;
+    flash: boolean;
     axis: "x" | "y" | "on" | undefined;
     indent: number | undefined;
-    overscroll: boolean;
-    fullscreen: boolean;
     staticMode: boolean;
     persistent: boolean;
     autoClose: boolean;
-    flash: boolean;
     inDom: boolean;
+    overscroll: boolean;
+    fullscreen: boolean;
 }, {}>, Readonly<WindowSlots> & WindowSlots>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {

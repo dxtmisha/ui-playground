@@ -19,9 +19,9 @@ declare const meta: {
                 default: string;
             };
         }>>, {
-            tag: string;
-            inverse: boolean;
             visible: boolean;
+            inverse: boolean;
+            tag: string;
             border: boolean;
         }, true, {}, {}, {
             P: {};
@@ -39,9 +39,9 @@ declare const meta: {
                 default: string;
             };
         }>>, {}, {}, {}, {}, {
-            tag: string;
-            inverse: boolean;
             visible: boolean;
+            inverse: boolean;
+            tag: string;
             border: boolean;
         }>;
         __isFragment?: undefined;
@@ -56,9 +56,9 @@ declare const meta: {
             default: string;
         };
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
-        tag: string;
-        inverse: boolean;
         visible: boolean;
+        inverse: boolean;
+        tag: string;
         border: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../../constructors/Scrollbar/types").ScrollbarSlots> & import("../../constructors/Scrollbar/types").ScrollbarSlots;

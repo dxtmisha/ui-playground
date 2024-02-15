@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTranslateRef } from 'ui'
 
-
 const translate = useTranslateRef([
   'about',
   'shop'
@@ -20,6 +19,9 @@ const translate = useTranslateRef([
     </div>
     <div class="pt-12">
       <router-view/>
+    </div>
+    <div>
+
     </div>
   </div>
 </template>

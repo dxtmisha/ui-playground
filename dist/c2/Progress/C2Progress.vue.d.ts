@@ -54,13 +54,13 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
 }>>, {
     indeterminate: "type1" | "type2" | "type3" | undefined;
     position: "top" | "bottom" | undefined;
+    max: string | number;
+    visible: boolean;
+    delay: string | number;
     linear: boolean;
     circular: boolean;
     dense: boolean;
     inverse: boolean;
-    max: string | number;
-    visible: boolean;
-    delay: string | number;
 }, {}>, Readonly<ProgressSlots>>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {

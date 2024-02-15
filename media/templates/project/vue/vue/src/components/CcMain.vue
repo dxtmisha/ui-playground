@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useTranslateRef } from 'ui'
+
+const translate = useTranslateRef([
+  'main'
+] as const)
 </script>
 
 <template>

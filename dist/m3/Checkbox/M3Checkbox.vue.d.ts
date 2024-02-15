@@ -111,11 +111,11 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     type: import("../../constructors/Input/typesBasic").InputTypeName | undefined;
     spellcheck: boolean;
     autofocus: boolean;
-    readonly: boolean;
     indeterminate: boolean;
+    readonly: boolean;
     autocomplete: AutoFill | undefined;
-    arrow: boolean;
     required: boolean;
+    arrow: boolean;
     iconCheckbox: string;
     iconIndeterminate: string;
     comp: boolean;

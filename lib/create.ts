@@ -5,7 +5,6 @@ import { type App, type Component, createApp } from 'vue'
 import { forEach } from '../functions/data'
 
 import { components } from './components'
-import './types.d.ts'
 
 import './../c2/icons.ts'
 

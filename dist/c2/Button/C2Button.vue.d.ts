@@ -6,14 +6,14 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     readonly: BooleanConstructor;
     adaptive: import("vue").PropType<"icon" | undefined>;
     size: {
-        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+        default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;
     intent: {
-        type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
-        default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
+        type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
+        default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
     };
     primary: {
         type: BooleanConstructor;
@@ -49,14 +49,14 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     readonly: BooleanConstructor;
     adaptive: import("vue").PropType<"icon" | undefined>;
     size: {
-        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+        default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;
     intent: {
-        type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
-        default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
+        type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
+        default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
     };
     primary: {
         type: BooleanConstructor;
@@ -85,20 +85,20 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         detail: Record<string, any> | undefined;
     }) => any) | undefined;
 }, {
-    size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+    size: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
     link: boolean;
     focus: boolean;
     disabled: boolean;
-    loading: boolean;
-    tag: string | undefined;
     selected: boolean;
-    readonly: boolean;
     iconTurn: boolean;
     iconHide: boolean;
+    loading: boolean;
+    tag: string | undefined;
+    readonly: boolean;
+    outline: boolean;
+    intent: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
     primary: boolean;
     secondary: boolean;
-    outline: boolean;
-    intent: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
     ghost: boolean;
 }, {}>, Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots>;
 export default _default;

@@ -21,7 +21,7 @@ declare const meta: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -66,7 +66,7 @@ declare const meta: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -93,14 +93,14 @@ declare const meta: {
             filled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
+            selected: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
-            selected: boolean;
             readonly: boolean;
             elevated: boolean;
             tonal: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -127,7 +127,7 @@ declare const meta: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -154,14 +154,14 @@ declare const meta: {
             filled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
+            selected: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
-            selected: boolean;
             readonly: boolean;
             elevated: boolean;
             tonal: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -185,7 +185,7 @@ declare const meta: {
         text: BooleanConstructor;
         elevated: BooleanConstructor;
         tonal: BooleanConstructor;
-        palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
+        palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
         tag: {
             type: import("vue").PropType<string | undefined>;
             default: string | undefined;
@@ -218,14 +218,14 @@ declare const meta: {
         filled: boolean;
         outlined: boolean;
         height: "sm" | "md" | "lg" | undefined;
+        selected: boolean;
+        iconTurn: boolean;
+        iconHide: boolean;
         loading: boolean;
         tag: string | undefined;
-        selected: boolean;
         readonly: boolean;
         elevated: boolean;
         tonal: boolean;
-        iconTurn: boolean;
-        iconHide: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots;
     });

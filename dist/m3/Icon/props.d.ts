@@ -43,8 +43,8 @@ export declare const propsInstruction: {
     start: BooleanConstructor;
     end: BooleanConstructor;
     high: BooleanConstructor;
-    rounded: PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
-    size: PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
+    rounded: PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
+    size: PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
     icon: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     active: BooleanConstructor;

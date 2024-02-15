@@ -46,8 +46,8 @@ export declare const propsInstruction: {
     end: BooleanConstructor;
     high: BooleanConstructor;
     variation: {
-        type: PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
-        default: "icon" | "country" | "avatar" | "payment" | undefined;
+        type: PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
+        default: "icon" | "payment" | "avatar" | "country" | undefined;
     };
     shape: {
         type: PropType<"circle" | "rect" | "box" | undefined>;

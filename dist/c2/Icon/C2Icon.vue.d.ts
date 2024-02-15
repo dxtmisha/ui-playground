@@ -14,8 +14,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     end: BooleanConstructor;
     high: BooleanConstructor;
     variation: {
-        type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
-        default: "icon" | "country" | "avatar" | "payment" | undefined;
+        type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
+        default: "icon" | "payment" | "avatar" | "country" | undefined;
     };
     shape: {
         type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -47,8 +47,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     end: BooleanConstructor;
     high: BooleanConstructor;
     variation: {
-        type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
-        default: "icon" | "country" | "avatar" | "payment" | undefined;
+        type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
+        default: "icon" | "payment" | "avatar" | "country" | undefined;
     };
     shape: {
         type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -76,7 +76,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: boolean;
     end: boolean;
     high: boolean;
-    variation: "icon" | "country" | "avatar" | "payment" | undefined;
+    variation: "icon" | "payment" | "avatar" | "country" | undefined;
     shape: "circle" | "rect" | "box" | undefined;
 }, {}>, Readonly<IconSlots> & IconSlots>;
 export default _default;
