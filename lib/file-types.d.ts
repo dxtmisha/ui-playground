@@ -43,9 +43,6 @@ declare module 'ui/M3Ripple' {
 declare module 'ui/M3Scrollbar' {
   export { M3Scrollbar } from 'ui/dist/m3/Scrollbar/index.d.ts'
 }
-declare module 'ui/M3Test' {
-  export { M3Test } from 'ui/dist/m3/Test/index.d.ts'
-}
 declare module 'ui/M3Window' {
   export { M3Window } from 'ui/dist/m3/Window/index.d.ts'
 }

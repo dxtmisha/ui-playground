@@ -10174,17 +10174,811 @@ $designsProperties: (
           ),
         ),
       ),
+      'window':(
+        index: 'window',
+        name: 'm3-window',
+        type: 'component',
+        value: (
+          'menuSizeMultiplier':(
+            index: 'menuSizeMultiplier',
+            name: '--m3-window-menuSizeMultiplier',
+            type: 'var',
+            value: 1,
+          ),
+          'padding':(
+            index: 'padding',
+            name: '--m3-window-padding',
+            type: 'var',
+            value: 'var(--m3-ref-spacing-4)',
+          ),
+          'backgroundColor':(
+            index: 'backgroundColor',
+            name: '--m3-window-backgroundColor',
+            type: 'var',
+            value: 'var(--m3-sys-palette-scrim)',
+          ),
+          'backgroundOpacity':(
+            index: 'backgroundOpacity',
+            name: '--m3-window-backgroundOpacity',
+            type: 'var',
+            value: 'var(--m3-sys-opacity-scrim)',
+          ),
+          'zIndex':(
+            index: 'zIndex',
+            name: 'z-index',
+            type: 'property',
+            value: 'var(--m3-ref-index-4)',
+          ),
+          'body':(
+            index: 'body',
+            name: '&__body',
+            type: 'subclass',
+            value: (
+              'zIndex':(
+                index: 'zIndex',
+                name: 'z-index',
+                type: 'property',
+                value: 'var(--m3-ref-index-4)',
+              ),
+              'background':(
+                index: 'background',
+                name: 'background',
+                type: 'property',
+                value: 'var(--m3-ref-background-4)',
+              ),
+              'borderRadius':(
+                index: 'borderRadius',
+                name: 'border-radius',
+                type: 'property',
+                value: 'var(--m3-sys-rounded-2xl)',
+              ),
+              'boxShadow':(
+                index: 'boxShadow',
+                name: 'box-shadow',
+                type: 'property',
+                value: 'var(--m3-ref-shadow-4)',
+              ),
+              'context':(
+                index: 'context',
+                name: '&__context',
+                type: 'subclass',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'control':(
+            index: 'control',
+            name: '&__control',
+            type: 'subclass',
+            value: (
+            ),
+          ),
+          'width':(
+            index: 'width',
+            name: '&--width',
+            type: 'state',
+            value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 768)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 1024)',
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'width':(
+                    index: 'width',
+                    name: '--m3-window-width',
+                    type: 'var',
+                    value: 'var(--m3-window-sys-width)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'height':(
+            index: 'height',
+            name: '&--height',
+            type: 'state',
+            value: (
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'auto',
+                  ),
+                ),
+              ),
+              'max':(
+                index: 'max',
+                name: '&--max',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 100%,
+                  ),
+                ),
+              ),
+              'sm':(
+                index: 'sm',
+                name: '&--sm',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 256)',
+                  ),
+                ),
+              ),
+              'md':(
+                index: 'md',
+                name: '&--md',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 384)',
+                  ),
+                ),
+              ),
+              'lg':(
+                index: 'lg',
+                name: '&--lg',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
+                  ),
+                ),
+              ),
+              'custom':(
+                index: 'custom',
+                name: '&--custom',
+                type: 'state',
+                value: (
+                  'height':(
+                    index: 'height',
+                    name: '--m3-window-height',
+                    type: 'var',
+                    value: 'var(--m3-window-sys-height)',
+                  ),
+                ),
+              ),
+            ),
+            var: true,
+          ),
+          'adaptive':(
+            index: 'adaptive',
+            name: '&--adaptive',
+            type: 'state',
+            value: (
+              'menu':(
+                index: 'menu',
+                name: '&--menu',
+                type: 'state',
+                value: (
+                  'menuSizeMultiplier':(
+                    index: 'menuSizeMultiplier',
+                    name: '--m3-window-menuSizeMultiplier',
+                    type: 'var',
+                    value: 0.5,
+                  ),
+                  'backgroundOpacity':(
+                    index: 'backgroundOpacity',
+                    name: '--m3-window-backgroundOpacity',
+                    type: 'var',
+                    value: 0,
+                  ),
+                  'transformOrigin':(
+                    index: 'transformOrigin',
+                    name: '--m3-window-transformOrigin',
+                    type: 'var',
+                    value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
+                  ),
+                  'top':(
+                    index: 'top',
+                    name: 'top',
+                    type: 'property',
+                    value: 'var(--m3-window-sys-inset-y)',
+                  ),
+                  'right':(
+                    index: 'right',
+                    name: 'right',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'bottom':(
+                    index: 'bottom',
+                    name: 'bottom',
+                    type: 'property',
+                    value: 'auto',
+                  ),
+                  'left':(
+                    index: 'left',
+                    name: 'left',
+                    type: 'property',
+                    value: 'var(--m3-window-sys-inset-x)',
+                  ),
+                  'padding':(
+                    index: 'padding',
+                    name: 'padding',
+                    type: 'property',
+                    value: 0,
+                  ),
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--MENU--'',
+                  ),
+                  'body':(
+                    index: 'body',
+                    name: '& .m3-window__body',
+                    type: 'subclass',
+                    value: (
+                      'zIndex':(
+                        index: 'zIndex',
+                        name: 'z-index',
+                        type: 'property',
+                        value: 'var(--m3-ref-index-2)',
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'maxWidth':(
+                        index: 'maxWidth',
+                        name: 'max-width',
+                        type: 'property',
+                        value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
+                      ),
+                      'maxHeight':(
+                        index: 'maxHeight',
+                        name: 'max-height',
+                        type: 'property',
+                        value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
+                      ),
+                      'background':(
+                        index: 'background',
+                        name: 'background',
+                        type: 'property',
+                        value: 'var(--m3-ref-background-2)',
+                      ),
+                      'borderRadius':(
+                        index: 'borderRadius',
+                        name: 'border-radius',
+                        type: 'property',
+                        value: 'var(--m3-sys-rounded-sm)',
+                      ),
+                      'boxShadow':(
+                        index: 'boxShadow',
+                        name: 'box-shadow',
+                        type: 'property',
+                        value: 'var(--m3-ref-shadow-2)',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'modal':(
+                index: 'modal',
+                name: '&--modal',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'modalDynamic':(
+                index: 'modalDynamic',
+                name: '&--modalDynamic',
+                type: 'state',
+                value: (
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.m3-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'static':(
+                index: 'static',
+                name: '&--static',
+                type: 'state',
+                value: (
+                  'content':(
+                    index: 'content',
+                    name: 'content',
+                    type: 'property',
+                    value: ''--STATIC--'',
+                  ),
+                ),
+              ),
+              'auto':(
+                index: 'auto',
+                name: '&--auto',
+                type: 'state',
+                value: (
+                  'paddingTop':(
+                    index: 'paddingTop',
+                    name: 'padding-top',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-12)',
+                  ),
+                  'paddingBottom':(
+                    index: 'paddingBottom',
+                    name: 'padding-bottom',
+                    type: 'property',
+                    value: 'var(--m3-ref-spacing-12)',
+                  ),
+                  '&.??--location':(
+                    index: '&.??--location',
+                    name: '&.m3-window--location',
+                    type: 'scss',
+                    value: (
+                      'center':(
+                        index: 'center',
+                        name: '&--center',
+                        type: 'state',
+                        value: (
+                        ),
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: '&--top',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-start',
+                          ),
+                        ),
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: '&--bottom',
+                        type: 'state',
+                        value: (
+                          'alignItems':(
+                            index: 'alignItems',
+                            name: 'align-items',
+                            type: 'property',
+                            value: 'flex-end',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  'mediaSm':(
+                    index: 'mediaSm',
+                    name: '(min-width: 600px)',
+                    type: 'media',
+                    value: (
+                      'menuSizeMultiplier':(
+                        index: 'menuSizeMultiplier',
+                        name: '--m3-window-menuSizeMultiplier',
+                        type: 'var',
+                        value: 0.5,
+                      ),
+                      'backgroundOpacity':(
+                        index: 'backgroundOpacity',
+                        name: '--m3-window-backgroundOpacity',
+                        type: 'var',
+                        value: 0,
+                      ),
+                      'transformOrigin':(
+                        index: 'transformOrigin',
+                        name: '--m3-window-transformOrigin',
+                        type: 'var',
+                        value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
+                      ),
+                      'top':(
+                        index: 'top',
+                        name: 'top',
+                        type: 'property',
+                        value: 'var(--m3-window-sys-inset-y)',
+                      ),
+                      'right':(
+                        index: 'right',
+                        name: 'right',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'bottom':(
+                        index: 'bottom',
+                        name: 'bottom',
+                        type: 'property',
+                        value: 'auto',
+                      ),
+                      'left':(
+                        index: 'left',
+                        name: 'left',
+                        type: 'property',
+                        value: 'var(--m3-window-sys-inset-x)',
+                      ),
+                      'padding':(
+                        index: 'padding',
+                        name: 'padding',
+                        type: 'property',
+                        value: 0,
+                      ),
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--MENU--'',
+                      ),
+                      'body':(
+                        index: 'body',
+                        name: '& .m3-window__body',
+                        type: 'subclass',
+                        value: (
+                          'zIndex':(
+                            index: 'zIndex',
+                            name: 'z-index',
+                            type: 'property',
+                            value: 'var(--m3-ref-index-2)',
+                          ),
+                          'top':(
+                            index: 'top',
+                            name: 'top',
+                            type: 'property',
+                            value: 'auto',
+                          ),
+                          'maxWidth':(
+                            index: 'maxWidth',
+                            name: 'max-width',
+                            type: 'property',
+                            value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
+                          ),
+                          'maxHeight':(
+                            index: 'maxHeight',
+                            name: 'max-height',
+                            type: 'property',
+                            value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
+                          ),
+                          'background':(
+                            index: 'background',
+                            name: 'background',
+                            type: 'property',
+                            value: 'var(--m3-ref-background-2)',
+                          ),
+                          'borderRadius':(
+                            index: 'borderRadius',
+                            name: 'border-radius',
+                            type: 'property',
+                            value: 'var(--m3-sys-rounded-sm)',
+                          ),
+                          'boxShadow':(
+                            index: 'boxShadow',
+                            name: 'box-shadow',
+                            type: 'property',
+                            value: 'var(--m3-ref-shadow-2)',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticSm':(
+                index: 'staticSm',
+                name: '&--staticSm',
+                type: 'state',
+                value: (
+                  'mediaSm':(
+                    index: 'mediaSm',
+                    name: '(min-width: 600px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticMd':(
+                index: 'staticMd',
+                name: '&--staticMd',
+                type: 'state',
+                value: (
+                  'mediaMd':(
+                    index: 'mediaMd',
+                    name: '(min-width: 905px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              'staticLg':(
+                index: 'staticLg',
+                name: '&--staticLg',
+                type: 'state',
+                value: (
+                  'mediaLg':(
+                    index: 'mediaLg',
+                    name: '(min-width: 1280px)',
+                    type: 'media',
+                    value: (
+                      'content':(
+                        index: 'content',
+                        name: 'content',
+                        type: 'property',
+                        value: ''--STATIC--'',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          'overscroll':(
+            index: 'overscroll',
+            name: '&--overscroll',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'dense':(
+            index: 'dense',
+            name: '&--dense',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'fullscreen':(
+            index: 'fullscreen',
+            name: '&--fullscreen',
+            type: 'state',
+            value: (
+            ),
+          ),
+          'alignment':(
+            index: 'alignment',
+            name: '&--alignment',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+          'origin':(
+            index: 'origin',
+            name: '&--origin',
+            type: 'state',
+            value: (
+              'center':(
+                index: 'center',
+                name: '&--center',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'top':(
+                index: 'top',
+                name: '&--top',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'right':(
+                index: 'right',
+                name: '&--right',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottom':(
+                index: 'bottom',
+                name: '&--bottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'left':(
+                index: 'left',
+                name: '&--left',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'topToBottom':(
+                index: 'topToBottom',
+                name: '&--topToBottom',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'rightToLeft':(
+                index: 'rightToLeft',
+                name: '&--rightToLeft',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'bottomToTop':(
+                index: 'bottomToTop',
+                name: '&--bottomToTop',
+                type: 'state',
+                value: (
+                ),
+              ),
+              'leftToRight':(
+                index: 'leftToRight',
+                name: '&--leftToRight',
+                type: 'state',
+                value: (
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       'test':(
         index: 'test',
         name: 'm3-test',
         type: 'component',
         value: (
-          'main':(
-            index: 'main',
-            name: '--m3-test-main',
-            type: 'var',
-            value: 'var(--d-test)',
-          ),
           'focus':(
             index: 'focus',
             name: 'focus',
@@ -13405,806 +14199,6 @@ $designsProperties: (
                     type: 'property',
                     value: 'var(--m3-st-content-fg-color-neutral-secondary)',
                   ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      'window':(
-        index: 'window',
-        name: 'm3-window',
-        type: 'component',
-        value: (
-          'menuSizeMultiplier':(
-            index: 'menuSizeMultiplier',
-            name: '--m3-window-menuSizeMultiplier',
-            type: 'var',
-            value: 1,
-          ),
-          'padding':(
-            index: 'padding',
-            name: '--m3-window-padding',
-            type: 'var',
-            value: 'var(--m3-ref-spacing-4)',
-          ),
-          'backgroundColor':(
-            index: 'backgroundColor',
-            name: '--m3-window-backgroundColor',
-            type: 'var',
-            value: 'var(--m3-sys-palette-scrim)',
-          ),
-          'backgroundOpacity':(
-            index: 'backgroundOpacity',
-            name: '--m3-window-backgroundOpacity',
-            type: 'var',
-            value: 'var(--m3-sys-opacity-scrim)',
-          ),
-          'zIndex':(
-            index: 'zIndex',
-            name: 'z-index',
-            type: 'property',
-            value: 'var(--m3-ref-index-4)',
-          ),
-          'body':(
-            index: 'body',
-            name: '&__body',
-            type: 'subclass',
-            value: (
-              'zIndex':(
-                index: 'zIndex',
-                name: 'z-index',
-                type: 'property',
-                value: 'var(--m3-ref-index-4)',
-              ),
-              'background':(
-                index: 'background',
-                name: 'background',
-                type: 'property',
-                value: 'var(--m3-ref-background-4)',
-              ),
-              'borderRadius':(
-                index: 'borderRadius',
-                name: 'border-radius',
-                type: 'property',
-                value: 'var(--m3-sys-rounded-2xl)',
-              ),
-              'boxShadow':(
-                index: 'boxShadow',
-                name: 'box-shadow',
-                type: 'property',
-                value: 'var(--m3-ref-shadow-4)',
-              ),
-              'context':(
-                index: 'context',
-                name: '&__context',
-                type: 'subclass',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'control':(
-            index: 'control',
-            name: '&__control',
-            type: 'subclass',
-            value: (
-            ),
-          ),
-          'width':(
-            index: 'width',
-            name: '&--width',
-            type: 'state',
-            value: (
-              'auto':(
-                index: 'auto',
-                name: '&--auto',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 'auto',
-                  ),
-                ),
-              ),
-              'max':(
-                index: 'max',
-                name: '&--max',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 100%,
-                  ),
-                ),
-              ),
-              'sm':(
-                index: 'sm',
-                name: '&--sm',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
-                  ),
-                ),
-              ),
-              'md':(
-                index: 'md',
-                name: '&--md',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 768)',
-                  ),
-                ),
-              ),
-              'lg':(
-                index: 'lg',
-                name: '&--lg',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 1024)',
-                  ),
-                ),
-              ),
-              'custom':(
-                index: 'custom',
-                name: '&--custom',
-                type: 'state',
-                value: (
-                  'width':(
-                    index: 'width',
-                    name: '--m3-window-width',
-                    type: 'var',
-                    value: 'var(--m3-window-sys-width)',
-                  ),
-                ),
-              ),
-            ),
-            var: true,
-          ),
-          'height':(
-            index: 'height',
-            name: '&--height',
-            type: 'state',
-            value: (
-              'auto':(
-                index: 'auto',
-                name: '&--auto',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 'auto',
-                  ),
-                ),
-              ),
-              'max':(
-                index: 'max',
-                name: '&--max',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 100%,
-                  ),
-                ),
-              ),
-              'sm':(
-                index: 'sm',
-                name: '&--sm',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 256)',
-                  ),
-                ),
-              ),
-              'md':(
-                index: 'md',
-                name: '&--md',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 384)',
-                  ),
-                ),
-              ),
-              'lg':(
-                index: 'lg',
-                name: '&--lg',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 'calc(var(--m3-ref-spacing-px) * 512)',
-                  ),
-                ),
-              ),
-              'custom':(
-                index: 'custom',
-                name: '&--custom',
-                type: 'state',
-                value: (
-                  'height':(
-                    index: 'height',
-                    name: '--m3-window-height',
-                    type: 'var',
-                    value: 'var(--m3-window-sys-height)',
-                  ),
-                ),
-              ),
-            ),
-            var: true,
-          ),
-          'adaptive':(
-            index: 'adaptive',
-            name: '&--adaptive',
-            type: 'state',
-            value: (
-              'menu':(
-                index: 'menu',
-                name: '&--menu',
-                type: 'state',
-                value: (
-                  'menuSizeMultiplier':(
-                    index: 'menuSizeMultiplier',
-                    name: '--m3-window-menuSizeMultiplier',
-                    type: 'var',
-                    value: 0.5,
-                  ),
-                  'backgroundOpacity':(
-                    index: 'backgroundOpacity',
-                    name: '--m3-window-backgroundOpacity',
-                    type: 'var',
-                    value: 0,
-                  ),
-                  'transformOrigin':(
-                    index: 'transformOrigin',
-                    name: '--m3-window-transformOrigin',
-                    type: 'var',
-                    value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
-                  ),
-                  'top':(
-                    index: 'top',
-                    name: 'top',
-                    type: 'property',
-                    value: 'var(--m3-window-sys-inset-y)',
-                  ),
-                  'right':(
-                    index: 'right',
-                    name: 'right',
-                    type: 'property',
-                    value: 'auto',
-                  ),
-                  'bottom':(
-                    index: 'bottom',
-                    name: 'bottom',
-                    type: 'property',
-                    value: 'auto',
-                  ),
-                  'left':(
-                    index: 'left',
-                    name: 'left',
-                    type: 'property',
-                    value: 'var(--m3-window-sys-inset-x)',
-                  ),
-                  'padding':(
-                    index: 'padding',
-                    name: 'padding',
-                    type: 'property',
-                    value: 0,
-                  ),
-                  'content':(
-                    index: 'content',
-                    name: 'content',
-                    type: 'property',
-                    value: ''--MENU--'',
-                  ),
-                  'body':(
-                    index: 'body',
-                    name: '& .m3-window__body',
-                    type: 'subclass',
-                    value: (
-                      'zIndex':(
-                        index: 'zIndex',
-                        name: 'z-index',
-                        type: 'property',
-                        value: 'var(--m3-ref-index-2)',
-                      ),
-                      'top':(
-                        index: 'top',
-                        name: 'top',
-                        type: 'property',
-                        value: 'auto',
-                      ),
-                      'maxWidth':(
-                        index: 'maxWidth',
-                        name: 'max-width',
-                        type: 'property',
-                        value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
-                      ),
-                      'maxHeight':(
-                        index: 'maxHeight',
-                        name: 'max-height',
-                        type: 'property',
-                        value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
-                      ),
-                      'background':(
-                        index: 'background',
-                        name: 'background',
-                        type: 'property',
-                        value: 'var(--m3-ref-background-2)',
-                      ),
-                      'borderRadius':(
-                        index: 'borderRadius',
-                        name: 'border-radius',
-                        type: 'property',
-                        value: 'var(--m3-sys-rounded-sm)',
-                      ),
-                      'boxShadow':(
-                        index: 'boxShadow',
-                        name: 'box-shadow',
-                        type: 'property',
-                        value: 'var(--m3-ref-shadow-2)',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'modal':(
-                index: 'modal',
-                name: '&--modal',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'modalDynamic':(
-                index: 'modalDynamic',
-                name: '&--modalDynamic',
-                type: 'state',
-                value: (
-                  '&.??--location':(
-                    index: '&.??--location',
-                    name: '&.m3-window--location',
-                    type: 'scss',
-                    value: (
-                      'center':(
-                        index: 'center',
-                        name: '&--center',
-                        type: 'state',
-                        value: (
-                        ),
-                      ),
-                      'top':(
-                        index: 'top',
-                        name: '&--top',
-                        type: 'state',
-                        value: (
-                          'alignItems':(
-                            index: 'alignItems',
-                            name: 'align-items',
-                            type: 'property',
-                            value: 'flex-start',
-                          ),
-                        ),
-                      ),
-                      'bottom':(
-                        index: 'bottom',
-                        name: '&--bottom',
-                        type: 'state',
-                        value: (
-                          'alignItems':(
-                            index: 'alignItems',
-                            name: 'align-items',
-                            type: 'property',
-                            value: 'flex-end',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'static':(
-                index: 'static',
-                name: '&--static',
-                type: 'state',
-                value: (
-                  'content':(
-                    index: 'content',
-                    name: 'content',
-                    type: 'property',
-                    value: ''--STATIC--'',
-                  ),
-                ),
-              ),
-              'auto':(
-                index: 'auto',
-                name: '&--auto',
-                type: 'state',
-                value: (
-                  'paddingTop':(
-                    index: 'paddingTop',
-                    name: 'padding-top',
-                    type: 'property',
-                    value: 'var(--m3-ref-spacing-12)',
-                  ),
-                  'paddingBottom':(
-                    index: 'paddingBottom',
-                    name: 'padding-bottom',
-                    type: 'property',
-                    value: 'var(--m3-ref-spacing-12)',
-                  ),
-                  '&.??--location':(
-                    index: '&.??--location',
-                    name: '&.m3-window--location',
-                    type: 'scss',
-                    value: (
-                      'center':(
-                        index: 'center',
-                        name: '&--center',
-                        type: 'state',
-                        value: (
-                        ),
-                      ),
-                      'top':(
-                        index: 'top',
-                        name: '&--top',
-                        type: 'state',
-                        value: (
-                          'alignItems':(
-                            index: 'alignItems',
-                            name: 'align-items',
-                            type: 'property',
-                            value: 'flex-start',
-                          ),
-                        ),
-                      ),
-                      'bottom':(
-                        index: 'bottom',
-                        name: '&--bottom',
-                        type: 'state',
-                        value: (
-                          'alignItems':(
-                            index: 'alignItems',
-                            name: 'align-items',
-                            type: 'property',
-                            value: 'flex-end',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  'mediaSm':(
-                    index: 'mediaSm',
-                    name: '(min-width: 600px)',
-                    type: 'media',
-                    value: (
-                      'menuSizeMultiplier':(
-                        index: 'menuSizeMultiplier',
-                        name: '--m3-window-menuSizeMultiplier',
-                        type: 'var',
-                        value: 0.5,
-                      ),
-                      'backgroundOpacity':(
-                        index: 'backgroundOpacity',
-                        name: '--m3-window-backgroundOpacity',
-                        type: 'var',
-                        value: 0,
-                      ),
-                      'transformOrigin':(
-                        index: 'transformOrigin',
-                        name: '--m3-window-transformOrigin',
-                        type: 'var',
-                        value: 'var(--m3-window-origin-x) var(--m3-window-origin-y)',
-                      ),
-                      'top':(
-                        index: 'top',
-                        name: 'top',
-                        type: 'property',
-                        value: 'var(--m3-window-sys-inset-y)',
-                      ),
-                      'right':(
-                        index: 'right',
-                        name: 'right',
-                        type: 'property',
-                        value: 'auto',
-                      ),
-                      'bottom':(
-                        index: 'bottom',
-                        name: 'bottom',
-                        type: 'property',
-                        value: 'auto',
-                      ),
-                      'left':(
-                        index: 'left',
-                        name: 'left',
-                        type: 'property',
-                        value: 'var(--m3-window-sys-inset-x)',
-                      ),
-                      'padding':(
-                        index: 'padding',
-                        name: 'padding',
-                        type: 'property',
-                        value: 0,
-                      ),
-                      'content':(
-                        index: 'content',
-                        name: 'content',
-                        type: 'property',
-                        value: ''--MENU--'',
-                      ),
-                      'body':(
-                        index: 'body',
-                        name: '& .m3-window__body',
-                        type: 'subclass',
-                        value: (
-                          'zIndex':(
-                            index: 'zIndex',
-                            name: 'z-index',
-                            type: 'property',
-                            value: 'var(--m3-ref-index-2)',
-                          ),
-                          'top':(
-                            index: 'top',
-                            name: 'top',
-                            type: 'property',
-                            value: 'auto',
-                          ),
-                          'maxWidth':(
-                            index: 'maxWidth',
-                            name: 'max-width',
-                            type: 'property',
-                            value: 'calc(100dvw - (var(--m3-window-padding) * 2))',
-                          ),
-                          'maxHeight':(
-                            index: 'maxHeight',
-                            name: 'max-height',
-                            type: 'property',
-                            value: 'calc(100dvh - (var(--m3-window-padding) * 2))',
-                          ),
-                          'background':(
-                            index: 'background',
-                            name: 'background',
-                            type: 'property',
-                            value: 'var(--m3-ref-background-2)',
-                          ),
-                          'borderRadius':(
-                            index: 'borderRadius',
-                            name: 'border-radius',
-                            type: 'property',
-                            value: 'var(--m3-sys-rounded-sm)',
-                          ),
-                          'boxShadow':(
-                            index: 'boxShadow',
-                            name: 'box-shadow',
-                            type: 'property',
-                            value: 'var(--m3-ref-shadow-2)',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'staticSm':(
-                index: 'staticSm',
-                name: '&--staticSm',
-                type: 'state',
-                value: (
-                  'mediaSm':(
-                    index: 'mediaSm',
-                    name: '(min-width: 600px)',
-                    type: 'media',
-                    value: (
-                      'content':(
-                        index: 'content',
-                        name: 'content',
-                        type: 'property',
-                        value: ''--STATIC--'',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'staticMd':(
-                index: 'staticMd',
-                name: '&--staticMd',
-                type: 'state',
-                value: (
-                  'mediaMd':(
-                    index: 'mediaMd',
-                    name: '(min-width: 905px)',
-                    type: 'media',
-                    value: (
-                      'content':(
-                        index: 'content',
-                        name: 'content',
-                        type: 'property',
-                        value: ''--STATIC--'',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              'staticLg':(
-                index: 'staticLg',
-                name: '&--staticLg',
-                type: 'state',
-                value: (
-                  'mediaLg':(
-                    index: 'mediaLg',
-                    name: '(min-width: 1280px)',
-                    type: 'media',
-                    value: (
-                      'content':(
-                        index: 'content',
-                        name: 'content',
-                        type: 'property',
-                        value: ''--STATIC--'',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          'overscroll':(
-            index: 'overscroll',
-            name: '&--overscroll',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'dense':(
-            index: 'dense',
-            name: '&--dense',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'fullscreen':(
-            index: 'fullscreen',
-            name: '&--fullscreen',
-            type: 'state',
-            value: (
-            ),
-          ),
-          'alignment':(
-            index: 'alignment',
-            name: '&--alignment',
-            type: 'state',
-            value: (
-              'center':(
-                index: 'center',
-                name: '&--center',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'top':(
-                index: 'top',
-                name: '&--top',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'right':(
-                index: 'right',
-                name: '&--right',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottom':(
-                index: 'bottom',
-                name: '&--bottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'left':(
-                index: 'left',
-                name: '&--left',
-                type: 'state',
-                value: (
-                ),
-              ),
-            ),
-          ),
-          'origin':(
-            index: 'origin',
-            name: '&--origin',
-            type: 'state',
-            value: (
-              'center':(
-                index: 'center',
-                name: '&--center',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'top':(
-                index: 'top',
-                name: '&--top',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'right':(
-                index: 'right',
-                name: '&--right',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottom':(
-                index: 'bottom',
-                name: '&--bottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'left':(
-                index: 'left',
-                name: '&--left',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'topToBottom':(
-                index: 'topToBottom',
-                name: '&--topToBottom',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'rightToLeft':(
-                index: 'rightToLeft',
-                name: '&--rightToLeft',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'bottomToTop':(
-                index: 'bottomToTop',
-                name: '&--bottomToTop',
-                type: 'state',
-                value: (
-                ),
-              ),
-              'leftToRight':(
-                index: 'leftToRight',
-                name: '&--leftToRight',
-                type: 'state',
-                value: (
                 ),
               ),
             ),
