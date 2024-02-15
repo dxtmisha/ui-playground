@@ -1,6 +1,6 @@
 import { createApp, type Plugin } from 'vue'
 import { isFilled, Translate } from 'ui'
-// import { registrationUiComponents } from 'ui/create'
+import { registrationUiComponents } from 'ui/create'
 
 import 'ui/dist/style.css'
 import '../src/style.scss'
@@ -21,7 +21,7 @@ Translate.add(translate).then(() => {
     app.use(createRouter(router) as Plugin<[]>)
   }
 
-  // registrationUiComponents(app)
+  registrationUiComponents(app)
   init(app)
 
   app.mount('#app')

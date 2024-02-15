@@ -23,7 +23,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     suggestion: BooleanConstructor;
     avatar: BooleanConstructor;
     dragged: BooleanConstructor;
-    palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+    palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
     tag: {
         type: import("vue").PropType<string | undefined>;
         default: string | undefined;
@@ -68,7 +68,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     suggestion: BooleanConstructor;
     avatar: BooleanConstructor;
     dragged: BooleanConstructor;
-    palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+    palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
     tag: {
         type: import("vue").PropType<string | undefined>;
         default: string | undefined;
@@ -95,16 +95,16 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     disabled: boolean;
     outlined: boolean;
     height: "sm" | "md" | "lg" | undefined;
-    selected: boolean;
-    iconTurn: boolean;
-    iconHide: boolean;
     loading: boolean;
     tag: string | undefined;
+    selected: boolean;
     readonly: boolean;
-    avatar: boolean;
     elevated: boolean;
+    iconTurn: boolean;
+    iconHide: boolean;
     assist: boolean;
     suggestion: boolean;
+    avatar: boolean;
     dragged: boolean;
 }, {}>, Readonly<import("../../constructors/uses/ref/useLabel").UseLabelSlots> & import("../../constructors/uses/ref/useLabel").UseLabelSlots>;
 export default _default;

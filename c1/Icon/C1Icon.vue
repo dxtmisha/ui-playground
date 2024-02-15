@@ -23,7 +23,7 @@ import {
 } from './props'
 
 defineOptions({
-  name: 'c1-icon'
+  name: 'C1Icon'
 })
 
 const emits = defineEmits<IconEmits>()

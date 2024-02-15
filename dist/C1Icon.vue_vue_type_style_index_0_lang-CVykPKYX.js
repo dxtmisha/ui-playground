@@ -1,4 +1,4 @@
-import { defineComponent as y, computed as c, openBlock as u, createBlock as h, unref as g } from "vue";
+import { defineComponent as y, computed as t, openBlock as u, createBlock as h, unref as g } from "vue";
 import { n as e } from "./string-BEtu6Ook.js";
 import { p as B, d as T, I as _ } from "./props-Bh-htIS3.js";
 import { _ as f } from "./C1Image.vue_vue_type_style_index_0_lang-FIo-YM3Y.js";
@@ -39,12 +39,12 @@ const i = {
     default: o == null ? void 0 : o.size
   }
 }, b = /* @__PURE__ */ y({
-  name: "c1-icon",
+  name: "C1Icon",
   __name: "C1Icon",
   props: { ...z },
   emits: ["load"],
-  setup(t, { expose: s, emit: r }) {
-    const d = r, n = t, m = c(() => ({
+  setup(c, { expose: s, emit: r }) {
+    const d = r, n = c, m = t(() => ({
       main: {
         // :classes-values [!] System label / Системная метка
         "c1-icon": !0,
@@ -62,7 +62,7 @@ const i = {
         [`c1-icon--size--${n.size}`]: e(i.size, n.size)
         // :classes-values [!] System label / Системная метка
       }
-    })), p = c(() => ({
+    })), p = t(() => ({
       // :styles-values [!] System label / Системная метка
       // :styles-values [!] System label / Системная метка
     })), a = new _(
@@ -77,7 +77,7 @@ const i = {
         styles: p
       }
     ), l = a.render();
-    return s(a.expose()), (x, I) => (u(), h(g(l)));
+    return s(a.expose()), (I, x) => (u(), h(g(l)));
   }
 });
 export {

@@ -14,8 +14,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -39,8 +39,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -79,8 +79,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -118,8 +118,8 @@ export declare const components: {
         start: BooleanConstructor;
         end: BooleanConstructor;
         high: BooleanConstructor;
-        rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | undefined>;
-        size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+        rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+        size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
         icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         active: BooleanConstructor;
@@ -334,7 +334,7 @@ export declare const components: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -379,7 +379,7 @@ export declare const components: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -406,14 +406,14 @@ export declare const components: {
             filled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
             elevated: boolean;
             tonal: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -440,7 +440,7 @@ export declare const components: {
             text: BooleanConstructor;
             elevated: BooleanConstructor;
             tonal: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -467,14 +467,14 @@ export declare const components: {
             filled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
             elevated: boolean;
             tonal: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -498,7 +498,7 @@ export declare const components: {
         text: BooleanConstructor;
         elevated: BooleanConstructor;
         tonal: BooleanConstructor;
-        palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+        palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
         tag: {
             type: import("vue").PropType<string | undefined>;
             default: string | undefined;
@@ -531,14 +531,14 @@ export declare const components: {
         filled: boolean;
         outlined: boolean;
         height: "sm" | "md" | "lg" | undefined;
-        selected: boolean;
-        iconTurn: boolean;
-        iconHide: boolean;
         loading: boolean;
         tag: string | undefined;
+        selected: boolean;
         readonly: boolean;
         elevated: boolean;
         tonal: boolean;
+        iconTurn: boolean;
+        iconHide: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/uses/ref/useLabel").UseLabelSlots> & import("../constructors/uses/ref/useLabel").UseLabelSlots;
     });
@@ -661,11 +661,11 @@ export declare const components: {
             type: import("../constructors/Input/typesBasic").InputTypeName | undefined;
             spellcheck: boolean;
             autofocus: boolean;
-            indeterminate: boolean;
             readonly: boolean;
+            indeterminate: boolean;
             autocomplete: AutoFill | undefined;
-            required: boolean;
             arrow: boolean;
+            required: boolean;
             iconCheckbox: string;
             iconIndeterminate: string;
             comp: boolean;
@@ -736,11 +736,11 @@ export declare const components: {
             type: import("../constructors/Input/typesBasic").InputTypeName | undefined;
             spellcheck: boolean;
             autofocus: boolean;
-            indeterminate: boolean;
             readonly: boolean;
+            indeterminate: boolean;
             autocomplete: AutoFill | undefined;
-            required: boolean;
             arrow: boolean;
+            required: boolean;
             iconCheckbox: string;
             iconIndeterminate: string;
             comp: boolean;
@@ -813,11 +813,11 @@ export declare const components: {
         type: import("../constructors/Input/typesBasic").InputTypeName | undefined;
         spellcheck: boolean;
         autofocus: boolean;
-        indeterminate: boolean;
         readonly: boolean;
+        indeterminate: boolean;
         autocomplete: AutoFill | undefined;
-        required: boolean;
         arrow: boolean;
+        required: boolean;
         iconCheckbox: string;
         iconIndeterminate: string;
         comp: boolean;
@@ -850,7 +850,7 @@ export declare const components: {
             suggestion: BooleanConstructor;
             avatar: BooleanConstructor;
             dragged: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -901,7 +901,7 @@ export declare const components: {
             suggestion: BooleanConstructor;
             avatar: BooleanConstructor;
             dragged: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -928,16 +928,16 @@ export declare const components: {
             disabled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
-            avatar: boolean;
             elevated: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
             assist: boolean;
             suggestion: boolean;
+            avatar: boolean;
             dragged: boolean;
         }, true, {}, {}, {
             P: {};
@@ -971,7 +971,7 @@ export declare const components: {
             suggestion: BooleanConstructor;
             avatar: BooleanConstructor;
             dragged: BooleanConstructor;
-            palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+            palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
             tag: {
                 type: import("vue").PropType<string | undefined>;
                 default: string | undefined;
@@ -998,16 +998,16 @@ export declare const components: {
             disabled: boolean;
             outlined: boolean;
             height: "sm" | "md" | "lg" | undefined;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
-            avatar: boolean;
             elevated: boolean;
+            iconTurn: boolean;
+            iconHide: boolean;
             assist: boolean;
             suggestion: boolean;
+            avatar: boolean;
             dragged: boolean;
         }>;
         __isFragment?: undefined;
@@ -1038,7 +1038,7 @@ export declare const components: {
         suggestion: BooleanConstructor;
         avatar: BooleanConstructor;
         dragged: BooleanConstructor;
-        palette: import("vue").PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+        palette: import("vue").PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
         tag: {
             type: import("vue").PropType<string | undefined>;
             default: string | undefined;
@@ -1071,16 +1071,16 @@ export declare const components: {
         disabled: boolean;
         outlined: boolean;
         height: "sm" | "md" | "lg" | undefined;
-        selected: boolean;
-        iconTurn: boolean;
-        iconHide: boolean;
         loading: boolean;
         tag: string | undefined;
+        selected: boolean;
         readonly: boolean;
-        avatar: boolean;
         elevated: boolean;
+        iconTurn: boolean;
+        iconHide: boolean;
         assist: boolean;
         suggestion: boolean;
+        avatar: boolean;
         dragged: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/uses/ref/useLabel").UseLabelSlots> & import("../constructors/uses/ref/useLabel").UseLabelSlots;
@@ -1145,8 +1145,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -1170,8 +1170,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -1210,8 +1210,8 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-            size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+            size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             active: BooleanConstructor;
@@ -1249,8 +1249,8 @@ export declare const components: {
         start: BooleanConstructor;
         end: BooleanConstructor;
         high: BooleanConstructor;
-        rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-        size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+        rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+        size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
         icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         active: BooleanConstructor;
@@ -1515,8 +1515,8 @@ export declare const components: {
             autofocus: boolean;
             readonly: boolean;
             autocomplete: AutoFill | undefined;
-            required: boolean;
             arrow: boolean;
+            required: boolean;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -1575,8 +1575,8 @@ export declare const components: {
             autofocus: boolean;
             readonly: boolean;
             autocomplete: AutoFill | undefined;
-            required: boolean;
             arrow: boolean;
+            required: boolean;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -1637,8 +1637,8 @@ export declare const components: {
         autofocus: boolean;
         readonly: boolean;
         autocomplete: AutoFill | undefined;
-        required: boolean;
         arrow: boolean;
+        required: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/uses/ref/useLabel").UseLabelSlots> & import("../constructors/uses/ref/useLabel").UseLabelSlots;
     });
@@ -1906,13 +1906,13 @@ export declare const components: {
         }>>, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -1949,13 +1949,13 @@ export declare const components: {
         }>>, {}, {}, {}, {}, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -1989,13 +1989,13 @@ export declare const components: {
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
         indeterminate: "type1" | "type2" | "type3" | undefined;
         position: "top" | "bottom" | undefined;
-        max: string | number;
-        visible: boolean;
-        delay: string | number;
         linear: boolean;
         circular: boolean;
         dense: boolean;
         inverse: boolean;
+        max: string | number;
+        visible: boolean;
+        delay: string | number;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Progress/types").ProgressSlots>;
     });
@@ -2046,9 +2046,9 @@ export declare const components: {
                 default: string;
             };
         }>>, {
-            visible: boolean;
-            inverse: boolean;
             tag: string;
+            inverse: boolean;
+            visible: boolean;
             border: boolean;
         }, true, {}, {}, {
             P: {};
@@ -2066,9 +2066,9 @@ export declare const components: {
                 default: string;
             };
         }>>, {}, {}, {}, {}, {
-            visible: boolean;
-            inverse: boolean;
             tag: string;
+            inverse: boolean;
+            visible: boolean;
             border: boolean;
         }>;
         __isFragment?: undefined;
@@ -2083,9 +2083,9 @@ export declare const components: {
             default: string;
         };
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
-        visible: boolean;
-        inverse: boolean;
         tag: string;
+        inverse: boolean;
+        visible: boolean;
         border: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Scrollbar/types").ScrollbarSlots> & import("../constructors/Scrollbar/types").ScrollbarSlots;
@@ -2095,8 +2095,8 @@ export declare const components: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -2139,8 +2139,8 @@ export declare const components: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -2175,18 +2175,18 @@ export declare const components: {
         }, {
             contextmenu: boolean;
             disabled: boolean;
-            adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             open: boolean;
             dense: boolean;
-            flash: boolean;
             axis: "x" | "y" | "on" | undefined;
             indent: number | undefined;
+            overscroll: boolean;
+            fullscreen: boolean;
             staticMode: boolean;
             persistent: boolean;
             autoClose: boolean;
+            flash: boolean;
             inDom: boolean;
-            overscroll: boolean;
-            fullscreen: boolean;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -2198,8 +2198,8 @@ export declare const components: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -2239,18 +2239,18 @@ export declare const components: {
         }, {}, {}, {}, {
             contextmenu: boolean;
             disabled: boolean;
-            adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             open: boolean;
             dense: boolean;
-            flash: boolean;
             axis: "x" | "y" | "on" | undefined;
             indent: number | undefined;
+            overscroll: boolean;
+            fullscreen: boolean;
             staticMode: boolean;
             persistent: boolean;
             autoClose: boolean;
+            flash: boolean;
             inDom: boolean;
-            overscroll: boolean;
-            fullscreen: boolean;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -2259,8 +2259,8 @@ export declare const components: {
         width: import("vue").PropType<string | undefined>;
         height: import("vue").PropType<string | undefined>;
         adaptive: {
-            type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-            default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+            default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
         };
         overscroll: {
             type: BooleanConstructor;
@@ -2302,18 +2302,18 @@ export declare const components: {
     }, string, {
         contextmenu: boolean;
         disabled: boolean;
-        adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+        adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
         open: boolean;
         dense: boolean;
-        flash: boolean;
         axis: "x" | "y" | "on" | undefined;
         indent: number | undefined;
+        overscroll: boolean;
+        fullscreen: boolean;
         staticMode: boolean;
         persistent: boolean;
         autoClose: boolean;
+        flash: boolean;
         inDom: boolean;
-        overscroll: boolean;
-        fullscreen: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Window/types").WindowSlots> & import("../constructors/Window/types").WindowSlots;
     });
@@ -2642,14 +2642,14 @@ export declare const components: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
+                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
             intent: {
-                type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
-                default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+                type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
+                default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
             };
             primary: {
                 type: BooleanConstructor;
@@ -2691,14 +2691,14 @@ export declare const components: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
+                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
             intent: {
-                type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
-                default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+                type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
+                default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
             };
             primary: {
                 type: BooleanConstructor;
@@ -2727,20 +2727,20 @@ export declare const components: {
                 detail: Record<string, any> | undefined;
             }) => any) | undefined;
         }, {
-            size: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+            size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
             link: boolean;
             focus: boolean;
             disabled: boolean;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
-            outline: boolean;
-            intent: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+            iconTurn: boolean;
+            iconHide: boolean;
             primary: boolean;
             secondary: boolean;
+            outline: boolean;
+            intent: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
             ghost: boolean;
         }, true, {}, {}, {
             P: {};
@@ -2757,14 +2757,14 @@ export declare const components: {
             readonly: BooleanConstructor;
             adaptive: import("vue").PropType<"icon" | undefined>;
             size: {
-                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
-                default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+                type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
+                default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
             };
             outline: BooleanConstructor;
             link: BooleanConstructor;
             intent: {
-                type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
-                default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+                type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
+                default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
             };
             primary: {
                 type: BooleanConstructor;
@@ -2793,20 +2793,20 @@ export declare const components: {
                 detail: Record<string, any> | undefined;
             }) => any) | undefined;
         }, {}, {}, {}, {}, {
-            size: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+            size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
             link: boolean;
             focus: boolean;
             disabled: boolean;
-            selected: boolean;
-            iconTurn: boolean;
-            iconHide: boolean;
             loading: boolean;
             tag: string | undefined;
+            selected: boolean;
             readonly: boolean;
-            outline: boolean;
-            intent: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+            iconTurn: boolean;
+            iconHide: boolean;
             primary: boolean;
             secondary: boolean;
+            outline: boolean;
+            intent: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
             ghost: boolean;
         }>;
         __isFragment?: undefined;
@@ -2820,14 +2820,14 @@ export declare const components: {
         readonly: BooleanConstructor;
         adaptive: import("vue").PropType<"icon" | undefined>;
         size: {
-            type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
-            default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+            type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
+            default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
         };
         outline: BooleanConstructor;
         link: BooleanConstructor;
         intent: {
-            type: import("vue").PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
-            default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+            type: import("vue").PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
+            default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
         };
         primary: {
             type: BooleanConstructor;
@@ -2862,20 +2862,20 @@ export declare const components: {
             detail: Record<string, any> | undefined;
         }) => void;
     }, string, {
-        size: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
+        size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
         link: boolean;
         focus: boolean;
         disabled: boolean;
-        selected: boolean;
-        iconTurn: boolean;
-        iconHide: boolean;
         loading: boolean;
         tag: string | undefined;
+        selected: boolean;
         readonly: boolean;
-        outline: boolean;
-        intent: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
+        iconTurn: boolean;
+        iconHide: boolean;
         primary: boolean;
         secondary: boolean;
+        outline: boolean;
+        intent: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
         ghost: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/uses/ref/useLabel").UseLabelSlots> & import("../constructors/uses/ref/useLabel").UseLabelSlots;
@@ -2896,8 +2896,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -2931,8 +2931,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -2960,7 +2960,7 @@ export declare const components: {
             start: boolean;
             end: boolean;
             high: boolean;
-            variation: "icon" | "payment" | "avatar" | "country" | undefined;
+            variation: "icon" | "country" | "avatar" | "payment" | undefined;
             shape: "circle" | "rect" | "box" | undefined;
         }, true, {}, {}, {
             P: {};
@@ -2984,8 +2984,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             variation: {
-                type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-                default: "icon" | "payment" | "avatar" | "country" | undefined;
+                type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+                default: "icon" | "country" | "avatar" | "payment" | undefined;
             };
             shape: {
                 type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -3015,7 +3015,7 @@ export declare const components: {
             start: boolean;
             end: boolean;
             high: boolean;
-            variation: "icon" | "payment" | "avatar" | "country" | undefined;
+            variation: "icon" | "country" | "avatar" | "payment" | undefined;
             shape: "circle" | "rect" | "box" | undefined;
         }>;
         __isFragment?: undefined;
@@ -3036,8 +3036,8 @@ export declare const components: {
         end: BooleanConstructor;
         high: BooleanConstructor;
         variation: {
-            type: import("vue").PropType<"icon" | "payment" | "avatar" | "country" | undefined>;
-            default: "icon" | "payment" | "avatar" | "country" | undefined;
+            type: import("vue").PropType<"icon" | "country" | "avatar" | "payment" | undefined>;
+            default: "icon" | "country" | "avatar" | "payment" | undefined;
         };
         shape: {
             type: import("vue").PropType<"circle" | "rect" | "box" | undefined>;
@@ -3069,7 +3069,7 @@ export declare const components: {
         start: boolean;
         end: boolean;
         high: boolean;
-        variation: "icon" | "payment" | "avatar" | "country" | undefined;
+        variation: "icon" | "country" | "avatar" | "payment" | undefined;
         shape: "circle" | "rect" | "box" | undefined;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Icon/types").IconSlots> & import("../constructors/Icon/types").IconSlots;
@@ -3271,13 +3271,13 @@ export declare const components: {
         }>>, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -3314,13 +3314,13 @@ export declare const components: {
         }>>, {}, {}, {}, {}, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -3354,13 +3354,13 @@ export declare const components: {
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
         indeterminate: "type1" | "type2" | "type3" | undefined;
         position: "top" | "bottom" | undefined;
-        max: string | number;
-        visible: boolean;
-        delay: string | number;
         linear: boolean;
         circular: boolean;
         dense: boolean;
         inverse: boolean;
+        max: string | number;
+        visible: boolean;
+        delay: string | number;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Progress/types").ProgressSlots>;
     });

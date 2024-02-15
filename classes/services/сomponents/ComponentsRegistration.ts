@@ -43,7 +43,7 @@ export class ComponentsRegistration {
         'import { forEach } from \'../functions/data\'',
         '',
         'import { components } from \'./components\'',
-        // 'import \'./types.d.ts\'',
+        'import \'./types.d.ts\'',
         '',
         ...this.initIcon(),
         '',

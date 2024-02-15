@@ -13,8 +13,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: BooleanConstructor;
     end: BooleanConstructor;
     high: BooleanConstructor;
-    rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-    size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+    rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+    size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     active: BooleanConstructor;
@@ -36,8 +36,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: BooleanConstructor;
     end: BooleanConstructor;
     high: BooleanConstructor;
-    rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | "xl" | "2xl" | undefined>;
-    size: import("vue").PropType<"sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+    rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | "2xl" | undefined>;
+    size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     active: BooleanConstructor;

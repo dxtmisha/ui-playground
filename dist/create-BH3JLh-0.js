@@ -15,7 +15,7 @@ import { _ as h } from "./M3Progress.vue_vue_type_style_index_0_lang-pMSbfq1S.js
 import { _ as V } from "./M3Ripple.vue_vue_type_style_index_0_lang-aEtkMNIs.js";
 import { _ as H } from "./M3Scrollbar.vue_vue_type_style_index_0_lang-dI7SUw0D.js";
 import { _ as v } from "./M3Window.vue_vue_type_style_index_0_lang-CCAq0rvl.js";
-import { _ as m } from "./C1Icon.vue_vue_type_style_index_0_lang-DZ950H5_.js";
+import { _ as m } from "./C1Icon.vue_vue_type_style_index_0_lang-CVykPKYX.js";
 import { _ as k } from "./C1Image.vue_vue_type_style_index_0_lang-FIo-YM3Y.js";
 import { _ as p } from "./C2Button.vue_vue_type_style_index_0_lang-MREV1PDN.js";
 import { _ as x } from "./C2Icon.vue_vue_type_style_index_0_lang-DEthe9M_.js";

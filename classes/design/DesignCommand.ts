@@ -88,7 +88,7 @@ export class DesignCommand {
     this.componentsList.make()
     this.componentsRegistration.make()
     this.componentsMain.make()
-    // this.componentsTypes.make()
+    this.componentsTypes.make()
     this.componentsFileTypes.make()
     this.componentsStyle.make()
 
@@ -157,7 +157,7 @@ export class DesignCommand {
         require: './dist/index.umd.cjs',
         types: './dist/lib/index.d.ts'
       },
-      // './components-type': './dist/lib/types.d.ts',
+      './components-type': './dist/lib/types.d.ts',
       './components-file': './dist/lib/file-types.d.ts',
       './create': {
         import: './dist/create.js',
