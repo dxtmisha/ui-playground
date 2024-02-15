@@ -5,6 +5,9 @@ import { Api } from './Api'
 
 import { useEnv } from '../composables/useEnv'
 
+export type TranslateList<T extends string[]> = { [K in T[number]]: string }
+export type TranslateItemOrList<T extends string | string[]> = T extends string[] ? TranslateList<T> : string
+
 /**
  * Class for getting the translated text.
  * Класс для получения переведенного текста.
@@ -54,14 +57,14 @@ export class Translate {
    * Получение списка переводов по массиву кодов текста.
    * @param names list of codes to get translations /<br>список кодов для получения переводов
    */
-  static async getList (names: string[]): Promise<Record<string, string>> {
+  static async getList<T extends string[]> (names: T): Promise<TranslateList<T>> {
     const list: Record<string, string> = {}
 
     for (const name of names) {
       list[name] = await this.get(name)
     }
 
-    return list
+    return list as TranslateList<T>
   }
 
   /**

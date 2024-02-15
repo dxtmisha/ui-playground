@@ -1,3 +1,7 @@
+export type TranslateList<T extends string[]> = {
+    [K in T[number]]: string;
+};
+export type TranslateItemOrList<T extends string | string[]> = T extends string[] ? TranslateList<T> : string;
 /**
  * Class for getting the translated text.
  * Класс для получения переведенного текста.
@@ -26,7 +30,7 @@ export declare class Translate {
      * Получение списка переводов по массиву кодов текста.
      * @param names list of codes to get translations /<br>список кодов для получения переводов
      */
-    static getList(names: string[]): Promise<Record<string, string>>;
+    static getList<T extends string[]>(names: T): Promise<TranslateList<T>>;
     /**
      * Added a list of translated texts.<br>
      * Добавлен список переведенных текстов.
