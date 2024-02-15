@@ -3,6 +3,7 @@ import { isFilled, Translate } from 'ui'
 import { registrationUiComponents } from 'ui/create'
 
 import 'ui/dist/lib/types'
+
 import 'ui/dist/style.css'
 import '../src/style.scss'
 

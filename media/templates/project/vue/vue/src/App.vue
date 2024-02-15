@@ -18,7 +18,7 @@ const translate = useTranslateRef([
       <router-link to="/shop">{{ translate.shop }}</router-link>
     </div>
     <div class="pt-12">
-      <router-view/>
+      <router-view/><c1-icon/>
     </div>
   </div>
 </template>

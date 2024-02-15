@@ -1,4 +1,4 @@
-import './file-types'
+import './file-types.d.ts'
 
 export * from './../functions/all'
 export * from './../classes/all'
