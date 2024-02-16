@@ -1,4 +1,4 @@
-import { toCamelCase } from '../../../functions/string'
+// import { toCamelCase } from '../../../functions/string'
 
 import { PropertiesFile } from '../properties/PropertiesFile'
 
@@ -29,21 +29,22 @@ export class DesignIcons {
     const list = this.getList()
 
     if (list) {
-      const imports: string[] = []
+      // const imports: string[] = []
       const icons: string[] = []
 
       list.forEach(icon => {
-        const name = toCamelCase(icon.name)
+        // const name = toCamelCase(icon.name)
 
-        imports.push(`import ${name} from './${icon.path}'`)
-        icons.push(`Icons.add('${icon.name}', ${name})`)
+        // imports.push(`import ${name} from './${icon.path}'`)
+        // icons.push(`Icons.add('${icon.name}', ${name})`)
+        icons.push(`Icons.add('${icon.name}', import('./${icon.path}'))`)
       })
 
       this.write([
         'import { Icons } from \'../classes/Icons\'',
         '',
-        ...imports,
-        '',
+        // ...imports,
+        // '',
         ...icons,
         ''
       ])

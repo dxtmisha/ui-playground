@@ -6,8 +6,8 @@ declare const meta: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -50,8 +50,8 @@ declare const meta: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -86,18 +86,18 @@ declare const meta: {
         }, {
             contextmenu: boolean;
             disabled: boolean;
-            adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             open: boolean;
             dense: boolean;
-            flash: boolean;
             axis: "x" | "y" | "on" | undefined;
             indent: number | undefined;
+            overscroll: boolean;
+            fullscreen: boolean;
             staticMode: boolean;
             persistent: boolean;
             autoClose: boolean;
+            flash: boolean;
             inDom: boolean;
-            overscroll: boolean;
-            fullscreen: boolean;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -109,8 +109,8 @@ declare const meta: {
             width: import("vue").PropType<string | undefined>;
             height: import("vue").PropType<string | undefined>;
             adaptive: {
-                type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-                default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+                type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+                default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             };
             overscroll: {
                 type: BooleanConstructor;
@@ -150,18 +150,18 @@ declare const meta: {
         }, {}, {}, {}, {
             contextmenu: boolean;
             disabled: boolean;
-            adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
             open: boolean;
             dense: boolean;
-            flash: boolean;
             axis: "x" | "y" | "on" | undefined;
             indent: number | undefined;
+            overscroll: boolean;
+            fullscreen: boolean;
             staticMode: boolean;
             persistent: boolean;
             autoClose: boolean;
+            flash: boolean;
             inDom: boolean;
-            overscroll: boolean;
-            fullscreen: boolean;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -170,8 +170,8 @@ declare const meta: {
         width: import("vue").PropType<string | undefined>;
         height: import("vue").PropType<string | undefined>;
         adaptive: {
-            type: import("vue").PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-            default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+            type: import("vue").PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+            default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
         };
         overscroll: {
             type: BooleanConstructor;
@@ -213,18 +213,18 @@ declare const meta: {
     }, string, {
         contextmenu: boolean;
         disabled: boolean;
-        adaptive: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
+        adaptive: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
         open: boolean;
         dense: boolean;
-        flash: boolean;
         axis: "x" | "y" | "on" | undefined;
         indent: number | undefined;
+        overscroll: boolean;
+        fullscreen: boolean;
         staticMode: boolean;
         persistent: boolean;
         autoClose: boolean;
+        flash: boolean;
         inDom: boolean;
-        overscroll: boolean;
-        fullscreen: boolean;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../../constructors/Window/types").WindowSlots> & import("../../constructors/Window/types").WindowSlots;
     });

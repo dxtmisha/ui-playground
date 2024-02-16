@@ -2,12 +2,14 @@ import { forEach } from '../functions/data'
 
 import { useEnv } from '../composables/useEnv'
 
+export type IconsItem = string | Promise<string | any>
+
 /**
  * Class for managing icons.<br>
  * Класс для управления иконками.
  */
 export class Icons {
-  protected static readonly icons: Record<string, string> = {}
+  protected static readonly icons: Record<string, IconsItem> = {}
   protected static readonly url: string = useEnv('iconPath') ?? '/icons/'
 
   /**
@@ -26,10 +28,16 @@ export class Icons {
    * @param url path to the storage location of the icon, if the icon does not exist /<br>
    * путь к месту хранения иконки, если иконка не существует
    */
-  static get (index: string, url = ''): string {
-    return this.icons?.[this.getName(index)] ??
+  static async get (index: string, url = ''): Promise<string> {
+    const icon = this.icons?.[this.getName(index)] ??
       this.icons?.[index] ??
       `${index.replace(/^@/, url ?? this.url)}.svg`
+
+    if (typeof icon === 'string') {
+      return icon
+    }
+
+    return await icon
   }
 
   /**
@@ -48,7 +56,7 @@ export class Icons {
    * @param index icon name /<br>название иконки
    * @param file path to the file /<br>путь к файлу
    */
-  static add (index: string, file: string): void {
+  static add (index: string, file: IconsItem): void {
     this.icons[this.getName(index)] = file
   }
 
@@ -57,7 +65,7 @@ export class Icons {
    * Добавление иконки по списку.
    * @param list list of icons /<br>список иконки
    */
-  static addByList (list: Record<string, string>): void {
+  static addByList (list: Record<string, IconsItem>): void {
     forEach(list, (file, index) => this.add(index, file))
   }
 

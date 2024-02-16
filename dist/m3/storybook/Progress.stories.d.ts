@@ -57,13 +57,13 @@ declare const meta: {
         }>>, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -100,13 +100,13 @@ declare const meta: {
         }>>, {}, {}, {}, {}, {
             indeterminate: "type1" | "type2" | "type3" | undefined;
             position: "top" | "bottom" | undefined;
-            max: string | number;
-            visible: boolean;
-            delay: string | number;
             linear: boolean;
             circular: boolean;
             dense: boolean;
             inverse: boolean;
+            max: string | number;
+            visible: boolean;
+            delay: string | number;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -140,13 +140,13 @@ declare const meta: {
     }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
         indeterminate: "type1" | "type2" | "type3" | undefined;
         position: "top" | "bottom" | undefined;
-        max: string | number;
-        visible: boolean;
-        delay: string | number;
         linear: boolean;
         circular: boolean;
         dense: boolean;
         inverse: boolean;
+        max: string | number;
+        visible: boolean;
+        delay: string | number;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../../constructors/Progress/types").ProgressSlots>;
     });

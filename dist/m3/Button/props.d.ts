@@ -49,7 +49,7 @@ export declare const propsInstruction: {
     text: BooleanConstructor;
     elevated: BooleanConstructor;
     tonal: BooleanConstructor;
-    palette: PropType<"error" | "neutral" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutralVariant" | undefined>;
+    palette: PropType<"error" | "primary" | "secondary" | "tertiary" | "red" | "green" | "neutral" | "neutralVariant" | undefined>;
     tag: {
         type: PropType<string | undefined>;
         default: string | undefined;
