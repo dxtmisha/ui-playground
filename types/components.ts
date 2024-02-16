@@ -1,6 +1,6 @@
 export const COMPONENTS_EXCEPTIONS: string[] = [
-  'Mutation',
-  'MutationItem'
+  // 'Mutation',
+  // 'MutationItem'
 ]
 
 export const COMPONENTS_DIR = 'lib'

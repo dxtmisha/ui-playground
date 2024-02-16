@@ -1,0 +1,7 @@
+@import "../../styles/all";
+
+@mixin mixinMutationItemToken {
+  // :style [!] System label / Системная метка
+  --c2-mutationItem-main: var(--d-mutationItem);
+  // :style [!] System label / Системная метка
+}

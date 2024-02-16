@@ -20383,6 +20383,32 @@ $designsProperties: (
           ),
         ),
       ),
+      'mutation':(
+        index: 'mutation',
+        name: 'c2-mutation',
+        type: 'component',
+        value: (
+          'display':(
+            index: 'display',
+            name: 'display',
+            type: 'property',
+            value: 'none',
+          ),
+        ),
+      ),
+      'mutationItem':(
+        index: 'mutationItem',
+        name: 'c2-mutationItem',
+        type: 'component',
+        value: (
+          'main':(
+            index: 'main',
+            name: '--c2-mutationItem-main',
+            type: 'var',
+            value: 'var(--d-mutationItem)',
+          ),
+        ),
+      ),
       'progress':(
         index: 'progress',
         name: 'c2-progress',

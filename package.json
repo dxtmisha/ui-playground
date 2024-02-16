@@ -26,6 +26,7 @@
     "styles",
     "media/flags",
     "media/geo",
+    "packages/project-vue",
     "lib",
     "c1",
     "c2",
@@ -111,6 +112,16 @@
       "require": "./dist/M3Mask.umd.cjs",
       "types": "./dist/m3/Mask/index.d.ts"
     },
+    "./M3Mutation": {
+      "import": "./m3/Mutation/index.ts",
+      "require": "./dist/M3Mutation.umd.cjs",
+      "types": "./dist/m3/Mutation/index.d.ts"
+    },
+    "./M3MutationItem": {
+      "import": "./m3/MutationItem/index.ts",
+      "require": "./dist/M3MutationItem.umd.cjs",
+      "types": "./dist/m3/MutationItem/index.d.ts"
+    },
     "./M3Progress": {
       "import": "./m3/Progress/index.ts",
       "require": "./dist/M3Progress.umd.cjs",
@@ -155,6 +166,16 @@
       "import": "./c2/Image/index.ts",
       "require": "./dist/C2Image.umd.cjs",
       "types": "./dist/c2/Image/index.d.ts"
+    },
+    "./C2Mutation": {
+      "import": "./c2/Mutation/index.ts",
+      "require": "./dist/C2Mutation.umd.cjs",
+      "types": "./dist/c2/Mutation/index.d.ts"
+    },
+    "./C2MutationItem": {
+      "import": "./c2/MutationItem/index.ts",
+      "require": "./dist/C2MutationItem.umd.cjs",
+      "types": "./dist/c2/MutationItem/index.d.ts"
     },
     "./C2Progress": {
       "import": "./c2/Progress/index.ts",

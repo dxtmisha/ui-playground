@@ -34,6 +34,12 @@ declare module 'ui/M3Input' {
 declare module 'ui/M3Mask' {
   export { M3Mask } from 'ui/dist/m3/Mask/index.d.ts'
 }
+declare module 'ui/M3Mutation' {
+  export { M3Mutation } from 'ui/dist/m3/Mutation/index.d.ts'
+}
+declare module 'ui/M3MutationItem' {
+  export { M3MutationItem } from 'ui/dist/m3/MutationItem/index.d.ts'
+}
 declare module 'ui/M3Progress' {
   export { M3Progress } from 'ui/dist/m3/Progress/index.d.ts'
 }
@@ -60,6 +66,12 @@ declare module 'ui/C2Icon' {
 }
 declare module 'ui/C2Image' {
   export { C2Image } from 'ui/dist/c2/Image/index.d.ts'
+}
+declare module 'ui/C2Mutation' {
+  export { C2Mutation } from 'ui/dist/c2/Mutation/index.d.ts'
+}
+declare module 'ui/C2MutationItem' {
+  export { C2MutationItem } from 'ui/dist/c2/MutationItem/index.d.ts'
 }
 declare module 'ui/C2Progress' {
   export { C2Progress } from 'ui/dist/c2/Progress/index.d.ts'

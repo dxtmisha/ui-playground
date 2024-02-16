@@ -12,6 +12,8 @@ import { M3Icon } from './../m3/Icon'
 import { M3Image } from './../m3/Image'
 import { M3Input } from './../m3/Input'
 import { M3Mask } from './../m3/Mask'
+import { M3Mutation } from './../m3/Mutation'
+import { M3MutationItem } from './../m3/MutationItem'
 import { M3Progress } from './../m3/Progress'
 import { M3Ripple } from './../m3/Ripple'
 import { M3Scrollbar } from './../m3/Scrollbar'
@@ -21,6 +23,8 @@ import { C1Image } from './../c1/Image'
 import { C2Button } from './../c2/Button'
 import { C2Icon } from './../c2/Icon'
 import { C2Image } from './../c2/Image'
+import { C2Mutation } from './../c2/Mutation'
+import { C2MutationItem } from './../c2/MutationItem'
 import { C2Progress } from './../c2/Progress'
 
 export const components = {
@@ -35,6 +39,8 @@ export const components = {
   M3Image,
   M3Input,
   M3Mask,
+  M3Mutation,
+  M3MutationItem,
   M3Progress,
   M3Ripple,
   M3Scrollbar,
@@ -44,5 +50,7 @@ export const components = {
   C2Button,
   C2Icon,
   C2Image,
+  C2Mutation,
+  C2MutationItem,
   C2Progress
 }
