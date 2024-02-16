@@ -44,13 +44,17 @@ export class DesignProject {
 
   makeBuild (): void {
     if (this.getTemplateDir() === 'vue') {
-      const pathRoot = __dirname.replace(/node_modules\/.+$/, '')
-      const pathDist = `${pathRoot}/production/dist`
-      const pathBuild = `${pathRoot}/..`
+      const pathDist = ['.', 'production', 'dist']
+      const pathBuild = ['.', '..']
 
       this.copyBuild(pathDist, pathBuild)
 
-      console.log('__dirname', pathRoot)
+      console.log(
+        '__dirname',
+        __dirname,
+        pathDist,
+        pathBuild
+      )
     }
   }
 
@@ -117,13 +121,25 @@ export class DesignProject {
    * @param dist
    * @param build
    */
-  copyBuild (
-    dist: string,
-    build: string
+  private copyBuild (
+    dist: string[],
+    build: string[]
   ) {
-    const dirs = PropertiesFile.readDir(dist)
+    const paths = PropertiesFile.readDirRecursive(dist)
 
-    console.log('dirs', dirs)
+    this.removeDist(
+      dist,
+      build
+    )
+
+    paths.forEach(path => {
+      PropertiesFile.writeByPath(
+        [...build, path],
+        PropertiesFile.readFile<string>([...dist, path]) ?? ''
+      )
+    })
+
+    console.log('paths', paths)
   }
 
   /**
@@ -144,6 +160,23 @@ export class DesignProject {
     if (PropertiesFile.is(path)) {
       PropertiesFile.removeDir(path)
     }
+
+    return this
+  }
+
+  private removeDist (
+    dist: string[],
+    build: string[]
+  ): this {
+    const dirs = PropertiesFile.readDir(dist)
+
+    dirs.forEach(item => {
+      const paths = [...build, item]
+
+      if (PropertiesFile.isDir(paths)) {
+        PropertiesFile.removeDir(paths)
+      }
+    })
 
     return this
   }
