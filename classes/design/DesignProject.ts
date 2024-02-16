@@ -167,21 +167,4 @@ export class DesignProject {
 
     return this
   }
-
-  private removeDist (
-    dist: string[],
-    build: string[]
-  ): this {
-    const dirs = PropertiesFile.readDir(dist)
-
-    dirs.forEach(item => {
-      const paths = [...build, item]
-
-      if (PropertiesFile.isDir(paths)) {
-        PropertiesFile.removeDir(paths)
-      }
-    })
-
-    return this
-  }
 }

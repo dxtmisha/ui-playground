@@ -18,6 +18,7 @@ export declare class DesignProject {
      * Инициализация файлов для проекта.
      */
     make(): void;
+    makeBuild(): void;
     /**
      * Returns the name of the template directory.<br>
      * Возвращает название шаблонной директории.
@@ -45,6 +46,12 @@ export declare class DesignProject {
      * Читает выбранные файлы в проекте.
      * @param path name of the element being checked /<br>название проверяемого элемента
      */
+    /**
+     *
+     * @param dist
+     * @param build
+     */
+    private copyBuild;
     /**
      * We get a list of links to files.<br>
      * Получаем список ссылок на файлы.
