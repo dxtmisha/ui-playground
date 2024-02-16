@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { C2Mutation } from 'ui/c2/Mutation'
+import { C2Mutation } from 'ui/C2Mutation'
 </script>
 
 <template>

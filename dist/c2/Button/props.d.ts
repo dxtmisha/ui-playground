@@ -40,14 +40,14 @@ export declare const propsInstruction: {
     readonly: BooleanConstructor;
     adaptive: PropType<"icon" | undefined>;
     size: {
-        type: PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: PropType<"x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined>;
+        default: "x" | "sm" | "md" | "lg" | "xs" | "xl" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;
     intent: {
-        type: PropType<"default" | "neutral" | "positive" | "informative" | "negative" | undefined>;
-        default: "default" | "neutral" | "positive" | "informative" | "negative" | undefined;
+        type: PropType<"default" | "positive" | "informative" | "negative" | "neutral" | undefined>;
+        default: "default" | "positive" | "informative" | "negative" | "neutral" | undefined;
     };
     primary: {
         type: BooleanConstructor;

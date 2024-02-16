@@ -16,9 +16,9 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    tag: string;
-    inverse: boolean;
     visible: boolean;
+    inverse: boolean;
+    tag: string;
     border: boolean;
 }, {}>, Readonly<ScrollbarSlots> & ScrollbarSlots>;
 export default _default;

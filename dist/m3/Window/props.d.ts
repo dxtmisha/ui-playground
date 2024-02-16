@@ -31,8 +31,8 @@ export declare const propsInstruction: {
     width: PropType<string | undefined>;
     height: PropType<string | undefined>;
     adaptive: {
-        type: PropType<"menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined>;
-        default: "menu" | "auto" | "modal" | "modalDynamic" | "static" | "staticSm" | "staticMd" | "staticLg" | undefined;
+        type: PropType<"menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined>;
+        default: "menu" | "auto" | "static" | "modal" | "modalDynamic" | "staticSm" | "staticMd" | "staticLg" | undefined;
     };
     overscroll: {
         type: BooleanConstructor;
