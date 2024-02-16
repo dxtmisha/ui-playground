@@ -48,13 +48,6 @@ export class DesignProject {
       const pathBuild = ['.', '..']
 
       this.copyBuild(pathDist, pathBuild)
-
-      console.log(
-        '__dirname',
-        __dirname,
-        pathDist,
-        pathBuild
-      )
     }
   }
 
@@ -142,8 +135,6 @@ export class DesignProject {
         paths
       )
     })
-
-    console.log('paths', dirs)
   }
 
   /**
