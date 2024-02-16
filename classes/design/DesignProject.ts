@@ -125,21 +125,25 @@ export class DesignProject {
     dist: string[],
     build: string[]
   ) {
-    const paths = PropertiesFile.readDirRecursive(dist)
+    const dirs = PropertiesFile.readDir(dist)
 
-    this.removeDist(
-      dist,
-      build
-    )
+    dirs.forEach(item => {
+      const paths = [...build, item]
+      const pathsDist = [...dist, item]
 
-    paths.forEach(path => {
-      PropertiesFile.writeByPath(
-        [...build, path],
-        PropertiesFile.readFile<string>([...dist, path]) ?? ''
+      if (PropertiesFile.isDir(paths)) {
+        PropertiesFile.removeDir(paths)
+      } else {
+        PropertiesFile.removeFile(paths)
+      }
+
+      PropertiesFile.rename(
+        pathsDist,
+        paths
       )
     })
 
-    console.log('paths', paths)
+    console.log('paths', dirs)
   }
 
   /**

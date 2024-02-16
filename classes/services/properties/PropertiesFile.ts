@@ -284,8 +284,8 @@ export class PropertiesFile {
   }
 
   /**
-   * List of slots for update.<br>
-   * Список слотов для обновления.
+   * Directory deletion.<br>
+   * Удаление директории.
    * @param path path to the directory /<br>путь к директории
    */
   static removeDir (
@@ -297,6 +297,29 @@ export class PropertiesFile {
         force: true
       })
     }
+  }
+
+  /**
+   * File deletion.<br>
+   * Удаление файла.
+   * @param path path to the file /<br>путь к файлу
+   */
+  static removeFile (
+    path: PropertiesFilePath
+  ): void {
+    if (this.is(path)) {
+      requireFs.unlinkSync(this.joinPath(path))
+    }
+  }
+
+  static rename (
+    path: PropertiesFilePath,
+    newPath: PropertiesFilePath
+  ): void {
+    requireFs.renameSync(
+      this.joinPath(path),
+      this.joinPath(newPath)
+    )
   }
 
   /**
