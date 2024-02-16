@@ -94,7 +94,7 @@ export class Translate {
           this.resolveList.forEach(resolve => resolve())
           this.resolveList = []
         })
-      }, 1000)
+      }, 160)
     })
   }
 

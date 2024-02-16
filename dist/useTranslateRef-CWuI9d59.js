@@ -1288,7 +1288,7 @@ class p {
         this.timeout = void 0, this.make().then(() => {
           this.resolveList.forEach((e) => e()), this.resolveList = [];
         });
-      }, 1e3);
+      }, 160);
     });
   }
   /**
