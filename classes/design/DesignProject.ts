@@ -42,6 +42,18 @@ export class DesignProject {
     }
   }
 
+  makeBuild (): void {
+    if (this.getTemplateDir() === 'vue') {
+      const pathRoot = __dirname.replace(/node_modules\/.+$/, '')
+      const pathDist = `${pathRoot}/production/dist`
+      const pathBuild = `${pathRoot}/..`
+
+      this.copyBuild(pathDist, pathBuild)
+
+      console.log('__dirname', pathRoot)
+    }
+  }
+
   /**
    * Returns the name of the template directory.<br>
    * Возвращает название шаблонной директории.
@@ -99,6 +111,20 @@ export class DesignProject {
   // private readProject (path: PropertiesFilePath): string | undefined {
   //   return PropertiesFile.readFile(this.getProjectPath(path))
   // }
+
+  /**
+   *
+   * @param dist
+   * @param build
+   */
+  copyBuild (
+    dist: string,
+    build: string
+  ) {
+    const dirs = PropertiesFile.readDir(dist)
+
+    console.log('dirs', dirs)
+  }
 
   /**
    * We get a list of links to files.<br>

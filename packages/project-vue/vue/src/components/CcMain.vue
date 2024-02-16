@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <h1 class="text-center c2-font--heading--sm">Welcome!</h1>
+    <h1 class="c2-font--heading--sm">Welcome!</h1>
   </div>
 </template>
 

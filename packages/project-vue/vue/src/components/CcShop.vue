@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <div>shop</div>
+    <h1 class="c2-font--heading--sm">Shop</h1>
   </div>
 </template>
 
