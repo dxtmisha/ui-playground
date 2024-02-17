@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { C2Mutation } from 'ui/C2Mutation'
 </script>
 
 <template>

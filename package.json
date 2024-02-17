@@ -55,14 +55,15 @@
       "types": "./dist/lib/main.d.ts"
     },
     "./style": "./lib/style.scss",
+    "./style-init": "./lib/style-init.scss",
     "./style.css": "./dist/style.css",
-    "./style-init.css": "./dist/style-init.css",
     "./media": {
       "import": "./dist/media.js",
       "require": "./dist/media.umd.cjs",
       "types": "./dist/lib/media.d.ts"
     },
     "./dist/*": "./dist/*",
+    "./styles/*": "./styles/*",
     "./M2Icon": {
       "import": "./m2/Icon/index.ts",
       "require": "./dist/M2Icon.umd.cjs",

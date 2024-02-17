@@ -8,12 +8,22 @@ import * as functions from './../functions/all'
 import * as classes from './../classes/all'
 import { components } from './components'
 
+import * as vue from 'vue'
+import * as vueRouter from 'vue-router'
+import * as vuex from 'vuex'
+import * as ui from './index'
+
 MutationGlobal.addFunctionList(functions)
 MutationGlobal.addClassList(classes)
 MutationGlobal.addComponentList(components)
 
 ;(window as any).UI = MutationGlobal
 ;(window as any).UI_VUE = MutationGlobalRef
+
+;(window as any).UI_CORE_VUE = vue
+;(window as any).UI_CORE_VUE_ROUTER = vueRouter
+;(window as any).UI_CORE_VUEX = vuex
+;(window as any).UI_CORE_UI = ui
 
 export * from './create'
 export * from './index'
