@@ -15,6 +15,8 @@ import {
   type MutationSlots
 } from '../../constructors/Mutation/types'
 
+import { C2MutationItem } from '../MutationItem'
+
 import {
   propsInstruction // ,
   // propsValues
@@ -44,6 +46,9 @@ const design = new MutationDesign(
   props,
   {
     emits,
+    components: {
+      item: C2MutationItem
+    },
     classes: classesToken,
     styles: stylesToken
   }

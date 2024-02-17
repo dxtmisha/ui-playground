@@ -3,7 +3,7 @@ var u = (i, t, s) => t in i ? r(i, t, { enumerable: !0, configurable: !0, writab
 var a = (i, t, s) => (u(i, typeof t != "symbol" ? t + "" : t, s), s);
 import { shallowRef as h, onBeforeMount as m, nextTick as c, onUnmounted as d, h as l } from "vue";
 import { D as f } from "./DesignConstructorAbstract-pYeoTVwY.js";
-import { c as o, b, M as p } from "./MutationDataItem-B1VSdC0w.js";
+import { a as o, b, c as p } from "./props-D7LWGcQy.js";
 class v {
   constructor() {
     a(this, "items", []);
@@ -67,7 +67,7 @@ class v {
     return this.items.findIndex((s) => s.is(t));
   }
 }
-class M {
+class g {
   /**
    * Constructor
    * @param addCallback function for adding an element /<br>функция для добавления элемента
@@ -110,7 +110,7 @@ class M {
     });
   }
 }
-class g {
+class k {
   /**
    * Constructor
    * @param items object for working with elements /<br>объект для работы с элементами
@@ -160,7 +160,7 @@ class g {
     });
   }
 }
-class k {
+class M {
   /**
    * Constructor
    */
@@ -168,10 +168,10 @@ class k {
     a(this, "mutationGlobal");
     a(this, "mutationItems");
     a(this, "items", new v());
-    this.callback = t, this.mutationGlobal = new M(
+    this.callback = t, this.mutationGlobal = new g(
       (s) => this.add(s),
       (s) => this.remove(s)
-    ), this.mutationItems = new g(
+    ), this.mutationItems = new k(
       this.items,
       (s) => {
         var e;
@@ -233,7 +233,7 @@ class I {
   constructor() {
     a(this, "mutation");
     a(this, "items", h([]));
-    this.mutation = new k(() => this.update()), m(async () => {
+    this.mutation = new M(() => this.update()), m(async () => {
       await c(), requestAnimationFrame(() => {
         this.mutation.start(), this.update();
       });
