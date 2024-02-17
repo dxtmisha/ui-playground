@@ -4,7 +4,10 @@ export const COMPONENTS_EXCEPTIONS: string[] = [
 ]
 
 export const COMPONENTS_DIR = 'lib'
+export const COMPONENTS_DIR_FLAGS = ['media', 'flags']
 export const COMPONENTS_FILE = 'components'
+export const COMPONENTS_FLAGS = 'flags'
+export const COMPONENTS_MEDIA = 'media'
 export const COMPONENTS_MAIN = 'main'
 export const COMPONENTS_TYPES = 'types'
 export const COMPONENTS_FILE_TYPES = 'fileTypes'

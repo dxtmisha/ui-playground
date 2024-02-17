@@ -7,18 +7,18 @@ import { forEach } from '../functions/data'
 import { components } from './components'
 import './types.d.ts'
 
-import './../c2/icons.ts'
+export async function registrationUiComponents (app: App) {
+  await (await import('./media.ts')).makeMediaGlobal()
 
-export function registrationUiComponents (app: App): void {
   forEach(components, (component, name) => {
     app.component(name, component)
   })
 }
 
-export function createUiComponents<A extends Component> (App: A) {
+export async function createUiComponents<A extends Component> (App: A) {
   const app = createApp(App)
 
-  registrationUiComponents(app)
+  await registrationUiComponents(app)
 
   return app
 }

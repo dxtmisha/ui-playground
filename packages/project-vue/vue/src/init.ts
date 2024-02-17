@@ -8,7 +8,7 @@ export const translate: string[] = [
   ...Object.keys(translateList)
 ]
 
-export const init = (app: App): void => {
+export const init = async (app: App): Promise<void> => {
   // TODO: place to connect plugins for vue
   // TODO: место для подключения плагинов для vue
   console.log('App', app)

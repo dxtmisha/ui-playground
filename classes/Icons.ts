@@ -13,7 +13,7 @@ export type IconsItem = string | Promise<string | any>
 export class Icons {
   protected static readonly icons: Record<string, IconsItem> = {}
   protected static readonly url: string = useEnv('UI_PATH') ?? '/icons/'
-  protected static readonly urlGlobal = `${Api.isLocalhost() ? `${useEnv('UI_WEB')}` : ''}${this.url}`
+  protected static readonly urlGlobal = `${Api.isLocalhost() ? '' : ''}${this.url}`
 
   /**
    * Checks if the given icon is in the list of connected icons.<br>

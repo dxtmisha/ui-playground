@@ -258,7 +258,7 @@ export class DesignStructureRead extends DesignStructureItemAbstract<DesignStruc
       state
     }) => {
       const structure = this.data[index]
-      console.log('structure', index, structure)
+
       if (structure) {
         if (parent) {
           const value: DesignStructureItemSub = {

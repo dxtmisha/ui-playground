@@ -12,6 +12,9 @@ import { DesignIcons } from '../services/designs/DesignIcons'
 
 import { ComponentsItems } from '../services/сomponents/ComponentsItems'
 import { ComponentsList } from '../services/сomponents/ComponentsList'
+import { ComponentsFlags } from '../services/сomponents/ComponentsFlags.ts'
+import { ComponentsMedia } from '../services/сomponents/ComponentsMedia.ts'
+
 import { ComponentsMain } from '../services/сomponents/ComponentsMain'
 import { ComponentsTypes } from '../services/сomponents/ComponentsTypes'
 import { ComponentsStyle } from '../services/сomponents/ComponentsStyle'
@@ -27,6 +30,9 @@ config()
 export class DesignCommand {
   protected readonly components: ComponentsItems
   protected readonly componentsList: ComponentsList
+  protected readonly componentsFlags: ComponentsFlags
+  protected readonly componentsMedia: ComponentsMedia
+
   protected readonly componentsMain: ComponentsMain
   protected readonly componentsTypes: ComponentsTypes
   protected readonly componentsFileTypes: ComponentsFileTypes
@@ -43,6 +49,9 @@ export class DesignCommand {
   ) {
     this.components = new ComponentsItems()
     this.componentsList = new ComponentsList(this.components)
+    this.componentsFlags = new ComponentsFlags(this.components)
+    this.componentsMedia = new ComponentsMedia(this.components)
+
     this.componentsRegistration = new ComponentsRegistration(this.components)
     this.componentsMain = new ComponentsMain(this.components)
     this.componentsTypes = new ComponentsTypes(this.components)
@@ -86,6 +95,9 @@ export class DesignCommand {
     this.makeConstructorComponent()
 
     this.componentsList.make()
+    this.componentsFlags.make()
+    this.componentsMedia.make()
+
     this.componentsRegistration.make()
     this.componentsMain.make()
     this.componentsTypes.make()
@@ -132,7 +144,7 @@ export class DesignCommand {
       designs.forEach(design => {
         if (this.isDesign(design.name)) {
           new DesignIcons(design.name).make()
-          console.log('design.name', design.name)
+
           design.components.forEach(component => {
             if (this.isComponent(component.name)) {
               console.log(`Component update: ${component.alias}`)

@@ -1,4 +1,4 @@
-// import { toCamelCase } from '../../../functions/string'
+import { toCamelCase } from '../../../functions/string'
 
 import { PropertiesFile } from '../properties/PropertiesFile'
 
@@ -33,22 +33,24 @@ export class DesignIcons {
     const list = this.getList()
 
     if (list) {
-      // const imports: string[] = []
+      const imports: string[] = []
       const icons: string[] = []
 
       list.forEach(icon => {
-        // const name = toCamelCase(icon.name)
+        const name = toCamelCase(icon.name)
 
-        // imports.push(`import ${name} from './${icon.path}'`)
-        icons.push(`Icons.addGlobal('${icon.name}', '${icon.path}')`)
+        imports.push(`import ${name} from './${icon.path}'`)
+        icons.push(`  Icons.add('${icon.name}', ${name})`)
       })
 
       this.write([
         'import { Icons } from \'../classes/Icons\'',
         '',
-        // ...imports,
-        // '',
+        ...imports,
+        '',
+        'export const makeIconsGlobal = (): void => {',
         ...icons,
+        '}',
         ''
       ])
     }

@@ -18,7 +18,7 @@ import { router } from './../src/router'
 import { createStore } from 'vuex'
 import { store } from './../src/store'
 
-Translate.add(translate).then(() => {
+Translate.add(translate).then(async () => {
   const app = createApp(App)
 
   if (isFilled(router.routes)) {
@@ -27,8 +27,8 @@ Translate.add(translate).then(() => {
 
   app.use(createStore(store))
 
-  registrationUiComponents(app)
-  init(app)
+  await registrationUiComponents(app)
+  await init(app)
 
   app.mount('#app')
 })
