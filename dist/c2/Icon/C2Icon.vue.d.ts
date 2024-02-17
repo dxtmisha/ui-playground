@@ -22,8 +22,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: "circle" | "rect" | "box" | undefined;
     };
     size: {
-        type: import("vue").PropType<"12" | "16" | "20" | "24" | "32" | undefined>;
-        default: "12" | "16" | "20" | "24" | "32" | undefined;
+        type: import("vue").PropType<"12" | "24" | "32" | "20" | "16" | undefined>;
+        default: "12" | "24" | "32" | "20" | "16" | undefined;
     };
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -55,8 +55,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         default: "circle" | "rect" | "box" | undefined;
     };
     size: {
-        type: import("vue").PropType<"12" | "16" | "20" | "24" | "32" | undefined>;
-        default: "12" | "16" | "20" | "24" | "32" | undefined;
+        type: import("vue").PropType<"12" | "24" | "32" | "20" | "16" | undefined>;
+        default: "12" | "24" | "32" | "20" | "16" | undefined;
     };
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -64,7 +64,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
 }>> & {
     onLoad?: ((image: import("../../constructors/Image/typesBasic").ImageEventData) => any) | undefined;
 }, {
-    size: "12" | "16" | "20" | "24" | "32" | undefined;
+    size: "12" | "24" | "32" | "20" | "16" | undefined;
     animationType: "type1" | "type2" | undefined;
     turn: boolean;
     disabled: boolean;

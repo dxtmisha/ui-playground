@@ -6,6 +6,7 @@ export type IconsItem = string | Promise<string | any>;
 export declare class Icons {
     protected static readonly icons: Record<string, IconsItem>;
     protected static readonly url: string;
+    protected static readonly urlGlobal: string;
     /**
      * Checks if the given icon is in the list of connected icons.<br>
      * Проверяет, есть ли данная иконка в списке подключенных иконок.
@@ -32,6 +33,13 @@ export declare class Icons {
      * @param file path to the file /<br>путь к файлу
      */
     static add(index: string, file: IconsItem): void;
+    /**
+     * Adding custom global icons.<br>
+     * Добавление пользовательских глобальных иконок.
+     * @param index icon name /<br>название иконки
+     * @param file path to the file /<br>путь к файлу
+     */
+    static addGlobal(index: string, file: string): void;
     /**
      * Adding an icon by the list.<br>
      * Добавление иконки по списку.

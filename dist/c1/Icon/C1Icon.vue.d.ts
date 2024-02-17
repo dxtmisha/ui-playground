@@ -14,8 +14,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     end: BooleanConstructor;
     high: BooleanConstructor;
     rounded: {
-        type: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | undefined>;
-        default: "none" | "standard" | "sm" | "md" | "lg" | "full" | undefined;
+        type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
+        default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
     };
     size: {
         type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -43,8 +43,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     end: BooleanConstructor;
     high: BooleanConstructor;
     rounded: {
-        type: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | undefined>;
-        default: "none" | "standard" | "sm" | "md" | "lg" | "full" | undefined;
+        type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
+        default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
     };
     size: {
         type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -68,7 +68,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: boolean;
     end: boolean;
     high: boolean;
-    rounded: "none" | "standard" | "sm" | "md" | "lg" | "full" | undefined;
+    rounded: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
 }, {}>, Readonly<IconSlots> & IconSlots>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {

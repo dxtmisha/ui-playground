@@ -1,6 +1,9 @@
 export declare const COMPONENTS_EXCEPTIONS: string[];
 export declare const COMPONENTS_DIR = "lib";
+export declare const COMPONENTS_DIR_FLAGS: string[];
 export declare const COMPONENTS_FILE = "components";
+export declare const COMPONENTS_FLAGS = "flags";
+export declare const COMPONENTS_MEDIA = "media";
 export declare const COMPONENTS_MAIN = "main";
 export declare const COMPONENTS_TYPES = "types";
 export declare const COMPONENTS_FILE_TYPES = "fileTypes";

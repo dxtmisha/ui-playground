@@ -54,8 +54,8 @@ export declare const propsInstruction: {
         default: "circle" | "rect" | "box" | undefined;
     };
     size: {
-        type: PropType<"12" | "16" | "20" | "24" | "32" | undefined>;
-        default: "12" | "16" | "20" | "24" | "32" | undefined;
+        type: PropType<"12" | "24" | "32" | "20" | "16" | undefined>;
+        default: "12" | "24" | "32" | "20" | "16" | undefined;
     };
     icon: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;

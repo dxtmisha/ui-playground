@@ -16,7 +16,7 @@ declare const meta: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -41,7 +41,7 @@ declare const meta: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -81,7 +81,7 @@ declare const meta: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -120,7 +120,7 @@ declare const meta: {
         start: BooleanConstructor;
         end: BooleanConstructor;
         high: BooleanConstructor;
-        rounded: import("vue").PropType<"none" | "standard" | "sm" | "md" | "lg" | "xl" | "full" | undefined>;
+        rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
         size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
         icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
         iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;

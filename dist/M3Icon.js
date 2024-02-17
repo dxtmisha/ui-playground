@@ -1,4 +1,4 @@
-import { _ as a } from "./M3Icon.vue_vue_type_style_index_0_lang-M9fUlZn7.js";
+import { _ as a } from "./M3Icon.vue_vue_type_style_index_0_lang-B9jeXEzc.js";
 export {
   a as M3Icon
 };

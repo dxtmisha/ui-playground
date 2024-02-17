@@ -6,8 +6,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     readonly: BooleanConstructor;
     adaptive: import("vue").PropType<"icon" | undefined>;
     size: {
-        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: import("vue").PropType<"sm" | "x" | "md" | "lg" | "xl" | "xs" | undefined>;
+        default: "sm" | "x" | "md" | "lg" | "xl" | "xs" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;
@@ -49,8 +49,8 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     readonly: BooleanConstructor;
     adaptive: import("vue").PropType<"icon" | undefined>;
     size: {
-        type: import("vue").PropType<"x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined>;
-        default: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+        type: import("vue").PropType<"sm" | "x" | "md" | "lg" | "xl" | "xs" | undefined>;
+        default: "sm" | "x" | "md" | "lg" | "xl" | "xs" | undefined;
     };
     outline: BooleanConstructor;
     link: BooleanConstructor;
@@ -85,7 +85,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
         detail: Record<string, any> | undefined;
     }) => any) | undefined;
 }, {
-    size: "x" | "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+    size: "sm" | "x" | "md" | "lg" | "xl" | "xs" | undefined;
     link: boolean;
     focus: boolean;
     disabled: boolean;

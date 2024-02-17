@@ -4,7 +4,6 @@ import { PropertiesFile } from '../properties/PropertiesFile'
 
 import {
   DIR_ICONS,
-  DIR_ICONS_WEB,
   FILE_ICONS
 } from '../../../types/property'
 
@@ -79,7 +78,7 @@ export class DesignIcons {
 
           list.push({
             name: [...paths, parse.name].join('-'),
-            path: [this.design, DIR_ICONS_WEB, ...paths, name].join('/')
+            path: [...DIR_ICONS, ...paths, name].join('/')
           })
         }
       })

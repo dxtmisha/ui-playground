@@ -44,8 +44,8 @@ export declare const propsInstruction: {
     end: BooleanConstructor;
     high: BooleanConstructor;
     rounded: {
-        type: PropType<"none" | "standard" | "sm" | "md" | "lg" | "full" | undefined>;
-        default: "none" | "standard" | "sm" | "md" | "lg" | "full" | undefined;
+        type: PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
+        default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
     };
     size: {
         type: PropType<"sm" | "md" | "lg" | "xs" | undefined>;

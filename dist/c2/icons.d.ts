@@ -1,1 +1,1 @@
-export {};
+export declare const makeIconsGlobal: () => void;
