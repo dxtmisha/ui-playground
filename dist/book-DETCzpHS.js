@@ -1,4 +1,0 @@
-const e = "data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='book'%3e%3cpath%20id='icon'%20d='M4%2019C4%2020.1046%204.89543%2021%206%2021H18C19.1046%2021%2020%2020.1046%2020%2019V5C20%203.89543%2019.1046%203%2018%203H6C4.89543%203%204%203.89543%204%205V19ZM4%2019C4%2017.8954%204.89543%2017%206%2017H17C18.6569%2017%2020%2015.6569%2020%2014M15%207H8M13%2011L8%2011'%20stroke='black'%20stroke-width='2'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e";
-export {
-  e as default
-};

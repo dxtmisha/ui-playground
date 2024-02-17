@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import M3Mutation from '../m3/Mutation/M3Mutation.vue'
 import { M3Button } from '../m3/Button'
 import { useTranslateRef } from '../composables/useTranslateRef.ts'
+import './../c2/icons.ts'
 
 const text = useTranslateRef([
   'main',
@@ -10,8 +10,7 @@ const text = useTranslateRef([
 </script>
 
 <template>
-  <m3-mutation />
-  <m3-button icon="home">{{ text.test }}</m3-button>
+  <m3-button icon="share-02">{{ text.test }}</m3-button>
 </template>
 
 <style>

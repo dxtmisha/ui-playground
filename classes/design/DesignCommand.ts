@@ -132,7 +132,7 @@ export class DesignCommand {
       designs.forEach(design => {
         if (this.isDesign(design.name)) {
           new DesignIcons(design.name).make()
-
+          console.log('design.name', design.name)
           design.components.forEach(component => {
             if (this.isComponent(component.name)) {
               console.log(`Component update: ${component.alias}`)

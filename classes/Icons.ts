@@ -1,5 +1,7 @@
 import { forEach } from '../functions/data'
 
+import { Api } from './Api.ts'
+
 import { useEnv } from '../composables/useEnv'
 
 export type IconsItem = string | Promise<string | any>
@@ -10,7 +12,8 @@ export type IconsItem = string | Promise<string | any>
  */
 export class Icons {
   protected static readonly icons: Record<string, IconsItem> = {}
-  protected static readonly url: string = useEnv('iconPath') ?? '/icons/'
+  protected static readonly url: string = useEnv('UI_PATH') ?? '/icons/'
+  protected static readonly urlGlobal = `${Api.isLocalhost() ? `${useEnv('UI_WEB')}` : ''}${this.url}`
 
   /**
    * Checks if the given icon is in the list of connected icons.<br>
@@ -58,6 +61,16 @@ export class Icons {
    */
   static add (index: string, file: IconsItem): void {
     this.icons[this.getName(index)] = file
+  }
+
+  /**
+   * Adding custom global icons.<br>
+   * Добавление пользовательских глобальных иконок.
+   * @param index icon name /<br>название иконки
+   * @param file path to the file /<br>путь к файлу
+   */
+  static addGlobal (index: string, file: string): void {
+    this.icons[this.getName(index)] = `${this.urlGlobal}${file}`
   }
 
   /**

@@ -2,7 +2,11 @@
 
 import { PropertiesFile } from '../properties/PropertiesFile'
 
-import { DIR_ICONS, FILE_ICONS } from '../../../types/property'
+import {
+  DIR_ICONS,
+  DIR_ICONS_WEB,
+  FILE_ICONS
+} from '../../../types/property'
 
 export type DesignIconsItem = {
   name: string
@@ -36,8 +40,7 @@ export class DesignIcons {
         // const name = toCamelCase(icon.name)
 
         // imports.push(`import ${name} from './${icon.path}'`)
-        // icons.push(`Icons.add('${icon.name}', ${name})`)
-        icons.push(`Icons.add('${icon.name}', import('./${icon.path}'))`)
+        icons.push(`Icons.addGlobal('${icon.name}', '${icon.path}')`)
       })
 
       this.write([
@@ -74,7 +77,7 @@ export class DesignIcons {
 
           list.push({
             name: [...paths, parse.name].join('-'),
-            path: PropertiesFile.joinPath(['.', DIR_ICONS, ...paths, name])
+            path: [this.design, DIR_ICONS_WEB, ...paths, name].join('/')
           })
         }
       })
@@ -91,7 +94,7 @@ export class DesignIcons {
    * @param paths path to the icons folder /<br>путь к папке иконок
    */
   protected getDirs (paths: string[]): string[] {
-    return PropertiesFile.readDir([this.design, DIR_ICONS, ...paths])
+    return PropertiesFile.readDir([this.design, ...DIR_ICONS, ...paths])
   }
 
   /**
