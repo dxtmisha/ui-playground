@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=async()=>{(await Promise.resolve().then(()=>require("./flags-DsO91343.cjs"))).makeFlagsGlobal(),(await Promise.resolve().then(()=>require("./icons-CYPJPJgf.cjs"))).makeIconsGlobal()};exports.makeMediaGlobal=e;

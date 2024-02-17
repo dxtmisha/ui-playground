@@ -25,6 +25,10 @@
       mask-size: contain;
     }
 
+    &--icon {
+      background-size: cover;
+    }
+
     &--color,
     &--file,
     &--image {

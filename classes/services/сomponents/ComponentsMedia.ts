@@ -5,7 +5,7 @@ import { ComponentsItems } from './ComponentsItems.ts'
 import { FILE_ICONS } from '../../../types/property.ts'
 import {
   COMPONENTS_DIR,
-  COMPONENTS_FLAGS,
+  // COMPONENTS_FLAGS,
   COMPONENTS_MEDIA
 } from '../../../types/components.ts'
 
@@ -33,7 +33,7 @@ export class ComponentsMedia {
         '// Этот файл генерируется скриптом, не редактировать.',
         '',
         'export const makeMediaGlobal = async (): Promise<void> => {',
-        `  ;(await import('./${COMPONENTS_FLAGS}.ts')).makeFlagsGlobal()`,
+        // `  ;(await import('./${COMPONENTS_FLAGS}.ts')).makeFlagsGlobal()`,
         ...this.initIcon(),
         '}',
         ''

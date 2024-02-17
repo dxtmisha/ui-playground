@@ -202,11 +202,12 @@ export class Image extends DesignAsyncAbstract<ImageProps, ImageEventLoad> {
         case 'file':
         case 'image':
           return {
-            'background-image': this.background.getImage(),
             'background-size': this.background.get(),
             'background-position-x': this.position?.getX(),
             'background-position-y': this.position?.getY()
           }
+        case 'icon':
+          return { 'background-image': this.background.getImage() }
         case 'public':
           return { 'mask-image': this.background.getImage() }
         case 'color':

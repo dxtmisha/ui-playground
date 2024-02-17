@@ -4,4 +4,4 @@ import 'ui/style.css'
 
 import App from './App.vue'
 
-createUiComponents(App).mount('#app')
+createUiComponents(App).then(app => app.mount('#app'))

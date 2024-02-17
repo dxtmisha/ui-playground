@@ -10,7 +10,8 @@ export declare enum ImageTypeValue {
     round = "round",
     sharp = "sharp",
     twoTone = "two-tone",
-    material = "material"
+    material = "material",
+    icon = "icon"
 }
 export type ImageElement = HTMLElement | undefined;
 export type ImageValue = string | File | Undefined;

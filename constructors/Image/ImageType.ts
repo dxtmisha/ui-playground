@@ -7,6 +7,8 @@ import {
 } from './typesBasic'
 import { Icons } from '../../classes/Icons'
 
+import { GEO_FLAG_ICON_NAME } from '../../classes/GeoFlag.ts'
+
 /**
  * Class for working with the image type.<br>
  * Класс для работы с типом изображения.
@@ -45,6 +47,10 @@ export class ImageType extends CacheItem<ImageTypeItem> {
 
       if (image.match(/\//)) {
         return ImageTypeValue.image
+      }
+
+      if (image.match(GEO_FLAG_ICON_NAME)) {
+        return ImageTypeValue.icon
       }
 
       if (image.match(/^#/)) {

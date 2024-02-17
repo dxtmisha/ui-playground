@@ -183,6 +183,11 @@ export class DesignCommand {
       },
       './style': './lib/style.scss',
       './style.css': './dist/style.css',
+      './media': {
+        import: './dist/media.js',
+        require: './dist/media.umd.cjs',
+        types: './dist/lib/media.d.ts'
+      },
       './dist/*': './dist/*'
     }
 

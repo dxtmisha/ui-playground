@@ -14,7 +14,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -39,7 +39,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -79,7 +79,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -118,7 +118,7 @@ export declare const components: {
         start: BooleanConstructor;
         end: BooleanConstructor;
         high: BooleanConstructor;
-        rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | undefined>;
+        rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | undefined>;
         size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
         icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -1145,7 +1145,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -1170,7 +1170,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -1210,7 +1210,7 @@ export declare const components: {
             start: BooleanConstructor;
             end: BooleanConstructor;
             high: BooleanConstructor;
-            rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+            rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
             size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
             icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
             iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -1249,7 +1249,7 @@ export declare const components: {
         start: BooleanConstructor;
         end: BooleanConstructor;
         high: BooleanConstructor;
-        rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+        rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
         size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
         icon: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
         iconActive: import("vue").PropType<string | import("../constructors/Image/props").ImageProps | undefined>;
@@ -2415,8 +2415,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             rounded: {
-                type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
-                default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+                type: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | undefined>;
+                default: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
             };
             size: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -2446,8 +2446,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             rounded: {
-                type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
-                default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+                type: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | undefined>;
+                default: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
             };
             size: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -2471,7 +2471,7 @@ export declare const components: {
             start: boolean;
             end: boolean;
             high: boolean;
-            rounded: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+            rounded: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
         }, true, {}, {}, {
             P: {};
             B: {};
@@ -2494,8 +2494,8 @@ export declare const components: {
             end: BooleanConstructor;
             high: BooleanConstructor;
             rounded: {
-                type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
-                default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+                type: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | undefined>;
+                default: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
             };
             size: {
                 type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -2521,7 +2521,7 @@ export declare const components: {
             start: boolean;
             end: boolean;
             high: boolean;
-            rounded: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+            rounded: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
         }>;
         __isFragment?: undefined;
         __isTeleport?: undefined;
@@ -2541,8 +2541,8 @@ export declare const components: {
         end: BooleanConstructor;
         high: BooleanConstructor;
         rounded: {
-            type: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | undefined>;
-            default: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+            type: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | undefined>;
+            default: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
         };
         size: {
             type: import("vue").PropType<"sm" | "md" | "lg" | "xs" | undefined>;
@@ -2570,7 +2570,7 @@ export declare const components: {
         start: boolean;
         end: boolean;
         high: boolean;
-        rounded: "full" | "sm" | "none" | "standard" | "md" | "lg" | undefined;
+        rounded: "full" | "sm" | "standard" | "none" | "md" | "lg" | undefined;
     }, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
         $slots: Readonly<import("../constructors/Icon/types").IconSlots> & import("../constructors/Icon/types").IconSlots;
     });

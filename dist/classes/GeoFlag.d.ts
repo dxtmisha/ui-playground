@@ -1,5 +1,6 @@
 import { GeoIntl } from './GeoIntl';
 import { type GeoFlagItem, type GeoFlagNational, type GeoItemFull } from '../types/geo';
+export declare const GEO_FLAG_ICON_NAME = "@flag";
 /**
  * Class for working with Flags.<br>
  * Класс для работы с Флагами.

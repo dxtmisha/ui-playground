@@ -13,7 +13,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: BooleanConstructor;
     end: BooleanConstructor;
     high: BooleanConstructor;
-    rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+    rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
     size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
@@ -36,7 +36,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     start: BooleanConstructor;
     end: BooleanConstructor;
     high: BooleanConstructor;
-    rounded: import("vue").PropType<"full" | "sm" | "none" | "standard" | "md" | "lg" | "xl" | "2xl" | undefined>;
+    rounded: import("vue").PropType<"full" | "sm" | "standard" | "none" | "md" | "lg" | "xl" | "2xl" | undefined>;
     size: import("vue").PropType<"sm" | "md" | "lg" | "xl" | "xs" | undefined>;
     icon: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;
     iconActive: import("vue").PropType<string | import("../../constructors/Image/props").ImageProps | undefined>;

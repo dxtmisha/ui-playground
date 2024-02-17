@@ -1,3 +1,8 @@
+export declare enum IconsFlagsStatus {
+    none = "none",
+    init = "init",
+    read = "read"
+}
 export type IconsItem = string | Promise<string | any>;
 /**
  * Class for managing icons.<br>
@@ -7,6 +12,7 @@ export declare class Icons {
     protected static readonly icons: Record<string, IconsItem>;
     protected static readonly url: string;
     protected static readonly urlGlobal: string;
+    protected static flags: IconsFlagsStatus;
     /**
      * Checks if the given icon is in the list of connected icons.<br>
      * Проверяет, есть ли данная иконка в списке подключенных иконок.
@@ -47,9 +53,21 @@ export declare class Icons {
      */
     static addByList(list: Record<string, IconsItem>): void;
     /**
+     * Checks if the icon is a flag.<br>
+     * Проверяет, является ли иконка флагом.
+     * @param index icon name /<br>название иконки
+     */
+    protected static isFlag(index: string): boolean;
+    /**
      * Returns the icon name.<br>
      * Возвращает название иконки.
      * @param index icon name /<br>название иконки
      */
     protected static getName(index: string): string;
+    /**
+     * Connecting flag icons.<br>
+     * Подключение иконок флагов.
+     */
+    protected static makeFlags(): Promise<void>;
+    protected static makeFlagsWait(resolve: () => void): void;
 }

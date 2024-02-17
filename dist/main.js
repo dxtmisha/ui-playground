@@ -1,101 +1,103 @@
-import { K as ye, a as K } from "./MutationDataItem-CTGr6M47.js";
+import { K as ye, a as K } from "./MutationDataItem-DAccaake.js";
 import { shallowRef as Yt, unref as re, shallowReactive as Jt, watch as de, nextTick as Xt, defineComponent as ft, reactive as dt, inject as ie, computed as T, h as ht, provide as Ee, ref as Zt, getCurrentInstance as pt, watchEffect as en, effectScope as tn, createApp as nn } from "vue";
-import { F as rn, l as on, m as sn, e as an, f as mt, C as cn, y as un, D as ln, G as fn, q as dn, H as hn, E as pn, r as mn, s as gn, z as vn, n as _n, p as yn, i as En, o as bn, a as gt, b as wn, c as On, d as Nn, g as Cn, h as Rn, j as Sn, k as Pn, A as An, u as kn, I as xn, v as In, J as $n, w as Dn, K as Tn, L as vt, M as Vn, B as jn, t as Mn, x as Gn } from "./string-BEtu6Ook.js";
-import { C as Ln, a as Un, b as Bn, c as Kn, D as Hn, E as Wn, d as Fn, e as qn, f as zn, g as Qn, G as Yn, H as Jn, T as _t } from "./useTranslateRef-CUF2sSFT.js";
-import { u as ki, h as xi, i as Ii, j as $i, k as Di } from "./useTranslateRef-CUF2sSFT.js";
-import { t as Xn, D as Zn, G as er } from "./Datetime-C3OarrO4.js";
-import { c as tr, g as nr, b as rr, d as or, e as ir, f as sr, i as ar, a as cr, s as ur } from "./element-CA9epvId.js";
-import { g as lr, a as fr, b as dr, c as hr, m as pr } from "./event-MN4DTwoE.js";
-import { f as mr } from "./frame-kG6wLD-J.js";
-import { i as gr, r as vr, t as _r } from "./number-Bmx0fGP3.js";
-import { A as yr, I as Er } from "./Icons-D16ozvyn.js";
-import { C as br, G as wr } from "./CacheItem-CG-KsNyj.js";
-import { D as Or } from "./DataStorage-D0F_KbgZ.js";
-import { E as Nr } from "./EventItem-CzLiiCw2.js";
-import { c as Cr } from "./create-DhTJalr9.js";
-import { a as Vi, r as ji } from "./create-DhTJalr9.js";
-import { u as Gi } from "./useEnv-YUBoiK5i.js";
+import { l as rn, m as on, e as sn, f as mt, q as an, r as cn, s as un, n as ln, p as fn, i as dn, o as hn, a as gt, b as pn, c as mn, d as gn, g as vn, h as _n, j as yn, k as En, u as bn, v as wn, w as On, t as Nn, x as Cn } from "./object-DLpcn8Yy.js";
+import { e as Rn, b as Sn, g as Pn, c as An, f as kn, h as xn, d as In, a as $n, r as Dn, i as Tn, s as Vn, j as jn, k as vt, l as Mn, t as Gn } from "./string-BTYg8-hJ.js";
+import { C as Ln, a as Un, b as Bn, c as Kn, D as Wn, E as Hn, d as qn, e as Fn, f as zn, G as Qn, H as Yn, T as _t } from "./useTranslateRef-CCJ8vO8d.js";
+import { u as Ii, g as $i, h as Di, i as Ti, j as Vi } from "./useTranslateRef-CCJ8vO8d.js";
+import { t as Jn, G as Xn, a as Zn } from "./GeoIntl-COEyZZH7.js";
+import { c as er, g as tr, b as nr, d as rr, e as or, f as ir, i as sr, a as ar, s as cr } from "./element-DFCRAdFD.js";
+import { g as ur, a as lr, b as fr, c as dr, m as hr } from "./event-MN4DTwoE.js";
+import { f as pr } from "./frame-kG6wLD-J.js";
+import { i as mr, r as gr, t as vr } from "./number-Bmx0fGP3.js";
+import { A as _r, G as yr, I as Er } from "./Icons-CbmXJ5D4.js";
+import { C as br } from "./CacheItem-J86vAm6_.js";
+import { D as wr } from "./DataStorage-QmCJmeXG.js";
+import { D as Or } from "./Datetime-DeBly8TY.js";
+import { E as Nr } from "./EventItem-BDoYgJGi.js";
+import { c as Cr } from "./create-CzC0nu3t.js";
+import { a as Mi, r as Gi } from "./create-CzC0nu3t.js";
+import { u as Ui } from "./useEnv-o01b3-Ig.js";
 const Rr = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  anyToString: rn,
-  arrFill: on,
-  copyObject: sn,
-  createElement: tr,
-  executeFunction: an,
+  anyToString: Rn,
+  arrFill: rn,
+  copyObject: on,
+  createElement: er,
+  executeFunction: sn,
   forEach: mt,
-  frame: mr,
-  getAttributes: nr,
-  getBind: cn,
-  getBindRef: un,
-  getClassName: ln,
-  getClient: lr,
-  getClientX: fr,
-  getClientY: dr,
-  getClipboardData: fn,
-  getColumn: dn,
-  getElement: rr,
-  getElementId: or,
-  getElementItem: ir,
-  getElementOrWindow: sr,
-  getExp: hn,
-  getIndex: pn,
-  getKey: hr,
-  getMaxLength: mn,
-  getMinLength: gn,
-  getRef: vn,
-  inArray: _n,
-  intersectKey: yn,
-  isArray: En,
-  isDifferent: bn,
+  frame: pr,
+  getAttributes: tr,
+  getBind: Sn,
+  getBindRef: Pn,
+  getClassName: An,
+  getClient: ur,
+  getClientX: lr,
+  getClientY: fr,
+  getClipboardData: kn,
+  getColumn: an,
+  getElement: nr,
+  getElementId: rr,
+  getElementItem: or,
+  getElementOrWindow: ir,
+  getExp: xn,
+  getIndex: In,
+  getKey: dr,
+  getMaxLength: cn,
+  getMinLength: un,
+  getRef: $n,
+  inArray: ln,
+  intersectKey: fn,
+  isArray: dn,
+  isDifferent: hn,
   isFilled: gt,
-  isFunction: wn,
-  isInDom: ar,
-  isIntegerBetween: gr,
-  isNull: On,
-  isObject: Nn,
-  isObjectNotArray: Cn,
-  isSelected: Rn,
-  isSelectedByList: Sn,
-  isString: Pn,
-  isWindow: cr,
-  makeStopPropagation: pr,
-  random: vr,
-  render: An,
-  replaceRecursive: kn,
-  replaceTemplate: xn,
-  setElementItem: ur,
-  splice: In,
-  strFill: $n,
-  toArray: Dn,
-  toCamelCase: Tn,
+  isFunction: pn,
+  isInDom: sr,
+  isIntegerBetween: mr,
+  isNull: mn,
+  isObject: gn,
+  isObjectNotArray: vn,
+  isSelected: _n,
+  isSelectedByList: yn,
+  isString: En,
+  isWindow: ar,
+  makeStopPropagation: hr,
+  random: gr,
+  render: Dn,
+  replaceRecursive: bn,
+  replaceTemplate: Tn,
+  setElementItem: cr,
+  splice: wn,
+  strFill: Vn,
+  toArray: On,
+  toCamelCase: jn,
   toCamelCaseFirst: vt,
-  toDate: Xn,
-  toKebabCase: Vn,
-  toNumber: _r,
-  toRefItem: jn,
-  transformation: Mn,
-  uniqueArray: Gn
+  toDate: Jn,
+  toKebabCase: Mn,
+  toNumber: vr,
+  toRefItem: Gn,
+  transformation: Nn,
+  uniqueArray: Cn
 }, Symbol.toStringTag, { value: "Module" })), Sr = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  Api: yr,
+  Api: _r,
   Cache: Ln,
   CacheItem: br,
   CacheStatic: Un,
   Cookie: Bn,
   CookieBlock: Kn,
-  DataStorage: Or,
-  Datetime: Zn,
-  DatetimeRef: Hn,
+  DataStorage: wr,
+  Datetime: Or,
+  DatetimeRef: Wn,
   EventItem: Nr,
-  EventRef: Wn,
-  Geo: wr,
-  GeoFlag: Fn,
+  EventRef: Hn,
+  Geo: Xn,
+  GeoFlag: yr,
   GeoFlagRef: qn,
-  GeoIntl: er,
-  GeoIntlRef: zn,
-  GeoPhone: Qn,
-  GeoRef: Yn,
-  Hash: Jn,
+  GeoIntl: Zn,
+  GeoIntlRef: Fn,
+  GeoPhone: zn,
+  GeoRef: Qn,
+  Hash: Yn,
   Icons: Er,
   Translate: _t
 }, Symbol.toStringTag, { value: "Module" }));
@@ -228,11 +230,11 @@ function Vr(e, t) {
   const n = t.query ? e(t.query) : "";
   return t.path + (n && "?") + n + (t.hash || "");
 }
-function We(e, t, n) {
+function He(e, t, n) {
   const r = t.matched.length - 1, o = n.matched.length - 1;
-  return r > -1 && r === o && H(t.matched[r], n.matched[o]) && bt(t.params, n.params) && e(t.query) === e(n.query) && t.hash === n.hash;
+  return r > -1 && r === o && W(t.matched[r], n.matched[o]) && bt(t.params, n.params) && e(t.query) === e(n.query) && t.hash === n.hash;
 }
-function H(e, t) {
+function W(e, t) {
   return (e.aliasOf || e) === (t.aliasOf || t);
 }
 function bt(e, t) {
@@ -244,9 +246,9 @@ function bt(e, t) {
   return !0;
 }
 function jr(e, t) {
-  return D(e) ? Fe(e, t) : D(t) ? Fe(t, e) : e === t;
+  return D(e) ? qe(e, t) : D(t) ? qe(t, e) : e === t;
 }
-function Fe(e, t) {
+function qe(e, t) {
   return D(t) ? e.length === t.length && e.every((n, r) => n === t[r]) : e.length === 1 && e[0] === t;
 }
 function Mr(e, t) {
@@ -271,10 +273,10 @@ var le;
 (function(e) {
   e.pop = "pop", e.push = "push";
 })(le || (le = {}));
-var qe;
+var Fe;
 (function(e) {
   e.back = "back", e.forward = "forward", e.unknown = "";
-})(qe || (qe = {}));
+})(Fe || (Fe = {}));
 function Gr(e, t) {
   const n = document.documentElement.getBoundingClientRect(), r = e.getBoundingClientRect();
   return {
@@ -323,7 +325,7 @@ function Kr(e) {
   const t = Re.get(e);
   return Re.delete(e), t;
 }
-function Hr(e) {
+function Wr(e) {
   return typeof e == "string" || e && typeof e == "object";
 }
 function wt(e) {
@@ -344,7 +346,7 @@ var Qe;
 (function(e) {
   e[e.aborted = 4] = "aborted", e[e.cancelled = 8] = "cancelled", e[e.duplicated = 16] = "duplicated";
 })(Qe || (Qe = {}));
-const Wr = {
+const Hr = {
   1({ location: e, currentLocation: t }) {
     return `No match for
  ${JSON.stringify(e)}${t ? `
@@ -352,7 +354,7 @@ while being at
 ` + JSON.stringify(t) : ""}`;
   },
   2({ from: e, to: t }) {
-    return `Redirected from "${e.fullPath}" to "${qr(t)}" via a navigation guard.`;
+    return `Redirected from "${e.fullPath}" to "${Fr(t)}" via a navigation guard.`;
   },
   4({ from: e, to: t }) {
     return `Navigation aborted from "${e.fullPath}" to "${t.fullPath}" via a navigation guard.`;
@@ -365,7 +367,7 @@ while being at
   }
 };
 function X(e, t) {
-  return process.env.NODE_ENV !== "production" ? C(new Error(Wr[e](t)), {
+  return process.env.NODE_ENV !== "production" ? C(new Error(Hr[e](t)), {
     type: e,
     [Se]: !0
   }, t) : C(new Error(), {
@@ -376,14 +378,14 @@ function X(e, t) {
 function G(e, t) {
   return e instanceof Error && Se in e && (t == null || !!(e.type & t));
 }
-const Fr = ["params", "query", "hash"];
-function qr(e) {
+const qr = ["params", "query", "hash"];
+function Fr(e) {
   if (typeof e == "string")
     return e;
   if ("path" in e)
     return e.path;
   const t = {};
-  for (const n of Fr)
+  for (const n of qr)
     n in e && (t[n] = e[n]);
   return JSON.stringify(t, null, 2);
 }
@@ -620,16 +622,16 @@ function ro(e, t) {
     for (const P of R) {
       const { path: I } = P;
       if (c && I[0] !== "/") {
-        const W = c.record.path, M = W[W.length - 1] === "/" ? "" : "/";
+        const H = c.record.path, M = H[H.length - 1] === "/" ? "" : "/";
         P.path = c.record.path + (I && M + I);
       }
       if (process.env.NODE_ENV !== "production" && P.path === "*")
         throw new Error(`Catch all routes ("*") must now be defined using a param with a custom regexp.
 See more at https://next.router.vuejs.org/guide/migration/#removed-star-or-catch-all-routes.`);
       if (E = no(P, c, k), process.env.NODE_ENV !== "production" && c && I[0] === "/" && uo(E, c), d ? (d.alias.push(E), process.env.NODE_ENV !== "production" && ao(d, E)) : (b = b || E, b !== E && b.alias.push(E), p && i.name && !Ze(E) && a(i.name)), _.children) {
-        const W = _.children;
-        for (let M = 0; M < W.length; M++)
-          s(W[M], E, d && d.children[M]);
+        const H = _.children;
+        for (let M = 0; M < H.length; M++)
+          s(H[M], E, d && d.children[M]);
       }
       d = d || E, (E.record.components && Object.keys(E.record.components).length || E.record.name || E.record.redirect) && u(E);
     }
@@ -865,7 +867,7 @@ function B(e, t, n, r, o) {
       c === !1 ? f(X(4, {
         from: n,
         to: t
-      })) : c instanceof Error ? f(c) : Hr(c) ? f(X(2, {
+      })) : c instanceof Error ? f(c) : Wr(c) ? f(X(2, {
         from: t,
         to: c
       })) : (s && // since enterCallbackArray is truthy, both record and name also are
@@ -936,7 +938,7 @@ function rt(e) {
     const { matched: u } = r.value, { length: h } = u, i = u[h - 1], c = n.matched;
     if (!i || !c.length)
       return -1;
-    const d = c.findIndex(H.bind(null, i));
+    const d = c.findIndex(W.bind(null, i));
     if (d > -1)
       return d;
     const p = ot(u[h - 2]);
@@ -946,7 +948,7 @@ function rt(e) {
       // referring to the empty child. Or we currently are on a different
       // child of the same parent
       ot(i) === p && // avoid comparing the child with its parent
-      c[c.length - 1].path !== p ? c.findIndex(H.bind(null, u[h - 2])) : d
+      c[c.length - 1].path !== p ? c.findIndex(W.bind(null, u[h - 2])) : d
     );
   }), s = T(() => o.value > -1 && Io(n.params, r.value.params)), a = T(() => o.value > -1 && o.value === n.matched.length - 1 && bt(n.params, r.value.params));
   function f(u = {}) {
@@ -1071,7 +1073,7 @@ const it = (e, t, n) => e ?? t ?? n, $o = /* @__PURE__ */ ft({
     return de(() => [u.value, f.value, e.name], ([h, i, c], [d, p, _]) => {
       i && (i.instances[c] = h, p && p !== i && h && h === d && (i.leaveGuards.size || (i.leaveGuards = p.leaveGuards), i.updateGuards.size || (i.updateGuards = p.updateGuards))), h && i && // if there is no instance but to and from are the same this might be
       // the first visit
-      (!p || !H(i, p) || !d) && (i.enterCallbacks[c] || []).forEach((k) => k(h));
+      (!p || !W(i, p) || !d) && (i.enterCallbacks[c] || []).forEach((k) => k(h));
     }, { flush: "post" }), () => {
       const h = o.value, i = e.name, c = f.value, d = c && c.components[i];
       if (!d)
@@ -1125,7 +1127,7 @@ Use slot props instead:
 function ne(e, t) {
   const n = C({}, e, {
     // remove variables that can contain vue instances
-    matched: e.matched.map((r) => Ho(r, ["instances", "children", "aliasOf"]))
+    matched: e.matched.map((r) => Wo(r, ["instances", "children", "aliasOf"]))
   });
   return {
     _custom: {
@@ -1369,8 +1371,8 @@ function Dt(e) {
 let Bo = 0;
 const Ko = /^\/(.*)\/([a-z]*)$/;
 function Tt(e, t) {
-  const n = t.matched.length && H(t.matched[t.matched.length - 1], e.record);
-  e.__vd_exactActive = e.__vd_active = n, n || (e.__vd_active = t.matched.some((r) => H(r, e.record))), e.children.forEach((r) => Tt(r, t));
+  const n = t.matched.length && W(t.matched[t.matched.length - 1], e.record);
+  e.__vd_exactActive = e.__vd_active = n, n || (e.__vd_active = t.matched.some((r) => W(r, e.record))), e.children.forEach((r) => Tt(r, t));
 }
 function Vt(e) {
   e.__vd_match = !1, e.children.forEach(Vt);
@@ -1384,13 +1386,13 @@ function xe(e, t) {
   const o = e.record.path.toLowerCase(), s = se(o);
   return !t.startsWith("/") && (s.includes(t) || o.includes(t)) || s.startsWith(t) || o.startsWith(t) || e.record.name && String(e.record.name).includes(t) ? !0 : e.children.some((a) => xe(a, t));
 }
-function Ho(e, t) {
+function Wo(e, t) {
   const n = {};
   for (const r in e)
     t.includes(r) || (n[r] = e[r]);
   return n;
 }
-function Wo(e) {
+function Ho(e) {
   const t = ro(e.routes, e), n = e.parseQuery || No, r = e.stringifyQuery || tt, o = e.history;
   if (process.env.NODE_ENV !== "production" && !o)
     throw new Error('Provide the "history" option when calling "createRouter()": https://next.router.vuejs.org/api/#history.');
@@ -1417,12 +1419,12 @@ function Wo(e) {
   }
   function E(l, g) {
     if (g = C({}, g || u.value), typeof l == "string") {
-      const y = we(n, l, g.path), S = t.resolve({ path: y.path }, g), F = o.createHref(y.fullPath);
-      return process.env.NODE_ENV !== "production" && (F.startsWith("//") ? O(`Location "${l}" resolved to "${F}". A resolved location cannot start with multiple slashes.`) : S.matched.length || O(`No match found for location with path "${l}"`)), C(y, S, {
+      const y = we(n, l, g.path), S = t.resolve({ path: y.path }, g), q = o.createHref(y.fullPath);
+      return process.env.NODE_ENV !== "production" && (q.startsWith("//") ? O(`Location "${l}" resolved to "${q}". A resolved location cannot start with multiple slashes.`) : S.matched.length || O(`No match found for location with path "${l}"`)), C(y, S, {
         params: d(S.params),
         hash: se(y.hash),
         redirectedFrom: void 0,
-        href: F
+        href: q
       });
     }
     let m;
@@ -1476,7 +1478,7 @@ function Wo(e) {
   function I(l) {
     return Z(l);
   }
-  function W(l) {
+  function H(l) {
     return I(C(b(l), { replace: !0 }));
   }
   function M(l) {
@@ -1513,8 +1515,8 @@ ${JSON.stringify(v, null, 2)}
       );
     const S = m;
     S.redirectedFrom = g;
-    let F;
-    return !A && We(r, v, m) && (F = X(16, { to: S, from: v }), Ke(
+    let q;
+    return !A && He(r, v, m) && (q = X(16, { to: S, from: v }), Ke(
       v,
       v,
       // this is a push, the only way for it to be triggered from a
@@ -1523,7 +1525,7 @@ ${JSON.stringify(v, null, 2)}
       // This cannot be the first navigation because the initial location
       // cannot be manually navigated to
       !1
-    )), (F ? Promise.resolve(F) : Ge(S, v)).catch((x) => G(x) ? (
+    )), (q ? Promise.resolve(q) : Ge(S, v)).catch((x) => G(x) ? (
       // navigation redirects still mark the router as ready
       G(
         x,
@@ -1541,7 +1543,7 @@ ${JSON.stringify(v, null, 2)}
           /* ErrorTypes.NAVIGATION_GUARD_REDIRECT */
         ))
           return process.env.NODE_ENV !== "production" && // we are redirecting to the same location we were already at
-          We(r, E(x.to), S) && // and we have done it a couple of times
+          He(r, E(x.to), S) && // and we have done it a couple of times
           g && // @ts-expect-error: added only in dev
           (g._count = g._count ? (
             // @ts-expect-error
@@ -1564,7 +1566,7 @@ ${JSON.stringify(v, null, 2)}
       return Le(S, v, x), x;
     });
   }
-  function qt(l, g) {
+  function Ft(l, g) {
     const m = P(l, g);
     return m ? Promise.reject(m) : Promise.resolve();
   }
@@ -1574,13 +1576,13 @@ ${JSON.stringify(v, null, 2)}
   }
   function Ge(l, g) {
     let m;
-    const [v, N, A] = Fo(l, g);
+    const [v, N, A] = qo(l, g);
     m = Oe(v.reverse(), "beforeRouteLeave", l, g);
     for (const y of v)
       y.leaveGuards.forEach((S) => {
         m.push(B(S, l, g));
       });
-    const w = qt.bind(null, l, g);
+    const w = Ft.bind(null, l, g);
     return m.push(w), Q(m).then(() => {
       m = [];
       for (const y of s.list())
@@ -1629,7 +1631,7 @@ ${JSON.stringify(v, null, 2)}
   let ee;
   function zt() {
     ee || (ee = o.listen((l, g, m) => {
-      if (!He.listening)
+      if (!We.listening)
         return;
       const v = E(l), N = M(v);
       if (N) {
@@ -1699,7 +1701,7 @@ ${JSON.stringify(v, null, 2)}
   }
   const ve = (l) => o.go(l);
   let _e;
-  const ce = /* @__PURE__ */ new Set(), He = {
+  const ce = /* @__PURE__ */ new Set(), We = {
     currentRoute: u,
     listening: !0,
     addRoute: p,
@@ -1709,7 +1711,7 @@ ${JSON.stringify(v, null, 2)}
     resolve: E,
     options: e,
     push: I,
-    replace: W,
+    replace: H,
     go: ve,
     back: () => ve(-1),
     forward: () => ve(1),
@@ -1744,15 +1746,15 @@ ${JSON.stringify(v, null, 2)}
   function Q(l) {
     return l.reduce((g, m) => g.then(() => Me(m)), Promise.resolve());
   }
-  return He;
+  return We;
 }
-function Fo(e, t) {
+function qo(e, t) {
   const n = [], r = [], o = [], s = Math.max(t.matched.length, e.matched.length);
   for (let a = 0; a < s; a++) {
     const f = t.matched[a];
-    f && (e.matched.find((h) => H(h, f)) ? r.push(f) : n.push(f));
+    f && (e.matched.find((h) => W(h, f)) ? r.push(f) : n.push(f));
     const u = e.matched[a];
-    u && (t.matched.find((h) => H(h, u)) || o.push(u));
+    u && (t.matched.find((h) => W(h, u)) || o.push(u));
   }
   return [n, r, o];
 }
@@ -1761,8 +1763,8 @@ function Fo(e, t) {
  * (c) 2022 Evan You
  * @license MIT
  */
-var qo = "store";
-function q(e, t) {
+var Fo = "store";
+function F(e, t) {
   Object.keys(e).forEach(function(n) {
     return t(e[n], n);
   });
@@ -1798,7 +1800,7 @@ function Te(e, t, n) {
   e.getters = {}, e._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
   var s = e._wrappedGetters, a = {}, f = {}, u = tn(!0);
   u.run(function() {
-    q(s, function(h, i) {
+    F(s, function(h, i) {
       a[i] = Yo(h, e), f[i] = T(function() {
         return a[i]();
       }), Object.defineProperty(e.getters, i, {
@@ -2153,8 +2155,8 @@ var j = function(t, n) {
   this.runtime = n, this._children = /* @__PURE__ */ Object.create(null), this._rawModule = t;
   var r = t.state;
   this.state = (typeof r == "function" ? r() : r) || {};
-}, Ht = { namespaced: { configurable: !0 } };
-Ht.namespaced.get = function() {
+}, Wt = { namespaced: { configurable: !0 } };
+Wt.namespaced.get = function() {
   return !!this._rawModule.namespaced;
 };
 j.prototype.addChild = function(t, n) {
@@ -2173,18 +2175,18 @@ j.prototype.update = function(t) {
   this._rawModule.namespaced = t.namespaced, t.actions && (this._rawModule.actions = t.actions), t.mutations && (this._rawModule.mutations = t.mutations), t.getters && (this._rawModule.getters = t.getters);
 };
 j.prototype.forEachChild = function(t) {
-  q(this._children, t);
+  F(this._children, t);
 };
 j.prototype.forEachGetter = function(t) {
-  this._rawModule.getters && q(this._rawModule.getters, t);
+  this._rawModule.getters && F(this._rawModule.getters, t);
 };
 j.prototype.forEachAction = function(t) {
-  this._rawModule.actions && q(this._rawModule.actions, t);
+  this._rawModule.actions && F(this._rawModule.actions, t);
 };
 j.prototype.forEachMutation = function(t) {
-  this._rawModule.mutations && q(this._rawModule.mutations, t);
+  this._rawModule.mutations && F(this._rawModule.mutations, t);
 };
-Object.defineProperties(j.prototype, Ht);
+Object.defineProperties(j.prototype, Wt);
 var z = function(t) {
   this.register([], t, !1);
 };
@@ -2200,11 +2202,11 @@ z.prototype.getNamespace = function(t) {
   }, "");
 };
 z.prototype.update = function(t) {
-  Wt([], this.root, t);
+  Ht([], this.root, t);
 };
 z.prototype.register = function(t, n, r) {
   var o = this;
-  r === void 0 && (r = !0), process.env.NODE_ENV !== "production" && Ft(t, n);
+  r === void 0 && (r = !0), process.env.NODE_ENV !== "production" && qt(t, n);
   var s = new j(n, r);
   if (t.length === 0)
     this.root = s;
@@ -2212,7 +2214,7 @@ z.prototype.register = function(t, n, r) {
     var a = this.get(t.slice(0, -1));
     a.addChild(t[t.length - 1], s);
   }
-  n.modules && q(n.modules, function(f, u) {
+  n.modules && F(n.modules, function(f, u) {
     o.register(t.concat(u), f, r);
   });
 };
@@ -2230,8 +2232,8 @@ z.prototype.isRegistered = function(t) {
   var n = this.get(t.slice(0, -1)), r = t[t.length - 1];
   return n ? n.hasChild(r) : !1;
 };
-function Wt(e, t, n) {
-  if (process.env.NODE_ENV !== "production" && Ft(e, n), t.update(n), n.modules)
+function Ht(e, t, n) {
+  if (process.env.NODE_ENV !== "production" && qt(e, n), t.update(n), n.modules)
     for (var r in n.modules) {
       if (!t.getChild(r)) {
         process.env.NODE_ENV !== "production" && console.warn(
@@ -2239,7 +2241,7 @@ function Wt(e, t, n) {
         );
         return;
       }
-      Wt(
+      Ht(
         e.concat(r),
         t.getChild(r),
         n.modules[r]
@@ -2261,11 +2263,11 @@ var ut = {
   mutations: ut,
   actions: li
 };
-function Ft(e, t) {
+function qt(e, t) {
   Object.keys(lt).forEach(function(n) {
     if (t[n]) {
       var r = lt[n];
-      q(t[n], function(o, s) {
+      F(t[n], function(o, s) {
         V(
           r.assert(o),
           fi(e, n, s, o, r.expected)
@@ -2302,7 +2304,7 @@ var $ = function e(t) {
   });
 }, je = { state: { configurable: !0 } };
 $.prototype.install = function(t, n) {
-  t.provide(n || qo, this), t.config.globalProperties.$store = this;
+  t.provide(n || Fo, this), t.config.globalProperties.$store = this;
   var r = this._devtools !== void 0 ? this._devtools : process.env.NODE_ENV !== "production" || !1;
   r && oi(t, this);
 };
@@ -2466,7 +2468,7 @@ class hi {
    * @param router data for Router /<br>данные для Router
    */
   static createRouter(t) {
-    return Wo(t);
+    return Ho(t);
   }
   /**
    * Creates data for Store.<br>
@@ -2483,91 +2485,91 @@ K.addComponentList(Cr);
 window.UI = K;
 window.UI_VUE = hi;
 export {
-  yr as Api,
+  _r as Api,
   Ln as Cache,
   br as CacheItem,
   Un as CacheStatic,
   Bn as Cookie,
   Kn as CookieBlock,
-  Or as DataStorage,
-  Zn as Datetime,
-  Hn as DatetimeRef,
+  wr as DataStorage,
+  Or as Datetime,
+  Wn as DatetimeRef,
   Nr as EventItem,
-  Wn as EventRef,
-  wr as Geo,
-  Fn as GeoFlag,
+  Hn as EventRef,
+  Xn as Geo,
+  yr as GeoFlag,
   qn as GeoFlagRef,
-  er as GeoIntl,
-  zn as GeoIntlRef,
-  Qn as GeoPhone,
-  Yn as GeoRef,
-  Jn as Hash,
+  Zn as GeoIntl,
+  Fn as GeoIntlRef,
+  zn as GeoPhone,
+  Qn as GeoRef,
+  Yn as Hash,
   Er as Icons,
   _t as Translate,
-  rn as anyToString,
-  on as arrFill,
-  sn as copyObject,
-  tr as createElement,
-  Vi as createUiComponents,
-  an as executeFunction,
+  Rn as anyToString,
+  rn as arrFill,
+  on as copyObject,
+  er as createElement,
+  Mi as createUiComponents,
+  sn as executeFunction,
   mt as forEach,
-  mr as frame,
-  nr as getAttributes,
-  cn as getBind,
-  un as getBindRef,
-  ln as getClassName,
-  lr as getClient,
-  fr as getClientX,
-  dr as getClientY,
-  fn as getClipboardData,
-  dn as getColumn,
-  rr as getElement,
-  or as getElementId,
-  ir as getElementItem,
-  sr as getElementOrWindow,
-  hn as getExp,
-  pn as getIndex,
-  hr as getKey,
-  mn as getMaxLength,
-  gn as getMinLength,
-  vn as getRef,
-  _n as inArray,
-  yn as intersectKey,
-  En as isArray,
-  bn as isDifferent,
+  pr as frame,
+  tr as getAttributes,
+  Sn as getBind,
+  Pn as getBindRef,
+  An as getClassName,
+  ur as getClient,
+  lr as getClientX,
+  fr as getClientY,
+  kn as getClipboardData,
+  an as getColumn,
+  nr as getElement,
+  rr as getElementId,
+  or as getElementItem,
+  ir as getElementOrWindow,
+  xn as getExp,
+  In as getIndex,
+  dr as getKey,
+  cn as getMaxLength,
+  un as getMinLength,
+  $n as getRef,
+  ln as inArray,
+  fn as intersectKey,
+  dn as isArray,
+  hn as isDifferent,
   gt as isFilled,
-  wn as isFunction,
-  ar as isInDom,
-  gr as isIntegerBetween,
-  On as isNull,
-  Nn as isObject,
-  Cn as isObjectNotArray,
-  Rn as isSelected,
-  Sn as isSelectedByList,
-  Pn as isString,
-  cr as isWindow,
-  pr as makeStopPropagation,
-  vr as random,
-  ji as registrationUiComponents,
-  An as render,
-  kn as replaceRecursive,
-  xn as replaceTemplate,
-  ur as setElementItem,
-  In as splice,
-  $n as strFill,
-  Dn as toArray,
-  Tn as toCamelCase,
+  pn as isFunction,
+  sr as isInDom,
+  mr as isIntegerBetween,
+  mn as isNull,
+  gn as isObject,
+  vn as isObjectNotArray,
+  _n as isSelected,
+  yn as isSelectedByList,
+  En as isString,
+  ar as isWindow,
+  hr as makeStopPropagation,
+  gr as random,
+  Gi as registrationUiComponents,
+  Dn as render,
+  bn as replaceRecursive,
+  Tn as replaceTemplate,
+  cr as setElementItem,
+  wn as splice,
+  Vn as strFill,
+  On as toArray,
+  jn as toCamelCase,
   vt as toCamelCaseFirst,
-  Xn as toDate,
-  Vn as toKebabCase,
-  _r as toNumber,
-  jn as toRefItem,
-  Mn as transformation,
-  Gn as uniqueArray,
-  ki as useCookieRef,
-  Gi as useEnv,
-  xi as useHashRef,
-  Ii as useSessionRef,
-  $i as useStorageRef,
-  Di as useTranslateRef
+  Jn as toDate,
+  Mn as toKebabCase,
+  vr as toNumber,
+  Gn as toRefItem,
+  Nn as transformation,
+  Cn as uniqueArray,
+  Ii as useCookieRef,
+  Ui as useEnv,
+  $i as useHashRef,
+  Di as useSessionRef,
+  Ti as useStorageRef,
+  Vi as useTranslateRef
 };

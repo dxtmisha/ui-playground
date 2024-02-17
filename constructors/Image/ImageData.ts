@@ -103,6 +103,7 @@ export class ImageData extends DesignAsyncAbstract<ImageProps, ImageEventData> {
           }
           break
         case ImageTypeValue.public:
+        case ImageTypeValue.icon:
           if (isString(image)) {
             return await Icons.get(image, this.props?.url)
           }
