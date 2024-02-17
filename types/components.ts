@@ -12,6 +12,7 @@ export const COMPONENTS_MAIN = 'main'
 export const COMPONENTS_TYPES = 'types'
 export const COMPONENTS_FILE_TYPES = 'fileTypes'
 export const COMPONENTS_STYLE = 'style'
+export const COMPONENTS_STYLE_INIT = 'style-init'
 export const COMPONENTS_REGISTRATION = 'create'
 export const COMPONENTS_REGISTRATION_FUNCTION = 'createUiComponents'
 

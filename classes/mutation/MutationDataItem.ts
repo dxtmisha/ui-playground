@@ -1,5 +1,5 @@
 import { forEach, isFilled, isString, transformation } from '../../functions/data'
-import { toCamelCaseFirst } from '../../functions/string'
+import { toCamelCaseFirst, toKebabCase } from '../../functions/string'
 import { toArray } from '../../functions/object'
 import { getAttributes, getElementId } from '../../functions/element'
 
@@ -41,6 +41,7 @@ export class MutationDataItem {
     this.slots = this.initSlots()
 
     this.setStatus(MutationStatus.init)
+    this.element.classList.add(this.getClassMain())
   }
 
   /**
@@ -72,6 +73,22 @@ export class MutationDataItem {
     }
 
     return toCamelCaseFirst(`${KEY_NAME}-${this.componentName}`)
+  }
+
+  /**
+   * Returns the name of the design.<br>
+   * Возвращает название дизайна.
+   */
+  getDesign (): string {
+    return toKebabCase(this.getComponentName()).replace(/-.*?$/, '')
+  }
+
+  /**
+   * Returns the name of the main class.<br>
+   * Возвращает название главного класса.
+   */
+  getClassMain (): string {
+    return `${this.getDesign()}-init`
   }
 
   /**

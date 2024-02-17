@@ -1,9 +1,7 @@
 @import "../../../styles/all";
 
 .c2-main {
-  font: var(--c2-st-web-text-body-b2regular);
-  
-  @include color(#{var(--c2-st-content-fg-color-neutral-primary)});
+  --c2-main-init: var(--c2-init);
   
   @include backgroundColor(#{var(--c2-st-content-bg-color-default-solid-normal)});
 }

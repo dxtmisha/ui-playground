@@ -5,7 +5,7 @@ import M2Image from '../Image/M2Image.vue'
 import {
   imageArgs,
   imageValues
-} from '../../m3/storybook/argTypes/image'
+} from '../../book/m3/argTypes/image'
 
 const meta = {
   title: 'M2/Image',

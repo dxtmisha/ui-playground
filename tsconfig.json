@@ -34,6 +34,11 @@
     "lib/**/*.d.ts",
     "lib/**/*.tsx",
     "lib/**/*.vue",
+    // Book
+    "book/**/*.ts",
+    "book/**/*.d.ts",
+    "book/**/*.tsx",
+    "book/**/*.vue",
     // C1
     "c1/**/*.ts",
     "c1/**/*.d.ts",

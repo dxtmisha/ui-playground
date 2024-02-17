@@ -18,6 +18,7 @@ $designsMedia: (
   'm3-2xl': 1648px,);
 $designsClasses: (
   'm3.dark',
+  'm3.init',
   'm3.main',
   'm3.elevation',
   'm3.font',
@@ -5202,6 +5203,49 @@ $designsProperties: (
                 ),
               ),
             ),
+          ),
+        ),
+      ),
+      'init':(
+        index: 'init',
+        name: 'm3-init',
+        type: 'component',
+        value: (
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--m3-ref-font-family-roboto)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--m3-ref-font-size-16)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--m3-ref-font-weight-400)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--m3-ref-lineHeight-24)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--m3-ref-letterSpacing-50)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--m3-sys-palette-onSurface)',
           ),
         ),
       ),

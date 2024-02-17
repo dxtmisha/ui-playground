@@ -5,7 +5,7 @@ import M2Icon from '../Icon/M2Icon.vue'
 import {
   iconArgs,
   iconValues
-} from '../../m3/storybook/argTypes/icon'
+} from '../../book/m3/argTypes/icon'
 
 const meta = {
   title: 'M2/Icon',

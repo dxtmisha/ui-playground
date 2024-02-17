@@ -1,0 +1,11 @@
+@import "../../../styles/all";
+
+.m3-init {
+  font-family: var(--m3-ref-font-family-roboto);
+  @include fontSize(#{var(--m3-ref-font-size-16)});
+  font-weight: var(--m3-ref-font-weight-400);
+  @include lineHeight(#{var(--m3-ref-lineHeight-24)});
+  letter-spacing: var(--m3-ref-letterSpacing-50);
+  
+  @include color(#{var(--m3-sys-palette-onSurface)});
+}

@@ -16,6 +16,7 @@ $designsMedia: (
   'c1-xl': 1280px,
   'c1-2xl': 1536px,);
 $designsClasses: (
+  'c1.init',
   'c1.main',
   'c1.elevation',
   'c1.font',
@@ -2780,6 +2781,49 @@ $designsProperties: (
                 value: 'var(--c1-ref-palette-backgroundImage-50)',
               ),
             ),
+          ),
+        ),
+      ),
+      'init':(
+        index: 'init',
+        name: 'c1-init',
+        type: 'component',
+        value: (
+          'fontFamily':(
+            index: 'fontFamily',
+            name: 'font-family',
+            type: 'property',
+            value: 'var(--c1-ref-font-family-rubik)',
+          ),
+          'fontSize':(
+            index: 'fontSize',
+            name: 'font-size',
+            type: 'property',
+            value: 'var(--c1-ref-font-size-16)',
+          ),
+          'fontWeight':(
+            index: 'fontWeight',
+            name: 'font-weight',
+            type: 'property',
+            value: 'var(--c1-ref-font-weight-400)',
+          ),
+          'lineHeight':(
+            index: 'lineHeight',
+            name: 'line-height',
+            type: 'property',
+            value: 'var(--c1-ref-lineHeight-20)',
+          ),
+          'letterSpacing':(
+            index: 'letterSpacing',
+            name: 'letter-spacing',
+            type: 'property',
+            value: 'var(--c1-ref-letterSpacing-none)',
+          ),
+          'color':(
+            index: 'color',
+            name: 'color',
+            type: 'property',
+            value: 'var(--c1-sys-palette-onSurface)',
           ),
         ),
       ),

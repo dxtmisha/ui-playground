@@ -5,7 +5,7 @@ import M2Ripple from '../Ripple/M2Ripple.vue'
 import {
   rippleArgs,
   rippleValues
-} from '../../m3/storybook/argTypes/ripple'
+} from '../../book/m3/argTypes/ripple'
 
 const meta = {
   title: 'M2/Ripple',
@@ -38,7 +38,7 @@ export const Ripple: Story = {
     },
     template: `
       <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 256px;">
-        <m2-ripple v-bind="args" />
+        <m2-ripple v-bind="args"/>
         <span>Click</span>
       </div>
     `

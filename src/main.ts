@@ -1,6 +1,7 @@
+import { createUiComponents } from '../lib/main.ts'
+
 import App from './App.vue'
 
 import './style.scss'
-import { createApp } from 'vue'
 
-createApp(App).mount('#app')
+createUiComponents(App).then(app => app.mount('#app'))

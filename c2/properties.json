@@ -105,22 +105,15 @@
     "_type": "var",
     "_category": "root"
   },
-  "main": {
+  "init": {
     "font": "{st.web.text.body.b2Regular}",
     "color": "{st.content.fg.color.neutral.primary}",
-    "background-color": "{st.content.bg.color.default.solid.normal}",
     "_category": "class"
   },
-  "dark": {
-    "value": {
-      "st": {
-        "value": {
-          "file|sys": "tokens/_init/theme/dark.json#st"
-        },
-        "_type": "var"
-      }
-    },
-    "_category": "theme"
+  "main": {
+    "init": "{init}",
+    "background-color": "{st.content.bg.color.default.solid.normal}",
+    "_category": "class"
   },
   "font": {
     "value": {
@@ -135,6 +128,17 @@
       }
     },
     "_category": "class"
+  },
+  "dark": {
+    "value": {
+      "st": {
+        "value": {
+          "file|sys": "tokens/_init/theme/dark.json#st"
+        },
+        "_type": "var"
+      }
+    },
+    "_category": "theme"
   },
   "file|components": "tokens/components"
 }

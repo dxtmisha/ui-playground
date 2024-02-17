@@ -3,7 +3,8 @@ import { PropertiesFile } from '../properties/PropertiesFile'
 
 import {
   COMPONENTS_DIR,
-  COMPONENTS_STYLE
+  COMPONENTS_STYLE,
+  COMPONENTS_STYLE_INIT
 } from '../../../types/components'
 
 /**
@@ -35,13 +36,24 @@ export class ComponentsStyle {
         '// Этот файл генерируется скриптом, не редактировать.',
         ''
       ]
+      const init: string[] = [...data]
 
-      designs.forEach(item => data.push(`@import "./../${item}/${item === main ? 'main' : 'init'}";`))
+      designs.forEach(item => {
+        data.push(`@import "./../${item}/${item === main ? 'main' : 'init'}";`)
+        init.push(`@import "./../${item}/init";`)
+      })
 
       PropertiesFile.write(
         [COMPONENTS_DIR],
         COMPONENTS_STYLE,
         data.join('\r\n'),
+        'scss'
+      )
+
+      PropertiesFile.write(
+        [COMPONENTS_DIR],
+        COMPONENTS_STYLE_INIT,
+        init.join('\r\n'),
         'scss'
       )
     }

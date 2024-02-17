@@ -23,11 +23,16 @@
     "_type": "var",
     "_category": "root"
   },
-  "dark": {
-    "value": {
-      "file|dark": "tokens/dark.json"
-    },
-    "_category": "theme"
+  "init": {
+    "font": "{font.body1}",
+    "color": "{sys.palette.onSurface}",
+    "color-opacity": "{sys.opacity.surface.high}",
+    "_category": "class"
+  },
+  "main": {
+    "init": "{init}",
+    "background": "{ref.background.0}",
+    "_category": "class"
   },
   "elevation": {
     "value": {
@@ -53,11 +58,10 @@
     },
     "_category": "class"
   },
-  "main": {
-    "font": "{font.body1}",
-    "color": "{sys.palette.onSurface}",
-    "color-opacity": "{sys.opacity.surface.high}",
-    "background": "{ref.background.0}",
-    "_category": "class"
+  "dark": {
+    "value": {
+      "file|dark": "tokens/dark.json"
+    },
+    "_category": "theme"
   }
 }

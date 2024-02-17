@@ -26,9 +26,13 @@
     "_type": "var",
     "_category": "root"
   },
-  "main": {
+  "init": {
     "font": "{font.bodyLarge}",
     "color": "{sys.palette.onSurface}",
+    "_category": "class"
+  },
+  "main": {
+    "init": "{init}",
     "background": "{ref.background.0}",
     "_category": "class"
   },

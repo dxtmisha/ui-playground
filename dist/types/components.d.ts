@@ -8,6 +8,7 @@ export declare const COMPONENTS_MAIN = "main";
 export declare const COMPONENTS_TYPES = "types";
 export declare const COMPONENTS_FILE_TYPES = "fileTypes";
 export declare const COMPONENTS_STYLE = "style";
+export declare const COMPONENTS_STYLE_INIT = "style-init";
 export declare const COMPONENTS_REGISTRATION = "create";
 export declare const COMPONENTS_REGISTRATION_FUNCTION = "createUiComponents";
 export type ComponentsData = {

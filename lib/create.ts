@@ -8,7 +8,7 @@ import { components } from './components'
 import './types.d.ts'
 
 export async function registrationUiComponents (app: App) {
-  await (await import('./media.ts')).makeMediaGlobal()
+  await (await import('./media')).makeMediaGlobal()
 
   forEach(components, (component, name) => {
     app.component(name, component)

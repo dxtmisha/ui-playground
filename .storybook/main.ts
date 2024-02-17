@@ -4,6 +4,7 @@ const config: StorybookConfig = {
   stories: [
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../book/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../c1/storybook/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../c2/storybook/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../m2/storybook/**/*.stories.@(js|jsx|mjs|ts|tsx)',

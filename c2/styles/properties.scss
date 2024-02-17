@@ -13,6 +13,7 @@ $designsRoot: (
 $designsMedia: ();
 $designsClasses: (
   'c2.dark',
+  'c2.init',
   'c2.main',
   'c2.font',
   'c2.palette',);
@@ -13490,9 +13491,9 @@ $designsProperties: (
           ),
         ),
       ),
-      'main':(
-        index: 'main',
-        name: 'c2-main',
+      'init':(
+        index: 'init',
+        name: 'c2-init',
         type: 'component',
         value: (
           'font':(
@@ -13506,6 +13507,19 @@ $designsProperties: (
             name: 'color',
             type: 'property',
             value: 'var(--c2-st-content-fg-color-neutral-primary)',
+          ),
+        ),
+      ),
+      'main':(
+        index: 'main',
+        name: 'c2-main',
+        type: 'component',
+        value: (
+          'init':(
+            index: 'init',
+            name: '--c2-main-init',
+            type: 'var',
+            value: 'var(--c2-init)',
           ),
           'backgroundColor':(
             index: 'backgroundColor',
