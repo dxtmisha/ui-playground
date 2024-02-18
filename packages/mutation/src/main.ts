@@ -5,6 +5,4 @@ import 'ui/style.css'
 
 import App from './App.vue'
 
-import './tailwind.css'
-
 createUiComponents(App).then(app => app.mount('#ui-app-mutation'))

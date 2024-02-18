@@ -296,7 +296,7 @@ export class MutationDataItem {
 
     for (const element of children) {
       const slot = this.initChildren(element)
-      console.log('slot', slot)
+
       if (slot) {
         slots.push(slot)
       }

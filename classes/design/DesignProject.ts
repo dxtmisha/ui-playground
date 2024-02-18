@@ -1,6 +1,7 @@
 import { toArray } from '../../functions/object'
 
 import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile'
+import { DesignProjectModule } from './DesignProjectModule.ts'
 
 export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
 export const DIR_PROJECT = ['..']
@@ -46,6 +47,8 @@ export class DesignProject {
     if (this.getTemplateDir() === 'vue') {
       const pathDist = ['.', 'production', 'dist']
       const pathBuild = ['.', '..']
+
+      new DesignProjectModule(pathDist).make()
 
       this.copyBuild(pathDist, pathBuild)
     }

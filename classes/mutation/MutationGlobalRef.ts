@@ -33,22 +33,12 @@ export class MutationGlobalRef {
     translate?: MutationProjectItem['translate']
   ): void {
     const global = window as any
-    const item: MutationProjectItem = { item: app }
-
-    if (router) {
-      item.router = router
-    }
-
-    if (store) {
-      item.store = store
-    }
-
-    if (init) {
-      item.init = init
-    }
-
-    if (translate) {
-      item.translate = translate
+    const item: MutationProjectItem = {
+      item: app,
+      router,
+      store,
+      init,
+      translate
     }
 
     if (KEY_GLOBAL_PROJECT in global) {

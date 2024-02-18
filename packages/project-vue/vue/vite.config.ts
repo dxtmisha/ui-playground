@@ -19,6 +19,19 @@ export default defineConfig(({ mode }) => {
         targets: ['defaults', 'not IE 11']
       }),
       vue()
-    ]
+    ],
+    build: {
+      rollupOptions: {
+        external: ['vue', 'vue-router', 'ui'],
+        output: {
+          globals: {
+            vue: 'UI_CORE_VUE',
+            'vue-router': 'UI_CORE_VUE_ROUTER',
+            vuex: 'UI_CORE_VUEX',
+            ui: 'UI_CORE_UI'
+          }
+        }
+      }
+    }
   }
 })
