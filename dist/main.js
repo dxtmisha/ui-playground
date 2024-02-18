@@ -1,4 +1,4 @@
-import { K as $e, d as K } from "./props-D_aM5ACx.js";
+import { K as $e, d as K } from "./props-BxN0Huk1.js";
 import * as $n from "vue";
 import { getCurrentInstance as ge, inject as L, computed as T, unref as se, watchEffect as In, shallowRef as Dn, onUnmounted as Tn, onDeactivated as Vn, onActivated as jn, defineComponent as It, reactive as Dt, h as Tt, provide as Ie, ref as Mn, watch as ye, shallowReactive as Ln, nextTick as Gn, effectScope as Un, createApp as Bn } from "vue";
 import { k as Hn, l as Kn, e as Fn, f as Vt, n as Wn, o as qn, p as zn, h as Qn, q as Yn, j as Jn, r as Xn, i as jt, s as Zn, d as er, c as tr, b as nr, m as rr, u as or, a as ir, v as sr, w as ar, t as cr, g as ur, x as lr } from "./object-Cv4Jn6-r.js";
@@ -15,8 +15,8 @@ import { C as ao } from "./CacheItem-J86vAm6_.js";
 import { D as co } from "./DataStorage-Dat94vZg.js";
 import { D as uo } from "./Datetime-mXXAwVsn.js";
 import { E as lo } from "./EventItem-4BdmI3V8.js";
-import { c as fo } from "./create-4-GcHBBg.js";
-import { a as ks, r as $s } from "./create-4-GcHBBg.js";
+import { c as fo } from "./create-CiOf3kJp.js";
+import { a as ks, r as $s } from "./create-CiOf3kJp.js";
 import { u as Ds } from "./useEnv-B5K-n4xC.js";
 const po = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -2949,8 +2949,14 @@ class ss {
    * @param translate list of text translation keys /<br>список ключей текстовых переводов
    */
   static addComponent(t, n, r, o, s, c) {
-    const u = window, a = { item: n };
-    r && (a.router = r), o && (a.store = o), s && (a.init = s), c && (a.translate = c), $e in u ? u[$e][t] = a : u[$e] = {
+    const u = window, a = {
+      item: n,
+      router: r,
+      store: o,
+      init: s,
+      translate: c
+    };
+    $e in u ? u[$e][t] = a : u[$e] = {
       [t]: a
     };
   }

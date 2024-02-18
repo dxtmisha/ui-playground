@@ -463,7 +463,7 @@ class Y {
     const s = [];
     for (const i of t) {
       const e = this.initChildren(i);
-      console.log("slot", e), e && s.push(e);
+      e && s.push(e);
     }
     return s;
   }

@@ -35,7 +35,7 @@ export class DesignProjectModule {
             (_, list, name) => {
               const items = list.replace(/([^ ]+) as ([^, ]+)/ig, '$1: $2')
 
-              return `const{${items}=${this.getModule(name)}`
+              return `const{${items}}=${this.getModule(name)}`
             }
           )
         )

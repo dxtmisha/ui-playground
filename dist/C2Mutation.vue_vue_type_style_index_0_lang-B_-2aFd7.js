@@ -1,38 +1,38 @@
 import { defineComponent as p, computed as o, openBlock as u, createBlock as _, unref as f } from "vue";
-import { p as l, M } from "./props-DHzla3rk.js";
-import { _ as d } from "./M3MutationItem.vue_vue_type_style_index_0_lang-D4QpoV27.js";
+import { p as l, M as d } from "./props-BU-ADXPW.js";
+import { _ as M } from "./C2MutationItem.vue_vue_type_style_index_0_lang-C9oxOj4J.js";
 const k = {
   ...l
-}, h = /* @__PURE__ */ p({
-  name: "M3Mutation",
-  __name: "M3Mutation",
+}, T = /* @__PURE__ */ p({
+  name: "C2Mutation",
+  __name: "C2Mutation",
   props: { ...k },
   emits: ["load"],
   setup(e, { expose: n, emit: s }) {
-    const r = s, m = e, c = o(() => ({
+    const c = s, r = e, a = o(() => ({
       main: {
         // :classes-values [!] System label / Системная метка
-        "m3-mutation": !0
+        "c2-mutation": !0
         // :classes-values [!] System label / Системная метка
       }
-    })), a = o(() => ({
+    })), i = o(() => ({
       // :styles-values [!] System label / Системная метка
       // :styles-values [!] System label / Системная метка
-    })), t = new M(
-      "m3.mutation",
-      m,
+    })), t = new d(
+      "c2.mutation",
+      r,
       {
-        emits: r,
+        emits: c,
         components: {
-          item: d
+          item: M
         },
-        classes: c,
-        styles: a
+        classes: a,
+        styles: i
       }
-    ), i = t.render();
-    return n(t.expose()), (x, g) => (u(), _(f(i)));
+    ), m = t.render();
+    return n(t.expose()), (x, C) => (u(), _(f(m)));
   }
 });
 export {
-  h as _
+  T as _
 };

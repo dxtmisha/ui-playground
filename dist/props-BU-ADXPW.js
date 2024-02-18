@@ -3,7 +3,7 @@ var u = (i, t, s) => t in i ? r(i, t, { enumerable: !0, configurable: !0, writab
 var a = (i, t, s) => (u(i, typeof t != "symbol" ? t + "" : t, s), s);
 import { shallowRef as h, onBeforeMount as m, nextTick as c, onUnmounted as d, h as l } from "vue";
 import { D as f } from "./DesignConstructorAbstract-pYeoTVwY.js";
-import { a as o, b, c as p } from "./props-D_aM5ACx.js";
+import { a as o, b, c as p } from "./props-BxN0Huk1.js";
 class v {
   constructor() {
     a(this, "items", []);
