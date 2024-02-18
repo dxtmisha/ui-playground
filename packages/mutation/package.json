@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "sass": "^1.71.0",
-    "ui": "git+https://github.com/dxtmisha/ui-playground.git",
+    "ui": "./../../",
     "vue": "^3.4.15"
   },
   "devDependencies": {
