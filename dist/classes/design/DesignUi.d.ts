@@ -1,12 +1,12 @@
-import { ComponentsItems } from '../services/сomponents/ComponentsItems';
-import { ComponentsList } from '../services/сomponents/ComponentsList';
-import { ComponentsFlags } from '../services/сomponents/ComponentsFlags.ts';
-import { ComponentsMedia } from '../services/сomponents/ComponentsMedia.ts';
-import { ComponentsMain } from '../services/сomponents/ComponentsMain';
-import { ComponentsTypes } from '../services/сomponents/ComponentsTypes';
-import { ComponentsStyle } from '../services/сomponents/ComponentsStyle';
-import { ComponentsRegistration } from '../services/сomponents/ComponentsRegistration';
-import { ComponentsFileTypes } from '../services/сomponents/ComponentsFileTypes.ts';
+import { ComponentsItems } from '../services/components/ComponentsItems';
+import { ComponentsList } from '../services/components/ComponentsList';
+import { ComponentsFlags } from '../services/components/ComponentsFlags.ts';
+import { ComponentsMedia } from '../services/components/ComponentsMedia.ts';
+import { ComponentsMain } from '../services/components/ComponentsMain';
+import { ComponentsTypes } from '../services/components/ComponentsTypes';
+import { ComponentsStyle } from '../services/components/ComponentsStyle';
+import { ComponentsRegistration } from '../services/components/ComponentsRegistration';
+import { ComponentsFileTypes } from '../services/components/ComponentsFileTypes.ts';
 /**
  * A class for updating styles and tokens.<br>
  * Класс для обновления стилей и токенов.
