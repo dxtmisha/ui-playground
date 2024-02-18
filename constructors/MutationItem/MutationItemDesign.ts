@@ -1,10 +1,11 @@
 import { computed, h, Teleport, type VNode } from 'vue'
-import { forEach } from '../../functions/data'
+import { forEach, isObjectNotArray } from '../../functions/data'
 
 import { DesignConstructorAbstract } from '../../classes/design/DesignConstructorAbstract'
 import { MutationItemRef } from './MutationItemRef'
 
 import {
+  ConstrItem,
   type ConstrOptions,
   type ConstrStyles
 } from '../../types/constructor'
@@ -158,6 +159,7 @@ export class MutationItemDesign<
     if (data) {
       forEach(data, (children, name) => {
         const slot: MutationSlotsRefItem[] = []
+        let first = false
 
         children.forEach(item => {
           if (typeof item === 'string') {
@@ -170,7 +172,30 @@ export class MutationItemDesign<
           }
         })
 
-        slots[name] = () => slot
+        slots[name] = (props?: ConstrItem) => {
+          if (
+            !first &&
+            props
+          ) {
+            const element = slot?.[0]
+
+            if (
+              element &&
+              'UI' in window &&
+              isObjectNotArray(element) &&
+              element.props?.['data-ui']
+            ) {
+              (window as any).UI.comp(
+                element.props?.id,
+                props
+              )
+
+              first = true
+            }
+          }
+
+          return slot
+        }
       })
     }
 

@@ -1,4 +1,4 @@
-import { _ as a } from "./M3Mutation.vue_vue_type_style_index_0_lang-BfstZzKo.js";
+import { _ as a } from "./M3Mutation.vue_vue_type_style_index_0_lang-C3CkqK3Q.js";
 export {
   a as M3Mutation
 };

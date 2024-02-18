@@ -1,4 +1,13 @@
 @import "../../styles/properties";
 
 @mixin mixinMutation {
+  @at-root {
+    *[data-ui]:not(.d-mutation--end) {
+      display: none;
+    }
+
+    *[data-ui].d-mutation--end {
+      display: unset !important;
+    }
+  }
 }

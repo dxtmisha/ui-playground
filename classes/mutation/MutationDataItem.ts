@@ -261,7 +261,7 @@ export class MutationDataItem {
       const isSlotName = element.getAttribute('data-slot')
 
       if (isSlotName) {
-        slots[isSlotName] = this.initChildrenList(element.children)
+        slots[isSlotName] = this.initChildrenList(element.childNodes)
       } else {
         const slot = this.initChildren(element)
 
@@ -290,13 +290,13 @@ export class MutationDataItem {
    * @param children list of child elements /<br>список дочерних элементов
    */
   private initChildrenList (
-    children: HTMLCollection
+    children: NodeList
   ): MutationSlotsItemOrString[] {
     const slots: MutationSlotsItemOrString[] = []
 
     for (const element of children) {
       const slot = this.initChildren(element)
-
+      console.log('slot', slot)
       if (slot) {
         slots.push(slot)
       }
@@ -311,7 +311,7 @@ export class MutationDataItem {
    * @param element child element /<br>дочерний элемент
    */
   private initChildren (
-    element: ChildNode
+    element: Node
   ): MutationSlotsItemOrString | undefined {
     if (element instanceof HTMLElement) {
       return {

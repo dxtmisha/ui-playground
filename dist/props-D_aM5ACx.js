@@ -1,35 +1,35 @@
-var L = Object.defineProperty;
-var y = (o, t, s) => t in o ? L(o, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : o[t] = s;
-var n = (o, t, s) => (y(o, typeof t != "symbol" ? t + "" : t, s), s);
-import { shallowRef as f, resolveComponent as w, computed as $, h as g, Teleport as A } from "vue";
-import { f as h, i as m, g as K, t as _, a as D } from "./object-Cv4Jn6-r.js";
-import { D as U } from "./DesignConstructorAbstract-pYeoTVwY.js";
-import { c as C, d as I } from "./string-BjW7AeH_.js";
-import { b as P, d as k } from "./element-DOaDn3jQ.js";
-import { u as S } from "./useEnv-B5K-n4xC.js";
-const E = "d-mutation", F = C(S("DESIGNS_MAIN", "design")), T = C(S("DESIGNS_GLOBAL", "ui")), b = "init", v = "end", d = "__UI_PROJECT";
-var a = /* @__PURE__ */ ((o) => (o.new = "new", o[o.init = b] = "init", o[o.end = v] = "end", o))(a || {});
-class u {
+var A = Object.defineProperty;
+var K = (o, t, s) => t in o ? A(o, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : o[t] = s;
+var n = (o, t, s) => (K(o, typeof t != "symbol" ? t + "" : t, s), s);
+import { shallowRef as b, resolveComponent as U, computed as _, h as f, Teleport as D } from "vue";
+import { f as u, i as l, g as P, t as k, a as F, b as T } from "./object-Cv4Jn6-r.js";
+import { D as M } from "./DesignConstructorAbstract-pYeoTVwY.js";
+import { c as C, d as N } from "./string-BjW7AeH_.js";
+import { b as O, d as x } from "./element-DOaDn3jQ.js";
+import { u as w } from "./useEnv-B5K-n4xC.js";
+const v = "d-mutation", B = C(w("DESIGNS_MAIN", "design")), R = C(w("DESIGNS_GLOBAL", "ui")), L = "init", y = "end", g = "__UI_PROJECT";
+var a = /* @__PURE__ */ ((o) => (o.new = "new", o[o.init = L] = "init", o[o.end = y] = "end", o))(a || {});
+class d {
   /**
    * Returns the names of keys indicating the design name.<br>
    * Возвращает названия ключей, обозначающих название дизайна.
    */
   static getKeyUi() {
-    return T;
+    return R;
   }
   /**
    * Returns the names of keys indicating that the element is being processed.<br>
    * Возвращает названия ключей, обозначающих, что элемент находится в обработке.
    */
   static getKeyInit() {
-    return b;
+    return L;
   }
   /**
    * Returns the names of keys indicating that the element has already been processed.<br>
    * Возвращает названия ключей, обозначающих, что элемент уже обработан.
    */
   static getKeyEnd() {
-    return v;
+    return y;
   }
   /**
    * Returns the names of attributes indicating the design name.<br>
@@ -43,14 +43,14 @@ class u {
    * Возвращает названия атрибутов, обозначающих, что элемент находится в обработке.
    */
   static getClassInit() {
-    return `${E}--${this.getKeyInit()}`;
+    return `${v}--${this.getKeyInit()}`;
   }
   /**
    * Returns the names of attributes indicating that the element is being processed.<br>
    * Возвращает названия атрибутов, обозначающих, что элемент уже обработан.
    */
   static getClassEnd() {
-    return `${E}--${this.getKeyEnd()}`;
+    return `${v}--${this.getKeyEnd()}`;
   }
   /**
    * Initial stage, start of searching for all unprocessed elements.<br>
@@ -149,7 +149,7 @@ class r {
    * Возвращает список глобальных проектов.
    */
   static getComponentGlobal() {
-    return d in window ? window[d] : {};
+    return g in window ? window[g] : {};
   }
   /**
    * Returns the global project by its name.<br>
@@ -158,8 +158,8 @@ class r {
    */
   static getComponentGlobalItem(t) {
     var s;
-    if (d in window)
-      return ((s = window[d]) == null ? void 0 : s[t]) ?? void 0;
+    if (g in window)
+      return ((s = window[g]) == null ? void 0 : s[t]) ?? void 0;
   }
   /**
    * Returns connected Vue components by their name.<br>
@@ -212,7 +212,7 @@ class r {
    * @param functions list of functions to be added /<br>список добавляемой функции
    */
   static addFunctionList(t) {
-    h(t, (s, i) => {
+    u(t, (s, i) => {
       this.addFunction(i, s);
     });
   }
@@ -222,7 +222,7 @@ class r {
    * @param classes list of classes to be added /<br>список добавляемого класса
    */
   static addClassList(t) {
-    h(t, (s, i) => {
+    u(t, (s, i) => {
       this.addClass(i, s);
     });
   }
@@ -232,7 +232,7 @@ class r {
    * @param components list of components to be added /<br>список добавляемого компонента
    */
   static addComponentList(t) {
-    h(t, (s, i) => {
+    u(t, (s, i) => {
       this.addComponent(i, s);
     });
   }
@@ -271,7 +271,7 @@ class r {
   }
 }
 n(r, "functions", {}), n(r, "classes", {}), n(r, "components", {}), n(r, "compItems", {}), n(r, "compCaching", {});
-class M {
+class Y {
   /**
    * Constructor
    * @param element tracking element /<br>элемент слежения
@@ -284,7 +284,7 @@ class M {
     n(this, "props", {});
     n(this, "callback");
     var s;
-    this.element = t, this.id = P(t), this.componentName = ((s = t.dataset) == null ? void 0 : s[u.getKeyUi()]) ?? "component", this.static = a.new, this.slots = this.initSlots(), this.setStatus(a.init), this.element.classList.add(this.getClassMain());
+    this.element = t, this.id = O(t), this.componentName = ((s = t.dataset) == null ? void 0 : s[d.getKeyUi()]) ?? "component", this.static = a.new, this.slots = this.initSlots(), this.setStatus(a.init), this.element.classList.add(this.getClassMain());
   }
   /**
    * Checks if the element belongs to the current object.<br>
@@ -306,8 +306,8 @@ class M {
    * Возвращает названия компонента.
    */
   getComponentName() {
-    const t = I(this.componentName);
-    return r.isComponent(t) ? t : I(`${F}-${this.componentName}`);
+    const t = N(this.componentName);
+    return r.isComponent(t) ? t : N(`${B}-${this.componentName}`);
   }
   /**
    * Returns the name of the design.<br>
@@ -362,10 +362,10 @@ class M {
   setStatus(t) {
     switch (this.removeClasses(), this.static = t, this.static) {
       case a.init:
-        this.element.classList.add(u.getClassInit());
+        this.element.classList.add(d.getClassInit());
         break;
       case a.end:
-        this.element.classList.add(u.getClassEnd());
+        this.element.classList.add(d.getClassEnd());
         break;
     }
     return this;
@@ -381,7 +381,7 @@ class M {
       this.getId(),
       t,
       (e) => {
-        m(e) && this.setProps(e).update();
+        l(e) && this.setProps(e).update();
       }
     );
     return i && this.setProps(i), this.callback = s, this;
@@ -410,8 +410,8 @@ class M {
    */
   getDataset() {
     const t = {};
-    return h(this.element.dataset, (s, i) => {
-      i !== u.getKeyUi() && (t[i] = K(s));
+    return u(this.element.dataset, (s, i) => {
+      i !== d.getKeyUi() && (t[i] = P(s));
     }), t;
   }
   /**
@@ -420,7 +420,7 @@ class M {
    * @param props property values /<br>значения свойство
    */
   setProps(t) {
-    return m(t) && h(t, (s, i) => {
+    return l(t) && u(t, (s, i) => {
       i === "slots" ? this.setSlots(s) : this.props[i] = s;
     }), this;
   }
@@ -430,8 +430,8 @@ class M {
    * @param slots list of slots for update /<br>список слотов для обновления
    */
   setSlots(t) {
-    return m(t) && h(t, (s, i) => {
-      this.slots[i] = this.initChildrenList(_(s));
+    return l(t) && u(t, (s, i) => {
+      this.slots[i] = this.initChildrenList(k(s));
     }), this;
   }
   /**
@@ -443,7 +443,7 @@ class M {
     for (const i of this.element.children) {
       const e = i.getAttribute("data-slot");
       if (e)
-        t[e] = this.initChildrenList(i.children);
+        t[e] = this.initChildrenList(i.childNodes);
       else {
         const c = this.initChildren(i);
         c && ("default" in t ? t.default.push(c) : t.default = [c]);
@@ -463,7 +463,7 @@ class M {
     const s = [];
     for (const i of t) {
       const e = this.initChildren(i);
-      e && s.push(e);
+      console.log("slot", e), e && s.push(e);
     }
     return s;
   }
@@ -478,14 +478,14 @@ class M {
       return {
         tag: t.nodeName,
         attributes: {
-          ...k(t),
+          ...x(t),
           innerHTML: (t == null ? void 0 : t.innerHTML) ?? ""
         }
       };
     const s = (e = (i = t == null ? void 0 : t.textContent) == null ? void 0 : i.trim) == null ? void 0 : e.call(i);
-    if (m(s))
+    if (l(s))
       return s;
-    if (D(t) && m(t))
+    if (F(t) && l(t))
       return t;
   }
   /**
@@ -493,10 +493,10 @@ class M {
    * Удаление всех классов, относящихся к статусу.
    */
   removeClasses() {
-    return this.element.classList.remove(u.getClassInit()), this.element.classList.remove(u.getClassEnd()), this;
+    return this.element.classList.remove(d.getClassInit()), this.element.classList.remove(d.getClassEnd()), this;
   }
 }
-class x {
+class q {
   /**
    * Constructor
    * @param props input data /<br>входные данные
@@ -506,8 +506,8 @@ class x {
     n(this, "mainElement", document.body);
     n(this, "componentName", "div");
     n(this, "componentItem");
-    n(this, "binds", f({}));
-    n(this, "slots", f({}));
+    n(this, "binds", b({}));
+    n(this, "slots", b({}));
     var i;
     this.props = t, t.item && (this.mainElement = t.item.getElement(), this.componentName = t.item.getComponentName(), this.componentItem = this.initComponentItem(), t.item.registration(s, () => this.update())), (i = t.item) == null || i.setStatus(a.end), this.update();
   }
@@ -526,10 +526,10 @@ class x {
    */
   initComponentItem() {
     var t;
-    return ((t = r.getComponentGlobalItem(this.componentName)) == null ? void 0 : t.item) ?? w(this.componentName);
+    return ((t = r.getComponentGlobalItem(this.componentName)) == null ? void 0 : t.item) ?? U(this.componentName);
   }
 }
-class J extends U {
+class W extends M {
   /**
    * Constructor
    * @param name class name /<br>название класса
@@ -543,7 +543,7 @@ class J extends U {
       e
     );
     n(this, "mutation");
-    this.mutation = new x(i, this.element), this.init();
+    this.mutation = new q(i, this.element), this.init();
   }
   /**
    * Initialization of basic options.<br>
@@ -563,7 +563,7 @@ class J extends U {
       componentItem: this.mutation.componentItem,
       binds: this.mutation.binds,
       slots: this.mutation.slots,
-      renderSlots: $(() => this.renderSlots())
+      renderSlots: _(() => this.renderSlots())
     };
   }
   /**
@@ -597,12 +597,12 @@ class J extends U {
     var i;
     const s = this.setup();
     if (s.componentItem)
-      return g(A, {
+      return f(D, {
         ref: this.element,
         class: (i = this.classes) == null ? void 0 : i.value.main,
         to: s.mainElement
       }, [
-        g(
+        f(
           s.componentItem,
           s.binds.value,
           s.renderSlots.value
@@ -615,26 +615,37 @@ class J extends U {
    */
   renderSlots() {
     const s = this.setup(), i = {}, e = s.slots.value;
-    return e && h(e, (c, N) => {
-      const p = [];
-      c.forEach((l) => {
-        typeof l == "string" ? p.push(l) : p.push(g(
-          l.tag,
-          { ...l.attributes }
+    return e && u(e, (c, $) => {
+      const m = [];
+      let I = !1;
+      c.forEach((h) => {
+        typeof h == "string" ? m.push(h) : m.push(f(
+          h.tag,
+          { ...h.attributes }
         ));
-      }), i[N] = () => p;
+      }), i[$] = (h) => {
+        var E, S;
+        if (!I && h) {
+          const p = m == null ? void 0 : m[0];
+          p && "UI" in window && T(p) && ((E = p.props) != null && E["data-ui"]) && (window.UI.comp(
+            (S = p.props) == null ? void 0 : S.id,
+            h
+          ), I = !0);
+        }
+        return m;
+      };
     }), i;
   }
 }
-const V = {
-  item: M
+const X = {
+  item: Y
 };
 export {
-  d as K,
-  J as M,
-  u as a,
-  M as b,
+  g as K,
+  W as M,
+  d as a,
+  Y as b,
   a as c,
   r as d,
-  V as p
+  X as p
 };
