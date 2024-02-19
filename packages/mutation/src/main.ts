@@ -1,7 +1,8 @@
 import { createUiComponents } from 'ui/main'
 
 import 'ui/style-init'
-import 'ui/style.css'
+import 'ui/style-components'
+import './styles.scss'
 
 import App from './App.vue'
 

@@ -9,22 +9,22 @@ export default defineNuxtModule({
         {
           path: resolve('./c1'),
           prefix: 'c1',
-          extensions: ['index.ts']
+          extensions: ['.vue']
         },
         {
           path: resolve('./c2'),
           prefix: 'c2',
-          extensions: ['index.ts']
+          extensions: ['.vue']
         },
         {
           path: resolve('./m2'),
           prefix: 'm2',
-          extensions: ['index.ts']
+          extensions: ['.vue']
         },
         {
           path: resolve('./m3'),
           prefix: 'm3',
-          extensions: ['index.ts']
+          extensions: ['.vue']
         }
       )
     }
