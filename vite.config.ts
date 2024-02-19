@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import dtsPlugin from 'vite-plugin-dts'
 
-import components from './lib/components.json'
+// import components from './lib/components.json'
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -43,9 +43,9 @@ export default defineConfig(() => {
           ...(() => {
             const data: Record<string, any> = {}
 
-            components.forEach(item => {
-              data[item.name] = resolve(__dirname, `${item.path}/index.ts`)
-            })
+            // components.forEach(item => {
+            //   data[item.name] = resolve(__dirname, `${item.path}/index.ts`)
+            // })
 
             return data
           })()

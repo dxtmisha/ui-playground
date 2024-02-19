@@ -195,13 +195,13 @@ export class DesignUi {
     }
 
     this.components.getDesigns().forEach(design => {
-      exports[`./${design}/use`] = `./${design}/use.scss`
+      exports[`./${design}/use.scss`] = `./${design}/use.scss`
     })
 
     components.forEach(component => {
       exports[`./${component.codeFull}`] = {
         import: `./${component.design}/${component.dir}/index.ts`,
-        require: `./dist/${component.codeFull}.umd.cjs`,
+        // require: `./dist/${component.codeFull}.umd.cjs`,
         types: `./dist/${component.design}/${component.dir}/index.d.ts`
       }
     })
