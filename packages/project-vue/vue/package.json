@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "build-ui": "vue-tsc && vite build && vite-node ./node_modules/ui/commands/ui-project.ts build"
+    "build-ui": "vue-tsc && vite build && vite-node ./node_modules/ui/commands/ui-project.ts build",
+    "update-ui": "vite-node ./node_modules/ui/commands/ui-project.ts ui-project"
   },
   "dependencies": {
     "ui": "git+https://github.com/dxtmisha/ui-playground.git",

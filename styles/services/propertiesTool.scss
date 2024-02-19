@@ -48,12 +48,22 @@ $designsClassName: 'class' !default;
 }
 
 @function t($name, $default: null) {
-  $token: strReplace($name, '--', '--'#{$designsDesign});
+  $token: string.insert($name, #{$designsDesign}-, 3);
 
   @if ($default) {
-    @return #{var(#{i($token)}, #{$default})}
+    @return #{var($token, #{$default})}
   } @else {
-    @return #{var(#{i($token)})}
+    @return #{var($token)}
+  }
+}
+
+@function tColor($name, $default: null) {
+  $token: string.insert($name, #{$designsDesign}-, 3);
+
+  @if ($default) {
+    @return #{rgba(var($token, #{toColorRbg($default)}), var(#{$token}#{-opacity}, 1))}
+  } @else {
+    @return #{rgba(var($token), var(#{$token}#{-opacity}, 1))}
   }
 }
 

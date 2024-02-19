@@ -21,12 +21,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    /* --- */
-    "types": [
-      "node",
-      "vite/client"
-    ]
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "dev/**/*.ts",

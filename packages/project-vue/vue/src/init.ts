@@ -5,7 +5,7 @@ import translateList from './../dev/public/translate.json'
 export const translate: string[] = [
   // TODO: list of translation keys that need to be obtained before initializing the component
   // TODO: список ключей переводов, которые надо получить перед инициализацией компонента
-  ...Object.keys(translateList)
+  ...Object.keys(translateList.data)
 ]
 
 export const init = async (app: App): Promise<void> => {

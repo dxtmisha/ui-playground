@@ -194,7 +194,7 @@ export class DesignUi {
     }
 
     this.components.getDesigns().forEach(design => {
-      exports[`./style/${design}`] = `./${design}/use.scss`
+      exports[`./${design}/use`] = `./${design}/use.scss`
     })
 
     components.forEach(component => {

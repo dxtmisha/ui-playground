@@ -42,7 +42,7 @@ if (requireFs.existsSync(DIR_PROJECT)) {
 
     console.log('-- Install')
 
-    exec(`cd ${DIR_PROJECT};npx ts-node ./node_modules/ui/commands/ui-project.ts ui-project ${PROJECT_NAME}`, (error) => {
+    exec(`cd ${DIR_PROJECT};npx ts-node ./node_modules/ui/commands/ui-project.ts project ${PROJECT_NAME}`, (error) => {
       if (error) {
         console.error(error)
         return
