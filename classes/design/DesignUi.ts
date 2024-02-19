@@ -183,6 +183,7 @@ export class DesignUi {
       },
       './style-main': './lib/style.scss',
       './style-init': './lib/style-init.scss',
+      './style-components': './dist/style.css',
       './style.css': './dist/style.css',
       './media': {
         import: './dist/media.js',
