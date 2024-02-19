@@ -2594,7 +2594,11 @@ const L = {}, Z = [
    */
   static findLocation() {
     var e;
-    return document && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
+    try {
+      return this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language") || "en-GB";
+    } catch {
+    }
+    return "en-GB";
   }
   /**
    * Determines the current language.<br>
@@ -3493,7 +3497,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-BELEajmY.js").then((a) => {
+          this.flags = "init", import("./flags-iROFxJmf.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;

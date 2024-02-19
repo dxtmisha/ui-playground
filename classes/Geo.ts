@@ -198,13 +198,14 @@ export class Geo {
    * Определяет текущую локацию.
    */
   private static findLocation (): string {
-    if (document) {
+    try {
       return this.storage.get() ||
         document.querySelector('html')?.lang ||
         navigator.language ||
         navigator.languages[0] ||
         useEnv('language') ||
         'en-GB'
+    } catch (e) {
     }
 
     return 'en-GB'
