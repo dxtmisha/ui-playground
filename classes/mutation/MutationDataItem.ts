@@ -54,6 +54,14 @@ export class MutationDataItem {
   }
 
   /**
+   * Checks if the current element is a link.<br>
+   * Проверяет, является ли текущий элемент ссылкой.
+   */
+  isLink (): boolean {
+    return Boolean(this.componentName.match('/'))
+  }
+
+  /**
    * Returns the identifier.<br>
    * Возвращает идентификатор.
    */
@@ -66,6 +74,10 @@ export class MutationDataItem {
    * Возвращает названия компонента.
    */
   getComponentName (): string {
+    if (this.isLink()) {
+      return this.componentName
+    }
+
     const name = toCamelCaseFirst(this.componentName)
 
     if (MutationGlobal.isComponent(name)) {

@@ -193,6 +193,10 @@ export class DesignUi {
       './styles/*': './styles/*'
     }
 
+    this.components.getDesigns().forEach(design => {
+      exports[`./style/${design}`] = `./${design}/use.scss`
+    })
+
     components.forEach(component => {
       exports[`./${component.codeFull}`] = {
         import: `./${component.design}/${component.dir}/index.ts`,

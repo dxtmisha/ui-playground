@@ -9,7 +9,7 @@ export declare class MutationItemRef {
     protected readonly props: MutationItemProps;
     readonly mainElement: HTMLElement;
     readonly componentName: string;
-    readonly componentItem: any;
+    readonly componentItem: import("vue").ShallowRef<any>;
     readonly binds: import("vue").ShallowRef<undefined> | import("vue").ShallowRef<MutationComponentProps>;
     readonly slots: import("vue").ShallowRef<MutationSlots | undefined>;
     /**
@@ -23,6 +23,11 @@ export declare class MutationItemRef {
      * Обновление данных.
      */
     update(): this;
+    /**
+     * Returns a global object.<br>
+     * Возвращает глобальный объект.
+     */
+    private getComponentGlobalItem;
     /**
      * Initializes data for the component.<br>
      * Инициализирует данные для компонента.

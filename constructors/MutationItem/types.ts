@@ -36,7 +36,7 @@ export type MutationItemSetup = {
   mainElement: HTMLElement
 
   componentName: string
-  componentItem: any
+  componentItem: ShallowRef
 
   binds: ShallowRef<MutationComponentProps | undefined>
   slots: ShallowRef<MutationSlots | undefined>

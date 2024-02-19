@@ -130,14 +130,14 @@ export class MutationItemDesign<
   protected initRender (): VNode | undefined {
     const setup = this.setup()
 
-    if (setup.componentItem) {
+    if (setup.componentItem.value) {
       return h(Teleport, {
         ref: this.element,
         class: this.classes?.value.main,
         to: setup.mainElement
       }, [
         h(
-          setup.componentItem,
+          setup.componentItem.value,
           setup.binds.value,
           setup.renderSlots.value
         )

@@ -17,7 +17,7 @@ import { type MutationItemProps } from './props'
 export class MutationItemRef {
   readonly mainElement: HTMLElement = document.body
   readonly componentName: string = 'div'
-  readonly componentItem: any
+  readonly componentItem = shallowRef()
   readonly binds = shallowRef<MutationComponentProps | undefined>({})
   readonly slots = shallowRef<MutationSlots | undefined>({})
 
@@ -33,8 +33,11 @@ export class MutationItemRef {
     if (props.item) {
       this.mainElement = props.item.getElement()
       this.componentName = props.item.getComponentName()
-      this.componentItem = this.initComponentItem()
       props.item.registration(element, () => this.update())
+
+      this.initComponentItem().then(item => {
+        this.componentItem.value = item
+      })
     }
 
     props.item?.setStatus(MutationStatus.end)
@@ -55,11 +58,42 @@ export class MutationItemRef {
   }
 
   /**
+   * Returns a global object.<br>
+   * Возвращает глобальный объект.
+   */
+  private getComponentGlobalItem () {
+    return MutationGlobal.getComponentGlobalItem(this.componentName)?.item
+  }
+
+  /**
    * Initializes data for the component.<br>
    * Инициализирует данные для компонента.
    */
-  private initComponentItem (): any {
-    return MutationGlobal.getComponentGlobalItem(this.componentName)?.item ??
-      resolveComponent(this.componentName)
+  private async initComponentItem (): Promise<any> {
+    return new Promise(resolve => {
+      const item = this.getComponentGlobalItem()
+
+      if (item) {
+        resolve(item)
+      } else if (this.props.item?.isLink()) {
+        let repeat = 24
+        const time = setInterval(() => {
+          console.log('repeat', this.componentName)
+          if (repeat-- > 0) {
+            const item = this.getComponentGlobalItem()
+
+            if (item) {
+              clearInterval(time)
+              resolve(item)
+            }
+          } else {
+            clearInterval(time)
+            resolve(resolveComponent(this.componentName))
+          }
+        }, 64)
+      } else {
+        resolve(resolveComponent(this.componentName))
+      }
+    })
   }
 }

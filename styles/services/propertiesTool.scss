@@ -47,6 +47,16 @@ $designsClassName: 'class' !default;
   }
 }
 
+@function t($name, $default: null) {
+  $token: strReplace($name, '--', '--'#{$designsDesign});
+
+  @if ($default) {
+    @return #{var(#{i($token)}, #{$default})}
+  } @else {
+    @return #{var(#{i($token)})}
+  }
+}
+
 /// Returns property values by reference
 ///
 /// Возвращает значения свойства по ссылке

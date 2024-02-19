@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});require("vue");require("./object-D6teWcGS.cjs");const e=require("./create-DRRdkoBt.cjs");exports.createUiComponents=e.createUiComponents;exports.registrationUiComponents=e.registrationUiComponents;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});require("vue");require("./object-D6teWcGS.cjs");const e=require("./create-BWK4gmCX.cjs");exports.createUiComponents=e.createUiComponents;exports.registrationUiComponents=e.registrationUiComponents;
