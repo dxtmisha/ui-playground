@@ -150,6 +150,10 @@ export class PropertiesFile {
     return requirePath.parse(this.joinPath(path))
   }
 
+  static sep (): string {
+    return requirePath.sep
+  }
+
   /**
    * Getting information about the file.<br>
    * Получение информации о файле.

@@ -1,9 +1,10 @@
+import { forEach } from '../../functions/data'
 import { toArray } from '../../functions/object'
 
 import { PropertiesFile, type PropertiesFilePath } from '../services/properties/PropertiesFile'
-import { DesignProjectModule } from './DesignProjectModule.ts'
+import { DesignProjectModule } from './DesignProjectModule'
 
-export const DIR_TEMPLATE = [__dirname, '..', '..', 'media', 'templates', 'project']
+export const DIR_TEMPLATE = [__dirname, '..', '..', 'packages']
 export const DIR_PROJECT = ['..']
 export const DIR_TEMP = 'temp'
 
@@ -35,9 +36,16 @@ export class DesignProject {
         const data = this.read(path)
 
         if (data) {
-          PropertiesFile.writeByPath(this.getProjectPath(path), data)
+          const projectPath = this.getProjectPath(path)
+
+          if (!PropertiesFile.is(projectPath)) {
+            PropertiesFile.writeByPath(projectPath, data)
+          }
         }
       })
+
+      this.makeUpdatePackage()
+      this.makeUpdateLink()
 
       this.removeTempDir()
     }
@@ -67,7 +75,7 @@ export class DesignProject {
    * Возвращает путь к файлу шаблона.
    */
   private getTemplatePath (): string[] {
-    return [...DIR_TEMPLATE, this.getTemplateDir()]
+    return [...DIR_TEMPLATE, `project-${this.getTemplateDir()}`]
   }
 
   /**
@@ -92,6 +100,33 @@ export class DesignProject {
   }
 
   /**
+   * Returns the project name.<br>
+   * Возвращает название проекта.
+   */
+  private getProjectName (): string {
+    const paths = PropertiesFile.splitForDir(__dirname)
+    const name = []
+    let isName = false
+
+    while (paths.length > 0) {
+      if (isName) {
+        name.unshift(paths.pop())
+      } else if (PropertiesFile.is([PropertiesFile.sep(), ...paths, 'index.php'])) {
+        isName = true
+        name.unshift(paths.pop())
+      } else {
+        paths.pop()
+      }
+
+      if (PropertiesFile.is([PropertiesFile.sep(), ...paths, 'ui', 'index.html'])) {
+        break
+      }
+    }
+
+    return `/${name.join('/')}/`
+  }
+
+  /**
    * Reads the file from the template.<br>
    * Читает файл из шаблона.
    * @param path name of the element being checked /<br>название проверяемого элемента
@@ -113,9 +148,10 @@ export class DesignProject {
   // }
 
   /**
-   *
-   * @param dist
-   * @param build
+   * Copying the collected data.<br>
+   * Копирование собранных данных.
+   * @param dist link to the compiled script /<br>ссылка на собранный скрипт
+   * @param build link to the relocation site /<br>ссылка на место перемещения
    */
   private copyBuild (
     dist: string[],
@@ -138,6 +174,67 @@ export class DesignProject {
         paths
       )
     })
+  }
+
+  /**
+   * Updating the version of dependent files.<br>
+   * Обновление версии зависимых файлов.
+   */
+  private makeUpdatePackage (): void {
+    const pathProject = ['package.json']
+    const packageUi = PropertiesFile.readFile<Record<string, any>>(['node_modules', 'ui', 'package.json'])
+    const packageProject = PropertiesFile.readFile<Record<string, any>>(pathProject)
+
+    if (
+      packageUi &&
+      packageProject
+    ) {
+      [
+        'dependencies',
+        'devDependencies'
+      ].forEach(group => {
+        if (
+          group in packageUi &&
+          group in packageProject
+        ) {
+          forEach(packageProject[group], (_, key) => {
+            if (key in packageUi[group]) {
+              packageProject[group][key] = packageUi[group][key]
+            }
+          })
+        }
+      })
+
+      PropertiesFile.writeByPath(pathProject, packageProject)
+    }
+  }
+
+  /**
+   * Updating the script links.<br>
+   * Обновление ссылок на скрипт.
+   */
+  private makeUpdateLink (): void {
+    const name = this.getProjectName()
+
+    const pathIndex = this.getProjectPath(['index.php'])
+    const fileIndex = PropertiesFile.readFile<string>(pathIndex)
+
+    if (fileIndex) {
+      PropertiesFile.writeByPath(
+        pathIndex,
+        fileIndex.replace(/componentName = '[^']+'/, `componentName = '${name}'`)
+      )
+    }
+
+    const pathVue = this.getProjectPath(['vue', 'vite.config.ts'])
+    const fileVue = PropertiesFile.readFile<string>(pathVue)
+
+    if (fileVue) {
+      PropertiesFile.writeByPath(
+        pathVue,
+        fileVue.replace(/BASE_URL = '[^']+'/, `BASE_URL = '${name}'`)
+      )
+    }
   }
 
   /**
