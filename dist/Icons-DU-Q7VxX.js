@@ -2647,7 +2647,11 @@ class z {
    * Является ли сервер локальный.
    */
   static isLocalhost() {
-    return !location || location.hostname === "localhost";
+    try {
+      return location.hostname === "localhost";
+    } catch {
+    }
+    return !0;
   }
   /**
    * Getting the header for the request.<br>
@@ -3497,7 +3501,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-iROFxJmf.js").then((a) => {
+          this.flags = "init", import("./flags-CObgQ-a5.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;

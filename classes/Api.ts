@@ -36,7 +36,12 @@ export class Api {
    * Является ли сервер локальный.
    */
   static isLocalhost (): boolean {
-    return !location || location.hostname === 'localhost'
+    try {
+      return location.hostname === 'localhost'
+    } catch (e) {
+    }
+
+    return true
   }
 
   /**

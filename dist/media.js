@@ -1,5 +1,5 @@
 const a = async () => {
-  (await import("./icons-DE8dS-8N.js")).makeIconsGlobal();
+  (await import("./icons-0kNeD9SC.js")).makeIconsGlobal();
 };
 export {
   a as makeMediaGlobal
