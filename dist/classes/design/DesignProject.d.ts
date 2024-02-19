@@ -36,6 +36,11 @@ export declare class DesignProject {
      */
     private getProjectPath;
     /**
+     * Returns the project name.<br>
+     * Возвращает название проекта.
+     */
+    private getProjectName;
+    /**
      * Reads the file from the template.<br>
      * Читает файл из шаблона.
      * @param path name of the element being checked /<br>название проверяемого элемента
@@ -47,11 +52,22 @@ export declare class DesignProject {
      * @param path name of the element being checked /<br>название проверяемого элемента
      */
     /**
-     *
-     * @param dist
-     * @param build
+     * Copying the collected data.<br>
+     * Копирование собранных данных.
+     * @param dist link to the compiled script /<br>ссылка на собранный скрипт
+     * @param build link to the relocation site /<br>ссылка на место перемещения
      */
     private copyBuild;
+    /**
+     * Updating the version of dependent files.<br>
+     * Обновление версии зависимых файлов.
+     */
+    private makeUpdatePackage;
+    /**
+     * Updating the script links.<br>
+     * Обновление ссылок на скрипт.
+     */
+    private makeUpdateLink;
     /**
      * We get a list of links to files.<br>
      * Получаем список ссылок на файлы.
