@@ -4,7 +4,7 @@ export default defineNuxtModule({
   hooks: {
     'components:dirs': (dirs) => {
       const { resolve } = createResolver(import.meta.url)
-      // Add ./components dir to the list
+      console.log('ui components:dirs')
       dirs.push(
         {
           path: resolve('./c1'),

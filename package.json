@@ -31,7 +31,8 @@
     "c1",
     "c2",
     "m2",
-    "m3"
+    "m3",
+    "nuxt.js"
   ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",

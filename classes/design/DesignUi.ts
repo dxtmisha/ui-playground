@@ -190,7 +190,8 @@ export class DesignUi {
         types: './dist/lib/media.d.ts'
       },
       './dist/*': './dist/*',
-      './styles/*': './styles/*'
+      './styles/*': './styles/*',
+      './*': './*'
     }
 
     this.components.getDesigns().forEach(design => {
