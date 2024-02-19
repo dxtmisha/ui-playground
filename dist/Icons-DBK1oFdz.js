@@ -128,10 +128,10 @@ function oe(o, e) {
   return p(o, (a) => a == null ? void 0 : a[e]);
 }
 function te(o) {
-  return Math.min(...G(o));
+  return Math.min(...w(o));
 }
 function re(o) {
-  return Math.max(...G(o));
+  return Math.max(...w(o));
 }
 function D(o) {
   return JSON.parse(JSON.stringify(o));
@@ -178,7 +178,7 @@ function ue(o, e) {
 function le(o) {
   return Array.isArray(o) ? o : [o];
 }
-function G(o) {
+function w(o) {
   return p(o, (e) => e.length);
 }
 var M = { VITE_DESIGNS_MAIN: "m3", VITE_DESIGNS_GLOBAL: "UI", VITE_UI_GIT: "git+https://github.com/dxtmisha/ui-playground.git", VITE_UI_WEB: "https://ru.dev2.coralclub.app", VITE_UI_PATH: "/ui/", VITE_UI_API_TRANSLATE: "restApi/uiTranslate", BASE_URL: "/", MODE: "production", DEV: !1, PROD: !0, SSR: !1 };
@@ -316,8 +316,10 @@ class V {
    * Возвращает объект для работы с хранилищем.
    */
   getMethod() {
-    if (window)
+    try {
       return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
+    } catch {
+    }
   }
   /**
    * Getting the user name in the storage.<br>
@@ -3491,7 +3493,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-Bbsj5zo_.js").then((a) => {
+          this.flags = "init", import("./flags-BELEajmY.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;
@@ -3505,7 +3507,7 @@ const f = class f {
   }
 };
 g(f, "icons", {}), g(f, "url", k("UI_PATH") ?? "/icons/"), g(f, "urlGlobal", `${z.isLocalhost(), ""}${f.url}`), g(f, "flags", "none");
-let w = f;
+let G = f;
 export {
   K as A,
   _ as B,
@@ -3515,7 +3517,7 @@ export {
   J as F,
   y as G,
   k as H,
-  w as I,
+  G as I,
   n as J,
   ie as a,
   re as b,
