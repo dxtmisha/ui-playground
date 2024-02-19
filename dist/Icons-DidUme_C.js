@@ -1,6 +1,6 @@
 var F = Object.defineProperty;
-var R = (o, e, a) => e in o ? F(o, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : o[e] = a;
-var g = (o, e, a) => (R(o, typeof e != "symbol" ? e + "" : e, a), a);
+var v = (o, e, a) => e in o ? F(o, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : o[e] = a;
+var g = (o, e, a) => (v(o, typeof e != "symbol" ? e + "" : e, a), a);
 function m(o) {
   return o == null;
 }
@@ -16,7 +16,7 @@ function Q(o) {
 function I(o) {
   return typeof o == "string";
 }
-function v(o) {
+function R(o) {
   return o instanceof Function || typeof o == "function";
 }
 function O(o) {
@@ -57,7 +57,7 @@ function p(o, e) {
   return [];
 }
 function U(o) {
-  return v(o) ? o() : o;
+  return R(o) ? o() : o;
 }
 function K(o, e = !1) {
   if (typeof o == "string") {
@@ -128,10 +128,10 @@ function oe(o, e) {
   return p(o, (a) => a == null ? void 0 : a[e]);
 }
 function te(o) {
-  return Math.min(...w(o));
+  return Math.min(...G(o));
 }
 function re(o) {
-  return Math.max(...w(o));
+  return Math.max(...G(o));
 }
 function D(o) {
   return JSON.parse(JSON.stringify(o));
@@ -178,7 +178,7 @@ function ue(o, e) {
 function le(o) {
   return Array.isArray(o) ? o : [o];
 }
-function w(o) {
+function G(o) {
   return p(o, (e) => e.length);
 }
 var M = { VITE_DESIGNS_MAIN: "m3", VITE_DESIGNS_GLOBAL: "UI", VITE_UI_GIT: "git+https://github.com/dxtmisha/ui-playground.git", VITE_UI_WEB: "https://ru.dev2.coralclub.app", VITE_UI_PATH: "/ui/", VITE_UI_API_TRANSLATE: "restApi/uiTranslate", BASE_URL: "/", MODE: "production", DEV: !1, PROD: !0, SSR: !1 };
@@ -316,7 +316,8 @@ class V {
    * Возвращает объект для работы с хранилищем.
    */
   getMethod() {
-    return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
+    if (window)
+      return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
   }
   /**
    * Getting the user name in the storage.<br>
@@ -3490,7 +3491,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-CNWlHdZb.js").then((a) => {
+          this.flags = "init", import("./flags-Bbsj5zo_.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;
@@ -3504,7 +3505,7 @@ const f = class f {
   }
 };
 g(f, "icons", {}), g(f, "url", k("UI_PATH") ?? "/icons/"), g(f, "urlGlobal", `${z.isLocalhost(), ""}${f.url}`), g(f, "flags", "none");
-let G = f;
+let w = f;
 export {
   K as A,
   _ as B,
@@ -3514,7 +3515,7 @@ export {
   J as F,
   y as G,
   k as H,
-  G as I,
+  w as I,
   n as J,
   ie as a,
   re as b,
@@ -3528,7 +3529,7 @@ export {
   Q as j,
   ne as k,
   O as l,
-  v as m,
+  R as m,
   q as n,
   m as o,
   h as p,

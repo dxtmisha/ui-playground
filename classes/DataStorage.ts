@@ -101,9 +101,13 @@ export class DataStorage<T> {
    * Возвращает объект для работы с хранилищем.
    */
   private getMethod (): Storage | undefined {
-    return this.isSession
-      ? window?.sessionStorage
-      : window?.localStorage
+    if (window) {
+      return this.isSession
+        ? window?.sessionStorage
+        : window?.localStorage
+    }
+
+    return undefined
   }
 
   /**

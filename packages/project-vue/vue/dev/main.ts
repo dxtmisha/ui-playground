@@ -2,8 +2,8 @@ import { createApp, type Plugin } from 'vue'
 import { isFilled, Translate } from 'ui'
 import { registrationUiComponents } from 'ui/create'
 
-import 'ui/style'
-import 'ui/dist/style.css'
+import 'ui/style-main'
+import 'ui/style-components'
 import '../src/style.scss'
 
 import App from './../src/App.vue'
