@@ -181,7 +181,7 @@ export class DesignUi {
         require: './dist/main.umd.cjs',
         types: './dist/lib/main.d.ts'
       },
-      './style': './lib/style.scss',
+      './style-main': './lib/style.scss',
       './style-init': './lib/style-init.scss',
       './style.css': './dist/style.css',
       './media': {
