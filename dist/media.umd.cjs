@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=async()=>{(await Promise.resolve().then(()=>require("./icons-C3dpmrsw.cjs"))).makeIconsGlobal()};exports.makeMediaGlobal=e;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=async()=>{(await Promise.resolve().then(()=>require("./icons-UnNOPfmz.cjs"))).makeIconsGlobal()};exports.makeMediaGlobal=e;

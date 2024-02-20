@@ -1,6 +1,6 @@
 import "vue";
-import "./Icons-4MuLhBsh.js";
-import { a as i, r as a } from "./create-DMPnacel.js";
+import "./Icons-vEJJDKoV.js";
+import { a as i, r as a } from "./create-p5m9mHuD.js";
 export {
   i as createUiComponents,
   a as registrationUiComponents

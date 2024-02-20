@@ -1,7 +1,7 @@
 var R = Object.defineProperty;
 var v = (o, e, a) => e in o ? R(o, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : o[e] = a;
 var g = (o, e, a) => (v(o, typeof e != "symbol" ? e + "" : e, a), a);
-function m(o) {
+function S(o) {
   return o == null;
 }
 function h(o) {
@@ -31,7 +31,7 @@ function K(o) {
       case "symbol":
         return !0;
       case "object":
-        return Array.isArray(o) ? o.length > 0 : Object.values(o).some((e) => !m(e));
+        return Array.isArray(o) ? o.length > 0 : Object.values(o).some((e) => !S(e));
       case "string":
         return !["", "undefined", "null", "0", "false", "[]"].includes(o);
       case "undefined":
@@ -41,13 +41,13 @@ function K(o) {
     }
   return !1;
 }
-function T(o, e) {
-  return m(o) ? !1 : Array.isArray(e) ? e.includes(o) : o === e;
+function B(o, e) {
+  return S(o) ? !1 : Array.isArray(e) ? e.includes(o) : o === e;
 }
 function q(o, e) {
-  return Array.isArray(o) ? o.every((a) => T(a, e)) : T(o, e);
+  return Array.isArray(o) ? o.every((a) => B(a, e)) : B(o, e);
 }
-function B() {
+function m() {
   try {
     return !!window;
   } catch {
@@ -99,7 +99,7 @@ function j(o, e = !1) {
 function A(o) {
   if (o instanceof Date)
     return o;
-  if (m(o))
+  if (S(o))
     return /* @__PURE__ */ new Date();
   if (typeof o == "number")
     return new Date(o);
@@ -115,7 +115,7 @@ function ee(o, e) {
 function ne(o, e) {
   return Math.floor(Math.random() * (e - o + 1) + o);
 }
-function S(o) {
+function E(o) {
   return typeof o == "number" ? o : _(o) || 0;
 }
 function _(o) {
@@ -189,7 +189,7 @@ function F(o) {
   return p(o, (e) => e.length);
 }
 var M = { VITE_DESIGNS_MAIN: "m3", VITE_DESIGNS_GLOBAL: "UI", VITE_UI_GIT: "git+https://github.com/dxtmisha/ui-playground.git", VITE_UI_WEB: "https://ru.dev2.coralclub.app", VITE_UI_PATH: "/ui/", VITE_UI_API_TRANSLATE: "restApi/uiTranslate", BASE_URL: "/", MODE: "production", DEV: !1, PROD: !0, SSR: !1 };
-const E = {
+const L = {
   api: {
     index: "UI_API_URL",
     value: "/api/"
@@ -248,7 +248,7 @@ class V {
    * @private
    */
   getBasic() {
-    return E == null ? void 0 : E[this.index];
+    return L == null ? void 0 : L[this.index];
   }
   /**
    * Get the full key name in env.<br>
@@ -281,10 +281,10 @@ class Z {
     g(this, "age");
     this.name = e, this.isSession = a;
     const t = `${a ? "session" : "storage"}#${e}`;
-    if (t in L)
-      return L[t];
+    if (t in b)
+      return b[t];
     const r = this.getValue();
-    r && (this.value = r.value, this.age = r.age), L[t] = this;
+    r && (this.value = r.value, this.age = r.age), b[t] = this;
   }
   /**
    * Getting data from local storage.<br>
@@ -316,14 +316,14 @@ class Z {
    * @param cache cache time /<br>время кэширования
    */
   isCache(e) {
-    return m(e) || this.age && this.age + e * 1e3 >= (/* @__PURE__ */ new Date()).getTime();
+    return S(e) || this.age && this.age + e * 1e3 >= (/* @__PURE__ */ new Date()).getTime();
   }
   /**
    * Returns an object for working with storage.<br>
    * Возвращает объект для работы с хранилищем.
    */
   getMethod() {
-    if (B())
+    if (m())
       return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
   }
   /**
@@ -347,7 +347,7 @@ class Z {
       }
   }
 }
-const L = {}, x = [
+const b = {}, x = [
   {
     country: "US",
     countryAlternative: [
@@ -2565,7 +2565,7 @@ const L = {}, x = [
    */
   static getByCodeFull(e) {
     return this.getList().find(
-      (a) => T(e, [
+      (a) => B(e, [
         `${a.language}-${a.country}`,
         `${a.country}-${a.language}`
       ])
@@ -2599,7 +2599,7 @@ const L = {}, x = [
    */
   static findLocation() {
     var e;
-    return B() && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
+    return m() && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
   }
   /**
    * Determines the current language.<br>
@@ -2648,7 +2648,7 @@ class z {
    * Является ли сервер локальный.
    */
   static isLocalhost() {
-    return B() ? location.hostname === "localhost" : !0;
+    return m() ? location.hostname === "localhost" : !0;
   }
   /**
    * Getting the header for the request.<br>
@@ -2729,13 +2729,15 @@ class z {
     init: s = {}
   }) {
     try {
-      const u = this.getHeaders(r, i), l = u && a === "GET" ? "POST" : a;
-      return await (await fetch(this.getUrl(e), {
-        ...s,
-        method: l,
-        headers: u,
-        body: this.getBody(t)
-      })).json();
+      if (m()) {
+        const u = this.getHeaders(r, i), l = u && a === "GET" ? "POST" : a;
+        return await (await fetch(this.getUrl(e), {
+          ...s,
+          method: l,
+          headers: u,
+          body: this.getBody(t)
+        })).json();
+      }
     } catch (u) {
       console.error(u);
     }
@@ -2753,9 +2755,9 @@ class W {
     g(this, "geo");
     this.geo = y.find(e);
     const a = this.getLocation();
-    if (a in b)
-      return b[a];
-    b[a] = this;
+    if (a in T)
+      return T[a];
+    T[a] = this;
   }
   /**
    * Returns country code and language.<br>
@@ -2825,7 +2827,7 @@ class W {
    */
   number(e, a) {
     var t, r;
-    return ((r = (t = this.numberObject(a)) == null ? void 0 : t.format) == null ? void 0 : r.call(t, S(e))) || e.toString();
+    return ((r = (t = this.numberObject(a)) == null ? void 0 : t.format) == null ? void 0 : r.call(t, E(e))) || e.toString();
   }
   /**
    * Decimal point symbol.<br>
@@ -2851,7 +2853,7 @@ class W {
     }, i = e.toString().replace(/^([\S\s]+[\d ])([a-zA-Z]{3})$/i, (...s) => (r.currency = s[2].toUpperCase(), s[1]));
     if (t) {
       const s = this.numberObject(r);
-      return s ? s.formatToParts(S(e)).filter((u) => ["literal", "currency"].indexOf(u.type) === -1).join("") : e.toString();
+      return s ? s.formatToParts(E(e)).filter((u) => ["literal", "currency"].indexOf(u.type) === -1).join("") : e.toString();
     } else
       return this.number(i, r);
   }
@@ -2890,7 +2892,7 @@ class W {
    * объект с некоторыми или всеми свойствами
    */
   percentBy100(e, a) {
-    return this.percent(S(e) / 100, a);
+    return this.percent(E(e) / 100, a);
   }
   /**
    * Enables language-sensitive date and time formatting.<br>
@@ -3065,7 +3067,7 @@ class W {
     return ["full", "datetime", "date", void 0, "year-month", "year"].indexOf(e) !== -1 && (t.year = "numeric"), ["full", "datetime", "date", void 0, "year-month", "month"].indexOf(e) !== -1 && (t.month = a), ["full", "datetime", "date", void 0, "day"].indexOf(e) !== -1 && (t.day = "2-digit"), e !== void 0 && (["full", "datetime", "time", "hour-minute", "hour"].indexOf(e) !== -1 && (t.hour = "2-digit"), ["full", "datetime", "time", "hour-minute", "minute"].indexOf(e) !== -1 && (t.minute = "2-digit"), ["full", "time", "second"].indexOf(e) !== -1 && (t.second = "2-digit")), t;
   }
 }
-const b = {}, n = "@flag", C = class C {
+const T = {}, n = "@flag", C = class C {
   /**
    * Constructor
    * @param code country and language code /<br>код страны и языка
@@ -3498,7 +3500,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-BRh49B37.js").then((a) => {
+          this.flags = "init", import("./flags-Y8MK61fs.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;
@@ -3523,7 +3525,7 @@ export {
   y as G,
   k as H,
   G as I,
-  B as J,
+  m as J,
   n as K,
   se as a,
   ie as b,
@@ -3539,10 +3541,10 @@ export {
   K as l,
   O as m,
   ee as n,
-  m as o,
+  S as o,
   h as p,
   Q as q,
-  T as r,
+  B as r,
   q as s,
   N as t,
   ne as u,
@@ -3550,5 +3552,5 @@ export {
   ue as w,
   ge as x,
   A as y,
-  S as z
+  E as z
 };

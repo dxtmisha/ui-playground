@@ -164,15 +164,17 @@ export class Api {
     init = {}
   }: ApiFetch): Promise<T> {
     try {
-      const dataHeaders = this.getHeaders(headers, type)
-      const dataMethod = dataHeaders && method === ApiMethodItem.get ? ApiMethodItem.post : method
+      if (isDomRuntime()) {
+        const dataHeaders = this.getHeaders(headers, type)
+        const dataMethod = dataHeaders && method === ApiMethodItem.get ? ApiMethodItem.post : method
 
-      return await (await fetch(this.getUrl(path), {
-        ...init,
-        method: dataMethod,
-        headers: dataHeaders,
-        body: this.getBody(request)
-      })).json()
+        return await (await fetch(this.getUrl(path), {
+          ...init,
+          method: dataMethod,
+          headers: dataHeaders,
+          body: this.getBody(request)
+        })).json()
+      }
     } catch (e) {
       console.error(e)
     }
