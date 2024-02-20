@@ -130,7 +130,9 @@ export class Hash {
   }
 
   static {
-    this.reload()
-    addEventListener('hashchange', () => this.reload())
+    if (isDomRuntime()) {
+      this.reload()
+      addEventListener('hashchange', () => this.reload())
+    }
   }
 }

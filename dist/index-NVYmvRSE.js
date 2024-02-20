@@ -1,7 +1,7 @@
 var V = Object.defineProperty;
 var G = (i, t, e) => t in i ? V(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
 var r = (i, t, e) => (G(i, typeof t != "symbol" ? t + "" : t, e), e);
-import { D, e as O, H as T, J as x, l as W, A as q, y as $, G as g, E as z, F as Y, f as L, x as U, C as j, I as _, a as tt, c as et, g as st, b as at, d as it, i as rt, h as nt, j as ht, k as ct, m as ot, n as ut, o as lt, p as gt, q as dt, r as mt, s as vt, t as ft, u as pt, v as yt, w as Ct, z as wt, B as kt } from "./Icons-4MuLhBsh.js";
+import { D as I, e as O, H as T, J as L, l as W, A as q, y as $, G as g, E as z, F as Y, f as E, x as U, C as j, I as _, a as tt, c as et, g as st, b as at, d as it, i as rt, h as nt, j as ht, k as ct, m as ot, n as ut, o as lt, p as gt, q as dt, r as mt, s as vt, t as ft, u as pt, v as yt, w as Ct, z as wt, B as kt } from "./Icons-4MuLhBsh.js";
 import { E as Z, D as d, F as H, G as J, s as c, a as Lt, c as Et, f as Dt, g as It, b as Nt, d as St, e as bt, h as At, i as Ft, j as Mt, k as xt, l as $t, m as jt, n as Rt, o as Bt, p as Ot, q as Tt, r as Wt, t as qt, u as Ut, v as Kt, w as zt, x as Yt, y as Zt, z as Ht, A as Jt, B as Xt, C as Pt } from "./EventItem-B3PK6XBB.js";
 import { computed as n, ref as X, watch as u, triggerRef as Qt, shallowRef as C, watchEffect as Vt } from "vue";
 class P {
@@ -38,7 +38,7 @@ class P {
     return t in this.cache || (this.cache[t] = new Z(e)), this.cache[t];
   }
 }
-const E = class E {
+const D = class D {
   /**
    * Getting data for the cache, and if there is no cache, it performs a function to save the cache.<br>
    * Получение данных для кэша, и если нет кэша, выполняет функцию для сохранения кэша.
@@ -50,8 +50,8 @@ const E = class E {
     return this.cache.get(t, e, s);
   }
 };
-r(E, "cache"), E.cache = new P();
-let R = E;
+r(D, "cache"), D.cache = new P();
+let R = D;
 const Gt = "cookie-block";
 class K {
   /**
@@ -70,15 +70,15 @@ class K {
     this.storage.set(t);
   }
 }
-r(K, "storage", new D(Gt));
+r(K, "storage", new I(Gt));
 const k = {};
 class Q {
   constructor(t) {
     r(this, "value");
     r(this, "options", {});
-    if (this.name = t, t in S)
-      return S[t];
-    this.value = k == null ? void 0 : k[t], S[t] = this;
+    if (this.name = t, t in b)
+      return b[t];
+    this.value = k == null ? void 0 : k[t], b[t] = this;
   }
   /**
    * Get data or update if none.<br>
@@ -119,7 +119,7 @@ class Q {
    */
   update() {
     var t, e;
-    if (x() && !K.get()) {
+    if (L() && !K.get()) {
       const s = String(this.value ?? "");
       document.cookie = [
         `${encodeURIComponent(this.name)}=${encodeURIComponent(s)}`,
@@ -131,13 +131,13 @@ class Q {
   }
 }
 (() => {
-  if (x())
+  if (L())
     for (const t of document.cookie.split(";")) {
       const [e, s] = t.trim().split("=");
       e && W(s) && (k[e] = q(s));
     }
 })();
-const S = {};
+const b = {};
 class _t {
   /**
    * Constructor
@@ -283,14 +283,14 @@ class te extends J {
    * значение, связанное с событием
    */
   constructor(t, e, s = ["click"], a, h, p) {
-    const w = d(t), I = d(e);
+    const w = d(t), N = d(e);
     super(
       w.value,
       s,
       a,
       h,
       p
-    ), I.value && this.setElementControl(I.value), u(w, (N) => this.setElement(N)), u(I, (N) => this.setElementControl(N));
+    ), N.value && this.setElementControl(N.value), u(w, (S) => this.setElement(S)), u(N, (S) => this.setElementControl(S));
   }
 }
 const o = class o {
@@ -656,7 +656,7 @@ const v = class v {
    * Формирование списка для карты.
    */
   static makeList() {
-    const t = L(g.getList(), (e) => {
+    const t = E(g.getList(), (e) => {
       if (e != null && e.phoneMask)
         return {
           phone: (e == null ? void 0 : e.phoneCode) && parseInt(e.phoneCode) || void 0,
@@ -744,7 +744,7 @@ const m = class m {
    */
   static getLocation() {
     const t = {};
-    return x() && location.hash.replace(
+    return L() && location.hash.replace(
       /([\w-]+)[:=]([^;]+)/ig,
       (...e) => (t[e[1]] = q(e[2]), "")
     ), t;
@@ -755,7 +755,7 @@ const m = class m {
    */
   static update() {
     this.block = !0;
-    const t = L(
+    const t = E(
       this.hash,
       (e, s) => `${s}=${encodeURIComponent(String(e))}`
     );
@@ -779,13 +779,13 @@ const m = class m {
    * @param location fresh data /<br>свежий данные
    */
   static makeWatch(t) {
-    L(this.watch, (e, s) => {
+    E(this.watch, (e, s) => {
       var a;
       ((a = this.hash) == null ? void 0 : a[s]) !== (t == null ? void 0 : t[s]) && e.forEach((h) => h(t[s]));
     });
   }
 };
-r(m, "hash", {}), r(m, "watch", {}), r(m, "block", !1), m.reload(), addEventListener("hashchange", () => m.reload());
+r(m, "hash", {}), r(m, "watch", {}), r(m, "block", !1), L() && (m.reload(), addEventListener("hashchange", () => m.reload()));
 let f = m;
 class l {
   /**
@@ -870,37 +870,37 @@ class l {
 }
 r(l, "url", T("apiTranslate")), r(l, "urlLocalhost", "translate.json"), r(l, "data", {}), r(l, "cache", []), r(l, "resolveList", []), r(l, "timeout");
 function ae(i, t, e) {
-  if (i in b)
-    return b[i];
+  if (i in A)
+    return A[i];
   const s = new Q(i), a = X(s.get(t, e));
   return u(a, (h) => {
     s.set(h, e);
-  }), b[i] = a, a;
+  }), A[i] = a, a;
 }
-const b = {};
+const A = {};
 function ie(i, t) {
-  if (i in A)
-    return A[i];
+  if (i in F)
+    return F[i];
   const e = C(f.get(i, t));
   return u(e, (s) => f.set(i, s)), f.addWatch(i, (s) => {
     e.value = s;
-  }), A[i] = e, e;
-}
-const A = {};
-function re(i, t) {
-  if (i in F)
-    return F[i];
-  const e = new D(i, !0), s = C(e.get(t));
-  return u(s, (a) => e.set(a)), F[i] = s, s;
+  }), F[i] = e, e;
 }
 const F = {};
-function ne(i, t, e) {
+function re(i, t) {
   if (i in M)
     return M[i];
-  const s = new D(i), a = C(s.get(t, e));
-  return u(a, (h) => s.set(h)), M[i] = a, a;
+  const e = new I(i, !0), s = C(e.get(t));
+  return u(s, (a) => e.set(a)), M[i] = s, s;
 }
 const M = {};
+function ne(i, t, e) {
+  if (i in x)
+    return x[i];
+  const s = new I(i), a = C(s.get(t, e));
+  return u(a, (h) => s.set(h)), x[i] = a, a;
+}
+const x = {};
 function he(i) {
   const t = C({});
   return Vt(async () => {
@@ -915,7 +915,7 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   CacheStatic: R,
   Cookie: Q,
   CookieBlock: K,
-  DataStorage: D,
+  DataStorage: I,
   Datetime: H,
   DatetimeRef: _t,
   EventItem: J,
@@ -935,7 +935,7 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   copyObject: et,
   createElement: Et,
   executeFunction: O,
-  forEach: L,
+  forEach: E,
   frame: Dt,
   getAttributes: It,
   getBind: Nt,
