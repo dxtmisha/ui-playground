@@ -1,5 +1,5 @@
-var F = Object.defineProperty;
-var v = (o, e, a) => e in o ? F(o, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : o[e] = a;
+var R = Object.defineProperty;
+var v = (o, e, a) => e in o ? R(o, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : o[e] = a;
 var g = (o, e, a) => (v(o, typeof e != "symbol" ? e + "" : e, a), a);
 function m(o) {
   return o == null;
@@ -7,19 +7,19 @@ function m(o) {
 function h(o) {
   return !!(o && typeof o == "object");
 }
-function Y(o) {
+function Q(o) {
   return h(o) && !Array.isArray(o);
 }
-function Q(o) {
+function X(o) {
   return Array.isArray(o);
 }
 function I(o) {
   return typeof o == "string";
 }
-function R(o) {
+function O(o) {
   return o instanceof Function || typeof o == "function";
 }
-function O(o) {
+function K(o) {
   if (o)
     switch (typeof o) {
       case "bigint":
@@ -44,8 +44,15 @@ function O(o) {
 function T(o, e) {
   return m(o) ? !1 : Array.isArray(e) ? e.includes(o) : o === e;
 }
-function X(o, e) {
+function q(o, e) {
   return Array.isArray(o) ? o.every((a) => T(a, e)) : T(o, e);
+}
+function G() {
+  try {
+    return !!window;
+  } catch {
+  }
+  return !1;
 }
 function p(o, e) {
   if (h(o)) {
@@ -57,9 +64,9 @@ function p(o, e) {
   return [];
 }
 function U(o) {
-  return R(o) ? o() : o;
+  return O(o) ? o() : o;
 }
-function K(o, e = !1) {
+function j(o, e = !1) {
   if (typeof o == "string") {
     const a = o.trim();
     switch (a) {
@@ -101,45 +108,45 @@ function A(o) {
   const t = (/^\d{4}\d{2}\d{2}$/.exec(e) && `${e.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3")}T00:00:00`) ?? (/^\d{4}\d{2}$/.exec(e) && `${e.replace(/^(\d{4})(\d{2})$/, "$1-$2")}-01T00:00:00`) ?? (/^\d{4}-\d{2}-\d{2}$/.exec(e) && `${e}T00:00:00`) ?? (/^\d{4}-\d{2}$/.exec(e) && `${e}-01T00:00:00`) ?? (/^\d{4}$/.exec(e) && `${e}-01-01T00:00:00`) ?? (/^\d{2}:\d{2}$/.exec(e) && `2000-01-01T${e}:00`) ?? (/^\d{2}:\d{2}:\d{2}$/.exec(e) && `2000-01-01T${e}`) ?? e.replace(" ", "T");
   return /* @__PURE__ */ new Date(`${t}${a}`);
 }
-function q(o, e) {
+function ee(o, e) {
   const a = Math.floor(e);
   return o >= a && o < a + 1;
 }
-function ee(o, e) {
+function ne(o, e) {
   return Math.floor(Math.random() * (e - o + 1) + o);
 }
 function S(o) {
-  return typeof o == "number" ? o : j(o) || 0;
+  return typeof o == "number" ? o : _(o) || 0;
 }
-function j(o) {
+function _(o) {
   let e = o.replace(/[^\d., ]+/ig, "");
   return e.match(/( [0-9]{3}[ ,.]|[0-9] [0-9])/ig) ? e = e.replace(/ /ig, "").replace(/,/ig, ".") : e.match(/,[0-9]{3}[,.]/ig) ? e = e.replace(/,/ig, "") : e.match(/[.][0-9]{3}[,.]/ig) ? e = e.replace(/[.]/ig, "").replace(/,/ig, ".") : e = e.replace(/,/ig, "."), parseFloat(e);
 }
-function ne(o, e) {
+function ae(o, e) {
   let a = Object.keys(o).length !== Object.keys(e).length;
   return a || p(o, (t, r) => {
     t !== (e == null ? void 0 : e[r]) && (a = !0);
   }), a;
 }
-function ae(o, e) {
+function oe(o, e) {
   return o.indexOf(e) !== -1;
 }
-function oe(o, e) {
+function te(o, e) {
   return p(o, (a) => a == null ? void 0 : a[e]);
 }
-function te(o) {
-  return Math.min(...w(o));
-}
 function re(o) {
-  return Math.max(...w(o));
+  return Math.min(...F(o));
+}
+function ie(o) {
+  return Math.max(...F(o));
 }
 function D(o) {
   return JSON.parse(JSON.stringify(o));
 }
-function _(o) {
+function H(o) {
   return [...new Set(o)];
 }
-function ie(o, e) {
+function se(o, e) {
   return Array(e).fill(o);
 }
 function $(o, e, a = !0) {
@@ -148,7 +155,7 @@ function $(o, e, a = !0) {
     e,
     (r, i) => {
       const s = o == null ? void 0 : o[i];
-      h(s) && h(r) ? a && Array.isArray(s) && Array.isArray(r) ? t[i] = D(_([...s, ...r])) : t[i] = $(
+      h(s) && h(r) ? a && Array.isArray(s) && Array.isArray(r) ? t[i] = D(H([...s, ...r])) : t[i] = $(
         Array.isArray(s) ? { ...s } : s,
         r,
         a
@@ -156,7 +163,7 @@ function $(o, e, a = !0) {
     }
   ), t;
 }
-function se(o, e, a) {
+function ue(o, e, a) {
   if (h(o) && h(e)) {
     if (a) {
       let t = {}, r = !1;
@@ -169,16 +176,16 @@ function se(o, e, a) {
   }
   return D(o);
 }
-function ue(o, e) {
+function le(o, e) {
   const a = {};
   return h(o) && h(e) && p(o, (t, r) => {
     r in e && (a[r] = t);
   }), a;
 }
-function le(o) {
+function ge(o) {
   return Array.isArray(o) ? o : [o];
 }
-function w(o) {
+function F(o) {
   return p(o, (e) => e.length);
 }
 var M = { VITE_DESIGNS_MAIN: "m3", VITE_DESIGNS_GLOBAL: "UI", VITE_UI_GIT: "git+https://github.com/dxtmisha/ui-playground.git", VITE_UI_WEB: "https://ru.dev2.coralclub.app", VITE_UI_PATH: "/ui/", VITE_UI_API_TRANSLATE: "restApi/uiTranslate", BASE_URL: "/", MODE: "production", DEV: !1, PROD: !0, SSR: !1 };
@@ -208,7 +215,7 @@ const E = {
     value: "ui-playground-"
   }
 };
-class H {
+class V {
   /**
    * Constructor
    * @param index property name /<br>название свойства
@@ -231,7 +238,7 @@ class H {
       }
     } catch {
     }
-    return K(
+    return j(
       e ?? this.getValue()
     );
   }
@@ -261,9 +268,9 @@ class H {
   }
 }
 function k(o, e) {
-  return new H(o).get(e);
+  return new V(o).get(e);
 }
-class V {
+class Z {
   /**
    * Constructor
    * @param name value name /<br>название значения
@@ -316,10 +323,8 @@ class V {
    * Возвращает объект для работы с хранилищем.
    */
   getMethod() {
-    try {
+    if (G())
       return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
-    } catch {
-    }
   }
   /**
    * Getting the user name in the storage.<br>
@@ -342,7 +347,7 @@ class V {
       }
   }
 }
-const L = {}, Z = [
+const L = {}, x = [
   {
     country: "US",
     countryAlternative: [
@@ -2455,7 +2460,7 @@ const L = {}, Z = [
     language: "es",
     firstDay: "Mo"
   }
-], x = "geo-code", c = class c {
+], J = "geo-code", c = class c {
   /**
    * Information about the current country.<br>
    * Информация об текущей стране.
@@ -2513,7 +2518,7 @@ const L = {}, Z = [
    * Возвращает полный список стран.
    */
   static getList() {
-    return Z;
+    return x;
   }
   /**
    * Determines the current country by its full name.<br>
@@ -2594,11 +2599,7 @@ const L = {}, Z = [
    */
   static findLocation() {
     var e;
-    try {
-      return this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language") || "en-GB";
-    } catch {
-    }
-    return "en-GB";
+    return G() && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
   }
   /**
    * Determines the current language.<br>
@@ -2639,7 +2640,7 @@ const L = {}, Z = [
     };
   }
 };
-g(c, "storage", new V(x)), g(c, "location"), g(c, "item"), g(c, "language"), c.location = c.findLocation(), c.language = c.findLanguage(c.location), c.item = c.getByCode(c.location);
+g(c, "storage", new Z(J)), g(c, "location"), g(c, "item"), g(c, "language"), c.location = c.findLocation(), c.language = c.findLanguage(c.location), c.item = c.getByCode(c.location);
 let y = c;
 class z {
   /**
@@ -2687,7 +2688,7 @@ class z {
    * @param request this request /<br>данный запрос
    */
   static getBody(e) {
-    if (O(e))
+    if (K(e))
       return e instanceof FormData || I(e) ? e : JSON.stringify(e);
   }
   /**
@@ -2746,7 +2747,7 @@ class z {
   }
 }
 g(z, "url", k("api", "/")), g(z, "urlLocalhost", `${k("BASE_URL", "/")}public/`), g(z, "urlCommand", "ui");
-class J {
+class W {
   /**
    * Constructor
    * @param code country code, full form language-country or one of them /<br>
@@ -3142,7 +3143,7 @@ const b = {}, n = "@flag", C = class C {
    * Возвращает специальный объект для работы с форматированием.
    */
   getLocation() {
-    return new J(this.code);
+    return new W(this.code);
   }
   /**
    * Returns a list of countries to retrieve data from.<br>
@@ -3501,7 +3502,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags-CObgQ-a5.js").then((a) => {
+          this.flags = "init", import("./flags--Oz9SKOU.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;
@@ -3515,42 +3516,43 @@ const f = class f {
   }
 };
 g(f, "icons", {}), g(f, "url", k("UI_PATH") ?? "/icons/"), g(f, "urlGlobal", `${z.isLocalhost(), ""}${f.url}`), g(f, "flags", "none");
-let G = f;
+let w = f;
 export {
-  K as A,
-  _ as B,
+  j as A,
+  H as B,
   z as C,
-  V as D,
+  Z as D,
   N as E,
-  J as F,
+  W as F,
   y as G,
   k as H,
-  G as I,
-  n as J,
-  ie as a,
-  re as b,
+  w as I,
+  G as J,
+  n as K,
+  se as a,
+  ie as b,
   D as c,
-  te as d,
+  re as d,
   U as e,
   p as f,
-  oe as g,
-  ue as h,
-  ae as i,
-  Q as j,
-  ne as k,
-  O as l,
-  R as m,
-  q as n,
+  te as g,
+  le as h,
+  oe as i,
+  X as j,
+  ae as k,
+  K as l,
+  O as m,
+  ee as n,
   m as o,
   h as p,
-  Y as q,
+  Q as q,
   T as r,
-  X as s,
+  q as s,
   I as t,
-  ee as u,
+  ne as u,
   $ as v,
-  se as w,
-  le as x,
+  ue as w,
+  ge as x,
   A as y,
   S as z
 };

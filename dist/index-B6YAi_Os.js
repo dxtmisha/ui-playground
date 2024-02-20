@@ -1,10 +1,10 @@
-var Q = Object.defineProperty;
-var V = (i, t, e) => t in i ? Q(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
-var r = (i, t, e) => (V(i, typeof t != "symbol" ? t + "" : t, e), e);
-import { D, e as B, H as O, l as T, A as W, y as x, G as g, E as K, F as z, f as L, x as q, C as $, I as G, a as _, c as tt, g as et, b as st, d as at, i as it, h as rt, j as nt, k as ht, m as ct, n as ot, o as ut, p as lt, q as gt, r as dt, s as mt, t as vt, u as ft, v as pt, w as yt, z as Ct, B as wt } from "./Icons-DU-Q7VxX.js";
-import { E as Y, D as d, F as Z, G as H, s as c, a as kt, c as Lt, f as Et, g as Dt, b as It, d as Nt, e as St, h as bt, i as At, j as Ft, k as Mt, l as xt, m as $t, n as jt, o as Rt, p as Bt, q as Ot, r as Tt, t as Wt, u as qt, v as Ut, w as Kt, x as zt, y as Yt, z as Zt, A as Ht, B as Xt, C as Jt } from "./EventItem-P0gybvds.js";
-import { computed as n, ref as X, watch as u, triggerRef as Pt, shallowRef as C, watchEffect as Qt } from "vue";
-class J {
+var V = Object.defineProperty;
+var G = (i, t, e) => t in i ? V(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
+var r = (i, t, e) => (G(i, typeof t != "symbol" ? t + "" : t, e), e);
+import { D, e as B, H as O, J as K, l as T, A as W, y as x, G as g, E as z, F as Y, f as L, x as q, C as $, I as _, a as tt, c as et, g as st, b as at, d as it, i as rt, h as nt, j as ht, k as ct, m as ot, n as ut, o as lt, p as gt, q as dt, r as mt, s as vt, t as ft, u as pt, v as yt, w as Ct, z as wt, B as kt } from "./Icons-BpQeXsrc.js";
+import { E as Z, D as d, F as H, G as J, s as c, a as Lt, c as Et, f as Dt, g as It, b as Nt, d as St, e as bt, h as At, i as Ft, j as Mt, k as xt, l as $t, m as jt, n as Rt, o as Bt, p as Ot, q as Tt, r as Wt, t as qt, u as Ut, v as Kt, w as zt, x as Yt, y as Zt, z as Ht, A as Jt, B as Xt, C as Pt } from "./EventItem-kbqaJolD.js";
+import { computed as n, ref as X, watch as u, triggerRef as Qt, shallowRef as C, watchEffect as Vt } from "vue";
+class P {
   constructor() {
     r(this, "cache", {});
   }
@@ -35,7 +35,7 @@ class J {
    * @param callback function for the cache /<br>функция для кэша
    */
   getCacheItem(t, e) {
-    return t in this.cache || (this.cache[t] = new Y(e)), this.cache[t];
+    return t in this.cache || (this.cache[t] = new Z(e)), this.cache[t];
   }
 }
 const E = class E {
@@ -50,9 +50,9 @@ const E = class E {
     return this.cache.get(t, e, s);
   }
 };
-r(E, "cache"), E.cache = new J();
+r(E, "cache"), E.cache = new P();
 let j = E;
-const Vt = "cookie-block";
+const Gt = "cookie-block";
 class U {
   /**
    * Obtaining status.<br>
@@ -70,9 +70,9 @@ class U {
     this.storage.set(t);
   }
 }
-r(U, "storage", new D(Vt));
+r(U, "storage", new D(Gt));
 const k = {};
-class P {
+class Q {
   constructor(t) {
     r(this, "value");
     r(this, "options", {});
@@ -119,7 +119,7 @@ class P {
    */
   update() {
     var t, e;
-    if (!U.get()) {
+    if (K() && !U.get()) {
       const s = String(this.value ?? "");
       document.cookie = [
         `${encodeURIComponent(this.name)}=${encodeURIComponent(s)}`,
@@ -131,13 +131,14 @@ class P {
   }
 }
 (() => {
-  for (const t of document.cookie.split(";")) {
-    const [e, s] = t.trim().split("=");
-    e && T(s) && (k[e] = W(s));
-  }
+  if (K())
+    for (const t of document.cookie.split(";")) {
+      const [e, s] = t.trim().split("=");
+      e && T(s) && (k[e] = W(s));
+    }
 })();
 const S = {};
-class Gt {
+class _t {
   /**
    * Constructor
    * @param date date for processing /<br>дата для обработки
@@ -156,13 +157,13 @@ class Gt {
     r(this, "hour", n(() => this.date.value && this.datetime.getHour()));
     r(this, "minute", n(() => this.date.value && this.datetime.getMinute()));
     r(this, "second", n(() => this.date.value && this.datetime.getSecond()));
-    this.item = d(t), this.type = d(e), this.code = d(s), this.date = X(x(this.item.value)), this.datetime = new Z(
+    this.item = d(t), this.type = d(e), this.code = d(s), this.date = X(x(this.item.value)), this.datetime = new H(
       this.date.value,
       this.type.value,
       this.code.value
     ), u(this.item, (a) => {
       this.date.value = x(a);
-    }), u(this.type, (a) => this.datetime.setType(a)), u(this.code, (a) => this.datetime.setCode(a)), u(this.date, (a) => this.datetime.setDate(a)), this.datetime.setWatch(() => Pt(this.date));
+    }), u(this.type, (a) => this.datetime.setType(a)), u(this.code, (a) => this.datetime.setCode(a)), u(this.date, (a) => this.datetime.setDate(a)), this.datetime.setWatch(() => Qt(this.date));
   }
   /**
    * Returns the basic data for the date.<br>
@@ -268,7 +269,7 @@ class Gt {
     return n(() => this.date.value && this.datetime.standard(t));
   }
 }
-class _t extends H {
+class te extends J {
   /**
    * Classes Constructor
    * @param elementSelector element /<br>элемент
@@ -340,7 +341,7 @@ const o = class o {
 };
 r(o, "item", C(g.get())), r(o, "country", n(() => o.item.value.country)), r(o, "language", n(() => o.item.value.language)), r(o, "standard", n(() => o.item.value.standard)), r(o, "firstDay", n(() => o.item.value.firstDay));
 let y = o;
-class te {
+class ee {
   /**
    * Constructor
    * @param code country and language code /<br>код страны и языка
@@ -348,7 +349,7 @@ class te {
   constructor(t = g.getLocation()) {
     r(this, "code");
     r(this, "flag");
-    this.code = d(t), this.flag = new K(this.code.value), u(this.code, (e) => this.flag.setCode(e));
+    this.code = d(t), this.flag = new z(this.code.value), u(this.code, (e) => this.flag.setCode(e));
   }
   /**
    * Obtaining a reactive object with the country code.<br>
@@ -393,7 +394,7 @@ class te {
     return n(() => this.flag.getNational(t));
   }
 }
-class ee {
+class se {
   /**
    * Constructor
    * @param code country code, full form language-country or one of them /<br>
@@ -402,7 +403,7 @@ class ee {
   constructor(t) {
     r(this, "location");
     r(this, "intl");
-    this.location = d(t), this.intl = n(() => new z(this.location.value ?? y.getLanguage().value));
+    this.location = d(t), this.intl = n(() => new Y(this.location.value ?? y.getLanguage().value));
   }
   /**
    * The consistent translation of language, region and script display names.<br>
@@ -868,16 +869,16 @@ class l {
   }
 }
 r(l, "url", O("apiTranslate")), r(l, "urlLocalhost", "translate.json"), r(l, "data", {}), r(l, "cache", []), r(l, "resolveList", []), r(l, "timeout");
-function se(i, t, e) {
+function ae(i, t, e) {
   if (i in b)
     return b[i];
-  const s = new P(i), a = X(s.get(t, e));
+  const s = new Q(i), a = X(s.get(t, e));
   return u(a, (h) => {
     s.set(h, e);
   }), b[i] = a, a;
 }
 const b = {};
-function ae(i, t) {
+function ie(i, t) {
   if (i in A)
     return A[i];
   const e = C(f.get(i, t));
@@ -886,131 +887,131 @@ function ae(i, t) {
   }), A[i] = e, e;
 }
 const A = {};
-function ie(i, t) {
+function re(i, t) {
   if (i in F)
     return F[i];
   const e = new D(i, !0), s = C(e.get(t));
   return u(s, (a) => e.set(a)), F[i] = s, s;
 }
 const F = {};
-function re(i, t, e) {
+function ne(i, t, e) {
   if (i in M)
     return M[i];
   const s = new D(i), a = C(s.get(t, e));
   return u(a, (h) => s.set(h)), M[i] = a, a;
 }
 const M = {};
-function ne(i) {
+function he(i) {
   const t = C({});
-  return Qt(async () => {
+  return Vt(async () => {
     y.getLanguage() && (t.value = await l.getList(i));
   }), t;
 }
-const le = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Api: $,
-  Cache: J,
-  CacheItem: Y,
+  Cache: P,
+  CacheItem: Z,
   CacheStatic: j,
-  Cookie: P,
+  Cookie: Q,
   CookieBlock: U,
   DataStorage: D,
-  Datetime: Z,
-  DatetimeRef: Gt,
-  EventItem: H,
-  EventRef: _t,
+  Datetime: H,
+  DatetimeRef: _t,
+  EventItem: J,
+  EventRef: te,
   Geo: g,
-  GeoFlag: K,
-  GeoFlagRef: te,
-  GeoIntl: z,
-  GeoIntlRef: ee,
+  GeoFlag: z,
+  GeoFlagRef: ee,
+  GeoIntl: Y,
+  GeoIntlRef: se,
   GeoPhone: R,
   GeoRef: y,
   Hash: f,
-  Icons: G,
+  Icons: _,
   Translate: l,
-  anyToString: kt,
-  arrFill: _,
-  copyObject: tt,
-  createElement: Lt,
+  anyToString: Lt,
+  arrFill: tt,
+  copyObject: et,
+  createElement: Et,
   executeFunction: B,
   forEach: L,
-  frame: Et,
-  getAttributes: Dt,
-  getBind: It,
-  getBindRef: Nt,
-  getClassName: St,
-  getClient: bt,
-  getClientX: At,
-  getClientY: Ft,
-  getClipboardData: Mt,
-  getColumn: et,
-  getElement: xt,
-  getElementId: $t,
-  getElementItem: jt,
-  getElementOrWindow: Rt,
-  getExp: Bt,
-  getIndex: Ot,
-  getKey: Tt,
-  getMaxLength: st,
-  getMinLength: at,
+  frame: Dt,
+  getAttributes: It,
+  getBind: Nt,
+  getBindRef: St,
+  getClassName: bt,
+  getClient: At,
+  getClientX: Ft,
+  getClientY: Mt,
+  getClipboardData: xt,
+  getColumn: st,
+  getElement: $t,
+  getElementId: jt,
+  getElementItem: Rt,
+  getElementOrWindow: Bt,
+  getExp: Ot,
+  getIndex: Tt,
+  getKey: Wt,
+  getMaxLength: at,
+  getMinLength: it,
   getRef: c,
-  inArray: it,
-  intersectKey: rt,
-  isArray: nt,
-  isDifferent: ht,
+  inArray: rt,
+  intersectKey: nt,
+  isArray: ht,
+  isDifferent: ct,
   isFilled: T,
-  isFunction: ct,
-  isInDom: Wt,
-  isIntegerBetween: ot,
-  isNull: ut,
-  isObject: lt,
-  isObjectNotArray: gt,
-  isSelected: dt,
-  isSelectedByList: mt,
-  isString: vt,
-  isWindow: qt,
-  makeStopPropagation: Ut,
-  random: ft,
-  render: Kt,
-  replaceRecursive: pt,
-  replaceTemplate: zt,
-  setElementItem: Yt,
-  splice: yt,
-  strFill: Zt,
+  isFunction: ot,
+  isInDom: qt,
+  isIntegerBetween: ut,
+  isNull: lt,
+  isObject: gt,
+  isObjectNotArray: dt,
+  isSelected: mt,
+  isSelectedByList: vt,
+  isString: ft,
+  isWindow: Ut,
+  makeStopPropagation: Kt,
+  random: pt,
+  render: zt,
+  replaceRecursive: yt,
+  replaceTemplate: Yt,
+  setElementItem: Zt,
+  splice: Ct,
+  strFill: Ht,
   toArray: q,
-  toCamelCase: Ht,
+  toCamelCase: Jt,
   toCamelCaseFirst: Xt,
   toDate: x,
-  toKebabCase: Jt,
-  toNumber: Ct,
+  toKebabCase: Pt,
+  toNumber: wt,
   toRefItem: d,
   transformation: W,
-  uniqueArray: wt,
-  useCookieRef: se,
+  uniqueArray: kt,
+  useCookieRef: ae,
   useEnv: O,
-  useHashRef: ae,
-  useSessionRef: ie,
-  useStorageRef: re,
-  useTranslateRef: ne
+  useHashRef: ie,
+  useSessionRef: re,
+  useStorageRef: ne,
+  useTranslateRef: he
 }, Symbol.toStringTag, { value: "Module" }));
 export {
-  J as C,
-  Gt as D,
-  _t as E,
-  te as G,
+  P as C,
+  _t as D,
+  te as E,
+  ee as G,
   f as H,
   l as T,
   j as a,
-  P as b,
+  Q as b,
   U as c,
-  ee as d,
+  se as d,
   R as e,
   y as f,
-  se as g,
-  ae as h,
-  ie as i,
-  re as j,
-  ne as k,
-  le as u
+  ae as g,
+  ie as h,
+  re as i,
+  ne as j,
+  he as k,
+  ge as u
 };

@@ -56,6 +56,11 @@ export declare function isSelected<T>(value: T, selected: T | T[]): boolean;
  */
 export declare function isSelectedByList<T>(values: T | T[], selected: T | T[]): boolean;
 /**
+ * Checks if the runtime environment is a browser.<br>
+ * Проверяет, является ли среда выполнения браузером.
+ */
+export declare function isDomRuntime(): boolean;
+/**
  * The function performs the specified function once for each element in the object.
  * And returns an array with the results of executing the function.<br>
  * Функция выполняет указанную функцию один раз для каждого элемента в объекте.
