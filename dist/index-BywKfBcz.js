@@ -1,8 +1,8 @@
 var V = Object.defineProperty;
 var G = (i, t, e) => t in i ? V(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
 var r = (i, t, e) => (G(i, typeof t != "symbol" ? t + "" : t, e), e);
-import { D, e as B, H as O, J as K, l as T, A as W, y as x, G as g, E as z, F as Y, f as L, x as q, C as $, I as _, a as tt, c as et, g as st, b as at, d as it, i as rt, h as nt, j as ht, k as ct, m as ot, n as ut, o as lt, p as gt, q as dt, r as mt, s as vt, t as ft, u as pt, v as yt, w as Ct, z as wt, B as kt } from "./Icons-BpQeXsrc.js";
-import { E as Z, D as d, F as H, G as J, s as c, a as Lt, c as Et, f as Dt, g as It, b as Nt, d as St, e as bt, h as At, i as Ft, j as Mt, k as xt, l as $t, m as jt, n as Rt, o as Bt, p as Ot, q as Tt, r as Wt, t as qt, u as Ut, v as Kt, w as zt, x as Yt, y as Zt, z as Ht, A as Jt, B as Xt, C as Pt } from "./EventItem-kbqaJolD.js";
+import { D, e as O, H as T, J as x, l as W, A as q, y as $, G as g, E as z, F as Y, f as L, x as U, C as j, I as _, a as tt, c as et, g as st, b as at, d as it, i as rt, h as nt, j as ht, k as ct, m as ot, n as ut, o as lt, p as gt, q as dt, r as mt, s as vt, t as ft, u as pt, v as yt, w as Ct, z as wt, B as kt } from "./Icons-4MuLhBsh.js";
+import { E as Z, D as d, F as H, G as J, s as c, a as Lt, c as Et, f as Dt, g as It, b as Nt, d as St, e as bt, h as At, i as Ft, j as Mt, k as xt, l as $t, m as jt, n as Rt, o as Bt, p as Ot, q as Tt, r as Wt, t as qt, u as Ut, v as Kt, w as zt, x as Yt, y as Zt, z as Ht, A as Jt, B as Xt, C as Pt } from "./EventItem-B3PK6XBB.js";
 import { computed as n, ref as X, watch as u, triggerRef as Qt, shallowRef as C, watchEffect as Vt } from "vue";
 class P {
   constructor() {
@@ -51,9 +51,9 @@ const E = class E {
   }
 };
 r(E, "cache"), E.cache = new P();
-let j = E;
+let R = E;
 const Gt = "cookie-block";
-class U {
+class K {
   /**
    * Obtaining status.<br>
    * Получение статуса.
@@ -70,7 +70,7 @@ class U {
     this.storage.set(t);
   }
 }
-r(U, "storage", new D(Gt));
+r(K, "storage", new D(Gt));
 const k = {};
 class Q {
   constructor(t) {
@@ -96,7 +96,7 @@ class Q {
    * @param options additional parameters /<br>дополнительные параметры
    */
   set(t, e) {
-    this.value = B(t), Object.assign(this.options, e), this.update();
+    this.value = O(t), Object.assign(this.options, e), this.update();
   }
   /**
    * Delete cookie data.<br>
@@ -111,7 +111,7 @@ class Q {
    */
   getAge() {
     var t;
-    return ((t = this.options) == null ? void 0 : t.age) ?? O("cache") ?? 7 * 24 * 60 * 60;
+    return ((t = this.options) == null ? void 0 : t.age) ?? T("cache") ?? 7 * 24 * 60 * 60;
   }
   /**
    * Update cookie data.<br>
@@ -119,7 +119,7 @@ class Q {
    */
   update() {
     var t, e;
-    if (K() && !U.get()) {
+    if (x() && !K.get()) {
       const s = String(this.value ?? "");
       document.cookie = [
         `${encodeURIComponent(this.name)}=${encodeURIComponent(s)}`,
@@ -131,10 +131,10 @@ class Q {
   }
 }
 (() => {
-  if (K())
+  if (x())
     for (const t of document.cookie.split(";")) {
       const [e, s] = t.trim().split("=");
-      e && T(s) && (k[e] = W(s));
+      e && W(s) && (k[e] = q(s));
     }
 })();
 const S = {};
@@ -157,12 +157,12 @@ class _t {
     r(this, "hour", n(() => this.date.value && this.datetime.getHour()));
     r(this, "minute", n(() => this.date.value && this.datetime.getMinute()));
     r(this, "second", n(() => this.date.value && this.datetime.getSecond()));
-    this.item = d(t), this.type = d(e), this.code = d(s), this.date = X(x(this.item.value)), this.datetime = new H(
+    this.item = d(t), this.type = d(e), this.code = d(s), this.date = X($(this.item.value)), this.datetime = new H(
       this.date.value,
       this.type.value,
       this.code.value
     ), u(this.item, (a) => {
-      this.date.value = x(a);
+      this.date.value = $(a);
     }), u(this.type, (a) => this.datetime.setType(a)), u(this.code, (a) => this.datetime.setCode(a)), u(this.date, (a) => this.datetime.setDate(a)), this.datetime.setWatch(() => Qt(this.date));
   }
   /**
@@ -628,7 +628,7 @@ const v = class v {
    * @param masks a mask to transform a phone number /<br>маска для преобразования номер телефон
    */
   static toMask(t, e) {
-    if (T(t) && Array.isArray(e) && e.length > 0) {
+    if (W(t) && Array.isArray(e) && e.length > 0) {
       const s = this.removeZero(t), a = s.length;
       for (const h of e)
         if (this.getUnnecessaryLength(h) === a)
@@ -660,7 +660,7 @@ const v = class v {
       if (e != null && e.phoneMask)
         return {
           phone: (e == null ? void 0 : e.phoneCode) && parseInt(e.phoneCode) || void 0,
-          mask: q(e.phoneMask),
+          mask: U(e.phoneMask),
           value: e.country
         };
     });
@@ -707,7 +707,7 @@ const v = class v {
   }
 };
 r(v, "list", []), r(v, "map", {}), v.makeList(), v.makeMap();
-let R = v;
+let B = v;
 const m = class m {
   /**
    * Get data from hash.<br>
@@ -726,7 +726,7 @@ const m = class m {
    */
   static set(t, e) {
     var a;
-    const s = B(e);
+    const s = O(e);
     s !== ((a = this.hash) == null ? void 0 : a[t]) && (this.hash[t] = s, this.update());
   }
   /**
@@ -744,9 +744,9 @@ const m = class m {
    */
   static getLocation() {
     const t = {};
-    return location.hash.replace(
+    return x() && location.hash.replace(
       /([\w-]+)[:=]([^;]+)/ig,
-      (...e) => (t[e[1]] = W(e[2]), "")
+      (...e) => (t[e[1]] = q(e[2]), "")
     ), t;
   }
   /**
@@ -829,7 +829,7 @@ class l {
    */
   static add(t) {
     return new Promise((e) => {
-      this.cache.push(...q(t)), this.resolveList.push(e), this.timeout && clearTimeout(this.timeout), this.timeout = setTimeout(() => {
+      this.cache.push(...U(t)), this.resolveList.push(e), this.timeout && clearTimeout(this.timeout), this.timeout = setTimeout(() => {
         this.timeout = void 0, this.make().then(() => {
           this.resolveList.forEach((s) => s()), this.resolveList = [];
         });
@@ -849,7 +849,7 @@ class l {
    * Получение списка переводов с сервера.
    */
   static async getResponse() {
-    const t = $.isLocalhost() ? this.urlLocalhost : this.url, e = await $.response({
+    const t = j.isLocalhost() ? this.urlLocalhost : this.url, e = await j.response({
       path: t,
       request: {
         list: this.cache
@@ -868,7 +868,7 @@ class l {
     }), this.cache = [];
   }
 }
-r(l, "url", O("apiTranslate")), r(l, "urlLocalhost", "translate.json"), r(l, "data", {}), r(l, "cache", []), r(l, "resolveList", []), r(l, "timeout");
+r(l, "url", T("apiTranslate")), r(l, "urlLocalhost", "translate.json"), r(l, "data", {}), r(l, "cache", []), r(l, "resolveList", []), r(l, "timeout");
 function ae(i, t, e) {
   if (i in b)
     return b[i];
@@ -909,12 +909,12 @@ function he(i) {
 }
 const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  Api: $,
+  Api: j,
   Cache: P,
   CacheItem: Z,
-  CacheStatic: j,
+  CacheStatic: R,
   Cookie: Q,
-  CookieBlock: U,
+  CookieBlock: K,
   DataStorage: D,
   Datetime: H,
   DatetimeRef: _t,
@@ -925,7 +925,7 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   GeoFlagRef: ee,
   GeoIntl: Y,
   GeoIntlRef: se,
-  GeoPhone: R,
+  GeoPhone: B,
   GeoRef: y,
   Hash: f,
   Icons: _,
@@ -934,7 +934,7 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   arrFill: tt,
   copyObject: et,
   createElement: Et,
-  executeFunction: B,
+  executeFunction: O,
   forEach: L,
   frame: Dt,
   getAttributes: It,
@@ -960,7 +960,7 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   intersectKey: nt,
   isArray: ht,
   isDifferent: ct,
-  isFilled: T,
+  isFilled: W,
   isFunction: ot,
   isInDom: qt,
   isIntegerBetween: ut,
@@ -979,17 +979,17 @@ const ge = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   setElementItem: Zt,
   splice: Ct,
   strFill: Ht,
-  toArray: q,
+  toArray: U,
   toCamelCase: Jt,
   toCamelCaseFirst: Xt,
-  toDate: x,
+  toDate: $,
   toKebabCase: Pt,
   toNumber: wt,
   toRefItem: d,
-  transformation: W,
+  transformation: q,
   uniqueArray: kt,
   useCookieRef: ae,
-  useEnv: O,
+  useEnv: T,
   useHashRef: ie,
   useSessionRef: re,
   useStorageRef: ne,
@@ -1002,11 +1002,11 @@ export {
   ee as G,
   f as H,
   l as T,
-  j as a,
+  R as a,
   Q as b,
-  U as c,
+  K as c,
   se as d,
-  R as e,
+  B as e,
   y as f,
   ae as g,
   ie as h,

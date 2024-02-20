@@ -1,4 +1,4 @@
-import { executeFunction, forEach, transformation } from '../functions/data'
+import { executeFunction, forEach, isDomRuntime, transformation } from '../functions/data'
 
 /**
  * Working with data stored in hash.<br>
@@ -71,13 +71,15 @@ export class Hash {
   private static getLocation (): Record<string, any> {
     const hash: Record<string, any> = {}
 
-    location.hash.replace(
-      /([\w-]+)[:=]([^;]+)/ig,
-      (...item: string[]) => {
-        hash[item[1]] = transformation(item[2])
-        return ''
-      }
-    )
+    if (isDomRuntime()) {
+      location.hash.replace(
+        /([\w-]+)[:=]([^;]+)/ig,
+        (...item: string[]) => {
+          hash[item[1]] = transformation(item[2])
+          return ''
+        }
+      )
+    }
 
     return hash
   }

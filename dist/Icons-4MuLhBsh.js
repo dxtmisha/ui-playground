@@ -13,7 +13,7 @@ function Q(o) {
 function X(o) {
   return Array.isArray(o);
 }
-function I(o) {
+function N(o) {
   return typeof o == "string";
 }
 function O(o) {
@@ -47,7 +47,7 @@ function T(o, e) {
 function q(o, e) {
   return Array.isArray(o) ? o.every((a) => T(a, e)) : T(o, e);
 }
-function G() {
+function B() {
   try {
     return !!window;
   } catch {
@@ -323,7 +323,7 @@ class Z {
    * Возвращает объект для работы с хранилищем.
    */
   getMethod() {
-    if (G())
+    if (B())
       return this.isSession ? window == null ? void 0 : window.sessionStorage : window == null ? void 0 : window.localStorage;
   }
   /**
@@ -2599,7 +2599,7 @@ const L = {}, x = [
    */
   static findLocation() {
     var e;
-    return G() && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
+    return B() && (this.storage.get() || ((e = document.querySelector("html")) == null ? void 0 : e.lang) || navigator.language || navigator.languages[0] || k("language")) || "en-GB";
   }
   /**
    * Determines the current language.<br>
@@ -2648,11 +2648,7 @@ class z {
    * Является ли сервер локальный.
    */
   static isLocalhost() {
-    try {
-      return location.hostname === "localhost";
-    } catch {
-    }
-    return !0;
+    return B() ? location.hostname === "localhost" : !0;
   }
   /**
    * Getting the header for the request.<br>
@@ -2689,7 +2685,7 @@ class z {
    */
   static getBody(e) {
     if (K(e))
-      return e instanceof FormData || I(e) ? e : JSON.stringify(e);
+      return e instanceof FormData || N(e) ? e : JSON.stringify(e);
   }
   /**
    * To execute a request.<br>
@@ -2697,7 +2693,7 @@ class z {
    * @param pathRequest query string or list of parameters /<br>строка запроса или список параметров
    */
   static async response(e) {
-    return I(e) ? await this.fetch({
+    return N(e) ? await this.fetch({
       path: e
     }) : await this.fetch(e);
   }
@@ -2947,8 +2943,8 @@ class W {
    * @param hour24 whether to use 12-hour time /<br>использовать ли 12-часовое время
    */
   relativeLimit(e, a, t, r, i, s, u) {
-    const l = A(e), d = t || /* @__PURE__ */ new Date(), B = new Date(d), P = new Date(d);
-    return B.setDate(d.getDate() - a), P.setDate(d.getDate() + a), l >= B && l <= P ? this.relative(
+    const l = A(e), d = t || /* @__PURE__ */ new Date(), P = new Date(d), I = new Date(d);
+    return P.setDate(d.getDate() - a), I.setDate(d.getDate() + a), l >= P && l <= I ? this.relative(
       l,
       r,
       d
@@ -3419,7 +3415,7 @@ g(C, "flags", {
   ZM: `${n}-zm`,
   ZW: `${n}-zw`
 });
-let N = C;
+let w = C;
 const f = class f {
   /**
    * Checks if the given icon is in the list of connected icons.<br>
@@ -3502,7 +3498,7 @@ const f = class f {
           this.makeFlagsWait(e);
           break;
         case "none":
-          this.flags = "init", import("./flags--Oz9SKOU.js").then((a) => {
+          this.flags = "init", import("./flags-BRh49B37.js").then((a) => {
             a.makeFlagsGlobal(), this.flags = "read", e();
           });
           break;
@@ -3516,18 +3512,18 @@ const f = class f {
   }
 };
 g(f, "icons", {}), g(f, "url", k("UI_PATH") ?? "/icons/"), g(f, "urlGlobal", `${z.isLocalhost(), ""}${f.url}`), g(f, "flags", "none");
-let w = f;
+let G = f;
 export {
   j as A,
   H as B,
   z as C,
   Z as D,
-  N as E,
+  w as E,
   W as F,
   y as G,
   k as H,
-  w as I,
-  G as J,
+  G as I,
+  B as J,
   n as K,
   se as a,
   ie as b,
@@ -3548,7 +3544,7 @@ export {
   Q as q,
   T as r,
   q as s,
-  I as t,
+  N as t,
   ne as u,
   $ as v,
   ue as w,

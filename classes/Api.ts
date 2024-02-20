@@ -1,4 +1,4 @@
-import { isFilled, isString } from '../functions/data'
+import { isDomRuntime, isFilled, isString } from '../functions/data'
 
 import { Geo } from './Geo'
 
@@ -36,9 +36,8 @@ export class Api {
    * Является ли сервер локальный.
    */
   static isLocalhost (): boolean {
-    try {
+    if (isDomRuntime()) {
       return location.hostname === 'localhost'
-    } catch (e) {
     }
 
     return true
