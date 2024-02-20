@@ -1,4 +1,4 @@
-import { isSelected } from '../functions/data'
+import { isDomRuntime, isSelected } from '../functions/data'
 import { copyObject } from '../functions/object'
 import { useEnv } from '../composables/useEnv'
 
@@ -198,14 +198,13 @@ export class Geo {
    * Определяет текущую локацию.
    */
   private static findLocation (): string {
-    try {
+    if (isDomRuntime()) {
       return this.storage.get() ||
         document.querySelector('html')?.lang ||
         navigator.language ||
         navigator.languages[0] ||
         useEnv('language') ||
         'en-GB'
-    } catch (e) {
     }
 
     return 'en-GB'

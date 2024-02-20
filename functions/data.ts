@@ -131,6 +131,19 @@ export function isSelectedByList<T> (
 }
 
 /**
+ * Checks if the runtime environment is a browser.<br>
+ * Проверяет, является ли среда выполнения браузером.
+ */
+export function isDomRuntime (): boolean {
+  try {
+    return Boolean(window)
+  } catch (e) {
+  }
+
+  return false
+}
+
+/**
  * The function performs the specified function once for each element in the object.
  * And returns an array with the results of executing the function.<br>
  * Функция выполняет указанную функцию один раз для каждого элемента в объекте.

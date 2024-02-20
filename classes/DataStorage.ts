@@ -1,4 +1,4 @@
-import { executeFunction, isNull } from '../functions/data'
+import { executeFunction, isDomRuntime, isNull } from '../functions/data'
 import { useEnv } from '../composables/useEnv'
 
 type DataStorageValue<T> = {
@@ -101,11 +101,10 @@ export class DataStorage<T> {
    * Возвращает объект для работы с хранилищем.
    */
   private getMethod (): Storage | undefined {
-    try {
+    if (isDomRuntime()) {
       return this.isSession
         ? window?.sessionStorage
         : window?.localStorage
-    } catch (e) {
     }
 
     return undefined

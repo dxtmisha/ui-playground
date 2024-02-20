@@ -1,4 +1,4 @@
-import { executeFunction, isFilled, transformation } from '../functions/data'
+import { executeFunction, isDomRuntime, isFilled, transformation } from '../functions/data'
 import { useEnv } from '../composables/useEnv'
 
 import { CookieBlock } from './CookieBlock'
@@ -87,7 +87,10 @@ export class Cookie<T> {
    * Обновление данных cookie.
    */
   private update (): void {
-    if (!CookieBlock.get()) {
+    if (
+      isDomRuntime() &&
+      !CookieBlock.get()
+    ) {
       const value = String(this.value ?? '')
 
       document.cookie = [
@@ -100,11 +103,13 @@ export class Cookie<T> {
   }
 
   static {
-    for (const item of document.cookie.split(';')) {
-      const [key, value] = item.trim().split('=')
+    if (isDomRuntime()) {
+      for (const item of document.cookie.split(';')) {
+        const [key, value] = item.trim().split('=')
 
-      if (key && isFilled(value)) {
-        cookie[key] = transformation(value)
+        if (key && isFilled(value)) {
+          cookie[key] = transformation(value)
+        }
       }
     }
   }
