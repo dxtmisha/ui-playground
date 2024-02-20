@@ -115,7 +115,7 @@ export const propsBasicInput = {
   required: Boolean,
 
   pattern: String,
-  match: [String, HTMLInputElement, Object] as PropType<InputBasicProps['match']>,
+  match: [String, Object] as PropType<InputBasicProps['match']>,
 
   arrow: Boolean,
   step: [String, Number],

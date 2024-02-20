@@ -3961,7 +3961,7 @@ const hi = {
   spellcheck: Boolean,
   required: Boolean,
   pattern: String,
-  match: [String, HTMLInputElement, Object],
+  match: [String, Object],
   arrow: Boolean,
   step: [String, Number],
   min: [String, Number],
