@@ -9836,7 +9836,7 @@ const E = {
     default: E == null ? void 0 : E.indent
   },
   persistent: Boolean,
-  overElement: [String, HTMLElement],
+  overElement: [String, Object],
   autoClose: Boolean,
   flash: Boolean,
   inDom: Boolean,

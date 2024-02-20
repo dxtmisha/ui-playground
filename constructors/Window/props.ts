@@ -82,7 +82,7 @@ export const propsWindow = {
     default: defaultsWindow?.indent
   },
   persistent: Boolean,
-  overElement: [String, HTMLElement] as PropType<WindowProps['overElement']>,
+  overElement: [String, Object] as PropType<WindowProps['overElement']>,
 
   autoClose: Boolean,
   flash: Boolean,
